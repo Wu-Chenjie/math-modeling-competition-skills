@@ -1,0 +1,42 @@
+{
+  "manifest_version": 1,
+  "status": "pre_registered_ready",
+  "created_at": "2026-08-30T00:00:00+08:00",
+  "model": "gpt-5.6-sol",
+  "provider": "openlux",
+  "skill_refs": {
+    "domain": {
+      "repository": "https://github.com/XiaoMaColtAI/math-modeling-skill",
+      "commit": "5a85fe34ca1d075872e95556b122c8979984d322"
+    },
+    "engineering": {
+      "repository": "https://github.com/mattpocock/skills",
+      "commit": "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76",
+      "selected_skills": ["grill-with-docs", "research", "prototype", "tdd", "code-review"]
+    }
+  },
+  "groups": {
+    "A": {"skills": ["domain"], "runs_per_case": 3},
+    "B": {"skills": ["domain", "engineering"], "runs_per_case": 3},
+    "C": {"status": "reserved_until_A_B_complete"}
+  },
+  "case_registry_command": "python scripts/evaluate.py eligible-cases benchmarks/cases",
+  "eligible_case_count": 7,
+  "required_competitions": ["CUMCM", "MCM", "ICM"],
+  "fairness_controls": {
+    "same_case_artifacts": true,
+    "same_model": true,
+    "same_tools": true,
+    "same_wall_clock_budget_minutes": 120,
+    "same_initial_context": true,
+    "same_external_search_permission": true,
+    "token_budget": "not_hard_enforceable_by_codex_exec_0.151.0; record_actual_usage"
+  },
+  "run_id_format": "<group>-<case_id>-<index:03d>",
+  "scoring_status": "not_started",
+  "blocking_conditions": [
+    "No complete A/B run records yet",
+    "No blind multi-judge reports yet",
+    "C fusion group must not be created before A/B evidence"
+  ]
+}

@@ -1,6 +1,6 @@
 # Math Modeling Competition Skills
 
-This repository is currently in **Phase 1: research and baseline design**.
+This repository is currently at the **A/B benchmark pre-registration gate**: research and official case ingestion are complete; scoring has not started.
 
 ## Phase 1 deliverables
 
@@ -29,7 +29,7 @@ Before Architecture Design, review all five documents, confirm that sources are 
 - `Rejected assumption`: Stars do not establish modeling quality; no public benchmark evidence was found in this scan.
 - `Risk`: candidate repositories differ in scope (pure Skills versus full applications), so the benchmark must report product/runtime overhead separately.
 
-The next stage is worth executing only after the five documents are reviewed because it converts these observations into an architecture proposal and a controlled Group A/B harness.
+The next stage is worth executing only after the five documents and the official case manifest are reviewed because it converts these observations into a controlled Group A/B run.
 
 ## Current execution state
 
