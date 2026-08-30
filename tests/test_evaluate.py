@@ -31,9 +31,16 @@ class EvaluateContractTests(unittest.TestCase):
             competitions.add(metadata["competition"])
         self.assertEqual(competitions, {"CUMCM", "MCM", "ICM"})
 
-    def test_catalog_cases_are_not_eligible_for_scoring(self):
+    def test_catalog_cases_are_not_eligible_but_verified_cases_are(self):
         paths = sorted((ROOT / "benchmarks" / "cases").glob("*/metadata.yaml"))
-        self.assertEqual(eligible_cases(paths), [])
+        eligible = eligible_cases(paths)
+        eligible_ids = {path.parent.name for path in eligible}
+        self.assertEqual(
+            eligible_ids,
+            {"cumcm-2022-c", "mcm-2023-a", "mcm-2023-b", "mcm-2023-c", "mcm-2023-y", "icm-2023-d", "icm-2023-e"},
+        )
+        catalog_ids = {path.parent.name for path in paths} - eligible_ids
+        self.assertEqual(len(catalog_ids), 6)
 
     def test_run_record_requires_traceable_artifacts(self):
         record = {

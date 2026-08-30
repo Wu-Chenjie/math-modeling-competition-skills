@@ -7,7 +7,12 @@
   "difficulty": "high",
   "expected_methods": ["compositional_data", "classification", "uncertainty_analysis"],
   "common_failures": ["ignored_compositional_constraint", "data_leakage", "unsupported_classification"],
-  "source_status": "catalog_only",
-  "source_url": "https://github.com/yushuhong1212/2022CUMCM-ProblemC",
-  "official_index_url": "https://www.mcm.edu.cn/html_cn/node/9b4b8c1e0f0f4b1f9a4b/index.html"
+  "source_status": "verified",
+  "source_url": "https://www.mcm.edu.cn/html_cn/node/388239ded4b057d37b7b8e51e33fe903.html",
+  "official_index_url": "https://www.mcm.edu.cn/html_cn/block/8579f5fce999cdc896f78bca5d4f8237.html",
+  "download_urls": ["https://www.mcm.edu.cn/upload_cn/node/670/5eWlbmTt28f88a0815a79d555da8b7072f971633.rar"],
+  "statement_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+  "data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+  "accessed_at": "2026-08-30",
+  "license_note": "Official CUMCM website statement and attachment; use for reproducible research and benchmark evaluation, do not redistribute student solutions."
 }

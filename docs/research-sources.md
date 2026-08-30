@@ -14,6 +14,10 @@ Retrieval date: 2026-08-30 (Asia/Shanghai)
 | S08 | GitHub REST repository endpoint | https://api.github.com/repos/zhnnky329/MathModeling-skills | 2026-08-30 | API metadata | Stars, forks, timestamps, branch, license |
 | S09 | GitHub REST repository endpoint | https://api.github.com/repos/Lupynow/math-modeling-skills | 2026-08-30 | API metadata | Stars, forks, timestamps, branch, license |
 | S10 | GitHub REST repository endpoint | https://api.github.com/repos/jihe520/MathModelAgent | 2026-08-30 | API metadata | Stars, forks, timestamps, branch, license |
+| S11 | CUMCM official historical-problem archive | https://www.mcm.edu.cn/html_cn/block/8579f5fce999cdc896f78bca5d4f8237.html | 2026-08-30 | Official index and download link | Lists 2022 and earlier historical statements |
+| S12 | CUMCM 2022 C official node | https://www.mcm.edu.cn/html_cn/node/388239ded4b057d37b7b8e51e33fe903.html | 2026-08-30 | Official node and RAR package | `CUMCM2022Problems.rar`; C problem extracted locally |
+| S13 | COMAP official 2023 MCM/ICM index | https://www.contest.comap.com/undergraduate/contests/mcm/contests/2023/problems/ | 2026-08-30 | Official archive index | Lists MCM A/B/C/Y and ICM D/E/F/Z |
+| S14 | COMAP official 2023 resource pages | https://www.comap.org/membership/member-resources/item/predicting-wordle-results | 2026-08-30 | Official resource pages and download endpoints | Problem PDFs and official C/Y data attachments |
 
 ## Reproducible query method
 
@@ -25,5 +29,5 @@ For each repository, query `GET https://api.github.com/repos/{owner}/{repo}` and
 - Evidence: zhnnky exposes parser/auditor/selector/orchestrator files and explicit gate contracts; XiaoMa and Lupynow expose broad domain references and templates.
 - Rejected assumption: popularity is a proxy for correctness.
 - Risks: metadata changes over time; public repository presence does not prove runtime execution; `jihe520/MathModelAgent` includes application infrastructure and needs a separate track.
-- Required modification before Architecture Design: select the primary A baseline by evidence, create the historical case manifest, and pre-register controlled conditions and hard penalties.
+- Required modification before Architecture Design: select the primary A baseline by evidence, pin exact Skill commits, create the historical case manifest, and pre-register controlled conditions and hard penalties.
 - Next-stage rationale: only a fair A/B run can test whether engineering architecture improves outcomes beyond domain breadth.

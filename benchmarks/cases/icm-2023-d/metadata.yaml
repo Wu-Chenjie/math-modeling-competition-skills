@@ -1,0 +1,18 @@
+{
+  "id": "icm-2023-d",
+  "title": "Prioritizing the UN Sustainability Goals",
+  "competition": "ICM",
+  "year": 2023,
+  "problem_type": "multi_objective_decision",
+  "difficulty": "high",
+  "expected_methods": ["multi_criteria_decision", "weight_sensitivity", "robustness_analysis"],
+  "common_failures": ["arbitrary_weights", "scale_mismatch", "no_ranking_robustness"],
+  "source_status": "verified",
+  "source_url": "https://www.comap.org/membership/member-resources/item/prioritizing-the-un-sustainability-goals",
+  "official_index_url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2023/problems/",
+  "download_urls": ["https://www.comap.org/component/zoo/?task=callelement&format=raw&item_id=3323&element=71992483-3d3b-47dc-a146-3c901bdea04f&method=download"],
+  "statement_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "accessed_at": "2026-08-30",
+  "license_note": "Official COMAP problem statement; use for reproducible research and benchmark evaluation, do not redistribute student solutions."
+}

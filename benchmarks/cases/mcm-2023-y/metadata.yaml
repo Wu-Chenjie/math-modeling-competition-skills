@@ -1,0 +1,18 @@
+{
+  "id": "mcm-2023-y",
+  "title": "Understanding Used Sailboat Prices",
+  "competition": "MCM",
+  "year": 2023,
+  "problem_type": "prediction_and_statistics",
+  "difficulty": "medium",
+  "expected_methods": ["regression", "feature_engineering", "cross_validation"],
+  "common_failures": ["target_leakage", "overfitting", "metric_mismatch"],
+  "source_status": "verified",
+  "source_url": "https://www.comap.org/membership/member-resources/item/understanding-used-sailboat-prices",
+  "official_index_url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2023/problems/",
+  "download_urls": ["https://www.comap.org/component/zoo/?task=callelement&format=raw&item_id=3319&element=71992483-3d3b-47dc-a146-3c901bdea04f&method=download", "https://www.comap.org/component/zoo/?task=callelement&format=raw&item_id=3319&element=979148b8-68eb-4e88-83df-a28439d5b0e5&method=download"],
+  "statement_sha256": "2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce",
+  "data_sha256": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba",
+  "accessed_at": "2026-08-30",
+  "license_note": "Official COMAP problem statement and official data attachment; use for reproducible research and benchmark evaluation, do not redistribute student solutions."
+}

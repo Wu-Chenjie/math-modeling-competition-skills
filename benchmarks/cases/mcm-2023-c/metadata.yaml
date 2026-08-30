@@ -1,13 +1,18 @@
 {
   "id": "mcm-2023-c",
-  "title": "2023 MCM Problem C",
+  "title": "Predicting Wordle Results",
   "competition": "MCM",
   "year": 2023,
   "problem_type": "prediction_and_statistics",
   "difficulty": "medium",
   "expected_methods": ["time_series", "classification", "cross_validation"],
   "common_failures": ["temporal_leakage", "overfitting", "metric_mismatch"],
-  "source_status": "catalog_only",
-  "source_url": "https://github.com/jxtse/MCM2023-C",
-  "official_index_url": "https://www.comap.com/contests/mcm-icm"
+  "source_status": "verified",
+  "source_url": "https://www.comap.org/membership/member-resources/item/predicting-wordle-results",
+  "official_index_url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2023/problems/",
+  "download_urls": ["https://www.comap.org/component/zoo/?task=callelement&format=raw&item_id=3324&element=71992483-3d3b-47dc-a146-3c901bdea04f&method=download", "https://www.comap.org/component/zoo/?task=callelement&format=raw&item_id=3324&element=979148b8-68eb-4e88-83df-a28439d5b0e5&method=download"],
+  "statement_sha256": "b511204705db800f3b812943b780074cc24bfe5108d26b6c20f308128e631ef6",
+  "data_sha256": "22d9c6c308700c6b744d74da8c83e358eefba955f58713c65f947624cda5ac94",
+  "accessed_at": "2026-08-30",
+  "license_note": "Official COMAP problem statement and official data attachment; use for reproducible research and benchmark evaluation, do not redistribute student solutions."
 }

@@ -1,0 +1,18 @@
+{
+  "id": "icm-2023-e",
+  "title": "Light Pollution",
+  "competition": "ICM",
+  "year": 2023,
+  "problem_type": "complex_data_analysis",
+  "difficulty": "high",
+  "expected_methods": ["spatial_analysis", "statistical_modeling", "scenario_analysis"],
+  "common_failures": ["sampling_bias", "confounded_correlation", "no_uncertainty_analysis"],
+  "source_status": "verified",
+  "source_url": "https://www.comap.org/membership/member-resources/item/light-pollution",
+  "official_index_url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2023/problems/",
+  "download_urls": ["https://www.comap.org/component/zoo/?task=callelement&format=raw&item_id=3321&element=71992483-3d3b-47dc-a146-3c901bdea04f&method=download"],
+  "statement_sha256": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "accessed_at": "2026-08-30",
+  "license_note": "Official COMAP problem statement; use for reproducible research and benchmark evaluation, do not redistribute student solutions."
+}

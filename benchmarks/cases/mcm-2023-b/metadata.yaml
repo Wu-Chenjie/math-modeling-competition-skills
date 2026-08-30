@@ -1,0 +1,18 @@
+{
+  "id": "mcm-2023-b",
+  "title": "Reimagining Maasai Mara",
+  "competition": "MCM",
+  "year": 2023,
+  "problem_type": "optimization",
+  "difficulty": "high",
+  "expected_methods": ["network_analysis", "multi_objective_optimization", "scenario_analysis"],
+  "common_failures": ["arbitrary_weights", "ignored_capacity_constraint", "no_robustness"],
+  "source_status": "verified",
+  "source_url": "https://www.comap.org/membership/member-resources/item/reimagining-maasai-mara",
+  "official_index_url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2023/problems/",
+  "download_urls": ["https://www.comap.org/component/zoo/?task=callelement&format=raw&item_id=3325&element=71992483-3d3b-47dc-a146-3c901bdea04f&method=download"],
+  "statement_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "accessed_at": "2026-08-30",
+  "license_note": "Official COMAP problem statement; use for reproducible research and benchmark evaluation, do not redistribute student solutions."
+}

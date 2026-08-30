@@ -33,4 +33,4 @@ The next stage is worth executing only after the five documents are reviewed bec
 
 ## Current execution state
 
-The A/B harness is now scaffolded under `benchmarks/` and `scripts/`. Six unit tests cover metadata validation, catalog exclusion, hard-fail penalties, traceable run records, and summary statistics. The case registry currently has eight historical pointers but zero eligible cases because official statement/data ingestion and hash verification are still pending.
+The A/B harness is scaffolded under `benchmarks/` and `scripts/`. The test suite covers metadata validation, catalog exclusion, hard-fail penalties, traceable run records, and summary statistics. The registry contains seven source-verified cases across CUMCM/MCM/ICM plus six catalog-only discovery pointers; no benchmark score is claimed yet.

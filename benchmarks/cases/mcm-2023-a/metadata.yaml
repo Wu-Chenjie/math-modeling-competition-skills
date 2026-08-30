@@ -1,0 +1,18 @@
+{
+  "id": "mcm-2023-a",
+  "title": "Drought-Stricken Plant Communities",
+  "competition": "MCM",
+  "year": 2023,
+  "problem_type": "dynamic_system",
+  "difficulty": "high",
+  "expected_methods": ["mechanistic_model", "differential_equation", "numerical_simulation"],
+  "common_failures": ["wrong_boundary_condition", "unstable_solver", "no_extreme_case"],
+  "source_status": "verified",
+  "source_url": "https://www.comap.org/membership/member-resources/item/drought-stricken-plant-communities",
+  "official_index_url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2023/problems/",
+  "download_urls": ["https://www.comap.org/component/zoo/?task=callelement&format=raw&item_id=3326&element=71992483-3d3b-47dc-a146-3c901bdea04f&method=download"],
+  "statement_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "accessed_at": "2026-08-30",
+  "license_note": "Official COMAP problem statement; use for reproducible research and benchmark evaluation, do not redistribute student solutions."
+}

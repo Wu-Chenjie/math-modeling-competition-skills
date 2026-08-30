@@ -22,7 +22,7 @@ The primary A candidate must be selected from the retained candidate set using d
 
 Create `benchmarks/cases/` with 6-10 historical CUMCM/MCM/ICM cases spanning prediction, evaluation, optimization, graph/network, statistics, dynamic systems/ODE, multi-objective decision, and complex data analysis. The current repository contains an eight-case `catalog_only` inventory; no catalog-only case may be scored. Before execution, each case must contain `problem/`, `data/`, `reference/`, `rubric/`, and `metadata.yaml` with `competition`, `year`, `problem_type`, `difficulty`, `expected_methods`, `common_failures`, verified source hashes, access date, and license note.
 
-Case selection must avoid training leakage: record the source URL, access date, licensing/usage note, and whether the exact statement or reference solution appears in any Skill repository. A known overlap is either excluded or reported as a contamination risk for all groups.
+Case selection must avoid training leakage: record the source URL, access date, licensing/usage note, and whether the exact statement or reference solution appears in any Skill repository. A known overlap is either excluded or reported as a contamination risk for all groups. The first verified corpus currently contains seven official cases: CUMCM 2022 C plus COMAP 2023 MCM A/B/C/Y and ICM D/E.
 
 ## Controlled conditions
 
@@ -83,4 +83,4 @@ Before interpreting a result, verify: case hash, Skill commit, model identifier,
 
 ## Current gate status
 
-The runner smoke test is `PASS`; metadata/evaluator tests are `PASS`; case ingestion is `BLOCKED_PENDING_SOURCE_VERIFICATION`; A/B scoring is `BLOCKED_NO_ELIGIBLE_CASES`. Do not create Group C or publish superiority claims until at least six cases pass `validate_verified_case` and each group has three complete runs per case.
+The runner smoke test is `PASS`; metadata/evaluator tests are `PASS`; seven cases now pass `validate_verified_case` across all required competitions; A/B scoring is `READY_TO_EXECUTE` once Skill commits, token budget, and run manifest are recorded. Do not create Group C or publish superiority claims until each group has three complete runs per case.

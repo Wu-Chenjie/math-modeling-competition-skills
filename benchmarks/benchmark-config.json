@@ -11,14 +11,14 @@
     "A": {
       "label": "domain_skill_only",
       "skill_repo": "XiaoMaColtAI/math-modeling-skill",
-      "skill_ref": "PENDING_PINNED_COMMIT"
+      "skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322"
     },
     "B": {
       "label": "domain_plus_engineering",
       "domain_skill_repo": "XiaoMaColtAI/math-modeling-skill",
-      "domain_skill_ref": "PENDING_PINNED_COMMIT",
+      "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
       "engineering_skill_repo": "mattpocock/skills",
-      "engineering_skill_ref": "PENDING_PINNED_COMMIT"
+      "engineering_skill_ref": "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
     },
     "C": {
       "label": "fusion_reserved",
@@ -30,7 +30,7 @@
     "same_case_data": true,
     "same_tools": true,
     "same_wall_clock_budget_minutes": 120,
-    "same_token_budget": "provider_default_unrecorded",
+    "same_token_budget": "unavailable_cli_hard_cap; record_actual_usage_per_run",
     "blind_submission_prefix": "Submission-",
     "review_disagreement_threshold_points": 20
   },
