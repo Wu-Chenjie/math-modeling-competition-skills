@@ -1,0 +1,13 @@
+{
+  "id": "icm-2021-d",
+  "title": "Music Characteristics and Classification",
+  "competition": "ICM",
+  "year": 2021,
+  "problem_type": "complex_data_analysis",
+  "difficulty": "high",
+  "expected_methods": ["feature_engineering", "network_analysis", "classification"],
+  "common_failures": ["sampling_bias", "high_dimensional_overfit", "no_external_validation"],
+  "source_status": "catalog_only",
+  "source_url": "https://github.com/facingfrost/2021_COMAP_ICM_Problem_D",
+  "official_index_url": "https://www.comap.com/contests/mcm-icm"
+}

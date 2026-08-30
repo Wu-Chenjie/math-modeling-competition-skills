@@ -1,0 +1,13 @@
+{
+  "id": "mcm-2022-a",
+  "title": "2022 MCM Problem A",
+  "competition": "MCM",
+  "year": 2022,
+  "problem_type": "dynamic_system",
+  "difficulty": "high",
+  "expected_methods": ["mechanistic_model", "differential_equation", "numerical_simulation"],
+  "common_failures": ["wrong_boundary_condition", "unstable_solver", "no_extreme_case"],
+  "source_status": "catalog_only",
+  "source_url": "https://github.com/A-chai-chai/2022-MCM-A-problem",
+  "official_index_url": "https://www.comap.com/contests/mcm-icm"
+}

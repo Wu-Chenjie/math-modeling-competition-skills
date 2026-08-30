@@ -18,7 +18,7 @@ The primary A candidate must be selected from the retained candidate set using d
 
 ## Case corpus
 
-Create `benchmarks/cases/` with 6-10 historical CUMCM/MCM/ICM cases spanning prediction, evaluation, optimization, graph/network, statistics, dynamic systems/ODE, multi-objective decision, and complex data analysis. Each case must contain `problem/`, `data/`, `reference/`, `rubric/`, and `metadata.yaml` with `competition`, `year`, `problem_type`, `difficulty`, `expected_methods`, and `common_failures`.
+Create `benchmarks/cases/` with 6-10 historical CUMCM/MCM/ICM cases spanning prediction, evaluation, optimization, graph/network, statistics, dynamic systems/ODE, multi-objective decision, and complex data analysis. The current repository contains an eight-case `catalog_only` inventory; no catalog-only case may be scored. Before execution, each case must contain `problem/`, `data/`, `reference/`, `rubric/`, and `metadata.yaml` with `competition`, `year`, `problem_type`, `difficulty`, `expected_methods`, `common_failures`, verified source hashes, access date, and license note.
 
 Case selection must avoid training leakage: record the source URL, access date, licensing/usage note, and whether the exact statement or reference solution appears in any Skill repository. A known overlap is either excluded or reported as a contamination risk for all groups.
 
@@ -78,4 +78,3 @@ After C exists, run C Full and one removal per selected Skill (`problem-grill`, 
 ## Reproducibility checklist
 
 Before interpreting a result, verify: case hash, Skill commit, model identifier, initial-context hash, seed, environment/package lock, command, wall time, token count, raw outputs, generated figures, evaluator version, judge reports, and rerun status. Missing evidence is `Unverified`, never an inferred pass.
-

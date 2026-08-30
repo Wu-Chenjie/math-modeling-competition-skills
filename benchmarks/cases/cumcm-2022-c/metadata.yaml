@@ -1,0 +1,13 @@
+{
+  "id": "cumcm-2022-c",
+  "title": "古代玻璃制品的成分分析",
+  "competition": "CUMCM",
+  "year": 2022,
+  "problem_type": "statistical_analysis",
+  "difficulty": "high",
+  "expected_methods": ["compositional_data", "classification", "uncertainty_analysis"],
+  "common_failures": ["ignored_compositional_constraint", "data_leakage", "unsupported_classification"],
+  "source_status": "catalog_only",
+  "source_url": "https://github.com/whu-cst/2022CUMCM-C",
+  "official_index_url": "https://www.mcm.edu.cn/html_cn/node/9b4b8c1e0f0f4b1f9a4b/index.html"
+}

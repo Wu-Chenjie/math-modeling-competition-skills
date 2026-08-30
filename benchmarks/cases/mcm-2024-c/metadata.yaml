@@ -1,0 +1,13 @@
+{
+  "id": "mcm-2024-c",
+  "title": "2024 MCM Problem C",
+  "competition": "MCM",
+  "year": 2024,
+  "problem_type": "prediction_and_optimization",
+  "difficulty": "high",
+  "expected_methods": ["data_analysis", "forecasting", "scenario_optimization"],
+  "common_failures": ["target_leakage", "unreported_uncertainty", "algorithm_first_selection"],
+  "source_status": "catalog_only",
+  "source_url": "https://github.com/XDzzzzzZyq/MCM-2024-C",
+  "official_index_url": "https://www.comap.com/contests/mcm-icm"
+}

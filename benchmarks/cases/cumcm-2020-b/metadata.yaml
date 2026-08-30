@@ -1,0 +1,13 @@
+{
+  "id": "cumcm-2020-b",
+  "title": "穿越沙漠",
+  "competition": "CUMCM",
+  "year": 2020,
+  "problem_type": "multi_objective_decision",
+  "difficulty": "medium",
+  "expected_methods": ["dynamic_programming", "resource_constraint", "sensitivity_analysis"],
+  "common_failures": ["wrong_resource_units", "ignored_weather_state", "no_baseline"],
+  "source_status": "catalog_only",
+  "source_url": "https://github.com/seanys/CUMCM2020-Desert-Game",
+  "official_index_url": "https://www.mcm.edu.cn/html_cn/node/9b4b8c1e0f0f4b1f9a4b/index.html"
+}

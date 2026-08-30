@@ -1,0 +1,13 @@
+{
+  "id": "cumcm-2019-a",
+  "title": "机场出租车调度与定价问题",
+  "competition": "CUMCM",
+  "year": 2019,
+  "problem_type": "optimization",
+  "difficulty": "medium",
+  "expected_methods": ["queueing", "simulation", "optimization"],
+  "common_failures": ["omitted_capacity_constraint", "unvalidated_assumptions"],
+  "source_status": "catalog_only",
+  "source_url": "https://github.com/Shulin-Li22/airport_taxi_optimization-CUMCM2019",
+  "official_index_url": "https://www.mcm.edu.cn/html_cn/node/9b4b8c1e0f0f4b1f9a4b/index.html"
+}

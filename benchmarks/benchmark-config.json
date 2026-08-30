@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "protocol_ready_data_pending",
+  "retrieved_at": "2026-08-30T00:00:00+08:00",
+  "model": {
+    "id": "PENDING_USER_SELECTION",
+    "temperature": "PENDING_RUNTIME_SUPPORT",
+    "seed_policy": "three_pre_registered_run_ids_per_group_case"
+  },
+  "groups": {
+    "A": {
+      "label": "domain_skill_only",
+      "skill_repo": "XiaoMaColtAI/math-modeling-skill",
+      "skill_ref": "PENDING_PINNED_COMMIT"
+    },
+    "B": {
+      "label": "domain_plus_engineering",
+      "domain_skill_repo": "XiaoMaColtAI/math-modeling-skill",
+      "domain_skill_ref": "PENDING_PINNED_COMMIT",
+      "engineering_skill_repo": "mattpocock/skills",
+      "engineering_skill_ref": "PENDING_PINNED_COMMIT"
+    },
+    "C": {
+      "label": "fusion_reserved",
+      "status": "not_created"
+    }
+  },
+  "controls": {
+    "independent_runs_per_case": 3,
+    "same_case_data": true,
+    "same_tools": true,
+    "same_wall_clock_budget_minutes": 120,
+    "same_token_budget": "PENDING_USER_SELECTION",
+    "blind_submission_prefix": "Submission-",
+    "review_disagreement_threshold_points": 20
+  },
+  "case_policy": {
+    "minimum_eligible_cases": 6,
+    "required_competitions": ["CUMCM", "MCM", "ICM"],
+    "exclude_source_status": ["catalog_only", "unverified", "contaminated"]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "icm-2024-e",
+  "title": "2024 ICM Problem E",
+  "competition": "ICM",
+  "year": 2024,
+  "problem_type": "multi_objective_environmental_decision",
+  "difficulty": "high",
+  "expected_methods": ["multi_objective_optimization", "scenario_analysis", "robustness_analysis"],
+  "common_failures": ["arbitrary_weights", "omitted_stakeholder_constraint", "no_robustness"],
+  "source_status": "catalog_only",
+  "source_url": "https://github.com/ydchen0806/24ICM_E_O_Award_Paper_code",
+  "official_index_url": "https://www.comap.com/contests/mcm-icm"
+}

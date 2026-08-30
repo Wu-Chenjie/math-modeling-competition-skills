@@ -30,3 +30,7 @@ Before Architecture Design, review all five documents, confirm that sources are 
 - `Risk`: candidate repositories differ in scope (pure Skills versus full applications), so the benchmark must report product/runtime overhead separately.
 
 The next stage is worth executing only after the five documents are reviewed because it converts these observations into an architecture proposal and a controlled Group A/B harness.
+
+## Current execution state
+
+The A/B harness is now scaffolded under `benchmarks/` and `scripts/`. Six unit tests cover metadata validation, catalog exclusion, hard-fail penalties, traceable run records, and summary statistics. The case registry currently has eight historical pointers but zero eligible cases because official statement/data ingestion and hash verification are still pending.

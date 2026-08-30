@@ -1,0 +1,13 @@
+{
+  "id": "mcm-2023-c",
+  "title": "2023 MCM Problem C",
+  "competition": "MCM",
+  "year": 2023,
+  "problem_type": "prediction_and_statistics",
+  "difficulty": "medium",
+  "expected_methods": ["time_series", "classification", "cross_validation"],
+  "common_failures": ["temporal_leakage", "overfitting", "metric_mismatch"],
+  "source_status": "catalog_only",
+  "source_url": "https://github.com/jxtse/MCM2023-C",
+  "official_index_url": "https://www.comap.com/contests/mcm-icm"
+}
