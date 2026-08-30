@@ -20,3 +20,13 @@ Facts are marked `Observed`, interpretations `Inferred`, and missing evidence `U
 
 Before Architecture Design, review all five documents, confirm that sources are reachable, and execute the benchmark protocol without changing conditions between groups.
 
+## Phase 1 findings
+
+- `Observed`: the strongest domain/process separation is in zhnnky's parser, data auditor, method selector, manifests, and G1-G6 gates.
+- `Observed`: XiaoMaColtAI supplies the broadest contest-oriented role, algorithm, tool, template, and reproducibility reference set in this sample.
+- `Observed`: Lupynow separates solver/paper knowledge and provides extensive cookbooks, playbooks, and Python/MATLAB templates.
+- `Inferred`: Matt Pocock's highest-value contribution is Skill architecture: trigger boundaries, progressive disclosure, artifacts, human gates, and independent review. Its software `domain-modeling` must not be transplanted as mathematical modeling knowledge.
+- `Rejected assumption`: Stars do not establish modeling quality; no public benchmark evidence was found in this scan.
+- `Risk`: candidate repositories differ in scope (pure Skills versus full applications), so the benchmark must report product/runtime overhead separately.
+
+The next stage is worth executing only after the five documents are reviewed because it converts these observations into an architecture proposal and a controlled Group A/B harness.
