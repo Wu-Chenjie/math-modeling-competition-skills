@@ -1,5 +1,7 @@
 import json
+import hashlib
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -12,6 +14,9 @@ from evaluate import (
     eligible_cases,
     validate_case_metadata,
     validate_run_record,
+    validate_verified_case,
+    sha256_tree,
+    build_run_id,
 )
 
 
@@ -41,6 +46,32 @@ class EvaluateContractTests(unittest.TestCase):
         }
         self.assertEqual(validate_run_record(record), [])
         self.assertIn("artifacts", validate_run_record({"group": "A"}))
+
+    def test_verified_case_requires_hashes_and_artifact_directories(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            case_root = Path(temp_dir)
+            for directory in ("problem", "data", "reference", "rubric"):
+                (case_root / directory).mkdir()
+            metadata = {
+                "source_status": "verified",
+                "statement_sha256": "a" * 64,
+                "data_sha256": "b" * 64,
+                "accessed_at": "2026-08-30",
+                "license_note": "official archival source",
+            }
+            self.assertEqual(validate_verified_case(case_root, metadata), [])
+            self.assertIn("statement_sha256", validate_verified_case(case_root, {"source_status": "verified"}))
+
+    def test_tree_hash_is_deterministic_and_path_sensitive(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            (root / "b.txt").write_text("B", encoding="utf-8")
+            (root / "a.txt").write_text("A", encoding="utf-8")
+            expected = hashlib.sha256(b"a.txt\0A\nb.txt\0B\n").hexdigest()
+            self.assertEqual(sha256_tree(root), expected)
+
+    def test_run_id_is_stable_for_group_case_and_index(self):
+        self.assertEqual(build_run_id("B", "mcm-2023-c", 2), "B-mcm-2023-c-002")
 
     def test_case_metadata_requires_benchmark_fields(self):
         metadata = {

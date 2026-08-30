@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import re
 import statistics
 from pathlib import Path
 from typing import Any
@@ -35,6 +37,7 @@ POINT_PENALTIES = {
 }
 
 REQUIRED_RUN_FIELDS = ("group", "case_id", "run_id", "score", "failed", "artifacts")
+REQUIRED_VERIFIED_FIELDS = ("statement_sha256", "data_sha256", "accessed_at", "license_note")
 
 
 def validate_case_metadata(metadata: dict[str, Any]) -> list[str]:
@@ -42,17 +45,45 @@ def validate_case_metadata(metadata: dict[str, Any]) -> list[str]:
     return [field for field in REQUIRED_METADATA_FIELDS if not metadata.get(field)]
 
 
+def sha256_tree(root: Path) -> str:
+    """Hash relative paths and file bytes in deterministic lexical order."""
+    digest = hashlib.sha256()
+    for path in sorted(path for path in root.rglob("*") if path.is_file()):
+        relative = path.relative_to(root).as_posix().encode("utf-8")
+        digest.update(relative + b"\0" + path.read_bytes() + b"\n")
+    return digest.hexdigest()
+
+
+def build_run_id(group: str, case_id: str, index: int) -> str:
+    """Build a stable blind-run identifier."""
+    if index < 1:
+        raise ValueError("run index must be positive")
+    return f"{group}-{case_id}-{index:03d}"
+
+
 def eligible_cases(paths: list[Path]) -> list[Path]:
     """Return only cases whose source and required artifacts are verified."""
     eligible: list[Path] = []
     for path in paths:
         metadata = _load_json(path)
-        if metadata.get("source_status") != "verified":
-            continue
-        case_root = path.parent
-        if all((case_root / directory).is_dir() for directory in ("problem", "data", "reference", "rubric")):
+        if not validate_verified_case(path.parent, metadata):
             eligible.append(path)
     return eligible
+
+
+def validate_verified_case(case_root: Path, metadata: dict[str, Any]) -> list[str]:
+    """Validate the evidence required before a case can be scored."""
+    missing = [field for field in REQUIRED_VERIFIED_FIELDS if not metadata.get(field)]
+    if metadata.get("source_status") != "verified":
+        missing.append("source_status=verified")
+    for digest_field in ("statement_sha256", "data_sha256"):
+        value = metadata.get(digest_field, "")
+        if value and not re.fullmatch(r"[0-9a-fA-F]{64}", value):
+            missing.append(digest_field)
+    for directory in ("problem", "data", "reference", "rubric"):
+        if not (case_root / directory).is_dir():
+            missing.append(directory)
+    return missing
 
 
 def validate_run_record(record: dict[str, Any]) -> list[str]:

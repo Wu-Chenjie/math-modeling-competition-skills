@@ -80,3 +80,7 @@ After C exists, run C Full and one removal per selected Skill (`problem-grill`, 
 ## Reproducibility checklist
 
 Before interpreting a result, verify: case hash, Skill commit, model identifier, initial-context hash, seed, environment/package lock, command, wall time, token count, raw outputs, generated figures, evaluator version, judge reports, and rerun status. Missing evidence is `Unverified`, never an inferred pass.
+
+## Current gate status
+
+The runner smoke test is `PASS`; metadata/evaluator tests are `PASS`; case ingestion is `BLOCKED_PENDING_SOURCE_VERIFICATION`; A/B scoring is `BLOCKED_NO_ELIGIBLE_CASES`. Do not create Group C or publish superiority claims until at least six cases pass `validate_verified_case` and each group has three complete runs per case.
