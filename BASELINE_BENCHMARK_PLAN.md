@@ -2,6 +2,8 @@
 
 Status: **Protocol only; no benchmark result has been run or claimed.**
 
+The Codex non-interactive smoke test was run on 2026-08-30 with `gpt-5.6-sol` and returned `SMOKE_OK`. It validated the runner path only; it did not use a benchmark case, produce a score, or compare Skills. The provider reported plugin-sync/network warnings, so those warnings must be captured in every real run's environment record.
+
 ## Objective
 
 Measure whether engineering Skill architecture improves mathematical-modeling quality, stability, validity, and cost without changing model, tools, data, time, token budget, machine, or external-search permissions.

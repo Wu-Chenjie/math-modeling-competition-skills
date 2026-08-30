@@ -16,3 +16,4 @@ Expected current output:
 
 To make a case eligible, verify the official statement/data source, add the required directories, add hashes and license notes, and change only that case's `source_status` to `verified` after review.
 
+The current runner environment is known to execute `codex exec` non-interactively with `gpt-5.6-sol`; model/provider pinning and token-budget pinning still require a run manifest before scoring.

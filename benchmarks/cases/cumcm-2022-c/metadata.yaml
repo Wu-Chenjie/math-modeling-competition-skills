@@ -8,6 +8,6 @@
   "expected_methods": ["compositional_data", "classification", "uncertainty_analysis"],
   "common_failures": ["ignored_compositional_constraint", "data_leakage", "unsupported_classification"],
   "source_status": "catalog_only",
-  "source_url": "https://github.com/whu-cst/2022CUMCM-C",
+  "source_url": "https://github.com/yushuhong1212/2022CUMCM-ProblemC",
   "official_index_url": "https://www.mcm.edu.cn/html_cn/node/9b4b8c1e0f0f4b1f9a4b/index.html"
 }

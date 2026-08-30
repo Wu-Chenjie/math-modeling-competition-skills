@@ -3,8 +3,8 @@
   "status": "protocol_ready_data_pending",
   "retrieved_at": "2026-08-30T00:00:00+08:00",
   "model": {
-    "id": "PENDING_USER_SELECTION",
-    "temperature": "PENDING_RUNTIME_SUPPORT",
+    "id": "gpt-5.6-sol",
+    "temperature": "provider_default_unrecorded",
     "seed_policy": "three_pre_registered_run_ids_per_group_case"
   },
   "groups": {
@@ -30,7 +30,7 @@
     "same_case_data": true,
     "same_tools": true,
     "same_wall_clock_budget_minutes": 120,
-    "same_token_budget": "PENDING_USER_SELECTION",
+    "same_token_budget": "provider_default_unrecorded",
     "blind_submission_prefix": "Submission-",
     "review_disagreement_threshold_points": 20
   },
