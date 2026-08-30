@@ -1,6 +1,6 @@
 {
   "manifest_version": 1,
-  "status": "pre_registered_ready",
+  "status": "blocked_pending_full_ab_runs",
   "created_at": "2026-08-30T00:00:00+08:00",
   "model": "gpt-5.6-sol",
   "provider": "openlux",
@@ -34,6 +34,10 @@
   },
   "run_id_format": "<group>-<case_id>-<index:03d>",
   "scoring_status": "not_started",
+  "trial_runs": [
+    {"group": "A", "case_id": "cumcm-2022-c", "run_id": "trial-A-smoke", "status": "entry_smoke_only", "result_file": "results/trial-A-smoke.txt", "reported_tokens": 16430},
+    {"group": "B", "case_id": "cumcm-2022-c", "run_id": "trial-B-smoke", "status": "entry_smoke_only", "result_file": "results/trial-B-smoke.txt", "reported_tokens": 12438}
+  ],
   "blocking_conditions": [
     "No complete A/B run records yet",
     "No blind multi-judge reports yet",

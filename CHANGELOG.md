@@ -7,3 +7,4 @@
 - Pinned Group A/B Skill commits and documented the Codex CLI token-cap limitation in `docs/baseline-run-manifest.json`.
 - Updated evaluator tests so catalog-only discovery cases remain excluded while verified cases are eligible.
 - Benchmark scores remain intentionally unpublished until three independent A/B runs per case and blind review are complete.
+- Entry smoke receipts are retained under `results/`; they are explicitly non-scoring and do not count toward the 42 required full runs.
