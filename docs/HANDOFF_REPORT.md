@@ -32,6 +32,10 @@ validation reports zero errors. Aggregation is complete for all 25 panels;
 `REVIEW_DISAGREEMENT` is emitted when the four-judge total spread exceeds the
 registered 20-point threshold. No fatal flags were assigned.
 
+The current aggregate is stored in
+`results/blind-submissions/review-aggregation.json`: 25 scored panels, with
+disagreement flags retained for panels whose judge-total spread exceeds 20.
+
 ## Decision
 
 The auditable decision remains **INCONCLUSIVE**. Blind-review totals alone do

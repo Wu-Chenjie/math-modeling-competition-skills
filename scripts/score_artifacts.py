@@ -24,6 +24,20 @@ def resolve_record_path(value: str) -> Path:
     marker = "/results/"
     if marker in normalized:
         suffix = normalized.split(marker, 1)[1]
+        candidate = PROJECT_ROOT / "results" / suffix
+        if candidate.exists():
+            return candidate
+        # Some recovery records retain a workspace path without the formal
+        # runner container; resolve that suffix against the project root.
+        if "/workspaces-v2/" in suffix:
+            tail = suffix.split("/workspaces-v2/", 1)[1]
+            candidate = PROJECT_ROOT / "results" / "workspaces-v2" / tail
+            if candidate.exists():
+                return candidate
+            for container in ("formal-recovery", "formal-v2-batch", "formal-extra"):
+                candidate = PROJECT_ROOT / "results" / container / "workspaces-v2" / tail
+                if candidate.exists():
+                    return candidate
         return PROJECT_ROOT / "results" / suffix
     return candidate
 
