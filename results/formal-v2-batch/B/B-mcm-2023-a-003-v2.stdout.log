@@ -1,0 +1,16 @@
+{
+  "status": "completed_with_pending_stages",
+  "code_path": "model_run.py",
+  "metrics_path": "results/metrics.json",
+  "figures_count": 6,
+  "tests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "pending_stages": [
+    "empirical_calibration",
+    "out_of_sample_validation",
+    "real_world_species_recommendation",
+    "independent_subagent_quality_gate"
+  ]
+}

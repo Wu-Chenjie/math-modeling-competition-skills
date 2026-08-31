@@ -1,0 +1,45 @@
+{
+  "code_sha256": "636ddde01fd3bb8ff99269be077e3d7b040012460849785e3d76b23b9aaf1425",
+  "command": "python model_run.py --years 120 --seed 2023003",
+  "dependencies": "Python standard library only",
+  "input_problem_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+  "parameters": {
+    "richness": [
+      1,
+      8
+    ],
+    "scenarios": [
+      {
+        "drought_frequency": 0.1,
+        "drought_variability": 0.15,
+        "habitat_loss": 0.0,
+        "name": "low_drought",
+        "pollution": 0.0
+      },
+      {
+        "drought_frequency": 0.25,
+        "drought_variability": 0.25,
+        "habitat_loss": 0.0,
+        "name": "reference",
+        "pollution": 0.0
+      },
+      {
+        "drought_frequency": 0.45,
+        "drought_variability": 0.35,
+        "habitat_loss": 0.0,
+        "name": "future_drought",
+        "pollution": 0.0
+      },
+      {
+        "drought_frequency": 0.45,
+        "drought_variability": 0.35,
+        "habitat_loss": 0.2,
+        "name": "future_plus_stress",
+        "pollution": 0.1
+      }
+    ],
+    "years": 120
+  },
+  "python": "3.12.13",
+  "seed": 2023003
+}

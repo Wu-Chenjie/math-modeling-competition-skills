@@ -1,0 +1,115 @@
+# A-mcm-2023-c Modeling Report
+
+## Problem Framing
+
+The benchmark is 2023 MCM Problem C, “Predicting Wordle Results.” Wordle permits a valid five-letter English guess on each of at most six attempts; tile feedback distinguishes correct-position letters, present-but-misplaced letters, and absent letters. The modeling objective is prediction and statistical explanation of daily solving outcomes.
+
+Because the supplied summary truncates the detailed requirements after the game description, exact question-to-output mapping must remain pending until the official problem text is available. The report therefore defines a reproducible framework for daily outcome prediction, factor analysis, and out-of-sample evaluation without asserting unprovided conclusions.
+
+## Data Audit
+
+- Source status: verified.
+- Workbook inventory: `official-data.zip` containing `official/2023_MCM_Problem_C_Data.xlsx`.
+- Workbook: one sheet, `Sheet1`; 481 rows, 13 columns, 4,321 nonempty cells.
+- Reported headers begin with `"Percent in "` followed by blank header entries, indicating merged or incompletely extracted labels.
+- Numeric range: 0 to 361,908.
+- Input SHA-256: `22d9c6c308700c6b744d74da8c83e358eefba955f58713c65f947624cda5ac94`.
+- Problem SHA-256: `b511204705db800f3b812943b780074cc24bfe5108d26b6c20f308128e631ef6`.
+- No binary attachment was opened. Exact column meanings, missingness, dates, words, and denominator definitions are pending.
+
+The outcome should be treated as compositional: percentages across six guess counts plus failure should sum approximately to 100%, subject to rounding and any documented exclusions.
+
+## Assumptions
+
+1. Rows are chronologically ordered daily observations, subject to verification.
+2. Outcome categories are mutually exclusive and collectively exhaustive.
+3. Any player-count field is an exposure/weight, not a predictive feature.
+4. Future evaluation must use information available before the prediction date.
+5. Word difficulty and calendar effects may be nonstationary.
+6. Missing or malformed rows are excluded only under a predeclared rule and logged.
+
+## Candidate Models
+
+**Model A: Dirichlet-multinomial time-series model.**  
+Let \(y_{t,k}\) be the count in outcome category \(k\), \(k=1,\ldots,7\) (guesses 1–6 and failure), and \(n_t=\sum_k y_{t,k}\). Use
+
+\[
+y_t\sim\operatorname{DirichletMultinomial}(n_t,\alpha_t),\qquad
+\log \alpha_{t,k}= \beta_k+x_t^\top\gamma_k+u_{t,k},
+\]
+
+with random walk or autoregressive \(u_{t,k}\). This preserves compositional dependence and supports uncertainty intervals.
+
+**Model B: Ordered/hierarchical classification.**  
+Model individual or aggregated outcomes using cumulative logits,
+
+\[
+\operatorname{logit}P(G_t\le j)=\theta_j-x_t^\top\beta,\quad j=1,\ldots,6,
+\]
+
+with optional word-level features (letter frequency, repeated letters, positional entropy) only if they are present or derivable from the permitted dataset. A multinomial logistic model is a simpler fallback if ordering is empirically inappropriate.
+
+At most these two model families should be compared for each question; feature engineering and sensitivity analyses are not additional model families.
+
+## Baseline
+
+A persistence/seasonal baseline predicts the next day’s composition as the previous observed composition, with a rolling historical mean as a second baseline. For count data, use the prior-day empirical proportions and evaluate with weighted log loss and compositional distance. Baseline results are **pending execution**.
+
+## Mathematical Specification
+
+For prediction date \(t+h\), estimate parameters only on \(1{:}t\). Produce:
+
+- category probabilities \(\hat p_{t+h,k}\);
+- expected guesses \(\hat E[G]=\sum_{k=1}^{6}k\hat p_k+6\hat p_7\) (or the problem’s specified convention);
+- prediction intervals from posterior simulation or block bootstrap;
+- optional ranking of days/words by predicted failure probability.
+
+Apply simplex normalization only after documenting whether the source percentages are rounded, incomplete, or exposure-weighted.
+
+## Executable Experiment Plan
+
+1. Parse the workbook after obtaining authorization to access it; reconstruct merged headers.
+2. Validate dates, duplicate rows, category bounds, denominator consistency, and row-wise percentage sums.
+3. Freeze a chronological split, for example 60% training, 20% validation, 20% test; use rolling-origin validation for tuning.
+4. Fit the baseline, Model A, and Model B.
+5. Tune only on historical folds; never use future outcomes, test-period aggregates, or answer-word information unavailable at forecast time.
+6. Report per-category log loss, Brier score, MAE for expected guesses, and calibration error; use the primary metric specified by the official prompt once confirmed.
+7. Refit the selected specification on all permitted pre-test data and generate requested forecasts/tables.
+
+All computations and numerical conclusions are **pending execution**.
+
+## Validation
+
+Use rolling-origin cross-validation, prediction-interval coverage, probability calibration plots, residual autocorrelation checks, and comparison against both baselines. Bootstrap confidence intervals must preserve temporal blocks.
+
+## Sensitivity and Robustness
+
+Repeat analysis under:
+
+- alternative training-window lengths;
+- Dirichlet concentration priors;
+- exclusion versus imputation of invalid percentage sums;
+- with/without calendar effects;
+- with/without word-derived features;
+- alternative scoring metrics.
+
+Report how rankings and forecasts change, not only point estimates.
+
+## Falsification
+
+Treat the approach as unsupported if it fails to outperform persistence in rolling-origin log loss, produces materially miscalibrated probabilities, violates simplex constraints, shows leakage-sensitive performance collapse, or cannot reproduce category totals within documented rounding tolerance.
+
+## Reviewer Risks
+
+Primary risks are temporal leakage, overfitting, and metric mismatch, all identified in the benchmark metadata. Additional risks are ambiguous headers, unknown treatment of failed games, changing player populations, nonindependent daily observations, and unsupported claims about causal effects of word characteristics.
+
+## Reproducibility Manifest
+
+- Run ID: `A-mcm-2023-c-002`
+- Repository files modified: none.
+- Case ID: `mcm-2023-c`
+- Competition/year: MCM 2023
+- Input and problem hashes: as listed above.
+- Random seed: to be fixed before execution, e.g. `20230802`.
+- Software versions, preprocessing log, fitted parameters, fold boundaries, and unique execution command: **pending execution**.
+- Attachments inspected: none, by instruction.

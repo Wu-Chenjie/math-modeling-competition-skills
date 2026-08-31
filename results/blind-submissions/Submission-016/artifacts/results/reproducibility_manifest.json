@@ -1,0 +1,15 @@
+{
+  "random_seed": null,
+  "input_problem_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+  "input_data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": "python run_sdg_audit.py",
+  "code_sha256": "81397b541ca07b03100eb9eeee4878e95f09bb54c4deb603a8a06f836521b524",
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "tests": {
+    "goal_count_is_17": true,
+    "no_unsupported_edges": true,
+    "no_unsupported_scores": true,
+    "figure_exists": true
+  }
+}

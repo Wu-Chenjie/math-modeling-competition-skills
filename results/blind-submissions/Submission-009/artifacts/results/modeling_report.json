@@ -1,0 +1,217 @@
+{
+  "problem_framing": {
+    "decision": "Assign one management policy to each of four conceptual zones.",
+    "objectives": [
+      "wildlife protection",
+      "livelihood opportunity",
+      "tourism value",
+      "human-wildlife coexistence",
+      "management capacity"
+    ],
+    "scope_warning": "The benchmark provides no quantitative observations; outputs are conditional scenario scores, not Maasai Mara forecasts."
+  },
+  "data_audit": {
+    "data_files": 0,
+    "rows_data": 0,
+    "binary_attachments_opened": 0,
+    "problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "consequence": "Empirical calibration, uncertainty intervals, and external validation are not identifiable."
+  },
+  "assumptions": [
+    "Four conceptual zones stand in for spatial units.",
+    "All indices and effects are dimensionless on [0,1].",
+    "Policy effects are illustrative structural assumptions declared in code.",
+    "A capacity index below 0.55 makes a portfolio infeasible.",
+    "Equal-weight scoring is only a transparent baseline and is stress-tested by scenario factors."
+  ],
+  "candidate_models": [
+    {
+      "name": "signed interaction network plus exhaustive multicriteria screening",
+      "status": "implemented",
+      "reason": "matches sparse-data policy comparison"
+    },
+    {
+      "name": "spatial system dynamics",
+      "status": "pending",
+      "reason": "requires time series and transition calibration"
+    },
+    {
+      "name": "agent-based conflict simulation",
+      "status": "pending",
+      "reason": "requires household, wildlife movement, and encounter microdata"
+    }
+  ],
+  "baseline": {
+    "definition": "protection assigned to every conceptual zone",
+    "metrics": {
+      "policy": "protection|protection|protection|protection",
+      "wildlife": 0.7875000000000001,
+      "livelihood": 0.4125,
+      "tourism": 0.4125,
+      "conflict": 0.325,
+      "capacity": 0.8,
+      "score": 0.6031250000000001,
+      "feasible": true
+    }
+  },
+  "math_specification": {
+    "decision_space": "a_z in {protection, regulated_tourism, community_conservancy, corridor_restoration}, z=1..4",
+    "zone_response": "y_zk = clip(base_zk + effect_a(z), 0, 1)",
+    "capacity_constraint": "capacity >= 0.55",
+    "screening_score": "0.30 wildlife + 0.25 livelihood + 0.20 tourism + 0.15(1-conflict) + 0.10 capacity",
+    "selection": "maximize screening score over all feasible assignments; inspect scenario winner stability"
+  },
+  "code_prototype": {
+    "entrypoint": "model_run.py",
+    "dependencies": "Python standard library",
+    "deterministic_seed_label": 202302
+  },
+  "experiment": {
+    "policy_combinations": 256,
+    "feasible_combinations": 189,
+    "scenarios": 12,
+    "recommended": {
+      "policy": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+      "wildlife": 0.8424999999999999,
+      "livelihood": 0.795,
+      "tourism": 0.5650000000000001,
+      "conflict": 0.2325,
+      "capacity": 0.73,
+      "score": 0.752625,
+      "feasible": true
+    }
+  },
+  "validation": {
+    "status": "structural_only",
+    "checks": {
+      "enumerated_all_assignments": true,
+      "feasible_set_nonempty": true,
+      "recommended_is_feasible": true,
+      "all_indices_bounded_0_1": true,
+      "nine_svg_figures_created": true,
+      "falsification_recomputed": true
+    },
+    "external_validation": "pending because observations are absent"
+  },
+  "sensitivity_robustness": {
+    "pressure_levels": [
+      0.8,
+      1.0,
+      1.2,
+      1.4
+    ],
+    "compensation_levels": [
+      0.0,
+      0.2,
+      0.4
+    ],
+    "scenario_results": [
+      {
+        "pressure": 0.8,
+        "compensation": 0.0,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|corridor_restoration",
+        "score": 0.751425
+      },
+      {
+        "pressure": 0.8,
+        "compensation": 0.2,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+        "score": 0.7595999999999999
+      },
+      {
+        "pressure": 0.8,
+        "compensation": 0.4,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+        "score": 0.7720999999999999
+      },
+      {
+        "pressure": 1.0,
+        "compensation": 0.0,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|corridor_restoration",
+        "score": 0.744
+      },
+      {
+        "pressure": 1.0,
+        "compensation": 0.2,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+        "score": 0.752625
+      },
+      {
+        "pressure": 1.0,
+        "compensation": 0.4,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+        "score": 0.7651249999999999
+      },
+      {
+        "pressure": 1.2,
+        "compensation": 0.0,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|corridor_restoration",
+        "score": 0.730575
+      },
+      {
+        "pressure": 1.2,
+        "compensation": 0.2,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+        "score": 0.7396499999999999
+      },
+      {
+        "pressure": 1.2,
+        "compensation": 0.4,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+        "score": 0.7521499999999999
+      },
+      {
+        "pressure": 1.4,
+        "compensation": 0.0,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|corridor_restoration",
+        "score": 0.71715
+      },
+      {
+        "pressure": 1.4,
+        "compensation": 0.2,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+        "score": 0.726675
+      },
+      {
+        "pressure": 1.4,
+        "compensation": 0.4,
+        "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+        "score": 0.7391749999999999
+      }
+    ],
+    "interpretation": "Winner changes across assumptions, so no unconditional policy claim is supported."
+  },
+  "falsification": {
+    "recommendation_beats_baseline_score": true,
+    "recommendation_beats_baseline_without_corridor_bonus": true,
+    "baseline_score": 0.6031250000000001,
+    "recommended_score": 0.752625,
+    "test": "Remove the assumed corridor wildlife bonus and recompute the score."
+  },
+  "reviewer_risks": [
+    "No observed data",
+    "Illustrative effect sizes",
+    "Baseline score weights encode value judgments",
+    "Conceptual zones are not GIS boundaries",
+    "No calibrated long-term forecast",
+    "No statistical confidence intervals",
+    "No independent stage-gate review"
+  ],
+  "reproducibility_manifest": {
+    "path": "results/repro_manifest.json",
+    "metrics": "results/metrics.json",
+    "tables": [
+      "results/policy_scores.csv",
+      "results/robustness.csv"
+    ],
+    "figures": 9
+  },
+  "pending_stages": [
+    "empirical_calibration",
+    "external_validation",
+    "long_term_forecast_calibration",
+    "official_rule_verification",
+    "independent_stage_gates"
+  ]
+}

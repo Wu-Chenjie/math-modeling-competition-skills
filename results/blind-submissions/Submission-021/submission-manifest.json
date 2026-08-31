@@ -1,0 +1,52 @@
+{
+  "submission_id": "Submission-021",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 11,
+  "artifacts": [
+    {
+      "path": "figures/process_future_drought_trajectories.svg",
+      "sha256": "a4548e0fb5615766aff4d3d9e05c1fd9cad69e1441232f41199e92c5672499cc"
+    },
+    {
+      "path": "figures/process_reference_trajectories.svg",
+      "sha256": "33a35cd7851772fea02513096d277bc5e9b34fe25b7ebd36ac60e765e7b4e5d9"
+    },
+    {
+      "path": "figures/result_richness_cv_last_30.svg",
+      "sha256": "acc0293ba74f16954da70b278378d18867f4bb3f2e2827926c22fd2b97dc02dd"
+    },
+    {
+      "path": "figures/result_richness_mean_last_30.svg",
+      "sha256": "6a0afcf7c05f6e3d1159667f7af9ee7404766f931a73773cac1c7e5ef37f5582"
+    },
+    {
+      "path": "figures/result_richness_min_last_30.svg",
+      "sha256": "0044638e5d877119a9912155dde620bcfeae7e133da0fdff50177fed8fc842d6"
+    },
+    {
+      "path": "figures/result_trait_falsification.svg",
+      "sha256": "1fc20067d9f7b04ce707ae7b5054eb98c6efa5dbf7c6f3c07c2e13188d7ac30c"
+    },
+    {
+      "path": "model_run.py",
+      "sha256": "636ddde01fd3bb8ff99269be077e3d7b040012460849785e3d76b23b9aaf1425"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "9225486af1e5e8e83e2aa05dd0f09b26897a420b4462886c3693ab8b43f0671b"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "ca89aa085a9bbf0f31f27dbc8d8b46d961e434902b2fa5bb3702615be77ac8b8"
+    },
+    {
+      "path": "results/repro_manifest.json",
+      "sha256": "f4cde98f5e567610ca302c45cac2785809a1f1d9946da68ed54447e77772df16"
+    },
+    {
+      "path": "test_model_run.py",
+      "sha256": "2056a69ff7a23a96a212522ca9c1b34ff5f222a85166041d2830622f33e8438d"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

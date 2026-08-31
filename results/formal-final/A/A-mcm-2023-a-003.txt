@@ -1,0 +1,120 @@
+# Modeling Report: A-mcm-2023-a-003
+
+## Problem Framing
+
+**Case:** MCM 2023 A, *Drought-Stricken Plant Communities*  
+**Type:** Dynamic system. The excerpt concerns plant communities exposed to repeated droughts of varying frequency and severity, with species richness affecting adaptation over successive generations. The visible objective is to identify the minimum richness that provides a drought-adaptation benefit and characterize community response across drought regimes. The supplied excerpt is truncated; unshown requirements remain pending.
+
+Primary outputs:
+
+- Community persistence and recovery across drought cycles.
+- Generational change in drought tolerance.
+- Minimum species count \(S^\*\) producing a defined benefit relative to a one-species community.
+
+## Data Audit
+
+The deterministic summary reports:
+
+- `source_status`: verified.
+- `pdf_pages`: 2; extracted characters: 3102.
+- No data files and no ZIP entries.
+- `problem_sha256`: `948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002`.
+- `data_sha256`: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+
+Therefore, there are no observations for parameter fitting or empirical validation. All numerical parameter values, thresholds, and complete subquestion wording are pending.
+
+## Assumptions
+
+1. Species biomass or cover is nonnegative and bounded by a community carrying capacity.
+2. Drought is represented by a known, piecewise-continuous forcing function \(D(t)\ge 0\).
+3. Species differ in drought sensitivity and competitive effects.
+4. Adaptation occurs between generations through heritable change in drought tolerance.
+5. Initial total biomass is held fixed when comparing richness, avoiding a richness-versus-abundance confound.
+6. Extinction is declared when biomass falls below a specified threshold \(\varepsilon\), to be set from the full problem specification.
+
+## Candidate Models
+
+**Model 1: Mechanistic ODE plus generation update.**  
+For species \(i=1,\ldots,S\), biomass \(x_i(t)\) and tolerance \(a_i(g)\in[0,1]\):
+
+\[
+\frac{dx_i}{dt}
+=x_i\left[r_i\left(1-\frac{\sum_j\alpha_{ij}x_j}{K}\right)
+-m_i-\beta_iD(t)(1-a_i(g))\right].
+\]
+
+At generation \(g\), update tolerance using drought exposure \(E_g\):
+
+\[
+a_i(g+1)=\operatorname{clip}\left(a_i(g)+h_iE_g-c_i,\;0,\;1\right),
+\qquad
+E_g=\int_{gT}^{(g+1)T}D(t)\,dt .
+\]
+
+This directly represents competition, drought mortality, and adaptation.
+
+**Model 2: Stochastic scenario simulation.**  
+Use the same mechanism, but draw drought severity, duration, and species parameters from prespecified distributions. Estimate persistence, recovery, and \(S^\*\) by Monte Carlo. This assesses uncertainty rather than serving as an independent biological theory.
+
+## Baseline
+
+One species (\(S=1\)), fixed tolerance (\(h_1=0\)), identical initial total biomass, and the same drought forcing. Compare every richer community against this baseline using recovery, cumulative biomass, and extinction probability.
+
+## Math Specification
+
+For a specified benefit margin \(\Delta\) and acceptable extinction probability \(p_0\),
+
+\[
+S^\*=\min\left\{S:
+A(S)-A(1)\ge\Delta,\quad
+P_{\mathrm{ext}}(S)\le p_0\right\},
+\]
+
+where \(A(S)\) is a prespecified adaptation or recovery metric. Candidate metrics include post-drought biomass ratio, time to recovery, cumulative biomass, and tolerance increase. \(\Delta,p_0,\varepsilon,K,T\), and parameter distributions are pending.
+
+Boundary conditions: \(x_i(0)\ge0\), \(0\le a_i(0)\le1\), and state projection or event handling must preserve these domains.
+
+## Executable Experiment Plan
+
+Pending implementation:
+
+1. Encode deterministic drought waveforms spanning frequency and severity specified by the full prompt.
+2. Simulate \(S=1,\ldots,S_{\max}\) with fixed total initial biomass.
+3. Run Model 1 using an adaptive nonnegative ODE solver with event detection at \(x_i=\varepsilon\).
+4. Repeat under Model 2 with a preregistered random seed and sufficient Monte Carlo replicates.
+5. Compute \(A(S)\), recovery time, extinction probability, and \(S^\*\).
+6. Export machine-readable results and parameter metadata.
+
+## Validation
+
+Pending execution. Required checks:
+
+- Solver timestep/convergence stability.
+- Nonnegativity and carrying-capacity bounds.
+- \(D(t)=0\): recovery to the competition equilibrium.
+- \(S=1\): exact agreement with baseline.
+- \(h_i=0\): no generational adaptation.
+- Identical species: no spurious richness advantage.
+- Extreme drought: behavior remains bounded and interpretable.
+
+## Sensitivity and Robustness
+
+Vary drought amplitude, duration, frequency, competition matrix \(\alpha\), tolerance parameters, heritability \(h_i\), mortality \(\beta_i\), initial evenness, extinction threshold \(\varepsilon\), and benefit margin \(\Delta\). Report rank stability of \(S^\*\), confidence intervals, and the fraction of scenarios supporting the same conclusion.
+
+## Falsification
+
+The hypothesis is weakened or rejected if richer communities do not improve recovery under plausible parameterizations, if the estimated \(S^\*\) is highly unstable to small parameter changes, or if the advantage disappears after controlling total initial biomass. Results are invalid if conclusions depend on solver settings, an arbitrary boundary condition, or one drought waveform.
+
+## Reviewer Risks
+
+Main risks are incomplete problem specification, absence of calibration data, arbitrary adaptation law, confounding richness with biomass, unsupported thresholds, incorrect drought boundary conditions, unstable numerical integration, and failure to test extreme drought cases.
+
+## Reproducibility Manifest
+
+- Run ID: `A-mcm-2023-a-003`
+- Case ID: `mcm-2023-a`
+- Input source: deterministic case summary JSON only
+- Attachments inspected: none
+- Input hashes: listed above
+- Code, environment versions, seed, parameter table, solver tolerances, and unique execution command: **pending**
+- Numerical results and validation status: **pending**

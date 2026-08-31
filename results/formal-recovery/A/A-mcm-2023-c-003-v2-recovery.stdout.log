@@ -1,0 +1,16 @@
+{
+  "status": "partial",
+  "code_path": "run_model.py",
+  "metrics_path": "results/metrics.json",
+  "figures_count": 12,
+  "tests": {
+    "code_run": "PASS",
+    "rows_processed": 359,
+    "figure_audit": "PASS",
+    "dependency_check": "LIMITED: matplotlib, scipy, statsmodels, and scikit-learn unavailable"
+  },
+  "pending_stages": [
+    "independent M1/P1/P2 validation",
+    "visual figure inspection"
+  ]
+}

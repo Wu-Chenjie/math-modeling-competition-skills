@@ -1,0 +1,16 @@
+{
+  "run_id": "A-cumcm-2022-c-001",
+  "status": "invalid_preflight_then_timeout",
+  "not_scored": true,
+  "diagnosis": [
+    "First attempt failed because subprocess output was decoded with Windows GBK and stderr was None.",
+    "Second attempt used an incomplete vendor cache and the model reported missing XiaoMa role files.",
+    "Third attempt used a complete Python-extracted snapshot, but the model's XLSX audit invoked unavailable pandas and then hit a None XML color field without producing a final report."
+  ],
+  "evidence": [
+    "results/raw/A-cumcm-2022-c-001.txt",
+    "results/raw/A-cumcm-2022-c-001.stderr.log",
+    "results/raw3/A-cumcm-2022-c-001.stderr.log"
+  ],
+  "action": "Do not include in A/B scores; repair runner/prompt before batch execution."
+}

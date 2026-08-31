@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-005",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 9,
+    "model_reasonableness": 5,
+    "mathematical_rigor": 4,
+    "data_handling": 2,
+    "code_and_solving": 6,
+    "model_validation": 2,
+    "innovation": 2,
+    "result_interpretation": 3,
+    "paper_quality": 4,
+    "reproducibility": 3
+  },
+  "fatal_flags": [],
+  "notes": "Problem framing and a uniform-baseline metric are documented, but no modeling report and no empirical data; most requested analyses pending."
+}

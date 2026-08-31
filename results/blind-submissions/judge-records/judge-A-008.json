@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-008",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 7,
+    "model_reasonableness": 8,
+    "mathematical_rigor": 4,
+    "data_handling": 2,
+    "code_and_solving": 7,
+    "model_validation": 3,
+    "innovation": 2,
+    "result_interpretation": 3,
+    "paper_quality": 5,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "Partial synthetic portfolio model with explicit data limitation; limited derivation and pending stages reduce rigor."
+}

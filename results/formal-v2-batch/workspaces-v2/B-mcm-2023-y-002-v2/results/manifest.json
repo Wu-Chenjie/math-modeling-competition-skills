@@ -1,0 +1,22 @@
+{
+  "command": "python run_model.py",
+  "seed": 2023,
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "input_case": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-y.json",
+  "input_sha256": "debad91a2bf4d4bfab453dce3f4b8adadb9dddcb158518f31663599a793342ef",
+  "figures": [
+    "process_q4_age.png",
+    "process_q4_all.png",
+    "process_q4_length.png",
+    "raw_q1_catamaran.png",
+    "raw_q1_monohull.png",
+    "raw_q2_catamaran.png",
+    "raw_q2_monohull.png",
+    "raw_q3_catamaran.png",
+    "raw_q3_monohull.png",
+    "result_q4_all_age.png",
+    "result_q4_catamaran.png",
+    "result_q4_monohull.png"
+  ]
+}

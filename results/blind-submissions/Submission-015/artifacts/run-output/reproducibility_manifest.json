@@ -1,0 +1,21 @@
+{
+  "case_id": "icm-2023-d",
+  "random_seed": null,
+  "randomness_used": false,
+  "input": {
+    "path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json",
+    "sha256": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "implementation": "CPython"
+  },
+  "dependencies": {
+    "python_standard_library_only": true
+  },
+  "parameters": {
+    "expected_case_id": "icm-2023-d",
+    "missing_value_policy": "preserve_as_null"
+  },
+  "reproduction_command": "python \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-d-001-v2\\model_run.py\" --case \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json\" --output \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-d-001-v2\\run-output\""
+}

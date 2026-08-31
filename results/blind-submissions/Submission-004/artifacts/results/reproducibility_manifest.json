@@ -1,0 +1,17 @@
+{
+  "run_id": "A-icm-2023-d-001-v2-recovery",
+  "seed": 0,
+  "input": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json",
+  "input_sha256": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf",
+  "command": "python icm_baseline.py --case C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json --out .",
+  "figures_logical": 15,
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "pending_stages": [
+    "relationship_network_estimation",
+    "indicator_based_multi_criteria_ranking",
+    "ten_year_impact_projection",
+    "counterfactual_network_recalculation",
+    "crisis_scenario_quantification",
+    "external_validation_and_literature_calibration"
+  ]
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="62" y="28" font-family="Arial" font-size="16" font-weight="bold">Q1 mean SiO2 by type and weathering</text>
+<line x1="62" y1="368" x2="698" y2="368" stroke="#333"/>
+<rect x="87.44" y="173.22" width="108.12" height="194.78" fill="#1b9e77"/>
+<text x="141.50" y="385" text-anchor="middle" font-family="Arial" font-size="10">K-none</text>
+<text x="141.50" y="168.22" text-anchor="middle" font-family="Arial" font-size="10">69.052</text>
+<rect x="246.44" y="101.91" width="108.12" height="266.09" fill="#1b9e77"/>
+<text x="300.50" y="385" text-anchor="middle" font-family="Arial" font-size="10">K-weather</text>
+<text x="300.50" y="96.91" text-anchor="middle" font-family="Arial" font-size="10">94.331</text>
+<rect x="405.44" y="204.27" width="108.12" height="163.73" fill="#1b9e77"/>
+<text x="459.50" y="385" text-anchor="middle" font-family="Arial" font-size="10">Pb-none</text>
+<text x="459.50" y="199.27" text-anchor="middle" font-family="Arial" font-size="10">58.045</text>
+<rect x="564.44" y="262.73" width="108.12" height="105.27" fill="#1b9e77"/>
+<text x="618.50" y="385" text-anchor="middle" font-family="Arial" font-size="10">Pb-weather</text>
+<text x="618.50" y="257.73" text-anchor="middle" font-family="Arial" font-size="10">37.320</text>
+</svg>

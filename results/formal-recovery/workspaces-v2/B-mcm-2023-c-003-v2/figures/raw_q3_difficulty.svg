@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420"><rect width="100%" height="100%" fill="white"/><text x="380.0" y="25" text-anchor="middle" font-family="Arial" font-size="16">Difficulty class counts</text><text x="15" y="210.0" transform="rotate(-90 15 210.0)" font-family="Arial" font-size="12">puzzles</text>
+<line x1="60" y1="45" x2="60" y2="350" stroke="black"/><line x1="60" y1="350" x2="740" y2="350" stroke="black"/>
+<rect x="107.6" y="46.7" width="244.8" height="303.3" fill="#4472c4"/><text x="230.0" y="368" text-anchor="middle" font-family="Arial" font-size="10">easy</text>
+<rect x="447.6" y="45.0" width="244.8" height="305.0" fill="#4472c4"/><text x="570.0" y="368" text-anchor="middle" font-family="Arial" font-size="10">hard</text>
+</svg>

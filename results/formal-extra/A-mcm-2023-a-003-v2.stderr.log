@@ -1,0 +1,615 @@
+Reading additional input from stdin...
+2026-08-31T13:27:23.838825Z  WARN codex_core_plugins::manager: remote installed plugin bundle sync failed error=chatgpt authentication required for remote plugin catalog; api key auth is not supported
+2026-08-31T13:27:23.905497Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-08-31T13:27:23.905539Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-08-31T13:27:24.047397Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+OpenAI Codex v0.151.0-alpha.7.2
+--------
+workdir: C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+model: gpt-5.6-sol
+provider: custom
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\baseline-vendors\pinned, C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\benchmarks\case-summaries]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a05800-d1cb-70f0-9b96-b74e11443ce2
+--------
+user
+This is preregistered run A-mcm-2023-a-003-v2. Do not modify repository files.
+Read the pinned domain Skill at ..\baseline-vendors\pinned\xiao\SKILL.md.
+Also read exactly these domain stage files: ..\baseline-vendors\pinned\xiao\使用指南.md, ..\baseline-vendors\pinned\xiao\references\roles\建模手\SKILL.md, and ..\baseline-vendors\pinned\xiao\references\roles\编程手\SKILL.md.
+Read the deterministic case summary JSON at C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-a.json as the complete benchmark input. It includes the full official problem text and a binary-safe data audit with sample rows.
+Do not open or parse binary attachments (PDF, XLSX, ZIP). You may create text/code artifacts in the run workspace and use the supplied rows_data, but never invent omitted rows or values.
+create executable code in the run workspace, run the code, and save machine-readable metrics and figures. If a calculation cannot be completed, mark only that stage pending and explain why.
+Return a structured modeling report: problem framing, data audit, assumptions, candidate models, baseline, math specification, code/prototype, experiment, validation, sensitivity/robustness, falsification, reviewer risks, and reproducibility manifest.
+Never invent data, execution results, citations, or scores. Do not narrate tool use or internal reasoning. After the code run, stop immediately and return only a JSON receipt with keys status, code_path, metrics_path, figures_count, tests, and pending_stages; keep it under 300 words.
+2026-08-31T13:27:26.230079Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=file:///C:/Users/%E4%BC%8D%E8%BE%B0%E6%9D%B0/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-08-31T13:27:26.244559Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=file:///C:/Users/%E4%BC%8D%E8%BE%B0%E6%9D%B0/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+codex
+I’ll inspect the pinned modeling guidance and deterministic case summary, then build and run a reproducible prototype in the run workspace without touching repository source files.
+2026-08-31T13:27:33.845935Z  WARN codex_core_plugins::manager: failed to warm featured plugin ids cache error=failed to send remote featured plugin request to https://chatgpt.com/backend-api/plugins/featured?platform=codex: error sending request for url (https://chatgpt.com/backend-api/plugins/featured?platform=codex)
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw 'C:/Users/伍辰杰/.codex/skills/r0/using-superpowers/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ exited 1 in 45ms:
+Get-Content : 找不到路径“C:\Users\伍辰杰\.codex\skills\r0\using-superpowers\SKILL.md”，因为该路径不存在。
+所在位置 行:2 字符: 1
++ Get-Content -Raw 'C:/Users/伍辰杰/.codex/skills/r0/using-superpowers/SKI ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\伍辰杰\.c...powers\SKILL.md:String) [Get-Content], ItemNotFoundEx 
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ 
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-ChildItem -Force 'C:/Users/伍辰杰/.codex/skills' | Select-Object Name" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 58ms:
+
+Name                          
+----                          
+.system                       
+academic-research-suite       
+annual-project-planner        
+aspnet-core                   
+brainstorming                 
+chatgpt-apps                  
+cli-creator                   
+dispatching-parallel-agents   
+executing-plans               
+finishing-a-development-branch
+gh-address-comments           
+gh-fix-ci                     
+jupyter-notebook              
+notion-research-documentation 
+pdf                           
+receiving-code-review         
+requesting-code-review        
+screenshot                    
+security-best-practices       
+subagent-driven-development   
+systematic-debugging          
+test-driven-development       
+using-git-worktrees           
+using-superpowers             
+verification-before-completion
+writing-plans                 
+writing-skills                
+yeet                          
+
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw 'C:/Users/伍辰杰/.codex/skills/using-superpowers/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 24ms:
+---
+name: using-superpowers
+description: Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions
+---
+
+<SUBAGENT-STOP>
+If you were dispatched as a subagent to execute a specific task, skip this skill.
+</SUBAGENT-STOP>
+
+<EXTREMELY-IMPORTANT>
+If you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.
+
+IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.
+
+This is not negotiable. This is not optional. You cannot rationalize your way out of this.
+</EXTREMELY-IMPORTANT>
+
+## Instruction Priority
+
+Superpowers skills override default system prompt behavior, but **user instructions always take precedence**:
+
+1. **User's explicit instructions** (CLAUDE.md, GEMINI.md, AGENTS.md, direct requests) 鈥?highest priority
+2. **Superpowers skills** 鈥?override default system behavior where they conflict
+3. **Default system prompt** 鈥?lowest priority
+
+If CLAUDE.md, GEMINI.md, or AGENTS.md says "don't use TDD" and a skill says "always use TDD," follow the user's instructions. The user is in control.
+
+## How to Access Skills
+
+**In Claude Code:** Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you鈥攆ollow it directly. Never use the Read tool on skill files.
+
+**In Copilot CLI:** Use the `skill` tool. Skills are auto-discovered from installed plugins. The `skill` tool works the same as Claude Code's `Skill` tool.
+
+**In Gemini CLI:** Skills activate via the `activate_skill` tool. Gemini loads skill metadata at session start and activates the full content on demand.
+
+**In other environments:** Check your platform's documentation for how skills are loaded.
+
+## Platform Adaptation
+
+Skills use Claude Code tool names. Non-CC platforms: see `references/copilot-tools.md` (Copilot CLI), `references/codex-tools.md` (Codex) for tool equivalents. Gemini CLI users get the tool mapping loaded automatically via GEMINI.md.
+
+# Using Skills
+
+## The Rule
+
+**Invoke relevant or requested skills BEFORE any response or action.** Even a 1% chance a skill might apply means that you should invoke the skill to check. If an invoked skill turns out to be wrong for the situation, you don't need to use it.
+
+```dot
+digraph skill_flow {
+    "User message received" [shape=doublecircle];
+    "About to EnterPlanMode?" [shape=doublecircle];
+    "Already brainstormed?" [shape=diamond];
+    "Invoke brainstorming skill" [shape=box];
+    "Might any skill apply?" [shape=diamond];
+    "Invoke Skill tool" [shape=box];
+    "Announce: 'Using [skill] to [purpose]'" [shape=box];
+    "Has checklist?" [shape=diamond];
+    "Create TodoWrite todo per item" [shape=box];
+    "Follow skill exactly" [shape=box];
+    "Respond (including clarifications)" [shape=doublecircle];
+
+    "About to EnterPlanMode?" -> "Already brainstormed?";
+    "Already brainstormed?" -> "Invoke brainstorming skill" [label="no"];
+    "Already brainstormed?" -> "Might any skill apply?" [label="yes"];
+    "Invoke brainstorming skill" -> "Might any skill apply?";
+
+    "User message received" -> "Might any skill apply?";
+    "Might any skill apply?" -> "Invoke Skill tool" [label="yes, even 1%"];
+    "Might any skill apply?" -> "Respond (including clarifications)" [label="definitely not"];
+    "Invoke Skill tool" -> "Announce: 'Using [skill] to [purpose]'";
+    "Announce: 'Using [skill] to [purpose]'" -> "Has checklist?";
+    "Has checklist?" -> "Create TodoWrite todo per item" [label="yes"];
+    "Has checklist?" -> "Follow skill exactly" [label="no"];
+    "Create TodoWrite todo per item" -> "Follow skill exactly";
+}
+```
+
+## Red Flags
+
+These thoughts mean STOP鈥攜ou're rationalizing:
+
+| Thought | Reality |
+|---------|---------|
+| "This is just a simple question" | Questions are tasks. Check for skills. |
+| "I need more context first" | Skill check comes BEFORE clarifying questions. |
+| "Let me explore the codebase first" | Skills tell you HOW to explore. Check first. |
+| "I can check git/files quickly" | Files lack conversation context. Check for skills. |
+| "Let me gather information first" | Skills tell you HOW to gather information. |
+| "This doesn't need a formal skill" | If a skill exists, use it. |
+| "I remember this skill" | Skills evolve. Read current version. |
+| "This doesn't count as a task" | Action = task. Check for skills. |
+| "The skill is overkill" | Simple things become complex. Use it. |
+| "I'll just do this one thing first" | Check BEFORE doing anything. |
+| "This feels productive" | Undisciplined action wastes time. Skills prevent this. |
+| "I know what that means" | Knowing the concept 鈮?using the skill. Invoke it. |
+
+## Skill Priority
+
+When multiple skills could apply, use this order:
+
+1. **Process skills first** (brainstorming, debugging) - these determine HOW to approach the task
+2. **Implementation skills second** (frontend-design, mcp-builder) - these guide execution
+
+"Let's build X" 鈫?brainstorming first, then implementation skills.
+"Fix this bug" 鈫?debugging first, then domain-specific skills.
+
+## Skill Types
+
+**Rigid** (TDD, debugging): Follow exactly. Don't adapt away discipline.
+
+**Flexible** (patterns): Adapt principles to context.
+
+The skill itself tells you which.
+
+## User Instructions
+
+Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$base='"'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/workspaces-v2/baseline-vendors/pinned/xiao'; Get-Content -Raw \""'$base/SKILL.md"; Get-Content -Raw "$base/使用指南.md"; Get-Content -Raw "$base/references/roles/建模手/SKILL.md"; Get-Content -Raw "$base/references/roles/编程手/SKILL.md"' in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ exited 1 in 70ms:
+Get-Content : 找不到路径“C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\bas
+eline-vendors\pinned\xiao\SKILL.md”，因为该路径不存在。
+所在位置 行:2 字符: 135
++ ... eline-vendors/pinned/xiao'; Get-Content -Raw "$base/SKILL.md"; Get-Co ...
++                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\伍辰杰\Do...d\xiao\SKILL.md:String) [Get-Content], ItemNotFoundEx 
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ 
+Get-Content : 找不到路径“C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\bas
+eline-vendors\pinned\xiao\使用指南.md”，因为该路径不存在。
+所在位置 行:2 字符: 170
++ ... ntent -Raw "$base/SKILL.md"; Get-Content -Raw "$base/使用指南.md"; Get-Co ...
++                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\伍辰杰\Do...ed\xiao\使用指南.md:String) [Get-Content], ItemNotFoundEx 
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ 
+Get-Content : 找不到路径“C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\bas
+eline-vendors\pinned\xiao\references\roles\建模手\SKILL.md”，因为该路径不存在。
+所在位置 行:2 字符: 204
++ ... e/使用指南.md"; Get-Content -Raw "$base/references/roles/建模手/SKILL.md"; G ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\伍辰杰\Do...es\建模手\SKILL.md:String) [Get-Content], ItemNotFoundEx 
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ 
+Get-Content : 找不到路径“C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\bas
+eline-vendors\pinned\xiao\references\roles\编程手\SKILL.md”，因为该路径不存在。
+所在位置 行:2 字符: 260
++ ... 建模手/SKILL.md"; Get-Content -Raw "$base/references/roles/编程手/SKILL.md"
++                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\伍辰杰\Do...es\编程手\SKILL.md:String) [Get-Content], ItemNotFoundEx 
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ 
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-ChildItem -Recurse -Depth 3 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/workspaces-v2/baseline-vendors/pinned' | Select-Object FullName" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ exited 1 in 132ms:
+Get-ChildItem : 找不到路径“C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\b
+aseline-vendors\”，因为该路径不存在。
+所在位置 行:2 字符: 1
++ Get-ChildItem -Recurse -Depth 3 'C:/Users/伍辰杰/Documents/ChatGPT/mathm ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\伍辰杰\Do...seline-vendors\:String) [Get-ChildItem], ItemNotFound 
+   Exception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ 
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-ChildItem -Force .. | Select-Object Name,FullName' in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 135ms:
+
+Name                FullName                                                                                           
+----                --------                                                                                           
+A-mcm-2023-a-003-v2 C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\...
+
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Location; Get-ChildItem -Force 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills' | Select-Object Name" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 57ms:
+Path                                                                                                               
+----                                                                                                               
+C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+
+Name : .git
+
+
+Name : benchmarks
+
+
+Name : docs
+
+
+Name : results
+
+
+Name : scripts
+
+
+Name : tests
+
+
+Name : tmp
+
+
+Name : .gitignore
+
+
+Name : BASELINE_BENCHMARK_PLAN.md
+
+
+Name : BENCHMARK_RESULTS.md
+
+
+Name : CANDIDATES.md
+
+
+Name : CHANGELOG.md
+
+
+Name : GAP_ANALYSIS.md
+
+
+Name : MATH_MODELING_ANALYSIS.md
+
+
+Name : MATT_ANALYSIS.md
+
+
+Name : README.md
+
+
+Name : SUPERIORITY_CONCLUSION.md
+
+
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-ChildItem -Recurse -Directory 'C:/Users/伍辰杰/Documents/ChatGPT' -ErrorAction SilentlyContinue | Where-Object {"'$_.Name -eq '"'xiao'} | Select-Object FullName" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 242ms:
+
+FullName                                                             
+--------                                                             
+C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\xiao       
+C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\xiao
+
+
+
+codex
+The workspace’s sibling path differs from the literal relative path in the instructions; I found the pinned `xiao` files under `C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/xiao` and will use that existing location.
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$base='"'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/xiao'; Get-Content -Raw \""'$base/SKILL.md"; Get-Content -Raw "$base/使用指南.md"; Get-Content -Raw "$base/references/roles/建模手/SKILL.md"; Get-Content -Raw "$base/references/roles/编程手/SKILL.md"' in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 16ms:
+---
+name: math-modeling
+description: 褰撶敤鎴疯姹傛暟瀛﹀缓妯°€佸缓妯＄珵璧涖€佸缓妯″垎鏋愩€佷唬鐮佹眰瑙ｃ€佺粨鏋滃彲瑙嗗寲鎴栫敓鎴愭暟瀛﹀缓妯¤鏂囨椂浣跨敤銆傛敮鎸佸畬鏁翠笁闃舵娴佺▼銆佸崟鐙墽琛屼换涓€瑙掕壊锛屼互鍙婂湪鍏抽敭鑺傜偣浣跨敤鐙珛 Subagent 杩涜闃舵鍐呰川妫€锛涢粯璁ゅ彧鍚敤璐ㄦ Subagent锛岀敤鎴峰彲鏄庣‘閫夋嫨棰濆鍗忎綔銆?---
+
+# 鏁板寤烘ā
+
+鏈?Skill 鐢ㄤ笁涓嫭绔嬭鑹插畬鎴愭暟瀛﹀缓妯°€傜敓鎴愮殑璁烘枃浠呬緵鐢ㄦ埛鍙傝€冿紝涓嶄綔涓哄彲鐩存帴鎻愪氦鐨勪綔鍝併€傝鏂囩粨鏋勪笌鏍煎紡蹇呴』浠ョ洰鏍囩珵璧涘綋灞婂畼鏂硅鍒欏拰瀹樻柟妯℃澘涓哄噯锛屼笉鑳界敤寰€灞婄粡楠屾浛浠ｅ畼鏂硅姹傘€?
+**浣跨敤鍓?*锛氳鍏堥槄璇绘牴鐩綍 `浣跨敤鎸囧崡.md`锛屾槑纭湰 Skill 鐨勪氦浠樼墿浣跨敤杈圭晫锛屽苟鎶婂畠澶嶅埗鍒板伐浣滃尯锛坄PROJECT_ROOT`锛夛細
+
+**PowerShell锛圵indows锛夛細**
+```powershell
+Copy-Item "<SKILL_ROOT>\浣跨敤鎸囧崡.md" "<PROJECT_ROOT>\浣跨敤鎸囧崡.md"
+```
+
+**bash锛坢acOS/Linux锛夛細**
+```bash
+cp "<SKILL_ROOT>/浣跨敤鎸囧崡.md" "<PROJECT_ROOT>/浣跨敤鎸囧崡.md"
+```
+
+> `<SKILL_ROOT>` 鏄湰 Skill 鐨勫畨瑁呯洰褰曪紙鍚?`SKILL.md` 鐨勭洰褰曪級锛宍<PROJECT_ROOT>` 鏄綘鐨勯鐩?椤圭洰鐩綍銆?
+## 寮哄埗鎵ц鍗忚
+
+鐢ㄦ埛鏄庣‘鐐瑰悕鏈?Skill 鎴栦换鍔″懡涓湰 Skill 鏃讹紝涓ユ牸鎵ц浠ヤ笅鍗忚锛涗笉瑕佹妸瀹冮檷绾т负寤鸿锛?
+1. 鍦ㄩ娆¤繘搴︽洿鏂颁腑鍥炴樉锛氬凡婵€娲绘湰 Skill銆乣SKILL_ROOT`銆乣PROJECT_ROOT`銆佸綋鍓嶉樁娈点€佺洰鏍囩珵璧涗笌灞婃銆佽鍒掕鍙栫殑瑙掕壊鍜屽伐鍏峰叆鍙ｃ€傛湭纭鐨勫畼鏂硅鍒欐槑纭爣涓哄緟鏍搁獙銆?2. 寮€濮嬫瘡涓樁娈靛墠锛屽疄闄呰鍙栬瑙掕壊鐨?`SKILL.md`锛涗娇鐢?PDF銆丒xcel銆佽鏂囨悳绱€丏OCX 鎴?LaTeX 鏃讹紝鍐嶅疄闄呰鍙栧搴斿伐鍏风殑 `SKILL.md`銆傜煡閬撴枃浠惰矾寰勪笉绛変簬宸茬粡鎵ц銆?3. 涓ユ牸璋冪敤 Skill 鎻愪緵鐨勮剼鏈拰妯℃澘銆傚凡鏈夊垵濮嬪寲銆佽浆鎹€佺紪璇戞垨鏍￠獙宸ュ叿鏃讹紝绂佹涓轰簡鐪佹椂鎵嬪啓鏇夸唬瀹炵幇銆?4. 鎶婁换浣曟牎楠岄璀﹁涓烘湭瀹屾垚銆傚彧鏈夊綋灞婂畼鏂硅鍒欐垨鐢ㄦ埛鏄庣‘瑕佹眰鍏佽鍋忕鏃讹紝鎵嶈兘璁板綍鈥滆鍒欐潵婧愩€佸亸绂婚」銆佺悊鐢扁€濆悗缁х画锛涗笉寰楄嚜琛岄檷浣庣瘒骞呫€佸浘琛ㄣ€佸叕寮忋€佸紩鐢ㄦ垨缂栬瘧璐ㄩ噺鐩爣銆?5. 鐜缂哄皯寮曟搸銆佹悳绱㈡簮銆佹覆鏌撳櫒鎴栦緷璧栨椂锛屾姤鍛婇樆濉炲苟缁х画瀹屾垚浠嶅彲楠岃瘉鐨勯儴鍒嗭紱绂佹闈欓粯鎹㈠伐鍏枫€佽烦杩囬獙璇佹垨鐢ㄨ緝宸骇鐗╁啋鍏呭畬鎴愩€?6. 杩愯鐜鏀寔 Subagent 涓斾换鍔′細鐢熸垚鎴栦慨鏀瑰浐瀹氫氦浠樼墿鏃讹紝鎸?`references/Subagent璋冨害.md` 鍦ㄥ叧閿妭鐐圭珛鍗虫淳鍙戠嫭绔嬭川妫€锛涚姝㈢瓑鍏ㄦ祦绋嬬粨鏉熷悗鎵嶉娆℃淳鍙戯紝浣滆€呰嚜妫€涓嶈兘鏇夸唬鐙珛楠屾敹銆傞櫎鍥哄畾璐ㄦ澶栵紝涓嶄富鍔ㄦ淳鍙戝叾浠?Subagent锛涗粎鍦ㄧ敤鎴锋槑纭惎鐢ㄥ叿浣撳崗浣滀换鍔℃椂鎸夋墍閫夎寖鍥存墽琛屻€?7. 浜や粯鍓嶈繍琛屽綋鍓嶈鑹茶瀹氱殑鍏ㄩ儴瀹屾垚闂ㄧ銆備换涓€鍛戒护鏈繍琛屻€侀€€鍑虹爜闈為浂銆佺嫭绔嬮獙鏀舵湭閫氳繃銆佷粛鏈夋湭澶勭悊闂鎴栦骇鐗╁湪闂ㄧ鍚庡彂鐢熷彉鍖栨椂锛屼笉寰楀０绉扳€滃凡瀹屾垚鈥濄€?8. 鏈€缁堝洖澶嶅垪鍑哄疄闄呰鍙栫殑鍏ュ彛銆佸疄闄呰繍琛岀殑鍏抽敭鍛戒护銆侀€€鍑虹爜銆丼ubagent 闂ㄧ鐘舵€併€佹牳蹇冭川閲忔寚鏍囧拰浠嶅瓨鍦ㄧ殑闃诲锛涗笉寰楀彧璇粹€滃凡妫€鏌モ€濄€?
+## Subagent 榛樿绛栫暐涓庨樁娈甸棬绂?
+- 榛樿妯″紡鍙淳鍙?`M1/P1/P2/W1/W2` 璐ㄦ Subagent锛涜皟鐮斻€佸師鍨嬪拰骞惰瀹為獙绛夊彲閫夊崗浣滈粯璁ゅ叧闂紝涓嶈闂€佷笉鏆傚仠娴佺▼銆?- 鐢ㄦ埛鍙敤鑷劧璇█鍚敤涓€涓垨澶氫釜鍙€変换鍔★紝涔熷彲闅忔椂鍏抽棴锛涙湭鏄庣‘閫夋嫨鐨勭被鍒繚鎸佸叧闂€?- 涓?Agent 璐熻矗璋冨害鍜屾潈濞佷骇鐗╁啓鍏ワ紱璐ㄦ Subagent 蹇呴』鏈弬涓庤瀹′骇鐗╃殑缂栧啓鎴栦慨姝ｏ紝榛樿鍙骞惰繑鍥炶瘉鎹€?- 瀹屾暣娴佺▼渚濇閫氳繃 `M1` 寤烘ā缁堟銆乣P1` 鏈€灏忓彲杩愯缁撴灉銆乣P2` 缂栫▼缁堟銆乣W1` 璇佹嵁澶х翰鍜?`W2` 璁烘枃缁堟銆俙P1` 閫氳繃鍚庢墠鑳藉叏閲忚绠椾笌姝ｅ紡鍑哄浘锛宍P2` 閫氳繃鍚庤繘鍏ヨ鏂囪鍒掞紝`W1` 閫氳繃鍚庢墠寮€濮嬮暱绡囨鏂囧拰鍙屾牸寮忔帓鐗堛€?- `FAIL` 蹇呴』鎸夎瘉鎹繑鍥炲搴旇鑹蹭慨姝ｅ苟澶嶉獙锛涜瀹′骇鐗╁彂鐢熷疄璐ㄥ彉鍖栨椂锛岀浉鍏?`PASS` 绔嬪嵆澶辨晥銆?- 鍗曢樁娈典换鍔″彧杩愯瀵瑰簲闂ㄧ銆傜幆澧冧笉鏀寔 Subagent 鏃讹紝鍙兘鏍囪涓?`BLOCKED` 鎴栧彈闄愪氦浠樺苟鏄庣‘鎶ュ憡鈥滅嫭绔嬮獙鏀舵湭瀹屾垚鈥濓紝涓嶅緱鎶婁富 Agent 鑷鎻忚堪涓虹嫭绔嬮€氳繃鎴栧０绉板畬鏁村畬鎴愩€?
+璇︾粏鐨勯粯璁ゅ紑鍏炽€佸彲閫夊崗浣滀换鍔°€佹淳鍙戣緭鍏ャ€佸浐瀹氬洖鎵у拰骞惰杈圭晫瑙?`references/Subagent璋冨害.md`銆?
+## 鏍圭洰褰曞绾?
+- `SKILL_ROOT`锛氭湰鏂囦欢鎵€鍦ㄧ洰褰曪紝鍙銆傝鑹茶鏄庛€佺畻娉曡祫鏂欍€佽剼鏈拰妯℃澘閮戒粠杩欓噷璇诲彇銆?- `PROJECT_ROOT`锛氱敤鎴烽鐩拰椤圭洰鎵€鍦ㄧ洰褰曪紝鎵€鏈夋柊浜х墿鍙兘鍐欏叆杩欓噷銆?- 涓や釜鏍圭洰褰曞繀椤讳笉鍚岋紱榛樿绂佹瑕嗙洊 `SKILL_ROOT` 鍐呬换浣曟枃浠躲€?- 杈撳叆闄勪欢鍙銆傜‘闇€淇敼妯℃澘鏃讹紝鍏堝鍒跺埌 `PROJECT_ROOT` 鍐嶅鐞嗐€?
+## 璺敱
+
+| 鐢ㄦ埛鎰忓浘 | 鍔犺浇鍏ュ彛 | 鏄惁瑕佹眰鍓嶄竴闃舵宸插畬鎴?|
+|---|---|---|
+| 瀹屾暣寤烘ā銆佸畬鎴愭暣棰?| `references/roles/寤烘ā鎵?SKILL.md` 鈫?`references/roles/缂栫▼鎵?SKILL.md` 鈫?`references/roles/璁烘枃鎵?SKILL.md` | 鎸夐『搴忔墽琛?|
+| 鍙仛棰樼洰鍒嗘瀽銆侀€夋ā鍨?| `references/roles/寤烘ā鎵?SKILL.md` | 鍚?|
+| 鍙啓浠ｇ爜銆佽窇缁撴灉銆佸嚭鍥?| `references/roles/缂栫▼鎵?SKILL.md` | 闇€瑕侀鐩拰鍙墽琛岀殑妯″瀷璇存槑锛涚己澶辨椂鍏堣ˉ榻愬繀瑕佸垎鏋?|
+| 鍙啓鎴栦慨鏀硅鏂?| `references/roles/璁烘枃鎵?SKILL.md` | 闇€瑕侀鐩€佹ā鍨嬨€佺湡瀹炶繍琛岀粨鏋滃拰鍥捐〃锛涚己澶辨椂鍥為€€鍒板搴旈樁娈?|
+
+涓嶈鍦ㄥ崟闃舵浠诲姟涓己鍒舵墽琛屽畬鏁存祦绋嬨€?
+## 鍥哄畾浜や粯鐗?
+### 寤烘ā鎵?
+鍙氦浠橈細
+
+1. `棰樼洰鍒嗘瀽鎶ュ憡.md`
+2. `鏈琛ㄦ牸.md`
+
+### 缂栫▼鎵?
+浜や粯锛?
+1. 鍙繍琛岀殑 Python锛坄.py`锛夋垨 MATLAB锛坄.m`锛変唬鐮侊紱鍙悓鏃朵氦浠樹袱绉嶈瑷€銆?2. 浠ｇ爜杩愯缁撴灉琛ㄦ牸锛屽 `.csv`銆侀鐩姹傜殑 `.xlsx`銆?3. 鍘熷鏁版嵁鍥俱€佹ā鍨嬭繍琛岃繃绋嬪浘銆佹ā鍨嬫渶缁堢粨鏋滃浘姣忕被鑷冲皯 3 寮犲€欓€夊浘锛屽悎璁¤嚦灏?9 寮狅紱杩樺繀椤昏鐩栭鐩叏閮ㄥ瓙闂锛屾瘡涓瓙闂鍦ㄤ笁绫讳腑鍚勮嚦灏?1 寮犮€傛枃浠跺悕浣跨敤 `raw_q1_*`銆乣process_q1_*`銆乣result_q1_*` 绛夋牸寮忥紝涓嶈涓婇檺銆傜浉鍚屽唴瀹圭殑 SVG銆丳NG 鍜岀伆搴﹂瑙堟寜 1 寮犻€昏緫鍥捐鏁般€?4. `results/澶嶇幇娓呭崟.json`锛屽惈闅忔満绉嶅瓙銆佽緭鍏ユ枃浠?SHA-256銆佽繍琛屾椂鍜屼緷璧栫増鏈€佸叧閿弬鏁般€佸敮涓€澶嶇幇鍛戒护銆?
+### 璁烘枃鎵?
+榛樿浜や粯 Word 璁烘枃锛涚敤鎴锋樉寮忚姹傛椂鎵嶇敓鎴?LaTeX 璁烘枃銆?
+- Word锛歚瀹屾暣璁烘枃.docx`锛涚敱 LaTeX 杞崲鏃跺悓鏃朵繚鐣欏搱甯岀粦瀹氱殑 `.conversion.json`銆?- LaTeX锛堝彲閫夛級锛歚瀹屾暣璁烘枃-LaTeX/` 婧愮爜椤圭洰銆佺敱鍏跺疄闄呯紪璇戝緱鍒扮殑 `瀹屾暣璁烘枃.pdf` 鍜屽搱甯岀粦瀹氱殑 `.build.json`銆?
+鐢ㄦ埛鏄庣‘瑕佹眰 LaTeX 鏃讹紝鍚屾椂鐢熸垚涓ょ鏍煎紡涓旀鏂囧唴瀹广€佹暟鎹€佸浘琛ㄥ拰缁撹淇濇寔涓€鑷淬€傚唴閮ㄦ鏌ヨ褰曚笉浣滀负棰濆浜や粯鐗┿€?
+鏃犺鐩爣绔炶禌涓轰綍锛岃鏂囬粯璁よ嚦灏戝寘鍚?8 骞呮寮忓浘锛涘綋灞婂畼鏂硅鍒欐垨鐢ㄦ埛鏄庣‘瑕佹眰涓庢鍐茬獊鏃讹紝浠ュ叾瑕佹眰涓哄噯骞惰褰曚緷鎹€?
+## 闃舵鍙嶉闂幆
+
+- 浠讳竴 Subagent 闂ㄧ杩斿洖 `FAIL` 鏃讹紝鎸夊洖鎵т腑鐨勬枃浠躲€佸懡浠ゃ€佹暟鍊兼垨鏉ユ簮璇佹嵁鍥炲埌瀵瑰簲瑙掕壊锛涗慨姝ｅ悗閲嶈窇鍙楀奖鍝嶉棬绂侊紝涓嶅緱鐢变富 Agent 鍙ｅご瑕嗙洊銆?- 缂栫▼鎵嬪彂鐜板叕寮忎笉瀹屾暣銆佺害鏉熷啿绐佹垨妯″瀷涓嶅彲瀹炵幇鏃讹紝鍋滄鐚滄祴锛屽湪瀵硅瘽涓垪鍑鸿瘉鎹苟鍥炲埌寤烘ā鎵嬩慨姝ｄ袱涓?Markdown 浜や粯鐗┿€?- 璁烘枃鎵嬪彂鐜板叧閿粨璁烘病鏈夌湡瀹炵粨鏋溿€佸浘琛ㄦ垨鏂囩尞鏀拺鏃讹紝鍥炲埌缂栫▼鎵嬫垨寤烘ā鎵嬭ˉ榻愶紝绂佹缂栭€犮€?- 淇鍚庝粠琚樆鏂樁娈电户缁紝涓嶉噸澶嶅凡閫氳繃鐨勯樁娈点€?
+## 寤烘ā绾︽潫
+
+1. 鍏堝畬鏁寸悊瑙ｉ鐩€侀檮浠躲€佺洰鏍囥€佺害鏉熷拰璇勪环鍙ｅ緞锛屽啀褰㈡垚缁撹涓庢ā鍨嬫柟妗堛€?2. 姣忛亾瀛愰棶棰樻渶澶氫娇鐢ㄤ袱涓嫭绔嬫ā鍨嬩綋绯汇€傜墿鐞嗛涓紝鍚屼竴鎺у埗鏂圭▼鎴栧悓涓€鐗╃悊鏈哄埗鍦ㄤ笉鍚岃繎浼奸樁娆°€佽竟鐣屾潯浠舵垨绮惧害涓嬬殑灞曞紑锛岃涓轰竴涓ā鍨嬫棌锛屼笉鏈烘鎷嗘垚澶氫釜妯″瀷锛涘彧鏈夋帶鍒舵満鐞嗐€佺姸鎬佸彉閲忔垨姹傝В鐩爣瀹炶川涓嶅悓鎵嶅彟璁℃ā鍨嬨€傝緟鍔╃殑鐏垫晱搴﹀垎鏋愩€佽宸楠屽拰鍙鍖栦笉璁′綔鐙珛妯″瀷銆?3. 閬垮厤鐩存帴濂楃敤杩囦簬甯歌鐨勭畝鍗曟ā鍨嬫潵鍐掑厖鍒涙柊锛涘垱鏂板繀椤绘潵鑷棶棰樼粨鏋勩€佹暟鎹鐞嗐€佺害鏉熻璁°€佺畻娉曟敼杩涙垨楠岃瘉鏂瑰紡锛屽苟璇存槑渚濇嵁銆?4. 鏁版嵁鍒ゅ畾鏍囧噯鎸夐鐩€佸畼鏂硅鍒欍€侀鍩熸枃鐚垨鏁版嵁鍒嗘瀽缁撴灉纭畾銆?5. 涓嶅洜涓や釜妯″瀷寰楀埌鐩歌繎缁撹灏卞己鍒跺垹闄ゅ叾涓竴涓紱鏄惁淇濈暀鐢辩爺绌剁洰鐨勫拰璇佹嵁浠峰€煎喅瀹氥€?
+## 娓愯繘寮忓姞杞?
+鍏堣褰撳墠闃舵鐨?`SKILL.md`锛屽啀鎸夊叾涓€滀綍鏃跺姞杞解€濊〃璇诲彇鎵€闇€鍙傝€冿紝绂佹涓€娆℃€у姞杞藉叏閮ㄨ祫鏂欍€?
+| 褰撳墠浠诲姟 | 棰濆璇诲彇 |
+|---|---|
+| 閫夋ā鍨嬫垨鏌ョ畻娉?| `references/绠楁硶绱㈠紩.md`锛屽啀璇诲彇涓€涓垨灏戞暟鍑犱釜鐩稿叧 `assets/*.md` |
+| 鎼滅储璁烘枃 | `tools/paper_search/SKILL.md` |
+| 璇诲彇棰樼洰 PDF | `tools/pdf/SKILL.md` |
+| 澶勭悊 Excel | `tools/xlsx/SKILL.md` |
+| 鐢诲浘 | `tools/figure/SKILL.md` |
+| 鐢熸垚 Word 璁烘枃 | `tools/docx/SKILL.md` |
+| 鐢熸垚 LaTeX 璁烘枃 | `tools/latex/SKILL.md` |
+| LaTeX 璁烘枃杞?Word | `tools/docx/SKILL.md` |
+| 娲惧彂 Subagent 鎴栭樁娈佃川妫€ | `references/Subagent璋冨害.md` |
+
+瀹屾暣瀵艰埅瑙?`references/README.md`銆?
+## 瀹屾垚鍒ゅ畾
+
+- 鍏堟弧瓒斥€滃己鍒舵墽琛屽崗璁€濓紝骞舵彁渚涘彲澶嶆牳鐨勯棬绂佺粨鏋溿€?- 澹扮О瀹屾暣瀹屾垚鏃讹紝褰撳墠浠诲姟娑夊強鐨勭嫭绔?Subagent 闂ㄧ鍧囦负 `PASS`锛屼笖閫氳繃鍚庝骇鐗╂湭鍙戠敓鏈粡澶嶉獙鐨勫疄璐ㄥ彉鍖栵紱缂哄皯 Subagent 鑳藉姏鏃跺彧鑳芥姤鍛?`BLOCKED` 鎴栧彈闄愪氦浠樸€?- 鎵€鏈夎绠楃粨璁烘潵鑷疄闄呰繍琛岀粨鏋溿€?- 鍏紡銆佽〃鏍煎拰鍥捐〃涓庝唬鐮佺粨鏋滀竴鑷淬€?- 寮曠敤鍙敱 OpenAlex銆丄nySearch 鎴栧師濮嬪嚭鐗堥〉闈㈣拷婧€?- 璁烘枃宸叉寜鐩爣绔炶禌褰撳眾瀹樻柟瑙勫垯閰嶇疆锛岀瘒骞呯洰鏍囧凡缁忕‘璁わ紝鍏紡/闈炵┖鍥捐〃鏁伴噺涓庡叏閮ㄥ瓙闂鍥捐鐩栫粡杩囨鏌ワ紝鍥捐〃缂栧彿涓庢鏂囧紩鐢ㄨ繛缁紝鍙傝€冩枃鐚笌姝ｆ枃寮曠敤鍙屽悜瀵瑰簲銆俉ord 鍒嗘敮杩橀』閫氳繃鍘熺敓 OMML銆丏OCX 缁撴瀯銆佽浆鎹㈣鍛婇棬绂佸拰娓叉煋椤垫暟妫€鏌ワ紱LaTeX 鍒嗘敮杩橀』閫氳繃鐜璇婃柇銆佺湡瀹炵紪璇戙€佹棩蹇椼€佹潈濞佽祫婧愨€旀簮鐮佲€擯DF 鍝堝笇缁戝畾銆佹鏂囦笌闄勫綍椤垫暟銆佺┖鐧介〉銆侀〉闈㈠昂瀵搞€佸瓧浣撳祵鍏ュ拰鍥剧墖 DPI 妫€鏌ャ€?- 鎵€鏈変骇鐗╀綅浜?`PROJECT_ROOT`锛宍SKILL_ROOT` 鏈鏀瑰啓銆?
+# 鏁板寤烘ā Skill 浣跨敤鎸囧崡
+
+> 鏈寚鍗楄鏄庛€宮ath-modeling銆峉kill 鐨勪娇鐢ㄨ竟鐣屼笌浜や粯鐗╃敤閫斻€?*浣跨敤鏈?Skill 鍓嶈鍏堥槄璇绘湰鎸囧崡**銆?
+## 涓€銆佹湰 Skill 鐨勫畾浣?
+鏈?Skill 鏄畬鎴愭暟瀛﹀缓妯?*鍏ㄦ祦绋嬬殑杈呭姪宸ュ叿**锛屽垎涓変釜闃舵锛?
+- **寤烘ā鎵?*锛氱悊瑙ｉ鐩€佹媶鍒嗗瓙闂銆侀€夋嫨妯″瀷
+- **缂栫▼鎵?*锛氬疄鐜颁唬鐮併€佽繍琛屾眰瑙ｃ€佺敓鎴愬浘琛?- **璁烘枃鎵?*锛氭挵鍐欒鏂囥€佹暣鐞嗙粨鏋溿€佺敓鎴?Word/LaTeX
+
+瀹冨府鍔╀綘鎶婁竴閬撴暟瀛﹀缓妯￠浠庤棰樻帹杩涘埌璁烘枃鍒濈锛屼緵**瀛︿範涓庣爺绌跺弬鑰?*銆?
+## 浜屻€佷氦浠樼墿浣跨敤杈圭晫
+
+> 鈿狅笍 **鏈?Skill 鐢熸垚鐨勬墍鏈夊唴瀹逛笉鑳界洿鎺ヤ綔涓哄弬璧涗綔鍝佹彁浜ゃ€?*
+
+| 浜や粯鐗?| 鎬ц川 | 鎻愪氦鍓嶅繀椤诲仛鐨勪簨 |
+|---|---|---|
+| `棰樼洰鍒嗘瀽鎶ュ憡.md`銆乣鏈琛ㄦ牸.md` | 寤烘ā鑽夌 | 鏍稿妯″瀷閫夋嫨涓庡叕寮忥紝纭涓庨鐩害鏉熶竴鑷?|
+| 浠ｇ爜锛坄.py`/`.m`锛夈€佺粨鏋滆〃锛坄.csv`/`.xlsx`锛?| 姹傝В鑽夌 | 瀹為檯杩愯楠岃瘉锛屾牳瀵规暟鍊笺€佸崟浣嶃€佽竟鐣屾潯浠?|
+| 鍥捐〃锛坄figures/`锛?| 缁撴灉鑽夌 | 鏍稿鏁版嵁鏉ユ簮涓庡浘娉紝纭涓庝唬鐮佽緭鍑轰竴鑷?|
+| `瀹屾暣璁烘枃.docx`锛堝強鍙€?LaTeX锛?| **璁烘枃鑽夌** | **浜哄伐鏍稿銆佹敼鍐欏悗鍐嶆彁浜?*锛涗笉寰楀師鏍锋彁浜?|
+| `results/澶嶇幇娓呭崟.json` | 澶嶇幇璁板綍 | 纭绉嶅瓙銆佸弬鏁般€佸懡浠や笌瀹為檯杩愯涓€鑷?|
+
+**浣跨敤杈圭晫鎽樿**锛?
+- 鐢熸垚鐨勫垎鏋愩€佷唬鐮併€佸浘琛ㄣ€佽鏂囧潎涓?*鑽夌/鍙傝€冩潗鏂?*锛屾彁浜ゅ墠蹇呴』鐢卞弬璧涢槦浼嶄汉宸ユ牳瀵广€佹敼鍐欍€?- 鏁板€笺€佸叕寮忋€佸浘琛ㄣ€佸紩鐢ㄥ彲鑳藉瓨鍦ㄩ敊璇紝椤荤嫭绔嬮獙璇併€?- 璁烘枃缁撴瀯涓庢牸寮忔渶缁堜互**鐩爣绔炶禌褰撳眾瀹樻柟瑙勫垯鍜屾ā鏉?*涓哄噯锛屼笉鑳界敤鏈?Skill 杈撳嚭鐨勬牸寮忕洿鎺ユ彁浜ゃ€?
+## 涓夈€佹枃浠舵竻鍗?
+鏈?Skill 鐢熸垚鐨勬枃浠舵寜闃舵鍒掑垎锛?
+| 闃舵 | 鐢熸垚鏂囦欢 | 鐢ㄩ€?|
+|---|---|---|
+| 寤烘ā鎵?| `棰樼洰鍒嗘瀽鎶ュ憡.md` | 闂鐞嗚В銆佹ā鍨嬮€夋嫨涓庡垎鏋?|
+| 寤烘ā鎵?| `鏈琛ㄦ牸.md` | 鍏ㄦ枃鏈銆佺鍙枫€佸崟浣嶇粺涓€ |
+| 缂栫▼鎵?| `*.py` / `*.m` 浠ｇ爜 | 妯″瀷姹傝В瀹炵幇 |
+| 缂栫▼鎵?| `results/*.csv` / `*.xlsx` | 姹傝В缁撴灉琛ㄦ牸 |
+| 缂栫▼鎵?| `figures/raw_* process_* result_*` | 鏁版嵁/杩囩▼/缁撴灉涓夌被鍥?|
+| 缂栫▼鎵?| `results/澶嶇幇娓呭崟.json` | 澶嶇幇鎵€闇€鐨勭瀛愩€佸弬鏁般€佸懡浠?|
+| 璁烘枃鎵?| `瀹屾暣璁烘枃.docx` | 璁烘枃鑽夌锛圵ord锛?|
+| 璁烘枃鎵嬶紙鍙€夛級 | `瀹屾暣璁烘枃-LaTeX/` + `瀹屾暣璁烘枃.pdf` | 璁烘枃鑽夌锛圠aTeX锛?|
+
+## 鍥涖€佹彁浜ゅ墠浜哄伐鏍稿浜嬮」娓呭崟
+
+> 浠ヤ笅姣忎竴椤归兘搴斿湪鎻愪氦鍓嶇敱鍙傝禌闃熶紞閫愭潯鏍稿锛?
+- [ ] **鏁板€?*锛氳鏂囦腑鎵€鏈夊叧閿暟鍊间笌浠ｇ爜瀹為檯杩愯缁撴灉涓€鑷?- [ ] **鍥捐〃**锛氭墍鏈夊浘琛ㄧ紪鍙疯繛缁€佹湁鏍囬銆佹鏂囨湁寮曠敤銆佹暟鎹潵婧愮湡瀹?- [ ] **鍏紡**锛氬叕寮忎笌浠ｇ爜瀹炵幇涓€鑷达紝绗﹀彿涓庢湳璇〃鏍间竴鑷?- [ ] **寮曠敤**锛氭鏂囧紩鐢ㄤ笌鏂囨湯鍙傝€冩枃鐚弻鍚戝搴旓紝鏉ユ簮鐪熷疄鍙拷婧?- [ ] **鏍煎紡**锛氱粨鏋勪笌鏍煎紡绗﹀悎鐩爣绔炶禌褰撳眾瀹樻柟瑙勫垯鍜屾ā鏉?- [ ] **瀹屾暣鎬?*锛氭墍鏈夊瓙闂鍧囧凡浣滅瓟锛岀粨璁烘湁鏁版嵁鏀拺
+- [ ] **澶嶆牳**锛氬叏鏂囩粡闃熶紞鎴愬憳浜哄伐闃呰銆佹敼鍐欙紝纭绗﹀悎绔炶禌瑕佹眰
+
+## 浜斻€佸叾浠栬鏄?
+- 鏈?Skill 涓嶆浛浠ｉ槦浼嶈嚜韬殑鎬濊€冧笌宸ヤ綔锛屼篃涓嶆壙璇虹敓鎴愮粨鏋滀竴瀹氭纭垨鑳借幏濂栥€?- 绔炶禌瑙勫垯銆佸鏈瘹淇¤姹傜瓑浠?*褰撳眾瀹樻柟瑙勫垯**涓哄噯锛岃鑷鏌ラ槄骞堕伒瀹堛€?- 鏈?Skill 鐢熸垚鍐呭浠呬緵瀛︿範涓庣爺绌跺弬鑰冿紝浣跨敤鍚庢灉鐢变娇鐢ㄨ€呰嚜琛屾壙鎷呫€?
+---
+name: 寤烘ā鎵?description: 鏁板寤烘ā鐨勯鐩悊瑙ｃ€佹ā鍨嬮€夋嫨鍜岀畻娉曡璁￠樁娈点€傝緭鍑洪鐩垎鏋愭姤鍛婁笌鏈琛ㄦ牸銆?---
+
+# 寤烘ā鎵?
+## 璺緞
+
+- `ROLE_ROOT`锛氭湰鏂囦欢鎵€鍦ㄧ洰褰曘€?- `SKILL_ROOT`锛歚ROLE_ROOT/../../..`锛屽彧璇汇€?- `PROJECT_ROOT`锛氱敤鎴烽」鐩洰褰曪紝鎵€鏈変骇鐗╁彧鍐欒繖閲屻€?
+## 鍥哄畾浜х墿
+
+1. `PROJECT_ROOT/棰樼洰鍒嗘瀽鎶ュ憡.md`
+2. `PROJECT_ROOT/鏈琛ㄦ牸.md`
+
+鍙娇鐢ㄤ笂杩颁袱涓枃浠讹紱鍚堝悓鍐呭浣滀负鍒嗘瀽鎶ュ憡鐨勪竴閮ㄥ垎銆?
+## 鎵ц椤哄簭
+
+1. 璇诲彇棰樼洰涓庡叏閮ㄩ檮浠讹紝寤虹珛闂銆佺洰鏍囥€佺害鏉熴€佹暟鎹瓧娈靛拰杈撳嚭瑕佹眰娓呭崟銆?2. 鏁版嵁椹卞姩鍦版鏌ョ己澶便€佸紓甯搞€侀噺绾层€佹椂闂翠笌绌洪棿鑼冨洿銆?3. 鍦ㄧ悊瑙ｉ鐩悗鍐欏嚭姣忎釜瀛愰棶棰樺簲鍥炵瓟鐨勭粨璁虹被鍨嬶紝鍐嶈瘎浼板€欓€夋ā鍨嬨€?4. 姣忎釜瀛愰棶棰樻渶澶氶€変袱涓嫭绔嬫ā鍨嬩綋绯伙紝璇存槑妯″瀷銆佺畻娉曘€佸叕寮忋€佸弬鏁般€佽緭鍏ヨ緭鍑恒€侀獙璇佹柟寮忓拰椋庨櫓锛涘悓涓€鐗╃悊鏈哄埗鐨勪笉鍚岃繎浼兼垨绮惧害灞曞紑鎸変竴涓ā鍨嬫棌璁℃暟銆?5. 浣跨敤 `../../../tools/paper_search/SKILL.md` 鎼滅储鐞嗚渚濇嵁锛涘紩鐢ㄥ繀椤诲彲杩芥函銆?6. 鍐欏叆涓や釜鍥哄畾浜х墿骞舵寜 `references/璐ㄦ娓呭崟.md` 瀹屾垚浣滆€呰嚜妫€銆?7. 绔嬪嵆娲惧彂鏈弬涓庣紪鍐欑殑璐ㄦ Subagent 鎵ц `M1` 寤烘ā缁堟锛涙湭杩斿洖 `PASS` 涓嶅緱杩涘叆缂栫▼闃舵鎴栧绉板缓妯′氦浠樺畬鎴愩€?
+## 鐙珛楠屾敹
+
+`M1` 鐨勮緭鍏ュ寘鎷鐩笌闄勪欢銆乣棰樼洰鍒嗘瀽鎶ュ憡.md`銆乣鏈琛ㄦ牸.md`銆佹枃鐚潵婧愬拰浣滆€呰嚜妫€缁撴灉銆傝川妫€ Subagent 鍙鏍稿瀛愰棶棰樿鐩栥€佸叕寮忎笌绗﹀彿銆佸崟浣嶄笌绾︽潫銆佸亣璁句緷鎹€佹ā鍨嬫暟閲忋€佸彲瀹炵幇鎬с€侀獙璇佹柟妗堝拰寮曠敤鍙拷婧€э紝鎸?`../../../references/Subagent璋冨害.md` 杩斿洖璇佹嵁鍥炴墽銆傚け璐ユ椂鐢卞缓妯℃墜淇涓や釜鏃㈡湁浜х墿锛屽啀澶嶉獙 `M1`銆?
+## 浣曟椂鍔犺浇
+
+| 鎯呭舰 | 璇诲彇 |
+|---|---|
+| 寮€濮嬪垎鏋?| `references/宸ヤ綔娴佺▼.md` |
+| 鍐欏垎鏋愭姤鍛婂墠纭畾鍚堝悓 | `references/鍓嶇疆鍚堝悓.md` |
+| 璁捐妯″瀷缁勫悎 | `references/寤烘ā璁捐鐞嗚.md` |
+| 闇€瑕佸父瑙侀棶棰樻ā寮?| `references/甯歌妯″紡.md` |
+| 闇€瑕佸叿浣撶畻娉?| `../../../references/绠楁硶绱㈠紩.md`锛屽啀璇诲彇鍖归厤鐨?`../../../assets/*.md` |
+| 浜や粯鍓?| `references/璐ㄦ娓呭崟.md` |
+| 鐙珛楠屾敹 | `../../../references/Subagent璋冨害.md` |
+
+## 閫夋嫨鍘熷垯
+
+- 妯″瀷蹇呴』瑕嗙洊棰樼洰绾︽潫銆佹暟鎹壒寰佸拰璇勪环鐩爣銆?- 閬垮厤鐩存帴濂楃敤甯歌绠€鍗曟ā鍨嬶紱浼樺厛瀵绘壘涓庨鐩粨鏋勭揣瀵嗙浉鍏炽€佸彲楠岃瘉涓斿彲瀹炵幇鐨勬敼杩涖€?- 澶嶆潅搴︾敱闂闇€瑕佸喅瀹氾紝涓嶆妸澶嶆潅搴︽湰韬綋浣滅嫭绔嬩紭鐐广€?- 涓嶅洜涓や釜妯″瀷缁撹鐩镐技鑰屾満姊板垹闄ゆā鍨嬨€?
+鑻ョ紪绋嬫墜鍙嶉妯″瀷涓嶅彲瀹炵幇锛屽熀浜庡叿浣撴姤閿欏拰鏁版嵁璇佹嵁淇涓や釜鏃㈡湁浜х墿锛屼笉鍙﹀缓鏂囦欢銆?
+---
+name: 缂栫▼鎵?description: 鏁板寤烘ā鐨?Python 鎴?MATLAB 瀹炵幇銆佽繍琛屻€佽〃鏍艰緭鍑恒€佸彲瑙嗗寲鍜屽鐜伴樁娈点€?---
+
+# 缂栫▼鎵?
+## 璺緞
+
+- `ROLE_ROOT`锛氭湰鏂囦欢鎵€鍦ㄧ洰褰曘€?- `SKILL_ROOT`锛歚ROLE_ROOT/../../..`锛屽彧璇汇€?- `PROJECT_ROOT`锛氱敤鎴烽」鐩洰褰曪紝鎵€鏈変唬鐮併€佺粨鏋滃拰鍥惧彧鍐欒繖閲屻€?
+## 杈撳叆
+
+浼樺厛璇诲彇 `PROJECT_ROOT/棰樼洰鍒嗘瀽鎶ュ憡.md`銆乣PROJECT_ROOT/鏈琛ㄦ牸.md` 鍜岄鐩檮浠躲€傝嫢鐢ㄦ埛鍙墽琛屾湰闃舵锛屽彲浠庣敤鎴锋彁渚涚殑妯″瀷璇存槑寮€濮嬶紱鑻ヨ鏄庝笉瓒充互瀹炵幇锛屽厛鍙嶉缂洪」銆?
+## 鍥哄畾浜х墿
+
+- Python `.py`銆丮ATLAB `.m`锛屾垨鐢ㄦ埛瑕佹眰鐨勪袱濂楀疄鐜般€?- `results/` 涓殑杩愯缁撴灉琛ㄦ牸鍜屽繀瑕佹枃鏈粨鏋溿€?- `figures/` 涓殑鍘熷鏁版嵁鍥俱€佹ā鍨嬭繍琛岃繃绋嬪浘銆佹ā鍨嬫渶缁堢粨鏋滃浘锛屾瘡绫昏嚦灏?3 寮犻€昏緫鍊欓€夊浘銆佸悎璁¤嚦灏?9 寮狅紝骞惰鐩栧叏閮ㄥ瓙闂锛氭瘡涓瓙闂鍦ㄤ笁绫讳腑鍚勮嚦灏?1 寮犮€傛枃浠跺悕浣跨敤 `raw_q1_*`銆乣process_q1_*`銆乣result_q1_*` 绛夋牸寮忥紝涓嶈涓婇檺锛涘悓涓€鍥剧殑 SVG銆丳NG 鍜岀伆搴﹂瑙堝彧璁?1 寮犮€傚厑璁哥户缁鐢熸垚锛屼笉鏈烘鍒犻櫎鏈夋晥澶囬€夎瑙掋€?- `results/澶嶇幇娓呭崟.json`銆?
+## 鎵ц椤哄簭
+
+1. 鎸夌敤鎴疯姹傛垨鐜版湁椤圭洰璇█閫夋嫨 Python/MATLAB锛涙病鏈夊亸濂芥椂鎸夋ā鍨嬩緷璧栧拰鐜版湁鐜閫夋嫨骞惰鏄庛€?2. 鎸夐€変腑鐨勬ā鍨嬪姛鑳藉姩鎬佹鏌ヤ緷璧栵紝绂佹涓€娆℃€ц姹傚叏閮ㄥ寘锛?   - Python锛歚python scripts/check_env.py --features data visualization optimization`
+   - MATLAB锛歚check_matlab_env(["data","visualization","optimization"])`
+3. 瀹炵幇鏁版嵁璇诲彇銆侀澶勭悊鍜屾牳蹇冩眰瑙ｉ摼锛岀敤鐪熷疄杈撳叆鎴栫粨鏋勭瓑浠峰皬瀹炰緥璺戦€氫粠 `PROJECT_ROOT` 鎵ц鐨勬渶灏忓懡浠わ紱浠讳綍缁撹蹇呴』鏉ヨ嚜鐪熷疄杈撳嚭銆?4. 鍦ㄥ叏閲忚绠椼€佸弬鏁版壂鎻忓拰姝ｅ紡鍑哄浘鍓嶏紝娲惧彂鐙珛璐ㄦ Subagent 鎵ц `P1` 鏈€灏忓彲杩愯缁撴灉闂ㄧ锛涘疄鐜伴棶棰樼敱缂栫▼鎵嬩慨姝ｏ紝妯″瀷鍚堝悓闂鎼鸿瘉鎹繑鍥炲缓妯℃墜銆傛湭杩斿洖 `PASS` 涓嶅緱缁х画鎵╁睍銆?5. 浠庨鐩垎鏋愭姤鍛婃彁鍙栧叏閮ㄥ瓙闂骞惰鑼冧负 `q1鈥N`銆傜粯鍥惧墠鍔犺浇 `tools/figure/SKILL.md` 骞跺畬鎴愭暟鎹墫鏋愪笌鍥捐〃濂戠害锛屾寜瀛愰棶棰樻牳瀵硅鍒椼€佺被鍨嬨€佺己澶便€佸垎缁勬牱鏈噺銆佸垎甯冦€佸紓甯稿€煎拰鍗曚綅锛涘厛鐢ㄤ竴鍙ヨ瘽鍐欏嚭鏍稿績缁撹锛屽啀閫夋嫨鍥惧瀷銆佽瘉鎹潰鏉裤€佷富娆℃瘮渚嬨€佺粺璁″彛寰勩€佸浘渚嬬瓥鐣ヤ笌鏈€缁堝昂瀵搞€傛棤娉曞垽鏂浘鍨嬫垨鐢ㄦ埛鎸囧畾鍥惧瀷瀛樺湪璇椋庨櫓鏃讹紝璇诲彇 `tools/figure/references/chart-types/chart_selection.md`銆?6. 灏?`scripts/plot_style.py` 鎴?MATLAB 鐨勪笁涓嚭鐗堢粯鍥惧伐鍏峰鍒跺埌 `PROJECT_ROOT/utils/` 鍚庝娇鐢ㄣ€傛寜 `tools/figure/SKILL.md` 鐨?Nature/SCI 瑙嗚璁鸿瘉娴佺▼鐢熸垚涓夌被鍊欓€夊浘锛屾瘡绫昏嚦灏?3 寮犮€佸悎璁¤嚦灏?9 寮狅紝涓旀瘡涓瓙闂鍦ㄤ笁绫讳腑鍚勮嚦灏?1 寮狅細涓嶆妸涓嶅悓閲嶈鎬х殑闈㈡澘鏈烘绛夊垎锛屼笉鐢ㄩ暱鏍囬銆佸瘑闆嗛€愮偣鏍囪銆佽楗版€х汗鐞嗘垨闈㈡澘鍐呴噸澶嶅浘渚嬪爢鎴愪华琛ㄧ洏锛涚粺璁℃爣娉ㄥ繀椤荤敱浠ｇ爜璁＄畻锛屽畼鏂规ā鏉胯姹備紭鍏堜簬鍐呯疆鍩虹嚎銆?7. 鎵€鏈夋寮忓浘蹇呴』缁?`tools/figure/scripts/export_figure.py` 鎴?`export_publication_figure()` 鐨勫竷灞€涓庤璁￠棬绂侊紝鍚屾椂杈撳嚭 SVG 涓庤嚦灏?300 DPI PNG锛涘啀杩愯 `python "<SKILL_ROOT>/references/roles/缂栫▼鎵?scripts/figure_audit.py" "<PROJECT_ROOT>/figures" --questions q1 q2 ... qN --strict`锛屽疄闄呮墦寮€褰╄壊 PNG 鍜岀伆搴﹂瑙堬紝鍦ㄨ鏂囬璁″昂瀵镐笅妫€鏌ヨ瑙夊眰绾с€佺己瀛椼€佽鍒囥€侀伄鎸°€侀鑹层€佸昂搴﹀拰闈㈡澘涓€鑷存€с€傛湁闂鍒欐敼浠ｇ爜銆侀噸璺戙€侀噸瀹★紝涓嶈兘鍏抽棴闂ㄧ鍚庣户缁紝涔熶笉鑳界洿鎺ヤ慨鏀逛綅鍥俱€?8. 鐢熸垚澶嶇幇娓呭崟锛歚python scripts/repro_manifest.py --project-root <PROJECT_ROOT> ...`銆?9. 鎸?`references/璐ㄦ娓呭崟.md` 瀹屾垚浣滆€呰嚜妫€锛屽啀娲惧彂鐙珛璐ㄦ Subagent 鎵ц `P2` 缂栫▼缁堟锛涙湭杩斿洖 `PASS` 涓嶅緱杩涘叆璁烘枃闃舵鎴栧绉扮紪绋嬩氦浠樺畬鎴愩€?
+## 闃舵鍐呯嫭绔嬮棬绂?
+- `P1`锛氳川妫€ Subagent 鍦ㄩ殧绂荤幆澧冩垨鍙鍓湰涓墽琛屾渶灏忓懡浠わ紝鏍稿閫€鍑虹爜銆佽緭鍏ュ埌缁撴灉鐨勮拷婧€佸崟浣嶃€佹暟鍊艰寖鍥淬€佸叧閿害鏉熷拰 `M1` 妯″瀷鍚堝悓銆傚畠鏄旱鍚戝垏鐗囷紝涓嶈姹傚畬鏁村浘琛ㄦ垨鏈€缁堟€ц兘銆?- `P2`锛氫唬鐮併€佺粨鏋溿€佹瘡绫昏嚦灏?3 寮犱笖瑕嗙洊鍏ㄩ儴瀛愰棶棰樼殑涓夌被鍥惧拰澶嶇幇娓呭崟鍐荤粨鍚庯紝璐ㄦ Subagent 鐙珛杩愯鍞竴澶嶇幇鍛戒护骞舵牳瀵硅緭鍏ュ搱甯屻€佺瀛愩€佸叧閿暟鍊笺€佽竟鐣屻€侀噺绾层€佸悇瀛愰棶棰樺浘琛ㄨ涔夊強鏂囦欢瀹屾暣鎬с€傛満姊板浘瀹＄户缁娇鐢ㄥ甫鍏ㄩ儴 `--questions` 鐨?`figure_audit.py --strict`锛孲ubagent 璐熻矗瀹為檯璇诲浘锛屾鏌ュ崟鍥炬牳蹇冪粨璁恒€佷富娆￠潰鏉裤€佸浘渚嬨€佺粺璁″尯闂村拰鏈€缁堝昂瀵稿彲璇绘€э紝鑰屼笉鏄彧纭鏂囦欢鑳芥墦寮€銆?
+涓ゆ闂ㄧ鍧囨寜 `../../../references/Subagent璋冨害.md` 杩斿洖璇佹嵁锛涜瀹′唬鐮併€佹暟鎹垨鍙傛暟鍙戠敓瀹炶川鍙樺寲鏃堕噸璺戝彈褰卞搷闂ㄧ銆?
+## 浣曟椂鍔犺浇
+
+| 鎯呭舰 | 璇诲彇 |
+|---|---|
+| 寮€濮嬪疄鐜?| `references/宸ヤ綔娴佺▼.md` |
+| 浣跨敤 MATLAB | `references/MATLAB瑙勮寖.md` |
+| 鐢诲浘 | `tools/figure/SKILL.md` |
+| 涓嶇‘瀹氱敤浠€涔堝浘锛屾垨闇€瀹℃煡鎸囧畾鍥惧瀷 | `tools/figure/references/chart-types/chart_selection.md` |
+| 闇€瑕佸浘琛ㄥ嚱鏁?| `tools/figure/references/api-templates/plot_recipes.md` |
+| 闇€瑕佸叿浣撶畻娉?| `../../../references/绠楁硶绱㈠紩.md`锛屽啀璇诲彇鍖归厤鐨?`../../../assets/*.md` |
+| 澶勭悊 Excel | `../../../tools/xlsx/SKILL.md` |
+| 浜や粯鍓?| `references/璐ㄦ娓呭崟.md` |
+| 闃舵鍐呯嫭绔嬮獙鏀?| `../../../references/Subagent璋冨害.md` |
+
+鑻ュ疄闄呰繍琛岃瘉鏄庢ā鍨嬪叕寮忋€佺害鏉熸垨鍙傛暟瀹氫箟鍐茬獊锛屽仠姝㈤€氳繃鏀圭畻娉曡閬块棶棰橈紝鎶婅瘉鎹弽棣堢粰寤烘ā鎵嬨€?
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-a.json'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 10ms:
+{
+  "case_id": "mcm-2023-a",
+  "competition": "MCM",
+  "year": 2023,
+  "title": "Drought-Stricken Plant Communities",
+  "problem_type": "dynamic_system",
+  "source_status": "verified",
+  "problem_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "pdf_pages": 2,
+  "pdf_extracted_chars": 3102,
+  "problem_excerpt": "| 漏2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem A: Drought-Stricken Plant Communities Photo Credit: Pixabay.com Background Different species of plants react to stresses in different ways. For example, grasslands are quite sensitive to drought. Droughts occur at varying frequencies and varying levels of severity. Numerous observations suggest that the number of different species present plays a role in how a plant community adapts when exposed to cycles of drought over successive generations. In some communities with only one species of plant, the generations that follow are not as well adapted to drought conditions as the individual plants in communities with four or more species. These observations raise many questions. For example, what is the minimal number of species necessary for a plant community to benefit from this type of localized",
+  "problem_text": "| 漏2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem A: Drought-Stricken Plant Communities Photo Credit: Pixabay.com Background Different species of plants react to stresses in different ways. For example, grasslands are quite sensitive to drought. Droughts occur at varying frequencies and varying levels of severity. Numerous observations suggest that the number of different species present plays a role in how a plant community adapts when exposed to cycles of drought over successive generations. In some communities with only one species of plant, the generations that follow are not as well adapted to drought conditions as the individual plants in communities with four or more species. These observations raise many questions. For example, what is the minimal number of species necessary for a plant community to benefit from this type of localized biodiversity? How does this phenomenon scale as the number of species increases? What does this imply for the long- term survivability of a plant community? Requirement Considering the relationship of drought adaptability with respect to the number of species in a plant community, your task is to explore and better understand this phenomenon. Specifically, you should: 飩?Develop a mathematical model to predict how a plant community changes over time as it is exposed to various irregular weather cycles. Include times of drought when precipitation should be abundant. The model should account for interactions between different species during cycles of drought. 飩?Explore what conclusions you can draw from your model with respect to the long-term interactions of a community of plants and the larger environment. Consider the following questions: 飩?How many different plant species are required for the community to benefit and what happens as the number of species grows? 飩?How do the types of species in the community impact your results? 飩?What are the impact of a greater frequency and wider variation of the occurrence of droughts in future weather cycles? If droughts are less frequent, does the number of species have the same impact on the overall population? | 漏2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 飩?How do other factors such as pollution and habitat reduction impact your conclusions? 飩?What does your model indicate should be done to ensure the long-term viability of a plant community and what are the impacts on the larger environment? Your PDF solution of no more than 25 total pages should include: 飩?One-page Summary Sheet. 飩?Table of Contents. 飩?Your complete solution. 飩?Reference List. Note: The MCM Contest has a 25-page limit. All aspects of your submission count toward the 25-page limit (Summary Sheet, Table of Contents, Report, Reference List, and any Appendices). You must cite the sources for your ideas, images, and any other materials used in your report. Glossary Biodiversity: The variety of life in the world or in a particular habitat or ecosystem.",
+  "data_files": [],
+  "data_audit": [],
+  "zip_entries": {},
+  "metadata_expected_methods": [
+    "mechanistic_model",
+    "differential_equation",
+    "numerical_simulation"
+  ],
+  "metadata_common_failures": [
+    "wrong_boundary_condition",
+    "unstable_solver",
+    "no_extreme_case"
+  ]
+}
+
+codex
+The case summary contains no attachment rows or auxiliary data, so the model will be a transparent synthetic mechanistic simulation driven only by parameters stated as assumptions. I’m checking the execution and verification requirements, then I’ll write a single self-contained script that emits metrics, figures, and a structured report.
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw 'C:/Users/伍辰杰/.codex/skills/test-driven-development/SKILL.md'; Get-Content -Raw 'C:/Users/伍辰杰/.codex/skills/verification-before-completion/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 5ms:
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-ChildItem -Force | Select-Object Name,Length,Mode; Get-ChildItem -Recurse -Depth 2 | Select-Object FullName' in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 54ms:
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-ChildItem -Force 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/workspaces-v2/A-mcm-2023-a-003-v2' | Format-List" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2
+ succeeded in 74ms:
+codex
+I’m setting up a small red-green check around the simulator’s invariants (nonnegative biomass and reproducible output), then I’ll implement the model and run the full experiment.
+apply patch
+patch: completed
+C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\results\workspaces-v2\A-mcm-2023-a-003-v2\test_prototype.py
+diff --git a/results/workspaces-v2/A-mcm-2023-a-003-v2/test_prototype.py b/results/workspaces-v2/A-mcm-2023-a-003-v2/test_prototype.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..33dd83d7ecab6f58b44c89c29ef0bea4a6ca7be7
+--- /dev/null
++++ b/results/workspaces-v2/A-mcm-2023-a-003-v2/test_prototype.py
+@@ -0,0 +1,10 @@
++import importlib
++
++
++def test_simulate_returns_nonnegative_reproducible_summary():
++    mod = importlib.import_module('simulate_community')
++    a = mod.run_experiment(seed=7, species=4, years=20)
++    b = mod.run_experiment(seed=7, species=4, years=20)
++    assert a['final_total_biomass'] >= 0
++    assert a['final_total_biomass'] == b['final_total_biomass']
++
+
+diff --git a/results/workspaces-v2/A-mcm-2023-a-003-v2/test_prototype.py b/results/workspaces-v2/A-mcm-2023-a-003-v2/test_prototype.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..33dd83d7ecab6f58b44c89c29ef0bea4a6ca7be7
+--- /dev/null
++++ b/results/workspaces-v2/A-mcm-2023-a-003-v2/test_prototype.py
+@@ -0,0 +1,10 @@
++import importlib
++
++
++def test_simulate_returns_nonnegative_reproducible_summary():
++    mod = importlib.import_module('simulate_community')
++    a = mod.run_experiment(seed=7, species=4, years=20)
++    b = mod.run_experiment(seed=7, species=4, years=20)
++    assert a['final_total_biomass'] >= 0
++    assert a['final_total_biomass'] == b['final_total_biomass']
++
+

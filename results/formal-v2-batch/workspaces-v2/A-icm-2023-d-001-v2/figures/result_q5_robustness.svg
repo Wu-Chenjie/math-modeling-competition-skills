@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="28" text-anchor="middle" font-family="Arial" font-size="20">q5 result: top-3 inclusion frequency</text>
+<line x1="70" y1="430" x2="830" y2="430" stroke="#333"/>
+<rect x="75.6" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="92.4" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 1</text>
+<rect x="120.3" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="137.1" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 2</text>
+<rect x="165.0" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="181.8" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 3</text>
+<rect x="209.7" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="226.5" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 4</text>
+<rect x="254.4" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="271.2" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 5</text>
+<rect x="299.1" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="315.9" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 6</text>
+<rect x="343.8" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="360.6" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 7</text>
+<rect x="388.5" y="159.2" width="33.5" height="270.8" fill="#577590"/>
+<text x="405.3" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 8</text>
+<rect x="433.2" y="96.7" width="33.5" height="333.3" fill="#577590"/>
+<text x="450.0" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 9</text>
+<rect x="477.9" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="494.7" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 10</text>
+<rect x="522.6" y="367.5" width="33.5" height="62.5" fill="#577590"/>
+<text x="539.4" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 11</text>
+<rect x="567.4" y="96.7" width="33.5" height="333.3" fill="#577590"/>
+<text x="584.1" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 12</text>
+<rect x="612.1" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="628.8" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 13</text>
+<rect x="656.8" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="673.5" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 14</text>
+<rect x="701.5" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="718.2" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 15</text>
+<rect x="746.2" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="762.9" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 16</text>
+<rect x="790.9" y="430.0" width="33.5" height="0.0" fill="#577590"/>
+<text x="807.6" y="448" text-anchor="middle" font-family="Arial" font-size="10">SDG 17</text>
+</svg>

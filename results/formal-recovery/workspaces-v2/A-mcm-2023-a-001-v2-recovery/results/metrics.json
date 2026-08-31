@@ -1,0 +1,19 @@
+{
+  "case_id": "mcm-2023-a",
+  "data_status": "no rows supplied; parameters are assumptions, not calibrated data",
+  "baseline": {
+    "species": 4,
+    "years": 80,
+    "final_total": 38.03386762177482,
+    "final_richness": 1.0
+  },
+  "scenario_count": 15,
+  "best_final_total": {
+    "species": 1,
+    "frequency": 0.1,
+    "final_total": 49.21814948942061,
+    "final_richness": 1.0,
+    "mean_total": 54.716868959969176
+  },
+  "min_final_total": 18.73427527194267
+}

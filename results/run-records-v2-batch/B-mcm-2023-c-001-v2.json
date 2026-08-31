@@ -1,0 +1,31 @@
+{
+  "group": "B",
+  "case_id": "mcm-2023-c",
+  "index": 1,
+  "run_id": "B-mcm-2023-c-001-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/mcm-2023-c",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-c.json",
+  "statement_sha256": "b511204705db800f3b812943b780074cc24bfe5108d26b6c20f308128e631ef6",
+  "data_sha256": "22d9c6c308700c6b744d74da8c83e358eefba955f58713c65f947624cda5ac94",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76",
+  "status": "timeout",
+  "started_at": "2026-08-30T08:57:06.408281+00:00",
+  "ended_at": "2026-08-30T09:07:06.435655+00:00",
+  "exit_code": null,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/B/B-mcm-2023-c-001-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/B-mcm-2023-c-001-v2",
+  "artifacts": [
+    "__pycache__/test_wordle_model.cpython-312.pyc",
+    "__pycache__/wordle_model.cpython-312.pyc",
+    "test_wordle_model.py",
+    "wordle_model.py"
+  ],
+  "reported_tokens": null,
+  "stdout_log": "results/formal-v2-batch/B/B-mcm-2023-c-001-v2.stdout.log",
+  "stderr_log": "results/formal-v2-batch/B/B-mcm-2023-c-001-v2.stderr.log",
+  "stdout_tail": "",
+  "stderr_tail": " [\n+            \"The reporting population is self-selected Twitter users, so inference does not identify all-player behavior.\",\n+            \"The March forecast extrapolates 60 days beyond the supplied period and its residual interval omits structural-break uncertainty.\",\n+            \"No external word-frequency, corpus, or Wordle strategy data were supplied; lexical features are intentionally sparse.\",\n+            \"Daily percentages are rounded and do not provide individual-level trial counts; multinomial sampling uncertainty cannot be reconstructed exactly.\",\n+            \"The anomalous six-letter token 'rprobe' is retained for primary results and excluded only in sensitivity analysis.\",\n+            \"Classification thresholds are sample-relative tertiles, not externally validated difficulty categories.\",\n+        ],\n+        \"reproducibility_manifest\": {},\n+        \"figures\": figures,\n+        \"pending_stages\": [],\n+    }\n+    RESULTS.mkdir(exist_ok=True)\n+    input_sha = hashlib.sha256(CASE_PATH.read_bytes()).hexdigest()\n+    report[\"reproducibility_manifest\"] = {\n+        \"random_seed\": 2023,\n+        \"input_path\": str(CASE_PATH),\n+        \"input_sha256\": input_sha,\n+        \"declared_problem_sha256\": \"b511204705db800f3b812943b780074cc24bfe5108d26b6c20f308128e631ef6\",\n+        \"declared_data_sha256\": \"22d9c6c308700c6b744d74da8c83e358eefba955f58713c65f947624cda5ac94\",\n+        \"python\": platform.python_version(),\n+        \"command\": \"python wordle_model.py\",\n+        \"runtime_seconds\": time.time() - started,\n+        \"figures_count\": len(figures),\n+    }\n+    (RESULTS / \"metrics.json\").write_text(json.dumps(report, indent=2, ensure_ascii=True), encoding=\"utf-8\")\n+    (RESULTS / \"repro_manifest.json\").write_text(json.dumps(report[\"reproducibility_manifest\"], indent=2), encoding=\"utf-8\")\n+    print(json.dumps({\"status\": \"ok\", \"records\": len(records), \"figures\": len(figures), \"metrics\": str(RESULTS / \"metrics.json\")}))\n+\n+\n+if __name__ == \"__main__\":\n+    main()\n\n"
+}

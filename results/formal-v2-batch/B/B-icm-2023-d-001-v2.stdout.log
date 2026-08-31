@@ -1,0 +1,20 @@
+{
+  "status": "partial",
+  "code_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-d-001-v2\\model_run.py",
+  "metrics_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-d-001-v2\\run-output\\metrics.json",
+  "figures_count": 3,
+  "tests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "pending_stages": [
+    "network_edge_estimation",
+    "priority_ranking",
+    "ten_year_forecast",
+    "achieved_goal_counterfactual",
+    "crisis_impact_quantification",
+    "external_validation",
+    "sensitivity_robustness",
+    "empirical_falsification"
+  ]
+}

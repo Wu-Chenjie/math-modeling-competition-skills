@@ -1,0 +1,65 @@
+{
+  "case_id": "mcm-2023-a",
+  "model": "stochastic_complementarity_logistic",
+  "seed": 2023,
+  "years": 40,
+  "scenarios": [
+    {
+      "scenario": "species_1",
+      "final_population": 1.0,
+      "minimum_population": 1.0,
+      "mean_drought_population": 1.0,
+      "extinction": 0
+    },
+    {
+      "scenario": "species_2",
+      "final_population": 1.06,
+      "minimum_population": 1.0,
+      "mean_drought_population": 1.0596396614550698,
+      "extinction": 0
+    },
+    {
+      "scenario": "species_4",
+      "final_population": 1.0899999999999999,
+      "minimum_population": 1.0,
+      "mean_drought_population": 1.0897007201534943,
+      "extinction": 0
+    },
+    {
+      "scenario": "species_8",
+      "final_population": 1.105,
+      "minimum_population": 1.0,
+      "mean_drought_population": 1.104758217148892,
+      "extinction": 0
+    },
+    {
+      "scenario": "high_drought",
+      "final_population": 1.09,
+      "minimum_population": 1.0,
+      "mean_drought_population": 1.0878220292511795,
+      "extinction": 0
+    },
+    {
+      "scenario": "pollution_habitat",
+      "final_population": 0.613125,
+      "minimum_population": 0.6131249999999999,
+      "mean_drought_population": 0.6131462252133855,
+      "extinction": 0
+    },
+    {
+      "scenario": "no_drought",
+      "final_population": 1.09,
+      "minimum_population": 1.0,
+      "mean_drought_population": 0.0,
+      "extinction": 0
+    }
+  ],
+  "data_audit": {
+    "data_files": [],
+    "rows_data": []
+  },
+  "limitations": [
+    "No attachments or omitted rows were used.",
+    "matplotlib unavailable; figures are dependency-free SVG only."
+  ]
+}

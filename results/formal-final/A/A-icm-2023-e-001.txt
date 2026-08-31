@@ -1,0 +1,117 @@
+# Modeling Report: A-icm-2023-e
+
+## Problem Framing
+
+The benchmark concerns light pollution: excessive or poorly used artificial light, including skyglow, light trespass, over-illumination, and light clutter. The stated impacts include degraded night-sky visibility, environmental effects, and health and safety consequences such as altered plant development, wildlife migration disruption, circadian-rhythm disturbance, and glare.
+
+The supplied summary does not enumerate the original numbered requirements. Accordingly, the following are provisional analytical tracks rather than claims about omitted tasks:
+
+1. Quantify and map spatial patterns of light pollution.
+2. Estimate associations between light pollution and environmental, health, or safety outcomes.
+3. Compare mitigation scenarios and their consequences.
+
+## Data Audit
+
+- `data_files`: none declared.
+- No tabular schema, sample size, coordinate system, time range, outcome variables, or measurement units are available.
+- No attachment or case directory was inspected.
+- Problem SHA-256: `058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da`.
+- Data SHA-256 recorded by the benchmark: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+- Expected method families: spatial analysis, statistical modeling, scenario analysis.
+- Recorded failure modes: sampling bias, confounded correlation, and absent uncertainty analysis.
+
+All empirical quantities, preprocessing rules, and performance metrics remain pending data availability.
+
+## Assumptions
+
+1. Light-pollution observations can eventually be indexed by location and, ideally, time.
+2. Exposure and response variables are measured on compatible spatial units.
+3. Potential confounders such as population density, urbanization, weather, season, socioeconomic status, and industrial activity can be observed or proxied.
+4. Intervention scenarios alter lighting intensity, spectrum, timing, shielding, or spatial coverage without changing all other drivers.
+5. Missingness and detection limits are documented rather than treated as zero.
+
+Each assumption requires diagnostic testing; none is established by the benchmark summary.
+
+## Candidate Models
+
+**Spatial track**
+
+- Baseline: descriptive maps, quantiles, exceedance fractions, and spatial autocorrelation.
+- Candidate A: generalized additive model (GAM) with spatial smooth \(f(\text{longitude},\text{latitude})\) and temporal smooth \(g(t)\).
+- Candidate B: Bayesian hierarchical spatial model with structured spatial effect and region-level random effects.
+
+**Effect track**
+
+- Baseline: adjusted linear/log-link regression with prespecified covariates.
+- Candidate A: multilevel regression,
+  \[
+  h_{it}=\beta_0+\beta_1L_{it}+\boldsymbol{\gamma}^{T}\mathbf X_{it}+u_i+v_t+\epsilon_{it}.
+  \]
+- Candidate B: difference-in-differences or interrupted time-series model where credible intervention timing exists.
+
+**Scenario track**
+
+- Baseline: proportional reduction model \(L'=(1-r)L\).
+- Candidate: constrained counterfactual simulation over intervention levers \(r\), with uncertainty propagated from the fitted exposure-response model.
+
+## Math Specification
+
+Let \(L(s,t)\) denote light-pollution intensity at location \(s\), time \(t\); \(Y(s,t)\) an environmental, health, or safety response; and \(\mathbf X(s,t)\) observed confounders.
+
+Spatial model:
+\[
+\eta(s,t)=\alpha+\mathbf b^\top\mathbf X(s,t)+f_s(s)+f_t(t),\qquad
+L(s,t)\sim p(\cdot\mid\eta(s,t)).
+\]
+
+Effect model:
+\[
+g\{E[Y(s,t)]\}=\theta_0+\theta_1L(s,t)+\boldsymbol{\theta}_X^\top\mathbf X(s,t)+u_{\text{region}}+v_t.
+\]
+
+Scenario \(k\) produces \(L_k(s,t)\). For a minimization objective,
+\[
+J_k=w_L\,\overline{L_k}+w_C\,C_k+w_R\,R_k,
+\]
+subject to budget, minimum service illumination, safety, and implementation constraints. Weights must be elicited or reported as ranges; arbitrary fixed weights are unacceptable.
+
+## Executable Experiment Plan
+
+Pending data and requirements confirmation:
+
+1. Verify input hashes, schema, units, coordinates, timestamps, duplicate records, missingness, and detection limits.
+2. Produce a preregistered train/validation/test split using spatial and temporal blocking.
+3. Fit the descriptive baseline, GAM/hierarchical spatial model, and adjusted effect model.
+4. Estimate uncertainty with bootstrap or posterior intervals.
+5. Run intervention scenarios over a documented parameter grid.
+6. Export maps, coefficient/interval tables, scenario rankings, and a machine-readable manifest.
+7. Execute all analyses from one deterministic command with logged package versions.
+
+No commands have been executed; results are pending.
+
+## Validation
+
+Use spatially blocked cross-validation for mapping, temporal holdouts where repeated observations exist, residual spatial-correlation tests, calibration/coverage checks, and comparison against the baseline. For effect estimates, inspect covariate balance, parallel trends (if applicable), influential observations, and sensitivity to alternative exposure aggregation scales.
+
+## Sensitivity and Robustness
+
+Vary spatial resolution, temporal aggregation, missing-data treatment, distribution/link function, confounder sets, spatial correlation structure, intervention effectiveness, and scenario weights. Report interval-valued rankings and the fraction of parameter draws in which each policy is preferred.
+
+## Falsification
+
+Apply placebo intervention dates, permuted exposure maps, negative-control outcomes, pre-intervention trend tests, and leave-one-region-out analyses. A claimed effect should weaken or disappear under designs that remove the proposed causal pathway.
+
+## Reviewer Risks
+
+Primary risks are nonrepresentative sampling, ecological fallacy, confounded correlation interpreted causally, exposure measurement error, incompatible spatial scales, arbitrary policy weights, and unreported uncertainty. The absent explicit question list and absent data schema are additional blockers to claiming task completion.
+
+## Reproducibility Manifest
+
+- Run ID: `A-icm-2023-e-001`
+- Benchmark input: `benchmarks/case-summaries.json`, entry `case_id=icm-2023-e`
+- Recorded problem/data hashes: as above
+- Random seed: pending
+- Software and dependency versions: pending
+- Input schema and preprocessing log: pending
+- Unique execution command: pending
+- Numerical results, scores, and citations: none available; do not infer or fabricate.

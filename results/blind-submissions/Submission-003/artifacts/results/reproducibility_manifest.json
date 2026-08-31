@@ -1,0 +1,10 @@
+{
+  "command": "python analysis.py --input \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\cumcm-2022-c.json\" --output .",
+  "input_sha256": "86b82e0ac469e5dff323bea2773de708fc879c26fc9e2f6cc8ff711b01e1e231",
+  "declared_problem_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+  "declared_data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "seed": 20220918,
+  "runtime_seconds": 36.24955868721008
+}

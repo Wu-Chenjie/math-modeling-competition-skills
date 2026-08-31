@@ -1,0 +1,390 @@
+{
+  "case_id": "cumcm-2022-c",
+  "seed": 20220918,
+  "input_audit": {
+    "known_rows": 69,
+    "valid_known_rows": 67,
+    "invalid_known_rows": 2,
+    "invalid_samples": [
+      "15",
+      "17"
+    ],
+    "artifact_rows": 58,
+    "unknown_rows": 8,
+    "blank_interpretation": "not detected -> 0 before multiplicative replacement",
+    "valid_sum_interval": [
+      85,
+      105
+    ]
+  },
+  "q1_weathering": {
+    "categorical_associations": {
+      "type": {
+        "levels": [
+          "铅钡",
+          "高钾"
+        ],
+        "table": [
+          [
+            12,
+            28
+          ],
+          [
+            12,
+            6
+          ]
+        ],
+        "chi_square_p": 0.019548014331003307,
+        "cramers_v": 0.32076261543731194
+      },
+      "pattern": {
+        "levels": [
+          "A",
+          "B",
+          "C"
+        ],
+        "table": [
+          [
+            11,
+            11
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            13,
+            17
+          ]
+        ],
+        "chi_square_p": 0.08388839673210007,
+        "cramers_v": 0.22642715760942025
+      },
+      "color": {
+        "levels": [
+          "浅绿",
+          "浅蓝",
+          "深绿",
+          "深蓝",
+          "紫",
+          "绿",
+          "缺失",
+          "蓝绿",
+          "黑"
+        ],
+        "table": [
+          [
+            2,
+            1
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "chi_square_p": 0.3071378142880555,
+        "cramers_v": 0.15058326642775174
+      }
+    },
+    "reconstruction_method": "type-specific unweathered CLR center; back-transform to closed composition",
+    "reconstruction_type_means": {
+      "高钾": {
+        "SiO2": 79.46337486005235,
+        "Na2O": 0.047841739616824065,
+        "K2O": 6.503942518753024,
+        "CaO": 2.426676618465167,
+        "MgO": 0.6330712943459651,
+        "Al2O3": 7.284241790824092,
+        "Fe2O3": 0.9038485534447996,
+        "CuO": 1.621827511947074,
+        "PbO": 0.10992898020893828,
+        "BaO": 0.06466044920072722,
+        "P2O5": 0.8595095376910271,
+        "SrO": 0.03283512912049362,
+        "SnO2": 0.018560562231467227,
+        "SO2": 0.02968045409806388
+      },
+      "铅钡": {
+        "SiO2": 61.11307012469642,
+        "Na2O": 0.1433602777080785,
+        "K2O": 0.09566854117678188,
+        "CaO": 0.7020489133273564,
+        "MgO": 0.22018062596263635,
+        "Al2O3": 4.169029350963522,
+        "Fe2O3": 0.10943798580030702,
+        "CuO": 0.6704307487790789,
+        "PbO": 23.69535399928571,
+        "BaO": 8.680131899486154,
+        "P2O5": 0.21953314673394744,
+        "SrO": 0.14875750513731992,
+        "SnO2": 0.018180413866477844,
+        "SO2": 0.014816467076209937
+      }
+    }
+  },
+  "q2_classification": {
+    "baseline_rule": "PbO+BaO > K2O",
+    "baseline_accuracy": 0.9850746268656716,
+    "loao_accuracy": 0.9850746268656716,
+    "loao_balanced_accuracy": 0.9722222222222222,
+    "confusion_matrix_rows_true_0_highK_1_leadBarium": [
+      [
+        17,
+        1
+      ],
+      [
+        0,
+        49
+      ]
+    ],
+    "subtypes": {
+      "高钾": {
+        "artifact_count": 16,
+        "clusters": 2,
+        "silhouette": 0.3750835659699292,
+        "assignments": {
+          "01": 1,
+          "03": 1,
+          "04": 1,
+          "05": 1,
+          "06": 1,
+          "07": 1,
+          "09": 1,
+          "10": 1,
+          "12": 1,
+          "13": 1,
+          "14": 1,
+          "16": 1,
+          "18": 2,
+          "21": 1,
+          "22": 1,
+          "27": 1
+        }
+      },
+      "铅钡": {
+        "artifact_count": 40,
+        "clusters": 2,
+        "silhouette": 0.21263346688606127,
+        "assignments": {
+          "02": 2,
+          "08": 2,
+          "11": 2,
+          "19": 2,
+          "20": 2,
+          "23": 1,
+          "24": 2,
+          "25": 1,
+          "26": 2,
+          "28": 2,
+          "29": 1,
+          "30": 2,
+          "31": 2,
+          "32": 2,
+          "33": 2,
+          "34": 2,
+          "35": 2,
+          "36": 1,
+          "37": 2,
+          "38": 1,
+          "39": 2,
+          "40": 2,
+          "41": 2,
+          "42": 1,
+          "43": 2,
+          "44": 1,
+          "45": 1,
+          "46": 2,
+          "47": 1,
+          "48": 2,
+          "49": 2,
+          "50": 2,
+          "51": 2,
+          "52": 1,
+          "53": 1,
+          "54": 2,
+          "55": 1,
+          "56": 2,
+          "57": 2,
+          "58": 2
+        }
+      }
+    }
+  },
+  "q3_unknown_classification": {
+    "predictions": {
+      "A1": {
+        "predicted_type": "高钾",
+        "probability_lead_barium": 0.010594312784019316,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A2": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9758220982040098,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A3": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9794539044544176,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A4": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9434686548155846,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A5": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9132239697434845,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A6": {
+        "predicted_type": "高钾",
+        "probability_lead_barium": 0.006169048022500142,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A7": {
+        "predicted_type": "高钾",
+        "probability_lead_barium": 0.005909994179103876,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A8": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9929371447237112,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      }
+    }
+  },
+  "q4_association": {
+    "method": "Pearson correlation in CLR coordinates, descriptive because closure induces dependence",
+    "top_absolute_correlation_differences": [
+      {
+        "pair": [
+          "Fe2O3",
+          "CuO"
+        ],
+        "delta_r": -1.0726395722896123,
+        "abs_delta_r": 1.0726395722896123
+      },
+      {
+        "pair": [
+          "Fe2O3",
+          "SnO2"
+        ],
+        "delta_r": 0.9026528822591491,
+        "abs_delta_r": 0.9026528822591491
+      },
+      {
+        "pair": [
+          "BaO",
+          "SO2"
+        ],
+        "delta_r": 0.8591400710594316,
+        "abs_delta_r": 0.8591400710594316
+      },
+      {
+        "pair": [
+          "CaO",
+          "SrO"
+        ],
+        "delta_r": 0.776216073064679,
+        "abs_delta_r": 0.776216073064679
+      },
+      {
+        "pair": [
+          "PbO",
+          "SO2"
+        ],
+        "delta_r": 0.7461661702185665,
+        "abs_delta_r": 0.7461661702185665
+      },
+      {
+        "pair": [
+          "CaO",
+          "CuO"
+        ],
+        "delta_r": -0.722735859031335,
+        "abs_delta_r": 0.722735859031335
+      },
+      {
+        "pair": [
+          "MgO",
+          "BaO"
+        ],
+        "delta_r": -0.6926152641381101,
+        "abs_delta_r": 0.6926152641381101
+      },
+      {
+        "pair": [
+          "SrO",
+          "SnO2"
+        ],
+        "delta_r": -0.6526175556741887,
+        "abs_delta_r": 0.6526175556741887
+      },
+      {
+        "pair": [
+          "SiO2",
+          "SrO"
+        ],
+        "delta_r": -0.6429894268518568,
+        "abs_delta_r": 0.6429894268518568
+      },
+      {
+        "pair": [
+          "MgO",
+          "SO2"
+        ],
+        "delta_r": -0.6415971293301632,
+        "abs_delta_r": 0.6415971293301632
+      }
+    ]
+  },
+  "validation": {
+    "split": "leave-one-artifact-out; all repeated sample points remain in the same fold",
+    "permutation_iterations_completed": 199,
+    "permutation_p": 0.005
+  },
+  "limitations": [
+    "Only audited rows_data were used; binary attachments were not opened.",
+    "Weathering reconstruction is a type-level CLR center, not a paired causal restoration for each artifact.",
+    "Subtypes are exploratory with small artifact counts.",
+    "Compositional correlations remain basis-dependent and are descriptive."
+  ],
+  "runtime_seconds": 36.24955868721008
+}

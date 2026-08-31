@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-009",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 8,
+    "model_reasonableness": 10,
+    "mathematical_rigor": 5,
+    "data_handling": 2,
+    "code_and_solving": 7,
+    "model_validation": 3,
+    "innovation": 3,
+    "result_interpretation": 4,
+    "paper_quality": 6,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "Policy simulation and robustness/falsification are reported, but input has no rows and several requested stages remain pending."
+}

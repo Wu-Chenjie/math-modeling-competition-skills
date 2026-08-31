@@ -1,0 +1,80 @@
+{
+  "submission_id": "Submission-017",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 18,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_baseline.svg",
+      "sha256": "b9b7891b944a359f54c871308c6cd1558bff4256034d3083c92a5038f11b7b48"
+    },
+    {
+      "path": "figures/process_q1_best_scenario.svg",
+      "sha256": "1ab6ecd37717f99c823bbcc26da15d2850b5862fcfe6875b3eab5adbb55176ec"
+    },
+    {
+      "path": "figures/process_q1_skyglow.svg",
+      "sha256": "1ce20965353f2a1d653071b692a41ea7fdf2efdbf9250d83481f203c38a55e74"
+    },
+    {
+      "path": "figures/raw_q1_baseline.svg",
+      "sha256": "b9b7891b944a359f54c871308c6cd1558bff4256034d3083c92a5038f11b7b48"
+    },
+    {
+      "path": "figures/raw_q1_best_scenario.svg",
+      "sha256": "1ab6ecd37717f99c823bbcc26da15d2850b5862fcfe6875b3eab5adbb55176ec"
+    },
+    {
+      "path": "figures/raw_q1_skyglow.svg",
+      "sha256": "1ce20965353f2a1d653071b692a41ea7fdf2efdbf9250d83481f203c38a55e74"
+    },
+    {
+      "path": "figures/result_q1_baseline.svg",
+      "sha256": "b9b7891b944a359f54c871308c6cd1558bff4256034d3083c92a5038f11b7b48"
+    },
+    {
+      "path": "figures/result_q1_best_scenario.svg",
+      "sha256": "1ab6ecd37717f99c823bbcc26da15d2850b5862fcfe6875b3eab5adbb55176ec"
+    },
+    {
+      "path": "figures/result_q1_skyglow.svg",
+      "sha256": "1ce20965353f2a1d653071b692a41ea7fdf2efdbf9250d83481f203c38a55e74"
+    },
+    {
+      "path": "flyer_urban_adaptive_led.md",
+      "sha256": "f836cba5ced60a07e1fbf8f5701c9cec8e382662a68532fbe1ab1f2eb5323b6c"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "20ca4ed25891a2b49dfed303936a94c83f162344ac45e9d5c50d5978679f32c1"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "80316bf33a2bd2f09ff1a82ae6921980ef20fe71a845a60cad253357184bda22"
+    },
+    {
+      "path": "results/reproducibility_manifest.json",
+      "sha256": "f17fb31c6bddfb8aed3e6c891c95410a323926ef2b6b7a9c5ecea1c2a27705a2"
+    },
+    {
+      "path": "results/risk_scores.csv",
+      "sha256": "02e24382a0e3f0a88abb7943594a8903b79933e170d9c770f0498256cfffee17"
+    },
+    {
+      "path": "results/selected_interventions.json",
+      "sha256": "156b6bf92a98247795e81e968ef03a89d77e59aa857ecac78c8f8bc719a51761"
+    },
+    {
+      "path": "results/sensitivity.json",
+      "sha256": "6ecc16a957d84448f5144441aaf67f3ea2a3d73313514d6621aaa56ac5f5e008"
+    },
+    {
+      "path": "run_model.py",
+      "sha256": "abe0098f256b7d0a14b9d02b8b051c08ca8ebe9067083ffc1344f10be211fc38"
+    },
+    {
+      "path": "test_run_model.py",
+      "sha256": "ff014449de0f27586cbcca0dc56c0095233410136d73ed5559f6ba74e165dfc3"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

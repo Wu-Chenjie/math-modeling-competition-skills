@@ -1,0 +1,230 @@
+{
+  "run_id": "B-icm-2023-d-003-v2",
+  "status": "partial_evidence_limited",
+  "problem_framing": {
+    "decision": "Prioritize 17 interdependent SDGs and assess network-mediated effects.",
+    "subproblems": [
+      "relationship network",
+      "priority and effectiveness",
+      "achievement counterfactual",
+      "crisis impacts",
+      "organizational transfer"
+    ],
+    "identifiability_boundary": "The supplied input identifies goal labels and requested outputs, but contains no observed relationships or outcomes."
+  },
+  "data_audit": {
+    "source_status": "verified",
+    "problem_sha256_declared": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+    "case_summary_sha256_computed": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf",
+    "data_files_count": 0,
+    "data_audit_entries": 0,
+    "rows_data_count": 0,
+    "goals_parsed": 17,
+    "binary_attachments_opened": 0,
+    "finding": "No empirical edge, weight, cost, progress, or response rows are available."
+  },
+  "assumptions": [
+    "Goal labels parsed from the supplied official problem text are the complete node set.",
+    "No missing relationship is interpreted as a zero relationship; all edges remain unknown.",
+    "In the absence of distinguishing evidence, goals are exchangeable and receive equal baseline priority."
+  ],
+  "candidate_models": [
+    {
+      "name": "signed weighted SDG influence network",
+      "status": "pending",
+      "need": "directed edge signs and strengths with provenance"
+    },
+    {
+      "name": "robust multi-criteria portfolio optimization",
+      "status": "pending",
+      "need": "costs, feasible actions, progress outcomes, and defensible criteria"
+    }
+  ],
+  "baseline": {
+    "name": "permutation-invariant maximum-entropy allocation",
+    "priority": [
+      {
+        "goal_id": 1,
+        "goal_name": "No Poverty",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 2,
+        "goal_name": "Zero Hunger",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 3,
+        "goal_name": "Good Health and Well-being",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 4,
+        "goal_name": "Quality Education",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 5,
+        "goal_name": "Gender Equality",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 6,
+        "goal_name": "Clean Water and Sanitation",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 7,
+        "goal_name": "Affordable and Clean Energy",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 8,
+        "goal_name": "Decent Work and Economic Growth",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 9,
+        "goal_name": "Industry, Innovation and Infrastructure",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 10,
+        "goal_name": "Reduced Inequality",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 11,
+        "goal_name": "Sustainable Cities and Communities",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 12,
+        "goal_name": "Responsible Consumption and Production",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 13,
+        "goal_name": "Climate Action",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 14,
+        "goal_name": "Life Below Water",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 15,
+        "goal_name": "Life on Land",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 16,
+        "goal_name": "Peace and Justice Strong Institutions",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      },
+      {
+        "goal_id": 17,
+        "goal_name": "Partnerships to achieve the Goal",
+        "priority": 0.058823529411764705,
+        "rank": 1
+      }
+    ],
+    "interpretation": "A neutral benchmark, not an empirical recommendation or inferred tie."
+  },
+  "math_specification": {
+    "node_set": "V={1,...,17}",
+    "observed_edge_set": "E_obs=empty",
+    "baseline_program": "maximize -sum_i p_i log(p_i), subject to p_i>=0 and sum_i p_i=1",
+    "solution": "p_i=1/17 for every i by symmetry and strict concavity",
+    "non_identifiability": "Any signed adjacency matrix and any non-uniform ranking require information absent from the benchmark input."
+  },
+  "code_prototype": {
+    "entrypoint": "run_model.py",
+    "interface": "python run_model.py --input <case-summary.json> --output artifacts",
+    "dependencies": [
+      "Python standard library"
+    ]
+  },
+  "experiment": {
+    "type": "deterministic evidence-limited baseline",
+    "observed_edges": 0,
+    "priority_sum": 1.0,
+    "normalized_entropy": 1.0,
+    "herfindahl_index": 0.058823529411764705
+  },
+  "validation": {
+    "goal_count_is_17": true,
+    "priority_nonnegative": true,
+    "priority_sums_to_one": true,
+    "permutation_invariant": true,
+    "input_has_no_relationship_rows": true
+  },
+  "sensitivity_robustness": {
+    "result": "Uniform allocation is invariant to relabeling.",
+    "ranking_robustness": "No strict rank is identified; all 17 goals share rank 1 under the baseline.",
+    "empirical_weight_sensitivity": "pending because no weights or uncertainty bounds are supplied"
+  },
+  "falsification": {
+    "claim_tested": "The supplied evidence supports a strict priority ordering.",
+    "result": "falsified",
+    "reason": "All goal-specific evidence vectors are empty; a strict ordering would change under a label permutation without evidential justification.",
+    "baseline_falsifier": "Any traceable goal-specific effectiveness, cost, constraint, or edge evidence would invalidate exchangeability and trigger re-estimation."
+  },
+  "reviewer_risks": [
+    "The neutral baseline does not answer substantive network or forecasting questions.",
+    "Treating absent observations as zero edges would be a material modeling error.",
+    "No claim about a 10-year outcome, crisis effect, or added goal is supportable from this input.",
+    "The generated figures visualize evidence coverage and the baseline, not empirical SDG performance."
+  ],
+  "reproducibility_manifest": {
+    "input_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json",
+    "input_sha256": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf",
+    "random_seed": null,
+    "deterministic": true,
+    "command": "python run_model.py --input \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json\" --output artifacts",
+    "figures": [
+      "artifacts/figures/raw_q1_goal_coverage.svg",
+      "artifacts/figures/process_q1_edge_evidence.svg",
+      "artifacts/figures/result_q1_network_status.svg",
+      "artifacts/figures/raw_q2_priority_evidence.svg",
+      "artifacts/figures/process_q2_uniform_baseline.svg",
+      "artifacts/figures/result_q2_priority_baseline.svg",
+      "artifacts/figures/raw_q3_achievement_evidence.svg",
+      "artifacts/figures/process_q3_counterfactual_status.svg",
+      "artifacts/figures/result_q3_reprioritization_status.svg",
+      "artifacts/figures/raw_q4_crisis_evidence.svg",
+      "artifacts/figures/process_q4_shock_model_status.svg",
+      "artifacts/figures/result_q4_crisis_priority_status.svg",
+      "artifacts/figures/raw_q5_transfer_evidence.svg",
+      "artifacts/figures/process_q5_transfer_framework.svg",
+      "artifacts/figures/result_q5_transfer_validation.svg"
+    ],
+    "figure_data_directory": "artifacts/figure_data"
+  },
+  "pending_stages": [
+    "empirical_network_estimation",
+    "network_centrality_ranking",
+    "10_year_effectiveness_forecast",
+    "achieved_goal_counterfactual",
+    "new_goal_recommendation",
+    "crisis_shock_quantification",
+    "external_organization_validation"
+  ]
+}

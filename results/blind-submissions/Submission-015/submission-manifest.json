@@ -1,0 +1,40 @@
+{
+  "submission_id": "Submission-015",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 8,
+  "artifacts": [
+    {
+      "path": "model_run.py",
+      "sha256": "1f0f7e6c3db18142e86214b45591b728c094e818c4c6be233600585accb24b33"
+    },
+    {
+      "path": "run-output/figures/process_q1_estimation_gates.svg",
+      "sha256": "c1eff4a14559c552c0022eadb7494ac7ea1d8163432e16da7392751978489cbe"
+    },
+    {
+      "path": "run-output/figures/raw_q1_input_inventory.svg",
+      "sha256": "414745a5bbf8fafbaee143ce1f7b4c33df0b5a4a5322bc68ee592e8e47ad2af5"
+    },
+    {
+      "path": "run-output/figures/result_q1_output_status.svg",
+      "sha256": "e29fa9e2a241d3571575c28458ef71c314f60cd1ee3b0f3b8823c140f0df1b68"
+    },
+    {
+      "path": "run-output/metrics.json",
+      "sha256": "119dcad7ebd192ada691ebc61ba47ac2e9e0885e1ae2312b96e16eb099c276c8"
+    },
+    {
+      "path": "run-output/modeling_report.json",
+      "sha256": "ede22a90a70bb08e7c342135cde90139a027484b1b8236eefb6bdb4623072723"
+    },
+    {
+      "path": "run-output/reproducibility_manifest.json",
+      "sha256": "609d70183218390d06464d2a9fd50480a170287bce0a7272ea4d81228008dc88"
+    },
+    {
+      "path": "test_model_run.py",
+      "sha256": "354f32e7e7b4cdf8c8a8493cfea9ee719158dc30d7b65c9b20a0220cd231d7fc"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

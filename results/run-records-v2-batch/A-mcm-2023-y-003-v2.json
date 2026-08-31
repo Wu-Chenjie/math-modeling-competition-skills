@@ -1,0 +1,31 @@
+{
+  "group": "A",
+  "case_id": "mcm-2023-y",
+  "index": 3,
+  "run_id": "A-mcm-2023-y-003-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/mcm-2023-y",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-y.json",
+  "statement_sha256": "2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce",
+  "data_sha256": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "timeout",
+  "started_at": "2026-08-30T09:07:53.269287+00:00",
+  "ended_at": "2026-08-30T09:17:53.292276+00:00",
+  "exit_code": null,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/A/A-mcm-2023-y-003-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-003-v2",
+  "artifacts": [
+    "__pycache__/run_model.cpython-312.pyc",
+    "__pycache__/test_run_model.cpython-312.pyc",
+    "run_model.py",
+    "test_run_model.py"
+  ],
+  "reported_tokens": null,
+  "stdout_log": "results/formal-v2-batch/A/A-mcm-2023-y-003-v2.stdout.log",
+  "stderr_log": "results/formal-v2-batch/A/A-mcm-2023-y-003-v2.stderr.log",
+  "stdout_tail": "",
+  "stderr_tail": "cted price\",np.exp(df.log_price.iloc[::max(1,len(df)//120)]),np.exp(p1[::max(1,len(df)//120)]),\"Actual USD\",\"Predicted USD\"),(\"result_q2_region_multipliers.svg\",\"Regional price multipliers\",range(len(region_effect)),[np.exp(v) for v in region_effect.values()],\"Coefficient index\",\"Multiplier\"),(\"result_q3_hk_pending.svg\",\"Hong Kong comparison unavailable\",[0,1],[0,0],\"Status\",\"No supplied HK data\")]\n+    for name,title,xs,ys,xlab,ylab in specs: svg(FIG/name,title,list(xs),list(ys),xlab,ylab)\n+    manifest = {\"generated_utc\":datetime.now(timezone.utc).isoformat(),\"python\":sys.version,\"platform\":platform.platform(),\"seed\":0,\"input_path\":str(SUMMARY),\"input_sha256\":hashlib.sha256(SUMMARY.read_bytes()).hexdigest(),\"command\":\"python run_model.py\",\"dependencies\":{\"numpy\":np.__version__,\"pandas\":pd.__version__}}\n+    (OUT/\"reproducibility_manifest.json\").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding=\"utf-8\")\n+    (OUT/\"metrics.json\").write_text(json.dumps({\"rows_used\":len(df),\"baseline\":baseline,\"main_cv\":m1,\"variant_cv\":m2,\"figures_count\":len(specs),\"pending_stages\":report[\"pending_stages\"]}, indent=2), encoding=\"utf-8\")\n+    print(json.dumps({\"rows_used\":len(df),\"main_cv\":m1,\"variant_cv\":m2,\"figures_count\":len(specs)}, separators=(\",\",\":\")))\n+\n+if __name__ == \"__main__\": main()\ndiff --git a/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-003-v2/test_run_model.py b/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-003-v2/test_run_model.py\nnew file mode 100644\nindex 0000000000000000000000000000000000000000..cc5c5d6f3b501fbe9bc58270f5ed12981ed3bb31\n--- /dev/null\n+++ b/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-003-v2/test_run_model.py\n@@ -0,0 +1,9 @@\n+from run_model import load_data, design\n+\n+def test_supplied_rows_are_loaded_and_design_is_finite():\n+    _, df = load_data()\n+    assert len(df) == 3490\n+    X, names = design(df, False)\n+    assert X.shape[0] == len(df)\n+    assert X.shape[1] == len(names)\n+    assert X.min() == X.min()\n\n"
+}

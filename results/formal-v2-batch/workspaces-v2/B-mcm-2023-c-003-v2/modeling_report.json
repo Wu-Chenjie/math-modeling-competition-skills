@@ -1,0 +1,109 @@
+{
+  "problem_framing": {
+    "title": "Predicting Wordle Results",
+    "questions": [
+      "reported-count prediction interval",
+      "hard-mode association",
+      "future outcome distribution",
+      "difficulty classification",
+      "other features"
+    ]
+  },
+  "data_audit": {
+    "source": "case summary JSON rows_data only",
+    "audited_sheet_rows": 481,
+    "audited_columns": 13,
+    "nonempty_cells": 4321,
+    "valid_data_rows": 359,
+    "date_min": "2022-01-07",
+    "date_max": "2022-12-31",
+    "omitted_rows_not_invented": true,
+    "binary_attachments_opened": false
+  },
+  "assumptions": [
+    "Rows are chronological and percentages are rounded compositions.",
+    "Twitter reporters represent the modeled population but not all players.",
+    "No external lexical or social data are used."
+  ],
+  "candidate_models": {
+    "q1": "log-linear trend with weekly Fourier terms; residual bootstrap interval",
+    "q2": "OLS hard-mode share on intrinsic word features and time",
+    "q3": "ALR compositional regression for seven outcomes",
+    "q4": "tertile classification by expected tries with feature diagnostics"
+  },
+  "baseline": {
+    "forecast": "historical mean reported count",
+    "distribution": "overall mean composition",
+    "difficulty": "tertile labels from observed expected tries"
+  },
+  "math_specification": {
+    "forecast": "log(1+N_t)=beta0+beta1 t+beta2 sin(2pi t/7)+beta3 cos(2pi t/7)+epsilon_t",
+    "composition": "ALR(p_t,j)=gamma_j^T x_t; p=softmax([ALR,0])",
+    "features": [
+      "vowel_count",
+      "unique_letters",
+      "repeat_excess",
+      "letter_sum",
+      "contains_e"
+    ]
+  },
+  "code_prototype": {
+    "path": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-mcm-2023-c-003-v2\\wordle_modeling.py",
+    "entrypoint": "main"
+  },
+  "experiment": {
+    "rows": 359,
+    "march_1_2023": {
+      "horizon_days": 60,
+      "point": 9413.130023425307,
+      "prediction_interval_95": [
+        5969.075804983683,
+        15432.913360536792
+      ]
+    },
+    "eerie": {
+      "distribution_percent": [
+        4.113279238326241e-08,
+        1.1684560667386286,
+        13.57717975675672,
+        32.92535431247964,
+        34.102346506582606,
+        16.56849910553356,
+        1.6581642107760524
+      ],
+      "expected_tries": 4.562997453363455,
+      "difficulty_class": "hard"
+    }
+  },
+  "validation": {
+    "rolling_origin_splits": 5,
+    "forecast_mae_mean": 7505.53770129783,
+    "hard_mode_accuracy_mean": 1.0,
+    "classification_note": "No held-out classifier package; class thresholds are descriptive."
+  },
+  "sensitivity_robustness": {
+    "bootstrap_draws": 4000,
+    "seed": 20230301,
+    "composition_clipped_probability": 1e-08,
+    "temporal_leakage_control": "rolling origin"
+  },
+  "falsification": [
+    "Residual autocorrelation or calendar shocks would invalidate the simple forecast.",
+    "Word-feature coefficients are associative, not causal.",
+    "Rounded percentages and reporter selection limit calibration."
+  ],
+  "reviewer_risks": [
+    "Only audited sample rows are available; omitted binary rows were not reconstructed.",
+    "March 1 is extrapolated 60 calendar days beyond the final 2022 row.",
+    "Difficulty labels depend on tertile thresholds and expected-tries proxy."
+  ],
+  "reproducibility_manifest": {
+    "case_id": "mcm-2023-c",
+    "input_sha256": "3a6237b515ff2d07de7a07d92b2104e03a040a938783b1508e75f7700626ec01",
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "seed": 20230301,
+    "command": "python wordle_modeling.py --input C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-c.json --output .",
+    "rows_used": 359
+  }
+}

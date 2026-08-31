@@ -1,0 +1,152 @@
+{
+  "case_id": "mcm-2023-a",
+  "model": "adaptive_competition_logistic",
+  "data_status": "no attachment rows supplied; parameters are explicit assumptions",
+  "baseline": {
+    "seed": 7,
+    "species": 4,
+    "years": 60,
+    "drought_prob": 0.25,
+    "severity_sd": 0.18,
+    "pollution": 0.0,
+    "habitat": 1.0,
+    "interaction": 0.12,
+    "final_total_biomass": 0.8212314197686872,
+    "final_richness": 4,
+    "drought_count": 14
+  },
+  "scenarios": [
+    {
+      "scenario": "low_drought",
+      "species": 1,
+      "final_total_biomass": 1.0,
+      "final_richness": 1,
+      "drought_count": 8
+    },
+    {
+      "scenario": "baseline",
+      "species": 1,
+      "final_total_biomass": 1.0,
+      "final_richness": 1,
+      "drought_count": 14
+    },
+    {
+      "scenario": "high_drought",
+      "species": 1,
+      "final_total_biomass": 1.0,
+      "final_richness": 1,
+      "drought_count": 33
+    },
+    {
+      "scenario": "low_drought",
+      "species": 2,
+      "final_total_biomass": 0.8752701285667077,
+      "final_richness": 2,
+      "drought_count": 8
+    },
+    {
+      "scenario": "baseline",
+      "species": 2,
+      "final_total_biomass": 0.873622482165296,
+      "final_richness": 2,
+      "drought_count": 14
+    },
+    {
+      "scenario": "high_drought",
+      "species": 2,
+      "final_total_biomass": 0.8683609511166602,
+      "final_richness": 2,
+      "drought_count": 33
+    },
+    {
+      "scenario": "low_drought",
+      "species": 4,
+      "final_total_biomass": 0.8235695117820373,
+      "final_richness": 4,
+      "drought_count": 8
+    },
+    {
+      "scenario": "baseline",
+      "species": 4,
+      "final_total_biomass": 0.8212314197686872,
+      "final_richness": 4,
+      "drought_count": 14
+    },
+    {
+      "scenario": "high_drought",
+      "species": 4,
+      "final_total_biomass": 0.8133159655218194,
+      "final_richness": 4,
+      "drought_count": 33
+    },
+    {
+      "scenario": "low_drought",
+      "species": 8,
+      "final_total_biomass": 0.8000224153319804,
+      "final_richness": 8,
+      "drought_count": 8
+    },
+    {
+      "scenario": "baseline",
+      "species": 8,
+      "final_total_biomass": 0.7976949929433268,
+      "final_richness": 8,
+      "drought_count": 14
+    },
+    {
+      "scenario": "high_drought",
+      "species": 8,
+      "final_total_biomass": 0.7901885412401856,
+      "final_richness": 8,
+      "drought_count": 33
+    },
+    {
+      "scenario": "low_drought",
+      "species": 16,
+      "final_total_biomass": 0.7887984788152416,
+      "final_richness": 16,
+      "drought_count": 8
+    },
+    {
+      "scenario": "baseline",
+      "species": 16,
+      "final_total_biomass": 0.7869980681526176,
+      "final_richness": 16,
+      "drought_count": 14
+    },
+    {
+      "scenario": "high_drought",
+      "species": 16,
+      "final_total_biomass": 0.7820232182031646,
+      "final_richness": 16,
+      "drought_count": 33
+    },
+    {
+      "scenario": "pollution_20pct",
+      "species": 8,
+      "final_total_biomass": 0.664977757946718,
+      "final_richness": 8,
+      "drought_count": 14
+    },
+    {
+      "scenario": "habitat_50pct",
+      "species": 8,
+      "final_total_biomass": 0.44366902861430946,
+      "final_richness": 8,
+      "drought_count": 14
+    },
+    {
+      "scenario": "combined",
+      "species": 8,
+      "final_total_biomass": 0.36312199115030147,
+      "final_richness": 8,
+      "drought_count": 14
+    }
+  ],
+  "extreme_checks": {
+    "no_drought": 0.8000000000000008,
+    "always_drought": 0.7875562318051325,
+    "single_species": 1.0
+  },
+  "figures_count": 9
+}

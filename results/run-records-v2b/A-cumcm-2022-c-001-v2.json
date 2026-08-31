@@ -1,0 +1,28 @@
+{
+  "group": "A",
+  "case_id": "cumcm-2022-c",
+  "index": 1,
+  "run_id": "A-cumcm-2022-c-001-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/cumcm-2022-c",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/cumcm-2022-c.json",
+  "statement_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+  "data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "completed",
+  "started_at": "2026-08-30T07:10:52.791810+00:00",
+  "ended_at": "2026-08-30T07:14:24.690595+00:00",
+  "exit_code": 0,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2b/A/A-cumcm-2022-c-001-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2b/workspaces-v2/A-cumcm-2022-c-001-v2",
+  "artifacts": [
+    "run_model.py"
+  ],
+  "reported_tokens": 311810,
+  "stdout_log": "results/formal-v2b/A/A-cumcm-2022-c-001-v2.stdout.log",
+  "stderr_log": "results/formal-v2b/A/A-cumcm-2022-c-001-v2.stderr.log",
+  "stdout_tail": "{\n  \"status\": \"pending\",\n  \"code_path\": \"C:\\\\Users\\\\伍辰杰\\\\Documents\\\\ChatGPT\\\\mathmodel\\\\math-modeling-competition-skills\\\\results\\\\formal-v2b\\\\workspaces-v2\\\\A-cumcm-2022-c-001-v2\\\\run_model.py\",\n  \"metrics_path\": null,\n  \"figures_count\": 0,\n  \"tests\": {\n    \"command\": \"python run_model.py\",\n    \"exit_code\": 1,\n    \"result\": \"ModuleNotFoundError: No module named 'pandas'\"\n  },\n  \"pending_stages\": [\n    \"data_audit_metrics\",\n    \"baseline\",\n    \"experiment\",\n    \"validation\",\n    \"sensitivity_robustness\",\n    \"falsification\",\n    \"machine_readable_metrics\",\n    \"figures\"\n  ]\n}\n",
+  "stderr_tail": ",'omitted_binary_not_read':True},'assumptions':['Blank composition means not detected and is encoded as 0 for compositional closure.','Only rows with sums in [85,105] are modeled.','CLR pseudocount epsilon=1e-6.'],'candidate_models':['Chi-square/Mann-Whitney compositional contrasts','CLR logistic regression and within-class KMeans','Spearman correlation'],'baseline':'Majority/type prior baseline is reported by cross-validation comparison against logistic model.','math_specification':'clr(x)_j=log((x_j+eps)/sum_k(x_k+eps)); logistic regression on standardized CLR; KMeans k=2 per type.','experiment':metrics,'validation':'5-fold stratified CV; silhouette scores; epsilon sensitivity.','sensitivity_robustness':metrics['q3']['epsilon_sensitivity'],'falsification':'Check composition sums and compare model CV to majority baseline; no claim of causality.','reviewer_risks':['Rows are repeated sampling points and may not be independent.','Zero-as-not-detected and CLR pseudocount affect small components.','Weathering correction is descriptive due limited paired points.'],'reproducibility_manifest':'results/复现清单.json'}\n+    (OUT/'modeling_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')\n+    sha=hashlib.sha256(CASE.read_bytes()).hexdigest()\n+    manifest={'input_case':str(CASE),'input_sha256':sha,'seed':SEED,'python':sys.version,'platform':platform.platform(),'parameters':{'valid_sum':[85,105],'clr_epsilon':1e-6,'cv_folds':5,'kmeans_k':2},'command':'python run_model.py','outputs':['results/metrics.json','results/modeling_report.json','figures/*.png','figures/*.svg']}\n+    (OUT/'复现清单.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')\n+    (OUT/'metrics.json').write_text(json.dumps(metrics,ensure_ascii=False,indent=2),encoding='utf-8')\n+    print(json.dumps({'status':'ok','n_figures':len(list(FIG.glob('*.png'))),'metrics':metrics},ensure_ascii=False))\n+\n+if __name__=='__main__': main()\n\ntokens used\n311,810\n"
+}

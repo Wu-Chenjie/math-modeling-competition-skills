@@ -1,0 +1,104 @@
+{
+  "status": "ok",
+  "n_rows": 359,
+  "input_sha256": "3a6237b515ff2d07de7a07d92b2104e03a040a938783b1508e75f7700626ec01",
+  "seed": 20230301,
+  "problem_framing": "Predict reported-count volume, hard-mode association, outcome distribution, and word difficulty from 2022 Wordle rows.",
+  "data_audit": {
+    "source": "case-summary JSON rows_data only",
+    "populated_rows": 359,
+    "date_min": "2022-01-07",
+    "date_max": "2022-12-31",
+    "binary_attachments_opened": false,
+    "omitted_rows_invented": false
+  },
+  "assumptions": [
+    "reported percentages are proportions with rounding error",
+    "word morphology represented by length-5 letter counts and vowels",
+    "temporal split preserves chronology",
+    "March 1 is extrapolation beyond observed dates"
+  ],
+  "candidate_models": {
+    "q1": "quadratic trend + weekend indicators on log1p(count), Gaussian residual PI",
+    "q2": "OLS hard-rate on lexical features",
+    "q3": "per-outcome OLS with clipping/renormalization; global-mean baseline",
+    "q4": "tertile difficulty score + one-vs-rest linear scores"
+  },
+  "q1_prediction": {
+    "date": "2023-03-01",
+    "point_estimate": 20049.862789491475,
+    "prediction_interval_95": [
+      11983.959997533748,
+      33544.134792752295
+    ]
+  },
+  "q2_hard_mode": {
+    "eerie_predicted_fraction": 0.10128000707804435,
+    "temporal_holdout_rmse": 0.09962829024664678,
+    "temporal_holdout_r2": -0.023998453456198776
+  },
+  "q3_distribution": {
+    "outcomes": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "X"
+    ],
+    "eerie_prediction": [
+      0.009145215763671527,
+      0.026149920889692146,
+      0.10010499810701423,
+      0.22315107876107537,
+      0.34681713103004236,
+      0.23892909955609792,
+      0.05570255589240623
+    ],
+    "bootstrap_95_low": [
+      0.0012958071120008506,
+      9.549667901332752e-06,
+      0.03692571177956671,
+      0.1377519232380699,
+      0.25614400205604426,
+      0.13268137754125622,
+      9.779315298533673e-06
+    ],
+    "bootstrap_95_high": [
+      0.01692151237174025,
+      0.0676143222739471,
+      0.16440536721872243,
+      0.3473558168183165,
+      0.4246580119974619,
+      0.3239778079353325,
+      0.13017436789770792
+    ],
+    "temporal_holdout_mae": 0.03622360439675901,
+    "baseline_mae": 0.03846514789759917
+  },
+  "q4_classification": {
+    "difficulty_cuts": [
+      4.003333333333334,
+      4.32
+    ],
+    "eerie_expected_tries": 4.811942510642043,
+    "eerie_class": "hard",
+    "temporal_holdout_accuracy": 0.4722222222222222
+  },
+  "validation": "Chronological 80/20 holdout; bootstrap (500 resamples) for EERIE intervals.",
+  "sensitivity_robustness": "Prediction uncertainty widens for March extrapolation; distribution model is benchmarked against global mean; hard-mode and class metrics are holdout-only.",
+  "falsification": "Reject feature claims if holdout error does not beat baseline or coefficients unstable under bootstrap; observed holdout metrics are retained regardless.",
+  "reviewer_risks": [
+    "Twitter reporters are a non-random sample",
+    "rounded percentages induce compositional noise",
+    "lexical features omit player strategy and known-word frequency",
+    "quadratic extrapolation may drift"
+  ],
+  "reproducibility_manifest": {
+    "code_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-recovery\\workspaces-v2\\A-mcm-2023-c-001-v2-recovery\\wordle_recovery.py",
+    "command": "python wordle_recovery.py",
+    "python": "3.12.13",
+    "figures_dir": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-recovery\\workspaces-v2\\A-mcm-2023-c-001-v2-recovery\\figures"
+  }
+}

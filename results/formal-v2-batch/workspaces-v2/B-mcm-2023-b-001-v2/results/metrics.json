@@ -1,0 +1,113 @@
+{
+  "status": "conditional_assumption_run",
+  "data_status": "pending_no_rows",
+  "input": {
+    "case_id": "mcm-2023-b",
+    "problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data_files": [],
+    "data_audit": []
+  },
+  "assumptions": {
+    "coefficients": {
+      "w0": 0.45,
+      "wz": 0.35,
+      "wc": 0.25,
+      "wp": 0.12,
+      "p0": 0.35,
+      "pp": 0.35,
+      "pc": 0.3,
+      "pz": 0.1,
+      "h0": 0.6,
+      "hz": 0.35,
+      "hc": 0.3,
+      "hp": 0.1,
+      "e0": 0.3,
+      "ep": 0.35,
+      "ec": 0.25,
+      "ez": 0.05
+    },
+    "grid_step": 0.1,
+    "capacity_constraint": "z+p+c<=1",
+    "weights": {
+      "wildlife": 0.3,
+      "people": 0.25,
+      "conflict_reduction": 0.25,
+      "economy": 0.2
+    },
+    "network_edges": "conceptual only; not geographic observations"
+  },
+  "best_policy": {
+    "wildlife": 0.7,
+    "people": 0.6499999999999999,
+    "conflict_reduction": 0.7,
+    "economy": 0.55,
+    "x": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "utility": 0.6574999999999999
+  },
+  "policy_scores": {
+    "baseline": {
+      "wildlife": 0.45,
+      "people": 0.35,
+      "conflict_reduction": 0.4,
+      "economy": 0.3,
+      "x": [
+        0,
+        0,
+        0
+      ],
+      "utility": 0.3825
+    },
+    "zoned_co_management": {
+      "wildlife": 0.6742,
+      "people": 0.425,
+      "conflict_reduction": 0.61,
+      "economy": 0.45999999999999996,
+      "x": [
+        0.6,
+        0.3,
+        0.1
+      ],
+      "utility": 0.55301
+    },
+    "corridor_community": {
+      "wildlife": 0.6108,
+      "people": 0.5499999999999999,
+      "conflict_reduction": 0.5549999999999999,
+      "economy": 0.5299999999999999,
+      "x": [
+        0.3,
+        0.4,
+        0.3
+      ],
+      "utility": 0.5654899999999999
+    },
+    "adaptive_hybrid": {
+      "wildlife": 0.7,
+      "people": 0.6499999999999999,
+      "conflict_reduction": 0.7,
+      "economy": 0.55,
+      "x": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "utility": 0.6574999999999999
+    }
+  },
+  "pareto_count": 21,
+  "long_term": {
+    "trend_method": "scenario recurrence; calibration pending",
+    "certainty": "not estimable without longitudinal data"
+  },
+  "pending_stages": [
+    "empirical_calibration",
+    "observed_network_validation",
+    "causal_economic_estimation",
+    "long_term_certainty_intervals"
+  ]
+}

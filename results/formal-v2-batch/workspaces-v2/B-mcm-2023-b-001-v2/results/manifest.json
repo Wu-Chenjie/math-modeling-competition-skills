@@ -1,0 +1,26 @@
+{
+  "seed": 20230830,
+  "input_path": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-b.json",
+  "input_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090",
+  "python": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "command": "python run_model.py --test",
+  "figures": [
+    "figures\\process_q1_outcomes.svg",
+    "figures\\process_q2_outcomes.svg",
+    "figures\\process_q3_outcomes.svg",
+    "figures\\raw_q1_policy_utility.svg",
+    "figures\\raw_q2_policy_utility.svg",
+    "figures\\raw_q3_policy_utility.svg",
+    "figures\\result_q1_conflict_reduction.svg",
+    "figures\\result_q2_conflict_reduction.svg",
+    "figures\\result_q2_network.svg",
+    "figures\\result_q3_conflict_reduction.svg"
+  ],
+  "tests": [
+    "feasibility",
+    "utility_recompute",
+    "pareto_non_dominated",
+    "figures_generated"
+  ]
+}

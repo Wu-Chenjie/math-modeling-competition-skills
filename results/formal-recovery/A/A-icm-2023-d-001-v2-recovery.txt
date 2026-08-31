@@ -1,0 +1,22 @@
+{
+  "status": "partial",
+  "code_path": "icm_baseline.py",
+  "metrics_path": "results/metrics.json",
+  "figures_count": 15,
+  "tests": {
+    "unittest": "PASS",
+    "py_compile": "PASS",
+    "execution": "PASS",
+    "deterministic_rerun": "PASS",
+    "strict_figure_audit": "FAIL: PNG unavailable because matplotlib is not installed; 15 SVG figures generated"
+  },
+  "pending_stages": [
+    "relationship_network_estimation",
+    "indicator_based_multi_criteria_ranking",
+    "ten_year_impact_projection",
+    "counterfactual_network_recalculation",
+    "crisis_scenario_quantification",
+    "external_validation_and_literature_calibration",
+    "publication_png_export"
+  ]
+}

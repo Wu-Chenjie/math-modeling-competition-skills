@@ -1,0 +1,64 @@
+{
+  "submission_id": "Submission-012",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 14,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_cv_mae.svg",
+      "sha256": "fba7761b96eaaf8daa9322a5d59b0cb4cb0a74fc87ff7384a8230e9e244fb248"
+    },
+    {
+      "path": "figures/process_q1_cv_rmse.svg",
+      "sha256": "2e9ad4ca37e81b289728f13c5745e93295890da2d3b6dc9a492497167143d621"
+    },
+    {
+      "path": "figures/process_q1_regularization.svg",
+      "sha256": "d041a3a10a07b5c1def0cdc03b3f471c6e894ab06c4ad17be5cf570f00c35bd2"
+    },
+    {
+      "path": "figures/raw_q1_age_by_hull.svg",
+      "sha256": "43d5a27e7e978440393a6225f0cfead1203e5aa4d69d2f19120d93f421755e31"
+    },
+    {
+      "path": "figures/raw_q1_price_by_hull.svg",
+      "sha256": "506ecc7d01663dc707d755c8f73c62fcecbe70d2d450a37162529ccb2572cb0d"
+    },
+    {
+      "path": "figures/raw_q2_region_counts.svg",
+      "sha256": "70e61de9494d2fd62f5f185543455e0aed6235e5d8d72258ed987772ffdc83a5"
+    },
+    {
+      "path": "figures/result_q1_variant_precision.svg",
+      "sha256": "ef5156808c55db2b982d22b917529cb40246ea994e740b5a698c3749786e3daf"
+    },
+    {
+      "path": "figures/result_q2_region_effects.svg",
+      "sha256": "d08d7622052e63eff922f1918fe4b984fd0ccdc96d7f7493aa459c48fba81ffd"
+    },
+    {
+      "path": "figures/result_q3_hk_data_readiness.svg",
+      "sha256": "3b6052f95216deb72813090a0c7e8366da72e75da37275dd8f35faa2557ce60a"
+    },
+    {
+      "path": "reproducibility_manifest.json",
+      "sha256": "e01cc8c9dd22a98c403719d87ff197ebb6e87677bb0a6e146b998d2e5ce52567"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "b2572f32ba271a2c571585a84023d1e7908315ee28d38c31167a168f7db47dfc"
+    },
+    {
+      "path": "results/oof_predictions.csv",
+      "sha256": "a210a7ad1657b9b161c5df5120d461e506d3ef2c96c1455ffc14b2208ce216a5"
+    },
+    {
+      "path": "sailboat_model.py",
+      "sha256": "da1fe0627776bb9b1a80285d098e72cd4bab3fc329253bd72a409f0a93386214"
+    },
+    {
+      "path": "test_model.py",
+      "sha256": "ab99c6cbe9a6fadc5a85b3d9ccfc2a1f41495ce1fab175b9382bfa83f00ccade"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

@@ -1,0 +1,68 @@
+{
+  "submission_id": "Submission-022",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 15,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_conflict.svg",
+      "sha256": "8afdd9d5b9a80d7868f0a2ac1222c050fbf5a5ec6eb6d06305222f8b53ec5a92"
+    },
+    {
+      "path": "figures/process_q1_livelihood.svg",
+      "sha256": "c88cbd1f87ccc3307c9f0a5c207d028b40fc4398b3c838866e4b49faa18083f3"
+    },
+    {
+      "path": "figures/process_q1_wildlife.svg",
+      "sha256": "ce3da6401521fdf1147adedcec4765bc088907a50441b15b546c8d357743fce7"
+    },
+    {
+      "path": "figures/raw_q1_conflict.svg",
+      "sha256": "1632e64d23069dd71e544aec74d9ec156f7eb8ba7a9829440197ba80d49ce9b9"
+    },
+    {
+      "path": "figures/raw_q1_livelihood.svg",
+      "sha256": "da1a839befc90820a6225f2fb43cffd4d31f7af098c13771f3889d295c6f2cae"
+    },
+    {
+      "path": "figures/raw_q1_wildlife.svg",
+      "sha256": "62dab6f5402debd592df3a49846811c90307bc70076414b57a159ac9fe091264"
+    },
+    {
+      "path": "figures/result_q1_conflict.svg",
+      "sha256": "b6e38183bdb0cb1fc58ec1b87306b8c6a307c3302487411dfe5df6016860cd05"
+    },
+    {
+      "path": "figures/result_q1_livelihood.svg",
+      "sha256": "574afff295d3eb03a01de33e670e84f9f8538bce98432c368be191b2deb21a43"
+    },
+    {
+      "path": "figures/result_q1_wildlife.svg",
+      "sha256": "c5070cd1fcf58bfa4bd66dcebca6aaa0540137084029b13ec6f2ac1614e7d513"
+    },
+    {
+      "path": "model.py",
+      "sha256": "db23b598577f03e6830cb97ad7ba17016d9abcd5c98cb3734a9265f6ac374b50"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "c7dba61ce3497e27c9ea3f795ff9c7556e541841f7f22fd96410483563506265"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "90388c71d98b9fd7abae1e90ee93c0ae7700df7b79b190f67ade706e5bc24cab"
+    },
+    {
+      "path": "results/reproducibility_manifest.json",
+      "sha256": "53f281bf97458a9ea47e647f23755498f37cae0473a9861bd4fe1476c32323d3"
+    },
+    {
+      "path": "results/strategy_metrics.csv",
+      "sha256": "1c29ca8c4e48c51b4a228ab1b2fb6f237cd61c4aa75e7ee8937acd285003e852"
+    },
+    {
+      "path": "test_model.py",
+      "sha256": "c313b9e9ac8f925703b1e8443c2c272cce19529a1866e1788bbf46073a7234d9"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

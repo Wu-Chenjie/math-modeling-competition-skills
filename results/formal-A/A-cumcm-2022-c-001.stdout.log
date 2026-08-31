@@ -1,0 +1,132 @@
+**Problem Framing**
+
+Case `cumcm-2022-c` is the 2022 CUMCM problem “古代玻璃制品的成分分析与鉴别,” a compositional-data classification task. The excerpt establishes two known classes: high-potassium glass (HK) and lead-barium glass (PB). Chemical components are reported as percentages whose sum should be 100%, but measurement error is allowed. A record is valid when its reported sum lies in `[85%, 105%]`.
+
+The summary does not contain the attachment rows or the complete verbatim subquestion list. The following operational decomposition is therefore proposed and must be confirmed against the official statement before execution:
+
+- Q1: discriminate HK versus PB using labeled samples.
+- Q2: account for weathering and infer class for weathered artifacts.
+- Q3: classify unlabeled/unknown artifacts and quantify classification confidence.
+
+No sample-level conclusion is supportable from the summary alone.
+
+**Data Audit**
+
+- Input inventory: `CUMCM_2022_C_附件.xlsx` only; not opened or parsed.
+- Problem SHA-256: `61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7`.
+- Data SHA-256: `14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2`.
+- Blank cells mean “component not detected” in the statement, but the detection limit is unspecified.
+- Required audit fields: sample identifier, class label, weathering status, component names/units, missingness, component sum, duplicate or batch indicators.
+- Validity filter: retain records with `85 ≤ s_i = Σ_j x_ij ≤ 105`; report excluded records and reasons.
+- The compositional closure constraint must be respected; applying ordinary regression directly to raw percentages risks spurious correlation.
+
+**Assumptions**
+
+1. Component percentages are nonnegative and measured on a common scale.
+2. Class labels in the labeled table are reference labels, not model predictions.
+3. Missing/blank components are censored observations, not automatically exact zeros.
+4. Weathering changes measured composition and may be class-dependent.
+5. Samples are independent unless metadata reveal batches, artifacts, or repeated measurements.
+
+**Candidate Models**
+
+For Q1, use at most two systems:
+
+1. **Primary:** isometric log-ratio (ilr) transformation followed by elastic-net logistic regression. This respects closure and yields interpretable component balances.
+2. **Comparator:** ilr-space quadratic discriminant analysis (QDA), with shrinkage covariance if sample size is limited.
+
+For Q2/Q3:
+
+1. **Weathering-aware discriminant model:** class- and weathering-specific Gaussian distributions in ilr space, or logistic regression with weathering indicator and prespecified interactions.
+2. **Latent-composition measurement-error model:** infer unweathered latent composition, then model observed ilr coordinates as latent coordinates plus weathering shift and measurement noise. Use posterior class probabilities and an out-of-domain flag.
+
+**Baseline**
+
+Closure-normalize each valid record and classify by nearest class centroid in ilr space. This is deliberately simple and supplies a transparent benchmark. A majority-class predictor should also be reported as a lower-bound reference.
+
+**Math Specification**
+
+Let \(x_{ij}\) be the measured proportion of component \(j\) for sample \(i\), and \(s_i=\sum_jx_{ij}\). After a documented treatment of censored values, define \(p_{ij}=x_{ij}/s_i\). For an orthonormal ilr basis \(V\),
+
+\[
+z_i=V^\top\log(p_i).
+\]
+
+For class \(c\in\{\mathrm{HK},\mathrm{PB}\}\),
+
+\[
+P(c_i=\mathrm{PB}\mid z_i)=
+\sigma(\beta_0+\beta^\top z_i),
+\]
+
+with elastic-net penalty
+\[
+\lambda\{\alpha\|\beta\|_1+(1-\alpha)\|\beta\|_2^2/2\}.
+\]
+
+For weathering state \(w\), a Gaussian discriminant specification is
+
+\[
+z_i\mid(c_i,w_i)\sim N(\mu_{cw},\Sigma_{cw}),
+\]
+
+and classification uses Bayes posterior probabilities. A latent model can use
+
+\[
+z_i^{obs}=z_i^{true}+\delta_{c_i,w_i}+\epsilon_i.
+\]
+
+All preprocessing, imputation, basis selection, and tuning must be fitted inside each training fold.
+
+**Executable Experiment Plan**
+
+Pending because the XLSX is intentionally not opened and no repository files may be modified.
+
+1. Parse only the permitted workbook in a temporary read-only run; inventory sheets, rows, columns, units, blanks, sums, labels, and weathering fields.
+2. Apply the `[85%,105%]` validity rule and produce an audit table.
+3. Fit fold-wise censored-value handling, closure normalization, and ilr transformation.
+4. Run nested stratified cross-validation for logistic and QDA models; reserve unknown samples for final inference.
+5. Fit the weathering-aware model using only metadata available before prediction.
+6. Export class probabilities, uncertainty intervals, excluded records, and an out-of-domain flag.
+7. Freeze environment, seed, parameters, and hashes in a manifest.
+
+**Validation**
+
+Use balanced accuracy, macro-F1, confusion matrix, log loss, Brier score, and calibration curves. Use stratified nested cross-validation; if the sample is small, add leave-one-out sensitivity. Bootstrap confidence intervals are pending execution. Check that no test-fold labels influence imputation, scaling, basis construction, or feature selection.
+
+**Sensitivity and Robustness**
+
+Repeat analyses under:
+
+- alternative valid-sum handling (`85–105%` versus stricter closure checks);
+- censored-value methods: multiplicative replacement, conservative half-limit replacement, and omission of heavily missing components;
+- alternative ilr balances;
+- robust versus classical covariance;
+- weathering perturbation magnitudes;
+- class weighting and probability thresholds.
+
+Report the proportion of samples whose predicted class changes across specifications.
+
+**Falsification**
+
+- Permute class labels and verify performance collapses toward chance.
+- Compare against raw-percentage models to expose closure-induced artifacts.
+- Apply closure-preserving perturbations and assess prediction stability.
+- Test whether performance is explained by batch, sampling location, or missingness patterns rather than chemistry.
+- Use posterior predictive checks for the weathering model and inspect influential samples.
+
+**Reviewer Risks**
+
+The exact subquestions and workbook contents are unavailable in the permitted summary, so Q1–Q3 are a proposed contract only. Other risks are unspecified detection limits, treating blanks as zeros, invalid-sum filtering without disclosure, weathering/class confounding, small or imbalanced classes, repeated artifacts violating independence, data leakage, and unsupported claims that statistical separation proves archaeological provenance.
+
+**Reproducibility Manifest**
+
+- Case ID: `cumcm-2022-c`
+- Input file: `CUMCM_2022_C_附件.xlsx`
+- Recorded problem/data hashes: as listed above
+- Planned seed: fixed before execution (for example, `202208`); no run has occurred
+- Planned software record: Python version, NumPy/Pandas/scikit-learn versions, OS, ilr implementation, and exact command
+- Planned outputs: audit table, fold metrics, fitted-model parameters, probabilities, sensitivity table, and exclusion log
+- Execution status: **PENDING**
+- Repository modifications: **none**
+- Independent M1/P1/P2 gates: **not run; no stage artifacts or executable results were created**

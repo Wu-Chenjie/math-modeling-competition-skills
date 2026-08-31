@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-007",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 9,
+    "model_reasonableness": 11,
+    "mathematical_rigor": 6,
+    "data_handling": 2,
+    "code_and_solving": 8,
+    "model_validation": 5,
+    "innovation": 4,
+    "result_interpretation": 4,
+    "paper_quality": 8,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "Dynamic equations and scenario assumptions are stated and synthetic nature disclosed; no empirical data, so calibration/validation is limited."
+}

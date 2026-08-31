@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-001",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 9,
+    "model_reasonableness": 17,
+    "mathematical_rigor": 9,
+    "data_handling": 7,
+    "code_and_solving": 9,
+    "model_validation": 10,
+    "innovation": 6,
+    "result_interpretation": 6,
+    "paper_quality": 8,
+    "reproducibility": 5
+  },
+  "fatal_flags": [],
+  "notes": "Report states compositional closure, artifact-level validation, candidate models and permutation/CV diagnostics; metrics and figures are present."
+}

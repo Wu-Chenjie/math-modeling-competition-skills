@@ -1,0 +1,33 @@
+{
+  "group": "A",
+  "case_id": "icm-2023-d",
+  "index": 2,
+  "run_id": "A-icm-2023-d-002-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/icm-2023-d",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/icm-2023-d.json",
+  "statement_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "completed",
+  "started_at": "2026-08-30T07:44:01.289351+00:00",
+  "ended_at": "2026-08-30T07:49:09.025185+00:00",
+  "exit_code": 0,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/A/A-icm-2023-d-002-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-icm-2023-d-002-v2",
+  "artifacts": [
+    "__pycache__/run_model.cpython-312.pyc",
+    "figures/process_q2_data_gate.svg",
+    "figures/raw_q1_input_coverage.svg",
+    "figures/result_q2_uniform_baseline.svg",
+    "results/metrics.json",
+    "run_model.py"
+  ],
+  "reported_tokens": 112238,
+  "stdout_log": "results/formal-v2-batch/A/A-icm-2023-d-002-v2.stdout.log",
+  "stderr_log": "results/formal-v2-batch/A/A-icm-2023-d-002-v2.stderr.log",
+  "stdout_tail": "{\"status\":\"partial_data_limited\",\"code_path\":\"C:\\\\Users\\\\伍辰杰\\\\Documents\\\\ChatGPT\\\\mathmodel\\\\math-modeling-competition-skills\\\\results\\\\formal-v2-batch\\\\workspaces-v2\\\\A-icm-2023-d-002-v2\\\\run_model.py\",\"metrics_path\":\"C:\\\\Users\\\\伍辰杰\\\\Documents\\\\ChatGPT\\\\mathmodel\\\\math-modeling-competition-skills\\\\results\\\\formal-v2-batch\\\\workspaces-v2\\\\A-icm-2023-d-002-v2\\\\results\\\\metrics.json\",\"figures_count\":3,\"tests\":[{\"name\":\"valid_case_schema\",\"passed\":true},{\"name\":\"detects_17_goals\",\"passed\":true},{\"name\":\"rejects_wrong_case\",\"passed\":true},{\"name\":\"uniform_simplex\",\"passed\":true}],\"pending_stages\":[\"network_estimation\",\"priority_effectiveness_experiment\",\"ten_year_forecast\",\"achieved_goal_counterfactual\",\"crisis_scenario_quantification\",\"ranking_validation\",\"weight_sensitivity_and_robustness\",\"empirical_falsification\"]}\n",
+  "stderr_tail": "rror(\"; \".join(errors))\n+\n+    out = args.output.resolve()\n+    results_dir = out / \"results\"\n+    figures_dir = out / \"figures\"\n+    results_dir.mkdir(parents=True, exist_ok=True)\n+    figures_dir.mkdir(parents=True, exist_ok=True)\n+\n+    report = build_report(case, args.input, input_hash)\n+    goal_count = report[\"data_audit\"][\"official_goal_count_detected\"]\n+    uniform = list(report[\"baseline\"][\"priority_by_goal\"].values())\n+\n+    svg_bar(\n+        figures_dir / \"raw_q1_input_coverage.svg\",\n+        \"Supplied benchmark input coverage\",\n+        [\"SDG nodes\", \"data files\", \"relationship rows\"],\n+        [goal_count, report[\"data_audit\"][\"data_files_count\"], report[\"data_audit\"][\"supplied_relationship_rows\"]],\n+        17,\n+        \"Only the 17 node labels are observed; no edge or outcome rows are supplied.\",\n+    )\n+    svg_bar(\n+        figures_dir / \"process_q2_data_gate.svg\",\n+        \"Model execution gate\",\n+        [\"schema\", \"baseline\", \"network\", \"forecast\", \"robustness\"],\n+        [1, 1, 0, 0, 0],\n+        1,\n+        \"1 = executable with supplied input; 0 = pending required data.\",\n+    )\n+    svg_uniform(figures_dir / \"result_q2_uniform_baseline.svg\", uniform)\n+\n+    report[\"execution\"] = {\n+        \"status\": \"partial_data_limited\",\n+        \"runtime_seconds\": round(time.perf_counter() - started, 6),\n+        \"tests\": tests,\n+        \"tests_passed\": sum(item[\"passed\"] for item in tests),\n+        \"tests_total\": len(tests),\n+        \"figures_count\": 3,\n+    }\n+    metrics_path = results_dir / \"metrics.json\"\n+    metrics_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")\n+    print(json.dumps({\n+        \"status\": report[\"execution\"][\"status\"],\n+        \"metrics_path\": str(metrics_path),\n+        \"figures_count\": 3,\n+        \"tests\": tests,\n+        \"pending_stages\": report[\"pending_stages\"],\n+    }, ensure_ascii=False))\n+    return 0\n+\n+\n+if __name__ == \"__main__\":\n+    raise SystemExit(main())\n\ntokens used\n112,238\n"
+}

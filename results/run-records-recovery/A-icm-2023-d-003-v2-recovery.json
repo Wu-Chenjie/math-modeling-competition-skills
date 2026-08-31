@@ -1,0 +1,33 @@
+{
+  "group": "A",
+  "case_id": "icm-2023-d",
+  "index": 3,
+  "run_id": "A-icm-2023-d-003-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/icm-2023-d",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/icm-2023-d.json",
+  "statement_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "completed",
+  "timeout_budget_seconds": 7200,
+  "started_at": "2026-08-30T09:55:27.353638+00:00",
+  "ended_at": "2026-08-30T10:08:34.713077+00:00",
+  "exit_code": 0,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/A/A-icm-2023-d-003-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-icm-2023-d-003-v2",
+  "artifacts": [
+    "__pycache__/run_model.cpython-312.pyc",
+    "figures/input_audit_status.svg",
+    "results/metrics.json",
+    "results/modeling_report.json",
+    "run_model.py"
+  ],
+  "reported_tokens": 186638,
+  "stdout_log": "results/formal-recovery/A/A-icm-2023-d-003-v2.stdout.log",
+  "stderr_log": "results/formal-recovery/A/A-icm-2023-d-003-v2.stderr.log",
+  "stdout_tail": "{\"status\":\"pending_data\",\"code_path\":\"run_model.py\",\"metrics_path\":\"results/metrics.json\",\"figures_count\":1,\"tests\":[\"python run_model.py ... (exit 0)\",\"python -m py_compile run_model.py (exit 0)\",\"metrics assertions (passed)\"],\"pending_stages\":[\"network construction and edge-weight estimation\",\"priority ranking and effectiveness evaluation\",\"10-year scenario projection\",\"achieved-goal network recomputation\",\"crisis perturbation analysis\",\"organization transfer validation\",\"weight sensitivity and ranking robustness\",\"falsification against observed outcomes\"]}\n",
+  "stderr_tail": " an explicit weight simplex. Parameters cannot be instantiated from this input.',\n+        'code_prototype': {'script': 'run_model.py', 'deterministic_seed': 0},\n+        'experiment': 'Input audit and SDG-label extraction only.',\n+        'validation': 'Structural validation passed for JSON parsing and extraction of all 17 SDG labels; predictive validation pending data.',\n+        'sensitivity_robustness': 'Pending; no criteria or weights available.',\n+        'falsification': 'Pending; no observed outcomes or external edge list available.',\n+        'reviewer_risks': ['Arbitrary weights', 'scale mismatch', 'unverifiable network edges', 'no ranking robustness without data'],\n+        'reproducibility_manifest': {\n+            'command': 'python run_model.py --input ../benchmarks/case-summaries/icm-2023-d.json --output-dir results',\n+            'python': sys.version,\n+            'platform': platform.platform(),\n+            'seed': 0,\n+            'input_path': str(input_path),\n+            'input_sha256_observed': sha256_file(input_path),\n+        },\n+        'status': 'pending_data',\n+        'pending_stages': pending,\n+    }\n+    metrics = {\n+        'status': report['status'],\n+        'case_id': case.get('case_id'),\n+        'goal_count': len(goals),\n+        'rows_data_count': len(rows_data),\n+        'data_audit_count': len(data_audit),\n+        'figures': ['figures/input_audit_status.svg'],\n+        'pending_stages': pending,\n+        'report': report,\n+    }\n+    (out_dir / 'modeling_report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')\n+    (out_dir / 'metrics.json').write_text(json.dumps(metrics, ensure_ascii=False, indent=2), encoding='utf-8')\n+    write_figure(fig_dir / 'input_audit_status.png', len(goals), len(rows_data))\n+    print(json.dumps({'status': report['status'], 'goals': len(goals), 'rows_data': len(rows_data), 'pending': len(pending)}))\n+\n+\n+if __name__ == '__main__':\n+    main()\n\ntokens used\n186,638\n"
+}

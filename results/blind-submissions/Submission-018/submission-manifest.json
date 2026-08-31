@@ -1,0 +1,64 @@
+{
+  "submission_id": "Submission-018",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 14,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_model_response.svg",
+      "sha256": "8f23408f63ae82a8501f4e78799a6c7bd9f2e84b5009bc8c239b82ea620da022"
+    },
+    {
+      "path": "figures/process_q3_strategy_response.svg",
+      "sha256": "5a7dd6fba0137425152ecd382beb8588c08041ff9da9828fa69306be4076e170"
+    },
+    {
+      "path": "figures/process_q4_penalty_response.svg",
+      "sha256": "fa40d0e473b4525a85a787692ea6f3c58b16a9fe9c57cf3c143d8f90af2a3204"
+    },
+    {
+      "path": "figures/raw_q1_metric_domain.svg",
+      "sha256": "0d4e3ace0a06d792f394e1dd97d9bab2e47b21477c826a3ff03f137e545a1071"
+    },
+    {
+      "path": "figures/raw_q3_efficacy_domain.svg",
+      "sha256": "53e10b2c5b8a01be5a51c6be37316295adba79c5ad4aea7ce79e163c3a54143c"
+    },
+    {
+      "path": "figures/raw_q4_safety_domain.svg",
+      "sha256": "b579cd9193c1e2c11ac18a9a74059de436f6026ffbab7d72ebc34265a839f316"
+    },
+    {
+      "path": "figures/result_q1_local_sensitivity.svg",
+      "sha256": "5879db219c1ad19cc1968762a4956ab0d2a4d36c2c6aefcc968367edc53e9fc1"
+    },
+    {
+      "path": "figures/result_q3_strategy_comparison.svg",
+      "sha256": "74c2802fd6ebbc00b2299463fb58cd62501c96e4603ef2559b725d13cb02280b"
+    },
+    {
+      "path": "figures/result_q4_safety_robustness.svg",
+      "sha256": "db184ce8d546aa8e2b09ad3dc2a20fb580fa63b6ee97186fbe06662db9752753"
+    },
+    {
+      "path": "light_pollution_model.py",
+      "sha256": "32440e55d134b861556c303451f30998c815809d91f37467dbe9aa3183ef5609"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "a8ee40b5bb0804913a72b56c2e4bbabe2ca242662d4f9f20b22f85b851dfc78a"
+    },
+    {
+      "path": "results/grid_summary.csv",
+      "sha256": "f1494ca0b2ebe1db6477c81b73f28713f6416305656c6d9bcf81c863f0baa19e"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "c4386e21ad95316d900ae2034a1d5ea0644e2ac7df8c9a14474e2ae4c6babf7f"
+    },
+    {
+      "path": "results/repro_manifest.json",
+      "sha256": "8813403a3789335de9b33f993cdae2e100e7013c25a481a551c56fe55968850b"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

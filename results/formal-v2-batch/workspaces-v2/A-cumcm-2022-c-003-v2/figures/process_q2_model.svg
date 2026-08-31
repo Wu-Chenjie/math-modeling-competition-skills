@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="30" y="32" font-family="Arial" font-size="18" fill="#222">q2 model process</text>
+<circle cx="70.0" cy="235.4" r="4" fill="#d95f02"/>
+<circle cx="84.0" cy="160.8" r="4" fill="#4472c4"/>
+<circle cx="97.9" cy="234.6" r="4" fill="#d95f02"/>
+<circle cx="111.9" cy="220.9" r="4" fill="#d95f02"/>
+<circle cx="125.8" cy="225.2" r="4" fill="#d95f02"/>
+<circle cx="139.8" cy="178.1" r="4" fill="#4472c4"/>
+<circle cx="153.7" cy="267.9" r="4" fill="#d95f02"/>
+<circle cx="167.7" cy="235.9" r="4" fill="#d95f02"/>
+<circle cx="181.6" cy="235.8" r="4" fill="#4472c4"/>
+<circle cx="195.6" cy="268.1" r="4" fill="#d95f02"/>
+<circle cx="209.5" cy="198.9" r="4" fill="#d95f02"/>
+<circle cx="223.5" cy="200.1" r="4" fill="#d95f02"/>
+<circle cx="237.4" cy="163.2" r="4" fill="#d95f02"/>
+<circle cx="251.4" cy="78.0" r="4" fill="#d95f02"/>
+<circle cx="265.3" cy="240.2" r="4" fill="#4472c4"/>
+<circle cx="279.3" cy="157.1" r="4" fill="#4472c4"/>
+<circle cx="293.3" cy="145.0" r="4" fill="#d95f02"/>
+<circle cx="307.2" cy="287.9" r="4" fill="#d95f02"/>
+<circle cx="321.2" cy="240.1" r="4" fill="#4472c4"/>
+<circle cx="335.1" cy="179.5" r="4" fill="#4472c4"/>
+<circle cx="349.1" cy="232.2" r="4" fill="#d95f02"/>
+<circle cx="363.0" cy="233.1" r="4" fill="#4472c4"/>
+<circle cx="377.0" cy="212.8" r="4" fill="#4472c4"/>
+<circle cx="390.9" cy="211.1" r="4" fill="#4472c4"/>
+<circle cx="404.9" cy="245.1" r="4" fill="#4472c4"/>
+<circle cx="418.8" cy="230.8" r="4" fill="#4472c4"/>
+<circle cx="432.8" cy="212.2" r="4" fill="#4472c4"/>
+<circle cx="446.7" cy="181.1" r="4" fill="#4472c4"/>
+<circle cx="460.7" cy="209.6" r="4" fill="#4472c4"/>
+<circle cx="474.7" cy="246.5" r="4" fill="#4472c4"/>
+<circle cx="488.6" cy="198.5" r="4" fill="#4472c4"/>
+<circle cx="502.6" cy="239.1" r="4" fill="#4472c4"/>
+<circle cx="516.5" cy="157.8" r="4" fill="#4472c4"/>
+<circle cx="530.5" cy="181.3" r="4" fill="#4472c4"/>
+<circle cx="544.4" cy="200.9" r="4" fill="#4472c4"/>
+<circle cx="558.4" cy="139.7" r="4" fill="#4472c4"/>
+<circle cx="572.3" cy="230.8" r="4" fill="#4472c4"/>
+<circle cx="586.3" cy="244.7" r="4" fill="#4472c4"/>
+<circle cx="600.2" cy="220.0" r="4" fill="#4472c4"/>
+<circle cx="614.2" cy="232.4" r="4" fill="#4472c4"/>
+<circle cx="628.1" cy="180.3" r="4" fill="#4472c4"/>
+<circle cx="642.1" cy="228.3" r="4" fill="#4472c4"/>
+<circle cx="656.0" cy="198.2" r="4" fill="#4472c4"/>
+<circle cx="670.0" cy="253.1" r="4" fill="#4472c4"/>
+<line x1="70" y1="360" x2="670" y2="360" stroke="#333"/>
+<line x1="70" y1="70" x2="70" y2="360" stroke="#333"/>
+</svg>

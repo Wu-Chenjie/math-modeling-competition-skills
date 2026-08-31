@@ -1,0 +1,64 @@
+{
+  "submission_id": "Submission-023",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 14,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_logtrend.svg",
+      "sha256": "3815d7ab9eef6bd1fe16ba22713cd99807e3c66b7885d4a0cf1cb9005f60e4b0"
+    },
+    {
+      "path": "figures/process_q2_hardfit.svg",
+      "sha256": "c191fa837d59e850e7d355920da56c195f5bf462f696d02f8a0824e872060b6e"
+    },
+    {
+      "path": "figures/process_q3_classes.svg",
+      "sha256": "b92f4f10820b3711cba14255e9305f158d6867715c179756c2190c0beaed2a2c"
+    },
+    {
+      "path": "figures/raw_q1_reported.svg",
+      "sha256": "ca29f2075262e7ceb3c7cdedffcb91246779dc5535d22d147aa92e8ee8ec088a"
+    },
+    {
+      "path": "figures/raw_q2_hardmode.svg",
+      "sha256": "4bfbe80822536b795ee0bdd121e17b6d4a8065b94e585d99b207937b4de08544"
+    },
+    {
+      "path": "figures/raw_q3_attempts.svg",
+      "sha256": "e636be9e14323887eab38b9dba8b6dd2c0eccc671031cfda6ce7d8741dd6cc2c"
+    },
+    {
+      "path": "figures/result_q1_forecast.svg",
+      "sha256": "3e7f414321aa6505b9c971fb9d2c3a3e6c97f53c791dd65456ec2f323be94a06"
+    },
+    {
+      "path": "figures/result_q2_eerie.svg",
+      "sha256": "9d05200a83752e769d746554838f2a00650de281497ae985abd3a262b095b50b"
+    },
+    {
+      "path": "figures/result_q3_eerie.svg",
+      "sha256": "1c909e897bb9c419d240b0c754ee1ec9a02a6ee9eb038f93afd22eba85cb568f"
+    },
+    {
+      "path": "reproducibility_manifest.json",
+      "sha256": "978264f9d002accf469d470f8d751f0ddb1336c57b4dc28595f51c2e365707b7"
+    },
+    {
+      "path": "results/forecast_and_eerie.csv",
+      "sha256": "e548f5368678b0af716de295af358f102c94889ace5f3fd666fa9c869c1849d6"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "afaef19afee93b514fa32c113870294a75d9bc89d9ce0a9d0b690dace6ed77ec"
+    },
+    {
+      "path": "solution.py",
+      "sha256": "40bb2a5560e7e41eb2cafecbe7bb6a2640334b3e5eda465c4a3f01726b1a9413"
+    },
+    {
+      "path": "test_solution.py",
+      "sha256": "4378b584e0bb7203a915cf24edee53ba258e51c0551f2f6f2dc9bcf1c2fcffd8"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

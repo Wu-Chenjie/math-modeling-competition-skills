@@ -1,0 +1,27 @@
+{
+  "case_id": "icm-2023-d",
+  "competition": "ICM",
+  "year": 2023,
+  "title": "Prioritizing the UN Sustainability Goals",
+  "problem_type": "multi_objective_decision",
+  "source_status": "verified",
+  "problem_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "pdf_pages": 2,
+  "pdf_extracted_chars": 3852,
+  "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 ICM Problem D: Prioritizing the UN Sustainability Goals Unknown author. Public domain via Wikimedia Commons Background The United Nations (UN) has set 17 Sustainable Development Goals (SDGs). Achieving these goals would ultimately lead to an improved life for many people around the world. These goals are not independent of each other. So, often positive gains in some goals have an impact (positive or negative and sometimes both) on other goals. This interconnectedness makes the achievement of all goals a fluid process where funding limitations and other national and international priorities may take precedence. Additionally, the impact of technological advances, global pandemics, climate change, regional wars, and refugee movements have had serious implications on many of the goals. Requirement To explore",
+  "problem_text": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 ICM Problem D: Prioritizing the UN Sustainability Goals Unknown author. Public domain via Wikimedia Commons Background The United Nations (UN) has set 17 Sustainable Development Goals (SDGs). Achieving these goals would ultimately lead to an improved life for many people around the world. These goals are not independent of each other. So, often positive gains in some goals have an impact (positive or negative and sometimes both) on other goals. This interconnectedness makes the achievement of all goals a fluid process where funding limitations and other national and international priorities may take precedence. Additionally, the impact of technological advances, global pandemics, climate change, regional wars, and refugee movements have had serious implications on many of the goals. Requirement To explore the relationships between the goals: • Create a network of the relationships between the 17 SDGs. • Use the individual SDGs, as well as the structure of your network, to set priorities that can most efficiently move the work of the UN forward. How did you evaluate the effectiveness of each priority? What could be reasonable to achieve in the next 10 years if your priorities are initiated? • If one of the SDGs is achieved (for example, there is no poverty or no hunger), what would be the structure of the resulting network? How would this achievement impact your team’s priorities? Are there other goals that should be included or proposed to the UN for inclusion? • Discuss the impact of technological advances, global pandemics, climate change, regional wars, and refugee movements, or other international crises on your team’s network and your team’s choice of priorities. What are the significant effects on the progress of the UN from a network perspective? • Discuss how your network approach may help other companies and organizations set priorities of their goals. | ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | UN Sustainable Development Goals[1] GOAL 1: No Poverty GOAL 2: Zero Hunger GOAL 3: Good Health and Well-being GOAL 4: Quality Education GOAL 5: Gender Equality GOAL 6: Clean Water and Sanitation GOAL 7: Affordable and Clean Energy GOAL 8: Decent Work and Economic Growth GOAL 9: Industry, Innovation and Infrastructure GOAL 10: Reduced Inequality GOAL 11: Sustainable Cities and Communities GOAL 12: Responsible Consumption and Production GOAL 13: Climate Action GOAL 14: Life Below Water GOAL 15: Life on Land GOAL 16: Peace and Justice Strong Institutions GOAL 17: Partnerships to achieve the Goal Your PDF solution of no more than 25 total pages should include: • One-page Summary Sheet. • Table of Contents. • Your complete solution. • Reference List. Note: The ICM has a 25-page limit. All aspects of your submission count toward the 25-page limit (Summary Sheet, Table of Contents, Reference List, and any Appendices). You must cite the sources for your ideas, images, and any other materials used in your report. Glossary United Nations (UN) - The United Nations (UN) is an intergovernmental organization whose stated purposes are to maintain international peace and security, develop friendly relations among nations, achieve international cooperation, and be a centre for harmonizing the actions of nations. Sustainable Development Goals (SDGs) - The Sustainable Development Goals (SDGs) or Global Goals are a collection of 17 interlinked objectives designed to serve as a “shared blueprint for peace and prosperity for people and the planet now and into the future”. References [1] Transforming Our World: The 2030 Agenda for Sustainable Development. UN General Assembly, A/RES/70/1, 2015.",
+  "data_files": [],
+  "data_audit": [],
+  "zip_entries": {},
+  "metadata_expected_methods": [
+    "multi_criteria_decision",
+    "weight_sensitivity",
+    "robustness_analysis"
+  ],
+  "metadata_common_failures": [
+    "arbitrary_weights",
+    "scale_mismatch",
+    "no_ranking_robustness"
+  ]
+}

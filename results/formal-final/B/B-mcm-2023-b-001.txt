@@ -1,0 +1,100 @@
+## Problem Framing
+
+**Case:** 2023 MCM Problem B, “Reimagining Maasai Mara” (verified summary input; problem SHA-256 `a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4`).
+
+The task concerns alternative management of resources inside and outside Kenya’s Maasai Mara preserve, consistent with the Wildlife Conservation and Management Act (2013) and later amendments. The supplied excerpt explicitly requests consideration and recommendation of specific policies and management strategies, but truncates the remainder of the bullet list. Exact subquestion wording, evaluation criteria, geography, and numerical limits are therefore pending.
+
+Primary decision: select a portfolio of conservation, community, tourism, infrastructure, and enforcement interventions. Expected analytical methods are network analysis, multi-objective optimization, and scenario analysis.
+
+## Data Audit
+
+The deterministic summary reports no attached data files, no spreadsheet sheets, and no tabular audit. Therefore:
+
+- No empirical baseline, spatial layer, budget, capacity, visitation, wildlife, or community data may be claimed.
+- `data_sha256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` is recorded as the summary’s data fingerprint, not as evidence of usable observations.
+- The problem PDF has 2 pages and 3,149 extracted characters.
+- The excerpt references sources `[1]` and `[2]`, but their bibliographic details are unavailable in the summary; citation verification is pending.
+
+## Assumptions
+
+Pending confirmation against the full statement:
+
+1. Management is represented by discrete interventions \(x_j\in\{0,1\}\), with optional intensity \(0\leq u_j\leq1\).
+2. Effects are evaluated over a fixed planning horizon \(T\), using normalized indices rather than invented physical units.
+3. Objectives include wildlife/conservation benefit, community benefit, financial sustainability, and implementation risk.
+4. Interventions consume budget, staff, land, or visitor capacity; all such capacities must come from the statement or be scenario parameters.
+5. Interactions among interventions and stakeholder locations are represented by a network.
+
+## Candidate Models
+
+**Model 1: Multi-objective mixed-integer optimization.**  
+Choose \(x,u\) to maximize a vector of objective functions subject to budget, capacity, feasibility, and policy constraints. Generate a Pareto frontier using \(\epsilon\)-constraint optimization, avoiding arbitrary fixed weights.
+
+**Model 2: Spatial-stakeholder network plus scenario simulation.**  
+Construct a multilayer graph whose nodes are park zones, corridors, community areas, tourism facilities, and enforcement points. Edges encode wildlife movement, revenue flows, conflict spillovers, and accessibility. Simulate intervention portfolios under ecological, economic, climate, and governance scenarios. This model tests network externalities and temporal resilience rather than replacing Model 1.
+
+## Baseline
+
+A transparent baseline is “current-boundary management”: no new external-management interventions, existing park boundary retained, and resources allocated proportionally to currently specified capacities. If the statement defines a different status quo, substitute it. Baseline objective values and feasibility are **pending execution** because no numerical inputs are available.
+
+## Math Specification
+
+Let \(G=(V,E)\) be the management network. For intervention \(j\):
+
+- cost \(c_j\), staff requirement \(h_j\), land requirement \(a_j\);
+- objective contribution \(b_{kj}\) for objective \(k\);
+- interaction coefficient \(q_{kij}\) for pairwise synergies or conflicts.
+
+Portfolio score:
+
+\[
+F_k(x,u)=F_{k0}+\sum_j b_{kj}x_ju_j+
+\sum_{(i,j)\in E}q_{kij}x_ix_j-\rho_k R_k(x,u).
+\]
+
+Core constraints:
+
+\[
+\sum_j c_jx_ju_j\le B,\quad
+\sum_j h_jx_ju_j\le H,\quad
+\sum_j a_jx_ju_j\le A,
+\]
+
+plus incompatibilities \(x_i+x_j\le1\), minimum coverage constraints, and connectivity requirements for selected corridor/enforcement nodes. Solve
+
+\[
+\max (F_1,\ldots,F_K)
+\]
+
+through \(\epsilon\)-constraint runs, retaining nondominated portfolios. Scenario \(s\) modifies costs, effects, capacities, and risk: \(F_k^{(s)}\).
+
+## Executable Experiment Plan
+
+1. Extract the complete bullet list and define a requirements-to-variable table.
+2. Obtain or encode only statement-supported data; document units, ranges, missingness, and provenance.
+3. Build the network adjacency and intervention-effect matrices.
+4. Implement the baseline and Model 1 in an MILP solver.
+5. Produce the Pareto frontier with \(\epsilon\)-constraint sweeps.
+6. Run Model 2 over named scenarios and compare portfolio rankings.
+7. Export portfolio decisions, objective values, constraint slacks, and scenario outcomes.
+8. All numerical outputs remain **pending** until actual execution.
+
+## Validation
+
+Use feasibility checks, independent recomputation of objective terms, solver optimality gaps, and perturbation tests. Hold out no data because none are supplied; empirical validation is pending data acquisition. Compare optimization recommendations with network-simulation outcomes and verify that every recommendation satisfies capacity and policy constraints.
+
+## Sensitivity and Robustness
+
+Vary budget/capacity parameters, intervention effects, interaction strengths, and objective trade-off tolerances over statement-justified ranges. Report rank stability, Pareto hypervolume, worst-case objective values, and regret relative to the scenario-optimal portfolio. Weight sensitivity should be replaced by \(\epsilon\)-constraint and stakeholder-weight elicitation where possible.
+
+## Falsification
+
+Reject the model if: (i) the status quo dominates every proposed portfolio; (ii) small parameter perturbations cause unstable recommendations; (iii) selected interventions routinely violate capacities; (iv) network interactions add no explanatory or predictive value; or (v) recommendations depend on undocumented weights or fabricated data.
+
+## Reviewer Risks
+
+Main risks are arbitrary weights, ignored capacity constraints, unsupported causal effects, incomplete treatment of communities outside the boundary, network edges without evidence, and claims presented as results before execution. The truncated excerpt also makes complete requirement coverage unverifiable.
+
+## Reproducibility Manifest
+
+Record case ID, both hashes, source-summary path, full-statement version, variable/constraint dictionary, scenario definitions, solver and dependency versions, random seed (if simulation is stochastic), tolerances, and a single command that rebuilds all tables and figures. Current manifest status: **pending implementation and execution**.

@@ -1,0 +1,27 @@
+{
+  "case_id": "icm-2023-e",
+  "command": "python light_pollution_model.py --output . --draws 2000",
+  "seed": 2023,
+  "draws": 2000,
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "Pillow": "12.3.0"
+  },
+  "input_sha256": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+  "figures": [
+    "process_q1_pressure_by_location.png",
+    "process_q2_exposure_vulnerability.png",
+    "process_q3_strategy_profiles.png",
+    "process_q4_strategy_delta.png",
+    "raw_q1_metric_weights.png",
+    "raw_q2_pressure_heatmap.png",
+    "raw_q3_intervention_reductions.png",
+    "raw_q4_selected_location_comparison.png",
+    "result_q1_baseline_risk.png",
+    "result_q2_location_ranking.png",
+    "result_q3_risk_reduction.png",
+    "result_q4_sensitivity_frequency.png"
+  ],
+  "metrics_sha256": "c9f4727d3a69e4cd446afad14901ca097924687b4941c7592af6a60b4f0a58d6"
+}

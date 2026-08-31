@@ -1,0 +1,137 @@
+# Modeling Report: B-mcm-2023-b
+
+## Problem Framing
+
+Maasai Mara is treated as a coupled conservation and community-resource system. The decision problem is to recommend management policies for resources inside and outside the current preserve boundary while balancing:
+
+- biodiversity and habitat connectivity;
+- local-community benefits and equitable resource sharing;
+- tourism/revenue generation;
+- enforcement and implementation cost;
+- ecological and operational capacity.
+
+The supplied excerpt identifies policy recommendation and boundary-aware management as the core requirement. Exact downstream sub-question wording should be checked against the official statement before implementation.
+
+## Data Audit
+
+The deterministic summary reports no attached empirical data files. Therefore, no observed wildlife, land-use, tourism, budget, or community data may be assumed.
+
+Available benchmark metadata:
+
+- Case: `mcm-2023-b`, MCM 2023 Problem B, verified.
+- Problem excerpt: 2 pages, 3,149 extracted characters.
+- Problem SHA-256: `a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4`
+- Data SHA-256: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`
+- Inventory: no data files; no ZIP entries.
+
+All numerical parameters, network topology, capacities, and policy costs are consequently **pending acquisition or explicit elicitation**.
+
+## Assumptions
+
+Provisional assumptions requiring confirmation:
+
+1. Management units can be represented as nodes (habitat blocks, community areas, tourism zones, or corridors).
+2. Policies have measurable effects on ecological, social, financial, and enforcement outcomes.
+3. Resource, budget, visitor, and enforcement capacities are finite.
+4. Benefits and costs can be normalized before aggregation.
+5. Uncertainty is represented through scenarios rather than hidden point estimates.
+6. Community outcomes require explicit equity constraints, not only an aggregate welfare objective.
+
+## Candidate Models
+
+**Model family A: Network-constrained multi-objective optimization.**  
+Represent zones and stakeholders as a graph; optimize policy intensities and cross-boundary agreements. This directly addresses the expected methods `network_analysis` and `multi_objective_optimization`.
+
+**Model family B: Scenario-based robustness analysis.**  
+Evaluate each policy portfolio under ecological, tourism, enforcement, and governance scenarios. This supplies `scenario_analysis` and tests whether recommendations remain acceptable under shocks.
+
+No more than these two independent model families should be used per subproblem.
+
+## Baseline
+
+Status quo: retain current boundaries and current management intensities. Apply the same evaluation metrics and normalization as for alternatives. Baseline results are **pending**, because no parameterized system or data are available.
+
+## Mathematical Specification
+
+Let \(G=(V,E(y))\) be the management network, where \(y_{ij}\in\{0,1\}\) indicates a corridor or cooperation link. Let \(x_i\in[0,1]\) denote intensity of policy \(i\).
+
+For scenario \(s\), compute:
+
+\[
+F_s(x,y)=\big(B_s,\;W_s,\;R_s,\;-C_s\big),
+\]
+
+where \(B\) is biodiversity/connectivity, \(W\) community welfare/equity, \(R\) revenue, and \(C\) implementation/enforcement cost.
+
+A Pareto portfolio may be found by:
+
+\[
+\max_{x,y}\; \sum_s p_s
+\left[
+w_B\tilde B_s+w_W\tilde W_s+w_R\tilde R_s-w_C\tilde C_s
+\right]
+-\rho\,\mathrm{SD}_s(U_s)
+\]
+
+subject to:
+
+\[
+\sum_i c_i x_i\le C_{\max},\qquad
+\sum_{i\in g} b_i x_i\ge Q_g^{\min},
+\]
+
+\[
+v_{ij}(x)\le K_{ij},\qquad
+\mathrm{Conn}(G)\ge L_{\min},\qquad
+x_i\in[0,1].
+\]
+
+Here \(C_{\max}\) is budget capacity, \(Q_g^{\min}\) is a community-equity floor, \(K_{ij}\) are ecological or visitor capacities, and \(\mathrm{Conn}(G)\) is a connectivity measure such as reachable habitat coverage or algebraic connectivity. Weights should be elicited or sensitivity-tested, never chosen arbitrarily.
+
+## Executable Experiment Plan
+
+1. Define a machine-readable schema for zones, links, stakeholders, policies, costs, capacities, and scenario assumptions.
+2. Validate units, missingness, bounds, and graph connectivity.
+3. Construct the status-quo baseline.
+4. Generate feasible policy portfolios using mixed-integer or nonlinear optimization.
+5. Produce a Pareto frontier and retain non-dominated portfolios.
+6. Stress-test each portfolio across all scenarios.
+7. Report objective values, constraint slack, community distribution, connectivity, cost, and robustness.
+8. Export configuration, seed, inputs, outputs, and solver status.
+
+Execution is **pending** because the benchmark provides no parameter dataset.
+
+## Validation
+
+Pending validation checks:
+
+- feasibility of every reported portfolio;
+- independent recomputation of objective components;
+- comparison with status quo;
+- extreme cases: zero budget, no cooperation links, maximum enforcement, and full-capacity tourism;
+- sensitivity to weights, capacities, scenario probabilities, and policy-effect coefficients;
+- stability of ranking under bootstrap or one-at-a-time perturbations.
+
+## Falsification Criteria
+
+Reject a recommendation if it violates any hard capacity or equity constraint, disconnects required habitat corridors, is dominated by the status quo, depends on a single arbitrary weight vector, or loses its advantage across plausible scenarios. Any causal claim unsupported by supplied evidence must be labeled as an assumption.
+
+## Reviewer Risks
+
+Primary risks are exactly those flagged in the benchmark metadata:
+
+- arbitrary objective weights;
+- ignored resource, visitor, or enforcement capacity;
+- no robustness analysis.
+
+Additional risks include fabricated empirical parameters, double-counting tourism and community benefits, treating graph links as guaranteed causation, and reporting unsupported numerical performance.
+
+## Reproducibility Manifest
+
+- Input source: deterministic case summary entry `mcm-2023-b`.
+- Problem hash: recorded above.
+- Data hash: recorded above; no empirical file available.
+- Random seed: pending; use a fixed seed for stochastic scenario generation.
+- Software versions and solver: pending.
+- Unique reproduction command: pending implementation.
+- Execution status: **not run**; no results, scores, rankings, or claims of empirical validation are available.

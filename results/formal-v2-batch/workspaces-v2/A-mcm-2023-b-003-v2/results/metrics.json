@@ -1,0 +1,261 @@
+{
+  "assumptions": {
+    "budget": "Feasible portfolios have normalized policy cost <= 0.57.",
+    "capacity": "Visits are capped by the smaller of the policy cap and habitat-adjusted capacity.",
+    "coefficients": "All coefficients are transparent normative elicitation placeholders and require local calibration.",
+    "long_term": "Outcomes approach scenario equilibria at 12% per year; this rate is uncalibrated.",
+    "scale": "All decisions and outcomes are dimensionless on [0,1].",
+    "scenarios": [
+      "reference",
+      "drought",
+      "tourism_boom",
+      "recession",
+      "governance_stress"
+    ]
+  },
+  "baseline": {
+    "definition": {
+      "benefit_share": 0.25,
+      "conflict_response": 0.35,
+      "core_protection": 0.6,
+      "corridor_protection": 0.4,
+      "tourism_cap": 1.0
+    },
+    "note": "Benchmark-defined comparison portfolio, not a measured representation of current management.",
+    "robust_outcomes": {
+      "community": 0.3082636,
+      "conflict_avoidance": 0.4353975,
+      "economy": 0.30473712,
+      "wildlife": 0.2736977
+    }
+  },
+  "candidate_models": [
+    {
+      "name": "robust multi-objective discrete optimization",
+      "role": "policy generation and Pareto filtering"
+    },
+    {
+      "name": "weighted interaction-risk network proxy",
+      "role": "animal-visitor-community conflict propagation"
+    },
+    {
+      "name": "scenario state-transition projection",
+      "role": "conditional 20-year trend exploration"
+    }
+  ],
+  "code_prototype": {
+    "deterministic": true,
+    "entrypoint": "python model.py --case-summary <mcm-2023-b.json>",
+    "language": "Python",
+    "random_seed": null
+  },
+  "data_audit": {
+    "case_id": "mcm-2023-b",
+    "data_files": 0,
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "limitation": "The benchmark supplies no observations; numerical outputs are conditional demonstrations, not empirical estimates.",
+    "model_generated_values_only": true,
+    "observed_rows": 0,
+    "problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+    "sample_rows_used": 0
+  },
+  "experiment": {
+    "candidate_count_feasible": 563,
+    "candidate_count_total": 1024,
+    "pareto_count": 22,
+    "recommended_candidate_id": "96408ba8450f",
+    "recommended_policy": {
+      "benefit_share": 0.45,
+      "conflict_response": 0.65,
+      "core_protection": 0.6,
+      "corridor_protection": 0.85,
+      "tourism_cap": 1.0
+    },
+    "recommended_robust_outcomes": {
+      "community": 0.4768964,
+      "conflict_avoidance": 0.6143525,
+      "economy": 0.2988322,
+      "wildlife": 0.4075223
+    },
+    "robust_delta_vs_baseline": {
+      "community": 0.1686328,
+      "conflict_avoidance": 0.178955,
+      "economy": -0.00590492,
+      "wildlife": 0.1338246
+    },
+    "scenario_count": 5,
+    "status": "conditional model result; calibration pending"
+  },
+  "falsification": {
+    "conditions": [
+      "Observed visitation exceeds modeled effective capacity without predicted degradation.",
+      "Locally estimated interaction effects reverse the signs used in the risk network.",
+      "A calibrated portfolio outside the discrete grid dominates the recommendation.",
+      "Benefit-sharing or response capacity cannot be implemented at the stated levels.",
+      "Empirical trajectories reject the first-order transition structure."
+    ],
+    "required_evidence": [
+      "zone-level wildlife trends",
+      "visitor counts and capacity",
+      "conflict incidents",
+      "household benefit distribution",
+      "program and tourism costs"
+    ]
+  },
+  "math_specification": {
+    "capacity": "visits_s=min(demand_s, cap, 0.76+0.16*corridor_s-0.08*core_s).",
+    "feasible_set": "X={x on stated grid: C(x)<=0.57}; C=0.28p_core+0.22p_corridor+0.12(1-cap)+0.18share+0.20response.",
+    "pareto_rule": "Retain x for which no feasible y weakly improves every R_j and strictly improves at least one.",
+    "ranking": "Among Pareto portfolios minimize maximum regret across five disclosed stakeholder weight profiles.",
+    "robust_vector": "R_j(x)=min_s f_j(x,s) for each objective j.",
+    "trend": "z_{t+1}=z_t+0.12(f(x,s)-z_t), z_0=0.5."
+  },
+  "problem_framing": {
+    "areas": [
+      "core preserve",
+      "buffer/corridor",
+      "adjacent community"
+    ],
+    "decision": "Choose zone-specific protection, corridor, tourism-cap, benefit-sharing, and conflict-response intensities.",
+    "objectives": [
+      "wildlife",
+      "community",
+      "economy",
+      "conflict_avoidance"
+    ],
+    "requested_outputs_covered": [
+      "policy portfolio",
+      "ranking methodology",
+      "interaction and economic model",
+      "long-term trends",
+      "transfer protocol"
+    ]
+  },
+  "reproducibility_manifest": {
+    "command": "model.py --case-summary C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-b.json --output-dir results --figures-dir figures",
+    "input": {
+      "case_id": "mcm-2023-b",
+      "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+      "source_status": "verified",
+      "summary_file_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090"
+    },
+    "logical_figures": 9,
+    "model_file_sha256": "20aef22360a30ac722c131698f4e1e6e4c35a24c80d51725e016838279d0b995",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13",
+    "randomness": "none"
+  },
+  "reviewer_risks": [
+    "No empirical calibration or external validation is possible from the supplied input.",
+    "The budget ceiling, coefficients, scenarios, and stakeholder weights are normative assumptions.",
+    "Normalized economic output is not currency and must not be reported as a monetary forecast.",
+    "Network topology is conceptual; spatial and species heterogeneity are omitted.",
+    "The recommendation is a decision-analysis demonstration, not an operational plan."
+  ],
+  "sensitivity_robustness": {
+    "interpretation": "Profile disagreement measures preference sensitivity; worst-scenario outcomes measure scenario robustness.",
+    "profile_winners": {
+      "balanced": {
+        "candidate_id": "96408ba8450f",
+        "utility": 0.44940085
+      },
+      "community_priority": {
+        "candidate_id": "96408ba8450f",
+        "utility": 0.45693037
+      },
+      "conflict_priority": {
+        "candidate_id": "96408ba8450f",
+        "utility": 0.4981672
+      },
+      "economic_priority": {
+        "candidate_id": "96408ba8450f",
+        "utility": 0.4035111
+      },
+      "wildlife_priority": {
+        "candidate_id": "9cbe4c63f2af",
+        "utility": 0.4387778
+      }
+    },
+    "scenario_set": {
+      "drought": {
+        "demand": 0.65,
+        "effectiveness": 0.9,
+        "pressure": 0.8,
+        "rainfall": 0.35
+      },
+      "governance_stress": {
+        "demand": 0.7,
+        "effectiveness": 0.7,
+        "pressure": 0.75,
+        "rainfall": 0.6
+      },
+      "recession": {
+        "demand": 0.45,
+        "effectiveness": 0.95,
+        "pressure": 0.55,
+        "rainfall": 0.65
+      },
+      "reference": {
+        "demand": 0.75,
+        "effectiveness": 1.0,
+        "pressure": 0.55,
+        "rainfall": 0.7
+      },
+      "tourism_boom": {
+        "demand": 1.15,
+        "effectiveness": 0.95,
+        "pressure": 0.65,
+        "rainfall": 0.65
+      }
+    },
+    "stakeholder_profiles": {
+      "balanced": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "community_priority": [
+        0.2,
+        0.5,
+        0.15,
+        0.15
+      ],
+      "conflict_priority": [
+        0.2,
+        0.2,
+        0.15,
+        0.45
+      ],
+      "economic_priority": [
+        0.2,
+        0.2,
+        0.45,
+        0.15
+      ],
+      "wildlife_priority": [
+        0.5,
+        0.2,
+        0.15,
+        0.15
+      ]
+    },
+    "winner_frequency": {
+      "96408ba8450f": 4,
+      "9cbe4c63f2af": 1
+    }
+  },
+  "validation": {
+    "checks": [
+      "deterministic repeatability",
+      "decision feasibility",
+      "capacity compliance",
+      "[0,1] outcome bounds",
+      "Pareto membership",
+      "report schema"
+    ],
+    "empirical_validation": "pending: no observed data in benchmark input",
+    "structural_validation_only": true
+  }
+}

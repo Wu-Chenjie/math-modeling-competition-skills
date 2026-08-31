@@ -1,0 +1,21 @@
+{
+  "group": "A",
+  "case_id": "cumcm-2022-c",
+  "index": 1,
+  "run_id": "A-cumcm-2022-c-001",
+  "case_root": "benchmarks/cases/cumcm-2022-c",
+  "statement_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+  "data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "failed",
+  "started_at": "2026-08-30T05:55:53.136416+00:00",
+  "ended_at": "2026-08-30T06:04:19.133576+00:00",
+  "exit_code": 4294967295,
+  "output_file": "results/raw3/A-cumcm-2022-c-001.txt",
+  "stdout_log": "results/raw3/A-cumcm-2022-c-001.stdout.log",
+  "stderr_log": "results/raw3/A-cumcm-2022-c-001.stderr.log",
+  "stdout_tail": "",
+  "stderr_tail": "Failed to create unified exec process: CreateProcessWithLogonW failed: 267\\\")\" }\nexec\n\"C:\\\\Users\\\\伍辰杰\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'git status --short' in C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\n succeeded in 114ms:\nwarning: unable to access 'C:\\Users\\伍辰杰/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\伍辰杰/.config/git/ignore': Permission denied\n M tests/test_evaluate.py\n?? results/raw2/\n?? results/raw3/\n?? results/run-plan.json\n?? results/run-records-v2/\n?? results/run-records/\n?? results/trials/\n?? scripts/run_baseline.py\n?? tmp/\n\ncodex\n数据审计已完成到可复核层面：成分表 69 行中 67 行满足题目给出的 85%–105% 和值规则，2 行不满足；主要缺失集中在 Na₂O、SnO₂、SO₂ 等列，不能直接当作零。未知表为 8 个样品（A1–A8），不是已执行分类结果；后续分类、预测和显著性检验均会标为 pending。\n2026-08-30T06:03:37.208308Z ERROR codex_core::tools::router: error=exec_command failed for `\"C:\\\\Users\\\\伍辰杰\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python -c \\\"import importlib.metadata as m; print('python',__import__('sys').version.split()[0]);\nfor p in ['numpy','matplotlib','pypdf','pdfplumber','pandas','openpyxl']:\n try: print(p,m.version(p))\n except Exception as e: print(p,'MISSING')\\\"\"`: CreateProcess { message: \"Rejected(\\\"Failed to create unified exec process: CreateProcessWithLogonW failed: 267\\\")\" }\n2026-08-30T06:03:51.617435Z ERROR codex_core::tools::router: error=exec_command failed for `\"C:\\\\Users\\\\伍辰杰\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python -c \\\"import importlib.metadata as m,sys; print('python',sys.version.split()[0]); print([(p, (m.version(p) if p in [x.metadata['Name'].lower() for x in m.distributions()] else 'MISSING')) for p in ['numpy','matplotlib','pypdf','pdfplumber','pandas','openpyxl']])\\\"\"`: CreateProcess { message: \"Rejected(\\\"Failed to create unified exec process: CreateProcessWithLogonW failed: 267\\\")\" }\n"
+}

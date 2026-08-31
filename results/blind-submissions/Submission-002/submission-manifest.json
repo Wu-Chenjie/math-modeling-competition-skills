@@ -1,0 +1,76 @@
+{
+  "submission_id": "Submission-002",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 17,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_type_weathering.svg",
+      "sha256": "aeac14c7b8b1c0d510c73a462a5b899392a29725c2f5387dee7ff9c8c0edb254"
+    },
+    {
+      "path": "figures/process_q2_subclasses.svg",
+      "sha256": "fe9104db0913069f4e51d8dde7098323cfaaf2ab9d7484cd5f2283ee59d0b416"
+    },
+    {
+      "path": "figures/process_q3_margin.svg",
+      "sha256": "3a2a2c34f80764319876ff27cc76b6dc617672de20aba58060973196336d96c3"
+    },
+    {
+      "path": "figures/process_q4_top_corr.svg",
+      "sha256": "f06199d71c6a1a4a3a850c349954466b418c6e94c1a0808f8e03db740f9ff56b"
+    },
+    {
+      "path": "figures/raw_q1_weathering.svg",
+      "sha256": "dc61a31b85399c72f80add6ae644caf197b73d0d53a17259650b22b31dd6d878"
+    },
+    {
+      "path": "figures/raw_q2_markers.svg",
+      "sha256": "1ef921b765cd52157893a37a0d7c7b6e55705050be948f52f82defe54aea4e3b"
+    },
+    {
+      "path": "figures/raw_q3_unknown.svg",
+      "sha256": "866c4d7d2955b7b6a8a2fca816c98c0b3628fcfebde0bb998abe7113ac08716d"
+    },
+    {
+      "path": "figures/raw_q4_type_sizes.svg",
+      "sha256": "4b3ef6e0bea4c6b18efe22f7b6e09bab72df12d2decf81bfc091a675be5fa934"
+    },
+    {
+      "path": "figures/result_q1_sio2.svg",
+      "sha256": "7f9d2d001df7dab87143e4197d5a458e644c18069dddb7fc811b37b220c49d1d"
+    },
+    {
+      "path": "figures/result_q2_loo.svg",
+      "sha256": "fa679077679917a951f6d565e81bdee9f753b2abdc705c96ffa06bd2116b7f14"
+    },
+    {
+      "path": "figures/result_q3_stability.svg",
+      "sha256": "a8b1930fc0f56db3cdee5ac84423d499a809ed8bb1c321dfd26b8f13208af88b"
+    },
+    {
+      "path": "figures/result_q4_type_diff.svg",
+      "sha256": "6807c508a7b6d7e3828ab55b30b6c1f94350519005af215c87c222224cd46682"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "b36e702a245cc0ec9dc080b00f778daf829db7edd974b442fd878448359e3b19"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "f3f40153253f9ff253db693a9e22b32c95a6ca02b1210579bcb6ffc97e9a5304"
+    },
+    {
+      "path": "results/reproducibility_manifest.json",
+      "sha256": "3d6b0737a014f3ff1cf2fb9428ab4b22168c514077bc188bbc73882b9fd9333d"
+    },
+    {
+      "path": "run_model.py",
+      "sha256": "87e6afcd88b26c8a2c25d9f9f9295de751e203c5d9669c01a2fff7c3a59b311d"
+    },
+    {
+      "path": "test_model.py",
+      "sha256": "f5cab49820aa16c8cbc7d35f4fc26b18b5283865ee67a84effcb6e02a9613115"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

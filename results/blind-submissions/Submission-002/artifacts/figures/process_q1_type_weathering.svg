@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="62" y="28" font-family="Arial" font-size="16" font-weight="bold">Q1 weathering by type</text>
+<line x1="62" y1="368" x2="698" y2="368" stroke="#333"/>
+<rect x="87.44" y="282.85" width="108.12" height="85.15" fill="#7570b3"/>
+<text x="141.50" y="385" text-anchor="middle" font-family="Arial" font-size="10">K-none</text>
+<text x="141.50" y="277.85" text-anchor="middle" font-family="Arial" font-size="10">8.000</text>
+<rect x="246.44" y="304.14" width="108.12" height="63.86" fill="#7570b3"/>
+<text x="300.50" y="385" text-anchor="middle" font-family="Arial" font-size="10">K-weather</text>
+<text x="300.50" y="299.14" text-anchor="middle" font-family="Arial" font-size="10">6.000</text>
+<rect x="405.44" y="250.92" width="108.12" height="117.08" fill="#7570b3"/>
+<text x="459.50" y="385" text-anchor="middle" font-family="Arial" font-size="10">Pb-none</text>
+<text x="459.50" y="245.92" text-anchor="middle" font-family="Arial" font-size="10">11.000</text>
+<rect x="564.44" y="101.91" width="108.12" height="266.09" fill="#7570b3"/>
+<text x="618.50" y="385" text-anchor="middle" font-family="Arial" font-size="10">Pb-weather</text>
+<text x="618.50" y="96.91" text-anchor="middle" font-family="Arial" font-size="10">25.000</text>
+</svg>

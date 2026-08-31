@@ -1,0 +1,9 @@
+test,value,interpretation
+bounds_violations,0,synthetic structural test
+monotonicity_violations,0,synthetic structural test
+finite_violations,0,synthetic structural test
+all_zero,0.0,analytic boundary
+all_one,1.0,analytic boundary
+p=1.0,0.5,deterministic reference vector; not location data
+p=2.0,0.6009252125773316,deterministic reference vector; not location data
+p=4.0,0.7076517579156499,deterministic reference vector; not location data

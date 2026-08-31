@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "code_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2c\\workspaces-v2\\A-cumcm-2022-c-001-v2\\run_analysis.py",
+  "metrics_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2c\\workspaces-v2\\A-cumcm-2022-c-001-v2\\analysis_output\\metrics.json",
+  "figures_count": 10,
+  "tests": {
+    "command": "pytest -q test_run_analysis.py",
+    "passed": 2,
+    "failed": 0
+  },
+  "pending_stages": []
+}

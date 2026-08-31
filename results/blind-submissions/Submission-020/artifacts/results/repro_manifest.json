@@ -1,0 +1,22 @@
+{
+  "seed": 7,
+  "command": "python drought_model_run.py",
+  "input_case": "mcm-2023-a.json",
+  "input_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+  "dependencies": {
+    "python": "3.12.13",
+    "matplotlib": null
+  },
+  "figures": [
+    "process_q1_biomass.svg",
+    "process_q2_adaptation.svg",
+    "process_q3_stress.svg",
+    "raw_q1_precipitation.svg",
+    "raw_q2_sensitivity.svg",
+    "raw_q3_environment.svg",
+    "result_q1_species.svg",
+    "result_q2_frequency.svg",
+    "result_q3_pollution_habitat.svg"
+  ],
+  "code_sha256": "f431dc5fc0654e57a44e91e553f43425b831665215c716b4da76167e9a92b043"
+}

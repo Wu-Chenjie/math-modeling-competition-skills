@@ -1,0 +1,16 @@
+{
+  "status": "partial",
+  "code_path": "model_prototype.py",
+  "metrics_path": "results/metrics.json",
+  "figures_count": 9,
+  "tests": {
+    "command": "python -m unittest -v test_model_prototype.py",
+    "passed": 2,
+    "failed": 0
+  },
+  "pending_stages": [
+    "Empirical calibration and external validation: benchmark contains no supplied data rows.",
+    "Full pollution and habitat sensitivity sweep: parameter ranges are unspecified.",
+    "Independent M1/P1/P2 review gates were not performed."
+  ]
+}

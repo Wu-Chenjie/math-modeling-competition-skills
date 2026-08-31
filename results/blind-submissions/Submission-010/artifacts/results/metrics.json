@@ -1,0 +1,363 @@
+{
+  "baseline": {
+    "feasible": true,
+    "final_state": {
+      "conflict": 0.435914,
+      "connectivity": 0.274217,
+      "habitat": 0.364928,
+      "income": 0.411038,
+      "visitors": 0.546112,
+      "wildlife": 0.403538
+    },
+    "outcomes": {
+      "coexistence": 0.555131,
+      "ecology": 0.36416,
+      "livelihood": 0.427456,
+      "tourism": 0.56496
+    },
+    "policy": "status_quo"
+  },
+  "case_id": "mcm-2023-b",
+  "data_status": "no empirical data files or audited rows supplied",
+  "figures": [
+    "raw_q1_assumed_levers.svg",
+    "raw_q2_initial_state.svg",
+    "raw_q3_parameter_scale.svg",
+    "result_q1_ecology.svg",
+    "result_q2_coexistence.svg",
+    "result_q3_robustness.svg",
+    "process_q1_wildlife_paths.svg",
+    "process_q2_income_paths.svg",
+    "process_q3_conflict_paths.svg"
+  ],
+  "input_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090",
+  "monte_carlo_runs": 600,
+  "normalized_outcomes": {
+    "balanced_portfolio": {
+      "coexistence": 1.0,
+      "ecology": 1.0,
+      "livelihood": 0.9759553072010118,
+      "tourism": 1.0
+    },
+    "community_led": {
+      "coexistence": 0.7763575278456641,
+      "ecology": 0.5305589550681562,
+      "livelihood": 1.0,
+      "tourism": 0.690509741057231
+    },
+    "corridor_first": {
+      "coexistence": 0.8503367959970652,
+      "ecology": 0.9879281270972797,
+      "livelihood": 0.5512979616348243,
+      "tourism": 0.8726035189326854
+    },
+    "status_quo": {
+      "coexistence": 0.0,
+      "ecology": 0.0,
+      "livelihood": 0.0,
+      "tourism": 0.0
+    },
+    "strict_zoning": {
+      "coexistence": 0.6369995641788081,
+      "ecology": 0.8161048541280109,
+      "livelihood": 0.13488828866303132,
+      "tourism": 0.35656018512533405
+    }
+  },
+  "pareto_front": [
+    "balanced_portfolio",
+    "community_led"
+  ],
+  "policy_summaries": [
+    {
+      "feasible": true,
+      "final_state": {
+        "conflict": 0.435914,
+        "connectivity": 0.274217,
+        "habitat": 0.364928,
+        "income": 0.411038,
+        "visitors": 0.546112,
+        "wildlife": 0.403538
+      },
+      "outcomes": {
+        "coexistence": 0.555131,
+        "ecology": 0.36416,
+        "livelihood": 0.427456,
+        "tourism": 0.56496
+      },
+      "policy": "status_quo"
+    },
+    {
+      "feasible": true,
+      "final_state": {
+        "conflict": 0.330207,
+        "connectivity": 0.574018,
+        "habitat": 0.664484,
+        "income": 0.529003,
+        "visitors": 0.620027,
+        "wildlife": 0.680442
+      },
+      "outcomes": {
+        "coexistence": 0.670598,
+        "ecology": 0.653572,
+        "livelihood": 0.525388,
+        "tourism": 0.620122
+      },
+      "policy": "strict_zoning"
+    },
+    {
+      "feasible": true,
+      "final_state": {
+        "conflict": 0.305187,
+        "connectivity": 0.45983,
+        "habitat": 0.50851,
+        "income": 1.213456,
+        "visitors": 0.670689,
+        "wildlife": 0.627479
+      },
+      "outcomes": {
+        "coexistence": 0.695859,
+        "ecology": 0.55231,
+        "livelihood": 1.153479,
+        "tourism": 0.671786
+      },
+      "policy": "community_led"
+    },
+    {
+      "feasible": true,
+      "final_state": {
+        "conflict": 0.294138,
+        "connectivity": 0.760675,
+        "habitat": 0.565944,
+        "income": 0.859159,
+        "visitors": 0.699991,
+        "wildlife": 0.809532
+      },
+      "outcomes": {
+        "coexistence": 0.709269,
+        "ecology": 0.714505,
+        "livelihood": 0.827711,
+        "tourism": 0.699957
+      },
+      "policy": "corridor_first"
+    },
+    {
+      "feasible": true,
+      "final_state": {
+        "conflict": 0.267172,
+        "connectivity": 0.70772,
+        "habitat": 0.619378,
+        "income": 1.197769,
+        "visitors": 0.719928,
+        "wildlife": 0.801022
+      },
+      "outcomes": {
+        "coexistence": 0.736398,
+        "ecology": 0.718786,
+        "livelihood": 1.136022,
+        "tourism": 0.719666
+      },
+      "policy": "balanced_portfolio"
+    }
+  ],
+  "problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+  "rank_acceptability": {
+    "balanced_portfolio": {
+      "mean_normalized_score": 0.993989,
+      "weight_grid_win_share": 0.996503
+    },
+    "community_led": {
+      "mean_normalized_score": 0.749357,
+      "weight_grid_win_share": 0.003497
+    },
+    "corridor_first": {
+      "mean_normalized_score": 0.815542,
+      "weight_grid_win_share": 0.0
+    },
+    "status_quo": {
+      "mean_normalized_score": 0.0,
+      "weight_grid_win_share": 0.0
+    },
+    "strict_zoning": {
+      "mean_normalized_score": 0.486138,
+      "weight_grid_win_share": 0.0
+    }
+  },
+  "recommended_scenario_policy": "balanced_portfolio",
+  "robustness": {
+    "balanced_portfolio": {
+      "equal_weight_win_rate": 1.0,
+      "feasibility_rate": 1.0,
+      "score_max": 0.997889,
+      "score_mean": 0.994339,
+      "score_min": 0.99053
+    },
+    "community_led": {
+      "equal_weight_win_rate": 0.0,
+      "feasibility_rate": 1.0,
+      "score_max": 0.794915,
+      "score_mean": 0.749223,
+      "score_min": 0.706686
+    },
+    "corridor_first": {
+      "equal_weight_win_rate": 0.0,
+      "feasibility_rate": 1.0,
+      "score_max": 0.83424,
+      "score_mean": 0.816672,
+      "score_min": 0.80151
+    },
+    "status_quo": {
+      "equal_weight_win_rate": 0.0,
+      "feasibility_rate": 0.696667,
+      "score_max": 0.0,
+      "score_mean": 0.0,
+      "score_min": 0.0
+    },
+    "strict_zoning": {
+      "equal_weight_win_rate": 0.0,
+      "feasibility_rate": 1.0,
+      "score_max": 0.508675,
+      "score_mean": 0.486175,
+      "score_min": 0.459825
+    }
+  },
+  "seed": 2023003,
+  "sensitivity": {
+    "climate_stress_0.9": {
+      "scores": {
+        "balanced_portfolio": 0.99368,
+        "community_led": 0.751448,
+        "corridor_first": 0.815085,
+        "status_quo": 0.0,
+        "strict_zoning": 0.48408
+      },
+      "winner": "balanced_portfolio"
+    },
+    "climate_stress_1.1": {
+      "scores": {
+        "balanced_portfolio": 0.994293,
+        "community_led": 0.747385,
+        "corridor_first": 0.81599,
+        "status_quo": 0.0,
+        "strict_zoning": 0.488072
+      },
+      "winner": "balanced_portfolio"
+    },
+    "conflict_pressure_0.9": {
+      "scores": {
+        "balanced_portfolio": 0.994539,
+        "community_led": 0.738934,
+        "corridor_first": 0.819829,
+        "status_quo": 0.0,
+        "strict_zoning": 0.489843
+      },
+      "winner": "balanced_portfolio"
+    },
+    "conflict_pressure_1.1": {
+      "scores": {
+        "balanced_portfolio": 0.993445,
+        "community_led": 0.759671,
+        "corridor_first": 0.811757,
+        "status_quo": 0.0,
+        "strict_zoning": 0.482725
+      },
+      "winner": "balanced_portfolio"
+    },
+    "governance_efficiency_0.9": {
+      "scores": {
+        "balanced_portfolio": 0.994539,
+        "community_led": 0.738934,
+        "corridor_first": 0.819829,
+        "status_quo": 0.0,
+        "strict_zoning": 0.489843
+      },
+      "winner": "balanced_portfolio"
+    },
+    "governance_efficiency_1.1": {
+      "scores": {
+        "balanced_portfolio": 0.993445,
+        "community_led": 0.759671,
+        "corridor_first": 0.811757,
+        "status_quo": 0.0,
+        "strict_zoning": 0.482725
+      },
+      "winner": "balanced_portfolio"
+    },
+    "habitat_recovery_0.9": {
+      "scores": {
+        "balanced_portfolio": 0.994262,
+        "community_led": 0.746258,
+        "corridor_first": 0.815766,
+        "status_quo": 0.0,
+        "strict_zoning": 0.487256
+      },
+      "winner": "balanced_portfolio"
+    },
+    "habitat_recovery_1.1": {
+      "scores": {
+        "balanced_portfolio": 0.993722,
+        "community_led": 0.752407,
+        "corridor_first": 0.815403,
+        "status_quo": 0.0,
+        "strict_zoning": 0.484839
+      },
+      "winner": "balanced_portfolio"
+    },
+    "tourism_yield_0.9": {
+      "scores": {
+        "balanced_portfolio": 0.993668,
+        "community_led": 0.749357,
+        "corridor_first": 0.815573,
+        "status_quo": 0.0,
+        "strict_zoning": 0.487158
+      },
+      "winner": "balanced_portfolio"
+    },
+    "tourism_yield_1.1": {
+      "scores": {
+        "balanced_portfolio": 0.994285,
+        "community_led": 0.749357,
+        "corridor_first": 0.815513,
+        "status_quo": 0.0,
+        "strict_zoning": 0.485194
+      },
+      "winner": "balanced_portfolio"
+    },
+    "wildlife_growth_0.9": {
+      "scores": {
+        "balanced_portfolio": 0.994873,
+        "community_led": 0.747378,
+        "corridor_first": 0.817407,
+        "status_quo": 0.0,
+        "strict_zoning": 0.491986
+      },
+      "winner": "balanced_portfolio"
+    },
+    "wildlife_growth_1.1": {
+      "scores": {
+        "balanced_portfolio": 0.993157,
+        "community_led": 0.751309,
+        "corridor_first": 0.813654,
+        "status_quo": 0.0,
+        "strict_zoning": 0.48005
+      },
+      "winner": "balanced_portfolio"
+    }
+  },
+  "tests": {
+    "checks": {
+      "baseline_present": true,
+      "case_complete_text": true,
+      "deterministic_repeat": true,
+      "finite_bounded_states": true,
+      "no_empirical_data_claimed": true,
+      "robustness_rates_valid": true,
+      "trajectory_length": true,
+      "visitor_capacity_constraint": true
+    },
+    "passed": 8,
+    "total": 8
+  },
+  "units": "dimensionless scenario indices unless stated otherwise",
+  "years": 30
+}

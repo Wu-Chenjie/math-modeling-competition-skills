@@ -1,0 +1,385 @@
+{
+  "problem_framing": {
+    "case_id": "icm-2023-d",
+    "objective": "Represent signed interdependence among 17 SDGs and prioritize interventions for efficient UN progress under constraints.",
+    "required_decisions": [
+      "construct the SDG relationship network",
+      "select and evaluate priorities",
+      "estimate reasonable 10-year outcomes",
+      "analyze the network after one SDG is achieved",
+      "assess international-crisis effects",
+      "explain transfer to other organizations"
+    ],
+    "decision_unit": "one of the 17 official Sustainable Development Goals",
+    "status": "model_contract_complete_empirical_solution_pending"
+  },
+  "data_audit": {
+    "source_status": "verified",
+    "problem_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+    "declared_data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "official_goals_found": 17,
+    "goals": [
+      {
+        "id": 1,
+        "name": "No Poverty"
+      },
+      {
+        "id": 2,
+        "name": "Zero Hunger"
+      },
+      {
+        "id": 3,
+        "name": "Good Health and Well-being"
+      },
+      {
+        "id": 4,
+        "name": "Quality Education"
+      },
+      {
+        "id": 5,
+        "name": "Gender Equality"
+      },
+      {
+        "id": 6,
+        "name": "Clean Water and Sanitation"
+      },
+      {
+        "id": 7,
+        "name": "Affordable and Clean Energy"
+      },
+      {
+        "id": 8,
+        "name": "Decent Work and Economic Growth"
+      },
+      {
+        "id": 9,
+        "name": "Industry, Innovation and Infrastructure"
+      },
+      {
+        "id": 10,
+        "name": "Reduced Inequality"
+      },
+      {
+        "id": 11,
+        "name": "Sustainable Cities and Communities"
+      },
+      {
+        "id": 12,
+        "name": "Responsible Consumption and Production"
+      },
+      {
+        "id": 13,
+        "name": "Climate Action"
+      },
+      {
+        "id": 14,
+        "name": "Life Below Water"
+      },
+      {
+        "id": 15,
+        "name": "Life on Land"
+      },
+      {
+        "id": 16,
+        "name": "Peace and Justice Strong Institutions"
+      },
+      {
+        "id": 17,
+        "name": "Partnerships to achieve the Goal"
+      }
+    ],
+    "data_files_count": 0,
+    "audited_tables_count": 0,
+    "rows_available": 0,
+    "usable_relationship_edges": 0,
+    "fields_required_but_absent": [
+      "directed SDG source and target",
+      "interaction sign and magnitude",
+      "evidence strength or uncertainty",
+      "intervention cost or budget",
+      "baseline progress and outcome response",
+      "time index for 10-year calibration",
+      "crisis exposure or shock magnitude"
+    ],
+    "limitation": "The benchmark supplies no relationship, intervention, cost, outcome, time-series, or crisis-scenario observations."
+  },
+  "assumptions": {
+    "structural": [
+      "The 17 official SDGs are the complete node set for the base model.",
+      "Relationships should be directed and signed because effects may differ by direction and may be beneficial or harmful.",
+      "A zero weight may be used only for an observed or justified absence, never as a substitute for missing evidence."
+    ],
+    "estimation": [
+      "Edge weights, criterion weights, budgets, and response rates are not identifiable from the supplied benchmark.",
+      "No independence, stationarity, linearity, or equal-cost assumption is asserted without data."
+    ]
+  },
+  "candidate_models": [
+    {
+      "name": "signed_directed_network_plus_robust_mcda",
+      "role": "primary",
+      "description": "Estimate a signed weighted adjacency matrix, derive network leverage and vulnerability criteria, then rank interventions across an explicit uncertainty set of normalized criterion weights.",
+      "required_inputs": [
+        "edge evidence",
+        "criterion definitions",
+        "criterion weights or admissible ranges",
+        "costs"
+      ],
+      "status": "specified_not_estimable"
+    },
+    {
+      "name": "constrained_dynamic_influence_simulation",
+      "role": "forecast_and_counterfactual",
+      "description": "Propagate bounded goal-progress states through the signed network under an intervention budget, then remove or clamp an achieved goal and repeat under crisis shocks.",
+      "required_inputs": [
+        "initial progress",
+        "response rates",
+        "intervention effects",
+        "shock scenarios",
+        "calibration targets"
+      ],
+      "status": "specified_not_estimable"
+    }
+  ],
+  "baseline": {
+    "name": "data-honest_unranked_baseline",
+    "rule": "Keep every official SDG in its source order and assign no score when distinguishing evidence is absent.",
+    "ranking_status": "pending",
+    "goals": [
+      {
+        "id": 1,
+        "name": "No Poverty",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 2,
+        "name": "Zero Hunger",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 3,
+        "name": "Good Health and Well-being",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 4,
+        "name": "Quality Education",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 5,
+        "name": "Gender Equality",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 6,
+        "name": "Clean Water and Sanitation",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 7,
+        "name": "Affordable and Clean Energy",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 8,
+        "name": "Decent Work and Economic Growth",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 9,
+        "name": "Industry, Innovation and Infrastructure",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 10,
+        "name": "Reduced Inequality",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 11,
+        "name": "Sustainable Cities and Communities",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 12,
+        "name": "Responsible Consumption and Production",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 13,
+        "name": "Climate Action",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 14,
+        "name": "Life Below Water",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 15,
+        "name": "Life on Land",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 16,
+        "name": "Peace and Justice Strong Institutions",
+        "priority_score": null,
+        "rank": null
+      },
+      {
+        "id": 17,
+        "name": "Partnerships to achieve the Goal",
+        "priority_score": null,
+        "rank": null
+      }
+    ],
+    "reason": "The benchmark supplies no relationship, intervention, cost, outcome, time-series, or crisis-scenario observations."
+  },
+  "math_specification": {
+    "network": {
+      "nodes": "V={1,...,17}",
+      "adjacency": "A=[a_ij], where a_ij in [-1,1] is the evidenced signed effect of SDG i on SDG j",
+      "evidence_rule": "a_ij is missing until supported; missing is not numerically zero"
+    },
+    "priority_model": {
+      "criteria": "x_ik=(benefit leverage, harm risk reduction, feasibility, equity gain, robustness, cost efficiency)",
+      "normalization": "z_ik=(x_ik-min_i x_ik)/(max_i x_ik-min_i x_ik), with direction reversed for cost criteria",
+      "score": "S_i(w)=sum_k w_k z_ik, w_k>=0, sum_k w_k=1",
+      "robustness": "R_i=P_w(i is in top K) over a declared weight uncertainty set W",
+      "optimization": "maximize sum_i S_i(w)y_i subject to sum_i c_i y_i<=B and y_i in {0,1}"
+    },
+    "dynamics": {
+      "state": "p(t) in [0,1]^17",
+      "update": "p(t+1)=clip(p(t)+D[u(t)+A^T p(t)+s(t)],0,1)",
+      "achieved_goal_counterfactual": "clamp p_g(t)=1 and compare the induced subnetwork or retained influence paths",
+      "ten_year_effectiveness": "Delta=sum_i q_i[p_i(10)-p_i(0)] with uncertainty intervals from calibrated parameter draws"
+    },
+    "identifiability_status": "pending_missing_empirical_inputs"
+  },
+  "code_prototype": {
+    "status": "executed_audit_scaffold",
+    "capabilities": [
+      "validate the benchmark identity and 17-goal ontology",
+      "preserve missing values rather than impute edges or scores",
+      "emit report, metrics, manifest, and audit SVGs deterministically"
+    ],
+    "excluded": [
+      "edge inference",
+      "priority scoring",
+      "forecast simulation"
+    ]
+  },
+  "experiment": {
+    "status": "pending",
+    "design": [
+      "Fit or elicit signed edges with source-level uncertainty.",
+      "Compare the robust-MCDA ranking against centrality-only and equal-weight baselines.",
+      "Backtest held-out goal-progress changes where time-indexed observations exist.",
+      "Run achieved-goal and crisis counterfactuals over calibrated uncertainty draws."
+    ],
+    "blocking_reason": "The benchmark supplies no relationship, intervention, cost, outcome, time-series, or crisis-scenario observations."
+  },
+  "validation": {
+    "status": "partial_input_contract_only",
+    "completed_checks": [
+      "case identity matches icm-2023-d",
+      "official SDG identifiers are exactly 1 through 17",
+      "empty data inventory is propagated to null scores and pending empirical stages"
+    ],
+    "pending_checks": [
+      "edge sign and magnitude validation",
+      "out-of-sample ranking validation",
+      "forecast calibration and coverage",
+      "budget-feasibility validation"
+    ]
+  },
+  "sensitivity_robustness": {
+    "status": "pending",
+    "planned_analyses": [
+      "simplex or Dirichlet sampling over criterion weights",
+      "edge deletion and sign-flip perturbations weighted by evidence confidence",
+      "budget and intervention-effect sweeps",
+      "rank acceptability, top-K inclusion frequency, and Kendall rank stability"
+    ],
+    "blocking_reason": "The benchmark supplies no relationship, intervention, cost, outcome, time-series, or crisis-scenario observations."
+  },
+  "falsification": {
+    "status": "pending",
+    "tests": [
+      "reject a claimed positive edge if its uncertainty interval is not directionally stable",
+      "reject a priority if it loses top-K membership under small admissible weight changes",
+      "reject the dynamic model if it cannot outperform a persistence forecast out of sample",
+      "reject transferability if criterion directions or constraints fail in a target organization"
+    ],
+    "blocking_reason": "The benchmark supplies no relationship, intervention, cost, outcome, time-series, or crisis-scenario observations."
+  },
+  "reviewer_risks": [
+    {
+      "risk": "arbitrary relationship weights",
+      "mitigation": "require traceable edge evidence and uncertainty",
+      "current_status": "unresolved_no_data"
+    },
+    {
+      "risk": "scale mismatch across criteria",
+      "mitigation": "predeclare directions and normalization; audit degenerate ranges",
+      "current_status": "specified"
+    },
+    {
+      "risk": "unstable rankings",
+      "mitigation": "report rank acceptability rather than one weight vector",
+      "current_status": "pending"
+    },
+    {
+      "risk": "causal overclaiming from a descriptive network",
+      "mitigation": "separate association, expert elicitation, and causal evidence",
+      "current_status": "specified"
+    },
+    {
+      "risk": "unsupported 10-year forecasts",
+      "mitigation": "calibrate and backtest dynamics before forecasting",
+      "current_status": "pending"
+    },
+    {
+      "risk": "crisis scenarios chosen after seeing results",
+      "mitigation": "predeclare shock definitions and parameter ranges",
+      "current_status": "pending"
+    }
+  ],
+  "reproducibility_manifest": {
+    "case_id": "icm-2023-d",
+    "random_seed": null,
+    "randomness_used": false,
+    "input": {
+      "path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json",
+      "sha256": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf"
+    },
+    "runtime": {
+      "python": "3.12.13",
+      "implementation": "CPython"
+    },
+    "dependencies": {
+      "python_standard_library_only": true
+    },
+    "parameters": {
+      "expected_case_id": "icm-2023-d",
+      "missing_value_policy": "preserve_as_null"
+    },
+    "reproduction_command": "python \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-d-001-v2\\model_run.py\" --case \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json\" --output \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-d-001-v2\\run-output\""
+  }
+}

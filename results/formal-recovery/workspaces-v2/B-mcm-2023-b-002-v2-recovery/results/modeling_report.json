@@ -1,0 +1,86 @@
+{
+  "problem_framing": {
+    "goal": "Compare spatial management policies that balance conservation, local interests, human-wildlife conflict, and economic impacts.",
+    "required_outputs": [
+      "policy recommendations",
+      "ranking methodology",
+      "long-term outcomes",
+      "transferability"
+    ]
+  },
+  "data_audit": {
+    "verified_source_status": "verified",
+    "data_files": [],
+    "audit_records": [],
+    "finding": "No supplied data file, audit record, or sample row is available for calibration."
+  },
+  "assumptions": {
+    "allowed": "Future implementation may use normalized indicators only after each is computed from supplied measurements.",
+    "prohibited_here": "No normalized indicator values, weights, or forecasts are estimated from absent data."
+  },
+  "candidate_models": [
+    "Spatial interaction network linking conservation zones, communities, wildlife movement, and tourism nodes.",
+    "Constrained multi-objective optimization over biodiversity, livelihoods, tourism, and conflict outcomes; retain the Pareto frontier before stakeholder ranking.",
+    "Scenario analysis with calibrated uncertainty distributions once observations and capacity constraints are supplied."
+  ],
+  "baseline": "Status quo policy evaluated against the same observed indicators; pending because those indicators are absent.",
+  "math_specification": {
+    "decision_variables": "z_a,p in {0,1}: policy p selected for area a; x_a,p >= 0: associated allocation.",
+    "objectives": "maximize biodiversity B(z,x), livelihood L(z,x), tourism T(z,x), and minimize conflict H(z,x).",
+    "constraints": "one policy per area; sum_a,p c_a,p x_a,p <= budget; ecological and social capacity constraints require measured inputs.",
+    "ranking": "Use non-dominated sorting, then stakeholder-approved weights or outranking; do not use unelicited weights."
+  },
+  "code_prototype": "This run executes a factual audit only. The normalized evaluator is unit-tested but receives no benchmark policy vectors.",
+  "experiment": {
+    "status": "pending",
+    "reason": "No observational rows, values, or data files were supplied."
+  },
+  "validation": {
+    "status": "pending",
+    "reason": "No holdout, historical, or field data were supplied."
+  },
+  "sensitivity_robustness": {
+    "status": "pending",
+    "reason": "Parameter distributions and capacity measurements are absent."
+  },
+  "falsification": [
+    "Reject a policy model if held-out conflict or wildlife outcomes are no better than the status quo baseline.",
+    "Reject a ranked recommendation if small stakeholder-weight changes reverse the selected policy without a stable Pareto advantage.",
+    "Reject extrapolation where predicted use exceeds a measured ecological or community capacity constraint."
+  ],
+  "reviewer_risks": [
+    "Any numerical policy ranking would be unsupported with this input.",
+    "Weights must be elicited or justified, not selected by the modeler.",
+    "Spatial and temporal transferability requires data from each target management area."
+  ],
+  "reproducibility_manifest": {
+    "command": "python model_run.py --input <case-json>",
+    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "metrics": {
+      "case_id": "mcm-2023-b",
+      "input_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090",
+      "official_problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+      "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_status": "verified",
+      "data_files_count": 0,
+      "data_audit_records_count": 0,
+      "sample_rows_available": false,
+      "official_problem_pages": 2,
+      "expected_method_count": 3,
+      "model_execution": "pending_no_data_rows_or_files",
+      "empirical_validation": "pending_no_data_rows_or_files",
+      "figures": [
+        "figures\\raw_q1_input_availability.svg",
+        "figures\\process_q1_audit_trace.svg",
+        "figures\\result_q1_policy_data_gate.svg",
+        "figures\\raw_q2_benchmark_structure.svg",
+        "figures\\process_q2_method_contract.svg",
+        "figures\\result_q2_ranking_status.svg",
+        "figures\\raw_q3_source_integrity.svg",
+        "figures\\process_q3_falsification_checks.svg",
+        "figures\\result_q3_execution_status.svg"
+      ]
+    }
+  }
+}

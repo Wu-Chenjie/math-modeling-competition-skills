@@ -1,0 +1,10 @@
+{
+  "status": "completed_with_pending_figure_audit",
+  "code_path": "model_simulation.py",
+  "metrics_path": "results/metrics.json",
+  "figures_count": 9,
+  "tests": "pytest -q test_model.py: 2 passed",
+  "pending_stages": [
+    "publication_png_export_and_strict_figure_audit"
+  ]
+}

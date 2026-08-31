@@ -1,0 +1,27 @@
+{
+  "case_id": "icm-2023-e",
+  "status": "partial_pending_data",
+  "input_sha256": "9c136273749e640d6926cadeccad4d16dc55904d7d3a178602931f69fd4e2557",
+  "declared_problem_sha256": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+  "rows_available": 0,
+  "location_scores_count": 0,
+  "structural_trials": 1000,
+  "structural_violations": {
+    "bounds": 0,
+    "monotonicity": 0,
+    "finite": 0
+  },
+  "figures_count": 15,
+  "unit_tests_passed": true,
+  "unit_test_exit_code": 0,
+  "runtime_seconds": 0.3257045999998809,
+  "pending_stages": [
+    "four_location_empirical_scoring",
+    "two_location_strategy_selection",
+    "empirical_validation_and_uncertainty",
+    "location_specific_flyer",
+    "weight_threshold_calibration",
+    "intervention_effect_calibration",
+    "publication_png_figure_audit"
+  ]
+}

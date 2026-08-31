@@ -1,0 +1,68 @@
+{
+  "submission_id": "Submission-020",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 15,
+  "artifacts": [
+    {
+      "path": "drought_model_run.py",
+      "sha256": "f431dc5fc0654e57a44e91e553f43425b831665215c716b4da76167e9a92b043"
+    },
+    {
+      "path": "figures/process_q1_biomass.svg",
+      "sha256": "b7f28439aaf21414eb9658967b267bebabf816715308eb1dde3485d17382640f"
+    },
+    {
+      "path": "figures/process_q2_adaptation.svg",
+      "sha256": "424e331bf9ec3a83a957a09dc5eaff38002bce0a58e3ffa6d3bd5f312fc56a5c"
+    },
+    {
+      "path": "figures/process_q3_stress.svg",
+      "sha256": "b88c1033fa85e57fd84a87bf7a28033d8e308a726c11044a01cbc12be4849e32"
+    },
+    {
+      "path": "figures/raw_q1_precipitation.svg",
+      "sha256": "9af0c92704278f0af85e2cc000e9ad1b9c305515dcda6461791a869e85038013"
+    },
+    {
+      "path": "figures/raw_q2_sensitivity.svg",
+      "sha256": "f452a171e3f2f930b0c04b1243c3fb8ad9a06f47809895dd9b15075c9d9ee58b"
+    },
+    {
+      "path": "figures/raw_q3_environment.svg",
+      "sha256": "67bfd4aa333012992763b5f6140ac06453dcd5676f894e0aaeff98717b747605"
+    },
+    {
+      "path": "figures/result_q1_species.svg",
+      "sha256": "e8f19e9b96bf87c3243a0b90a6ebb599b7340b9430fa51b534b9efa1834737a6"
+    },
+    {
+      "path": "figures/result_q2_frequency.svg",
+      "sha256": "f347a574082f98c305e849976cf6dbf1060ea695eceb7d17a41f333692c8694b"
+    },
+    {
+      "path": "figures/result_q3_pollution_habitat.svg",
+      "sha256": "ecf1aa9cfea4e75895c9d4d394b835bbd183784deb6e1162132559ef9d3bb4b1"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "40b5f80714e586940774363f79abfdbc61aff5eaaf063e8ba3bc3b75f80d30fa"
+    },
+    {
+      "path": "results/metrics.csv",
+      "sha256": "d89094f71116a640ef0578fe816aa17701f388b3c314bb353454a2b0d3422f10"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "960945b54e2a344e98c4ff11fee91f9d45a9c803124b89b6fe4b8f59f9d28570"
+    },
+    {
+      "path": "results/repro_manifest.json",
+      "sha256": "809a126e2b67903b67493fdcb56f6257d7cc1528b0c794559c7f058f113a5161"
+    },
+    {
+      "path": "test_drought_model.py",
+      "sha256": "1118bde33a26e2156e506ad42a0dbb0724beb9cba13646809d818bd0009374c2"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

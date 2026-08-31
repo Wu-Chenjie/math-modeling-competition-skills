@@ -1,0 +1,232 @@
+{
+  "run_id": "A-icm-2023-d-001-v2-recovery",
+  "problem_framing": {
+    "title": "Prioritizing the UN Sustainability Goals",
+    "objective": "Prioritize 17 interlinked UN SDGs and assess network/crisis implications.",
+    "subproblems": [
+      {
+        "id": "q1",
+        "task": "Construct SDG relationship network and characterize structure."
+      },
+      {
+        "id": "q2",
+        "task": "Set priorities and evaluate effectiveness over a 10-year horizon."
+      },
+      {
+        "id": "q3",
+        "task": "Recompute network and priorities after one SDG is achieved."
+      },
+      {
+        "id": "q4",
+        "task": "Assess technological, pandemic, climate, war, and refugee shocks."
+      },
+      {
+        "id": "q5",
+        "task": "Generalize the network prioritization approach to organizations."
+      }
+    ]
+  },
+  "data_audit": {
+    "source": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json",
+    "problem_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data_files": [],
+    "audited_rows": [],
+    "finding": "No relationship, indicator, temporal, geographic, or crisis-scenario rows supplied; only 17 SDG labels are available.",
+    "binary_attachments_opened": false
+  },
+  "assumptions": {
+    "critical": [
+      "The 17 labels in problem_text are the complete node set.",
+      "With no measured evidence, all SDGs receive equal prior weight.",
+      "No causal/network effect is claimed from the null baseline."
+    ],
+    "relaxable": [
+      "Equal weights can be replaced by stakeholder, entropy, AHP, or Bayesian weights when rows arrive.",
+      "Directed weighted edges can replace the current zero-edge placeholder.",
+      "Crisis shocks can be represented as scenario multipliers once calibrated."
+    ]
+  },
+  "candidate_models": {
+    "q1": [
+      "Weighted directed SDG network (pending edge data)",
+      "Correlation/partial-correlation network (pending indicators)"
+    ],
+    "q2": [
+      "Multi-criteria utility with normalized indicators (pending)",
+      "Equal-weight null baseline (computable)"
+    ],
+    "q3": [
+      "Node-removal and rewiring counterfactual (pending network)"
+    ],
+    "q4": [
+      "Scenario stress test with shock multipliers (pending calibration)"
+    ],
+    "q5": [
+      "Reusable network-MCDM pipeline (method transfer)"
+    ]
+  },
+  "baseline_math": {
+    "definition": "w_i = 1/17; rank by descending w_i, ties retained in goal-number order.",
+    "constraints": [
+      "w_i >= 0",
+      "sum_i w_i = 1"
+    ],
+    "computed_result": {
+      "goals": [
+        {
+          "rank": 1,
+          "goal_id": 1,
+          "goal": "No Poverty",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 2,
+          "goal_id": 2,
+          "goal": "Zero Hunger",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 3,
+          "goal_id": 3,
+          "goal": "Good Health and Well-being",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 4,
+          "goal_id": 4,
+          "goal": "Quality Education",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 5,
+          "goal_id": 5,
+          "goal": "Gender Equality",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 6,
+          "goal_id": 6,
+          "goal": "Clean Water and Sanitation",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 7,
+          "goal_id": 7,
+          "goal": "Affordable and Clean Energy",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 8,
+          "goal_id": 8,
+          "goal": "Decent Work and Economic Growth",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 9,
+          "goal_id": 9,
+          "goal": "Industry, Innovation and Infrastructure",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 10,
+          "goal_id": 10,
+          "goal": "Reduced Inequality",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 11,
+          "goal_id": 11,
+          "goal": "Sustainable Cities and Communities",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 12,
+          "goal_id": 12,
+          "goal": "Responsible Consumption and Production",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 13,
+          "goal_id": 13,
+          "goal": "Climate Action",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 14,
+          "goal_id": 14,
+          "goal": "Life Below Water",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 15,
+          "goal_id": 15,
+          "goal": "Life on Land",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 16,
+          "goal_id": 16,
+          "goal": "Peace and Justice Strong Institutions",
+          "priority": 0.058823529411764705
+        },
+        {
+          "rank": 17,
+          "goal_id": 17,
+          "goal": "Partnerships to achieve the Goal",
+          "priority": 0.058823529411764705
+        }
+      ],
+      "weights_sum": 1.0
+    }
+  },
+  "validation": {
+    "performed": [
+      "17-node count check",
+      "weight normalization check",
+      "deterministic rerun check",
+      "input hash capture"
+    ],
+    "not_performed": [
+      "predictive validation",
+      "network holdout",
+      "external criterion validation"
+    ]
+  },
+  "sensitivity_robustness": {
+    "method": "Admissible simplex stress tests: uniform prior and one-goal-dominant priors; no empirical values invented.",
+    "result": "Uniform prior is completely tied; ranking is non-identifiable without additional evidence."
+  },
+  "falsification": [
+    "Any supplied edge/indicator table that yields nonzero, reproducible structure falsifies the zero-edge assumption.",
+    "Out-of-sample or stakeholder-priority agreement below a predeclared threshold would falsify a proposed weighting model."
+  ],
+  "reviewer_risks": [
+    "Equal weighting is a fallback, not a substantive SDG priority claim.",
+    "No causal inference or 10-year forecast is possible from labels alone.",
+    "Claims about crises and achieved-goal counterfactuals remain qualitative/pending."
+  ],
+  "code_prototype": {
+    "entrypoint": "icm_baseline.py",
+    "command": "python icm_baseline.py --case <path> --out ."
+  },
+  "experiment": {
+    "status": "baseline_only",
+    "n_goals": 17,
+    "n_rows": 0
+  },
+  "reproducibility_manifest": {
+    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "input_sha256": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf",
+    "seed": 0
+  },
+  "pending_stages": [
+    "relationship_network_estimation",
+    "indicator_based_multi_criteria_ranking",
+    "ten_year_impact_projection",
+    "counterfactual_network_recalculation",
+    "crisis_scenario_quantification",
+    "external_validation_and_literature_calibration"
+  ]
+}

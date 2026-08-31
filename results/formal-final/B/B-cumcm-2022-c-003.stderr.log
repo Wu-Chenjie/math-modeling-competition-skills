@@ -1,0 +1,1489 @@
+Reading additional input from stdin...
+2026-08-30T06:32:09.611077Z  WARN codex_core_plugins::manager: remote installed plugin bundle sync failed error=chatgpt authentication required for remote plugin catalog; api key auth is not supported
+2026-08-30T06:32:09.677212Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-08-30T06:32:09.677256Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-08-30T06:32:09.781424Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+OpenAI Codex v0.151.0-alpha.7.1
+--------
+workdir: C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+model: gpt-5.6-sol
+provider: custom
+approval: never
+sandbox: read-only
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0515e-4c93-7a31-b312-a557f9d94456
+--------
+user
+This is preregistered run B-cumcm-2022-c-003. Do not modify repository files.
+Read the pinned domain Skill at C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\xiao\SKILL.md.
+Also read exactly these domain stage files: C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\xiao\使用指南.md, C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\xiao\references\roles\建模手\SKILL.md, and C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\xiao\references\roles\编程手\SKILL.md.
+Read exactly these pinned Matt files: C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\matt\skills\engineering\grill-with-docs\SKILL.md, C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\matt\skills\engineering\research\SKILL.md, C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\matt\skills\engineering\prototype\SKILL.md, C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\matt\skills\engineering\tdd\SKILL.md, C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\baseline-vendors\pinned\matt\skills\engineering\code-review\SKILL.md. Do not recursively enumerate other files.
+Read the deterministic case summary JSON at C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries.json and use the entry for case_id=cumcm-2022-c as the complete benchmark input.
+Do not open or parse binary attachments (PDF, XLSX, ZIP) and do not inspect the case directories; the summary contains the auditable problem excerpt, hashes, file inventory, expected methods, and common failure modes.
+Return a structured modeling report: problem framing, data audit, assumptions, candidate models, baseline, math specification, executable experiment plan, validation, sensitivity/robustness, falsification, reviewer risks, and reproducibility manifest.
+Never invent data, execution results, citations, or scores. Mark unexecuted work pending. Keep the response under 1200 words.
+Do not narrate tool use or internal reasoning; return only the final report and keep it under 900 words.
+2026-08-30T06:32:19.621331Z  WARN codex_core_plugins::manager: failed to warm featured plugin ids cache error=failed to send remote featured plugin request to https://chatgpt.com/backend-api/plugins/featured?platform=codex: error sending request for url (https://chatgpt.com/backend-api/plugins/featured?platform=codex)
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/.codex/skills/r0/using-superpowers/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/xiao/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/xiao/使用指南.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/xiao/references/roles/建模手/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/xiao/references/roles/编程手/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/grill-with-docs/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/research/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/tdd/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/prototype/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+ exited 1 in 0ms:
+Get-Content: 
+Line |
+   2 |  Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/.codex/skills/r0/using-su …
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'C:/Users/伍辰杰/.codex/skills/r0/using-superpowers/SKILL.md' because it does not exist.
+
+ succeeded in 0ms:
+# 数学建模 Skill 使用指南
+
+> 本指南说明「math-modeling」Skill 的使用边界与交付物用途。**使用本 Skill 前请先阅读本指南**。
+
+## 一、本 Skill 的定位
+
+本 Skill 是完成数学建模**全流程的辅助工具**，分三个阶段：
+
+- **建模手**：理解题目、拆分子问题、选择模型
+- **编程手**：实现代码、运行求解、生成图表
+- **论文手**：撰写论文、整理结果、生成 Word/LaTeX
+
+它帮助你把一道数学建模题从读题推进到论文初稿，供**学习与研究参考**。
+
+## 二、交付物使用边界
+
+> ⚠️ **本 Skill 生成的所有内容不能直接作为参赛作品提交。**
+
+| 交付物 | 性质 | 提交前必须做的事 |
+|---|---|---|
+| `题目分析报告.md`、`术语表格.md` | 建模草稿 | 核对模型选择与公式，确认与题目约束一致 |
+| 代码（`.py`/`.m`）、结果表（`.csv`/`.xlsx`） | 求解草稿 | 实际运行验证，核对数值、单位、边界条件 |
+| 图表（`figures/`） | 结果草稿 | 核对数据来源与图注，确认与代码输出一致 |
+| `完整论文.docx`（及可选 LaTeX） | **论文草稿** | **人工核对、改写后再提交**；不得原样提交 |
+| `results/复现清单.json` | 复现记录 | 确认种子、参数、命令与实际运行一致 |
+
+**使用边界摘要**：
+
+- 生成的分析、代码、图表、论文均为**草稿/参考材料**，提交前必须由参赛队伍人工核对、改写。
+- 数值、公式、图表、引用可能存在错误，须独立验证。
+- 论文结构与格式最终以**目标竞赛当届官方规则和模板**为准，不能用本 Skill 输出的格式直接提交。
+
+## 三、文件清单
+
+本 Skill 生成的文件按阶段划分：
+
+| 阶段 | 生成文件 | 用途 |
+|---|---|---|
+| 建模手 | `题目分析报告.md` | 问题理解、模型选择与分析 |
+| 建模手 | `术语表格.md` | 全文术语、符号、单位统一 |
+| 编程手 | `*.py` / `*.m` 代码 | 模型求解实现 |
+| 编程手 | `results/*.csv` / `*.xlsx` | 求解结果表格 |
+| 编程手 | `figures/raw_* process_* result_*` | 数据/过程/结果三类图 |
+| 编程手 | `results/复现清单.json` | 复现所需的种子、参数、命令 |
+| 论文手 | `完整论文.docx` | 论文草稿（Word） |
+| 论文手（可选） | `完整论文-LaTeX/` + `完整论文.pdf` | 论文草稿（LaTeX） |
+
+## 四、提交前人工核对事项清单
+
+> 以下每一项都应在提交前由参赛队伍逐条核对：
+
+- [ ] **数值**：论文中所有关键数值与代码实际运行结果一致
+- [ ] **图表**：所有图表编号连续、有标题、正文有引用、数据来源真实
+- [ ] **公式**：公式与代码实现一致，符号与术语表格一致
+- [ ] **引用**：正文引用与文末参考文献双向对应，来源真实可追溯
+- [ ] **格式**：结构与格式符合目标竞赛当届官方规则和模板
+- [ ] **完整性**：所有子问题均已作答，结论有数据支撑
+- [ ] **复核**：全文经队伍成员人工阅读、改写，确认符合竞赛要求
+
+## 五、其他说明
+
+- 本 Skill 不替代队伍自身的思考与工作，也不承诺生成结果一定正确或能获奖。
+- 竞赛规则、学术诚信要求等以**当届官方规则**为准，请自行查阅并遵守。
+- 本 Skill 生成内容仅供学习与研究参考，使用后果由使用者自行承担。
+
+
+ succeeded in 0ms:
+---
+name: 建模手
+description: 数学建模的题目理解、模型选择和算法设计阶段。输出题目分析报告与术语表格。
+---
+
+# 建模手
+
+## 路径
+
+- `ROLE_ROOT`：本文件所在目录。
+- `SKILL_ROOT`：`ROLE_ROOT/../../..`，只读。
+- `PROJECT_ROOT`：用户项目目录，所有产物只写这里。
+
+## 固定产物
+
+1. `PROJECT_ROOT/题目分析报告.md`
+2. `PROJECT_ROOT/术语表格.md`
+
+只使用上述两个文件；合同内容作为分析报告的一部分。
+
+## 执行顺序
+
+1. 读取题目与全部附件，建立问题、目标、约束、数据字段和输出要求清单。
+2. 数据驱动地检查缺失、异常、量纲、时间与空间范围。
+3. 在理解题目后写出每个子问题应回答的结论类型，再评估候选模型。
+4. 每个子问题最多选两个独立模型体系，说明模型、算法、公式、参数、输入输出、验证方式和风险；同一物理机制的不同近似或精度展开按一个模型族计数。
+5. 使用 `../../../tools/paper_search/SKILL.md` 搜索理论依据；引用必须可追溯。
+6. 写入两个固定产物并按 `references/质检清单.md` 完成作者自检。
+7. 立即派发未参与编写的质检 Subagent 执行 `M1` 建模终检；未返回 `PASS` 不得进入编程阶段或宣称建模交付完成。
+
+## 独立验收
+
+`M1` 的输入包括题目与附件、`题目分析报告.md`、`术语表格.md`、文献来源和作者自检结果。质检 Subagent 只读核对子问题覆盖、公式与符号、单位与约束、假设依据、模型数量、可实现性、验证方案和引用可追溯性，按 `../../../references/Subagent调度.md` 返回证据回执。失败时由建模手修正两个既有产物，再复验 `M1`。
+
+## 何时加载
+
+| 情形 | 读取 |
+|---|---|
+| 开始分析 | `references/工作流程.md` |
+| 写分析报告前确定合同 | `references/前置合同.md` |
+| 设计模型组合 | `references/建模设计理论.md` |
+| 需要常见问题模式 | `references/常见模式.md` |
+| 需要具体算法 | `../../../references/算法索引.md`，再读取匹配的 `../../../assets/*.md` |
+| 交付前 | `references/质检清单.md` |
+| 独立验收 | `../../../references/Subagent调度.md` |
+
+## 选择原则
+
+- 模型必须覆盖题目约束、数据特征和评价目标。
+- 避免直接套用常见简单模型；优先寻找与题目结构紧密相关、可验证且可实现的改进。
+- 复杂度由问题需要决定，不把复杂度本身当作独立优点。
+- 不因两个模型结论相似而机械删除模型。
+
+若编程手反馈模型不可实现，基于具体报错和数据证据修订两个既有产物，不另建文件。
+
+
+ succeeded in 0ms:
+---
+name: math-modeling
+description: 当用户要求数学建模、建模竞赛、建模分析、代码求解、结果可视化或生成数学建模论文时使用。支持完整三阶段流程、单独执行任一角色，以及在关键节点使用独立 Subagent 进行阶段内质检；默认只启用质检 Subagent，用户可明确选择额外协作。
+---
+
+# 数学建模
+
+本 Skill 用三个独立角色完成数学建模。生成的论文仅供用户参考，不作为可直接提交的作品。论文结构与格式必须以目标竞赛当届官方规则和官方模板为准，不能用往届经验替代官方要求。
+
+**使用前**：请先阅读根目录 `使用指南.md`，明确本 Skill 的交付物使用边界，并把它复制到工作区（`PROJECT_ROOT`）：
+
+**PowerShell（Windows）：**
+```powershell
+Copy-Item "<SKILL_ROOT>\使用指南.md" "<PROJECT_ROOT>\使用指南.md"
+```
+
+**bash（macOS/Linux）：**
+```bash
+cp "<SKILL_ROOT>/使用指南.md" "<PROJECT_ROOT>/使用指南.md"
+```
+
+> `<SKILL_ROOT>` 是本 Skill 的安装目录（含 `SKILL.md` 的目录），`<PROJECT_ROOT>` 是你的题目/项目目录。
+
+## 强制执行协议
+
+用户明确点名本 Skill 或任务命中本 Skill 时，严格执行以下协议；不要把它降级为建议：
+
+1. 在首次进度更新中回显：已激活本 Skill、`SKILL_ROOT`、`PROJECT_ROOT`、当前阶段、目标竞赛与届次、计划读取的角色和工具入口。未确认的官方规则明确标为待核验。
+2. 开始每个阶段前，实际读取该角色的 `SKILL.md`；使用 PDF、Excel、论文搜索、DOCX 或 LaTeX 时，再实际读取对应工具的 `SKILL.md`。知道文件路径不等于已经执行。
+3. 严格调用 Skill 提供的脚本和模板。已有初始化、转换、编译或校验工具时，禁止为了省时手写替代实现。
+4. 把任何校验预警视为未完成。只有当届官方规则或用户明确要求允许偏离时，才能记录“规则来源、偏离项、理由”后继续；不得自行降低篇幅、图表、公式、引用或编译质量目标。
+5. 环境缺少引擎、搜索源、渲染器或依赖时，报告阻塞并继续完成仍可验证的部分；禁止静默换工具、跳过验证或用较差产物冒充完成。
+6. 运行环境支持 Subagent 且任务会生成或修改固定交付物时，按 `references/Subagent调度.md` 在关键节点立即派发独立质检；禁止等全流程结束后才首次派发，作者自检不能替代独立验收。除固定质检外，不主动派发其他 Subagent；仅在用户明确启用具体协作任务时按所选范围执行。
+7. 交付前运行当前角色规定的全部完成门禁。任一命令未运行、退出码非零、独立验收未通过、仍有未处理问题或产物在门禁后发生变化时，不得声称“已完成”。
+8. 最终回复列出实际读取的入口、实际运行的关键命令、退出码、Subagent 门禁状态、核心质量指标和仍存在的阻塞；不得只说“已检查”。
+
+## Subagent 默认策略与阶段门禁
+
+- 默认模式只派发 `M1/P1/P2/W1/W2` 质检 Subagent；调研、原型和并行实验等可选协作默认关闭，不询问、不暂停流程。
+- 用户可用自然语言启用一个或多个可选任务，也可随时关闭；未明确选择的类别保持关闭。
+- 主 Agent 负责调度和权威产物写入；质检 Subagent 必须未参与被审产物的编写或修正，默认只读并返回证据。
+- 完整流程依次通过 `M1` 建模终检、`P1` 最小可运行结果、`P2` 编程终检、`W1` 证据大纲和 `W2` 论文终检。`P1` 通过后才能全量计算与正式出图，`P2` 通过后进入论文规划，`W1` 通过后才开始长篇正文和双格式排版。
+- `FAIL` 必须按证据返回对应角色修正并复验；被审产物发生实质变化时，相关 `PASS` 立即失效。
+- 单阶段任务只运行对应门禁。环境不支持 Subagent 时，只能标记为 `BLOCKED` 或受限交付并明确报告“独立验收未完成”，不得把主 Agent 自检描述为独立通过或声称完整完成。
+
+详细的默认开关、可选协作任务、派发输入、固定回执和并行边界见 `references/Subagent调度.md`。
+
+## 根目录契约
+
+- `SKILL_ROOT`：本文件所在目录，只读。角色说明、算法资料、脚本和模板都从这里读取。
+- `PROJECT_ROOT`：用户题目和项目所在目录，所有新产物只能写入这里。
+- 两个根目录必须不同；默认禁止覆盖 `SKILL_ROOT` 内任何文件。
+- 输入附件只读。确需修改模板时，先复制到 `PROJECT_ROOT` 再处理。
+
+## 路由
+
+| 用户意图 | 加载入口 | 是否要求前一阶段已完成 |
+|---|---|---|
+| 完整建模、完成整题 | `references/roles/建模手/SKILL.md` → `references/roles/编程手/SKILL.md` → `references/roles/论文手/SKILL.md` | 按顺序执行 |
+| 只做题目分析、选模型 | `references/roles/建模手/SKILL.md` | 否 |
+| 只写代码、跑结果、出图 | `references/roles/编程手/SKILL.md` | 需要题目和可执行的模型说明；缺失时先补齐必要分析 |
+| 只写或修改论文 | `references/roles/论文手/SKILL.md` | 需要题目、模型、真实运行结果和图表；缺失时回退到对应阶段 |
+
+不要在单阶段任务中强制执行完整流程。
+
+## 固定交付物
+
+### 建模手
+
+只交付：
+
+1. `题目分析报告.md`
+2. `术语表格.md`
+
+### 编程手
+
+交付：
+
+1. 可运行的 Python（`.py`）或 MATLAB（`.m`）代码；可同时交付两种语言。
+2. 代码运行结果表格，如 `.csv`、题目要求的 `.xlsx`。
+3. 原始数据图、模型运行过程图、模型最终结果图每类至少 3 张候选图，合计至少 9 张；还必须覆盖题目全部子问题，每个子问题在三类中各至少 1 张。文件名使用 `raw_q1_*`、`process_q1_*`、`result_q1_*` 等格式，不设上限。相同内容的 SVG、PNG 和灰度预览按 1 张逻辑图计数。
+4. `results/复现清单.json`，含随机种子、输入文件 SHA-256、运行时和依赖版本、关键参数、唯一复现命令。
+
+### 论文手
+
+默认交付 Word 论文；用户显式要求时才生成 LaTeX 论文。
+
+- Word：`完整论文.docx`；由 LaTeX 转换时同时保留哈希绑定的 `.conversion.json`。
+- LaTeX（可选）：`完整论文-LaTeX/` 源码项目、由其实际编译得到的 `完整论文.pdf` 和哈希绑定的 `.build.json`。
+
+用户明确要求 LaTeX 时，同时生成两种格式且正文内容、数据、图表和结论保持一致。内部检查记录不作为额外交付物。
+
+无论目标竞赛为何，论文默认至少包含 8 幅正式图；当届官方规则或用户明确要求与此冲突时，以其要求为准并记录依据。
+
+## 阶段反馈闭环
+
+- 任一 Subagent 门禁返回 `FAIL` 时，按回执中的文件、命令、数值或来源证据回到对应角色；修正后重跑受影响门禁，不得由主 Agent 口头覆盖。
+- 编程手发现公式不完整、约束冲突或模型不可实现时，停止猜测，在对话中列出证据并回到建模手修正两个 Markdown 交付物。
+- 论文手发现关键结论没有真实结果、图表或文献支撑时，回到编程手或建模手补齐，禁止编造。
+- 修正后从被阻断阶段继续，不重复已通过的阶段。
+
+## 建模约束
+
+1. 先完整理解题目、附件、目标、约束和评价口径，再形成结论与模型方案。
+2. 每道子问题最多使用两个独立模型体系。物理题中，同一控制方程或同一物理机制在不同近似阶次、边界条件或精度下的展开，计为一个模型族，不机械拆成多个模型；只有控制机理、状态变量或求解目标实质不同才另计模型。辅助的灵敏度分析、误差检验和可视化不计作独立模型。
+3. 避免直接套用过于常见的简单模型来冒充创新；创新必须来自问题结构、数据处理、约束设计、算法改进或验证方式，并说明依据。
+4. 数据判定标准按题目、官方规则、领域文献或数据分析结果确定。
+5. 不因两个模型得到相近结论就强制删除其中一个；是否保留由研究目的和证据价值决定。
+
+## 渐进式加载
+
+先读当前阶段的 `SKILL.md`，再按其中“何时加载”表读取所需参考，禁止一次性加载全部资料。
+
+| 当前任务 | 额外读取 |
+|---|---|
+| 选模型或查算法 | `references/算法索引.md`，再读取一个或少数几个相关 `assets/*.md` |
+| 搜索论文 | `tools/paper_search/SKILL.md` |
+| 读取题目 PDF | `tools/pdf/SKILL.md` |
+| 处理 Excel | `tools/xlsx/SKILL.md` |
+| 画图 | `tools/figure/SKILL.md` |
+| 生成 Word 论文 | `tools/docx/SKILL.md` |
+| 生成 LaTeX 论文 | `tools/latex/SKILL.md` |
+| LaTeX 论文转 Word | `tools/docx/SKILL.md` |
+| 派发 Subagent 或阶段质检 | `references/Subagent调度.md` |
+
+完整导航见 `references/README.md`。
+
+## 完成判定
+
+- 先满足“强制执行协议”，并提供可复核的门禁结果。
+- 声称完整完成时，当前任务涉及的独立 Subagent 门禁均为 `PASS`，且通过后产物未发生未经复验的实质变化；缺少 Subagent 能力时只能报告 `BLOCKED` 或受限交付。
+- 所有计算结论来自实际运行结果。
+- 公式、表格和图表与代码结果一致。
+- 引用可由 OpenAlex、AnySearch 或原始出版页面追溯。
+- 论文已按目标竞赛当届官方规则配置，篇幅目标已经确认，公式/非空图表数量与全部子问题图覆盖经过检查，图表编号与正文引用连续，参考文献与正文引用双向对应。Word 分支还须通过原生 OMML、DOCX 结构、转换警告门禁和渲染页数检查；LaTeX 分支还须通过环境诊断、真实编译、日志、权威资源—源码—PDF 哈希绑定、正文与附录页数、空白页、页面尺寸、字体嵌入和图片 DPI 检查。
+- 所有产物位于 `PROJECT_ROOT`，`SKILL_ROOT` 未被改写。
+
+
+ succeeded in 0ms:
+---
+name: 编程手
+description: 数学建模的 Python 或 MATLAB 实现、运行、表格输出、可视化和复现阶段。
+---
+
+# 编程手
+
+## 路径
+
+- `ROLE_ROOT`：本文件所在目录。
+- `SKILL_ROOT`：`ROLE_ROOT/../../..`，只读。
+- `PROJECT_ROOT`：用户项目目录，所有代码、结果和图只写这里。
+
+## 输入
+
+优先读取 `PROJECT_ROOT/题目分析报告.md`、`PROJECT_ROOT/术语表格.md` 和题目附件。若用户只执行本阶段，可从用户提供的模型说明开始；若说明不足以实现，先反馈缺项。
+
+## 固定产物
+
+- Python `.py`、MATLAB `.m`，或用户要求的两套实现。
+- `results/` 中的运行结果表格和必要文本结果。
+- `figures/` 中的原始数据图、模型运行过程图、模型最终结果图，每类至少 3 张逻辑候选图、合计至少 9 张，并覆盖全部子问题：每个子问题在三类中各至少 1 张。文件名使用 `raw_q1_*`、`process_q1_*`、`result_q1_*` 等格式，不设上限；同一图的 SVG、PNG 和灰度预览只计 1 张。允许继续多生成，不机械删除有效备选视角。
+- `results/复现清单.json`。
+
+## 执行顺序
+
+1. 按用户要求或现有项目语言选择 Python/MATLAB；没有偏好时按模型依赖和现有环境选择并说明。
+2. 按选中的模型功能动态检查依赖，禁止一次性要求全部包：
+   - Python：`python scripts/check_env.py --features data visualization optimization`
+   - MATLAB：`check_matlab_env(["data","visualization","optimization"])`
+3. 实现数据读取、预处理和核心求解链，用真实输入或结构等价小实例跑通从 `PROJECT_ROOT` 执行的最小命令；任何结论必须来自真实输出。
+4. 在全量计算、参数扫描和正式出图前，派发独立质检 Subagent 执行 `P1` 最小可运行结果门禁；实现问题由编程手修正，模型合同问题携证据返回建模手。未返回 `PASS` 不得继续扩展。
+5. 从题目分析报告提取全部子问题并规范为 `q1…qN`。绘图前加载 `tools/figure/SKILL.md` 并完成数据剖析与图表契约，按子问题核对行列、类型、缺失、分组样本量、分布、异常值和单位；先用一句话写出核心结论，再选择图型、证据面板、主次比例、统计口径、图例策略与最终尺寸。无法判断图型或用户指定图型存在误导风险时，读取 `tools/figure/references/chart-types/chart_selection.md`。
+6. 将 `scripts/plot_style.py` 或 MATLAB 的三个出版绘图工具复制到 `PROJECT_ROOT/utils/` 后使用。按 `tools/figure/SKILL.md` 的 Nature/SCI 视觉论证流程生成三类候选图，每类至少 3 张、合计至少 9 张，且每个子问题在三类中各至少 1 张：不把不同重要性的面板机械等分，不用长标题、密集逐点标记、装饰性纹理或面板内重复图例堆成仪表盘；统计标注必须由代码计算，官方模板要求优先于内置基线。
+7. 所有正式图必须经 `tools/figure/scripts/export_figure.py` 或 `export_publication_figure()` 的布局与设计门禁，同时输出 SVG 与至少 300 DPI PNG；再运行 `python "<SKILL_ROOT>/references/roles/编程手/scripts/figure_audit.py" "<PROJECT_ROOT>/figures" --questions q1 q2 ... qN --strict`，实际打开彩色 PNG 和灰度预览，在论文预计尺寸下检查视觉层级、缺字、裁切、遮挡、颜色、尺度和面板一致性。有问题则改代码、重跑、重审，不能关闭门禁后继续，也不能直接修改位图。
+8. 生成复现清单：`python scripts/repro_manifest.py --project-root <PROJECT_ROOT> ...`。
+9. 按 `references/质检清单.md` 完成作者自检，再派发独立质检 Subagent 执行 `P2` 编程终检；未返回 `PASS` 不得进入论文阶段或宣称编程交付完成。
+
+## 阶段内独立门禁
+
+- `P1`：质检 Subagent 在隔离环境或只读副本中执行最小命令，核对退出码、输入到结果的追溯、单位、数值范围、关键约束和 `M1` 模型合同。它是纵向切片，不要求完整图表或最终性能。
+- `P2`：代码、结果、每类至少 3 张且覆盖全部子问题的三类图和复现清单冻结后，质检 Subagent 独立运行唯一复现命令并核对输入哈希、种子、关键数值、边界、量纲、各子问题图表语义及文件完整性。机械图审继续使用带全部 `--questions` 的 `figure_audit.py --strict`，Subagent 负责实际读图，检查单图核心结论、主次面板、图例、统计区间和最终尺寸可读性，而不是只确认文件能打开。
+
+两次门禁均按 `../../../references/Subagent调度.md` 返回证据；被审代码、数据或参数发生实质变化时重跑受影响门禁。
+
+## 何时加载
+
+| 情形 | 读取 |
+|---|---|
+| 开始实现 | `references/工作流程.md` |
+| 使用 MATLAB | `references/MATLAB规范.md` |
+| 画图 | `tools/figure/SKILL.md` |
+| 不确定用什么图，或需审查指定图型 | `tools/figure/references/chart-types/chart_selection.md` |
+| 需要图表函数 | `tools/figure/references/api-templates/plot_recipes.md` |
+| 需要具体算法 | `../../../references/算法索引.md`，再读取匹配的 `../../../assets/*.md` |
+| 处理 Excel | `../../../tools/xlsx/SKILL.md` |
+| 交付前 | `references/质检清单.md` |
+| 阶段内独立验收 | `../../../references/Subagent调度.md` |
+
+若实际运行证明模型公式、约束或参数定义冲突，停止通过改算法规避问题，把证据反馈给建模手。
+
+
+ succeeded in 0ms:
+---
+name: grill-with-docs
+description: A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.
+disable-model-invocation: true
+---
+
+Call the Skill tool twice, for "grilling" and "domain-modeling".
+
+
+ succeeded in 0ms:
+---
+name: research
+description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.
+---
+
+Spin up a **background agent** to do the research, so you keep working while it reads.
+
+Its job:
+
+1. Investigate the question against **primary sources** (official docs, source code, specs, first-party APIs), not a secondary write-up of them. Follow every claim back to the source that owns it.
+2. Write the findings to a single Markdown file, citing each claim's source.
+3. Save it where the repo already keeps such notes; match the existing convention, and if there is none, put it somewhere sensible and say where.
+
+
+ succeeded in 0ms:
+---
+name: tdd
+description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests.
+---
+
+# Test-Driven Development
+
+TDD is the red → green loop. This skill is the reference that makes that loop produce tests worth keeping: what a good test is, where tests go, the anti-patterns, and the rules of the loop. Every section applies on every cycle: consult them before and during the loop, not after.
+
+When exploring the codebase, read `CONTEXT.md` (if it exists) so test names and interface vocabulary match the project's domain language, and respect ADRs in the area you're touching.
+
+## What a good test is
+
+Tests verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't. A good test reads like a specification: "user can checkout with valid cart" tells you exactly what capability exists, and it survives refactors because it doesn't care about internal structure.
+
+See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
+
+## Seams: where tests go
+
+A **seam** is the public boundary you test at: the interface where you observe behavior without reaching inside. Tests live at seams, never against internals.
+
+**Test only at pre-agreed seams.** Before writing any test, write down the seams under test and confirm them with the user. No test is written at an unconfirmed seam. You can't test everything, so agreeing the seams up front is how testing effort lands on the critical paths and complex logic instead of every edge case.
+
+Ask: "What's the public interface, and which seams should we test?"
+
+When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.
+
+## Anti-patterns
+
+- **Implementation-coupled**: mocks internal collaborators, tests private methods, or verifies through a side channel (querying the database instead of using the interface). The tell: the test breaks when you refactor but behavior hasn't changed.
+- **Tautological**: the assertion recomputes the expected value the way the code does (`expect(add(a, b)).toBe(a + b)`, a snapshot derived by hand the same way, a constant asserted equal to itself), so it passes by construction and can never disagree with the code. Expected values must come from an independent source of truth: a known-good literal, a worked example, the spec.
+- **Horizontal slicing**: writing all tests first, then all implementation. Bulk tests verify _imagined_ behavior: you test the _shape_ of things rather than user-facing behavior, the tests go insensitive to real changes, and you commit to test structure before understanding the implementation. Work in **vertical slices** instead: one test → one implementation → repeat, each test a **tracer bullet** that responds to what the last cycle taught you.
+
+## Rules of the loop
+
+- **Red before green.** Write the failing test first, then only enough code to pass it. Don't anticipate future tests or add speculative features.
+- **One slice at a time.** One seam, one test, one minimal implementation per cycle.
+- **Refactoring is not part of the loop.** It belongs to the review stage (see the `code-review` skill), not the red → green implementation cycle.
+
+
+ succeeded in 0ms:
+---
+name: prototype
+description: Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.
+---
+
+# Prototype
+
+A prototype is **throwaway code that answers a question**. The question decides the shape.
+
+## Pick a branch
+
+Identify which question is being answered, using the user's prompt, the surrounding code, or by asking if the user is around:
+
+- **"Does this logic / state model feel right?"** → [LOGIC.md](LOGIC.md). Build a single shareable HTML file (free-play buttons plus tabbed guided walkthroughs) that pushes the state machine through cases that are hard to reason about on paper, and that a non-developer can drive.
+- **"What should this look like?"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar.
+
+The two branches produce very different artifacts, so getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend module → logic; a page or component → UI) and state the assumption at the top of the prototype.
+
+## Rules that apply to both
+
+1. **Throwaway from day one, and clearly marked as such.** Locate the prototype code close to where it will actually be used (next to the module or page it's prototyping for) so context is obvious, but name it so a casual reader can see it's a prototype, not production. For throwaway UI routes, obey whatever routing convention the project already uses; don't invent a new top-level structure.
+2. **Trivial to run.** A UI prototype starts from one command in the project's task runner: `pnpm <name>`, `python <path>`, `bun <path>`, etc. A logic demo is a single HTML file the user double-clicks. Either way, no thinking required to start it.
+3. **No persistence by default.** State lives in memory. Persistence is the thing the prototype is _checking_, not something it should depend on. If the question explicitly involves a database, hit a scratch DB or a local file with a clear "PROTOTYPE, wipe me" name.
+4. **Skip the polish.** No tests, no error handling beyond what makes the prototype _runnable_, no abstractions. The point is to learn something fast.
+5. **Surface the state.** After every action (logic) or on every variant switch (UI), print or render the full relevant state so the user can see what changed.
+6. **Capture it when done.** Fold any validated decision into the real code, then capture the prototype itself as a **primary source**: commit it to a throwaway branch, out of main, and leave a context pointer to that branch on the implementation issue. Capture the answer too (the verdict and the question it settled) in the issue or a commit. The main branch keeps only the validated decision.
+
+
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/code-review/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+ succeeded in 123ms:
+---
+name: code-review
+description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
+---
+
+Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
+
+- **Standards**: does the code conform to this repo's documented coding standards?
+- **Spec**: does the code faithfully implement the originating issue / spec?
+
+Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
+
+The issue tracker should have been provided to you. If `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-matt-pocock-skills`.
+
+## Process
+
+### 1. Pin the fixed point
+
+Whatever the user said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, ask for it.
+
+Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so the comparison is against the merge-base). Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
+
+Before going further, confirm the fixed point resolves (`git rev-parse <fixed-point>`) and the diff is non-empty. A bad ref or empty diff should fail here, not inside two parallel sub-agents.
+
+### 2. Identify the spec source
+
+Look for the originating spec, in this order:
+
+1. Issue references in the commit messages (`#123`, `Closes #45`, GitLab `!67`, etc.), fetched via the workflow in `docs/agents/issue-tracker.md`.
+2. A path the user passed as an argument.
+3. A spec file under `docs/`, `specs/`, or `.scratch/` matching the branch name or feature.
+4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
+
+### 3. Identify the standards sources
+
+Anything in the repo that documents how code should be written, such as `CODING_STANDARDS.md` or `CONTRIBUTING.md`.
+
+On top of whatever the repo documents, the Standards axis always carries the **smell baseline** below: a fixed set of Fowler code smells (_Refactoring_, ch.3) that applies even when a repo documents nothing. Two rules bind it:
+
+- **The repo overrides.** A documented repo standard always wins; where it endorses something the baseline would flag, suppress the smell.
+- **Always a judgement call.** Each smell is a labelled heuristic ("possible Feature Envy"), never a hard violation. Like any standard here, skip anything tooling already enforces.
+
+Each smell reads *what it is* → *how to fix*; match it against the diff:
+
+- **Mysterious Name**: a function, variable, or type whose name doesn't reveal what it does or holds. → rename it; if no honest name comes, the design's murky.
+- **Duplicated Code**: the same logic shape appears in more than one hunk or file in the change. → extract the shared shape, call it from both.
+- **Feature Envy**: a method that reaches into another object's data more than its own. → move the method onto the data it envies.
+- **Data Clumps**: the same few fields or params keep travelling together (a type wanting to be born). → bundle them into one type, pass that.
+- **Primitive Obsession**: a primitive or string standing in for a domain concept that deserves its own type. → give the concept its own small type.
+- **Repeated Switches**: the same `switch`/`if`-cascade on the same type recurs across the change. → replace with polymorphism, or one map both sites share.
+- **Shotgun Surgery**: one logical change forces scattered edits across many files in the diff. → gather what changes together into one module.
+- **Divergent Change**: one file or module is edited for several unrelated reasons. → split so each module changes for one reason.
+- **Speculative Generality**: abstraction, parameters, or hooks added for needs the spec doesn't have. → delete it; inline back until a real need shows.
+- **Message Chains**: long `a.b().c().d()` navigation the caller shouldn't depend on. → hide the walk behind one method on the first object.
+- **Middle Man**: a class or function that mostly just delegates onward. → cut it, call the real target direct.
+- **Refused Bequest**: a subclass or implementer that ignores or overrides most of what it inherits. → drop the inheritance, use composition.
+
+### 4. Spawn both sub-agents in parallel
+
+**Standards sub-agent prompt** should include:
+
+- The full diff command and commit list.
+- The list of standards-source files you found in step 3, **plus the smell baseline from step 3** pasted in full (the sub-agent has no other access to it).
+- The brief: "Report, per file/hunk where relevant, (a) every place the diff violates a documented standard: cite the standard (file + the rule); and (b) any baseline smell you spot: name it and quote the hunk. Distinguish hard violations from judgement calls: documented-standard breaches can be hard, but baseline smells are always judgement calls, and a documented repo standard overrides the baseline. Skip anything tooling enforces. Under 400 words."
+
+**Spec sub-agent prompt** should include:
+
+- The diff command and commit list.
+- The path or fetched contents of the spec.
+- The brief: "Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong. Quote the spec line for each finding. Under 400 words."
+
+If the spec is missing, skip the Spec sub-agent and note this in the final report.
+
+### 5. Aggregate
+
+Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
+
+End with a one-line summary: total findings per axis, and the worst issue _within each axis_ (if any). Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
+
+## Why two axes
+
+A change can pass one axis and fail the other:
+
+- Code that follows every standard but implements the wrong thing → **Standards pass, Spec fail.**
+- Code that does exactly what the issue asked but breaks the project's conventions → **Spec pass, Standards fail.**
+
+Reporting them separately stops one axis from masking the other.
+
+
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries.json'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+ succeeded in 79ms:
+[
+  {
+    "case_id": "cumcm-2022-c",
+    "competition": "CUMCM",
+    "year": 2022,
+    "title": "古代玻璃制品的成分分析",
+    "problem_type": "statistical_analysis",
+    "source_status": "verified",
+    "problem_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+    "data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 1498,
+    "problem_excerpt": "2022 年高教社杯全国大学生数学建模竞赛题目 （请先阅读“全国大学生数学建模竞赛论文格式规范”） C 题 古代玻璃制品的成分分析与鉴别 丝绸之路是古代中西方文化交流的通道，其中玻璃是早期贸易往来的宝贵物证。早期的玻 璃在西亚和埃及地区常被制作成珠形饰品传入我国，我国古代玻璃吸收其技术后在本土就地取 材制作，因此与外来的玻璃制品外观相似，但化学成分却不相同。 玻璃的主要原料是石英砂， 主要化学成分是二氧化硅 （SiO2） 。 由于纯石英砂的熔点较高， 为了降低熔化温度，在炼制时需要添加助熔剂。古代常用的助熔剂有草木灰、天然泡碱、硝石 和铅矿石等，并添加石灰石作为稳定剂，石灰石煅烧以后转化为氧化钙（CaO）。添加的助熔 剂不同，其主要化学成分也不同。例如，铅钡玻璃在烧制过程中加入铅矿石作为助熔剂，其氧 化铅（PbO）、氧化钡（BaO）的含量较高，通常被认为是我国自己发明的玻璃品种，楚文化 的玻璃就是以铅钡玻璃为主。钾玻璃是以含钾量高的物质如草木灰作为助熔剂烧制而成的，主 要流行于我国岭南以及东南亚和印度等区域。 古代玻璃极易受埋藏环境的影响而风化。在风化过程中，内部元素与环境元素进行大量交 换，导致其成分比例发生变化，从而影响对其类别的正确判断。如图 1 的文物标记为表面无风 化，表面能明显看出文物的颜色、纹饰，但不排除局部有较浅的风化；图2 的文物标记为表面 风化，表面大面积灰黄色区域为风化层，是明显风化区域，紫色部分是一般风化表面。在部分 风化的文物中，其表面也有未风化的区域。 图 1 未风化的蜻蜓眼玻璃珠样品 图 2 风化的玻璃棋子样品 现有一批我国古代玻璃制品的相关数据，考古工作者依据这些文物样品的化学成分和其他 检测手段已将其分为高钾玻璃和铅钡玻璃两种类型。附件表单 1 给出了这些文物的分类信息， 附件表单 2 给出了相应的主要成分所占比例（空白处表示未检测到该成分）。这些数据的特点 是成分性，即各成分比例的累加和应为 100%，但因检测手段等原因可能导致其成分比例的累 加和非 100%的情况。本题中将成分比例累加和介于 85%~105%之间的数据视为有效数据。",
+    "data_files": [
+      "CUMCM_2022_C_附件.xlsx"
+    ],
+    "data_audit": [
+      {
+        "file": "CUMCM_2022_C_附件.xlsx",
+        "sheets": [
+          {
+            "sheet": "表单1",
+            "rows": 59,
+            "columns": 5,
+            "nonempty_cells": 291,
+            "headers": [
+              "文物编号",
+              "纹饰",
+              "类型",
+              "颜色",
+              "表面风化"
+            ],
+            "numeric_min": 1.0,
+            "numeric_max": 58.0
+          },
+          {
+            "sheet": "表单2",
+            "rows": 70,
+            "columns": 15,
+            "nonempty_cells": 726,
+            "headers": [
+              "文物采样点",
+              "二氧化硅(SiO2)",
+              "氧化钠(Na2O)",
+              "氧化钾(K2O)",
+              "氧化钙(CaO)",
+              "氧化镁(MgO)",
+              "氧化铝(Al2O3)",
+              "氧化铁(Fe2O3)",
+              "氧化铜(CuO)",
+              "氧化铅(PbO)",
+              "氧化钡(BaO)",
+              "五氧化二磷(P2O5)",
+              "氧化锶(SrO)",
+              "氧化锡(SnO2)",
+              "二氧化硫(SO2)"
+            ],
+            "numeric_min": 0.0,
+            "numeric_max": 96.77
+          },
+          {
+            "sheet": "表单3",
+            "rows": 9,
+            "columns": 16,
+            "nonempty_cells": 111,
+            "headers": [
+              "文物编号",
+              "表面风化",
+              "二氧化硅(SiO2)",
+              "氧化钠(Na2O)",
+              "氧化钾(K2O)",
+              "氧化钙(CaO)",
+              "氧化镁(MgO)",
+              "氧化铝(Al2O3)",
+              "氧化铁(Fe2O3)",
+              "氧化铜(CuO)",
+              "氧化铅(PbO)",
+              "氧化钡(BaO)",
+              "五氧化二磷(P2O5)",
+              "氧化锶(SrO)",
+              "氧化锡(SnO2)",
+              "二氧化硫(SO2)"
+            ],
+            "numeric_min": 0.0,
+            "numeric_max": 93.17
+          }
+        ]
+      }
+    ],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "compositional_data",
+      "classification",
+      "uncertainty_analysis"
+    ],
+    "metadata_common_failures": [
+      "ignored_compositional_constraint",
+      "data_leakage",
+      "unsupported_classification"
+    ]
+  },
+  {
+    "case_id": "icm-2023-d",
+    "competition": "ICM",
+    "year": 2023,
+    "title": "Prioritizing the UN Sustainability Goals",
+    "problem_type": "multi_objective_decision",
+    "source_status": "verified",
+    "problem_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 3852,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 ICM Problem D: Prioritizing the UN Sustainability Goals Unknown author. Public domain via Wikimedia Commons Background The United Nations (UN) has set 17 Sustainable Development Goals (SDGs). Achieving these goals would ultimately lead to an improved life for many people around the world. These goals are not independent of each other. So, often positive gains in some goals have an impact (positive or negative and sometimes both) on other goals. This interconnectedness makes the achievement of all goals a fluid process where funding limitations and other national and international priorities may take precedence. Additionally, the impact of technological advances, global pandemics, climate change, regional wars, and refugee movements have had serious implications on many of the goals. Requirement To explore",
+    "data_files": [],
+    "data_audit": [],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "multi_criteria_decision",
+      "weight_sensitivity",
+      "robustness_analysis"
+    ],
+    "metadata_common_failures": [
+      "arbitrary_weights",
+      "scale_mismatch",
+      "no_ranking_robustness"
+    ]
+  },
+  {
+    "case_id": "icm-2023-e",
+    "competition": "ICM",
+    "year": 2023,
+    "title": "Light Pollution",
+    "problem_type": "complex_data_analysis",
+    "source_status": "verified",
+    "problem_sha256": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 4724,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 ICM Problem E: Light Pollution Photo Credit: K. Blyman Background Light pollution is used to describe any excessive or poor use of artificial light. Some of the phenomena that we refer to as light pollution include light trespass, over-illumination, and light clutter. These phenomena are most easily observed as a glow in the sky after the sun has set in large cities; however, they may also occur in more remote regions. Light pollution alters our view of the night sky, has environmental impacts and affects our health and safety. For example, plant maturation may be delayed or accelerated, and migration patterns of wildlife affected. Excessive artificial light may confuse our circadian rhythms, leading to poor sleep quality and perhaps physical and mental health issues. Glare caused by artificial lights may",
+    "data_files": [],
+    "data_audit": [],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "spatial_analysis",
+      "statistical_modeling",
+      "scenario_analysis"
+    ],
+    "metadata_common_failures": [
+      "sampling_bias",
+      "confounded_correlation",
+      "no_uncertainty_analysis"
+    ]
+  },
+  {
+    "case_id": "mcm-2023-a",
+    "competition": "MCM",
+    "year": 2023,
+    "title": "Drought-Stricken Plant Communities",
+    "problem_type": "dynamic_system",
+    "source_status": "verified",
+    "problem_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 3102,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem A: Drought-Stricken Plant Communities Photo Credit: Pixabay.com Background Different species of plants react to stresses in different ways. For example, grasslands are quite sensitive to drought. Droughts occur at varying frequencies and varying levels of severity. Numerous observations suggest that the number of different species present plays a role in how a plant community adapts when exposed to cycles of drought over successive generations. In some communities with only one species of plant, the generations that follow are not as well adapted to drought conditions as the individual plants in communities with four or more species. These observations raise many questions. For example, what is the minimal number of species necessary for a plant community to benefit from this type of localized",
+    "data_files": [],
+    "data_audit": [],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "mechanistic_model",
+      "differential_equation",
+      "numerical_simulation"
+    ],
+    "metadata_common_failures": [
+      "wrong_boundary_condition",
+      "unstable_solver",
+      "no_extreme_case"
+    ]
+  },
+  {
+    "case_id": "mcm-2023-b",
+    "competition": "MCM",
+    "year": 2023,
+    "title": "Reimagining Maasai Mara",
+    "problem_type": "optimization",
+    "source_status": "verified",
+    "problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 3149,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem B: Reimagining Maasai Mara Photo Credit: Pixabay.com Background Kenya’s wildlife preserves were originally created primarily to protect wildlife and other natural resources. Kenya’s parliament passed the Wildlife Conservation and Management Act, 2013 to provide more equitable sharing of resources, as well as to allow alternative, community-based management efforts [1]. Kenya has since added amendments to address gaps in the legislation to provide more clear governance, finance, and penalties for violators[2]. Requirement Focusing on one large game preserve, the Maasai Mara, your task is to determine alternate ways to manage the resources within and outside the current boundaries of the park. Specifically, you should: • Consider and recommend specific policies and management strategies for diff",
+    "data_files": [],
+    "data_audit": [],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "network_analysis",
+      "multi_objective_optimization",
+      "scenario_analysis"
+    ],
+    "metadata_common_failures": [
+      "arbitrary_weights",
+      "ignored_capacity_constraint",
+      "no_robustness"
+    ]
+  },
+  {
+    "case_id": "mcm-2023-c",
+    "competition": "MCM",
+    "year": 2023,
+    "title": "Predicting Wordle Results",
+    "problem_type": "prediction_and_statistics",
+    "source_status": "verified",
+    "problem_sha256": "b511204705db800f3b812943b780074cc24bfe5108d26b6c20f308128e631ef6",
+    "data_sha256": "22d9c6c308700c6b744d74da8c83e358eefba955f58713c65f947624cda5ac94",
+    "pdf_pages": 4,
+    "pdf_extracted_chars": 7051,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem C: Predicting Wordle Results Image: nytco.com[1] Background Wordle is a popular puzzle currently offered daily by the New York Times. Players try to solve the puzzle by guessing a five-letter word in six tries or less, receiving feedback with every guess. For this version, each guess must be an actual word in English. Guesses that are not recognized as words by the contest are not allowed. Wordle continues to grow in popularity and versions of the game are now available in over 60 languages. The New York Times website directions for Wordle state that the color of the tiles will change after you submit your word. A yellow tile indicates the letter in that tile is in the word, but it is in the wrong location. A green tile indicates that the letter in that tile is in the word and is in the correc",
+    "data_files": [
+      "official-data.zip",
+      "official/2023_MCM_Problem_C_Data.xlsx"
+    ],
+    "data_audit": [
+      {
+        "file": "2023_MCM_Problem_C_Data.xlsx",
+        "sheets": [
+          {
+            "sheet": "Sheet1",
+            "rows": 481,
+            "columns": 13,
+            "nonempty_cells": 4321,
+            "headers": [
+              "Percent in ",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "numeric_min": 0.0,
+            "numeric_max": 361908.0
+          }
+        ]
+      }
+    ],
+    "zip_entries": {
+      "official-data.zip": [
+        "2023_MCM_Problem_C_Data.xlsx"
+      ]
+    },
+    "metadata_expected_methods": [
+      "time_series",
+      "classification",
+      "cross_validation"
+    ],
+    "metadata_common_failures": [
+      "temporal_leakage",
+      "overfitting",
+      "metric_mismatch"
+    ]
+  },
+  {
+    "case_id": "mcm-2023-y",
+    "competition": "MCM",
+    "year": 2023,
+    "title": "Understanding Used Sailboat Prices",
+    "problem_type": "prediction_and_statistics",
+    "source_status": "verified",
+    "problem_sha256": "2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce",
+    "data_sha256": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba",
+    "pdf_pages": 3,
+    "pdf_extracted_chars": 6010,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem Y: Understanding Used Sailboat Prices Photo Credit: www.pixabay.com Like many luxury goods, sailboats vary in value as they age and as market conditions change. The attached “2023_MCM_Problem_Y_Boats.xlsx” file includes data on approximately 3500 sailboats from 36 to 56 feet long advertised for sale in Europe, the Caribbean, and the USA in December 2020. A boating enthusiast provided these data to COMAP. Like most real-world data sets, it may have missing data or other issues that require some data cleaning prior to analysis. The Excel file includes two tabs, one for monohulled sailboats and one for catamarans. In each tab, columns are labeled Make, Variant, Length (in feet), Geographic Region, Country/Region/State, Listing Price (in US dollars), and Year (of manufacture). For a given make, va",
+    "data_files": [
+      "official-data.zip",
+      "official/2023_MCM_Problem_Y_Data.xlsx"
+    ],
+    "data_audit": [
+      {
+        "file": "2023_MCM_Problem_Y_Data.xlsx",
+        "sheets": [
+          {
+            "sheet": "Monohulled Sailboats ",
+            "rows": 2347,
+            "columns": 7,
+            "nonempty_cells": 16426,
+            "headers": [
+              "Make",
+              "Variant",
+              "Length \n(ft)",
+              "Geographic Region",
+              "Country/Region/State ",
+              "Listing Price (USD)",
+              "Year"
+            ],
+            "numeric_min": 12.0,
+            "numeric_max": 1885229.0
+          },
+          {
+            "sheet": "Catamarans",
+            "rows": 1146,
+            "columns": 7,
+            "nonempty_cells": 8022,
+            "headers": [
+              "Make",
+              "Variant",
+              "Length \n(ft)",
+              "Geographic Region",
+              "Country/Region/State ",
+              "Listing Price (USD)",
+              "Year"
+            ],
+            "numeric_min": 4.0,
+            "numeric_max": 2890000.0
+          }
+        ]
+      }
+    ],
+    "zip_entries": {
+      "official-data.zip": [
+        "2023_MCM_Problem_Y_Data.xlsx"
+      ]
+    },
+    "metadata_expected_methods": [
+      "regression",
+      "feature_engineering",
+      "cross_validation"
+    ],
+    "metadata_common_failures": [
+      "target_leakage",
+      "overfitting",
+      "metric_mismatch"
+    ]
+  }
+]
+
+2026-08-30T06:32:52.763867Z  WARN codex_core_plugins::startup_sync: git sync failed for curated plugin sync; falling back to GitHub HTTP error=git ls-remote curated plugins repo failed with status exit code: 128: fatal: unable to access 'https://github.com/openai/plugins.git/': Failed to connect to github.com port 443 after 21102 ms: Could not connect to server
+2026-08-30T06:32:53.454104Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=file:///C:/Users/%E4%BC%8D%E8%BE%B0%E6%9D%B0/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-08-30T06:32:53.471885Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=file:///C:/Users/%E4%BC%8D%E8%BE%B0%E6%9D%B0/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-08-30T06:32:55.965420Z ERROR codex_core::tools::router: error=request_user_input is unavailable in Default mode
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/.codex/skills/.system/using-superpowers/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/grill-with-docs/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/research/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/prototype/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+ exited 1 in 0ms:
+Get-Content: 
+Line |
+   2 |  Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/.codex/skills/.system/usi …
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'C:/Users/伍辰杰/.codex/skills/.system/using-superpowers/SKILL.md' because it does not exist.
+
+ succeeded in 0ms:
+---
+name: grill-with-docs
+description: A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.
+disable-model-invocation: true
+---
+
+Call the Skill tool twice, for "grilling" and "domain-modeling".
+
+
+ succeeded in 0ms:
+---
+name: research
+description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.
+---
+
+Spin up a **background agent** to do the research, so you keep working while it reads.
+
+Its job:
+
+1. Investigate the question against **primary sources** (official docs, source code, specs, first-party APIs), not a secondary write-up of them. Follow every claim back to the source that owns it.
+2. Write the findings to a single Markdown file, citing each claim's source.
+3. Save it where the repo already keeps such notes; match the existing convention, and if there is none, put it somewhere sensible and say where.
+
+
+ succeeded in 0ms:
+---
+name: prototype
+description: Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.
+---
+
+# Prototype
+
+A prototype is **throwaway code that answers a question**. The question decides the shape.
+
+## Pick a branch
+
+Identify which question is being answered, using the user's prompt, the surrounding code, or by asking if the user is around:
+
+- **"Does this logic / state model feel right?"** → [LOGIC.md](LOGIC.md). Build a single shareable HTML file (free-play buttons plus tabbed guided walkthroughs) that pushes the state machine through cases that are hard to reason about on paper, and that a non-developer can drive.
+- **"What should this look like?"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar.
+
+The two branches produce very different artifacts, so getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend module → logic; a page or component → UI) and state the assumption at the top of the prototype.
+
+## Rules that apply to both
+
+1. **Throwaway from day one, and clearly marked as such.** Locate the prototype code close to where it will actually be used (next to the module or page it's prototyping for) so context is obvious, but name it so a casual reader can see it's a prototype, not production. For throwaway UI routes, obey whatever routing convention the project already uses; don't invent a new top-level structure.
+2. **Trivial to run.** A UI prototype starts from one command in the project's task runner: `pnpm <name>`, `python <path>`, `bun <path>`, etc. A logic demo is a single HTML file the user double-clicks. Either way, no thinking required to start it.
+3. **No persistence by default.** State lives in memory. Persistence is the thing the prototype is _checking_, not something it should depend on. If the question explicitly involves a database, hit a scratch DB or a local file with a clear "PROTOTYPE, wipe me" name.
+4. **Skip the polish.** No tests, no error handling beyond what makes the prototype _runnable_, no abstractions. The point is to learn something fast.
+5. **Surface the state.** After every action (logic) or on every variant switch (UI), print or render the full relevant state so the user can see what changed.
+6. **Capture it when done.** Fold any validated decision into the real code, then capture the prototype itself as a **primary source**: commit it to a throwaway branch, out of main, and leave a context pointer to that branch on the implementation issue. Capture the answer too (the verdict and the question it settled) in the issue or a commit. The main branch keeps only the validated decision.
+
+
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/tdd/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+ succeeded in 103ms:
+---
+name: tdd
+description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests.
+---
+
+# Test-Driven Development
+
+TDD is the red → green loop. This skill is the reference that makes that loop produce tests worth keeping: what a good test is, where tests go, the anti-patterns, and the rules of the loop. Every section applies on every cycle: consult them before and during the loop, not after.
+
+When exploring the codebase, read `CONTEXT.md` (if it exists) so test names and interface vocabulary match the project's domain language, and respect ADRs in the area you're touching.
+
+## What a good test is
+
+Tests verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't. A good test reads like a specification: "user can checkout with valid cart" tells you exactly what capability exists, and it survives refactors because it doesn't care about internal structure.
+
+See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
+
+## Seams: where tests go
+
+A **seam** is the public boundary you test at: the interface where you observe behavior without reaching inside. Tests live at seams, never against internals.
+
+**Test only at pre-agreed seams.** Before writing any test, write down the seams under test and confirm them with the user. No test is written at an unconfirmed seam. You can't test everything, so agreeing the seams up front is how testing effort lands on the critical paths and complex logic instead of every edge case.
+
+Ask: "What's the public interface, and which seams should we test?"
+
+When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.
+
+## Anti-patterns
+
+- **Implementation-coupled**: mocks internal collaborators, tests private methods, or verifies through a side channel (querying the database instead of using the interface). The tell: the test breaks when you refactor but behavior hasn't changed.
+- **Tautological**: the assertion recomputes the expected value the way the code does (`expect(add(a, b)).toBe(a + b)`, a snapshot derived by hand the same way, a constant asserted equal to itself), so it passes by construction and can never disagree with the code. Expected values must come from an independent source of truth: a known-good literal, a worked example, the spec.
+- **Horizontal slicing**: writing all tests first, then all implementation. Bulk tests verify _imagined_ behavior: you test the _shape_ of things rather than user-facing behavior, the tests go insensitive to real changes, and you commit to test structure before understanding the implementation. Work in **vertical slices** instead: one test → one implementation → repeat, each test a **tracer bullet** that responds to what the last cycle taught you.
+
+## Rules of the loop
+
+- **Red before green.** Write the failing test first, then only enough code to pass it. Don't anticipate future tests or add speculative features.
+- **One slice at a time.** One seam, one test, one minimal implementation per cycle.
+- **Refactoring is not part of the loop.** It belongs to the review stage (see the `code-review` skill), not the red → green implementation cycle.
+
+
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/baseline-vendors/pinned/matt/skills/engineering/code-review/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+ succeeded in 83ms:
+---
+name: code-review
+description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
+---
+
+Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
+
+- **Standards**: does the code conform to this repo's documented coding standards?
+- **Spec**: does the code faithfully implement the originating issue / spec?
+
+Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
+
+The issue tracker should have been provided to you. If `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-matt-pocock-skills`.
+
+## Process
+
+### 1. Pin the fixed point
+
+Whatever the user said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, ask for it.
+
+Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so the comparison is against the merge-base). Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
+
+Before going further, confirm the fixed point resolves (`git rev-parse <fixed-point>`) and the diff is non-empty. A bad ref or empty diff should fail here, not inside two parallel sub-agents.
+
+### 2. Identify the spec source
+
+Look for the originating spec, in this order:
+
+1. Issue references in the commit messages (`#123`, `Closes #45`, GitLab `!67`, etc.), fetched via the workflow in `docs/agents/issue-tracker.md`.
+2. A path the user passed as an argument.
+3. A spec file under `docs/`, `specs/`, or `.scratch/` matching the branch name or feature.
+4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
+
+### 3. Identify the standards sources
+
+Anything in the repo that documents how code should be written, such as `CODING_STANDARDS.md` or `CONTRIBUTING.md`.
+
+On top of whatever the repo documents, the Standards axis always carries the **smell baseline** below: a fixed set of Fowler code smells (_Refactoring_, ch.3) that applies even when a repo documents nothing. Two rules bind it:
+
+- **The repo overrides.** A documented repo standard always wins; where it endorses something the baseline would flag, suppress the smell.
+- **Always a judgement call.** Each smell is a labelled heuristic ("possible Feature Envy"), never a hard violation. Like any standard here, skip anything tooling already enforces.
+
+Each smell reads *what it is* → *how to fix*; match it against the diff:
+
+- **Mysterious Name**: a function, variable, or type whose name doesn't reveal what it does or holds. → rename it; if no honest name comes, the design's murky.
+- **Duplicated Code**: the same logic shape appears in more than one hunk or file in the change. → extract the shared shape, call it from both.
+- **Feature Envy**: a method that reaches into another object's data more than its own. → move the method onto the data it envies.
+- **Data Clumps**: the same few fields or params keep travelling together (a type wanting to be born). → bundle them into one type, pass that.
+- **Primitive Obsession**: a primitive or string standing in for a domain concept that deserves its own type. → give the concept its own small type.
+- **Repeated Switches**: the same `switch`/`if`-cascade on the same type recurs across the change. → replace with polymorphism, or one map both sites share.
+- **Shotgun Surgery**: one logical change forces scattered edits across many files in the diff. → gather what changes together into one module.
+- **Divergent Change**: one file or module is edited for several unrelated reasons. → split so each module changes for one reason.
+- **Speculative Generality**: abstraction, parameters, or hooks added for needs the spec doesn't have. → delete it; inline back until a real need shows.
+- **Message Chains**: long `a.b().c().d()` navigation the caller shouldn't depend on. → hide the walk behind one method on the first object.
+- **Middle Man**: a class or function that mostly just delegates onward. → cut it, call the real target direct.
+- **Refused Bequest**: a subclass or implementer that ignores or overrides most of what it inherits. → drop the inheritance, use composition.
+
+### 4. Spawn both sub-agents in parallel
+
+**Standards sub-agent prompt** should include:
+
+- The full diff command and commit list.
+- The list of standards-source files you found in step 3, **plus the smell baseline from step 3** pasted in full (the sub-agent has no other access to it).
+- The brief: "Report, per file/hunk where relevant, (a) every place the diff violates a documented standard: cite the standard (file + the rule); and (b) any baseline smell you spot: name it and quote the hunk. Distinguish hard violations from judgement calls: documented-standard breaches can be hard, but baseline smells are always judgement calls, and a documented repo standard overrides the baseline. Skip anything tooling enforces. Under 400 words."
+
+**Spec sub-agent prompt** should include:
+
+- The diff command and commit list.
+- The path or fetched contents of the spec.
+- The brief: "Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong. Quote the spec line for each finding. Under 400 words."
+
+If the spec is missing, skip the Spec sub-agent and note this in the final report.
+
+### 5. Aggregate
+
+Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
+
+End with a one-line summary: total findings per axis, and the worst issue _within each axis_ (if any). Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
+
+## Why two axes
+
+A change can pass one axis and fail the other:
+
+- Code that follows every standard but implements the wrong thing → **Standards pass, Spec fail.**
+- Code that does exactly what the issue asked but breaks the project's conventions → **Spec pass, Standards fail.**
+
+Reporting them separately stops one axis from masking the other.
+
+
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "Get-Content -Raw -LiteralPath 'C:/Users/伍辰杰/.codex/skills/using-superpowers/SKILL.md'" in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+ succeeded in 93ms:
+---
+name: using-superpowers
+description: Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions
+---
+
+<SUBAGENT-STOP>
+If you were dispatched as a subagent to execute a specific task, skip this skill.
+</SUBAGENT-STOP>
+
+<EXTREMELY-IMPORTANT>
+If you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.
+
+IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.
+
+This is not negotiable. This is not optional. You cannot rationalize your way out of this.
+</EXTREMELY-IMPORTANT>
+
+## Instruction Priority
+
+Superpowers skills override default system prompt behavior, but **user instructions always take precedence**:
+
+1. **User's explicit instructions** (CLAUDE.md, GEMINI.md, AGENTS.md, direct requests) — highest priority
+2. **Superpowers skills** — override default system behavior where they conflict
+3. **Default system prompt** — lowest priority
+
+If CLAUDE.md, GEMINI.md, or AGENTS.md says "don't use TDD" and a skill says "always use TDD," follow the user's instructions. The user is in control.
+
+## How to Access Skills
+
+**In Claude Code:** Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you—follow it directly. Never use the Read tool on skill files.
+
+**In Copilot CLI:** Use the `skill` tool. Skills are auto-discovered from installed plugins. The `skill` tool works the same as Claude Code's `Skill` tool.
+
+**In Gemini CLI:** Skills activate via the `activate_skill` tool. Gemini loads skill metadata at session start and activates the full content on demand.
+
+**In other environments:** Check your platform's documentation for how skills are loaded.
+
+## Platform Adaptation
+
+Skills use Claude Code tool names. Non-CC platforms: see `references/copilot-tools.md` (Copilot CLI), `references/codex-tools.md` (Codex) for tool equivalents. Gemini CLI users get the tool mapping loaded automatically via GEMINI.md.
+
+# Using Skills
+
+## The Rule
+
+**Invoke relevant or requested skills BEFORE any response or action.** Even a 1% chance a skill might apply means that you should invoke the skill to check. If an invoked skill turns out to be wrong for the situation, you don't need to use it.
+
+```dot
+digraph skill_flow {
+    "User message received" [shape=doublecircle];
+    "About to EnterPlanMode?" [shape=doublecircle];
+    "Already brainstormed?" [shape=diamond];
+    "Invoke brainstorming skill" [shape=box];
+    "Might any skill apply?" [shape=diamond];
+    "Invoke Skill tool" [shape=box];
+    "Announce: 'Using [skill] to [purpose]'" [shape=box];
+    "Has checklist?" [shape=diamond];
+    "Create TodoWrite todo per item" [shape=box];
+    "Follow skill exactly" [shape=box];
+    "Respond (including clarifications)" [shape=doublecircle];
+
+    "About to EnterPlanMode?" -> "Already brainstormed?";
+    "Already brainstormed?" -> "Invoke brainstorming skill" [label="no"];
+    "Already brainstormed?" -> "Might any skill apply?" [label="yes"];
+    "Invoke brainstorming skill" -> "Might any skill apply?";
+
+    "User message received" -> "Might any skill apply?";
+    "Might any skill apply?" -> "Invoke Skill tool" [label="yes, even 1%"];
+    "Might any skill apply?" -> "Respond (including clarifications)" [label="definitely not"];
+    "Invoke Skill tool" -> "Announce: 'Using [skill] to [purpose]'";
+    "Announce: 'Using [skill] to [purpose]'" -> "Has checklist?";
+    "Has checklist?" -> "Create TodoWrite todo per item" [label="yes"];
+    "Has checklist?" -> "Follow skill exactly" [label="no"];
+    "Create TodoWrite todo per item" -> "Follow skill exactly";
+}
+```
+
+## Red Flags
+
+These thoughts mean STOP—you're rationalizing:
+
+| Thought | Reality |
+|---------|---------|
+| "This is just a simple question" | Questions are tasks. Check for skills. |
+| "I need more context first" | Skill check comes BEFORE clarifying questions. |
+| "Let me explore the codebase first" | Skills tell you HOW to explore. Check first. |
+| "I can check git/files quickly" | Files lack conversation context. Check for skills. |
+| "Let me gather information first" | Skills tell you HOW to gather information. |
+| "This doesn't need a formal skill" | If a skill exists, use it. |
+| "I remember this skill" | Skills evolve. Read current version. |
+| "This doesn't count as a task" | Action = task. Check for skills. |
+| "The skill is overkill" | Simple things become complex. Use it. |
+| "I'll just do this one thing first" | Check BEFORE doing anything. |
+| "This feels productive" | Undisciplined action wastes time. Skills prevent this. |
+| "I know what that means" | Knowing the concept ≠ using the skill. Invoke it. |
+
+## Skill Priority
+
+When multiple skills could apply, use this order:
+
+1. **Process skills first** (brainstorming, debugging) - these determine HOW to approach the task
+2. **Implementation skills second** (frontend-design, mcp-builder) - these guide execution
+
+"Let's build X" → brainstorming first, then implementation skills.
+"Fix this bug" → debugging first, then domain-specific skills.
+
+## Skill Types
+
+**Rigid** (TDD, debugging): Follow exactly. Don't adapt away discipline.
+
+**Flexible** (patterns): Adapt principles to context.
+
+The skill itself tells you which.
+
+## User Instructions
+
+Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
+
+
+exec
+"C:\\Users\\伍辰杰\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command '$j=Get-Content -Raw -LiteralPath '"'C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries.json' | ConvertFrom-Json; "'$e=$j | Where-Object case_id -eq '"'cumcm-2022-c'; "'$e | ConvertTo-Json -Depth 10' in C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills
+ succeeded in 137ms:
+{
+  "case_id": "cumcm-2022-c",
+  "competition": "CUMCM",
+  "year": 2022,
+  "title": "古代玻璃制品的成分分析",
+  "problem_type": "statistical_analysis",
+  "source_status": "verified",
+  "problem_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+  "data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+  "pdf_pages": 2,
+  "pdf_extracted_chars": 1498,
+  "problem_excerpt": "2022 年高教社杯全国大学生数学建模竞赛题目 （请先阅读“全国大学生数学建模竞赛论文格式规范”） C 题 古代玻璃制品的成分分析与鉴别 丝绸之路是古代中西方文化交流的通道，其中玻璃是早期贸易往来的宝贵物证。早期的玻 璃在西亚和埃及地区常被制作成珠形饰品传入我国，我国古代玻璃吸收其技术后在本土就地取 材制作，因此与外来的玻璃制品外观相似，但化学成分却不相同。 玻璃的主要原料是石英砂， 主要化学成分是二氧化硅 （SiO2） 。 由于纯石英砂的熔点较高， 为了降低熔化温度，在炼制时需要添加助熔剂。古代常用的助熔剂有草木灰、天然泡碱、硝石 和铅矿石等，并添加石灰石作为稳定剂，石灰石煅烧以后转化为氧化钙（CaO）。添加的助熔 剂不同，其主要化学成分也不同。例如，铅钡玻璃在烧制过程中加入铅矿石作为助熔剂，其氧 化铅（PbO）、氧化钡（BaO）的含量较高，通常被认为是我国自己发明的玻璃品种，楚文化 的玻璃就是以铅钡玻璃为主。钾玻璃是以含钾量高的物质如草木灰作为助熔剂烧制而成的，主 要流行于我国岭南以及东南亚和印度等区域。 古代玻璃极易受埋藏环境的影响而风化。在风化过程中，内部元素与环境元素进行大量交 换，导致其成分比例发生变化，从而影响对其类别的正确判断。如图 1 的文物标记为表面无风 化，表面能明显看出文物的颜色、纹饰，但不排除局部有较浅的风化；图2 的文物标记为表面 风化，表面大面积灰黄色区域为风化层，是明显风化区域，紫色部分是一般风化表面。在部分 风化的文物中，其表面也有未风化的区域。 图 1 未风化的蜻蜓眼玻璃珠样品 图 2 风化的玻璃棋子样品 现有一批我国古代玻璃制品的相关数据，考古工作者依据这些文物样品的化学成分和其他 检测手段已将其分为高钾玻璃和铅钡玻璃两种类型。附件表单 1 给出了这些文物的分类信息， 附件表单 2 给出了相应的主要成分所占比例（空白处表示未检测到该成分）。这些数据的特点 是成分性，即各成分比例的累加和应为 100%，但因检测手段等原因可能导致其成分比例的累 加和非 100%的情况。本题中将成分比例累加和介于 85%~105%之间的数据视为有效数据。",
+  "data_files": [
+    "CUMCM_2022_C_附件.xlsx"
+  ],
+  "data_audit": [
+    {
+      "file": "CUMCM_2022_C_附件.xlsx",
+      "sheets": [
+        {
+          "sheet": "表单1",
+          "rows": 59,
+          "columns": 5,
+          "nonempty_cells": 291,
+          "headers": [
+            "文物编号",
+            "纹饰",
+            "类型",
+            "颜色",
+            "表面风化"
+          ],
+          "numeric_min": 1.0,
+          "numeric_max": 58.0
+        },
+        {
+          "sheet": "表单2",
+          "rows": 70,
+          "columns": 15,
+          "nonempty_cells": 726,
+          "headers": [
+            "文物采样点",
+            "二氧化硅(SiO2)",
+            "氧化钠(Na2O)",
+            "氧化钾(K2O)",
+            "氧化钙(CaO)",
+            "氧化镁(MgO)",
+            "氧化铝(Al2O3)",
+            "氧化铁(Fe2O3)",
+            "氧化铜(CuO)",
+            "氧化铅(PbO)",
+            "氧化钡(BaO)",
+            "五氧化二磷(P2O5)",
+            "氧化锶(SrO)",
+            "氧化锡(SnO2)",
+            "二氧化硫(SO2)"
+          ],
+          "numeric_min": 0.0,
+          "numeric_max": 96.77
+        },
+        {
+          "sheet": "表单3",
+          "rows": 9,
+          "columns": 16,
+          "nonempty_cells": 111,
+          "headers": [
+            "文物编号",
+            "表面风化",
+            "二氧化硅(SiO2)",
+            "氧化钠(Na2O)",
+            "氧化钾(K2O)",
+            "氧化钙(CaO)",
+            "氧化镁(MgO)",
+            "氧化铝(Al2O3)",
+            "氧化铁(Fe2O3)",
+            "氧化铜(CuO)",
+            "氧化铅(PbO)",
+            "氧化钡(BaO)",
+            "五氧化二磷(P2O5)",
+            "氧化锶(SrO)",
+            "氧化锡(SnO2)",
+            "二氧化硫(SO2)"
+          ],
+          "numeric_min": 0.0,
+          "numeric_max": 93.17
+        }
+      ]
+    }
+  ],
+  "zip_entries": {},
+  "metadata_expected_methods": [
+    "compositional_data",
+    "classification",
+    "uncertainty_analysis"
+  ],
+  "metadata_common_failures": [
+    "ignored_compositional_constraint",
+    "data_leakage",
+    "unsupported_classification"
+  ]
+}
+
+codex
+# 建模报告：B-cumcm-2022-c-003
+
+## 1. 问题 framing
+
+题目研究中国古代玻璃制品的成分分析与类别鉴别，类别为高钾玻璃和铅钡玻璃。核心挑战是：
+
+- 成分比例属于闭合型 compositional data，理论和为 100%，但检测和可能落在 85%～105%；
+- 同一文物可能有多个采样点，不能把采样点误当作独立样本；
+- 风化会改变表面成分，使类别判别产生偏差；
+- 表单 3 提供待鉴别样品，需要输出类别及不确定性。
+
+完整题面未在本摘要中给出逐项问法；以下按摘要可审计目标覆盖分类、风化影响和未知样品鉴别。
+
+## 2. 数据审计
+
+唯一数据文件：`CUMCM_2022_C_附件.xlsx`。
+
+- 表单1：59 行、5 列、58 件文物分类及纹饰、颜色、表面风化信息。
+- 表单2：70 行、15 列、文物采样点及 14 项氧化物比例。
+- 表单3：9 行、16 列，含 8 件待分析文物的风化状态及 14 项氧化物比例。
+- 表单2 数值范围为 0～96.77，表单3 为 0～93.17；空白表示未检测到。
+- 有效性规则：每个采样点成分和 \(s_i\in[85,105]\)。
+- 已知哈希：题目 `61db63...8772f7`；数据 `14849c...c4b2f7e2`。
+- 尚未读取二进制附件，因此缺失模式、重复采样点映射和有效样本数量均为待执行审计项。
+
+## 3. 假设
+
+1. 氧化物比例均为非负，并以检测和进行闭合归一化。
+2. 同一文物的多个采样点共享潜在类别；训练、验证划分按文物编号分组。
+3. 风化主要表现为成分向量的系统性偏移，而非类别标签改变。
+4. 未检测成分视为左删失/低于检测限，不直接等同于精确 0。
+5. 若表单3类别未知，则其预测概率必须随结果一并报告。
+
+## 4. 候选模型
+
+### 分类模型（最多两个体系）
+
+**模型 A：ilr 变换 + 正则化逻辑回归**
+
+对成分 \(x_i\) 计算 \(p_{ij}=x_{ij}/s_i\)，对零值采用检测限相关的小正数替代，得到 \(p_i^*\)。以 Helmert 正交基 \(V\) 构造
+
+\[
+z_i=V^\top\log p_i^* .
+\]
+
+类别概率为
+
+\[
+P(y_i=1\mid z_i)=\operatorname{logit}^{-1}(\beta_0+\beta^\top z_i),
+\]
+
+并使用按文物聚类的 elastic-net 正则化。
+
+**模型 B：组成型判别模型**
+
+在 ilr 空间拟合两类 QDA，允许类别具有不同协方差；通过收缩协方差避免小样本不稳定。模型 B 作为非线性边界敏感性比较，不与模型 A 混合投票。
+
+### 风化影响模型
+
+在 ilr 空间建立
+
+\[
+z_{ik}=\mu_{y_i}+\gamma\,W_{ik}+u_i+\epsilon_{ik},
+\]
+
+其中 \(W=1\) 表示风化，\(u_i\) 为文物随机效应。检验 \(\gamma\) 的置信区间及其对分类概率的影响。
+
+## 5. 基线
+
+建立可解释规则基线：
+
+- 若 \(K_2O\) 高于训练集中位数且 \(PbO+BaO\) 较低，判为高钾；
+- 若 \(PbO+BaO\) 高于训练集中位数，判为铅钡；
+- 其余标记为不确定。
+
+阈值只能在训练折内估计，不能使用表单3信息。
+
+## 6. 数学与实验计划
+
+待执行的最小实验流程：
+
+```text
+读取表单1/2/3
+→ 按文物编号连接类别与风化状态
+→ 计算成分和并筛选 85%～105%
+→ 零值替代、闭合归一化、ilr 变换
+→ 按文物编号分组的分层交叉验证
+→ 拟合基线、模型A、模型B
+→ 预测表单3并输出概率
+→ 分组Bootstrap与测量扰动敏感性
+```
+
+建议实现命令（尚未执行）：
+
+```text
+python run_cumcm2022_c.py --input CUMCM_2022_C_附件.xlsx \
+  --seed 202208 --group-by 文物编号 --valid-sum 85 105
+```
+
+## 7. 验证
+
+报告以下指标，当前均为待执行：
+
+- 分组交叉验证：balanced accuracy、宏平均 F1、ROC-AUC、Brier score；
+- 与基线比较的性能增益及 95% Bootstrap 区间；
+- 混淆矩阵，分别报告风化/未风化子组；
+- 概率校准曲线和预测熵；
+- 留一文物验证，检查模型是否依赖单个文物。
+
+## 8. 敏感性与稳健性
+
+扫描：
+
+- 零值替代系数；
+- 有效和阈值（85～105 的局部放宽/收紧）；
+- ilr 与 clr 变换；
+- 正则化强度；
+- 风化样本是否剔除、降权或加入风化协变量；
+- 成分测量误差的 Dirichlet/对数正态扰动。
+
+若表单3类别在多数设定下保持一致，可称为稳健；否则应报告“不确定”而非强制分类。
+
+## 9. Falsification
+
+预先规定可能推翻模型的证据：
+
+- 置换类别标签后性能仍接近真实标签；
+- 随机按采样点划分显著优于按文物分组划分，提示数据泄漏；
+- 风化效应 \(\gamma\) 与类别效应同量级且方向不稳定；
+- 模型概率严重失准或不同合理零值处理导致类别翻转；
+- QDA、逻辑回归和基线结论互相冲突。
+
+## 10. Reviewer risks
+
+主要风险为忽略成分闭合约束、把采样点当独立样本、使用表单3调参造成泄漏、对风化机制作无数据支撑的因果解释，以及在未执行计算前报告具体准确率或类别。上述数值和最终类别目前全部待运行确认。
+
+## 11. Reproducibility manifest
+
+应记录：
+
+- 输入文件及上述 SHA-256；
+- Python、numpy、pandas、scikit-learn、scipy 版本；
+- 随机种子 `202208`；
+- 有效和区间、零值替代规则、模型超参数；
+- 按文物分组的折叠清单；
+- 唯一运行命令及原始输出哈希。
+
+当前状态：模型设计和审计合同已形成；数据读取、拟合、验证、图表和表单3预测均未执行。
+tokens used
+77,942

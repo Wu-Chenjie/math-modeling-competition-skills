@@ -1,0 +1,124 @@
+# Structured Modeling Report — Preregistered Run A-icm-2023-d
+
+## 1. Problem framing
+
+The 2023 ICM Problem D asks decision-makers to prioritize the UN’s 17 Sustainable Development Goals (SDGs). The stated challenge is that SDGs are interdependent: progress toward one goal may improve or harm another. Funding limits, national/international priorities, technological change, pandemics, climate change, wars, and refugee movements can alter priorities.
+
+The modeling objective is therefore a transparent, stakeholder-aware ranking or portfolio-selection method that:
+
+1. combines multiple criteria,
+2. represents positive and negative SDG interactions,
+3. exposes dependence on weights and interaction assumptions, and
+4. identifies rankings that remain stable under plausible uncertainty.
+
+The supplied excerpt ends before the detailed requirements; those requirements should be treated as pending confirmation if a full contest solution is attempted.
+
+## 2. Data audit
+
+- Case ID: `icm-2023-d`
+- Competition/year: ICM, 2023
+- Problem type: multi-objective decision
+- Source status: verified
+- Problem SHA-256: `a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7`
+- Data SHA-256: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`
+- PDF: 2 pages; 3,852 extracted characters
+- Listed data files: none
+- Attachments inspected: none
+
+Consequently, no country-level observations, criterion scores, costs, interaction coefficients, or scenario outcomes are available. All numerical estimates, rankings, and performance scores are pending.
+
+## 3. Assumptions
+
+- Each SDG is represented as a decision alternative or intervention target.
+- Criterion scores are supplied by authoritative indicators, expert elicitation, or scenario-specific estimates; their provenance must be recorded.
+- Criteria are transformed to a common beneficial scale before aggregation.
+- Interaction effects may be positive, negative, asymmetric, and scenario-dependent.
+- Stakeholder priorities are represented by explicit weight sets rather than a single unexplained weighting.
+- If budgets are modeled, intervention costs and a total budget are treated as inputs, not inferred.
+
+## 4. Candidate models
+
+**Model A: normalized multi-criteria decision analysis (MCDA).**  
+Use weighted additive scoring after direction correction and normalization. This is interpretable and provides a baseline for comparison.
+
+**Model B: interaction-aware network MCDA.**  
+Represent SDG spillovers with a signed influence matrix and add network gains/losses to direct scores. A constrained portfolio version can enforce budget and coverage requirements.
+
+These are the two independent model families; sensitivity analysis is not counted as an additional model.
+
+## 5. Baseline
+
+Equal-weight additive scoring:
+
+\[
+S_i^{(0)}=\frac{1}{m}\sum_{j=1}^{m}z_{ij},
+\]
+
+where \(z_{ij}\in[0,1]\) is the normalized score of SDG \(i\) on criterion \(j\). Rank SDGs by decreasing \(S_i^{(0)}\). If no criterion table is available, baseline ranking is **not executable**.
+
+## 6. Mathematical specification
+
+Let \(x_{ij}\) be the raw score, \(z_{ij}\) its direction-corrected normalized value, and \(w_j\ge0,\ \sum_jw_j=1\). The direct score is
+
+\[
+D_i=\sum_{j=1}^{m}w_jz_{ij}.
+\]
+
+Let \(A=[a_{ik}]\) be a signed, scenario-specific interaction matrix and \(\lambda\) an interaction-strength parameter. An interaction-aware score is
+
+\[
+S_i=D_i+\lambda\sum_{k=1}^{17}a_{ik}D_k.
+\]
+
+For portfolio selection, let \(y_i\in\{0,1\}\), cost \(c_i\), and budget \(B\):
+
+\[
+\max_y\ \sum_i y_iS_i,\qquad
+\sum_i c_iy_i\le B,
+\]
+
+with any required minimum coverage or policy constraints added explicitly. All symbols require a data dictionary before implementation.
+
+## 7. Executable experiment plan
+
+Pending data availability:
+
+1. Import criterion, direction, provenance, cost, and interaction tables.
+2. Check missingness, units, duplicated SDGs, score ranges, and matrix dimensions.
+3. Normalize criteria using preregistered min–max or goal-based transformations.
+4. Compute equal-weight baseline and Model A rankings.
+5. Estimate or elicit \(A\); compute Model B across \(\lambda\) values.
+6. Solve portfolio optimization where costs/budget exist.
+7. Produce ranking tables, interaction-network plots, and scenario comparisons.
+8. Save inputs, transformed data, parameters, rankings, and diagnostics.
+
+## 8. Validation
+
+Use criterion holdout/reweighting, bootstrap or expert-rating resampling, rank correlation between models, and constraint-feasibility checks. Confirm that normalization preserves intended direction and that interaction signs match documented evidence. Numerical results are pending execution.
+
+## 9. Sensitivity and robustness
+
+- Weight perturbations over a documented feasible set or Dirichlet draws.
+- One-at-a-time and global variation of \(\lambda\).
+- Alternative normalization methods.
+- Perturbation of interaction coefficients and deletion of weakly supported edges.
+- Scenario analysis for pandemic, climate, conflict, and technology shocks.
+- Report top-rank frequency, rank intervals, and probability of each SDG entering the recommended portfolio.
+
+## 10. Falsification tests
+
+The interaction model should be rejected or downgraded if it does not outperform the additive baseline in stability or decision relevance; if rankings change drastically under tiny weight perturbations; if permutation/null interaction matrices perform similarly; or if signs/magnitudes of spillovers contradict independent evidence.
+
+## 11. Reviewer risks
+
+Primary risks are arbitrary weights, scale mismatch, unsupported interaction coefficients, conflating association with causal impact, hidden budget assumptions, and reporting a single unstable ranking. These directly correspond to the benchmark’s expected failure modes.
+
+## 12. Reproducibility manifest
+
+- Run label: `A-icm-2023-d-003`
+- Case summary: `benchmarks/case-summaries.json`
+- Input hashes: listed above
+- Random seed: not applicable until stochastic analysis is executed
+- Software/dependency versions: pending
+- Unique execution command: pending
+- Outputs and scores: not generated; all empirical conclusions remain pending.

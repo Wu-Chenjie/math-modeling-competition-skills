@@ -1,0 +1,68 @@
+{
+  "submission_id": "Submission-009",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 15,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_policy.svg",
+      "sha256": "50cfe9c10fec15b8ca163337cd967496cae607dedf6d4956ad7222e0ec3f70e0"
+    },
+    {
+      "path": "figures/process_q2_policy.svg",
+      "sha256": "ce585d77056452d2bcbaa1bb469ef4b1a23ba9cfb33da261014ba13c062eadb3"
+    },
+    {
+      "path": "figures/process_q3_policy.svg",
+      "sha256": "c7e4bc1f1e4b42d9c99882aec1f91ff8d248cb6e05e97e94e57b4fb17da91dbc"
+    },
+    {
+      "path": "figures/raw_q1_policy.svg",
+      "sha256": "f7c6ecce97fb80922c34a20ab4d9ac551d35dbbd4d6b58d955115ce3fc13344e"
+    },
+    {
+      "path": "figures/raw_q2_policy.svg",
+      "sha256": "16779b04a7f151074d8ed80138c5a3ad7b824f5dbce6babe4ee3c1d3808c589c"
+    },
+    {
+      "path": "figures/raw_q3_policy.svg",
+      "sha256": "0f7cd4613899f0a7da6fca0577d69baf2e9bfab04072845afcf334ab19ca411f"
+    },
+    {
+      "path": "figures/result_q1_policy.svg",
+      "sha256": "b06790f21631b26c04958356dd98052d19b17715fe5da2524ef242a8be395f5c"
+    },
+    {
+      "path": "figures/result_q2_policy.svg",
+      "sha256": "f39a2fdc9a75af91277e9b4652ff5230ba160012be113d4aab441f9c5101b436"
+    },
+    {
+      "path": "figures/result_q3_policy.svg",
+      "sha256": "769cff09ddb006b979ec35edf14280fb6b90703248b100d7da0d11a8becf5e34"
+    },
+    {
+      "path": "model_run.py",
+      "sha256": "6241445278276ccb85bc80220fcfbd5164abbdcbe3c87e4200e6300e1a586899"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "edd63d0f87ba1ec32201b400a58f1943644851106a6c7c7f8541bed281d51b49"
+    },
+    {
+      "path": "results/modeling_report.json",
+      "sha256": "02c5ff0c16205abe91355cb0fb969520e79849d652e9bda4e519a5ddf68afbc6"
+    },
+    {
+      "path": "results/policy_scores.csv",
+      "sha256": "76a1628786e55d53e9ce9102c472762c9803fbe7848153fec3a56469c013dd61"
+    },
+    {
+      "path": "results/repro_manifest.json",
+      "sha256": "37c50374d88b6d79c11c4a35d0b71ca008a71a6269e631ca74b3d7be5de49d7b"
+    },
+    {
+      "path": "results/robustness.csv",
+      "sha256": "6e9d9cb35f69dd369abb1c8524d1c1870da07b8670cdeb04598c50ba3c1b4a0d"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

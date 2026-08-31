@@ -1,0 +1,72 @@
+{
+  "submission_id": "Submission-007",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 16,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_weather.svg",
+      "sha256": "ab8c22433960b645e12ac687d2f9b96ce52457a04264107c74b0d63a1f04dc23"
+    },
+    {
+      "path": "figures/process_q2_richness.svg",
+      "sha256": "80996fe16545dfcbe37c27f3c8193b7b7680c75f5fb0594ac7fd039dd80b30fe"
+    },
+    {
+      "path": "figures/process_q3_stress.svg",
+      "sha256": "4d622991dd8ae7ed3337e97a865db2a6f2112b043d0422009b8996fbdf264ca5"
+    },
+    {
+      "path": "figures/raw_q1_weather.svg",
+      "sha256": "6da4e9e3f029bb330d933892a829c0ecc2baa538d81c50f1b6c793b27e2735fe"
+    },
+    {
+      "path": "figures/raw_q2_richness.svg",
+      "sha256": "9de7f3d03dbe628c8aec6cd56a266c939a8bb44de60d8a48210bbb9fe6df6f52"
+    },
+    {
+      "path": "figures/raw_q3_stress.svg",
+      "sha256": "3cdfdbd829683dde332536aa5158bf928258d4d6758593d7242282bc56ff5efb"
+    },
+    {
+      "path": "figures/result_q1_resilience.svg",
+      "sha256": "79fb8bca076127a5e1f7f19278804a7f4e463076124988ab15020082f99c08ac"
+    },
+    {
+      "path": "figures/result_q2_drought.svg",
+      "sha256": "4a3c7e349477df0ada4f215108285793ecd03b05b778e401fd7eff410f787dd9"
+    },
+    {
+      "path": "figures/result_q3_external.svg",
+      "sha256": "7e5c401c3b9191dec4cb4b593e088c074ae5a08fc171b84a88c28c52a724c8f6"
+    },
+    {
+      "path": "model_run.py",
+      "sha256": "2765fafdd09e84500372f1605c40a1e93f0a557ccf47e77d1defa997e0bfa05d"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "03ea7ef475efbd94268492043059a95592868df3d9e560c3d76a64e53758b899"
+    },
+    {
+      "path": "results/metrics.csv",
+      "sha256": "cd55f014fb715a24fb5dde1812045167aa7025dbcb5952ba5bb3f7da5a774495"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "780f646b0fe2bd54b67fd698f793e17ee6808b7d0b4b0d7be12b170e026f325c"
+    },
+    {
+      "path": "results/repro_manifest.json",
+      "sha256": "6ffc4113957d06f7258b1a96b21af24481ea07427ba1422dd7202a5aa8e45108"
+    },
+    {
+      "path": "run_output.json",
+      "sha256": "1026bcbddcf68e495e449a966ee4c086aaebbf5bdbcebc0e48151fa8835ed41b"
+    },
+    {
+      "path": "test_model_run.py",
+      "sha256": "8d4fd784c19e7b783ad8d5b28e756eb5b144c68cd00f5a9c61af591eb3853b61"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "partial",
+  "code_path": "light_pollution_model.py",
+  "metrics_path": "results/metrics.json",
+  "figures_count": 12,
+  "tests": {
+    "command": "python -m unittest -v test_light_pollution_model.py",
+    "passed": 5,
+    "failed": 0
+  },
+  "pending_stages": [
+    "M1 modeling gate remediation",
+    "empirical calibration",
+    "spatial analysis",
+    "statistical model fitting",
+    "external validation",
+    "policy cost and fairness assessment",
+    "promotion flyer and submission formatting"
+  ]
+}

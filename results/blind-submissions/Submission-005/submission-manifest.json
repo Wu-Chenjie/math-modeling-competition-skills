@@ -1,0 +1,32 @@
+{
+  "submission_id": "Submission-005",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 6,
+  "artifacts": [
+    {
+      "path": "figures/process_q2_data_gate.svg",
+      "sha256": "5791d9e87c361a2a81c29eb7e621feb1dedee79bc0ea83bffff87063db59b17d"
+    },
+    {
+      "path": "figures/raw_q1_input_coverage.svg",
+      "sha256": "6c44e30bde48bd69db377a5cf085d9db5567c1261d0f14c6d77ce85392aa15af"
+    },
+    {
+      "path": "figures/result_q2_uniform_baseline.svg",
+      "sha256": "456c65d34b3bf91916dfb932bd42f6edeaa7a1eb9afe1ddc629eec7db0f14ba9"
+    },
+    {
+      "path": "reproducibility_manifest.json",
+      "sha256": "de482b6af048b0a7493e7aa8a429a56e522b117defd9abd72d479568b390a0c3"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "6f58f9b0696f0b2085ebf91edfb6e050e38065149d036500e22df278a06a5cb5"
+    },
+    {
+      "path": "run_model.py",
+      "sha256": "753e4f73958339c48245dbec9352822a5eb85cbe575e3d8e81c4c04de075e23d"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

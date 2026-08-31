@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="380"><line x1="40" y1="330" x2="600" y2="330" stroke="black"/><line x1="40" y1="50" x2="40" y2="330" stroke="black"/><polyline fill="none" stroke="#1f77b4" points="40.0,50.0 226.7,268.7 413.3,323.0 600.0,330.0"/><text x="250" y="370">drought frequency</text><text x="5" y="60">final biomass</text></svg>

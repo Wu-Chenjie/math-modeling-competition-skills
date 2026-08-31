@@ -1,0 +1,18 @@
+{
+  "seed": 2023003,
+  "input": {
+    "problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "input_path": "benchmarks/case-summaries/mcm-2023-b.json",
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "command": "python model.py",
+  "scenario_levels": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "years": 30,
+  "sha256_code": "db23b598577f03e6830cb97ad7ba17016d9abcd5c98cb3734a9265f6ac374b50"
+}

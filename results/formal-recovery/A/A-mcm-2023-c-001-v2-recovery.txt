@@ -1,0 +1,1 @@
+{"status":"ok","code_path":"wordle_recovery.py","metrics_path":"results/metrics.json","figures_count":10,"tests":["python wordle_recovery.py: passed","python -m py_compile wordle_recovery.py: passed"],"pending_stages":["PNG figure export/visual audit pending because matplotlib is unavailable; deterministic SVG figures were generated"]}

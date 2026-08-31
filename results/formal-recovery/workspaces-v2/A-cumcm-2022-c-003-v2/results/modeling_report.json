@@ -1,0 +1,237 @@
+{
+  "problem_framing": {
+    "questions": [
+      "weathering relations and pre-weathering composition",
+      "main-class rules and subtypes",
+      "unknown classification",
+      "within-class associations"
+    ],
+    "unit_of_analysis": "artifact for categorical Q1; valid sampling point for chemistry, grouped by artifact during validation"
+  },
+  "data_audit": {
+    "known_rows": 69,
+    "valid_known_rows": 67,
+    "invalid_known_rows": 2,
+    "invalid_samples": [
+      "15",
+      "17"
+    ],
+    "artifact_rows": 58,
+    "unknown_rows": 8,
+    "blank_interpretation": "not detected -> 0 before multiplicative replacement",
+    "valid_sum_interval": [
+      85,
+      105
+    ]
+  },
+  "assumptions": [
+    "Blank chemical cells mean not detected and are treated as structural zeros before small positive replacement.",
+    "Rows with measured sums in the inclusive 85–105 interval are valid.",
+    "Explicit sampling-point labels override artifact-level surface weathering.",
+    "Audited rows_data is the complete available benchmark input."
+  ],
+  "candidate_models": {
+    "selected": "CLR logistic regression with artifact-grouped validation; Ward clustering within class; CLR correlations",
+    "alternatives": [
+      "raw-percentage LDA as a non-compositional comparator",
+      "tree classifier, rejected as less stable for this small sample"
+    ]
+  },
+  "baseline": {
+    "baseline_rule": "PbO+BaO > K2O",
+    "baseline_accuracy": 0.9850746268656716,
+    "loao_accuracy": 0.9850746268656716,
+    "loao_balanced_accuracy": 0.9722222222222222,
+    "confusion_matrix_rows_true_0_highK_1_leadBarium": [
+      [
+        17,
+        1
+      ],
+      [
+        0,
+        49
+      ]
+    ],
+    "subtypes": {
+      "高钾": {
+        "artifact_count": 16,
+        "clusters": 2,
+        "silhouette": 0.3750835659699292,
+        "assignments": {
+          "01": 1,
+          "03": 1,
+          "04": 1,
+          "05": 1,
+          "06": 1,
+          "07": 1,
+          "09": 1,
+          "10": 1,
+          "12": 1,
+          "13": 1,
+          "14": 1,
+          "16": 1,
+          "18": 2,
+          "21": 1,
+          "22": 1,
+          "27": 1
+        }
+      },
+      "铅钡": {
+        "artifact_count": 40,
+        "clusters": 2,
+        "silhouette": 0.21263346688606127,
+        "assignments": {
+          "02": 2,
+          "08": 2,
+          "11": 2,
+          "19": 2,
+          "20": 2,
+          "23": 1,
+          "24": 2,
+          "25": 1,
+          "26": 2,
+          "28": 2,
+          "29": 1,
+          "30": 2,
+          "31": 2,
+          "32": 2,
+          "33": 2,
+          "34": 2,
+          "35": 2,
+          "36": 1,
+          "37": 2,
+          "38": 1,
+          "39": 2,
+          "40": 2,
+          "41": 2,
+          "42": 1,
+          "43": 2,
+          "44": 1,
+          "45": 1,
+          "46": 2,
+          "47": 1,
+          "48": 2,
+          "49": 2,
+          "50": 2,
+          "51": 2,
+          "52": 1,
+          "53": 1,
+          "54": 2,
+          "55": 1,
+          "56": 2,
+          "57": 2,
+          "58": 2
+        }
+      }
+    }
+  },
+  "math_specification": {
+    "closure": "c_i=(x_i+delta I[x_i=0])/sum_j(...) ",
+    "clr": "z_i=log(c_i)-mean_j log(c_j)",
+    "classifier": "P(y=1|z)=sigmoid(beta0+beta^T standardized(z))",
+    "reconstruction": "inverse-clr of the unweathered class CLR center"
+  },
+  "code_prototype": {
+    "entrypoint": "analysis.py",
+    "outputs": [
+      "results/metrics.json",
+      "results/modeling_report.json",
+      "results/predictions.csv",
+      "figures/*.png",
+      "figures/*.svg"
+    ]
+  },
+  "experiment": {
+    "seed": 20220918,
+    "zero_replacements": [
+      0.001,
+      0.01,
+      0.05
+    ],
+    "perturbation_sigma_log": 0.03,
+    "perturbations": 199
+  },
+  "validation": {
+    "split": "leave-one-artifact-out; all repeated sample points remain in the same fold",
+    "permutation_iterations_completed": 199,
+    "permutation_p": 0.005
+  },
+  "sensitivity_robustness": {
+    "unknown_perturbations": {
+      "A1": {
+        "predicted_type": "高钾",
+        "probability_lead_barium": 0.010594312784019316,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A2": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9758220982040098,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A3": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9794539044544176,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A4": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9434686548155846,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A5": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9132239697434845,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A6": {
+        "predicted_type": "高钾",
+        "probability_lead_barium": 0.006169048022500142,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A7": {
+        "predicted_type": "高钾",
+        "probability_lead_barium": 0.005909994179103876,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      },
+      "A8": {
+        "predicted_type": "铅钡",
+        "probability_lead_barium": 0.9929371447237112,
+        "perturbation_stability": 1.0,
+        "zero_replacement_agreement": 1.0
+      }
+    },
+    "zero_replacement_grid": [
+      0.001,
+      0.01,
+      0.05
+    ]
+  },
+  "falsification": {
+    "label_permutation_null": "artifact labels permuted then full LOAO repeated",
+    "observed_balanced_accuracy": 0.9722222222222222,
+    "p_value": 0.005
+  },
+  "reviewer_risks": [
+    "Only audited rows_data were used; binary attachments were not opened.",
+    "Weathering reconstruction is a type-level CLR center, not a paired causal restoration for each artifact.",
+    "Subtypes are exploratory with small artifact counts.",
+    "Compositional correlations remain basis-dependent and are descriptive."
+  ],
+  "reproducibility_manifest": {
+    "command": "python analysis.py --input \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\cumcm-2022-c.json\" --output .",
+    "input_sha256": "86b82e0ac469e5dff323bea2773de708fc879c26fc9e2f6cc8ff711b01e1e231",
+    "declared_problem_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+    "declared_data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+    "python": "3.13.9",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "seed": 20220918,
+    "runtime_seconds": 36.24955868721008
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "run_id": "B-mcm-2023-b-002-v2-recovery",
+  "command": "python model_run.py --input C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-b.json --output-dir results",
+  "input_path": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-b.json",
+  "input_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090",
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "random_seed": null,
+  "dependencies": {
+    "stdlib_only": true
+  },
+  "figures": [
+    "figures\\raw_q1_input_availability.svg",
+    "figures\\process_q1_audit_trace.svg",
+    "figures\\result_q1_policy_data_gate.svg",
+    "figures\\raw_q2_benchmark_structure.svg",
+    "figures\\process_q2_method_contract.svg",
+    "figures\\result_q2_ranking_status.svg",
+    "figures\\raw_q3_source_integrity.svg",
+    "figures\\process_q3_falsification_checks.svg",
+    "figures\\result_q3_execution_status.svg"
+  ],
+  "pending_stages": [
+    "empirical_experiment",
+    "holdout_validation",
+    "sensitivity_robustness",
+    "independent_P1_P2_gate"
+  ]
+}

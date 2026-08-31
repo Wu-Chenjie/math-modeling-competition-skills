@@ -1,0 +1,1 @@
+{"status":"completed_with_pending","code_path":"wordle_model.py","metrics_path":"results/metrics.json","figures_count":9,"tests":["python wordle_model.py (exit 0)","python -m py_compile wordle_model.py (exit 0)","359 rows validated","EERIE distribution sums to 100%"],"pending_stages":["independent quality-gate recheck"]}

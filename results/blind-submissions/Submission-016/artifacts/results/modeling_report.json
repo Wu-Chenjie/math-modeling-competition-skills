@@ -1,0 +1,102 @@
+{
+  "problem_framing": {
+    "objective": "Prioritize UN SDGs using their interrelationships.",
+    "official_goal_count": 17,
+    "requested_outputs": [
+      "network",
+      "priorities",
+      "10-year outlook",
+      "counterfactual",
+      "crisis impacts",
+      "transferability"
+    ]
+  },
+  "data_audit": {
+    "data_files": 0,
+    "audited_rows": 0,
+    "relationship_observations": 0,
+    "finding": "The supplied summary provides official problem text and no empirical edge, outcome, cost, or preference data."
+  },
+  "assumptions": {
+    "allowed": [
+      "The 17 named SDGs are the full node set."
+    ],
+    "rejected": [
+      "No directed or weighted edge is assumed.",
+      "No priority weight, intervention cost, baseline progress, or causal effect is assumed."
+    ]
+  },
+  "candidate_models": [
+    {
+      "name": "Evidence-weighted directed network",
+      "status": "pending",
+      "required_inputs": [
+        "edge direction",
+        "edge sign",
+        "edge strength",
+        "source/provenance"
+      ]
+    },
+    {
+      "name": "Robust multi-criteria prioritization",
+      "status": "pending",
+      "required_inputs": [
+        "effectiveness outcomes",
+        "cost/resource constraints",
+        "stakeholder weights"
+      ]
+    }
+  ],
+  "baseline": {
+    "name": "Evidence-null node inventory",
+    "nodes": 17,
+    "edges": 0,
+    "ranking": "not computed"
+  },
+  "math_specification": {
+    "proposed_when_data_available": "Let A_ij be a provenance-backed signed effect of intervention i on goal j; choose resource allocation x to maximize robust multi-criteria impact subject to budget and feasibility constraints.",
+    "current_status": "Parameters and constraints are unidentifiable from supplied input."
+  },
+  "code_prototype": {
+    "entrypoint": "run_sdg_audit.py",
+    "language": "Python standard library",
+    "deterministic": true
+  },
+  "experiment": {
+    "executed": "Input-completeness audit and zero-edge baseline rendering."
+  },
+  "validation": {
+    "executed": [
+      "official goal count equals 17",
+      "baseline edge count equals 0",
+      "no priority score emitted"
+    ]
+  },
+  "sensitivity_robustness": {
+    "status": "pending",
+    "reason": "No admissible weights or estimated parameters."
+  },
+  "falsification": {
+    "status": "pending",
+    "reason": "No observed outcomes or dated intervention records."
+  },
+  "reviewer_risks": [
+    "Any ranked output or nonzero edge would be unsupported by the benchmark input.",
+    "A semantic network derived from goal names would not establish causal, signed, or weighted relationships."
+  ],
+  "reproducibility_manifest": {
+    "random_seed": null,
+    "input_problem_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+    "input_data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": "python run_sdg_audit.py"
+  },
+  "pending_stages": [
+    "relationship_network_estimation",
+    "priority_ranking_and_effectiveness",
+    "ten_year_projection",
+    "achieved_goal_counterfactual",
+    "crisis_scenario_analysis",
+    "weight_sensitivity_and_robustness",
+    "falsification_against_observed_outcomes"
+  ]
+}

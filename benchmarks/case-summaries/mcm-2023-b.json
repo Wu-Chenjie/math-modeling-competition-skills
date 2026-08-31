@@ -1,0 +1,27 @@
+{
+  "case_id": "mcm-2023-b",
+  "competition": "MCM",
+  "year": 2023,
+  "title": "Reimagining Maasai Mara",
+  "problem_type": "optimization",
+  "source_status": "verified",
+  "problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "pdf_pages": 2,
+  "pdf_extracted_chars": 3149,
+  "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem B: Reimagining Maasai Mara Photo Credit: Pixabay.com Background Kenya’s wildlife preserves were originally created primarily to protect wildlife and other natural resources. Kenya’s parliament passed the Wildlife Conservation and Management Act, 2013 to provide more equitable sharing of resources, as well as to allow alternative, community-based management efforts [1]. Kenya has since added amendments to address gaps in the legislation to provide more clear governance, finance, and penalties for violators[2]. Requirement Focusing on one large game preserve, the Maasai Mara, your task is to determine alternate ways to manage the resources within and outside the current boundaries of the park. Specifically, you should: • Consider and recommend specific policies and management strategies for diff",
+  "problem_text": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem B: Reimagining Maasai Mara Photo Credit: Pixabay.com Background Kenya’s wildlife preserves were originally created primarily to protect wildlife and other natural resources. Kenya’s parliament passed the Wildlife Conservation and Management Act, 2013 to provide more equitable sharing of resources, as well as to allow alternative, community-based management efforts [1]. Kenya has since added amendments to address gaps in the legislation to provide more clear governance, finance, and penalties for violators[2]. Requirement Focusing on one large game preserve, the Maasai Mara, your task is to determine alternate ways to manage the resources within and outside the current boundaries of the park. Specifically, you should: • Consider and recommend specific policies and management strategies for different areas within the current preserve that will protect wildlife and other natural resources while also balancing the interests of the people who live in the area. These policies and strategies should help mitigate the impacts of lost opportunities experienced by the people who live near the preserve, as well as minimize negative interactions between animals and the people attracted to the preserve. • Develop and describe a methodology to determine which policies and management strategies will result in the best outcomes. Your report should discuss how to rank and compare outcomes from your methodology. Be sure to include descriptions and analyses of the models used to predict the interactions between animals and people, as well as the resulting economic impacts in the area within and around the preserve. • Given your proposed plan, provide predictions about the long-term trends that will result from your recommendations. Analyze and provide estimates of the certainties and impacts of the possible long-term outcomes. You should also describe how your approach could be applied to other wildlife management areas. Finally, provide a two-page non-technical report for the Kenyan Tourism and Wildlife Committee discussing your proposed plan and its value for the preserve. | ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | Your PDF solution of no more than 25 total pages should include: • One-page Summary Sheet. • Table of Contents. • Your complete solution. • Two-page non-technical report. • Reference List. Note: The MCM Contest has a 25-page limit. All aspects of your submission count toward the 25-page limit (Summary Sheet, Table of Contents, Report, Non-Technical Report, Reference List, and any Appendices). You must cite the sources for your ideas, images, and any other materials used in your report. References [1] The Wildlife Conservation and Management Act, 2013. Republic of Kenya, Kenya Gazette Supplement No. 181 (Acts No. 47), 2013. [2] The Wildlife Conservation and Management Act (No. 47 of 2013). Legal Notice No. 155. Republic of Kenya, Kenya Gazette Supplement No 141 (Acts No. 47), 2020.",
+  "data_files": [],
+  "data_audit": [],
+  "zip_entries": {},
+  "metadata_expected_methods": [
+    "network_analysis",
+    "multi_objective_optimization",
+    "scenario_analysis"
+  ],
+  "metadata_common_failures": [
+    "arbitrary_weights",
+    "ignored_capacity_constraint",
+    "no_robustness"
+  ]
+}

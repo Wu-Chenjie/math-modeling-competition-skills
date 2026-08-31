@@ -1,0 +1,64 @@
+{
+  "figures": [
+    {
+      "path": "figures/process_q1_biomass.svg",
+      "sha256": "1ac99a5d160a29c901baab3ba0da654cdaccd76a2b33f745528c56ae70b87602"
+    },
+    {
+      "path": "figures/process_q2_variability.svg",
+      "sha256": "85bb1c67931faf0f39b10ef3b1a345e2ebf273489a7b8e2b681de6b5e8061cf3"
+    },
+    {
+      "path": "figures/process_q3_composition.svg",
+      "sha256": "dbe0c640c6fb9824b21652ae02c18f75dc0b8b065969466c60ddc10c8e20d079"
+    },
+    {
+      "path": "figures/process_q4_variability.svg",
+      "sha256": "d04d096351bd651b80d973a3fcf46b4eb8fce1782833eecc07a03db59c4188bb"
+    },
+    {
+      "path": "figures/process_q5_survival.svg",
+      "sha256": "97b317d392ab1087c69d232ee799396593b4b719c4c109d5bce19e9e959b540a"
+    },
+    {
+      "path": "figures/raw_q1_weather.svg",
+      "sha256": "ef3e721ecd89c53293efbbda2b3f1e9ebfe925b3e97fb60ad4f0d6c225ea7df4"
+    },
+    {
+      "path": "figures/raw_q2_richness.svg",
+      "sha256": "6e727b312550689ae3d28a178942211d7fadde5515004795d44d69676fbd5a81"
+    },
+    {
+      "path": "figures/raw_q3_traits.svg",
+      "sha256": "dc7b6d47f91bd609f3eb65f71779e4c7b6670a1bc1de65d5955b1d1477f54281"
+    },
+    {
+      "path": "figures/raw_q4_regimes.svg",
+      "sha256": "b74c54a3a479ab67c58fd3e0adca8cb306b7ec5015dd5aae4f8abb4b96e7580f"
+    },
+    {
+      "path": "figures/raw_q5_stress.svg",
+      "sha256": "c3e5d28584b1ac3be2158cca5395f521625186406d7b891eadcb9dff95b26a91"
+    },
+    {
+      "path": "figures/result_q1_stability.svg",
+      "sha256": "7059d6b45c9c33ddd2261ae46d7a987f771fcfa9fd4f89b5d58ec698b5326d95"
+    },
+    {
+      "path": "figures/result_q2_benefit.svg",
+      "sha256": "d90d238cfde877ce85c9061e5173c45908ea8dacc41541262b1cf797e19c9d47"
+    },
+    {
+      "path": "figures/result_q3_composition.svg",
+      "sha256": "998c1e2242970035502c63a1216460512ca180058c3272887c5fba0bb581bf20"
+    },
+    {
+      "path": "figures/result_q4_drought.svg",
+      "sha256": "da938e343911cf800c257c64fda8118b796516de69ab1a9966bb0041c9efbf37"
+    },
+    {
+      "path": "figures/result_q5_management.svg",
+      "sha256": "d44ccbde2248d20a5df9b974bf98e45ebd947148fc404be4fcda5f49629f02ed"
+    }
+  ]
+}

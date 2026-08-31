@@ -1,0 +1,21 @@
+{
+  "group": "A",
+  "case_id": "cumcm-2022-c",
+  "index": 1,
+  "run_id": "A-cumcm-2022-c-001",
+  "case_root": "benchmarks/cases/cumcm-2022-c",
+  "statement_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+  "data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "failed",
+  "started_at": "2026-08-30T05:39:43.014962+00:00",
+  "ended_at": "2026-08-30T05:43:42.976356+00:00",
+  "exit_code": 4294967295,
+  "output_file": "results/raw/A-cumcm-2022-c-001.txt",
+  "stdout_log": "results/raw/A-cumcm-2022-c-001.stdout.log",
+  "stderr_log": "results/raw/A-cumcm-2022-c-001.stderr.log",
+  "stdout_tail": "",
+  "stderr_tail": "rue\r\n03部位1 100.0 valid True\r\n03部位2 98.88 valid True\r\n04 96.06 valid True\r\n05 96.51 valid True\r\n06部位1 98.92 valid True\r\n06部位2 98.84 valid True\r\n07 99.7 valid True\r\n08 99.82 valid True\r\n08严重风化点 98.24 valid True\r\n09 99.77 valid True\r\n10 99.81 valid True\r\n11 95.39 valid True\r\n12 99.57 valid True\r\n13 98.14 valid True\r\n14 99.0 valid True\r\n15 79.47 valid False\r\n16 98.41 valid True\r\n17 71.89 valid False\r\n18 97.25 valid True\r\n19 98.76 valid True\r\n20 88.41 valid True\r\n21 98.52 valid True\r\n22 100.0 valid True\r\n23未风化点 96.5 valid True\r\n24 98.88 valid True\r\n25未风化点 97.06 valid True\r\n26 99.82 valid True\r\n26严重风化点 99.89 valid True\r\n27 98.81 valid True\r\n28未风化点 98.69 valid True\r\n29未风化点 99.88 valid True\r\n30部位1 97.95 valid True\r\n30部位2 98.7 valid True\r\n31 98.43 valid True\r\n32 98.66 valid True\r\n33 99.96 valid True\r\n34 97.52 valid True\r\n35 96.21 valid True\r\n36 97.63 valid True\r\n37 99.98 valid True\r\n38 98.57 valid True\r\n39 98.76 valid True\r\n40 98.57 valid True\r\n41 93.71 valid True\r\n42未风化点1 98.01 valid True\r\n42未风化点2 97.9 valid True\r\n43部位1 94.68 valid True\r\n43部位2 96.67 valid True\r\n44未风化点 99.12 valid True\r\n45 98.34 valid True\r\n46 98.63 valid True\r\n47 97.26 valid True\r\n48 99.17 valid True\r\n49 95.5 valid True\r\n49未风化点 98.24 valid True\r\n50 90.17 valid True\r\n50未风化点 96.94 valid True\r\n51部位1 95.33 valid True\r\n51部位2 91.7 valid True\r\n52 94.08 valid True\r\n53未风化点 98.25 valid True\r\n54 99.67 valid True\r\n54严重风化点 96.92 valid True\r\n55 96.38 valid True\r\n56 92.24 valid True\r\n57 92.47 valid True\r\n58 98.76 valid True\r\n\nexec\n\"C:\\\\Users\\\\伍辰杰\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'git status --short' in C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\n succeeded in 105ms:\nwarning: unable to access 'C:\\Users\\伍辰杰/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\伍辰杰/.config/git/ignore': Permission denied\n M tests/test_evaluate.py\n?? results/run-plan.json\n?? results/trials/\n?? scripts/run_baseline.py\n?? tmp/\n\n"
+}

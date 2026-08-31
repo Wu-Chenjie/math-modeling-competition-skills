@@ -1,0 +1,230 @@
+{
+  "problem_framing": {
+    "objective": "Measure location-specific light-pollution risk while representing human and non-human concerns, compare three interventions, select strategies for two locations, and support a location-specific flyer.",
+    "decision_units": [
+      "protected land",
+      "rural community",
+      "suburban community",
+      "urban community"
+    ],
+    "required_outputs": [
+      "risk metric",
+      "four applications",
+      "three interventions",
+      "two selections",
+      "one-page flyer"
+    ]
+  },
+  "data_audit": {
+    "case_id": "icm-2023-e",
+    "source_status": "verified",
+    "problem_sha256_declared": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+    "data_sha256_declared": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data_files_count": 0,
+    "data_audit_entries": 0,
+    "rows_available": 0,
+    "rows_scoreable": 0,
+    "rows_rejected": [],
+    "binary_attachments_opened": 0,
+    "finding": "No empirical rows are supplied; location scoring is gated off."
+  },
+  "assumptions": {
+    "critical": [
+      "Each indicator must be normalized to [0,1] using documented external bounds before scoring.",
+      "Indicators and weights must have the same interpretation across location types.",
+      "Missing indicators do not receive imputed values in this preregistered run."
+    ],
+    "relaxable": [
+      "Equal weights are an uncalibrated baseline.",
+      "Power exponent p=2 emphasizes high-risk components.",
+      "Prototype intervention coefficients test mechanics only and are not effectiveness evidence."
+    ]
+  },
+  "candidate_models": [
+    {
+      "name": "weighted_power_mean_MCDA",
+      "status": "implemented_baseline",
+      "rationale": "Transparent, bounded, monotone, and applicable when indicators use different source units after normalization."
+    },
+    {
+      "name": "hierarchical_spatial_latent_risk",
+      "status": "pending_data",
+      "rationale": "Can pool heterogeneous locations and quantify uncertainty when spatial, temporal, and outcome observations exist."
+    }
+  ],
+  "baseline": {
+    "model": "equal-weight quadratic mean",
+    "weights": {
+      "skyglow": 0.14285714285714285,
+      "light_trespass": 0.14285714285714285,
+      "over_illumination": 0.14285714285714285,
+      "glare": 0.14285714285714285,
+      "light_clutter": 0.14285714285714285,
+      "ecological_concern": 0.14285714285714285,
+      "human_concern": 0.14285714285714285
+    },
+    "p": 2.0,
+    "location_scores": [],
+    "interpretation": "No empirical risk level is reported without complete supplied observations and calibrated category thresholds."
+  },
+  "math_specification": {
+    "indicators": [
+      "skyglow",
+      "light_trespass",
+      "over_illumination",
+      "glare",
+      "light_clutter",
+      "ecological_concern",
+      "human_concern"
+    ],
+    "normalization": "z_ij=(x_ij-L_j)/(U_j-L_j), clipped to [0,1], with L_j and U_j supplied from documented sources.",
+    "risk": "R_i=100*(sum_j w_j*z_ij^p)^(1/p), w_j>=0, sum_j w_j=1, p>0.",
+    "intervention": "z'_ij=clip(z_ij*(1-e_jk),0,1); e_jk must be calibrated or explicitly treated as a scenario assumption.",
+    "constraints": [
+      "complete indicators",
+      "documented normalization bounds",
+      "nonnegative normalized weights",
+      "no empirical category without calibrated thresholds"
+    ]
+  },
+  "code_prototype": {
+    "language": "Python standard library",
+    "entrypoint": "python run_model.py --input <case-summary.json> --output .",
+    "missing_data_policy": "reject incomplete rows; never impute omitted values"
+  },
+  "experiment": {
+    "kind": "synthetic_structural_test_not_location_data",
+    "seed": 2023001,
+    "trials": 1000,
+    "violations": {
+      "bounds": 0,
+      "monotonicity": 0,
+      "finite": 0
+    },
+    "boundary_scores": {
+      "all_zero": 0.0,
+      "all_one": 1.0
+    },
+    "p_sensitivity": {
+      "1.0": 0.5,
+      "2.0": 0.6009252125773316,
+      "4.0": 0.7076517579156499
+    },
+    "weight_concentration_range": [
+      0.5027701042999452,
+      0.7434902674398487
+    ],
+    "weight_concentration_scores": {
+      "skyglow": 0.5027701042999452,
+      "light_trespass": 0.510990323891863,
+      "over_illumination": 0.5348935511960404,
+      "glare": 0.5725188012439223,
+      "light_clutter": 0.6213783960769083,
+      "ecological_concern": 0.6790516262487788,
+      "human_concern": 0.7434902674398487
+    }
+  },
+  "validation": {
+    "structural_status": "complete",
+    "empirical_status": "pending",
+    "tests": [
+      "range",
+      "boundary",
+      "monotonicity",
+      "finite output",
+      "missing-data gate"
+    ],
+    "out_of_sample_validation": "pending because no observations or outcomes are supplied",
+    "unit_tests": {
+      "command": "python -m unittest -v",
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": "test_composite_risk_bounds_and_monotonicity (test_run_model.ModelTests.test_composite_risk_bounds_and_monotonicity) ... ok\ntest_intervention_reduces_harm_and_preserves_safety_floor (test_run_model.ModelTests.test_intervention_reduces_harm_and_preserves_safety_floor) ... ok\ntest_report_flags_missing_rows_without_scores (test_run_model.ModelTests.test_report_flags_missing_rows_without_scores) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.080s\n\nOK"
+    }
+  },
+  "sensitivity_robustness": {
+    "status": "structural_only",
+    "p_scores_on_deterministic_reference_vector": {
+      "1.0": 0.5,
+      "2.0": 0.6009252125773316,
+      "4.0": 0.7076517579156499
+    },
+    "weight_concentration_score_range": [
+      0.5027701042999452,
+      0.7434902674398487
+    ],
+    "limitation": "These are mathematical stress tests, not location estimates."
+  },
+  "falsification": {
+    "criteria": [
+      "Reject implementation if risk leaves [0,100], is non-finite, or decreases when any adverse indicator increases with others fixed.",
+      "Reject transferability if normalization bounds or indicator meanings differ materially by location type.",
+      "Reject a strategy ranking if it changes across plausible calibrated weights/effects or violates a safety constraint.",
+      "Reject empirical claims without representative samples, outcome validation, and uncertainty intervals."
+    ]
+  },
+  "reviewer_risks": [
+    "No location observations are supplied, so the official four-location application is incomplete.",
+    "Equal weights, p=2, normalization bounds, category thresholds, and intervention effects lack calibration.",
+    "Potential sampling bias and confounded correlations cannot be assessed without data provenance and outcomes.",
+    "The additive separability implicit in the power mean may miss ecological-human interactions.",
+    "Safety benefits of artificial light require explicit constraints and stakeholder evidence before intervention choice.",
+    "SVG-only figures have not passed the pinned publication PNG/DPI visual audit because matplotlib is unavailable.",
+    "Independent M1/P1/P2 Subagent gates were not run because the preregistered instructions did not authorize delegation."
+  ],
+  "reproducibility_manifest": {
+    "seed": 2023001,
+    "input_case_id": "icm-2023-e",
+    "input_problem_sha256": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+    "runtime": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "parameters": {
+      "p": 2.0,
+      "weights": "equal",
+      "indicators": [
+        "skyglow",
+        "light_trespass",
+        "over_illumination",
+        "glare",
+        "light_clutter",
+        "ecological_concern",
+        "human_concern"
+      ]
+    },
+    "input_path": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-e.json",
+    "input_sha256_actual": "9c136273749e640d6926cadeccad4d16dc55904d7d3a178602931f69fd4e2557",
+    "code_sha256": "204d3869da1e814fcb4059f6dc9fdf095bcaebb59e6bacb7b193226ec64fcbce",
+    "dependencies": {
+      "python": "3.12.13",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "matplotlib": null
+    },
+    "unique_command": "python run_model.py --input \"C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-e.json\" --output ."
+  },
+  "stage_status": {
+    "problem_framing": "complete",
+    "data_audit": "complete",
+    "assumptions": "complete",
+    "candidate_models": "complete",
+    "baseline": "complete",
+    "math_specification": "complete",
+    "code_prototype": "complete",
+    "experiment": "complete",
+    "validation": "complete",
+    "sensitivity_robustness": "complete",
+    "falsification": "complete",
+    "reviewer_risks": "complete",
+    "reproducibility_manifest": "complete"
+  },
+  "pending_stages": [
+    "four_location_empirical_scoring",
+    "two_location_strategy_selection",
+    "empirical_validation_and_uncertainty",
+    "location_specific_flyer",
+    "weight_threshold_calibration",
+    "intervention_effect_calibration",
+    "publication_png_figure_audit"
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "baseline": {
+    "coefficient_of_variation": 0.06002827102643559,
+    "final_adaptation_mean": 0.7612758336383965,
+    "minimum_biomass": 0.42,
+    "scenario": "baseline",
+    "seed": 2023001,
+    "survived": true,
+    "terminal_biomass": 1.2572229285876033,
+    "trait_range": 0.75
+  },
+  "benchmark": {
+    "case_id": "mcm-2023-a",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "problem_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+    "source_status": "verified",
+    "summary_sha256": "2b2ac0d4c79bbd9724e86d6b06447c3289208a36d345b593aab65120f8a7f32c"
+  },
+  "benefit_threshold_species": 2,
+  "composition": [
+    {
+      "composition": "mixed",
+      "mean_cv": 0.0384463061457886,
+      "richness": 4,
+      "scenario": "mixed",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.263660031993585,
+      "terminal_median": 1.2571190664829124,
+      "terminal_sd": 0.021688697274389178
+    },
+    {
+      "composition": "tolerant",
+      "mean_cv": 0.022421994793764607,
+      "richness": 4,
+      "scenario": "tolerant",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.358481339374762,
+      "terminal_median": 1.3552179324418727,
+      "terminal_sd": 0.013261506786780284
+    },
+    {
+      "composition": "fast_growth",
+      "mean_cv": 0.08748450721033756,
+      "richness": 4,
+      "scenario": "fast_growth",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.145618145903837,
+      "terminal_median": 1.1343363298053155,
+      "terminal_sd": 0.03882184676480832
+    }
+  ],
+  "design": {
+    "empirical_rows": 0,
+    "ensembles_per_cell": 24,
+    "seed": 2023001,
+    "years": 120
+  },
+  "drought_regimes": [
+    {
+      "composition": "mixed",
+      "mean_cv": 0.028482763612199233,
+      "richness": 4,
+      "scenario": "less_frequent",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.278282111944643,
+      "terminal_median": 1.2808056837627309,
+      "terminal_sd": 0.014417202477576373
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.0384463061457886,
+      "richness": 4,
+      "scenario": "baseline",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.263660031993585,
+      "terminal_median": 1.2571190664829124,
+      "terminal_sd": 0.021688697274389178
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.05647694490735473,
+      "richness": 4,
+      "scenario": "frequent_variable",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.2106885490507755,
+      "terminal_median": 1.2145532399273429,
+      "terminal_sd": 0.026469417643324528
+    }
+  ],
+  "external_stress": [
+    {
+      "composition": "mixed",
+      "mean_cv": 0.0384463061457886,
+      "richness": 4,
+      "scenario": "none",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.263660031993585,
+      "terminal_median": 1.2571190664829124,
+      "terminal_sd": 0.021688697274389178
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.04154125941005518,
+      "richness": 4,
+      "scenario": "pollution",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.0364621341853022,
+      "terminal_median": 1.0311153676217457,
+      "terminal_sd": 0.02131277533561578
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.03844203305348386,
+      "richness": 4,
+      "scenario": "habitat_loss",
+      "survival_probability": 1.0,
+      "terminal_mean": 0.7834610541073453,
+      "terminal_median": 0.7794057626819908,
+      "terminal_sd": 0.013444243195589092
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.04151800488486951,
+      "richness": 4,
+      "scenario": "combined",
+      "survival_probability": 1.0,
+      "terminal_mean": 0.6425712547192921,
+      "terminal_median": 0.6392589937239632,
+      "terminal_sd": 0.013198181447027578
+    }
+  ],
+  "interpretation_scope": "Synthetic scenario evidence only; no empirical calibration or ecological forecast claim.",
+  "richness": [
+    {
+      "composition": "mixed",
+      "mean_cv": 0.10337287157313473,
+      "richness": 1,
+      "scenario": "richness_1",
+      "survival_probability": 1.0,
+      "terminal_mean": 0.7331758645213918,
+      "terminal_median": 0.7248940470031567,
+      "terminal_sd": 0.028996851307562667
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.03824931045350626,
+      "richness": 2,
+      "scenario": "richness_2",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.0827842038158957,
+      "terminal_median": 1.0775775949050614,
+      "terminal_sd": 0.01871859652419641
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.039384294177855744,
+      "richness": 3,
+      "scenario": "richness_3",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.196905938059873,
+      "terminal_median": 1.1907355666082726,
+      "terminal_sd": 0.02113451387620415
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.0384463061457886,
+      "richness": 4,
+      "scenario": "richness_4",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.263660031993585,
+      "terminal_median": 1.2571190664829124,
+      "terminal_sd": 0.021688697274389178
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.03705640863499092,
+      "richness": 5,
+      "scenario": "richness_5",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.3075370637024195,
+      "terminal_median": 1.3010294919355951,
+      "terminal_sd": 0.021448642740930276
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.035708393723979825,
+      "richness": 6,
+      "scenario": "richness_6",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.3392512979322404,
+      "terminal_median": 1.3329229262642162,
+      "terminal_sd": 0.021013231343925885
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.034526791189333876,
+      "richness": 7,
+      "scenario": "richness_7",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.3637615756037957,
+      "terminal_median": 1.3576177611794131,
+      "terminal_sd": 0.020584171457823066
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.0335045774447157,
+      "richness": 8,
+      "scenario": "richness_8",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.3835028095719075,
+      "terminal_median": 1.3775358063504988,
+      "terminal_sd": 0.020180886424510994
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.03261883366028788,
+      "richness": 9,
+      "scenario": "richness_9",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.3998882196568672,
+      "terminal_median": 1.3940842789644114,
+      "terminal_sd": 0.019813567598414687
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.031846117439661814,
+      "richness": 10,
+      "scenario": "richness_10",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.4137965682585898,
+      "terminal_median": 1.4081413495923423,
+      "terminal_sd": 0.019481549639887494
+    }
+  ],
+  "run_id": "B-mcm-2023-a-001-v2",
+  "sensitivity": [
+    {
+      "composition": "mixed",
+      "mean_cv": 0.040004911394065736,
+      "parameter": "facilitation",
+      "richness": 4,
+      "scenario": "sens_facilitation_0.1",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.2606039354669933,
+      "terminal_median": 1.2538210395482199,
+      "terminal_sd": 0.02268573126607963,
+      "value": 0.1
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.0384463061457886,
+      "parameter": "facilitation",
+      "richness": 4,
+      "scenario": "sens_facilitation_0.22",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.263660031993585,
+      "terminal_median": 1.2571190664829124,
+      "terminal_sd": 0.021688697274389178,
+      "value": 0.22
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.03693589794338743,
+      "parameter": "facilitation",
+      "richness": 4,
+      "scenario": "sens_facilitation_0.34",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.2666362471134327,
+      "terminal_median": 1.2603346387269116,
+      "terminal_sd": 0.020735772115808328,
+      "value": 0.34
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.04414881193651394,
+      "parameter": "competition",
+      "richness": 4,
+      "scenario": "sens_competition_0.4",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.5231036726485874,
+      "terminal_median": 1.5150488275295506,
+      "terminal_sd": 0.028612361165926806,
+      "value": 0.4
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.0384463061457886,
+      "parameter": "competition",
+      "richness": 4,
+      "scenario": "sens_competition_0.55",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.263660031993585,
+      "terminal_median": 1.2571190664829124,
+      "terminal_sd": 0.021688697274389178,
+      "value": 0.55
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.029137479334452907,
+      "parameter": "competition",
+      "richness": 4,
+      "scenario": "sens_competition_0.7",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.0842175933631957,
+      "terminal_median": 1.0800656811132638,
+      "terminal_sd": 0.01408961428985152,
+      "value": 0.7
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.03321483492342088,
+      "parameter": "drought_probability",
+      "richness": 4,
+      "scenario": "sens_drought_probability_0.12",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.269084973539149,
+      "terminal_median": 1.26826568999638,
+      "terminal_sd": 0.02046203973087904,
+      "value": 0.12
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.0384463061457886,
+      "parameter": "drought_probability",
+      "richness": 4,
+      "scenario": "sens_drought_probability_0.2",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.263660031993585,
+      "terminal_median": 1.2571190664829124,
+      "terminal_sd": 0.021688697274389178,
+      "value": 0.2
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.03803756386850289,
+      "parameter": "drought_probability",
+      "richness": 4,
+      "scenario": "sens_drought_probability_0.3",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.2554534834131958,
+      "terminal_median": 1.2574874236150433,
+      "terminal_sd": 0.019937941077921083,
+      "value": 0.3
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.03844246022593162,
+      "parameter": "habitat_fraction",
+      "richness": 4,
+      "scenario": "sens_habitat_fraction_0.65",
+      "survival_probability": 1.0,
+      "terminal_mean": 0.8213713137799364,
+      "terminal_median": 0.8171197908708849,
+      "terminal_sd": 0.014095062667307784,
+      "value": 0.65
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.038444543707728644,
+      "parameter": "habitat_fraction",
+      "richness": 4,
+      "scenario": "sens_habitat_fraction_0.82",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.0361967651370771,
+      "terminal_median": 1.0308332449969355,
+      "terminal_sd": 0.017783243239959938,
+      "value": 0.82
+    },
+    {
+      "composition": "mixed",
+      "mean_cv": 0.0384463061457886,
+      "parameter": "habitat_fraction",
+      "richness": 4,
+      "scenario": "sens_habitat_fraction_1.0",
+      "survival_probability": 1.0,
+      "terminal_mean": 1.263660031993585,
+      "terminal_median": 1.2571190664829124,
+      "terminal_sd": 0.021688697274389178,
+      "value": 1.0
+    }
+  ]
+}

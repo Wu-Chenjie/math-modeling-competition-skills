@@ -1,0 +1,274 @@
+{
+  "report": {
+    "problem_framing": "Prioritize interdependent UN SDGs as a multi-objective network decision under no empirical rows.",
+    "data_audit": {
+      "source_status": "verified problem text only",
+      "rows_available": 0,
+      "data_files": [],
+      "binary_opened": false,
+      "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "assumptions": [
+      "Edges are transparent expert priors, not measurements.",
+      "Undirected signed influence; positive links create spillovers and negative links create conflict.",
+      "All goals have equal direct cost and no exogenous urgency score."
+    ],
+    "candidate_models": [
+      "Equal-weight network centrality score",
+      "Coverage-efficiency selection with ten-year spillover simulation"
+    ],
+    "baseline": {
+      "method": "uniform allocation",
+      "top5": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "evaluation": {
+        "coverage": 0.4564417177914111,
+        "internal_negative_externality": 0,
+        "efficiency": 0.09128834355828222,
+        "ten_year_mean_progress": 0.5656814814709951,
+        "ten_year_progress": {
+          "1": 0.857149895123896,
+          "2": 0.6033104991447916,
+          "3": 0.7702266368028154,
+          "4": 0.6876397941323252,
+          "5": 0.6765286532624674,
+          "6": 0.5725898498643309,
+          "7": 0.4139865706194059,
+          "8": 0.6024966827031546,
+          "9": 0.3303908791426036,
+          "10": 0.5374441453939529,
+          "11": 0.5747105698323622,
+          "12": 0.3483223907406377,
+          "13": 0.45317244605418244,
+          "14": 0.36291050777855055,
+          "15": 0.4205758997855601,
+          "16": 0.6147048298955338,
+          "17": 0.7904249347303449
+        }
+      }
+    },
+    "math_specification": {
+      "score": "S_i = (z(P_i)+z(E_i)+z(C_i))/3",
+      "coverage": "sum positive edge weights incident to selected set / total positive weight",
+      "dynamics": "x[t+1]=clip(x[t]+0.035 A_plus x[t]+0.02 I[x[t]>0],0,1)"
+    },
+    "model_output": {
+      "top5": [
+        17,
+        1,
+        11,
+        8,
+        16
+      ],
+      "top5_names": [
+        "Partnerships",
+        "No poverty",
+        "Sustainable cities",
+        "Decent work",
+        "Peace institutions"
+      ],
+      "scores": {
+        "1": 0.6362568541504423,
+        "2": 0.12181354359329696,
+        "3": 0.405906240768613,
+        "4": 0.2273467219848059,
+        "5": 0.21501279885260172,
+        "6": 0.42002149109719633,
+        "7": 0.15096818598900927,
+        "8": 0.4557115720296075,
+        "9": 0.02805813095962184,
+        "10": 0.20728716207474707,
+        "11": 0.517710202947781,
+        "12": 0.1008525892405735,
+        "13": 0.37603164206886813,
+        "14": 0.02222222222222224,
+        "15": 0.1825277449934007,
+        "16": 0.4233167320076287,
+        "17": 1.0
+      },
+      "evaluation": {
+        "coverage": 0.649079754601227,
+        "internal_negative_externality": 0,
+        "efficiency": 0.1298159509202454,
+        "ten_year_mean_progress": 0.6220292363372465,
+        "ten_year_progress": {
+          "1": 0.8718618875413673,
+          "2": 0.4649847100571942,
+          "3": 0.658184164998002,
+          "4": 0.5838916177298485,
+          "5": 0.5775526378160387,
+          "6": 0.5953403082610321,
+          "7": 0.5167897062853242,
+          "8": 0.7969405520235335,
+          "9": 0.4628274320838939,
+          "10": 0.5773097560724528,
+          "11": 0.8142930191695182,
+          "12": 0.4538257130132024,
+          "13": 0.5335555381951567,
+          "14": 0.39469145878150014,
+          "15": 0.4946637269015859,
+          "16": 0.7937356710384772,
+          "17": 0.9840491177650628
+        }
+      }
+    },
+    "experiment": {
+      "seed": 20230803,
+      "samples": 500,
+      "edge_noise_sd": 0.08,
+      "weight_prior": [
+        20,
+        20,
+        20
+      ]
+    },
+    "validation": {
+      "deterministic_replay": true,
+      "rank_length": 17,
+      "selection_size": 5
+    },
+    "sensitivity_robustness": {
+      "top5_inclusion_frequency": {
+        "1": 1.0,
+        "2": 0.0,
+        "3": 0.194,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.436,
+        "7": 0.0,
+        "8": 0.842,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.998,
+        "12": 0.0,
+        "13": 0.058,
+        "14": 0.0,
+        "15": 0.0,
+        "16": 0.472,
+        "17": 1.0
+      },
+      "top1_score_mean": 1.0,
+      "top1_score_sd": 4.710277376051325e-17,
+      "crisis_scenarios": {
+        "pandemic": {
+          "top5": [
+            17,
+            3,
+            1,
+            11,
+            6
+          ],
+          "top1": 17
+        },
+        "climate": {
+          "top5": [
+            17,
+            13,
+            1,
+            11,
+            6
+          ],
+          "top1": 17
+        },
+        "war": {
+          "top5": [
+            1,
+            11,
+            6,
+            8,
+            17
+          ],
+          "top1": 1
+        },
+        "refugees": {
+          "top5": [
+            17,
+            1,
+            16,
+            11,
+            8
+          ],
+          "top1": 17
+        }
+      }
+    },
+    "falsification": {
+      "sign_reversal_top5": [
+        17,
+        8,
+        13,
+        11,
+        1
+      ],
+      "top5_overlap_under_sign_reversal": 0.8,
+      "criterion": "material change expected when all signs reverse"
+    },
+    "achieved_goal_scenarios": {
+      "1": {
+        "top5": [
+          17,
+          11,
+          13,
+          6,
+          16
+        ],
+        "top1": 17
+      },
+      "2": {
+        "top5": [
+          17,
+          1,
+          11,
+          8,
+          16
+        ],
+        "top1": 17
+      },
+      "3": {
+        "top5": [
+          17,
+          1,
+          11,
+          13,
+          8
+        ],
+        "top1": 17
+      }
+    },
+    "reviewer_risks": [
+      "No empirical SDG relationship matrix was supplied; results are scenario priors.",
+      "Weights and edge magnitudes are judgment-sensitive despite robustness sampling.",
+      "Ten-year dynamics are illustrative, not calibrated forecasts."
+    ],
+    "reproducibility_manifest": {
+      "python": "3.12.13",
+      "numpy": "2.3.5",
+      "command": "python run_model.py",
+      "seed": 20230803,
+      "input_case": "icm-2023-d.json",
+      "input_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pending_stages": [
+      "empirical calibration",
+      "official-source citation verification",
+      "independent P1/P2 subagent gate",
+      "25-page ICM document production"
+    ]
+  },
+  "figures": [
+    "figures\\process_q1_crises.svg",
+    "figures\\process_q1_score_components.svg",
+    "figures\\process_q1_sensitivity.svg",
+    "figures\\raw_q1_degree.svg",
+    "figures\\raw_q1_network.svg",
+    "figures\\raw_q1_signed.svg",
+    "figures\\result_q1_10year.svg",
+    "figures\\result_q1_achieved.svg",
+    "figures\\result_q1_priorities.svg"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "command": "python light_pollution_model.py --case-summary \"C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-e.json\"",
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "random_seed": null,
+  "binary_attachments_opened": 0
+}

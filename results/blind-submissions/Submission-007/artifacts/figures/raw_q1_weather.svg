@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+<rect width="100%" height="100%" fill="white"/>
+<text x="400.0" y="28" text-anchor="middle" font-family="Arial" font-size="18">Weather forcing in representative run</text>
+<line x1="85" y1="405" x2="755" y2="405" stroke="black"/>
+<line x1="85" y1="55" x2="85" y2="405" stroke="black"/>
+<text x="420.0" y="455" text-anchor="middle" font-family="Arial" font-size="14">Year</text>
+<text x="18" y="230.0" transform="rotate(-90 18 230.0)" text-anchor="middle" font-family="Arial" font-size="14">Precipitation</text>
+<polyline points="85.00,90.15 101.75,98.37 118.50,113.82 135.25,326.39 152.00,290.35 168.75,107.74 185.50,107.34 202.25,402.97 219.00,96.20 235.75,55.00 252.50,71.98 269.25,113.39 286.00,101.54 302.75,95.36 319.50,93.05 336.25,83.70 353.00,68.84 369.75,69.98 386.50,111.03 403.25,73.38 420.00,83.98 436.75,375.91 453.50,110.32 470.25,102.24 487.00,379.82 503.75,77.08 520.50,83.21 537.25,252.56 554.00,355.34 570.75,296.06 587.50,292.43 604.25,270.48 621.00,99.50 637.75,112.57 654.50,78.60 671.25,285.17 688.00,112.82 704.75,85.78 721.50,86.19 738.25,69.88 755.00,94.40" fill="none" stroke="#0072B2" stroke-width="2"/>
+<line x1="610" y1="68" x2="635" y2="68" stroke="#0072B2" stroke-width="3"/><text x="642" y="73" font-family="Arial" font-size="13">precipitation</text>
+</svg>

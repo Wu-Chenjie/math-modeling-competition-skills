@@ -1,0 +1,128 @@
+{
+  "case_id": "mcm-2023-a",
+  "seed": 202302,
+  "input_data": "No rows supplied; simulation assumptions only",
+  "species_scenarios": [
+    {
+      "scenario": "N=1",
+      "species": 1,
+      "drought_prob": 0.25,
+      "mean_final_biomass": 0.9360526568715508,
+      "sd_final_biomass": 0.03114292172363491,
+      "mean_persistence": 1.0,
+      "mean_shannon": -1.1102230246251571e-15
+    },
+    {
+      "scenario": "N=2",
+      "species": 2,
+      "drought_prob": 0.25,
+      "mean_final_biomass": 0.8057752164261727,
+      "sd_final_biomass": 0.0220919885273711,
+      "mean_persistence": 1.0,
+      "mean_shannon": 0.6928221371519045
+    },
+    {
+      "scenario": "N=4",
+      "species": 4,
+      "drought_prob": 0.25,
+      "mean_final_biomass": 0.6441977595325513,
+      "sd_final_biomass": 0.010053430847412169,
+      "mean_persistence": 1.0,
+      "mean_shannon": 1.38580095385204
+    },
+    {
+      "scenario": "N=8",
+      "species": 8,
+      "drought_prob": 0.25,
+      "mean_final_biomass": 0.45597351119577495,
+      "sd_final_biomass": 0.0051265029648684644,
+      "mean_persistence": 1.0,
+      "mean_shannon": 2.0783899789507005
+    },
+    {
+      "scenario": "N=16",
+      "species": 16,
+      "drought_prob": 0.25,
+      "mean_final_biomass": 0.287464772628846,
+      "sd_final_biomass": 0.0021094147893033215,
+      "mean_persistence": 1.0,
+      "mean_shannon": 2.7709646332850224
+    }
+  ],
+  "frequency_sensitivity": [
+    {
+      "drought_prob": 0.05,
+      "mean_final_biomass": 0.6527272355542368,
+      "sd": 0.009983845979524312
+    },
+    {
+      "drought_prob": 0.15,
+      "mean_final_biomass": 0.6462961069569564,
+      "sd": 0.00818512327380165
+    },
+    {
+      "drought_prob": 0.25,
+      "mean_final_biomass": 0.648463150321527,
+      "sd": 0.009499509007950617
+    },
+    {
+      "drought_prob": 0.4,
+      "mean_final_biomass": 0.6435155141464693,
+      "sd": 0.009321657106429047
+    },
+    {
+      "drought_prob": 0.6,
+      "mean_final_biomass": 0.6379194685327457,
+      "sd": 0.012214073872850088
+    }
+  ],
+  "environment_sensitivity": [
+    {
+      "pollution": 0,
+      "habitat_fraction": 1,
+      "mean_final_biomass": 0.6420791821959295,
+      "sd": 0.010215367204563666
+    },
+    {
+      "pollution": 0.2,
+      "habitat_fraction": 1,
+      "mean_final_biomass": 0.6303438084378543,
+      "sd": 0.011853040892299318
+    },
+    {
+      "pollution": 0,
+      "habitat_fraction": 0.7,
+      "mean_final_biomass": 0.45148308292544337,
+      "sd": 0.007676759479038274
+    },
+    {
+      "pollution": 0.2,
+      "habitat_fraction": 0.7,
+      "mean_final_biomass": 0.44299747603572615,
+      "sd": 0.008681671265091753
+    }
+  ],
+  "extreme_checks": {
+    "no_drought": {
+      "mean_final_biomass": 0.6482655322688761,
+      "sd": 0.011077900624207097
+    },
+    "permanent_severe": {
+      "mean_final_biomass": 0.08512384692505542,
+      "sd": 0.006306234721055079
+    }
+  },
+  "assumptions": {
+    "dt_years": 0.1,
+    "years": 120,
+    "growth_mean": 0.35,
+    "drought_severity": 0.55,
+    "pollution_effect": "multiplicative growth reduction",
+    "habitat_effect": "biomass normalization"
+  },
+  "pending_stages": [
+    "empirical_calibration",
+    "external_validation",
+    "literature_citation_verification"
+  ]
+}

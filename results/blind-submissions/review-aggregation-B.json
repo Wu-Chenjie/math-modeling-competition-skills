@@ -1,0 +1,208 @@
+{
+  "status": "pending_blind_judges",
+  "records_received": 50,
+  "validation_errors": [],
+  "panels": [
+    {
+      "submission_id": "Submission-001",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-002",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-003",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-004",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-005",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-006",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-007",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-008",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-009",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-010",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-011",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-012",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-013",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-014",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-015",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-016",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-017",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-018",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-019",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-020",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-021",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-022",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-023",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-024",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "submission_id": "Submission-025",
+      "status": "pending_judges",
+      "judges_present": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "decision": "INCONCLUSIVE"
+}

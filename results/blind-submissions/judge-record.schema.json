@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["submission_id", "judge_id", "scores", "fatal_flags"],
+  "properties": {
+    "submission_id": {"type": "string", "pattern": "^Submission-[0-9]{3}$"},
+    "judge_id": {"enum": ["A", "B", "C", "D"]},
+    "scores": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0}},
+    "fatal_flags": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  }
+}

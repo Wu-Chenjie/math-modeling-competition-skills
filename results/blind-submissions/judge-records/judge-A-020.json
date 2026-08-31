@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-020",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 8,
+    "model_reasonableness": 11,
+    "mathematical_rigor": 6,
+    "data_handling": 2,
+    "code_and_solving": 8,
+    "model_validation": 5,
+    "innovation": 4,
+    "result_interpretation": 4,
+    "paper_quality": 7,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "Mechanistic drought equations, sweeps and reproducibility manifest are present; all parameters are hypothetical due to no data."
+}

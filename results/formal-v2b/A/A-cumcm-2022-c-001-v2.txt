@@ -1,0 +1,21 @@
+{
+  "status": "pending",
+  "code_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2b\\workspaces-v2\\A-cumcm-2022-c-001-v2\\run_model.py",
+  "metrics_path": null,
+  "figures_count": 0,
+  "tests": {
+    "command": "python run_model.py",
+    "exit_code": 1,
+    "result": "ModuleNotFoundError: No module named 'pandas'"
+  },
+  "pending_stages": [
+    "data_audit_metrics",
+    "baseline",
+    "experiment",
+    "validation",
+    "sensitivity_robustness",
+    "falsification",
+    "machine_readable_metrics",
+    "figures"
+  ]
+}

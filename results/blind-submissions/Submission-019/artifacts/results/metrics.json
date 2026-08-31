@@ -1,0 +1,80 @@
+{
+  "case_id": "icm-2023-e",
+  "source_status": "verified",
+  "input_summary_sha256": "9c136273749e640d6926cadeccad4d16dc55904d7d3a178602931f69fd4e2557",
+  "declared_problem_sha256": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+  "declared_data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "data_files": [],
+  "data_rows_available": 0,
+  "metric": {
+    "weights": {
+      "skyglow": 0.3,
+      "trespass": 0.2,
+      "glare": 0.15,
+      "ecology": 0.2,
+      "human": 0.15
+    },
+    "formula": "100 * sum(w_j * x_j), x_j in [0,1]",
+    "bands": {
+      "low": "<20",
+      "moderate": "20-<40",
+      "high": "40-<60",
+      "very_high": ">=60"
+    }
+  },
+  "empirical_location_scores": null,
+  "status": "model_executable_empirical_application_pending",
+  "pending_reason": "The deterministic summary contains no data files, rows, or location measurements.",
+  "illustrative_unit_midpoint_scenario": {
+    "inputs": {
+      "skyglow": 0.5,
+      "trespass": 0.5,
+      "glare": 0.5,
+      "ecology": 0.5,
+      "human": 0.5
+    },
+    "risk": 50.0,
+    "band": "high",
+    "ranked_interventions": [
+      {
+        "name": "curfew",
+        "post_risk": 33.875,
+        "band": "moderate"
+      },
+      {
+        "name": "dimming",
+        "post_risk": 37.375,
+        "band": "moderate"
+      },
+      {
+        "name": "shielding",
+        "post_risk": 38.75,
+        "band": "moderate"
+      }
+    ],
+    "label": "assumption-only diagnostic; not observed location data"
+  },
+  "interventions": {
+    "shielding": {
+      "skyglow": 0.1,
+      "trespass": 0.55,
+      "glare": 0.45,
+      "ecology": 0.05,
+      "human": 0.05
+    },
+    "dimming": {
+      "skyglow": 0.35,
+      "trespass": 0.3,
+      "glare": 0.25,
+      "ecology": 0.1,
+      "human": 0.2
+    },
+    "curfew": {
+      "skyglow": 0.25,
+      "trespass": 0.35,
+      "glare": 0.3,
+      "ecology": 0.4,
+      "human": 0.35
+    }
+  }
+}

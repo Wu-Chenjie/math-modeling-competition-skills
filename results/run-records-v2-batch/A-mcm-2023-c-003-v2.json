@@ -1,0 +1,29 @@
+{
+  "group": "A",
+  "case_id": "mcm-2023-c",
+  "index": 3,
+  "run_id": "A-mcm-2023-c-003-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/mcm-2023-c",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-c.json",
+  "statement_sha256": "b511204705db800f3b812943b780074cc24bfe5108d26b6c20f308128e631ef6",
+  "data_sha256": "22d9c6c308700c6b744d74da8c83e358eefba955f58713c65f947624cda5ac94",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "timeout",
+  "started_at": "2026-08-30T08:48:46.426660+00:00",
+  "ended_at": "2026-08-30T08:58:46.455965+00:00",
+  "exit_code": null,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/A/A-mcm-2023-c-003-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-mcm-2023-c-003-v2",
+  "artifacts": [
+    "__pycache__/test_model.cpython-312.pyc",
+    "test_model.py"
+  ],
+  "reported_tokens": null,
+  "stdout_log": "results/formal-v2-batch/A/A-mcm-2023-c-003-v2.stdout.log",
+  "stderr_log": "results/formal-v2-batch/A/A-mcm-2023-c-003-v2.stderr.log",
+  "stdout_tail": "",
+  "stderr_tail": ")\n+    self.assertEqual(rows[0][\"contest\"], 560)\n+    self.assertEqual(rows[-1][\"contest\"], 202)\n+\n+\n+  def test_word_features_capture_eerie_repetition_and_vowels(self):\n+    f = mp.word_features(\"EERIE\")\n+    self.assertEqual(f[\"length\"], 5)\n+    self.assertEqual(f[\"unique_letters\"], 3)\n+    self.assertEqual(f[\"vowels\"], 4)\n+    self.assertEqual(f[\"repeated_letters\"], 2)\n+\n+\n+  def test_composition_prediction_is_simplex_and_interval_is_ordered(self):\n+    rows, _ = mp.load_rows(json.loads(CASE.read_text(encoding=\"utf-8\")))\n+    frame = mp.build_frame(rows)\n+    fit = mp.fit_composition_model(frame)\n+    pred, lo, hi = mp.predict_composition(fit, frame, \"EERIE\", 2023, 3, 1)\n+    self.assertTrue(np.isclose(pred.sum(), 1.0))\n+    self.assertTrue(np.all(pred >= 0))\n+    self.assertTrue(np.all(lo <= pred))\n+    self.assertTrue(np.all(pred <= hi))\n+\n+\n+  def test_temporal_validation_does_not_shuffle_and_returns_metrics(self):\n+    rows, _ = mp.load_rows(json.loads(CASE.read_text(encoding=\"utf-8\")))\n+    frame = mp.build_frame(rows)\n+    result = mp.temporal_validation(frame)\n+    self.assertEqual(result[\"folds\"], 5)\n+    self.assertGreater(result[\"train_last_contest\"], result[\"test_last_contest\"])\n+    self.assertGreaterEqual(result[\"composition_mae\"], 0)\n+\n+\n+  def test_pipeline_writes_machine_readable_contract(self):\n+    import tempfile\n+    tmp_path = Path(tempfile.mkdtemp())\n+    out = mp.run_pipeline(CASE, tmp_path)\n+    self.assertTrue(Path(out[\"metrics_path\"]).exists())\n+    self.assertTrue(Path(out[\"manifest_path\"]).exists())\n+    self.assertEqual(len(list((tmp_path / \"figures\").glob(\"*.svg\"))), 9)\n+\n+if __name__ == \"__main__\":\n+  unittest.main()\n\ncodex\nThe red test now fails for the expected reason: the pipeline does not yet exist. I’m implementing the minimal complete pipeline next, including all requested report sections, chronological baselines and validation, sensitivity and falsification checks, nine SVG figures, and a hash-bound reproducibility manifest.\n"
+}

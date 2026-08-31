@@ -1,0 +1,10 @@
+{
+  "case_summary": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-e.json",
+  "case_summary_sha256": "9c136273749e640d6926cadeccad4d16dc55904d7d3a178602931f69fd4e2557",
+  "code_path": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-002-v2\\light_pollution_model.py",
+  "code_sha256": "32440e55d134b861556c303451f30998c815809d91f37467dbe9aa3183ef5609",
+  "python": "3.12.13",
+  "random_seed": null,
+  "randomness_used": false,
+  "unique_command": "python \"C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-002-v2\\light_pollution_model.py\" --case-summary \"C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-e.json\" --output-root \"C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-002-v2\""
+}

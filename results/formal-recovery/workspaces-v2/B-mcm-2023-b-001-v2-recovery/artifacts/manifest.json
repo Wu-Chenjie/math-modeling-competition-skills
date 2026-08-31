@@ -1,0 +1,15 @@
+{
+  "case_id": "mcm-2023-b",
+  "input_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090",
+  "command": "python model.py --case C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-b.json --metrics artifacts\\metrics.json --figures artifacts\\figures --report artifacts\\modeling_report.md",
+  "seed": null,
+  "dependencies": {
+    "python": "3.12+",
+    "numpy": "available",
+    "Pillow": "available"
+  },
+  "outputs": [
+    "artifacts\\metrics.json",
+    "artifacts\\modeling_report.md"
+  ]
+}

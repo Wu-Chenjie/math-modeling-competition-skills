@@ -1,0 +1,121 @@
+# Modeling Report: A-icm-2023-d-001
+
+## Problem Framing
+
+The case is ICM 2023 Problem D, “Prioritizing the UN Sustainability Goals.” The excerpt establishes 17 interdependent Sustainable Development Goals (SDGs), finite funding, competing national/international priorities, and disruptions from technology, pandemics, climate change, regional wars, and refugee movements. The available requirement text ends at “Requirement To explore”; therefore, no additional subquestion wording or prescribed output is assumed.
+
+The modeling objective is to produce a transparent SDG priority ranking or investment portfolio while accounting for interactions, resource limits, uncertainty, and changing scenarios. Results should be interpreted as decision support, not causal estimates.
+
+## Data Audit
+
+- Source status: verified.
+- Problem file hash: `a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7`.
+- Data inventory: no attached data files.
+- Reported data hash: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+- Problem length: 2 pages, 3,852 extracted characters.
+- Available fields, observations, units, missingness, geographic coverage, funding amounts, SDG indicators, and interaction measurements: unavailable from the summary.
+
+Consequently, numerical calibration, execution, and empirical validation are pending.
+
+## Assumptions
+
+1. Each SDG can be represented by one or more measurable indicators transformed to a common beneficial scale.
+2. Indicator direction, aggregation, and normalization are documented before ranking.
+3. Interactions may be positive or negative and are represented by an explicitly elicited or sourced matrix.
+4. Priorities depend on stakeholder weights and scenario conditions; no single “true” weight vector is presumed.
+5. Funding and implementation capacities, if required, are external inputs and remain pending.
+6. Missing or incomparable indicators are not silently imputed; exclusion or documented imputation is required.
+
+## Candidate Models
+
+**Model 1: Network-aware MCDA.**  
+Aggregate normalized SDG performance while propagating inter-goal effects through an interaction network. This directly addresses the expected `multi_criteria_decision` requirement.
+
+**Model 2: Robust multi-objective portfolio optimization.**  
+Generate Pareto-efficient allocations under uncertain weights, interaction strengths, and scenario-specific impacts. This supports `weight_sensitivity` and `robustness_analysis`.
+
+At most these two independent model systems should be retained; sensitivity analyses are not additional models.
+
+## Baseline
+
+Use an equal-weight additive score with no interactions:
+
+\[
+S_g^{(0)}=\frac{1}{K}\sum_{k=1}^{K}x_{gk},
+\]
+
+where \(x_{gk}\in[0,1]\) is the normalized indicator for goal \(g\). Rank goals by \(S_g^{(0)}\). This baseline is intentionally simple and provides a reference for gains attributable to interactions and uncertainty treatment.
+
+## Mathematical Specification
+
+Let \(x_g\) be the normalized indicator vector for SDG \(g\), \(w\in\Delta^{16}\) the weight vector, and \(B\) the signed interaction matrix.
+
+Direct score:
+
+\[
+d_g=w_g\,x_g.
+\]
+
+Network-adjusted score:
+
+\[
+y=(I-\alpha B)^{-1}d,\qquad
+0\leq\alpha<1/\rho(B),
+\]
+
+where \(\rho(B)\) is the spectral radius. If selecting goals or programs, let \(z_g\in\{0,1\}\), costs be \(c_g\), and capacity be \(C\):
+
+\[
+\max_z\; y^\top z+\beta z^\top H z-\lambda L(z)
+\quad\text{s.t.}\quad c^\top z\le C.
+\]
+
+Here \(H\) represents portfolio synergies, and \(L\) is a documented inequality or concentration penalty. All symbols, units, and parameter sources must be fixed before execution.
+
+For robustness, solve the same portfolio objective over \(w\in\mathcal W\), \(\alpha\in\mathcal A\), and scenario set \(\Omega\), reporting worst-case utility and rank stability.
+
+## Executable Experiment Plan
+
+1. Create a versioned input table for SDG indicators, costs, interaction edges, scenarios, and stakeholder weight sets.
+2. Validate ranges, directions, units, duplicates, and missingness.
+3. Normalize indicators using prespecified min-max or goalpost rules; record clipping.
+4. Fit/construct \(B\), then check stability condition \(\alpha\rho(B)<1\).
+5. Compute the equal-weight baseline.
+6. Solve Model 1 and Model 2 for each scenario and parameter set.
+7. Produce rankings, selected portfolios, Pareto fronts, marginal gains, and stability summaries.
+8. Save all inputs, parameters, random seeds, solver versions, and outputs.
+
+Execution is **pending** because no numerical inputs are supplied.
+
+## Validation
+
+Pending checks include: constraint feasibility; normalization invariance; comparison with the baseline; sensitivity to omitted interactions; scenario holdout or historical backtesting where data exist; rank correlation across methods; and independent recomputation from saved inputs. Expert review should assess whether recommended priorities are substantively plausible without treating plausibility as proof.
+
+## Sensitivity and Robustness
+
+Vary weights over documented stakeholder intervals or simplex samples, interaction attenuation \(\alpha\), normalization method, budget/capacity, and scenario assumptions. Report top-\(k\) inclusion probability, rank intervals, worst-case and median utility, Pareto dominance, and frequency of rank reversal. A priority should be labeled robust only if it remains high-ranked across a prespecified fraction of admissible settings.
+
+## Falsification Tests
+
+- Set \(B=0\); interaction-driven changes should disappear.
+- Permute SDG labels while preserving marginal distributions; meaningful structure should degrade.
+- Replace informed weights with equal weights; claimed stakeholder effects should change measurably.
+- Test extreme budgets and single-goal portfolios for feasibility and boundary behavior.
+- Check for dominated goals/portfolios and negative-cycle amplification in \(B\).
+
+## Reviewer Risks
+
+Arbitrary weights, scale mismatch, unsupported interaction coefficients, hidden normative choices, omitted uncertainty, infeasible portfolios, scenario cherry-picking, and presenting rankings as causal or universally valid. The incomplete requirement excerpt is itself a scope risk and must be resolved before final submission.
+
+## Reproducibility Manifest
+
+- Run ID: `A-icm-2023-d-001`
+- Case ID: `icm-2023-d`
+- Input: `benchmarks/case-summaries.json`, selected case entry
+- Hashes: as listed in Data Audit
+- Data files: none
+- Random seed: pending
+- Software/dependency versions: pending
+- Solver and parameters: pending
+- Unique reproduction command: pending
+- Execution status: **unexecuted; all numerical results pending**

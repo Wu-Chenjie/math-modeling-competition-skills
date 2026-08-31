@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470">
+<rect width="100%" height="100%" fill="white"/><text x="380.0" y="24" text-anchor="middle" font-family="Arial" font-size="16">Cross-validation fold RMSE</text>
+<line x1="70" y1="20" x2="70" y2="415" stroke="#333"/><line x1="70" y1="415" x2="740" y2="415" stroke="#333"/>
+<text x="380.0" y="458" text-anchor="middle" font-family="Arial" font-size="12">Fold</text>
+<text x="16" y="235.0" transform="rotate(-90 16 235.0)" text-anchor="middle" font-family="Arial" font-size="12">RMSE (USD)</text><circle cx="70.00" cy="296.90" r="2.2" fill="#176b87" opacity="0.55"/><circle cx="237.50" cy="415.00" r="2.2" fill="#176b87" opacity="0.55"/><circle cx="405.00" cy="30.00" r="2.2" fill="#176b87" opacity="0.55"/><circle cx="572.50" cy="294.87" r="2.2" fill="#176b87" opacity="0.55"/><circle cx="740.00" cy="276.79" r="2.2" fill="#176b87" opacity="0.55"/></svg>

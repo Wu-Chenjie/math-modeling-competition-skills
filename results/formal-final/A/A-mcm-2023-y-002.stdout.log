@@ -1,0 +1,99 @@
+# Modeling Report: MCM 2023 Problem Y
+
+**Run:** A-mcm-2023-y-002  
+**Status:** Design only; all computation and numerical results are pending.
+
+## Problem Framing
+
+Estimate and explain December 2020 advertised prices of used 36–56 ft sailboats across Europe, the Caribbean, and the USA. The response is listing price in USD; predictors are hull type, make, variant, length, geographic region, detailed location, and manufacture year. The model should distinguish depreciation, size, brand/variant, hull type, and location effects while producing defensible out-of-sample predictions.
+
+Because the supplied excerpt ends mid-sentence, no additional task-specific deliverables beyond this supported scope are assumed.
+
+## Data Audit
+
+The verified workbook contains two sheets and seven fields:
+
+- Monohulls: 2,347 rows, 16,426 nonempty cells.
+- Catamarans: 1,146 rows, 8,022 nonempty cells.
+- Inventory total: 3,493 rows including any header rows; the exact observation count is pending programmatic parsing.
+- Fields: make, variant, length, geographic region, country/region/state, listing price, and year.
+- Reported pooled numeric ranges are 12–1,885,229 for monohulls and 4–2,890,000 for catamarans; field-specific ranges and validity require audit.
+- Monohulls have three fewer nonempty cells than a fully populated 2,347×7 table; missing-field identities are pending.
+- Duplicate listings, inconsistent spelling, impossible years, nonpositive prices, and lengths outside the stated 36–56 ft scope must be checked.
+
+Listing prices are not completed-sale prices, so the response measures seller expectations rather than realized market value.
+
+## Assumptions
+
+1. USD prices are comparable because all listings share the December 2020 snapshot.
+2. Boat age is `2020 − manufacture year`; invalid or future years are excluded or corrected only with auditable rules.
+3. Observations are listings, conditionally independent except for shared make/variant effects.
+4. Unobserved condition, equipment, and seller urgency contribute irreducible error.
+5. Monohulls and catamarans may have different price structures; pooling is allowed only with hull interactions.
+6. Cleaning and imputation are learned inside each training fold to prevent leakage.
+
+## Candidate Models
+
+**Model 1: regularized hierarchical log-price regression.** Use nonlinear length and age terms, hull interactions, geographic fixed effects, and partially pooled make/variant effects. This is the primary interpretable model.
+
+**Model 2: gradient-boosted trees.** Encode categorical variables without using target information from validation rows. This model captures nonlinearities and interactions and serves as a predictive challenger.
+
+Rare categories should be pooled or handled hierarchically. Separate hull-type models will be compared with a pooled interaction model.
+
+## Baseline
+
+Predict the training-set median log price, first globally and then by hull type. A stronger baseline predicts the median within hull type × length band × age band, with fallback to broader groups. All medians are recomputed within each fold.
+
+## Mathematical Specification
+
+For listing \(i\),
+
+\[
+y_i=\log(1+P_i),
+\]
+
+\[
+y_i=\beta_0+\beta_HH_i+f_L(L_i)+f_A(A_i)
++H_i f_{HL}(L_i)+H_i f_{HA}(A_i)
++\gamma_{R_i}+u_{M_i}+v_{V_i}+\epsilon_i.
+\]
+
+Here \(P_i\) is price, \(H_i\) hull type, \(L_i\) length, \(A_i\) age, \(R_i\) region, and \(u_M,v_V\) regularized make and variant effects. Splines or restricted polynomial bases define \(f_L\) and \(f_A\). Predictions return to dollars using an estimated retransformation correction derived only from training residuals.
+
+## Executable Experiment Plan
+
+1. Load both sheets; normalize headers and text; add hull type and stable row IDs.
+2. Profile missingness, duplicates, category frequencies, price/year/length ranges, and geographic consistency.
+3. Apply documented validity rules; preserve an exclusion ledger.
+4. Engineer age, nonlinear size terms, hull interactions, and hierarchical location/category fields.
+5. Evaluate baselines and both candidate models using repeated cross-validation.
+6. Repeat evaluation with groups defined by make–variant, preventing near-duplicate designs from crossing folds.
+7. Run region-holdout and hull-specific tests.
+8. Tune only within nested training folds.
+9. Generate prediction intervals and coefficient/importance diagnostics.
+10. Fit the selected model on all valid records and export code, metrics, predictions, diagnostics, and manifest.
+
+All steps are pending execution.
+
+## Validation
+
+Primary metrics: MAE on USD and RMSLE on price. Report median absolute percentage error as a secondary scale-free measure, excluding no records merely to improve it. Compare against both baselines with fold-level paired differences. Inspect residuals by hull type, length, age, region, make frequency, and price decile. Calibration plots should compare predicted and observed prices.
+
+## Sensitivity and Robustness
+
+Vary outlier rules, rare-category thresholds, spline complexity, regularization, and retransformation method. Compare pooled versus hull-specific models, random versus grouped folds, and inclusion versus exclusion of detailed location. Bootstrap prediction intervals and model rankings. Report degradation under leave-one-region-out tests.
+
+## Falsification
+
+Reject the preferred model if it fails to beat the hull-median baseline consistently, produces implausible age or length effects, collapses under grouped validation, shows severe regional residual bias, or depends materially on a few extreme listings. Permuted targets must eliminate predictive performance; unexpectedly strong performance would indicate leakage.
+
+## Reviewer Risks
+
+Principal risks are target leakage through category encoding, overfitting rare makes/variants, metric mismatch on a heavy-tailed price distribution, treating advertisements as sales, hidden duplicate listings, and unsupported causal interpretations. The truncated problem excerpt also prevents confirmation of any omitted required subtask.
+
+## Reproducibility Manifest
+
+- Problem SHA-256: `2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce`
+- Data SHA-256: `17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba`
+- Source status: verified
+- Random seed, software versions, cleaning ledger, fold assignments, parameters, commands, outputs, scores, and runtime: **pending execution**.

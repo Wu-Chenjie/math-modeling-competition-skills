@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-002",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 9,
+    "model_reasonableness": 16,
+    "mathematical_rigor": 8,
+    "data_handling": 6,
+    "code_and_solving": 9,
+    "model_validation": 9,
+    "innovation": 5,
+    "result_interpretation": 6,
+    "paper_quality": 8,
+    "reproducibility": 5
+  },
+  "fatal_flags": [],
+  "notes": "Report gives composition assumptions and alternatives with LOOCV/figures; some empirical counts differ from other packages but are internally documented."
+}

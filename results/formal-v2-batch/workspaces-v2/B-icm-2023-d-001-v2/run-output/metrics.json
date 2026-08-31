@@ -1,0 +1,13 @@
+{
+  "case_id": "icm-2023-d",
+  "official_goals": 17,
+  "data_files": 0,
+  "audited_tables": 0,
+  "rows_available": 0,
+  "relationship_edges_available": 0,
+  "priority_ranking_computed": false,
+  "forecast_computed": false,
+  "figures_count": 3,
+  "pending_stages_count": 8,
+  "scores": null
+}

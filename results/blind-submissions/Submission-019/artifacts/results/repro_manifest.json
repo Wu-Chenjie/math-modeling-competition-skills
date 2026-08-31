@@ -1,0 +1,27 @@
+{
+  "command": "python run_light_pollution.py",
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "input": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-e.json",
+  "input_sha256": "9c136273749e640d6926cadeccad4d16dc55904d7d3a178602931f69fd4e2557",
+  "outputs": {
+    "metrics": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\results\\metrics.json",
+    "figures": [
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\process_q3_curfew.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\process_q3_dimming.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\process_q3_shielding.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\process_q4_tradeoff.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\raw_q1_component_1.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\raw_q1_component_2.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\raw_q1_component_3.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\raw_q1_component_4.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\raw_q1_component_5.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\raw_q2_audit_status.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\raw_q5_flyer_metric.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\result_q2_data_audit.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\result_q4_midpoint_ranking.svg",
+      "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\figures\\result_q5_flyer_basis.svg"
+    ]
+  },
+  "seed": null,
+  "seed_reason": "deterministic, no random sampling"
+}

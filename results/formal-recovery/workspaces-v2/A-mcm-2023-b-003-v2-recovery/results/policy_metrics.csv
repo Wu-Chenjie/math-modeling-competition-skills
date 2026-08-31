@@ -1,0 +1,6 @@
+policy,ecology,livelihood,coexistence,tourism,feasible,weight_grid_win_share,mc_win_rate
+status_quo,0.36416,0.427456,0.555131,0.56496,True,0.0,0.0
+strict_zoning,0.653572,0.525388,0.670598,0.620122,True,0.0,0.0
+community_led,0.55231,1.153479,0.695859,0.671786,True,0.003497,0.0
+corridor_first,0.714505,0.827711,0.709269,0.699957,True,0.0,0.0
+balanced_portfolio,0.718786,1.136022,0.736398,0.719666,True,0.996503,1.0

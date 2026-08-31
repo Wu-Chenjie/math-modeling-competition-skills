@@ -1,0 +1,32 @@
+{
+  "group": "B",
+  "case_id": "icm-2023-d",
+  "index": 2,
+  "run_id": "B-icm-2023-d-002-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/icm-2023-d",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/icm-2023-d.json",
+  "statement_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76",
+  "status": "completed",
+  "started_at": "2026-08-30T07:53:54.043105+00:00",
+  "ended_at": "2026-08-30T07:56:43.526955+00:00",
+  "exit_code": 0,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/B/B-icm-2023-d-002-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/B-icm-2023-d-002-v2",
+  "artifacts": [
+    "figures/result_q1_evidence_null_network.svg",
+    "results/metrics.json",
+    "results/modeling_report.json",
+    "results/reproducibility_manifest.json",
+    "run_sdg_audit.py"
+  ],
+  "reported_tokens": 87390,
+  "stdout_log": "results/formal-v2-batch/B/B-icm-2023-d-002-v2.stdout.log",
+  "stderr_log": "results/formal-v2-batch/B/B-icm-2023-d-002-v2.stderr.log",
+  "stdout_tail": "{\"status\":\"completed_with_data_dependent_stages_pending\",\"code_path\":\"C:\\\\Users\\\\伍辰杰\\\\Documents\\\\ChatGPT\\\\mathmodel\\\\math-modeling-competition-skills\\\\results\\\\formal-v2-batch\\\\workspaces-v2\\\\B-icm-2023-d-002-v2\\\\run_sdg_audit.py\",\"metrics_path\":\"C:\\\\Users\\\\伍辰杰\\\\Documents\\\\ChatGPT\\\\mathmodel\\\\math-modeling-competition-skills\\\\results\\\\formal-v2-batch\\\\workspaces-v2\\\\B-icm-2023-d-002-v2\\\\results\\\\metrics.json\",\"figures_count\":1,\"tests\":{\"goal_count_is_17\":true,\"no_unsupported_edges\":true,\"no_unsupported_scores\":true,\"figure_exists\":true},\"pending_stages\":[\"relationship_network_estimation\",\"priority_ranking_and_effectiveness\",\"ten_year_projection\",\"achieved_goal_counterfactual\",\"crisis_scenario_analysis\",\"weight_sensitivity_and_robustness\",\"falsification_against_observed_outcomes\"]}\n",
+  "stderr_tail": "\n+    }\n+\n+\n+def main() -> None:\n+    root = Path(__file__).resolve().parent\n+    results = root / \"results\"\n+    figures = root / \"figures\"\n+    results.mkdir(exist_ok=True)\n+    figures.mkdir(exist_ok=True)\n+    report = build_report()\n+    svg_path = figures / \"result_q1_evidence_null_network.svg\"\n+    svg_path.write_text(evidence_null_svg(), encoding=\"utf-8\")\n+    metrics = {\n+        \"case_id\": \"icm-2023-d\",\n+        \"run_status\": \"completed_with_data_dependent_stages_pending\",\n+        \"official_sdg_count\": len(GOALS),\n+        \"supplied_data_files\": 0,\n+        \"supplied_audited_rows\": 0,\n+        \"evidenced_relationship_edges\": 0,\n+        \"priority_scores_emitted\": 0,\n+        \"figures_created\": 1,\n+        \"pending_stages\": report[\"pending_stages\"],\n+    }\n+    tests = {\n+        \"goal_count_is_17\": len(GOALS) == 17,\n+        \"no_unsupported_edges\": metrics[\"evidenced_relationship_edges\"] == 0,\n+        \"no_unsupported_scores\": metrics[\"priority_scores_emitted\"] == 0,\n+        \"figure_exists\": svg_path.exists() and svg_path.stat().st_size > 0,\n+    }\n+    if not all(tests.values()):\n+        raise RuntimeError(f\"baseline checks failed: {tests}\")\n+    code_hash = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()\n+    manifest = {\n+        **report[\"reproducibility_manifest\"],\n+        \"code_sha256\": code_hash,\n+        \"python_version\": sys.version.split()[0],\n+        \"platform\": platform.platform(),\n+        \"tests\": tests,\n+    }\n+    (results / \"modeling_report.json\").write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding=\"utf-8\")\n+    (results / \"metrics.json\").write_text(json.dumps(metrics, indent=2, ensure_ascii=False), encoding=\"utf-8\")\n+    (results / \"reproducibility_manifest.json\").write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding=\"utf-8\")\n+    print(json.dumps({\"metrics\": str(results / \"metrics.json\"), \"tests\": tests}, ensure_ascii=False))\n+\n+\n+if __name__ == \"__main__\":\n+    main()\n\ntokens used\n87,390\n"
+}

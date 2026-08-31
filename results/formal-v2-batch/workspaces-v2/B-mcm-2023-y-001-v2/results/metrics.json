@@ -1,0 +1,159 @@
+{
+  "problem_framing": "Explain used sailboat listing prices and region effects; Hong Kong comparison requires external listings not present in the supplied summary.",
+  "data_audit": {
+    "source": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-y.json",
+    "source_sha256": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba",
+    "rows_used": 3491,
+    "by_hull": {
+      "monohull": 2346,
+      "catamaran": 1145
+    },
+    "fields": [
+      "Make",
+      "Variant",
+      "Length",
+      "Geographic Region",
+      "Country/Region/State",
+      "Listing Price",
+      "Year"
+    ],
+    "missing_rows_inferred": false
+  },
+  "assumptions": [
+    "2020 minus manufacture year is age",
+    "log-price residuals are approximately additive",
+    "Europe is the reference region",
+    "no supplemental data used"
+  ],
+  "candidate_models": [
+    "median-by-hull baseline",
+    "log-linear regression with length, age, hull and region indicators"
+  ],
+  "baseline": {
+    "n": 3491,
+    "mae_usd": 107708.63191062733,
+    "rmse_usd": 170661.14606210342,
+    "mape": 0.38689012549130863,
+    "r2": 0.25872393490079393
+  },
+  "math_specification": "log(P_i)=beta0+beta1*Length_i+beta2*Age_i+beta3*Catamaran_i+gamma_C*I(Caribbean)+gamma_U*I(USA)+epsilon_i",
+  "experiment": {
+    "cv": "deterministic 5-fold by sorted row index modulo 5",
+    "model_cv": {
+      "n": 3491,
+      "mae_usd": 66105.80148871288,
+      "rmse_usd": 111563.61263539703,
+      "mape": 0.23253393388900465,
+      "r2": 0.683221425535322
+    },
+    "folds": [
+      {
+        "fold": 1,
+        "n": 699,
+        "mae_usd": 64684.36999037008,
+        "rmse_usd": 109583.16490326088,
+        "mape": 0.23500484551156006,
+        "r2": 0.68423652398021
+      },
+      {
+        "fold": 2,
+        "n": 698,
+        "mae_usd": 64194.1041026703,
+        "rmse_usd": 103414.48330546032,
+        "mape": 0.22474403176690638,
+        "r2": 0.7013833621184744
+      },
+      {
+        "fold": 3,
+        "n": 698,
+        "mae_usd": 68589.48766808459,
+        "rmse_usd": 123524.35354795623,
+        "mape": 0.22985063315148194,
+        "r2": 0.663717345635938
+      },
+      {
+        "fold": 4,
+        "n": 698,
+        "mae_usd": 66927.05825376192,
+        "rmse_usd": 109689.24562472901,
+        "mape": 0.2404024826962755,
+        "r2": 0.6719730612485615
+      },
+      {
+        "fold": 5,
+        "n": 698,
+        "mae_usd": 66136.02386348892,
+        "rmse_usd": 110633.64710724526,
+        "mape": 0.23266413633080146,
+        "r2": 0.6975012263818335
+      }
+    ]
+  },
+  "validation": {
+    "in_sample_by_hull": {
+      "monohull": {
+        "n": 2346,
+        "mae_usd": 65571.81902720375,
+        "rmse_usd": 114829.97920463428,
+        "mape": 0.2706364891645071,
+        "r2": 0.3960806430423224
+      },
+      "catamaran": {
+        "n": 1145,
+        "mae_usd": 66955.41681241734,
+        "rmse_usd": 104297.53599904948,
+        "mape": 0.15331018178267497,
+        "r2": 0.7335255708835935
+      }
+    }
+  },
+  "sensitivity_robustness": "Compare CV metrics with hull-median baseline; region medians reported by hull.",
+  "falsification": "A useful model should beat the baseline on CV RMSE/MAE; this check is recorded numerically.",
+  "regional_descriptives": {
+    "monohull": {
+      "Caribbean": {
+        "n": 178,
+        "median_usd": 176131.0
+      },
+      "Europe": {
+        "n": 1783,
+        "median_usd": 193137.0
+      },
+      "USA": {
+        "n": 385,
+        "median_usd": 210000.0
+      }
+    },
+    "catamaran": {
+      "Caribbean": {
+        "n": 302,
+        "median_usd": 380000.0
+      },
+      "Europe": {
+        "n": 735,
+        "median_usd": 449087.0
+      },
+      "USA": {
+        "n": 108,
+        "median_usd": 449000.0
+      }
+    }
+  },
+  "reviewer_risks": [
+    "Listing prices are asking prices, not transaction prices",
+    "Rows_data is the only permitted data source",
+    "Model omits unobserved equipment and condition",
+    "Hong Kong effect is pending external comparable data"
+  ],
+  "pending_stages": [
+    "Hong Kong comparable-listing modeling and external-data source audit",
+    "official contest-format verification"
+  ],
+  "reproducibility": {
+    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "command": "python prototype_model.py",
+    "seed": 0,
+    "input_sha256": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba"
+  }
+}

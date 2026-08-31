@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.0" y="25" text-anchor="middle" font-family="Arial" font-size="16">CLR distance to class centroids</text>
+<line x1="70" y1="400" x2="735" y2="400" stroke="black"/><line x1="70" y1="400" x2="70" y2="35" stroke="black"/>
+<text x="380.0" y="432" text-anchor="middle" font-family="Arial" font-size="12">sample index</text>
+<text x="15" y="220.0" transform="rotate(-90 15 220.0)" text-anchor="middle" font-family="Arial" font-size="12">distance</text>
+<circle cx="70.00" cy="296.56" r="4" fill="#1769aa"/>
+<circle cx="82.31" cy="117.12" r="4" fill="#1769aa"/>
+<circle cx="94.63" cy="292.88" r="4" fill="#1769aa"/>
+<circle cx="106.94" cy="284.03" r="4" fill="#1769aa"/>
+<circle cx="119.26" cy="260.38" r="4" fill="#1769aa"/>
+<circle cx="131.57" cy="175.21" r="4" fill="#1769aa"/>
+<circle cx="143.89" cy="108.11" r="4" fill="#1769aa"/>
+<circle cx="156.20" cy="366.26" r="4" fill="#1769aa"/>
+<circle cx="168.52" cy="322.39" r="4" fill="#1769aa"/>
+<circle cx="180.83" cy="278.40" r="4" fill="#1769aa"/>
+<circle cx="193.15" cy="369.59" r="4" fill="#1769aa"/>
+<circle cx="205.46" cy="204.88" r="4" fill="#1769aa"/>
+<circle cx="217.78" cy="201.55" r="4" fill="#1769aa"/>
+<circle cx="230.09" cy="209.23" r="4" fill="#1769aa"/>
+<circle cx="242.41" cy="35.00" r="4" fill="#1769aa"/>
+<circle cx="254.72" cy="280.90" r="4" fill="#1769aa"/>
+<circle cx="267.04" cy="131.46" r="4" fill="#1769aa"/>
+<circle cx="279.35" cy="181.03" r="4" fill="#1769aa"/>
+<circle cx="291.67" cy="400.00" r="4" fill="#1769aa"/>
+<circle cx="303.98" cy="144.92" r="4" fill="#1769aa"/>
+<circle cx="316.30" cy="262.44" r="4" fill="#1769aa"/>
+<circle cx="328.61" cy="229.02" r="4" fill="#1769aa"/>
+<circle cx="340.93" cy="178.33" r="4" fill="#1769aa"/>
+<circle cx="353.24" cy="107.83" r="4" fill="#1769aa"/>
+<circle cx="365.56" cy="280.58" r="4" fill="#1769aa"/>
+<circle cx="377.87" cy="284.58" r="4" fill="#1769aa"/>
+<circle cx="390.19" cy="273.10" r="4" fill="#1769aa"/>
+<circle cx="402.50" cy="260.07" r="4" fill="#1769aa"/>
+<circle cx="414.81" cy="257.25" r="4" fill="#1769aa"/>
+<circle cx="427.13" cy="277.47" r="4" fill="#1769aa"/>
+<circle cx="439.44" cy="315.47" r="4" fill="#1769aa"/>
+<circle cx="451.76" cy="319.97" r="4" fill="#1769aa"/>
+<circle cx="464.07" cy="244.60" r="4" fill="#1769aa"/>
+<circle cx="476.39" cy="196.70" r="4" fill="#1769aa"/>
+<circle cx="488.70" cy="276.90" r="4" fill="#1769aa"/>
+<circle cx="501.02" cy="311.43" r="4" fill="#1769aa"/>
+<circle cx="513.33" cy="237.48" r="4" fill="#1769aa"/>
+<circle cx="525.65" cy="243.69" r="4" fill="#1769aa"/>
+<circle cx="537.96" cy="165.82" r="4" fill="#1769aa"/>
+<circle cx="550.28" cy="187.83" r="4" fill="#1769aa"/>
+<circle cx="562.59" cy="208.76" r="4" fill="#1769aa"/>
+<circle cx="574.91" cy="220.93" r="4" fill="#1769aa"/>
+<circle cx="587.22" cy="148.96" r="4" fill="#1769aa"/>
+<circle cx="599.54" cy="245.67" r="4" fill="#1769aa"/>
+<circle cx="611.85" cy="294.30" r="4" fill="#1769aa"/>
+<circle cx="624.17" cy="304.34" r="4" fill="#1769aa"/>
+<circle cx="636.48" cy="298.34" r="4" fill="#1769aa"/>
+<circle cx="648.80" cy="288.65" r="4" fill="#1769aa"/>
+<circle cx="661.11" cy="177.19" r="4" fill="#1769aa"/>
+<circle cx="673.43" cy="282.04" r="4" fill="#1769aa"/>
+<circle cx="685.74" cy="82.40" r="4" fill="#1769aa"/>
+<circle cx="698.06" cy="218.97" r="4" fill="#1769aa"/>
+<circle cx="710.37" cy="284.06" r="4" fill="#1769aa"/>
+<circle cx="722.69" cy="239.98" r="4" fill="#1769aa"/>
+<circle cx="735.00" cy="303.23" r="4" fill="#1769aa"/>
+</svg>

@@ -1,0 +1,396 @@
+{
+  "case_id": "cumcm-2022-c",
+  "data_audit": {
+    "metadata_artifacts": 58,
+    "classified_samples": 69,
+    "valid_classified_samples": 67,
+    "invalid_sample_ids": [
+      "15",
+      "17"
+    ],
+    "valid_artifacts_for_modeling": 56,
+    "unknown_samples": 8,
+    "valid_unknown_samples": 8,
+    "composition_total_range_classified": [
+      71.89,
+      100.0
+    ]
+  },
+  "q1": {
+    "categorical_associations": {
+      "type": {
+        "categories": [
+          "high-potassium",
+          "lead-barium"
+        ],
+        "table_unweathered_weathered": [
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            28
+          ]
+        ],
+        "cramers_v": 0.3444233600968322,
+        "permutation_p": 0.012997400519896021,
+        "n": 58
+      },
+      "decoration": {
+        "categories": [
+          "A",
+          "B",
+          "C"
+        ],
+        "table_unweathered_weathered": [
+          [
+            11,
+            11
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            13,
+            17
+          ]
+        ],
+        "cramers_v": 0.29233117579189066,
+        "permutation_p": 0.09998000399920016,
+        "n": 58
+      },
+      "color": {
+        "categories": [
+          "浅绿",
+          "浅蓝",
+          "深绿",
+          "深蓝",
+          "紫",
+          "绿",
+          "蓝绿",
+          "黑"
+        ],
+        "table_unweathered_weathered": [
+          [
+            2,
+            1
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "cramers_v": 0.34121631178560535,
+        "permutation_p": 0.5876824635072986,
+        "n": 54
+      }
+    },
+    "restoration": {
+      "paired_artifacts": 2,
+      "loao_rmse_pp_mean": 3.229590228183563,
+      "loao_rmse_pp_median": 3.229590228183563,
+      "loao_aitchison_mean": 2.498869775393326,
+      "top_weathering_changes": {
+        "high-potassium": [
+          {
+            "component": "SiO2",
+            "weathered_minus_unweathered_pp": 24.83647034338638
+          },
+          {
+            "component": "K2O",
+            "weathered_minus_unweathered_pp": -9.161593246758716
+          },
+          {
+            "component": "CaO",
+            "weathered_minus_unweathered_pp": -4.978498135805646
+          },
+          {
+            "component": "Al2O3",
+            "weathered_minus_unweathered_pp": -4.5789130567390375
+          },
+          {
+            "component": "Fe2O3",
+            "weathered_minus_unweathered_pp": -1.5698194312982272
+          }
+        ],
+        "lead-barium": [
+          {
+            "component": "SiO2",
+            "weathered_minus_unweathered_pp": -29.035522607718807
+          },
+          {
+            "component": "PbO",
+            "weathered_minus_unweathered_pp": 23.028683532348648
+          },
+          {
+            "component": "P2O5",
+            "weathered_minus_unweathered_pp": 3.903974846324476
+          },
+          {
+            "component": "BaO",
+            "weathered_minus_unweathered_pp": 2.1482208274666856
+          },
+          {
+            "component": "CaO",
+            "weathered_minus_unweathered_pp": 1.4088046736627464
+          }
+        ]
+      }
+    }
+  },
+  "q2": {
+    "majority_baseline_accuracy": 0.7142857142857143,
+    "chemical_rule_accuracy": 0.9464285714285714,
+    "rlda_loao_accuracy": 0.9821428571428571,
+    "rlda_loao_balanced_accuracy": 0.96875,
+    "rlda_confusion_order_K_PbBa": [
+      [
+        15,
+        1
+      ],
+      [
+        0,
+        40
+      ]
+    ],
+    "subclasses": {
+      "high-potassium": {
+        "k": 2,
+        "silhouette": 0.22379606818694286,
+        "cluster_sizes": {
+          "0": 8,
+          "1": 8
+        },
+        "selected_components": [
+          "SiO2",
+          "K2O",
+          "CaO",
+          "Al2O3"
+        ],
+        "zero_replacement_ari_min": 0.5333333333333333,
+        "candidate_silhouettes": {
+          "2": 0.22379606818694286,
+          "3": -1.0,
+          "4": -1.0
+        }
+      },
+      "lead-barium": {
+        "k": 3,
+        "silhouette": 0.23866985597340956,
+        "cluster_sizes": {
+          "2": 15,
+          "1": 9,
+          "0": 16
+        },
+        "selected_components": [
+          "SiO2",
+          "PbO",
+          "BaO",
+          "P2O5"
+        ],
+        "zero_replacement_ari_min": 0.44255468282928234,
+        "candidate_silhouettes": {
+          "2": 0.23466631841713365,
+          "3": 0.23866985597340956,
+          "4": 0.23705608779357545
+        }
+      }
+    }
+  },
+  "q3": {
+    "predictions": [
+      {
+        "artifact": "A1",
+        "prediction": "high-potassium",
+        "rlda_margin": 27.131219338130492,
+        "sensitivity_agreement": 1.0,
+        "composition_total": 99.48
+      },
+      {
+        "artifact": "A2",
+        "prediction": "lead-barium",
+        "rlda_margin": 24.67370280506497,
+        "sensitivity_agreement": 1.0,
+        "composition_total": 96.27999999999999
+      },
+      {
+        "artifact": "A3",
+        "prediction": "lead-barium",
+        "rlda_margin": 26.196641689648928,
+        "sensitivity_agreement": 1.0,
+        "composition_total": 98.98
+      },
+      {
+        "artifact": "A4",
+        "prediction": "lead-barium",
+        "rlda_margin": 25.433340881638188,
+        "sensitivity_agreement": 1.0,
+        "composition_total": 96.00000000000001
+      },
+      {
+        "artifact": "A5",
+        "prediction": "lead-barium",
+        "rlda_margin": 17.318519301564905,
+        "sensitivity_agreement": 1.0,
+        "composition_total": 99.62
+      },
+      {
+        "artifact": "A6",
+        "prediction": "high-potassium",
+        "rlda_margin": 32.96056152065104,
+        "sensitivity_agreement": 1.0,
+        "composition_total": 99.1
+      },
+      {
+        "artifact": "A7",
+        "prediction": "high-potassium",
+        "rlda_margin": 30.910860789566428,
+        "sensitivity_agreement": 1.0,
+        "composition_total": 99.63999999999999
+      },
+      {
+        "artifact": "A8",
+        "prediction": "lead-barium",
+        "rlda_margin": 24.14924898255046,
+        "sensitivity_agreement": 1.0,
+        "composition_total": 99.97999999999999
+      }
+    ]
+  },
+  "q4": {
+    "top_positive": {
+      "high-potassium": [
+        {
+          "pair": "CaO/Fe2O3",
+          "rho": 0.7453998603134663
+        },
+        {
+          "pair": "PbO/BaO",
+          "rho": 0.6708688499534292
+        },
+        {
+          "pair": "Fe2O3/CuO",
+          "rho": 0.6606724580385714
+        },
+        {
+          "pair": "MgO/Al2O3",
+          "rho": 0.6555128075971932
+        },
+        {
+          "pair": "CaO/Al2O3",
+          "rho": 0.6477012410825312
+        }
+      ],
+      "lead-barium": [
+        {
+          "pair": "MgO/Al2O3",
+          "rho": 0.5175619034233323
+        },
+        {
+          "pair": "CaO/P2O5",
+          "rho": 0.4987997735847577
+        },
+        {
+          "pair": "K2O/Al2O3",
+          "rho": 0.4799603593411902
+        },
+        {
+          "pair": "CuO/BaO",
+          "rho": 0.4397448504477425
+        },
+        {
+          "pair": "CuO/SO2",
+          "rho": 0.41936620236980815
+        }
+      ]
+    },
+    "top_differences": [
+      {
+        "pair": "Fe2O3/CuO",
+        "high-potassium": 0.6606724580385714,
+        "lead-barium": -0.3142096570585222,
+        "absolute_difference": 0.9748821150970937
+      },
+      {
+        "pair": "Al2O3/PbO",
+        "high-potassium": 0.45517354171872026,
+        "lead-barium": -0.4956332968544217,
+        "absolute_difference": 0.950806838573142
+      },
+      {
+        "pair": "Fe2O3/BaO",
+        "high-potassium": 0.4874754191852251,
+        "lead-barium": -0.40459097812544176,
+        "absolute_difference": 0.8920663973106668
+      },
+      {
+        "pair": "SiO2/Al2O3",
+        "high-potassium": -0.3898220357983546,
+        "lead-barium": 0.4121030904286611,
+        "absolute_difference": 0.8019251262270157
+      },
+      {
+        "pair": "MgO/BaO",
+        "high-potassium": 0.3579729160271151,
+        "lead-barium": -0.38601097936726614,
+        "absolute_difference": 0.7439838953943813
+      },
+      {
+        "pair": "SiO2/SrO",
+        "high-potassium": 0.253145314202066,
+        "lead-barium": -0.47751980297235885,
+        "absolute_difference": 0.7306651171744248
+      },
+      {
+        "pair": "CaO/SnO2",
+        "high-potassium": -0.494134872133589,
+        "lead-barium": 0.22190990090181262,
+        "absolute_difference": 0.7160447730354016
+      },
+      {
+        "pair": "PbO/BaO",
+        "high-potassium": 0.6708688499534292,
+        "lead-barium": -0.04321027622896256,
+        "absolute_difference": 0.7140791261823918
+      }
+    ],
+    "global_max_difference_permutation_p": 0.030984507746126936
+  },
+  "parameters": {
+    "seed": 20220915,
+    "valid_total_interval": [
+      85,
+      105
+    ],
+    "zero_replacement_percent": 0.1,
+    "rlda_shrinkage": 0.2,
+    "permutations_q1": 5000,
+    "permutations_q4": 2000
+  }
+}

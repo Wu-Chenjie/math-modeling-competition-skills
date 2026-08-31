@@ -1,0 +1,97 @@
+{
+  "protocol": "A/B baseline v2",
+  "runs": [
+    {
+      "run_id": "A-cumcm-2022-c-001-v2",
+      "group": "A",
+      "case_id": "cumcm-2022-c",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 238589,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2c/workspaces-v2/A-cumcm-2022-c-001-v2/analysis_output/metrics.json"
+        ],
+        "manifest_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2c/workspaces-v2/A-cumcm-2022-c-001-v2/analysis_output/reproducibility_manifest.json"
+        ],
+        "figures_count": 10,
+        "has_metrics": true,
+        "has_reproducibility_manifest": true,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": true,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "scoreable_artifacts_pending_blind_review"
+      }
+    },
+    {
+      "run_id": "B-cumcm-2022-c-001-v2",
+      "group": "B",
+      "case_id": "cumcm-2022-c",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 232748,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2c/workspaces-v2/B-cumcm-2022-c-001-v2/results/metrics.json"
+        ],
+        "manifest_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2c/workspaces-v2/B-cumcm-2022-c-001-v2/results/repro_manifest.json"
+        ],
+        "figures_count": 12,
+        "has_metrics": true,
+        "has_reproducibility_manifest": true,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": true,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "scoreable_artifacts_pending_blind_review"
+      }
+    }
+  ],
+  "by_group": {
+    "A": {
+      "runs": 1,
+      "scoreable_artifacts": 1,
+      "unscored": 0
+    },
+    "B": {
+      "runs": 1,
+      "scoreable_artifacts": 1,
+      "unscored": 0
+    }
+  },
+  "human_review": "pending blind Judges A-D",
+  "decision": "INCONCLUSIVE until three independent real runs per case and blind review are complete"
+}

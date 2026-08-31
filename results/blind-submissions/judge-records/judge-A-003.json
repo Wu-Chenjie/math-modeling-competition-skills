@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-003",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 10,
+    "model_reasonableness": 18,
+    "mathematical_rigor": 10,
+    "data_handling": 8,
+    "code_and_solving": 10,
+    "model_validation": 11,
+    "innovation": 7,
+    "result_interpretation": 7,
+    "paper_quality": 9,
+    "reproducibility": 5
+  },
+  "fatal_flags": [],
+  "notes": "Detailed mathematical framing, CLR treatment, formulas, CV and permutation evidence; strongest explicit derivation among packages."
+}

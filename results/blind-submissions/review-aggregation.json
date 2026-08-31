@@ -1,0 +1,398 @@
+{
+  "status": "complete",
+  "records_received": 100,
+  "validation_errors": [],
+  "panels": [
+    {
+      "submission_id": "Submission-001",
+      "status": "scored",
+      "judge_totals": {
+        "A": 86.0,
+        "B": 87.0,
+        "C": 72.0,
+        "D": 71.0
+      },
+      "mean": 79.0,
+      "median": 79.0,
+      "spread": 16.0,
+      "flags": []
+    },
+    {
+      "submission_id": "Submission-002",
+      "status": "scored",
+      "judge_totals": {
+        "A": 81.0,
+        "B": 86.0,
+        "C": 69.0,
+        "D": 71.0
+      },
+      "mean": 76.75,
+      "median": 76.0,
+      "spread": 17.0,
+      "flags": []
+    },
+    {
+      "submission_id": "Submission-003",
+      "status": "scored",
+      "judge_totals": {
+        "A": 95.0,
+        "B": 79.0,
+        "C": 60.0,
+        "D": 47.0
+      },
+      "mean": 70.25,
+      "median": 69.5,
+      "spread": 48.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-004",
+      "status": "scored",
+      "judge_totals": {
+        "A": 45.0,
+        "B": 76.0,
+        "C": 58.0,
+        "D": 47.0
+      },
+      "mean": 56.5,
+      "median": 52.5,
+      "spread": 31.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-005",
+      "status": "scored",
+      "judge_totals": {
+        "A": 40.0,
+        "B": 73.0,
+        "C": 61.0,
+        "D": 47.0
+      },
+      "mean": 55.25,
+      "median": 54.0,
+      "spread": 33.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-006",
+      "status": "scored",
+      "judge_totals": {
+        "A": 62.0,
+        "B": 82.0,
+        "C": 72.0,
+        "D": 71.0
+      },
+      "mean": 71.75,
+      "median": 71.5,
+      "spread": 20.0,
+      "flags": []
+    },
+    {
+      "submission_id": "Submission-007",
+      "status": "scored",
+      "judge_totals": {
+        "A": 61.0,
+        "B": 83.0,
+        "C": 63.0,
+        "D": 71.0
+      },
+      "mean": 69.5,
+      "median": 67.0,
+      "spread": 22.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-008",
+      "status": "scored",
+      "judge_totals": {
+        "A": 45.0,
+        "B": 81.0,
+        "C": 65.0,
+        "D": 71.0
+      },
+      "mean": 65.5,
+      "median": 68.0,
+      "spread": 36.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-009",
+      "status": "scored",
+      "judge_totals": {
+        "A": 52.0,
+        "B": 73.0,
+        "C": 56.0,
+        "D": 47.0
+      },
+      "mean": 57.0,
+      "median": 54.0,
+      "spread": 26.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-010",
+      "status": "scored",
+      "judge_totals": {
+        "A": 67.0,
+        "B": 76.0,
+        "C": 58.0,
+        "D": 47.0
+      },
+      "mean": 62.0,
+      "median": 62.5,
+      "spread": 29.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-011",
+      "status": "scored",
+      "judge_totals": {
+        "A": 29.0,
+        "B": 75.0,
+        "C": 61.0,
+        "D": 47.0
+      },
+      "mean": 53.0,
+      "median": 54.0,
+      "spread": 46.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-012",
+      "status": "scored",
+      "judge_totals": {
+        "A": 32.0,
+        "B": 77.0,
+        "C": 63.0,
+        "D": 47.0
+      },
+      "mean": 54.75,
+      "median": 55.0,
+      "spread": 45.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-013",
+      "status": "scored",
+      "judge_totals": {
+        "A": 35.0,
+        "B": 71.0,
+        "C": 60.0,
+        "D": 71.0
+      },
+      "mean": 59.25,
+      "median": 65.5,
+      "spread": 36.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-014",
+      "status": "scored",
+      "judge_totals": {
+        "A": 24.0,
+        "B": 78.0,
+        "C": 59.0,
+        "D": 47.0
+      },
+      "mean": 52.0,
+      "median": 53.0,
+      "spread": 54.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-015",
+      "status": "scored",
+      "judge_totals": {
+        "A": 52.0,
+        "B": 76.0,
+        "C": 55.0,
+        "D": 47.0
+      },
+      "mean": 57.5,
+      "median": 53.5,
+      "spread": 29.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-016",
+      "status": "scored",
+      "judge_totals": {
+        "A": 33.0,
+        "B": 73.0,
+        "C": 53.0,
+        "D": 47.0
+      },
+      "mean": 51.5,
+      "median": 50.0,
+      "spread": 40.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-017",
+      "status": "scored",
+      "judge_totals": {
+        "A": 54.0,
+        "B": 82.0,
+        "C": 69.0,
+        "D": 71.0
+      },
+      "mean": 69.0,
+      "median": 70.0,
+      "spread": 28.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-018",
+      "status": "scored",
+      "judge_totals": {
+        "A": 51.0,
+        "B": 81.0,
+        "C": 68.0,
+        "D": 71.0
+      },
+      "mean": 67.75,
+      "median": 69.5,
+      "spread": 30.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-019",
+      "status": "scored",
+      "judge_totals": {
+        "A": 54.0,
+        "B": 82.0,
+        "C": 63.0,
+        "D": 71.0
+      },
+      "mean": 67.5,
+      "median": 67.0,
+      "spread": 28.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-020",
+      "status": "scored",
+      "judge_totals": {
+        "A": 59.0,
+        "B": 84.0,
+        "C": 60.0,
+        "D": 71.0
+      },
+      "mean": 68.5,
+      "median": 65.5,
+      "spread": 25.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-021",
+      "status": "scored",
+      "judge_totals": {
+        "A": 66.0,
+        "B": 86.0,
+        "C": 60.0,
+        "D": 71.0
+      },
+      "mean": 70.75,
+      "median": 68.5,
+      "spread": 26.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-022",
+      "status": "scored",
+      "judge_totals": {
+        "A": 74.0,
+        "B": 82.0,
+        "C": 64.0,
+        "D": 71.0
+      },
+      "mean": 72.75,
+      "median": 72.5,
+      "spread": 18.0,
+      "flags": []
+    },
+    {
+      "submission_id": "Submission-023",
+      "status": "scored",
+      "judge_totals": {
+        "A": 78.0,
+        "B": 79.0,
+        "C": 63.0,
+        "D": 47.0
+      },
+      "mean": 66.75,
+      "median": 70.5,
+      "spread": 32.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-024",
+      "status": "scored",
+      "judge_totals": {
+        "A": 69.0,
+        "B": 74.0,
+        "C": 59.0,
+        "D": 47.0
+      },
+      "mean": 62.25,
+      "median": 64.0,
+      "spread": 27.0,
+      "flags": [
+        "REVIEW_DISAGREEMENT"
+      ]
+    },
+    {
+      "submission_id": "Submission-025",
+      "status": "scored",
+      "judge_totals": {
+        "A": 85.0,
+        "B": 86.0,
+        "C": 69.0,
+        "D": 71.0
+      },
+      "mean": 77.75,
+      "median": 78.0,
+      "spread": 17.0,
+      "flags": []
+    }
+  ],
+  "decision": "INCONCLUSIVE"
+}

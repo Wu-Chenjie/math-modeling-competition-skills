@@ -1,0 +1,19 @@
+{
+  "case_id": "icm-2023-d",
+  "run_status": "completed_with_data_dependent_stages_pending",
+  "official_sdg_count": 17,
+  "supplied_data_files": 0,
+  "supplied_audited_rows": 0,
+  "evidenced_relationship_edges": 0,
+  "priority_scores_emitted": 0,
+  "figures_created": 1,
+  "pending_stages": [
+    "relationship_network_estimation",
+    "priority_ranking_and_effectiveness",
+    "ten_year_projection",
+    "achieved_goal_counterfactual",
+    "crisis_scenario_analysis",
+    "weight_sensitivity_and_robustness",
+    "falsification_against_observed_outcomes"
+  ]
+}

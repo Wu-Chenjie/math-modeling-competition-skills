@@ -1,0 +1,16 @@
+{
+  "status": "partial",
+  "code_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\A-mcm-2023-a-003-v2\\run_model.py",
+  "metrics_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\A-mcm-2023-a-003-v2\\results\\metrics.csv",
+  "figures_count": 0,
+  "tests": {
+    "passed": 7,
+    "failed": 0,
+    "command": "python -m unittest test_model.py"
+  },
+  "pending_stages": [
+    "Figures: execution stopped with IndexError because the Q1 plotting series contained one value for five x-axis positions.",
+    "Structured modeling report: pending because execution stopped before modeling_report.json was written.",
+    "Final artifact validation: pending until the plotting dimension mismatch is corrected and the code is rerun."
+  ]
+}

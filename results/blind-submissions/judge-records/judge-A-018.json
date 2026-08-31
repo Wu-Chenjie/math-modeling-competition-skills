@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-018",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 8,
+    "model_reasonableness": 9,
+    "mathematical_rigor": 5,
+    "data_handling": 1,
+    "code_and_solving": 7,
+    "model_validation": 3,
+    "innovation": 3,
+    "result_interpretation": 4,
+    "paper_quality": 7,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "Structured light-pollution analysis with explicit input mode, validation limits and pending stages; no observations."
+}

@@ -1,0 +1,46 @@
+{
+  "problem_framing": "Model biomass and adaptive tolerance of competing plant species under irregular drought cycles; assess richness, drought frequency, pollution and habitat loss.",
+  "data_audit": {
+    "source": "deterministic case summary JSON",
+    "attachments": 0,
+    "rows_available": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "assumptions": [
+    "annual discrete generations",
+    "species differ only by initial tolerance",
+    "logistic carrying capacity",
+    "independent Bernoulli drought events",
+    "pollution and habitat reduce carrying capacity"
+  ],
+  "candidate_models": [
+    "adaptive competition logistic (selected)",
+    "neutral logistic without adaptation (benchmark)",
+    "Lotka-Volterra competition (not fitted)"
+  ],
+  "baseline": "8 species, drought probability 0.25, severity N(0.65,0.18) truncated, no pollution/habitat loss, seed 7",
+  "math_specification": "B_i(t+1)=max(0,B_i+B_i*r*(1-s_t(1-a_i))*(1-S_t/K)-c*B_i*(S_t-B_i)); a_i updated toward higher tolerance after drought; K=habitat*(1-pollution).",
+  "code_prototype": "simulate_community.py",
+  "experiment": "species 1/2/4/8/16 crossed with drought probabilities 0.10/0.25/0.50 plus pollution/habitat scenarios",
+  "validation": [
+    "deterministic seed replay",
+    "nonnegative biomass invariant",
+    "extreme no-drought/always-drought checks"
+  ],
+  "sensitivity_robustness": "scenario table in metrics.json; interpretation is qualitative because no observed data are supplied",
+  "falsification": [
+    "measure biomass trajectories and adaptation by species across replicated drought regimes",
+    "reject if richness effect reverses consistently after calibration"
+  ],
+  "reviewer_risks": [
+    "synthetic parameters are not empirical estimates",
+    "annual time step and linear interaction are simplifications",
+    "no attachment data available for calibration"
+  ],
+  "reproducibility_manifest": {
+    "command": "python simulate_community.py",
+    "seed": 7,
+    "python": "3.12.13",
+    "script_sha256": "c53b25eebbfeba239efc0846098dae3df0a75946bc0cb10f1231e1896df2a9d9"
+  }
+}

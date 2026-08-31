@@ -1,0 +1,8 @@
+scenario,final_population,minimum_population,mean_drought_population,extinction
+species_1,1.0,1.0,1.0,0
+species_2,1.06,1.0,1.0596396614550698,0
+species_4,1.0899999999999999,1.0,1.0897007201534943,0
+species_8,1.105,1.0,1.104758217148892,0
+high_drought,1.09,1.0,1.0878220292511795,0
+pollution_habitat,0.613125,0.6131249999999999,0.6131462252133855,0
+no_drought,1.09,1.0,0.0,0

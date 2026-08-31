@@ -1,0 +1,110 @@
+{
+  "status": "partial_data_limited",
+  "provenance": {
+    "case_id": "icm-2023-e",
+    "source_status": "verified",
+    "problem_sha256_from_summary": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+    "case_summary_sha256": "9c136273749e640d6926cadeccad4d16dc55904d7d3a178602931f69fd4e2557"
+  },
+  "data_audit": {
+    "data_files_count": 0,
+    "data_audit_entries_count": 0,
+    "rows_data_count": 0,
+    "location_records_count": 0,
+    "binary_attachments_opened": 0,
+    "can_score_locations": false
+  },
+  "model": {
+    "name": "interaction_aware_exposure_vulnerability_metric",
+    "formula": "R = 100 * P * (0.6 + 0.4 * V)",
+    "exposure_fields": [
+      "skyglow",
+      "trespass",
+      "glare",
+      "clutter"
+    ],
+    "vulnerability_fields": [
+      "ecological_sensitivity",
+      "human_vulnerability"
+    ],
+    "service_constraint_field": "lighting_need",
+    "risk_bands": null,
+    "calibration_status": "pending"
+  },
+  "baseline": {
+    "formula": "B = 100 * arithmetic_mean(six harm indicators)",
+    "scores_computed": 0
+  },
+  "experiment": {
+    "grid_points": 10201,
+    "score_min": 0.0,
+    "score_max": 100.0,
+    "monotonicity_violations_pressure": 0,
+    "monotonicity_violations_vulnerability": 0,
+    "pressure_slope_range": [
+      60.0,
+      100.0
+    ],
+    "vulnerability_slope_range": [
+      0.0,
+      40.0
+    ],
+    "interpretation": "Analytical response audit only; not a location experiment."
+  },
+  "validation": {
+    "command": "python -m unittest -v test_light_pollution_model.py",
+    "exit_code": 0,
+    "tests_run": 3,
+    "status": "passed"
+  },
+  "sensitivity": {
+    "analytical_only": true,
+    "pressure_slope_range": [
+      60.0,
+      100.0
+    ],
+    "vulnerability_slope_range": [
+      0.0,
+      40.0
+    ],
+    "empirical_robustness": "pending"
+  },
+  "falsification": {
+    "empirical_tests_completed": 0,
+    "criteria_defined": 4,
+    "status": "pending_data"
+  },
+  "figures": [
+    "figures\\raw_q1_input_availability.svg",
+    "figures\\process_q1_structural_response.svg",
+    "figures\\result_q1_metric_contract.svg",
+    "figures\\raw_q2_pending.svg",
+    "figures\\process_q2_pending.svg",
+    "figures\\result_q2_pending.svg",
+    "figures\\raw_q3_pending.svg",
+    "figures\\process_q3_pending.svg",
+    "figures\\result_q3_pending.svg",
+    "figures\\raw_q4_pending.svg",
+    "figures\\process_q4_pending.svg",
+    "figures\\result_q4_pending.svg",
+    "figures\\raw_q5_pending.svg",
+    "figures\\process_q5_pending.svg",
+    "figures\\result_q5_pending.svg"
+  ],
+  "pending_stages": [
+    "location_indicator_calibration",
+    "four_location_scoring_and_interpretation",
+    "empirical_intervention_effect_estimation",
+    "two_location_strategy_optimization",
+    "one_page_location_flyer",
+    "uncertainty_and_out_of_sample_validation",
+    "independent_domain_stage_gates"
+  ],
+  "reproducibility": {
+    "command": "python light_pollution_model.py --case-summary \"C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-e.json\"",
+    "python_version": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed": null,
+    "binary_attachments_opened": 0
+  }
+}

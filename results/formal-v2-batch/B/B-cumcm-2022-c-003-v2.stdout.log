@@ -1,0 +1,1 @@
+{"status":"completed_with_pending","code_path":"run_model.py","metrics_path":"results/metrics.json","figures_count":12,"tests":["python -m py_compile run_model.py","python run_model.py","python test_run_model.py"],"pending_stages":["Independent M1/P1/P2 quality gates","Publication-grade raster figure audit"]}

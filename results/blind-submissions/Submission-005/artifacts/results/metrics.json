@@ -1,0 +1,191 @@
+{
+  "run": {
+    "case_id": "icm-2023-d",
+    "competition": "ICM",
+    "year": 2023,
+    "seed": 20230217,
+    "input_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json",
+    "input_file_sha256": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf",
+    "problem_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7"
+  },
+  "problem_framing": {
+    "objective": "Prioritize 17 interdependent SDGs using a signed network, evaluate interventions, and study counterfactual and crisis scenarios.",
+    "required_outputs": [
+      "signed SDG relationship network",
+      "efficient priorities and effectiveness evaluation",
+      "10-year achievable outcomes",
+      "network after achieving one SDG and revised priorities",
+      "crisis impacts from a network perspective",
+      "transferable organizational prioritization method"
+    ]
+  },
+  "data_audit": {
+    "official_goal_count_detected": 17,
+    "data_files_count": 0,
+    "data_audit_entries": 0,
+    "supplied_relationship_rows": 0,
+    "binary_attachments_opened": false,
+    "network_identifiable_from_supplied_rows": false,
+    "finding": "No relationship or outcome observations are supplied; empirical edges, weights, dynamics, and forecasts are not identifiable."
+  },
+  "assumptions": [
+    "The 17 goal labels in the official problem text define the node set.",
+    "Absent relationship evidence is missing information, not evidence of zero interaction.",
+    "The equal-weight vector is a neutral baseline, not a substantive recommendation.",
+    "No quantitative 10-year forecast is valid without initial states, response functions, costs, and scenario inputs."
+  ],
+  "candidate_models": [
+    {
+      "name": "signed evidence-weighted multiplex network plus robust portfolio optimization",
+      "inputs_needed": "signed directed edges with provenance/uncertainty, costs, goal states, intervention response bounds",
+      "method": "centrality and controllability features feed a budget-constrained maximin multi-criteria portfolio",
+      "status": "pending_data"
+    },
+    {
+      "name": "Bayesian signed dynamic network",
+      "inputs_needed": "longitudinal SDG indicators and intervention/covariate series",
+      "method": "posterior edge effects support scenario propagation and probabilistic ranking",
+      "status": "pending_data"
+    }
+  ],
+  "baseline": {
+    "name": "uniform no-data allocation",
+    "priority_by_goal": {
+      "1": 0.058823529411764705,
+      "2": 0.058823529411764705,
+      "3": 0.058823529411764705,
+      "4": 0.058823529411764705,
+      "5": 0.058823529411764705,
+      "6": 0.058823529411764705,
+      "7": 0.058823529411764705,
+      "8": 0.058823529411764705,
+      "9": 0.058823529411764705,
+      "10": 0.058823529411764705,
+      "11": 0.058823529411764705,
+      "12": 0.058823529411764705,
+      "13": 0.058823529411764705,
+      "14": 0.058823529411764705,
+      "15": 0.058823529411764705,
+      "16": 0.058823529411764705,
+      "17": 0.058823529411764705
+    },
+    "sum": 1.0,
+    "entropy_nats": 2.833213344056216,
+    "normalized_entropy": 1.0,
+    "interpretation": "All goals tie because the supplied input contains no defensible discriminator."
+  },
+  "math_specification": {
+    "future_network": "G=(V,E,W), V={1,...,17}, w_ij in [-1,1] with uncertainty and source provenance",
+    "future_priority": "maximize over allocation x: min_s sum_i b_i(s)x_i + sum_{i,j} w_ij(s)r_j(x_i), subject to sum_i c_i x_i <= B and x_i >= 0",
+    "baseline": "p_i=1/17 for i=1,...,17",
+    "identifiability_gate": "estimate W and compare rankings only when at least one validated relationship row exists; forecasting additionally requires outcomes, time, and intervention data"
+  },
+  "code_prototype": {
+    "capabilities": [
+      "input validation",
+      "data-sufficiency gate",
+      "neutral baseline",
+      "machine-readable report",
+      "SVG diagnostics"
+    ],
+    "prohibited_by_gate": [
+      "edge inference from prose",
+      "fabricated scores",
+      "unsupported forecast"
+    ]
+  },
+  "experiment": {
+    "status": "pending_data",
+    "design": "Compare uniform allocation with robust-network portfolios under held-out interventions and multiple budget/scenario settings.",
+    "minimum_inputs": "validated edge evidence, costs, initial goal states, outcome measures, timestamps, and crisis covariates"
+  },
+  "validation": {
+    "completed": [
+      "case schema checks",
+      "17-node extraction check",
+      "baseline simplex invariant",
+      "deterministic output checks"
+    ],
+    "pending": [
+      "edge sign validation",
+      "temporal holdout",
+      "ranking concordance",
+      "forecast calibration"
+    ]
+  },
+  "sensitivity_robustness": {
+    "status": "pending_data",
+    "planned": [
+      "weight simplex perturbation",
+      "edge sign/weight intervals",
+      "leave-source-out analysis",
+      "scenario stress tests",
+      "rank acceptability frequencies"
+    ],
+    "reason": "No empirical weights, edges, or outcomes are present to perturb."
+  },
+  "falsification": {
+    "status": "pending_data",
+    "tests": [
+      "network model fails if it does not outperform the uniform baseline on held-out outcomes",
+      "priority is unstable if its top-k inclusion rate falls below a preregistered threshold under admissible uncertainty",
+      "forecast is rejected if interval coverage or calibration fails on temporal holdout"
+    ]
+  },
+  "reviewer_risks": [
+    "No supplied relationship data means the central deliverable cannot be empirically estimated.",
+    "Literature-derived edges would require traceable sources not present in the complete benchmark input.",
+    "Arbitrary criteria weights would create unearned ranking precision.",
+    "Centrality alone does not establish causal intervention leverage.",
+    "A 10-year numerical forecast without baseline trajectories and costs would be fictitious.",
+    "The neutral baseline is intentionally noncompetitive and must not be presented as policy advice."
+  ],
+  "reproducibility_manifest": {
+    "python": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "stdlib_only": true,
+    "seed": 20230217,
+    "command": "python run_model.py --input \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json\" --output .",
+    "outputs": [
+      "results/metrics.json",
+      "figures/raw_q1_input_coverage.svg",
+      "figures/process_q2_data_gate.svg",
+      "figures/result_q2_uniform_baseline.svg"
+    ]
+  },
+  "pending_stages": [
+    "network_estimation",
+    "priority_effectiveness_experiment",
+    "ten_year_forecast",
+    "achieved_goal_counterfactual",
+    "crisis_scenario_quantification",
+    "ranking_validation",
+    "weight_sensitivity_and_robustness",
+    "empirical_falsification"
+  ],
+  "execution": {
+    "status": "partial_data_limited",
+    "runtime_seconds": 0.083438,
+    "tests": [
+      {
+        "name": "valid_case_schema",
+        "passed": true
+      },
+      {
+        "name": "detects_17_goals",
+        "passed": true
+      },
+      {
+        "name": "rejects_wrong_case",
+        "passed": true
+      },
+      {
+        "name": "uniform_simplex",
+        "passed": true
+      }
+    ],
+    "tests_passed": 4,
+    "tests_total": 4,
+    "figures_count": 3
+  }
+}

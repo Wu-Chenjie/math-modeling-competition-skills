@@ -1,0 +1,128 @@
+{
+  "assumptions": [
+    "Annual time step and closed local community",
+    "Biomass is dimensionless relative abundance",
+    "Tolerance-growth tradeoff is monotone",
+    "Trait spread provides drought insurance through facilitation",
+    "Pollution adds mortality and habitat loss scales carrying capacity",
+    "Scenario parameters are illustrative, not measured"
+  ],
+  "baseline": {
+    "executed_metrics": {
+      "coefficient_of_variation": 0.06002827102643559,
+      "final_adaptation_mean": 0.7612758336383965,
+      "minimum_biomass": 0.42,
+      "scenario": "baseline",
+      "seed": 2023001,
+      "survived": true,
+      "terminal_biomass": 1.2572229285876033,
+      "trait_range": 0.75
+    },
+    "scenario": {
+      "competition": 0.55,
+      "composition": "mixed",
+      "drought_probability": 0.2,
+      "drought_variability": 0.35,
+      "facilitation": 0.22,
+      "habitat_fraction": 1.0,
+      "name": "baseline",
+      "pollution": 0.0,
+      "richness": 4
+    }
+  },
+  "candidate_models": [
+    {
+      "name": "stochastic trait-structured competition model",
+      "reason": "directly represents weather, interactions, traits, and stressors",
+      "selected": true
+    },
+    {
+      "name": "empirical hierarchical state-space model",
+      "reason": "preferred with longitudinal plot data, unavailable here",
+      "selected": false
+    }
+  ],
+  "code_prototype": {
+    "entrypoint": "model.py",
+    "public_seams": [
+      "simulate(Scenario, seed, years)",
+      "ensemble(Scenario, n)",
+      "CLI --case/--output-root"
+    ]
+  },
+  "data_audit": {
+    "consequence": "Parameters cannot be fitted and predictions cannot be externally validated.",
+    "data_files": [],
+    "empirical_observations": 0,
+    "official_problem_text_present": true,
+    "rows_data": []
+  },
+  "experiment": {
+    "common_random_numbers": true,
+    "factorial_sweeps": [
+      "richness 1..10",
+      "three composition classes",
+      "three drought regimes",
+      "four external-stress cases",
+      "four one-at-a-time sensitivity parameters"
+    ],
+    "replicates": 24
+  },
+  "falsification": [
+    "Reject facilitation mechanism if matched communities show no positive richness-by-drought interaction",
+    "Reject tolerance-growth tradeoff if measured growth and drought tolerance are not negatively associated",
+    "Reject viability threshold if out-of-sample survival ranking is not better than richness-neutral baseline",
+    "Reformulate if time-step refinement changes qualitative rankings"
+  ],
+  "math_specification": {
+    "adaptation": "A_i increases under drought and relaxes toward baseline tolerance otherwise",
+    "capacity": "K_i=h*(0.82+0.28*A_i)",
+    "interaction": "L_i=B_i+alpha*sum_{j!=i}B_j; R_i=W_t+A_i(1-W_t)+f*trait_range*(1-W_t)",
+    "state": "B_i(t)>=0 biomass and A_i(t) in [tau_i,0.99] adaptation",
+    "update": "B_i(t+1)=B_i(t) exp(clip(r_i R_i(t)(1-L_i/K_i)-m_i(t)-P_i-0.06,-3,1))",
+    "viability": "mean biomass over final 20 years and survival if all final-20 annual totals >=0.05",
+    "weather": "D_t~Bernoulli(p); W_t is bounded stochastic water adequacy conditional on D_t"
+  },
+  "problem_framing": {
+    "objective": "Explain how interacting plant communities respond over time to irregular drought, richness, composition, drought regime, pollution, and habitat loss.",
+    "subproblems": [
+      "q1 dynamic response",
+      "q2 richness benefit",
+      "q3 species types",
+      "q4 drought frequency and variation",
+      "q5 external stress and management"
+    ]
+  },
+  "reproducibility_manifest": {
+    "command": "python model.py --case \"C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-a.json\" --output-root .",
+    "dependencies": "Python standard library only",
+    "figure_count": 15,
+    "input_summary_sha256": "2b2ac0d4c79bbd9724e86d6b06447c3289208a36d345b593aab65120f8a7f32c",
+    "python": "3.12.13",
+    "runtime_seconds": 0.4547,
+    "seed": 2023001
+  },
+  "reviewer_risks": [
+    "No empirical calibration",
+    "Dimensionless biomass and assumed units",
+    "Benefit threshold depends on preregistered 5% rule",
+    "Competition matrix reduced to one coefficient",
+    "Adaptation conflates plasticity and evolution",
+    "No spatial dispersal or seed bank"
+  ],
+  "sensitivity_robustness": {
+    "limitation": "does not identify joint interactions or parameter posterior uncertainty",
+    "method": "one-at-a-time three-level sweeps with identical seed schedule",
+    "results_file": "results/sensitivity.csv"
+  },
+  "validation": {
+    "external": "pending: no empirical observations in benchmark",
+    "internal": [
+      "deterministic replay",
+      "nonnegative finite state",
+      "zero-drought boundary",
+      "severe combined-stress boundary",
+      "JSON and SVG parse"
+    ]
+  }
+}

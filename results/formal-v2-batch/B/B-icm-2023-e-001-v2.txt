@@ -1,0 +1,14 @@
+{
+  "status": "partial",
+  "code_path": "run_model.py",
+  "metrics_path": "results/metrics.json",
+  "figures_count": 9,
+  "tests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "pending_stages": [
+    "empirical calibration",
+    "real-location spatial validation"
+  ]
+}

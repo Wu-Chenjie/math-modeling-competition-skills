@@ -1,0 +1,107 @@
+{
+  "case_id": "icm-2023-e",
+  "case_summary_sha256": "9c136273749e640d6926cadeccad4d16dc55904d7d3a178602931f69fd4e2557",
+  "data_audit": {
+    "audited_entries_count": 0,
+    "data_files_count": 0,
+    "rows_available": 0
+  },
+  "experiment": {
+    "additive_baseline": {
+      "max": 100.0,
+      "mean": 50.0,
+      "median": 50.0,
+      "min": 0.0,
+      "q05": 25.0,
+      "q95": 75.0
+    },
+    "dimensions": 6,
+    "interaction_metric": {
+      "max": 100.0,
+      "mean": 38.278437853544894,
+      "median": 34.0520658001186,
+      "min": 0.0,
+      "q05": 3.284862945240944,
+      "q95": 85.0
+    },
+    "lattice_cases": 15625,
+    "levels": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "midpoint_sensitivity": {
+      "circadian": 19.99999999999993,
+      "clutter": 10.000960204342135,
+      "ecology": 30.00000000000007,
+      "glare": 12.501093975644473,
+      "skyglow": 15.00119023782247,
+      "trespass": 12.501093975644828
+    },
+    "strategy_regimes": {
+      "parameter_cases": 19683,
+      "ties": 3,
+      "unique_wins": {
+        "adaptive_dimming": 12560,
+        "shielding": 62,
+        "spectral_control": 7058
+      }
+    }
+  },
+  "figures": [
+    "raw_q1_metric_domain.svg",
+    "raw_q3_efficacy_domain.svg",
+    "raw_q4_safety_domain.svg",
+    "process_q1_model_response.svg",
+    "process_q3_strategy_response.svg",
+    "process_q4_penalty_response.svg",
+    "result_q1_local_sensitivity.svg",
+    "result_q3_strategy_comparison.svg",
+    "result_q4_safety_robustness.svg"
+  ],
+  "input_mode": "synthetic_parameter_lattice_no_observational_data",
+  "observational_claims_permitted": false,
+  "official_problem_sha256": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+  "pending_stages": [
+    "empirical_four_location_application: no location observations or rows in benchmark input",
+    "calibrated_two_location_intervention_selection: no location observations or intervention effect estimates",
+    "location_specific_flyer: no empirically supported location-strategy selection",
+    "external_validation: benchmark input supplies no validation observations"
+  ],
+  "validation": {
+    "assertions": 6,
+    "checks": [
+      {
+        "name": "interaction_zero_boundary",
+        "passed": true
+      },
+      {
+        "name": "interaction_upper_boundary",
+        "passed": true
+      },
+      {
+        "name": "baseline_upper_boundary",
+        "passed": true
+      },
+      {
+        "name": "baseline_confounds_unexposed_vulnerability",
+        "passed": true
+      },
+      {
+        "name": "componentwise_monotonicity",
+        "passed": true
+      },
+      {
+        "name": "unpenalized_efficacy_monotonicity",
+        "passed": true
+      }
+    ],
+    "efficacy_cases": 18,
+    "efficacy_failures": 0,
+    "failed": [],
+    "monotonic_cases": 75000,
+    "monotonic_failures": 0
+  }
+}

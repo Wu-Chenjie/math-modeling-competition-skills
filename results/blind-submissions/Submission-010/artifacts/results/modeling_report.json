@@ -1,0 +1,379 @@
+{
+  "assumptions": {
+    "dynamic_parameters": {
+      "climate_stress": 0.018,
+      "conflict_pressure": 0.06,
+      "governance_efficiency": 0.78,
+      "habitat_recovery": 0.055,
+      "tourism_yield": 0.08,
+      "wildlife_growth": 0.075
+    },
+    "initial_indices": {
+      "conflict": 0.38,
+      "habitat": 0.66,
+      "income": 0.48,
+      "visitors": 0.72,
+      "wildlife": 0.62
+    },
+    "policy_levers": [
+      {
+        "community": 0.25,
+        "conflict": 0.25,
+        "corridor": 0.2,
+        "habitat": 0.3,
+        "name": "status_quo",
+        "visitor_cap": 0.92
+      },
+      {
+        "community": 0.25,
+        "conflict": 0.55,
+        "corridor": 0.5,
+        "habitat": 0.8,
+        "name": "strict_zoning",
+        "visitor_cap": 0.62
+      },
+      {
+        "community": 0.88,
+        "conflict": 0.78,
+        "corridor": 0.42,
+        "habitat": 0.52,
+        "name": "community_led",
+        "visitor_cap": 0.76
+      },
+      {
+        "community": 0.48,
+        "conflict": 0.65,
+        "corridor": 0.92,
+        "habitat": 0.62,
+        "name": "corridor_first",
+        "visitor_cap": 0.7
+      },
+      {
+        "community": 0.78,
+        "conflict": 0.82,
+        "corridor": 0.78,
+        "habitat": 0.72,
+        "name": "balanced_portfolio",
+        "visitor_cap": 0.72
+      }
+    ],
+    "status": "hypothetical and explicitly uncalibrated"
+  },
+  "baseline": {
+    "feasible": true,
+    "final_state": {
+      "conflict": 0.435914,
+      "connectivity": 0.274217,
+      "habitat": 0.364928,
+      "income": 0.411038,
+      "visitors": 0.546112,
+      "wildlife": 0.403538
+    },
+    "outcomes": {
+      "coexistence": 0.555131,
+      "ecology": 0.36416,
+      "livelihood": 0.427456,
+      "tourism": 0.56496
+    },
+    "policy": "status_quo"
+  },
+  "candidate_models": [
+    {
+      "name": "coupled bounded system dynamics",
+      "purpose": "predict interactions and long-term comparative trends"
+    },
+    {
+      "name": "multi-objective scenario ranking with network-connectivity proxy",
+      "purpose": "compare trade-offs without fixing one arbitrary weight vector"
+    }
+  ],
+  "code_prototype": {
+    "entry_point": "run_model.py",
+    "outputs": [
+      "results/metrics.json",
+      "results/policy_metrics.csv",
+      "results/modeling_report.json",
+      "figures/*.svg"
+    ]
+  },
+  "data_audit": {
+    "audited_rows_count": 0,
+    "consequence": "No empirical calibration, geographic siting, absolute forecasts, or statistical confidence claims are possible.",
+    "data_files_count": 0,
+    "problem_text_present": true,
+    "source_status": "verified"
+  },
+  "experiment": {
+    "horizon": 30,
+    "parameter_uncertainty": "independent uniform +/-20% around assumptions",
+    "policies": [
+      "status_quo",
+      "strict_zoning",
+      "community_led",
+      "corridor_first",
+      "balanced_portfolio"
+    ],
+    "uncertainty_draws": 600
+  },
+  "falsification": {
+    "empirical_rejection_conditions": [
+      "Observed annual wildlife/habitat changes fall outside fitted predictive intervals after calibration.",
+      "Measured conflict does not decrease with independently verified mitigation exposure.",
+      "Policy ranking reverses under stakeholder-approved weights or plausible calibrated parameters.",
+      "Spatial corridor connectivity computed from GIS contradicts the proxy ordering used here."
+    ],
+    "tests": {
+      "baseline_present": true,
+      "case_complete_text": true,
+      "deterministic_repeat": true,
+      "finite_bounded_states": true,
+      "no_empirical_data_claimed": true,
+      "robustness_rates_valid": true,
+      "trajectory_length": true,
+      "visitor_capacity_constraint": true
+    }
+  },
+  "math_specification": {
+    "connectivity": "K_t = 0.45 H_t + 0.55 corridor",
+    "habitat": "H_(t+1)=clip(H_t+recovery*habitat_lever*(1-H_t)-climate*H_t-0.022*V_t*(1-habitat_lever))",
+    "ranking": "min-max normalize four outcomes; enumerate all 4-objective weights on the 0.1 simplex; report win shares and Pareto set",
+    "states": [
+      "wildlife W",
+      "habitat H",
+      "income I",
+      "conflict C",
+      "visitors V",
+      "connectivity K"
+    ],
+    "wildlife": "W_(t+1)=clip(W_t+rW_t(1-W_t/carrying)+0.018*corridor-0.045*C_t-0.030*crowding)"
+  },
+  "pending_stages": [
+    "empirical calibration and out-of-sample validation (no data supplied)",
+    "GIS network/corridor siting (no spatial data supplied)",
+    "absolute economic and wildlife forecasts with calibrated uncertainty (no observations supplied)",
+    "stakeholder elicitation and approval of objective weights/constraints",
+    "external literature and citation validation (benchmark input is closed and only contains two legal references)"
+  ],
+  "problem_framing": {
+    "decision": "Allocate management emphasis among habitat protection, corridors, community benefit sharing, conflict mitigation, and tourism capacity.",
+    "objectives": [
+      "ecological persistence",
+      "local livelihoods",
+      "human-wildlife coexistence",
+      "sustainable tourism"
+    ],
+    "time_horizon_years": 30
+  },
+  "reproducibility_manifest": {
+    "command": "python run_model.py --input \"C:/Users/\u4f0d\u8fb0\u6770/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-b.json\"",
+    "dependencies": "Python standard library only",
+    "input_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13",
+    "seed": 2023003
+  },
+  "reviewer_risks": [
+    "All numeric inputs are assumptions because the benchmark supplies no data rows.",
+    "Normalized indices cannot support absolute economic, population, or certainty estimates.",
+    "The connectivity proxy is not a GIS network analysis.",
+    "Independent parameter draws omit correlation and structural uncertainty.",
+    "A policy recommendation is conditional on the scenario equations and must not be presented as field evidence."
+  ],
+  "sensitivity_robustness": {
+    "monte_carlo": {
+      "balanced_portfolio": {
+        "equal_weight_win_rate": 1.0,
+        "feasibility_rate": 1.0,
+        "score_max": 0.997889,
+        "score_mean": 0.994339,
+        "score_min": 0.99053
+      },
+      "community_led": {
+        "equal_weight_win_rate": 0.0,
+        "feasibility_rate": 1.0,
+        "score_max": 0.794915,
+        "score_mean": 0.749223,
+        "score_min": 0.706686
+      },
+      "corridor_first": {
+        "equal_weight_win_rate": 0.0,
+        "feasibility_rate": 1.0,
+        "score_max": 0.83424,
+        "score_mean": 0.816672,
+        "score_min": 0.80151
+      },
+      "status_quo": {
+        "equal_weight_win_rate": 0.0,
+        "feasibility_rate": 0.696667,
+        "score_max": 0.0,
+        "score_mean": 0.0,
+        "score_min": 0.0
+      },
+      "strict_zoning": {
+        "equal_weight_win_rate": 0.0,
+        "feasibility_rate": 1.0,
+        "score_max": 0.508675,
+        "score_mean": 0.486175,
+        "score_min": 0.459825
+      }
+    },
+    "one_at_a_time": {
+      "climate_stress_0.9": {
+        "scores": {
+          "balanced_portfolio": 0.99368,
+          "community_led": 0.751448,
+          "corridor_first": 0.815085,
+          "status_quo": 0.0,
+          "strict_zoning": 0.48408
+        },
+        "winner": "balanced_portfolio"
+      },
+      "climate_stress_1.1": {
+        "scores": {
+          "balanced_portfolio": 0.994293,
+          "community_led": 0.747385,
+          "corridor_first": 0.81599,
+          "status_quo": 0.0,
+          "strict_zoning": 0.488072
+        },
+        "winner": "balanced_portfolio"
+      },
+      "conflict_pressure_0.9": {
+        "scores": {
+          "balanced_portfolio": 0.994539,
+          "community_led": 0.738934,
+          "corridor_first": 0.819829,
+          "status_quo": 0.0,
+          "strict_zoning": 0.489843
+        },
+        "winner": "balanced_portfolio"
+      },
+      "conflict_pressure_1.1": {
+        "scores": {
+          "balanced_portfolio": 0.993445,
+          "community_led": 0.759671,
+          "corridor_first": 0.811757,
+          "status_quo": 0.0,
+          "strict_zoning": 0.482725
+        },
+        "winner": "balanced_portfolio"
+      },
+      "governance_efficiency_0.9": {
+        "scores": {
+          "balanced_portfolio": 0.994539,
+          "community_led": 0.738934,
+          "corridor_first": 0.819829,
+          "status_quo": 0.0,
+          "strict_zoning": 0.489843
+        },
+        "winner": "balanced_portfolio"
+      },
+      "governance_efficiency_1.1": {
+        "scores": {
+          "balanced_portfolio": 0.993445,
+          "community_led": 0.759671,
+          "corridor_first": 0.811757,
+          "status_quo": 0.0,
+          "strict_zoning": 0.482725
+        },
+        "winner": "balanced_portfolio"
+      },
+      "habitat_recovery_0.9": {
+        "scores": {
+          "balanced_portfolio": 0.994262,
+          "community_led": 0.746258,
+          "corridor_first": 0.815766,
+          "status_quo": 0.0,
+          "strict_zoning": 0.487256
+        },
+        "winner": "balanced_portfolio"
+      },
+      "habitat_recovery_1.1": {
+        "scores": {
+          "balanced_portfolio": 0.993722,
+          "community_led": 0.752407,
+          "corridor_first": 0.815403,
+          "status_quo": 0.0,
+          "strict_zoning": 0.484839
+        },
+        "winner": "balanced_portfolio"
+      },
+      "tourism_yield_0.9": {
+        "scores": {
+          "balanced_portfolio": 0.993668,
+          "community_led": 0.749357,
+          "corridor_first": 0.815573,
+          "status_quo": 0.0,
+          "strict_zoning": 0.487158
+        },
+        "winner": "balanced_portfolio"
+      },
+      "tourism_yield_1.1": {
+        "scores": {
+          "balanced_portfolio": 0.994285,
+          "community_led": 0.749357,
+          "corridor_first": 0.815513,
+          "status_quo": 0.0,
+          "strict_zoning": 0.485194
+        },
+        "winner": "balanced_portfolio"
+      },
+      "wildlife_growth_0.9": {
+        "scores": {
+          "balanced_portfolio": 0.994873,
+          "community_led": 0.747378,
+          "corridor_first": 0.817407,
+          "status_quo": 0.0,
+          "strict_zoning": 0.491986
+        },
+        "winner": "balanced_portfolio"
+      },
+      "wildlife_growth_1.1": {
+        "scores": {
+          "balanced_portfolio": 0.993157,
+          "community_led": 0.751309,
+          "corridor_first": 0.813654,
+          "status_quo": 0.0,
+          "strict_zoning": 0.48005
+        },
+        "winner": "balanced_portfolio"
+      }
+    },
+    "weight_grid": {
+      "balanced_portfolio": {
+        "mean_normalized_score": 0.993989,
+        "weight_grid_win_share": 0.996503
+      },
+      "community_led": {
+        "mean_normalized_score": 0.749357,
+        "weight_grid_win_share": 0.003497
+      },
+      "corridor_first": {
+        "mean_normalized_score": 0.815542,
+        "weight_grid_win_share": 0.0
+      },
+      "status_quo": {
+        "mean_normalized_score": 0.0,
+        "weight_grid_win_share": 0.0
+      },
+      "strict_zoning": {
+        "mean_normalized_score": 0.486138,
+        "weight_grid_win_share": 0.0
+      }
+    }
+  },
+  "validation": {
+    "checks": {
+      "baseline_present": true,
+      "case_complete_text": true,
+      "deterministic_repeat": true,
+      "finite_bounded_states": true,
+      "no_empirical_data_claimed": true,
+      "robustness_rates_valid": true,
+      "trajectory_length": true,
+      "visitor_capacity_constraint": true
+    },
+    "passed": 8,
+    "total": 8
+  }
+}

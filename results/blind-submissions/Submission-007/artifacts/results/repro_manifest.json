@@ -1,0 +1,16 @@
+{
+  "case_summary": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-a.json",
+  "case_summary_sha256": "2b2ac0d4c79bbd9724e86d6b06447c3289208a36d345b593aab65120f8a7f32c",
+  "seed": 2023,
+  "parameters": {
+    "years": 40,
+    "drought_frequency": 0.3,
+    "drought_variation": 0.25
+  },
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "command": "python model_run.py",
+  "dependencies": {
+    "stdlib_only": true
+  }
+}

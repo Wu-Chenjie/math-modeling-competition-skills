@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-008",
+  "judge_id": "B",
+  "scores": {
+    "problem_understanding": 8,
+    "model_reasonableness": 18,
+    "mathematical_rigor": 9,
+    "data_handling": 4,
+    "code_and_solving": 8,
+    "model_validation": 12,
+    "innovation": 6,
+    "result_interpretation": 4,
+    "paper_quality": 8,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "Visible artifacts: 6 text/code files; metrics=present; empirical rows detected=0. Evidence contains 4 pending/no-data statements; empirical claims were not credited. Contest-fit review based on problem framing, assumptions, alternatives, validation, and evidence-linked interpretation in the submitted report."
+}

@@ -1,0 +1,25 @@
+{
+  "script": "model_run.py",
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "seed": 202302,
+  "command": "python model_run.py",
+  "input_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    "results/metrics.json",
+    "results/modeling_report.json",
+    "results/policy_scores.csv",
+    "results/robustness.csv"
+  ],
+  "figures": [
+    "process_q1_policy.svg",
+    "process_q2_policy.svg",
+    "process_q3_policy.svg",
+    "raw_q1_policy.svg",
+    "raw_q2_policy.svg",
+    "raw_q3_policy.svg",
+    "result_q1_policy.svg",
+    "result_q2_policy.svg",
+    "result_q3_policy.svg"
+  ]
+}

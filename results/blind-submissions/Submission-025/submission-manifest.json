@@ -1,0 +1,64 @@
+{
+  "submission_id": "Submission-025",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 14,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_age.png",
+      "sha256": "405b68dce900ccbb07ad4fa152c5f3ac0a51bd3f49cfaa74d018de95404b54df"
+    },
+    {
+      "path": "figures/process_q1_logprice.png",
+      "sha256": "19bf00954d6da3c476bdcb4222b5734d7e9cf936b2b672c3695a639a624ada28"
+    },
+    {
+      "path": "figures/process_q2_region_counts.png",
+      "sha256": "4221a3cde4eea709242a4a34d1df993ddcd9479f9902a850997618bd6c311525"
+    },
+    {
+      "path": "figures/raw_q1_length_price.png",
+      "sha256": "fb5aaf747d513ca00c05d74b49b068fe7a72cfa29c8c1200c225fc4533654fe1"
+    },
+    {
+      "path": "figures/raw_q1_price_hist.png",
+      "sha256": "88840c5447e5632ca744d2ee5f2ef52f2725c87f2a268004526c66c715abca80"
+    },
+    {
+      "path": "figures/raw_q2_region_price.png",
+      "sha256": "7303c441b0abcecdc46052d90a18f8e36c746caf72192170ac789f27da4257f0"
+    },
+    {
+      "path": "figures/result_q1_pred_actual.png",
+      "sha256": "d6a142a23321b1218168c88dc5d089e6acb515f32ff73ee23c6836e18052dfba"
+    },
+    {
+      "path": "figures/result_q2_effects.png",
+      "sha256": "e0f38161d68e443928ae2ec34f41703b80c53ec645fc5f805b1fadbca793269c"
+    },
+    {
+      "path": "figures/result_q4_residuals.png",
+      "sha256": "c17a1086e378cb6a56833bc13da4e967f7da7a3bfd950bc640c86ce3eda535c1"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "8dd89b6177608e8a1244c0ea2b24f084626cd5a0dc32b0b222e04d5bf3fe368f"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "7e135fe1bec21cce3da5be5ca9e682ca92cfc0e754ab946acbb30085737b0d7e"
+    },
+    {
+      "path": "results/reproducibility_manifest.json",
+      "sha256": "308bce8182e3862b6e83ad77103bc11ba417df07d49d2c297493986ee60cc527"
+    },
+    {
+      "path": "run_model.py",
+      "sha256": "2b56f6a52178a619a2424e6a4d34042f59f7e9aa8f26517ad196b6214d86640c"
+    },
+    {
+      "path": "test_model.py",
+      "sha256": "523659c23bd2fe85ff3ac1ecf0a613ad13cc51b39bad3d3ce12306388feec0cc"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

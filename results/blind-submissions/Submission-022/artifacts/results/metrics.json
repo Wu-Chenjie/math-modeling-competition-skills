@@ -1,0 +1,71 @@
+{
+  "scenario_count": 243,
+  "strategy_metrics": {
+    "status_quo": {
+      "central": {
+        "wildlife": 0.7847907410014426,
+        "livelihood": 1.0299419120711861,
+        "conflict": 0.581479103578718,
+        "mean_conflict": 0.44170650460644006,
+        "utility": 0.7973396819598207
+      },
+      "utility_mean": 0.7890629762090615,
+      "utility_sd": 0.04891913584419372,
+      "worst_utility": 0.6885008705393811,
+      "best_utility": 0.8836985208146303,
+      "feasible": true
+    },
+    "zoned_co_management": {
+      "central": {
+        "wildlife": 1.3228692008431624,
+        "livelihood": 1.4011019120711863,
+        "conflict": 0.0,
+        "mean_conflict": 0.06581675680362938,
+        "utility": 1.2856768096043383
+      },
+      "utility_mean": 1.277608617140106,
+      "utility_sd": 0.05850911051593327,
+      "worst_utility": 1.1293011900498962,
+      "best_utility": 1.4,
+      "feasible": true
+    },
+    "community_conservancies": {
+      "central": {
+        "wildlife": 1.3055097142292562,
+        "livelihood": 1.5,
+        "conflict": 0.0,
+        "mean_conflict": 0.04218867148389892,
+        "utility": 1.312479371403165
+      },
+      "utility_mean": 1.303952558019584,
+      "utility_sd": 0.052359903043769515,
+      "worst_utility": 1.1723379718326883,
+      "best_utility": 1.4,
+      "feasible": true
+    },
+    "conservation_tourism_balance": {
+      "central": {
+        "wildlife": 1.4974084307640252,
+        "livelihood": 1.4380739120711854,
+        "conflict": 0.0,
+        "mean_conflict": 0.0714937995054389,
+        "utility": 1.3771596630687262
+      },
+      "utility_mean": 1.3448285264191815,
+      "utility_sd": 0.044105794686857096,
+      "worst_utility": 1.2047908653757085,
+      "best_utility": 1.4,
+      "feasible": true
+    }
+  },
+  "pareto_strategies": [
+    "community_conservancies",
+    "conservation_tourism_balance"
+  ],
+  "ranking": [
+    "conservation_tourism_balance",
+    "community_conservancies",
+    "zoned_co_management",
+    "status_quo"
+  ]
+}

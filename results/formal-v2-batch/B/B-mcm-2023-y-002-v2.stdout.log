@@ -1,0 +1,1 @@
+{"status":"completed_with_pending","code_path":"run_model.py","metrics_path":"results/metrics.json","figures_count":12,"tests":["python run_model.py: exit 0","artifact assertions: TESTS_PASS 12 3491 581"],"pending_stages":["Hong Kong regional comparison","supplemental feature enrichment"]}

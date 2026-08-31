@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "code_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-mcm-2023-c-003-v2\\wordle_modeling.py",
+  "metrics_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-mcm-2023-c-003-v2\\modeling_report.json",
+  "figures_count": 9,
+  "tests": {
+    "command": "python -m unittest -v test_wordle_modeling.py",
+    "passed": 5,
+    "failed": 0
+  },
+  "pending_stages": []
+}

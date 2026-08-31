@@ -1,0 +1,104 @@
+{
+  "status": "completed_with_pending_figure_audit",
+  "case_id": "mcm-2023-a",
+  "seed": 2023,
+  "steps": 240,
+  "input_audit": {
+    "data_files": 0,
+    "data_audit": 0,
+    "problem_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "scenarios": [
+    {
+      "species": 1,
+      "mean_total": 0.9376786956048356,
+      "final_total": 0.9958964221687532,
+      "final_richness": 1,
+      "baseline_mean_total": 1.0,
+      "resilience_ratio": 0.9376786956048356
+    },
+    {
+      "species": 2,
+      "mean_total": 0.9301645584105375,
+      "final_total": 0.9955674908545237,
+      "final_richness": 2,
+      "baseline_mean_total": 1.0,
+      "resilience_ratio": 0.9301645584105375
+    },
+    {
+      "species": 3,
+      "mean_total": 0.9272574849252934,
+      "final_total": 0.995412241716672,
+      "final_richness": 3,
+      "baseline_mean_total": 1.0,
+      "resilience_ratio": 0.9272574849252934
+    },
+    {
+      "species": 4,
+      "mean_total": 0.9257212277246712,
+      "final_total": 0.9953246128187697,
+      "final_richness": 4,
+      "baseline_mean_total": 1.0,
+      "resilience_ratio": 0.9257212277246712
+    },
+    {
+      "species": 5,
+      "mean_total": 0.9247721293401444,
+      "final_total": 0.9952686607109198,
+      "final_richness": 5,
+      "baseline_mean_total": 1.0,
+      "resilience_ratio": 0.9247721293401444
+    },
+    {
+      "species": 6,
+      "mean_total": 0.9241278094067445,
+      "final_total": 0.9952299150404097,
+      "final_richness": 6,
+      "baseline_mean_total": 1.0,
+      "resilience_ratio": 0.9241278094067445
+    },
+    {
+      "species": 7,
+      "mean_total": 0.9236618456877671,
+      "final_total": 0.9952015205908192,
+      "final_richness": 7,
+      "baseline_mean_total": 1.0,
+      "resilience_ratio": 0.9236618456877671
+    },
+    {
+      "species": 8,
+      "mean_total": 0.9233092140707009,
+      "final_total": 0.9951798272506237,
+      "final_richness": 8,
+      "baseline_mean_total": 1.0,
+      "resilience_ratio": 0.9233092140707009
+    }
+  ],
+  "weather_sensitivity": {
+    "low_drought_frequency": 0.970298344317466,
+    "nominal": 0.9257212277246712,
+    "high_frequency_variation": 0.8112219576983555
+  },
+  "environment_sensitivity": {
+    "pollution_0_habitat_1": 0.9257212277246712,
+    "pollution_0.3_habitat_1": 0.8921069234595065,
+    "pollution_0_habitat_0.6": 0.5590400848538511,
+    "pollution_0.3_habitat_0.6": 0.5413763342347617
+  },
+  "falsification": {
+    "no_drought_total_biomass": 1.0,
+    "all_drought_total_biomass": 0.03997545274092678,
+    "zero_habitat_total_biomass": 0.0,
+    "high_pollution_total_biomass": 0.800319358611399
+  },
+  "reproducibility": {
+    "seed": 2023,
+    "command": "python model_simulation.py",
+    "python": "3.13.9",
+    "script_sha256": "e7c1bdfdb14930b87527ad2d45ed0661d09ac3927a2638f3b902f88418539075"
+  },
+  "pending_stages": [
+    "publication_png_export_and_strict_figure_audit"
+  ]
+}

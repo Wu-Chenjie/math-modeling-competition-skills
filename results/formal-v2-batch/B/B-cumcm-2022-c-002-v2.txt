@@ -1,0 +1,1 @@
+{"status":"completed_with_pending_stages","code_path":"run_model.py","metrics_path":"results/metrics.json","figures_count":4,"tests":{"command":"python -m unittest discover -s tests -v","result":"1 passed"},"pending_stages":["formal q1 texture/color significance tests","formal q2 subtype selection and sensitivity","publication-grade figure audit"]}

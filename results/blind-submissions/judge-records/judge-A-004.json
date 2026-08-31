@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-004",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 9,
+    "model_reasonableness": 6,
+    "mathematical_rigor": 4,
+    "data_handling": 2,
+    "code_and_solving": 7,
+    "model_validation": 2,
+    "innovation": 2,
+    "result_interpretation": 3,
+    "paper_quality": 6,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "SDG framing is clear, but metrics use uniform weights/data_rows=0 and manifest lists major pending stages; quantitative network model is incomplete."
+}

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.0" y="30" text-anchor="middle" font-family="Arial" font-size="18">Metric domain at fixed vulnerability</text>
+<line x1="80" y1="390" x2="730" y2="390" stroke="#333"/>
+<line x1="80" y1="55" x2="80" y2="390" stroke="#333"/>
+<text x="405.0" y="440" text-anchor="middle" font-family="Arial" font-size="14">Common normalized pressure</text>
+<text x="18" y="222.5" text-anchor="middle" transform="rotate(-90 18 222.5)" font-family="Arial" font-size="14">Dimensionless objective</text>
+<line x1="80.00" y1="55" x2="80.00" y2="390" stroke="#ddd"/>
+<text x="80.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.00</text>
+<line x1="80" y1="390.00" x2="730" y2="390.00" stroke="#ddd"/>
+<text x="70" y="394.00" text-anchor="end" font-family="Arial" font-size="11">0.0</text>
+<line x1="210.00" y1="55" x2="210.00" y2="390" stroke="#ddd"/>
+<text x="210.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.20</text>
+<line x1="80" y1="323.00" x2="730" y2="323.00" stroke="#ddd"/>
+<text x="70" y="327.00" text-anchor="end" font-family="Arial" font-size="11">15.0</text>
+<line x1="340.00" y1="55" x2="340.00" y2="390" stroke="#ddd"/>
+<text x="340.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.40</text>
+<line x1="80" y1="256.00" x2="730" y2="256.00" stroke="#ddd"/>
+<text x="70" y="260.00" text-anchor="end" font-family="Arial" font-size="11">30.0</text>
+<line x1="470.00" y1="55" x2="470.00" y2="390" stroke="#ddd"/>
+<text x="470.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.60</text>
+<line x1="80" y1="189.00" x2="730" y2="189.00" stroke="#ddd"/>
+<text x="70" y="193.00" text-anchor="end" font-family="Arial" font-size="11">45.0</text>
+<line x1="600.00" y1="55" x2="600.00" y2="390" stroke="#ddd"/>
+<text x="600.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.80</text>
+<line x1="80" y1="122.00" x2="730" y2="122.00" stroke="#ddd"/>
+<text x="70" y="126.00" text-anchor="end" font-family="Arial" font-size="11">60.0</text>
+<line x1="730.00" y1="55" x2="730.00" y2="390" stroke="#ddd"/>
+<text x="730.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">1.00</text>
+<line x1="80" y1="55.00" x2="730" y2="55.00" stroke="#ddd"/>
+<text x="70" y="59.00" text-anchor="end" font-family="Arial" font-size="11">75.0</text>
+<polyline points="80.00,390.00 112.50,384.42 145.00,378.83 177.50,373.25 210.00,367.67 242.50,362.08 275.00,356.50 307.50,350.92 340.00,345.33 372.50,339.75 405.00,334.17 437.50,328.58 470.00,323.00 502.50,317.42 535.00,311.83 567.50,306.25 600.00,300.67 632.50,295.08 665.00,289.50 697.50,283.92 730.00,278.33" fill="none" stroke="#0072B2" stroke-width="3"/>
+<line x1="570" y1="65" x2="595" y2="65" stroke="#0072B2" stroke-width="3"/>
+<text x="602" y="69" font-family="Arial" font-size="12">V=0.25</text>
+<polyline points="80.00,390.00 112.50,378.83 145.00,367.67 177.50,356.50 210.00,345.33 242.50,334.17 275.00,323.00 307.50,311.83 340.00,300.67 372.50,289.50 405.00,278.33 437.50,267.17 470.00,256.00 502.50,244.83 535.00,233.67 567.50,222.50 600.00,211.33 632.50,200.17 665.00,189.00 697.50,177.83 730.00,166.67" fill="none" stroke="#D55E00" stroke-width="3"/>
+<line x1="570" y1="85" x2="595" y2="85" stroke="#D55E00" stroke-width="3"/>
+<text x="602" y="89" font-family="Arial" font-size="12">V=0.50</text>
+<polyline points="80.00,390.00 112.50,373.25 145.00,356.50 177.50,339.75 210.00,323.00 242.50,306.25 275.00,289.50 307.50,272.75 340.00,256.00 372.50,239.25 405.00,222.50 437.50,205.75 470.00,189.00 502.50,172.25 535.00,155.50 567.50,138.75 600.00,122.00 632.50,105.25 665.00,88.50 697.50,71.75 730.00,55.00" fill="none" stroke="#009E73" stroke-width="3"/>
+<line x1="570" y1="105" x2="595" y2="105" stroke="#009E73" stroke-width="3"/>
+<text x="602" y="109" font-family="Arial" font-size="12">V=0.75</text>
+</svg>

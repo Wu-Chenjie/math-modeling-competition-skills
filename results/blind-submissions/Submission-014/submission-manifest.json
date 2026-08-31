@@ -1,0 +1,44 @@
+{
+  "submission_id": "Submission-014",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 9,
+  "artifacts": [
+    {
+      "path": "figures/process_q2_clr.svg",
+      "sha256": "f9bebc5a5c91679baf8a1017d91e2de19be1cbb2d93c95bf0792108091f622da"
+    },
+    {
+      "path": "figures/raw_q1_totals.svg",
+      "sha256": "191ad9dfd34bd2ca1f66dcc230d1489bc6edd4f0a94aaac5eb99dc313d71e0f1"
+    },
+    {
+      "path": "figures/result_q3_unknown.svg",
+      "sha256": "1099fb7df9c5c740a2f848b92b458d20360ea04255e6504d7081ff9526061574"
+    },
+    {
+      "path": "figures/result_q4_si_pb.svg",
+      "sha256": "29816a3d8eb09607eaa4163cb777ec8097ea39b239903838b994b90a23868f1c"
+    },
+    {
+      "path": "results/classification_predictions.csv",
+      "sha256": "2c842685e312f50615969ff7756bf6b64ca88a9baa4b0bd066f0051d7162e63a"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "18a6b73ffa20abe1db41fb4e9bf917aae11988131e42d4bf65aa8bbe8bfd73d0"
+    },
+    {
+      "path": "results/repro_manifest.json",
+      "sha256": "b61f5b5b8fb065cf791cb31f3cc5c65bc9821559be051773a90c8aeded378bad"
+    },
+    {
+      "path": "run_model.py",
+      "sha256": "2b13da86f15c707b4492beb2ec1886011d38cc85786f826293b218162eaa4916"
+    },
+    {
+      "path": "tests/test_run_model.py",
+      "sha256": "a71ff3c2854ff8ce2166a76a64df7a95bc914ac19f22dc6b5b718b154ca5443a"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

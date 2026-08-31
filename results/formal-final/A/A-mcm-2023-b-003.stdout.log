@@ -1,0 +1,114 @@
+# Modeling Report: A-mcm-2023-b
+
+## Problem Framing
+
+**Case:** 2023 MCM Problem B, “Reimagining Maasai Mara.”  
+**Decision context:** Recommend alternative policies and management strategies for resources inside and outside Maasai Mara, consistent with Kenya’s wildlife-conservation and community-management context. The supplied excerpt ends mid-requirement (“for diff…”), so the exact numbered subquestions and requested deliverables are unavailable in the deterministic summary; subquestion-specific claims remain pending.
+
+The decision should balance wildlife conservation, ecological connectivity, community welfare, tourism/economic benefits, enforcement, and financial/resource limits. Outputs should be a ranked portfolio of policies, implementation conditions, and performance under alternative futures.
+
+## Data Audit
+
+- `source_status`: verified.
+- Problem document: 2 pages; 3,149 extracted characters.
+- No data files, ZIP entries, or tabular observations are supplied in the summary.
+- Problem SHA-256: `a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4`.
+- Data SHA-256 field: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` (no corresponding data artifact is present).
+- Consequently, parameter estimation, numerical scores, and empirical ranking cannot yet be performed.
+
+## Assumptions
+
+1. Policies can be represented as discrete or continuous decisions allocated across park and surrounding community zones.
+2. Conservation, community benefit, tourism revenue, cost, and enforcement capacity are measurable through normalized indices once data are obtained.
+3. Effects propagate through spatial/social linkages rather than occurring independently.
+4. Resource, budget, and enforcement capacities are finite.
+5. Stakeholder weights are uncertain and must be elicited or stress-tested, not chosen arbitrarily.
+6. Scenarios represent uncertain pressures such as climate, tourism demand, land-use change, or enforcement conditions; exact scenario definitions are pending the full statement.
+
+## Candidate Models
+
+**Model 1: Network-constrained multi-objective optimization.**  
+Nodes represent ecological zones, communities, tourism facilities, and governance/enforcement units; edges represent wildlife movement, resource sharing, or policy spillovers. Select policy vector \(x\) to optimize conservation and socioeconomic objectives subject to budget, land/resource, and capacity constraints.
+
+**Model 2: Scenario simulation/robust portfolio analysis.**  
+Evaluate each feasible policy portfolio across a scenario set and identify solutions with strong expected performance and limited worst-case regret. This is a second model family for uncertainty analysis, not a substitute for the constrained optimization.
+
+## Baseline
+
+Pending execution and data. The minimum baseline is the current-boundary/current-management policy \(x^{(0)}\), evaluated with identical objective definitions and constraints. If the statement specifies no-action or status-quo details, they must be inserted directly from the full source.
+
+## Mathematical Specification
+
+Let \(x_j\) denote implementation intensity/selection for policy \(j\), \(s\in S\) a scenario, and \(A\) a weighted network adjacency matrix.
+
+\[
+\max_x \; \mathbf{F}(x)=
+\big(F_{\rm cons},F_{\rm community},F_{\rm tourism},-C,-R_{\rm conflict}\big)
+\]
+
+subject to
+
+\[
+\sum_j c_jx_j\le B,\qquad
+Lx\le \ell,\qquad
+Ex\le e,\qquad
+0\le x_j\le u_j .
+\]
+
+Network spillovers may be represented by
+
+\[
+y=(I-\rho A)^{-1}(b+Gx),
+\]
+
+where \(y\) contains propagated ecological/community outcomes, \(b\) is baseline state, \(G\) maps policies to directly affected nodes, and \(\rho\) controls spillover strength. Normalize objectives before aggregation. For a reported compromise solution, use an explicitly elicited weight vector \(w\):
+
+\[
+\max_x \sum_k w_k \,\tilde F_k(x),
+\]
+
+and separately report the Pareto frontier. Robust selection can minimize maximum normalized regret across scenarios.
+
+## Executable Experiment Plan
+
+Pending data and full requirements:
+
+1. Obtain the complete official statement and any permitted supporting data.
+2. Define zones, stakeholders, policy alternatives, capacities, costs, and measurable objective proxies.
+3. Build and document the network \(A\); test alternative edge definitions.
+4. Normalize objectives using predeclared bounds.
+5. Solve the constrained multi-objective problem; retain Pareto-efficient portfolios.
+6. Run scenario evaluations and regret analysis.
+7. Compare against the status quo, produce policy rankings, maps/network diagrams, and an auditable parameter/configuration file.
+8. Record software versions, random seeds (if stochastic), inputs, hashes, and a single reproduction command.
+
+## Validation
+
+Use feasibility checks, conservation of budget/capacity constraints, dimensional consistency, independent solver or enumeration checks on small instances, and out-of-scenario validation using held-out or newly specified scenarios. Validate network results against stakeholder/domain review where available. No validation results have been executed.
+
+## Sensitivity and Robustness
+
+Vary stakeholder weights, spillover parameter \(\rho\), policy costs/effect sizes, capacity limits, scenario probabilities, and normalization bounds. Report rank stability, Pareto-frontier movement, worst-case regret, and the minimum perturbation that changes the recommended portfolio. Explicitly test binding capacity constraints.
+
+## Falsification
+
+The recommendation is weakened or rejected if: the status quo dominates all alternatives; small plausible weight changes reverse the ranking; feasible solutions disappear under realistic capacity limits; network spillovers are statistically or substantively unsupported; or worst-case scenario performance is unacceptable. These tests are pending.
+
+## Reviewer Risks
+
+- Arbitrary objective weights.
+- Ignoring budget, land, or enforcement capacity.
+- Treating correlated stakeholders/ecological zones as independent.
+- Presenting unsupported numerical impacts because no data are supplied.
+- Overstating conclusions despite the truncated excerpt and missing exact subquestions.
+- No robustness analysis or status-quo comparison.
+
+## Reproducibility Manifest
+
+Run ID: `A-mcm-2023-b-003`  
+Case ID: `mcm-2023-b`  
+Input source: deterministic `case-summaries.json` entry above  
+Problem hash: recorded above  
+Data artifacts: none supplied  
+Execution status: **PENDING**  
+Results, scores, citations, parameter estimates, and solver outputs: **not executed / not available**

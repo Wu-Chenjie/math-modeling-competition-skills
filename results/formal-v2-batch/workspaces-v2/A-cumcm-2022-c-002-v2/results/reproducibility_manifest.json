@@ -1,0 +1,15 @@
+{
+  "case_id": "A-cumcm-2022-c-002-v2",
+  "seed": 202208,
+  "input_file": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\cumcm-2022-c.json",
+  "input_sha256": "86b82e0ac469e5dff323bea2773de708fc879c26fc9e2f6cc8ff711b01e1e231",
+  "command": "python run_model.py",
+  "dependencies": "Python standard library only",
+  "code_sha256": "87e6afcd88b26c8a2c25d9f9f9295de751e203c5d9669c01a2fff7c3a59b311d",
+  "outputs": [
+    "modeling_report.md",
+    "results/metrics.json",
+    "results/reproducibility_manifest.json",
+    "figures/*.svg"
+  ]
+}

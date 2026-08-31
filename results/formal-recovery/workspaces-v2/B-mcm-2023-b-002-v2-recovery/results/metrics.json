@@ -1,0 +1,25 @@
+{
+  "case_id": "mcm-2023-b",
+  "input_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090",
+  "official_problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_status": "verified",
+  "data_files_count": 0,
+  "data_audit_records_count": 0,
+  "sample_rows_available": false,
+  "official_problem_pages": 2,
+  "expected_method_count": 3,
+  "model_execution": "pending_no_data_rows_or_files",
+  "empirical_validation": "pending_no_data_rows_or_files",
+  "figures": [
+    "figures\\raw_q1_input_availability.svg",
+    "figures\\process_q1_audit_trace.svg",
+    "figures\\result_q1_policy_data_gate.svg",
+    "figures\\raw_q2_benchmark_structure.svg",
+    "figures\\process_q2_method_contract.svg",
+    "figures\\result_q2_ranking_status.svg",
+    "figures\\raw_q3_source_integrity.svg",
+    "figures\\process_q3_falsification_checks.svg",
+    "figures\\result_q3_execution_status.svg"
+  ]
+}

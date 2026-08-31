@@ -1,0 +1,136 @@
+{
+  "case_id": "cumcm-2022-c",
+  "seed": 20220915,
+  "input": {
+    "path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\cumcm-2022-c.json",
+    "sha256": "86b82e0ac469e5dff323bea2773de708fc879c26fc9e2f6cc8ff711b01e1e231",
+    "problem_sha256_recorded": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+    "data_sha256_recorded": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2"
+  },
+  "script": {
+    "path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2\\workspaces-v2\\A-cumcm-2022-c-001-v2\\math_model_run.py",
+    "sha256": "1f680e20ee48e78d1f64b75627e6080dde3f88bca829c02e4f81c19c6532ba8e"
+  },
+  "command": "python math_model_run.py",
+  "runtime_seconds": 9.832446,
+  "environment": {
+    "python": "3.14.0",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.8"
+  },
+  "artifacts": [
+    {
+      "path": "figures\\process_q1_weathering_shifts.png",
+      "sha256": "22641228c6336bba61bbedb8fffedc27b0b1a6aef755be30e680af09c4286d27"
+    },
+    {
+      "path": "figures\\process_q1_weathering_shifts.svg",
+      "sha256": "2daa31d0955cdc0f059f376e0c3549c1179ba531b70b74c7b5cf0ed6881d7872"
+    },
+    {
+      "path": "figures\\process_q2_loao_confusion.png",
+      "sha256": "b2f77c7d31ed6e30522a899c0af90a00755acbe2f4ace0d9da75d73d73ad6e0d"
+    },
+    {
+      "path": "figures\\process_q2_loao_confusion.svg",
+      "sha256": "742a645e3e76d7b0effaa1d7454ec73221102e47a3ebb4530065df4c407ddf39"
+    },
+    {
+      "path": "figures\\process_q3_sensitivity.png",
+      "sha256": "4cb339c7a3058f0ed67b177de02b4e992d1d154f545eded7db8ff78f78b3672b"
+    },
+    {
+      "path": "figures\\process_q3_sensitivity.svg",
+      "sha256": "b4fd34fd4e165a0dfc34918e935927177b4e8a10c9f51fdf34cce360c2bb5ff2"
+    },
+    {
+      "path": "figures\\process_q4_type_proportionality.png",
+      "sha256": "c16a4e5026856a19bd1340ccf2525897565b43e417990c88aff9ed9248ab356b"
+    },
+    {
+      "path": "figures\\process_q4_type_proportionality.svg",
+      "sha256": "1b6240f8f7fcdec6ba3c0a8d43e70b4af66fcb34175bce8b87edeca8ff466877"
+    },
+    {
+      "path": "figures\\raw_q1_metadata_weathering.png",
+      "sha256": "ba6468963a4db997ec29ffdae096d9339376d7734072d15cb9d667e9b19f87d5"
+    },
+    {
+      "path": "figures\\raw_q1_metadata_weathering.svg",
+      "sha256": "9279a6c96a24eb4b676c1851d7ac0bdaed550621b36632e3f0d1cd83e4c71640"
+    },
+    {
+      "path": "figures\\raw_q2_clr_pca.png",
+      "sha256": "7ca025d67df275700b7e7678c9b646bb6ee39492b10df1c21c722d4f6453f5c0"
+    },
+    {
+      "path": "figures\\raw_q2_clr_pca.svg",
+      "sha256": "5bd62acf92f33347c09727dc0492a676ab14943a18b5a56479c3edf330801e3e"
+    },
+    {
+      "path": "figures\\raw_q3_unknown_composition.png",
+      "sha256": "fa2fd722a6b116f424a9578e91e2bcc4bd47c4876fafe38f266cf5fc300d6af6"
+    },
+    {
+      "path": "figures\\raw_q3_unknown_composition.svg",
+      "sha256": "43d08755bb8fbb9998d46d9990df765e63f6339f9c2719145bebc849ded0beff"
+    },
+    {
+      "path": "figures\\raw_q4_pooled_clr_correlation.png",
+      "sha256": "c76671cb81650ac3e02b1b622f6b51d220776ae68ea9665a40e1cd85f25ee941"
+    },
+    {
+      "path": "figures\\raw_q4_pooled_clr_correlation.svg",
+      "sha256": "ec14c73ba7bbb46de4ca4f4816388fdd70b2f54286fa22ae3d824d9092d805fe"
+    },
+    {
+      "path": "figures\\result_q1_restoration_validation.png",
+      "sha256": "da9cf385d2633b5c3f57357ff4fa7811d006fa83e9829e6c14402ce41dbf7dee"
+    },
+    {
+      "path": "figures\\result_q1_restoration_validation.svg",
+      "sha256": "94052057773adc43eda7ac17e460055aa5f2cc920db74d186ebbe40e06daae09"
+    },
+    {
+      "path": "figures\\result_q2_subclasses.png",
+      "sha256": "21a1bca856818fea1f328ae2e813b60edef562fc36e3fa0efebb4b97b75bd55d"
+    },
+    {
+      "path": "figures\\result_q2_subclasses.svg",
+      "sha256": "c419590d5c33f7632ed30195e46eb3570ad87a8b1377beb8c4ea0be930dc820a"
+    },
+    {
+      "path": "figures\\result_q3_classification_margin.png",
+      "sha256": "ad4abde043e82f262596be4a0c05664190b44e851610341a99f1a218d39afa94"
+    },
+    {
+      "path": "figures\\result_q3_classification_margin.svg",
+      "sha256": "55753d5eee57ddb45260185d816f90a8eb4c379f54f0ce8db0425cc03ab83817"
+    },
+    {
+      "path": "figures\\result_q4_association_differences.png",
+      "sha256": "075eb4c43e0d0a2445433c7b24793c658fba7732f4a8f81c5646cc8b7e93295a"
+    },
+    {
+      "path": "figures\\result_q4_association_differences.svg",
+      "sha256": "6611a0118848520fcebe729354db1cec3771c145a2d3b72e117969edbc10728b"
+    },
+    {
+      "path": "results\\metrics.json",
+      "sha256": "da1f545a937354362271a0f9efd7b6cd166e79e86855bc8336daaf7fd6946730"
+    },
+    {
+      "path": "results\\restored_unweathered_compositions.csv",
+      "sha256": "d9c1f9e05948bf2a378162dfbeb20eb1fa2002057b6e82c3c4d401903feddda4"
+    },
+    {
+      "path": "results\\subclass_assignments.csv",
+      "sha256": "7635bd8fe630f53fe3582d117d071bd15fd725007661e4c0c8979c618018eafb"
+    },
+    {
+      "path": "results\\unknown_predictions.csv",
+      "sha256": "4bf7b0166c5d9d54963623b20fe4e305c09ab898efb52c42659bab754f18d1a4"
+    }
+  ]
+}

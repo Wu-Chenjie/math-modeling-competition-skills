@@ -1,0 +1,72 @@
+{
+  "submission_id": "Submission-013",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 16,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_delta.svg",
+      "sha256": "3fef889fe75d58f70d815d881e737410d210490b6a90ae28400d51e3922636b4"
+    },
+    {
+      "path": "figures/process_q2_centroid_dist.svg",
+      "sha256": "715f1c6ee4a8e96f2748d1afb5f520c0454a4b8a0576c618ac5a5f5743d2f6ee"
+    },
+    {
+      "path": "figures/process_q3_distance.svg",
+      "sha256": "001cc4613a8f672f89b405f6651fd246695ad3b51f1ce0e7345ce558f1cc19d4"
+    },
+    {
+      "path": "figures/process_q4_corr_type1.svg",
+      "sha256": "f5e6c9d7922e6a078a6821d01411be6bdb2fa844c2f907ba0ebc9f56a328fc8e"
+    },
+    {
+      "path": "figures/raw_q1_weathering.svg",
+      "sha256": "4ca1d28cbba60278b6cd8c8b90ec077a452428efe02ac486aee025437951a06a"
+    },
+    {
+      "path": "figures/raw_q2_valid_sums.svg",
+      "sha256": "5bd0a89bbf392f2384f812082ec8bbd3fdb9336e52286525ca3a50ede1b01da7"
+    },
+    {
+      "path": "figures/raw_q3_unknown_sums.svg",
+      "sha256": "2133d5fb491bf0c87c00d4f60964aa17ede1b2e3f6911374851b7dcc5878154d"
+    },
+    {
+      "path": "figures/raw_q4_corr_high.svg",
+      "sha256": "284ff94f5151d36562b33632ccc1d9c597ae71c93c168105758e1198534b849e"
+    },
+    {
+      "path": "figures/result_q1_type_weather.svg",
+      "sha256": "064f8cd2ba3b999b4bb2c129fce2b61489f84f53804365f177b1676b142e2e01"
+    },
+    {
+      "path": "figures/result_q2_accuracy.svg",
+      "sha256": "7220798f6fa522c23eb8a3450f3db8c3d083027829c7ab9a0b667c9c95749d53"
+    },
+    {
+      "path": "figures/result_q3_classes.svg",
+      "sha256": "6f113a3382e3157ec7ac73eee809f5233ffaea08dd2d15020073c113675f5003"
+    },
+    {
+      "path": "figures/result_q4_corr_type2.svg",
+      "sha256": "362cc8ef9095e930e1f6d615e78560c103f77a8a9a7e1a30baca42d8101411c2"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "1691f9a7155a0ae68d9657defabd67e2136de6fe9ccc921fedc99871a51f8079"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "283e5f81ebed84adbca14d3f2fef460410d423b9f54bf9ca2ba7d880ef20a37c"
+    },
+    {
+      "path": "results/repro_manifest.json",
+      "sha256": "1ac92809c68ebcc3d6c5a4ae27b9ce7fffa7307ff3841360bc9a7a38db73e0e7"
+    },
+    {
+      "path": "run_model.py",
+      "sha256": "f8da70e9e08d0ce0e7c307ccbd35f894118982ddbb3f80c5d4920e1130b790fd"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

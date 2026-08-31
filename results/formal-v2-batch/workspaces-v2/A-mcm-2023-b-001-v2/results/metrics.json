@@ -1,0 +1,51 @@
+{
+  "status": "illustrative_scenario_run",
+  "seed": 20230830,
+  "data_audit": {
+    "data_files": 0,
+    "rows_data_present": false,
+    "calibration": "pending"
+  },
+  "q1_portfolio": {
+    "strategies": [
+      "baseline",
+      "zoning",
+      "community",
+      "adaptive"
+    ],
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "utility": 0.196,
+    "budget_use": 0.65,
+    "conservation": 0.3,
+    "livelihood": 0.26,
+    "conflict_reduction": 0.22,
+    "cost": 0.28
+  },
+  "q2_rank": {
+    "mean_scores": {
+      "baseline": 0.0,
+      "zoning": 0.12856555748767964,
+      "community": 0.14201843800756014,
+      "adaptive": 0.173597739301257
+    },
+    "selection_probability": {
+      "baseline": 0.00235,
+      "zoning": 0.02965,
+      "community": 0.0645,
+      "adaptive": 0.9035
+    },
+    "draws": 20000
+  },
+  "q3_long_term": {
+    "adaptive_year20_median": 0.845898918154616,
+    "p10": 0.8039135126597075,
+    "p90": 0.8796287021514289,
+    "horizon_years": 20
+  },
+  "assumption_note": "All numeric strategy and trend parameters are scenario assumptions, not measurements."
+}

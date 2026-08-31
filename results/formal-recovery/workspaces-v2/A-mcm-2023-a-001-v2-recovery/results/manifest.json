@@ -1,0 +1,9 @@
+{
+  "command": "python model_prototype.py",
+  "seed": 17,
+  "python": "3.12.13",
+  "numpy": "2.3.5",
+  "pillow": "12.3.0",
+  "input_problem_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+  "input_data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

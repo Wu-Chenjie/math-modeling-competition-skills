@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="32" text-anchor="middle" font-family="Arial" font-size="21">Richness response: Biomass CV, last 30 years</text>
+<line x1="90" y1="485" x2="870" y2="485" stroke="#222"/>
+<line x1="90" y1="65" x2="90" y2="485" stroke="#222"/>
+<line x1="90" y1="485.00" x2="870" y2="485.00" stroke="#ddd"/>
+<text x="81" y="490.00" text-anchor="end" font-family="Arial" font-size="13">0.0</text>
+<line x1="90" y1="401.00" x2="870" y2="401.00" stroke="#ddd"/>
+<text x="81" y="406.00" text-anchor="end" font-family="Arial" font-size="13">0.0</text>
+<line x1="90" y1="317.00" x2="870" y2="317.00" stroke="#ddd"/>
+<text x="81" y="322.00" text-anchor="end" font-family="Arial" font-size="13">0.1</text>
+<line x1="90" y1="233.00" x2="870" y2="233.00" stroke="#ddd"/>
+<text x="81" y="238.00" text-anchor="end" font-family="Arial" font-size="13">0.1</text>
+<line x1="90" y1="149.00" x2="870" y2="149.00" stroke="#ddd"/>
+<text x="81" y="154.00" text-anchor="end" font-family="Arial" font-size="13">0.1</text>
+<line x1="90" y1="65.00" x2="870" y2="65.00" stroke="#ddd"/>
+<text x="81" y="70.00" text-anchor="end" font-family="Arial" font-size="13">0.1</text>
+<polyline points="90.00,456.37 201.43,480.35 312.86,479.88 424.29,480.73 535.71,481.81 647.14,482.93 758.57,484.00 870.00,485.00" fill="none" stroke="#0072B2" stroke-width="2.5"/>
+<circle cx="90.00" cy="456.37" r="3" fill="#0072B2"/>
+<circle cx="201.43" cy="480.35" r="3" fill="#0072B2"/>
+<circle cx="312.86" cy="479.88" r="3" fill="#0072B2"/>
+<circle cx="424.29" cy="480.73" r="3" fill="#0072B2"/>
+<circle cx="535.71" cy="481.81" r="3" fill="#0072B2"/>
+<circle cx="647.14" cy="482.93" r="3" fill="#0072B2"/>
+<circle cx="758.57" cy="484.00" r="3" fill="#0072B2"/>
+<circle cx="870.00" cy="485.00" r="3" fill="#0072B2"/>
+<line x1="670" y1="53" x2="700" y2="53" stroke="#0072B2" stroke-width="3"/>
+<text x="710" y="58" font-family="Arial" font-size="13">low_drought</text>
+<polyline points="90.00,352.06 201.43,398.31 312.86,398.20 424.29,400.90 535.71,404.34 647.14,407.95 758.57,411.51 870.00,414.89" fill="none" stroke="#D55E00" stroke-width="2.5"/>
+<circle cx="90.00" cy="352.06" r="3" fill="#D55E00"/>
+<circle cx="201.43" cy="398.31" r="3" fill="#D55E00"/>
+<circle cx="312.86" cy="398.20" r="3" fill="#D55E00"/>
+<circle cx="424.29" cy="400.90" r="3" fill="#D55E00"/>
+<circle cx="535.71" cy="404.34" r="3" fill="#D55E00"/>
+<circle cx="647.14" cy="407.95" r="3" fill="#D55E00"/>
+<circle cx="758.57" cy="411.51" r="3" fill="#D55E00"/>
+<circle cx="870.00" cy="414.89" r="3" fill="#D55E00"/>
+<line x1="670" y1="75" x2="700" y2="75" stroke="#D55E00" stroke-width="3"/>
+<text x="710" y="80" font-family="Arial" font-size="13">reference</text>
+<polyline points="90.00,278.36 201.43,356.70 312.86,361.03 424.29,369.79 535.71,378.34 647.14,385.99 758.57,392.68 870.00,398.52" fill="none" stroke="#009E73" stroke-width="2.5"/>
+<circle cx="90.00" cy="278.36" r="3" fill="#009E73"/>
+<circle cx="201.43" cy="356.70" r="3" fill="#009E73"/>
+<circle cx="312.86" cy="361.03" r="3" fill="#009E73"/>
+<circle cx="424.29" cy="369.79" r="3" fill="#009E73"/>
+<circle cx="535.71" cy="378.34" r="3" fill="#009E73"/>
+<circle cx="647.14" cy="385.99" r="3" fill="#009E73"/>
+<circle cx="758.57" cy="392.68" r="3" fill="#009E73"/>
+<circle cx="870.00" cy="398.52" r="3" fill="#009E73"/>
+<line x1="670" y1="97" x2="700" y2="97" stroke="#009E73" stroke-width="3"/>
+<text x="710" y="102" font-family="Arial" font-size="13">future_drought</text>
+<polyline points="90.00,65.00 201.43,265.26 312.86,269.48 424.29,277.39 535.71,286.48 647.14,294.94 758.57,302.39 870.00,308.88" fill="none" stroke="#CC79A7" stroke-width="2.5"/>
+<circle cx="90.00" cy="65.00" r="3" fill="#CC79A7"/>
+<circle cx="201.43" cy="265.26" r="3" fill="#CC79A7"/>
+<circle cx="312.86" cy="269.48" r="3" fill="#CC79A7"/>
+<circle cx="424.29" cy="277.39" r="3" fill="#CC79A7"/>
+<circle cx="535.71" cy="286.48" r="3" fill="#CC79A7"/>
+<circle cx="647.14" cy="294.94" r="3" fill="#CC79A7"/>
+<circle cx="758.57" cy="302.39" r="3" fill="#CC79A7"/>
+<circle cx="870.00" cy="308.88" r="3" fill="#CC79A7"/>
+<line x1="670" y1="119" x2="700" y2="119" stroke="#CC79A7" stroke-width="3"/>
+<text x="710" y="124" font-family="Arial" font-size="13">future_plus_stress</text>
+<text x="450.0" y="538" text-anchor="middle" font-family="Arial" font-size="15">Initial species richness</text>
+<text x="22" y="280.0" transform="rotate(-90 22 280.0)" text-anchor="middle" font-family="Arial" font-size="15">Biomass CV, last 30 years</text>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-013",
+  "judge_id": "C",
+  "scores": {
+    "problem_understanding": 7,
+    "model_reasonableness": 14,
+    "mathematical_rigor": 7,
+    "data_handling": 3,
+    "code_and_solving": 8,
+    "model_validation": 4,
+    "innovation": 4,
+    "result_interpretation": 5,
+    "paper_quality": 7,
+    "reproducibility": 1
+  },
+  "fatal_flags": [],
+  "notes": "Visible files: 17 total, code=1, tests=0, figures=12; metrics=parsed; reproducibility=absent. Missing or unusable evidence: reproducibility_manifest.json, test script."
+}

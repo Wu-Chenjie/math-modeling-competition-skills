@@ -1,0 +1,31 @@
+{
+  "group": "A",
+  "case_id": "mcm-2023-a",
+  "index": 1,
+  "run_id": "A-mcm-2023-a-001-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/mcm-2023-a",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-a.json",
+  "statement_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "timeout",
+  "started_at": "2026-08-30T08:11:25.645079+00:00",
+  "ended_at": "2026-08-30T08:21:25.674785+00:00",
+  "exit_code": null,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/A/A-mcm-2023-a-001-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-mcm-2023-a-001-v2",
+  "artifacts": [
+    "__pycache__/drought_model.cpython-312.pyc",
+    "__pycache__/test_drought_model.cpython-312.pyc",
+    "drought_model.py",
+    "test_drought_model.py"
+  ],
+  "reported_tokens": null,
+  "stdout_log": "results/formal-v2-batch/A/A-mcm-2023-a-001-v2.stdout.log",
+  "stderr_log": "results/formal-v2-batch/A/A-mcm-2023-a-001-v2.stderr.log",
+  "stdout_tail": "",
+  "stderr_tail": "lf.assertLess(matrix[0, 2], matrix[0, 1])\n+\n+    def test_simulation_remains_finite_nonnegative(self):\n+        weather = dm.generate_weather(years=12, seed=4, drought_frequency=0.25, variability=0.20)\n+        result = dm.simulate_community(4, weather)\n+        self.assertTrue(np.all(np.isfinite(result[\"biomass\"])))\n+        self.assertTrue(np.all(result[\"biomass\"] >= 0.0))\n+        self.assertTrue(np.all((result[\"adaptation\"] >= 0.0) & (result[\"adaptation\"] <= 0.30)))\n+\n+    def test_pollution_and_habitat_loss_reduce_matched_long_run_biomass(self):\n+        weather = dm.generate_weather(years=30, seed=91, drought_frequency=0.25, variability=0.20)\n+        reference = dm.simulate_community(5, weather, pollution=0.0, habitat_fraction=1.0)\n+        degraded = dm.simulate_community(5, weather, pollution=0.08, habitat_fraction=0.70)\n+        self.assertGreater(dm.long_run_mean(reference), dm.long_run_mean(degraded))\n+\n+    def test_zero_biomass_is_absorbing(self):\n+        weather = dm.generate_weather(years=3, seed=2, drought_frequency=0.2, variability=0.1)\n+        result = dm.simulate_community(3, weather, initial_total_biomass=0.0)\n+        np.testing.assert_allclose(result[\"biomass\"], 0.0)\n+\n+\n+if __name__ == \"__main__\":\n+    unittest.main()\n\ncodex\nThe invariant suite is green: five tests now pass, including the absorbing extinction boundary and matched-weather degradation direction. I’m running the full preregistered experiment next, then I’ll verify artifact counts and machine-readable consistency before returning the receipt.\nexec\n\"C:\\\\Users\\\\伍辰杰\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python drought_model.py --case-summary \\\"C:\\\\Users\\\\伍辰杰\\\\Documents\\\\ChatGPT\\\\mathmodel\\\\math-modeling-competition-skills\\\\benchmarks\\\\case-summaries\\\\mcm-2023-a.json\\\" --output-root .\" in C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\A-mcm-2023-a-001-v2\n"
+}

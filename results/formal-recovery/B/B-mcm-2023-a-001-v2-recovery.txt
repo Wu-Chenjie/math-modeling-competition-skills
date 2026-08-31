@@ -1,0 +1,1 @@
+{"status":"ok","code_path":"drought_model_run.py","metrics_path":"results/metrics.json","figures_count":9,"tests":"3 passed (unittest)","pending_stages":["empirical_data_validation","citation_verification"]}

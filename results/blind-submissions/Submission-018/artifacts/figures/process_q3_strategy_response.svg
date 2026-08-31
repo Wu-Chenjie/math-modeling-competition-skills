@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.0" y="30" text-anchor="middle" font-family="Arial" font-size="18">Strategy response at equal efficacy</text>
+<line x1="80" y1="390" x2="730" y2="390" stroke="#333"/>
+<line x1="80" y1="55" x2="80" y2="390" stroke="#333"/>
+<text x="405.0" y="440" text-anchor="middle" font-family="Arial" font-size="14">Hypothetical efficacy</text>
+<text x="18" y="222.5" text-anchor="middle" transform="rotate(-90 18 222.5)" font-family="Arial" font-size="14">Dimensionless score</text>
+<line x1="80.00" y1="55" x2="80.00" y2="390" stroke="#ddd"/>
+<text x="80.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.00</text>
+<line x1="80" y1="390.00" x2="730" y2="390.00" stroke="#ddd"/>
+<text x="70" y="394.00" text-anchor="end" font-family="Arial" font-size="11">2.5</text>
+<line x1="210.00" y1="55" x2="210.00" y2="390" stroke="#ddd"/>
+<text x="210.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.20</text>
+<line x1="80" y1="323.00" x2="730" y2="323.00" stroke="#ddd"/>
+<text x="70" y="327.00" text-anchor="end" font-family="Arial" font-size="11">7.0</text>
+<line x1="340.00" y1="55" x2="340.00" y2="390" stroke="#ddd"/>
+<text x="340.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.40</text>
+<line x1="80" y1="256.00" x2="730" y2="256.00" stroke="#ddd"/>
+<text x="70" y="260.00" text-anchor="end" font-family="Arial" font-size="11">11.5</text>
+<line x1="470.00" y1="55" x2="470.00" y2="390" stroke="#ddd"/>
+<text x="470.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.60</text>
+<line x1="80" y1="189.00" x2="730" y2="189.00" stroke="#ddd"/>
+<text x="70" y="193.00" text-anchor="end" font-family="Arial" font-size="11">16.0</text>
+<line x1="600.00" y1="55" x2="600.00" y2="390" stroke="#ddd"/>
+<text x="600.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">0.80</text>
+<line x1="80" y1="122.00" x2="730" y2="122.00" stroke="#ddd"/>
+<text x="70" y="126.00" text-anchor="end" font-family="Arial" font-size="11">20.5</text>
+<line x1="730.00" y1="55" x2="730.00" y2="390" stroke="#ddd"/>
+<text x="730.00" y="412" text-anchor="middle" font-family="Arial" font-size="11">1.00</text>
+<line x1="80" y1="55.00" x2="730" y2="55.00" stroke="#ddd"/>
+<text x="70" y="59.00" text-anchor="end" font-family="Arial" font-size="11">25.0</text>
+<polyline points="80.00,55.00 112.50,63.26 145.00,71.31 177.50,79.16 210.00,86.83 242.50,94.32 275.00,101.65 307.50,108.82 340.00,115.85 372.50,122.74 405.00,129.51 437.50,136.15 470.00,142.67 502.50,149.08 535.00,155.39 567.50,161.59 600.00,167.70 632.50,173.72 665.00,179.65 697.50,185.49 730.00,191.25" fill="none" stroke="#0072B2" stroke-width="3"/>
+<line x1="570" y1="65" x2="595" y2="65" stroke="#0072B2" stroke-width="3"/>
+<text x="602" y="69" font-family="Arial" font-size="12">shielding</text>
+<polyline points="80.00,55.00 112.50,71.75 145.00,88.50 177.50,105.25 210.00,122.00 242.50,138.75 275.00,155.50 307.50,172.25 340.00,189.00 372.50,205.75 405.00,222.50 437.50,239.25 470.00,256.00 502.50,272.75 535.00,289.50 567.50,306.25 600.00,323.00 632.50,339.75 665.00,356.50 697.50,373.25 730.00,390.00" fill="none" stroke="#D55E00" stroke-width="3"/>
+<line x1="570" y1="85" x2="595" y2="85" stroke="#D55E00" stroke-width="3"/>
+<text x="602" y="89" font-family="Arial" font-size="12">spectral_control</text>
+<polyline points="80.00,55.00 112.50,73.15 145.00,90.36 177.50,106.65 210.00,122.00 242.50,136.42 275.00,149.92 307.50,162.48 340.00,174.11 372.50,184.81 405.00,194.58 437.50,203.42 470.00,211.33 502.50,218.31 535.00,224.36 567.50,229.48 600.00,233.67 632.50,236.92 665.00,239.25 697.50,240.65 730.00,241.11" fill="none" stroke="#009E73" stroke-width="3"/>
+<line x1="570" y1="105" x2="595" y2="105" stroke="#009E73" stroke-width="3"/>
+<text x="602" y="109" font-family="Arial" font-size="12">adaptive_dimming</text>
+</svg>

@@ -1,0 +1,64 @@
+{
+  "submission_id": "Submission-011",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 14,
+  "artifacts": [
+    {
+      "path": "figures/process_q2_hardtrend.svg",
+      "sha256": "e940c166f8d6f9e3250977bda21955218bf642d7fe740e205bdc760bb8aa24a2"
+    },
+    {
+      "path": "figures/process_q2_unique.svg",
+      "sha256": "3b7a19168a61528abda77fc7e500ba17bf87ad4de90f01dd928755cf50a47ee4"
+    },
+    {
+      "path": "figures/process_q2_vowels.svg",
+      "sha256": "3f2e59d2a317e3a883b0b0497b35055e1bbbe2fd0dbdc6a199a06c9fdbc89be6"
+    },
+    {
+      "path": "figures/process_q4_classes.svg",
+      "sha256": "bfb6febcbd9d10f7fc0a46d83707f0a1773ef089273814b06ea3a3d6f0dda746"
+    },
+    {
+      "path": "figures/raw_q1_loghist.svg",
+      "sha256": "3d23ae4f2395a332ae814c9abfe8bd503993e35818442c3a94dfaaeb6c4f34dd"
+    },
+    {
+      "path": "figures/raw_q1_scatter.svg",
+      "sha256": "5bb22bdfecbe8fc41e9ef96926d80f361993d69eb2f68cff82e33fce7d9ed048"
+    },
+    {
+      "path": "figures/raw_q4_difficulty_hist.svg",
+      "sha256": "f12c416cf1ad9720e006472dda4eb1b1c2e4e74846b097272b216ba5cb06e230"
+    },
+    {
+      "path": "figures/result_q3_eerie_distribution.svg",
+      "sha256": "04c85378b1f9e119c6ff1939f39b976850be7bc76a60d6054c2294a30fe94bac"
+    },
+    {
+      "path": "figures/result_q3_model_vs_baseline.svg",
+      "sha256": "1f014d5fc8c2f47ef3996cc671157ea954f4aaa37b6e332d31fd4b759c430ff0"
+    },
+    {
+      "path": "figures/result_q4_difficulty_scatter.svg",
+      "sha256": "19babbc2f6b4c7a2352fbe5374a861ba1e9d5b495e53177070daf3cac486cb24"
+    },
+    {
+      "path": "reproducibility_manifest.json",
+      "sha256": "ae19addc1fd1b2f758b90ef10dae021d3597ec286d5c16110906593ef06b131c"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "c8abf410b91373bdfa75424b601cd53c24aba32309dbdea7cd399f206a21bdf5"
+    },
+    {
+      "path": "results/\u590d\u73b0\u6e05\u5355.json",
+      "sha256": "3f9d87a7021ebf4143205dc9ebc71beb529da779956300ffaaf627b578ae3fb7"
+    },
+    {
+      "path": "wordle_recovery.py",
+      "sha256": "b0f88e5eaa034c67323079bf696045c1d102a1f08c9ef99a7c0804f13d1bcf66"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

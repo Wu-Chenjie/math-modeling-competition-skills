@@ -1,0 +1,8 @@
+{
+  "seed": 20230830,
+  "input_sha256": "9c4f44ac847a400af6238e8747da42e54b9844ea03cfd4a9001dbd008f9af057",
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "command": "python run_model.py",
+  "data_status": "no benchmark rows supplied; assumptions only"
+}

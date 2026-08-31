@@ -1,0 +1,15 @@
+{
+  "case_id": "mcm-2023-b",
+  "input_sha256": "c9584634545f015cb9601b2917a4b5a875e06df81c71feef7622d0f79a8c0e28",
+  "command": "python model.py --case case_input.json --metrics results\\metrics.json --figures figures --report results\\modeling_report.md",
+  "seed": null,
+  "dependencies": {
+    "python": "3.12+",
+    "numpy": "available",
+    "Pillow": "available"
+  },
+  "outputs": [
+    "results\\metrics.json",
+    "results\\modeling_report.md"
+  ]
+}

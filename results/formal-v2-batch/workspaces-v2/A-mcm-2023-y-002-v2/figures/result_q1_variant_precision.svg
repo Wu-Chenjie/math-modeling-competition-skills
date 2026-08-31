@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="34" text-anchor="middle" font-family="Arial" font-size="20">Variant estimate uncertainty</text>
+<text x="22" y="260.0" transform="rotate(-90 22 260.0)" text-anchor="middle" font-family="Arial" font-size="14">Approx. 95% half-width, percent</text>
+<line x1="80" y1="440.0" x2="820" y2="440.0" stroke="#444"/>
+<rect x="123.2" y="235.2" width="160.3" height="204.8" fill="#2a6f97"/>
+<text x="203.3" y="462" text-anchor="middle" font-family="Arial" font-size="12">P25</text>
+<text x="203.3" y="228.2" text-anchor="middle" font-family="Arial" font-size="11">26.7</text>
+<rect x="369.8" y="178.9" width="160.3" height="261.1" fill="#2a6f97"/>
+<text x="450.0" y="462" text-anchor="middle" font-family="Arial" font-size="12">Median</text>
+<text x="450.0" y="171.9" text-anchor="middle" font-family="Arial" font-size="11">34</text>
+<rect x="616.5" y="80.0" width="160.3" height="360.0" fill="#2a6f97"/>
+<text x="696.7" y="462" text-anchor="middle" font-family="Arial" font-size="12">P75</text>
+<text x="696.7" y="73.0" text-anchor="middle" font-family="Arial" font-size="11">46.9</text>
+</svg>

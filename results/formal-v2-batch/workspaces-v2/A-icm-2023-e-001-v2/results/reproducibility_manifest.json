@@ -1,0 +1,33 @@
+{
+  "seed": 2023001,
+  "input_case_id": "icm-2023-e",
+  "input_problem_sha256": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+  "runtime": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "parameters": {
+    "p": 2.0,
+    "weights": "equal",
+    "indicators": [
+      "skyglow",
+      "light_trespass",
+      "over_illumination",
+      "glare",
+      "light_clutter",
+      "ecological_concern",
+      "human_concern"
+    ]
+  },
+  "input_path": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-e.json",
+  "input_sha256_actual": "9c136273749e640d6926cadeccad4d16dc55904d7d3a178602931f69fd4e2557",
+  "code_sha256": "204d3869da1e814fcb4059f6dc9fdf095bcaebb59e6bacb7b193226ec64fcbce",
+  "dependencies": {
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "matplotlib": null
+  },
+  "unique_command": "python run_model.py --input \"C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-e.json\" --output .",
+  "metrics_sha256": "5ee572aa0c3b36211aa7e6e69a041d696f3cb5f914878ddfa11dc9971b9404b3",
+  "report_sha256": "e5dd35b5e4252a8be1758c8aa7176ddd7c65290f9b93ee2ba49f64932ada03eb",
+  "figure_count": 15
+}

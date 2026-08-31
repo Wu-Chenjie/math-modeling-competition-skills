@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="34" text-anchor="middle" font-family="Arial" font-size="20">Counterfactual regional effect vs Europe</text>
+<text x="22" y="260.0" transform="rotate(-90 22 260.0)" text-anchor="middle" font-family="Arial" font-size="14">Percent</text>
+<line x1="80" y1="272.9" x2="820" y2="272.9" stroke="#444"/>
+<rect x="112.4" y="272.9" width="120.2" height="114.3" fill="#2a6f97"/>
+<text x="172.5" y="462" text-anchor="middle" font-family="Arial" font-size="12">Mono-Car</text>
+<text x="172.5" y="265.9" text-anchor="middle" font-family="Arial" font-size="11">-9.7</text>
+<rect x="297.4" y="80.0" width="120.2" height="192.9" fill="#2a6f97"/>
+<text x="357.5" y="462" text-anchor="middle" font-family="Arial" font-size="12">Mono-USA</text>
+<text x="357.5" y="73.0" text-anchor="middle" font-family="Arial" font-size="11">16.4</text>
+<rect x="482.4" y="272.9" width="120.2" height="167.1" fill="#2a6f97"/>
+<text x="542.5" y="462" text-anchor="middle" font-family="Arial" font-size="12">Cat-Car</text>
+<text x="542.5" y="265.9" text-anchor="middle" font-family="Arial" font-size="11">-14.2</text>
+<rect x="667.4" y="173.8" width="120.2" height="99.1" fill="#2a6f97"/>
+<text x="727.5" y="462" text-anchor="middle" font-family="Arial" font-size="12">Cat-USA</text>
+<text x="727.5" y="166.8" text-anchor="middle" font-family="Arial" font-size="11">8.42</text>
+</svg>

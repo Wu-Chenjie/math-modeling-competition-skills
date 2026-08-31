@@ -1,0 +1,17 @@
+location,scenario,score,band,baseline_score
+protected_land,adaptive_shielded_led,21.708,low,27.140000000000004
+protected_land,curfew_dimming,21.651,low,27.140000000000004
+protected_land,zoning_dark_corridors,18.099999999999998,low,27.140000000000004
+protected_land,baseline,27.140000000000004,low,27.140000000000004
+rural_community,adaptive_shielded_led,22.137999999999998,low,29.94
+rural_community,curfew_dimming,22.990999999999996,low,29.94
+rural_community,zoning_dark_corridors,20.830000000000002,low,29.94
+rural_community,baseline,29.94,low,29.94
+suburban_community,adaptive_shielded_led,40.34,moderate,57.70000000000001
+suburban_community,curfew_dimming,43.245,moderate,57.70000000000001
+suburban_community,zoning_dark_corridors,40.74,moderate,57.70000000000001
+suburban_community,baseline,57.70000000000001,moderate,57.70000000000001
+urban_community,adaptive_shielded_led,55.40600000000001,moderate,81.14
+urban_community,curfew_dimming,60.33500000000001,moderate,81.14
+urban_community,zoning_dark_corridors,57.388000000000005,moderate,81.14
+urban_community,baseline,81.14,high,81.14

@@ -1,0 +1,109 @@
+## Problem Framing
+
+**Run:** A-mcm-2023-y-001  
+**Case:** 2023 MCM Problem Y, *Understanding Used Sailboat Prices*
+
+Develop a reproducible model of December 2020 advertised sailboat prices using hull type, make, variant, length, geographic region, detailed location, and manufacture year. The analysis should:
+
+1. Predict listing price for comparable boats.
+2. Quantify how age, size, hull type, brand/model, and geography relate to price.
+3. Report predictive uncertainty and identify observations outside the model’s reliable domain.
+
+The supplied excerpt is truncated before the complete requirements. Therefore, any undisclosed subquestions are out of scope. Listing prices must not be interpreted as transaction values or causal valuations.
+
+## Data Audit
+
+The auditable inventory contains `official-data.zip` and `official/2023_MCM_Problem_Y_Data.xlsx`; the excerpt instead names `2023_MCM_Problem_Y_Boats.xlsx`. This naming discrepancy must be documented.
+
+- Problem SHA-256: `2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce`
+- Data SHA-256: `17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba`
+- Monohull sheet: 2,347 rows, 7 columns, 16,426 nonempty cells; reported numeric range 12–1,885,229.
+- Catamaran sheet: 1,146 rows, 7 columns, 8,022 nonempty cells; reported numeric range 4–2,890,000.
+- Fields: make, variant, length, geographic region, country/region/state, USD listing price, manufacture year.
+
+Pending checks include header exclusion, missingness by field, duplicates and relistings, invalid years, nonpositive prices, inconsistent category spelling, price/length extremes, and whether the reported minima belong to plausible fields. Binary data were not inspected.
+
+## Assumptions
+
+- All listings represent the stated December 2020 market snapshot.
+- Prices are already comparable nominal USD amounts.
+- Manufacture year does not exceed 2020; define age as \(2020-\text{year}\).
+- Each row is provisionally treated as a distinct listing, subject to duplicate testing.
+- Missingness is not assumed random until patterns are examined.
+- Predictions apply only to 36–56 ft used sailboats and represented markets.
+- Hull-type effects may interact with age, length, and geography.
+
+## Candidate Models
+
+**Model A: regularized hedonic regression.** Fit log price using nonlinear age and length terms, hull type, geography, make/variant effects, and selected interactions. Elastic-net regularization controls sparse categories and provides an interpretable benchmark.
+
+**Model B: gradient-boosted decision trees.** Use the same admissible predictors, fold-safe categorical processing, missing-value handling, and constrained tuning. This captures nonlinearities and interactions without prespecifying their exact form.
+
+Models will be compared on identical held-out folds. Complexity is accepted only when it improves out-of-sample performance and calibration.
+
+## Baseline
+
+Use the training-fold median log price within hull type, falling back to the global training median when necessary. This establishes whether feature-based models improve meaningfully over simple market segmentation.
+
+## Math Specification
+
+For listing \(i\),
+
+\[
+y_i=\log(1+P_i),\qquad
+A_i=2020-Y_i.
+\]
+
+Model A is
+
+\[
+y_i=\beta_0+f_A(A_i)+f_L(\log L_i)+
+\beta_HH_i+\gamma_{R_i}+u_{\text{make}(i)}
++v_{\text{variant}(i)}
++\delta^\top z_i+\epsilon_i,
+\]
+
+where \(f_A,f_L\) are spline or polynomial terms and \(z_i\) contains preregistered hull-by-age, hull-by-length, and hull-by-region interactions. Estimate coefficients by minimizing
+
+\[
+\sum_i(y_i-\hat y_i)^2+
+\lambda\left[\alpha\|\theta\|_1+(1-\alpha)\|\theta\|_2^2\right].
+\]
+
+Back-transform with a fold-estimated smearing factor. Report RMSLE, log-scale MAE, dollar MAE, and median absolute percentage error. Avoid relying on MAPE alone.
+
+## Executable Experiment Plan
+
+1. Load both sheets, standardize headers, add hull type, and preserve raw row identifiers.
+2. Validate ranges, categories, missingness, duplicates, and units; create an exclusion log.
+3. Construct age and log-length features. Collapse rare categories using training data only.
+4. Create a grouped 20% final test set, grouping by normalized make–variant to reduce near-duplicate leakage and stratifying by hull type where feasible.
+5. On the remaining data, run nested five-fold grouped cross-validation for preprocessing and hyperparameter selection.
+6. Fit baseline and Models A–B; generate fold-level metrics, residual diagnostics, and conformal prediction intervals.
+7. Refit the selected specification on all development data and evaluate once on the untouched test set.
+
+No models or metrics have been executed; all results are **pending**.
+
+## Validation
+
+Check fold variability, observed-versus-predicted calibration, interval coverage, residuals by hull type, price band, age, length, make, and region. Compare random grouped validation with leave-one-region-out validation. All imputers, encoders, outlier thresholds, and target-derived transformations must be fitted inside each training fold.
+
+## Sensitivity and Robustness
+
+Repeat evaluation under alternative duplicate rules, missing-value treatments, rare-category thresholds, pooled versus hull-specific models, and train-only price trimming. Bootstrap by make–variant groups. Examine performance after excluding the highest-price tail and under leave-one-region-out tests.
+
+## Falsification
+
+- Shuffled-target models should collapse to baseline performance.
+- Deliberately leaked target encodings should reveal an implausible validation jump.
+- Predictions should not systematically decrease with length among otherwise comparable boats without supporting evidence.
+- Residual location or make patterns would falsify adequate adjustment.
+- Poor unseen-region or unseen-variant performance would falsify broad generalizability.
+
+## Reviewer Risks
+
+Primary risks are target leakage, overfitting high-cardinality categories, metric mismatch on skewed prices, duplicate listings crossing folds, unsupported causal claims, and extrapolation beyond represented boats. The truncated requirement text prevents confirmation that every official deliverable is covered.
+
+## Reproducibility Manifest
+
+Record run ID, source hashes above, immutable row IDs, exclusion log, feature schema, group assignments, random seed, software and dependency versions, model parameters, fold predictions, metric definitions, generated artifacts, and one end-to-end command. Environment versions, seed, commands, outputs, scores, and runtime remain **pending execution**.

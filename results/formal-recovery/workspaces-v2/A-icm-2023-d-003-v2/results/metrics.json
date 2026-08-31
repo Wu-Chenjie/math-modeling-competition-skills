@@ -1,0 +1,155 @@
+{
+  "status": "pending_data",
+  "case_id": "icm-2023-d",
+  "goal_count": 17,
+  "rows_data_count": 0,
+  "data_audit_count": 0,
+  "figures": [
+    "figures/input_audit_status.svg"
+  ],
+  "pending_stages": [
+    "network construction and edge-weight estimation",
+    "priority ranking and effectiveness evaluation",
+    "10-year scenario projection",
+    "achieved-goal network recomputation",
+    "crisis perturbation analysis",
+    "organization transfer validation",
+    "weight sensitivity and ranking robustness",
+    "falsification against observed outcomes"
+  ],
+  "report": {
+    "problem_framing": {
+      "objective": "Prioritize the 17 UN Sustainable Development Goals using an interdependency network.",
+      "subproblems": [
+        "q1 network and priorities",
+        "q2 achieved-goal counterfactual",
+        "q3 crisis impacts",
+        "q4 transferability"
+      ]
+    },
+    "data_audit": {
+      "case_id": "icm-2023-d",
+      "source_status": "verified",
+      "problem_sha256_declared": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+      "data_sha256_declared": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "input_sha256_observed": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf",
+      "data_files": [],
+      "rows_data_count": 0,
+      "data_audit_count": 0,
+      "goal_count_extracted": 17,
+      "goal_labels": [
+        {
+          "id": "GOAL 1",
+          "name": "No Poverty"
+        },
+        {
+          "id": "GOAL 2",
+          "name": "Zero Hunger"
+        },
+        {
+          "id": "GOAL 3",
+          "name": "Good Health and Well-being"
+        },
+        {
+          "id": "GOAL 4",
+          "name": "Quality Education"
+        },
+        {
+          "id": "GOAL 5",
+          "name": "Gender Equality"
+        },
+        {
+          "id": "GOAL 6",
+          "name": "Clean Water and Sanitation"
+        },
+        {
+          "id": "GOAL 7",
+          "name": "Affordable and Clean Energy"
+        },
+        {
+          "id": "GOAL 8",
+          "name": "Decent Work and Economic Growth"
+        },
+        {
+          "id": "GOAL 9",
+          "name": "Industry, Innovation and Infrastructure"
+        },
+        {
+          "id": "GOAL 10",
+          "name": "Reduced Inequality"
+        },
+        {
+          "id": "GOAL 11",
+          "name": "Sustainable Cities and Communities"
+        },
+        {
+          "id": "GOAL 12",
+          "name": "Responsible Consumption and Production"
+        },
+        {
+          "id": "GOAL 13",
+          "name": "Climate Action"
+        },
+        {
+          "id": "GOAL 14",
+          "name": "Life Below Water"
+        },
+        {
+          "id": "GOAL 15",
+          "name": "Life on Land"
+        },
+        {
+          "id": "GOAL 16",
+          "name": "Peace and Justice Strong Institutions"
+        },
+        {
+          "id": "GOAL 17",
+          "name": "Partnerships to achieve the Goal"
+        }
+      ],
+      "finding": "No data files, rows_data, or data_audit records are supplied; only official problem text is available."
+    },
+    "assumptions": [
+      "No SDG relationship, weight, outcome, or crisis value is inferred without supplied data."
+    ],
+    "candidate_models": [
+      "Data-ready option A: directed weighted SDG network with multi-criteria centrality and constraint-aware prioritization.",
+      "Data-ready option B: robust outranking / Pareto analysis over normalized SDG benefit, cost, and resilience criteria."
+    ],
+    "baseline": "No numerical baseline is computed because no edge or criterion data are present.",
+    "math_specification": "For supplied data, normalize criteria x_ij, estimate adjacency W, score p_i = alpha centrality_i + beta marginal_gain_i - gamma cost_i, and report rank stability over an explicit weight simplex. Parameters cannot be instantiated from this input.",
+    "code_prototype": {
+      "script": "run_model.py",
+      "deterministic_seed": 0
+    },
+    "experiment": "Input audit and SDG-label extraction only.",
+    "validation": "Structural validation passed for JSON parsing and extraction of all 17 SDG labels; predictive validation pending data.",
+    "sensitivity_robustness": "Pending; no criteria or weights available.",
+    "falsification": "Pending; no observed outcomes or external edge list available.",
+    "reviewer_risks": [
+      "Arbitrary weights",
+      "scale mismatch",
+      "unverifiable network edges",
+      "no ranking robustness without data"
+    ],
+    "reproducibility_manifest": {
+      "command": "python run_model.py --input ../benchmarks/case-summaries/icm-2023-d.json --output-dir results",
+      "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "seed": 0,
+      "input_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json",
+      "input_sha256_observed": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf"
+    },
+    "status": "pending_data",
+    "pending_stages": [
+      "network construction and edge-weight estimation",
+      "priority ranking and effectiveness evaluation",
+      "10-year scenario projection",
+      "achieved-goal network recomputation",
+      "crisis perturbation analysis",
+      "organization transfer validation",
+      "weight sensitivity and ranking robustness",
+      "falsification against observed outcomes"
+    ]
+  }
+}

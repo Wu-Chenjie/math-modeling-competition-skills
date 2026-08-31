@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="62" y="28" font-family="Arial" font-size="16" font-weight="bold">Q4 strongest absolute clr correlations</text>
+<line x1="62" y1="368" x2="698" y2="368" stroke="#333"/>
+<rect x="78.96" y="135.08" width="72.08" height="232.92" fill="#fb9a99"/>
+<text x="115.00" y="385" text-anchor="middle" font-family="Arial" font-size="10">氧化铅(P</text>
+<text x="115.00" y="130.08" text-anchor="middle" font-family="Arial" font-size="10">0.875</text>
+<rect x="184.96" y="168.18" width="72.08" height="199.82" fill="#fb9a99"/>
+<text x="221.00" y="385" text-anchor="middle" font-family="Arial" font-size="10">二氧化硅(</text>
+<text x="221.00" y="163.18" text-anchor="middle" font-family="Arial" font-size="10">0.751</text>
+<rect x="290.96" y="184.53" width="72.08" height="183.47" fill="#fb9a99"/>
+<text x="327.00" y="385" text-anchor="middle" font-family="Arial" font-size="10">氧化钾(K</text>
+<text x="327.00" y="179.53" text-anchor="middle" font-family="Arial" font-size="10">0.690</text>
+<rect x="396.96" y="195.27" width="72.08" height="172.73" fill="#fb9a99"/>
+<text x="433.00" y="385" text-anchor="middle" font-family="Arial" font-size="10">氧化钠(N</text>
+<text x="433.00" y="190.27" text-anchor="middle" font-family="Arial" font-size="10">0.649</text>
+<rect x="502.96" y="196.47" width="72.08" height="171.53" fill="#fb9a99"/>
+<text x="539.00" y="385" text-anchor="middle" font-family="Arial" font-size="10">氧化钾(K</text>
+<text x="539.00" y="191.47" text-anchor="middle" font-family="Arial" font-size="10">0.645</text>
+<rect x="608.96" y="205.09" width="72.08" height="162.91" fill="#fb9a99"/>
+<text x="645.00" y="385" text-anchor="middle" font-family="Arial" font-size="10">氧化铝(A</text>
+<text x="645.00" y="200.09" text-anchor="middle" font-family="Arial" font-size="10">0.612</text>
+</svg>

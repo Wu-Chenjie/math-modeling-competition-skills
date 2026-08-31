@@ -1,0 +1,19 @@
+{
+  "status": "model_executable_empirical_application_pending",
+  "code_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\run_light_pollution.py",
+  "metrics_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\B-icm-2023-e-003-v2\\results\\metrics.json",
+  "figures_count": 14,
+  "tests": {
+    "command": "python -m unittest -v test_light_pollution.py",
+    "passed": 3,
+    "failed": 0
+  },
+  "pending_stages": [
+    "empirical location scoring",
+    "empirical calibration and validation",
+    "spatial analysis",
+    "uncertainty analysis",
+    "location-specific intervention selection",
+    "publication-grade PNG audit"
+  ]
+}

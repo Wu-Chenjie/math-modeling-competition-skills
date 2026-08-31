@@ -1,0 +1,172 @@
+{
+  "baseline": {
+    "final_total": 2.0732105750908207,
+    "mean_total": 2.1080481892970786,
+    "drought_fraction": 0.20273972602739726,
+    "final_adaptation": 0.07884999999999984,
+    "min_total": 1.0397165416853724
+  },
+  "species_sweep": [
+    {
+      "n_species": 1,
+      "final_total": 2.1015487158165236,
+      "mean_total": 2.1337333311548754,
+      "drought_fraction": 0.20273972602739726,
+      "final_adaptation": 0.05299999999999995,
+      "min_total": 1.0404571742278836
+    },
+    {
+      "n_species": 2,
+      "final_total": 2.078876315935104,
+      "mean_total": 2.1104596198894265,
+      "drought_fraction": 0.20273972602739726,
+      "final_adaptation": 0.08009999999999982,
+      "min_total": 1.0397165416853724
+    },
+    {
+      "n_species": 3,
+      "final_total": 2.0746893201541767,
+      "mean_total": 2.1086679547528084,
+      "drought_fraction": 0.20273972602739726,
+      "final_adaptation": 0.0792666666666665,
+      "min_total": 1.0397165416853724
+    },
+    {
+      "n_species": 4,
+      "final_total": 2.0732105750908207,
+      "mean_total": 2.1080481892970786,
+      "drought_fraction": 0.20273972602739726,
+      "final_adaptation": 0.07884999999999984,
+      "min_total": 1.0397165416853724
+    },
+    {
+      "n_species": 6,
+      "final_total": 2.0720454189513386,
+      "mean_total": 2.107565790572117,
+      "drought_fraction": 0.20273972602739726,
+      "final_adaptation": 0.07875999999999979,
+      "min_total": 1.0397165416853724
+    },
+    {
+      "n_species": 8,
+      "final_total": 2.071533808569404,
+      "mean_total": 2.1073540797986965,
+      "drought_fraction": 0.20273972602739726,
+      "final_adaptation": 0.07866071428571413,
+      "min_total": 1.0397165416853724
+    },
+    {
+      "n_species": 10,
+      "final_total": 2.0712471038864435,
+      "mean_total": 2.1072354155067825,
+      "drought_fraction": 0.20273972602739726,
+      "final_adaptation": 0.07859333333333318,
+      "min_total": 1.0397165416853724
+    }
+  ],
+  "frequency_sweep": [
+    {
+      "frequency": 0.1,
+      "final_total": 2.103644190648972
+    },
+    {
+      "frequency": 0.25,
+      "final_total": 2.0732105750908207
+    },
+    {
+      "frequency": 0.4,
+      "final_total": 2.065659769840877
+    },
+    {
+      "frequency": 0.55,
+      "final_total": 2.064681942101144
+    }
+  ],
+  "pollution_habitat": [
+    {
+      "pollution": 0.0,
+      "habitat_loss": 0.0,
+      "final_total": 2.0732105750908207
+    },
+    {
+      "pollution": 0.0,
+      "habitat_loss": 0.2,
+      "final_total": 1.6052324593934255
+    },
+    {
+      "pollution": 0.0,
+      "habitat_loss": 0.4,
+      "final_total": 1.1481074436112986
+    },
+    {
+      "pollution": 0.0,
+      "habitat_loss": 0.6,
+      "final_total": 0.7078212711601455
+    },
+    {
+      "pollution": 0.2,
+      "habitat_loss": 0.0,
+      "final_total": 1.7214577542760292
+    },
+    {
+      "pollution": 0.2,
+      "habitat_loss": 0.2,
+      "final_total": 1.2610187435468971
+    },
+    {
+      "pollution": 0.2,
+      "habitat_loss": 0.4,
+      "final_total": 0.8160662773281278
+    },
+    {
+      "pollution": 0.2,
+      "habitat_loss": 0.6,
+      "final_total": 0.39187484001918416
+    },
+    {
+      "pollution": 0.4,
+      "habitat_loss": 0.0,
+      "final_total": 1.3749096494633262
+    },
+    {
+      "pollution": 0.4,
+      "habitat_loss": 0.2,
+      "final_total": 0.9255640486146788
+    },
+    {
+      "pollution": 0.4,
+      "habitat_loss": 0.4,
+      "final_total": 0.49543201973149387
+    },
+    {
+      "pollution": 0.4,
+      "habitat_loss": 0.6,
+      "final_total": 0.11699192855409515
+    },
+    {
+      "pollution": 0.6,
+      "habitat_loss": 0.0,
+      "final_total": 1.0362643007810177
+    },
+    {
+      "pollution": 0.6,
+      "habitat_loss": 0.2,
+      "final_total": 0.6008934666401872
+    },
+    {
+      "pollution": 0.6,
+      "habitat_loss": 0.4,
+      "final_total": 0.1976377196000058
+    },
+    {
+      "pollution": 0.6,
+      "habitat_loss": 0.6,
+      "final_total": 0.008136941090825122
+    }
+  ],
+  "data_status": "No attached rows in benchmark; scenario simulation only.",
+  "pending_stages": [
+    "empirical_data_validation",
+    "citation_verification"
+  ]
+}

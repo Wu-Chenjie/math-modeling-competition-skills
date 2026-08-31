@@ -1,0 +1,88 @@
+{
+  "submission_id": "Submission-019",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 20,
+  "artifacts": [
+    {
+      "path": "figures/process_q3_curfew.svg",
+      "sha256": "16da9b454eba899ad598c0b5baa0b229a5fb9d7da8f5960dcf503b730ef1544c"
+    },
+    {
+      "path": "figures/process_q3_dimming.svg",
+      "sha256": "8eab349dfd25a63cf8a170ed92107a55537f3b07d2d4944356685dfa0c777d63"
+    },
+    {
+      "path": "figures/process_q3_shielding.svg",
+      "sha256": "cf76fff69969a45668d9c6708250079aad96682a2d98f2dca932032be625e1e8"
+    },
+    {
+      "path": "figures/process_q4_tradeoff.svg",
+      "sha256": "a66ffb00c94274a15880708ebe133ec581757f18326f2249d996b31f5efa2d72"
+    },
+    {
+      "path": "figures/raw_q1_component_1.svg",
+      "sha256": "a4e1c6630531f00a3bff59808160b9e532a310846e12a4b48177b1b33c6e0efc"
+    },
+    {
+      "path": "figures/raw_q1_component_2.svg",
+      "sha256": "5f568c26f204adf348accecc6cb75902289747dfeb5aca285ead10301a0649a7"
+    },
+    {
+      "path": "figures/raw_q1_component_3.svg",
+      "sha256": "0389be14221b3d7554a7ce327d92236442378ea6d994bb45a7b0434a94a8f390"
+    },
+    {
+      "path": "figures/raw_q1_component_4.svg",
+      "sha256": "1290a104e963f4e97eb8abe1523a5b3dda4f0e8dcdd0d816ab907c62581292d4"
+    },
+    {
+      "path": "figures/raw_q1_component_5.svg",
+      "sha256": "43dcc4dddcff582ce2c860738803303da8c1ed295d26aa7a3caddd76ebae61e5"
+    },
+    {
+      "path": "figures/raw_q2_audit_status.svg",
+      "sha256": "645db2ac32474522753a6683db2dc200594b533c654869914a258b1b83331f7e"
+    },
+    {
+      "path": "figures/raw_q5_flyer_metric.svg",
+      "sha256": "64eaca5c7fb44f016ecaf9d572c7f90af4b1913b64de54c9b4bdf66eb9ab8679"
+    },
+    {
+      "path": "figures/result_q2_data_audit.svg",
+      "sha256": "134e695168d5cda2ffd4bb7b3d17a72ef8d512c98199dbd05c80819c6a3afded"
+    },
+    {
+      "path": "figures/result_q4_midpoint_ranking.svg",
+      "sha256": "c5975315798d07a1a0b1741d18614662fde9bcaa9382876fad0c3baea84a918d"
+    },
+    {
+      "path": "figures/result_q5_flyer_basis.svg",
+      "sha256": "82297b9366f1ce57088edd2d0d9df0ce97e58640c1d907eda1d9c0f6319f83f2"
+    },
+    {
+      "path": "light_pollution_model.py",
+      "sha256": "b8ea4e0f55d7caba4cc31339ab04df9878a5017ad9126dc5521029e30872febd"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "ae54f955eb87a8674c497afaf416f41f611b60b49492c58863ea9caa27b4edf9"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "c9abf4d2806b1fd1daf1b1b6bf38317c56f305bebb1fa6cfa72acc57e5fb1a96"
+    },
+    {
+      "path": "results/repro_manifest.json",
+      "sha256": "cfb0d261953b44f739ed73f26352fdd4bc633aadf2940dd50e2c9537c69d36e3"
+    },
+    {
+      "path": "run_light_pollution.py",
+      "sha256": "595870a655136c98a00c9dee8a29113ad318a34e43b8afaee44a0c86f976cb55"
+    },
+    {
+      "path": "test_light_pollution.py",
+      "sha256": "76ed14e4b5e6e1d50e85597a35d7e24008c0f2d77159dcced4db198189ffcf68"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

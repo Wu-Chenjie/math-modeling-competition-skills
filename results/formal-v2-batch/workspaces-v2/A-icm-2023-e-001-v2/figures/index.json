@@ -1,0 +1,107 @@
+[
+  {
+    "file": "figures\\raw_q1_input_inventory.svg",
+    "category": "raw",
+    "question": "q1",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\process_q1_metric_response.svg",
+    "category": "process",
+    "question": "q1",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\result_q1_boundary_checks.svg",
+    "category": "result",
+    "question": "q1",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\raw_q2_location_rows.svg",
+    "category": "raw",
+    "question": "q2",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\process_q2_scoring_gate.svg",
+    "category": "process",
+    "question": "q2",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\result_q2_application_status.svg",
+    "category": "result",
+    "question": "q2",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\raw_q3_strategy_requirement.svg",
+    "category": "raw",
+    "question": "q3",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\process_q3_uniform_reduction.svg",
+    "category": "process",
+    "question": "q3",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\result_q3_calibration_status.svg",
+    "category": "result",
+    "question": "q3",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\raw_q4_selection_requirement.svg",
+    "category": "raw",
+    "question": "q4",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\process_q4_ranking_inputs.svg",
+    "category": "process",
+    "question": "q4",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\result_q4_selection_status.svg",
+    "category": "result",
+    "question": "q4",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\raw_q5_flyer_requirement.svg",
+    "category": "raw",
+    "question": "q5",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\process_q5_evidence_readiness.svg",
+    "category": "process",
+    "question": "q5",
+    "format": "svg",
+    "empirical_location_data": false
+  },
+  {
+    "file": "figures\\result_q5_flyer_status.svg",
+    "category": "result",
+    "question": "q5",
+    "format": "svg",
+    "empirical_location_data": false
+  }
+]

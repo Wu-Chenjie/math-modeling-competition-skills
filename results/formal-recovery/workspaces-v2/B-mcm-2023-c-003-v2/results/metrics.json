@@ -1,0 +1,158 @@
+{
+  "case_id": "mcm-2023-c",
+  "rows": 359,
+  "data_sha256": "3a6237b515ff2d07de7a07d92b2104e03a040a938783b1508e75f7700626ec01",
+  "data_audit": {
+    "columns": 13,
+    "valid_rows": 359,
+    "missing_rows": 0,
+    "binary_attachments_not_opened": true
+  },
+  "problem_framing": {
+    "q1": "model reported-result counts and interval for 2023-03-01; test word effects on hard mode",
+    "q2": "predict 7-part score distribution with uncertainty; example EERIE",
+    "q3": "classify word difficulty and assess accuracy"
+  },
+  "assumptions": [
+    "Twitter reporters are a changing sample; percentages are rounded",
+    "log-linear trend extrapolates 60 days beyond 2022-12-31",
+    "word-only effects use observable spelling features; no external lexicon"
+  ],
+  "candidate_models": {
+    "q1": [
+      "log-linear trend with empirical residual interval",
+      "seasonal/robust trend as sensitivity (not fitted due to summary-only rows)"
+    ],
+    "q2": [
+      "category-wise OLS on mean tries with spelling adjustment",
+      "Dirichlet-multinomial as future extension requiring integer counts"
+    ],
+    "q3": [
+      "nearest-centroid classifier on spelling features",
+      "logistic classifier as alternative baseline"
+    ]
+  },
+  "math_specification": {
+    "count": "ln(Y_t)=a+b t+e_t; PI=exp(a+b t* + Q_.025(e), a+b t* + Q_.975(e))",
+    "distribution": "p_k=clip(alpha_k+beta_k m_EERIE,0.01); normalize p to 100%",
+    "difficulty": "class=argmin_c ||x_spelling-centroid_c||_2"
+  },
+  "baseline": {
+    "mean_distribution_percent": [
+      0.47075208913649025,
+      5.844011142061281,
+      22.72701949860724,
+      32.92757660167131,
+      23.637883008356546,
+      11.559888579387186,
+      2.8050139275766015
+    ],
+    "mean_hard_mode_percent": 7.763431416133596
+  },
+  "q1": {
+    "model": "log(reported)=a+b*t",
+    "a": 12.422956785390703,
+    "b": -0.007872069685294261,
+    "forecast_2023_03_01": 9250.48865739578,
+    "prediction_interval_95": [
+      6208.1086616023795,
+      14956.746273258072
+    ],
+    "residual_sd": 0.29781606842560093
+  },
+  "q1_hard_mode_feature_correlations": {
+    "length": 0.008825166681988737,
+    "unique_letters": -0.007163346138343052,
+    "vowels": -0.027399280443980302,
+    "repeated_count": 0.008816829524430945,
+    "repeated_types": 0.005220608975856892,
+    "early_vowels": -0.02122261385191877
+  },
+  "q2": {
+    "model": "category-wise OLS on historical mean tries, feature adjustment for EERIE",
+    "eerie_features": [
+      5,
+      3,
+      4,
+      2,
+      1,
+      2
+    ],
+    "eerie_distribution_percent": [
+      0.3561289822027996,
+      4.680191741948,
+      20.03693296419707,
+      32.07447905369599,
+      25.284496129730595,
+      13.69198134049115,
+      3.875789787734396
+    ],
+    "uncertainty_sd_percent_points": [
+      0.7189786402502122,
+      2.619833012365173,
+      2.973231024058652,
+      4.867351893297568,
+      3.8888985427640037,
+      2.281095274348694,
+      2.9337183893516627
+    ],
+    "confidence": "moderate; extrapolation and compositional rounding dominate"
+  },
+  "q3": {
+    "model": "nearest-centroid classifier on spelling features",
+    "threshold_mean_tries": 4.17,
+    "eerie_class": "hard",
+    "five_fold_accuracy": [
+      0.5833333333333334,
+      0.6805555555555556,
+      0.7222222222222222,
+      0.5138888888888888,
+      0.7323943661971831
+    ],
+    "mean_accuracy": 0.6464788732394366
+  },
+  "code_prototype": {
+    "language": "Python 3 stdlib",
+    "entrypoint": "wordle_model.py",
+    "outputs": [
+      "results/metrics.json",
+      "results/reproducibility_manifest.json",
+      "figures/*.svg"
+    ]
+  },
+  "experiment": {
+    "chronological_folds": 5,
+    "forecast_horizon_days": 60
+  },
+  "interesting_features": {
+    "reported_min": 2569.0,
+    "reported_max": 361908.0,
+    "mean_try_min": 3.1,
+    "mean_try_max": 5.99
+  },
+  "validation": {
+    "tests_passed": [
+      "row count=359",
+      "all percentages finite",
+      "all reported and hard counts positive",
+      "predicted distribution sums to 100",
+      "9 SVG figures generated"
+    ]
+  },
+  "sensitivity_robustness": "Use residual quantiles for count interval; category predictions clipped and renormalized; correlations are descriptive, not causal.",
+  "falsification": "Refute trend if held-out late-period residuals show systematic drift; refute word effects if permutation correlations match observed.",
+  "reviewer_risks": [
+    "Temporal extrapolation beyond one year",
+    "selection bias in Twitter reporters",
+    "rounded percentages and one anomalous nonstandard word",
+    "difficulty labels threshold-dependent"
+  ],
+  "reproducibility_manifest": {
+    "code": "wordle_model.py",
+    "input": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-c.json",
+    "seed": 0,
+    "command": "python wordle_model.py",
+    "runtime": "Python stdlib",
+    "figures": 9
+  }
+}

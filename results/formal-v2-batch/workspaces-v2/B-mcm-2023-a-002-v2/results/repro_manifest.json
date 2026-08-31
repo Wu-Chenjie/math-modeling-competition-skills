@@ -1,0 +1,18 @@
+{
+  "command": "python drought_model.py",
+  "seed": 202302,
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "input_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "figures": [
+    "process_q1_trajectories.svg",
+    "process_q2_variability.svg",
+    "process_q3_heatmap.svg",
+    "raw_q1_species_gradient.svg",
+    "raw_q2_drought_frequency.svg",
+    "raw_q3_environment_factors.svg",
+    "result_q1_biodiversity.svg",
+    "result_q2_frequency.svg",
+    "result_q3_mitigation.svg"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "submission_id": "Submission-024",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 13,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_fold_rmse.svg",
+      "sha256": "820e5dd4db09721a475efa17b5a82af6ba841fe7d30ad6e98c6f613535e7f270"
+    },
+    {
+      "path": "figures/process_q1_log_length.svg",
+      "sha256": "1c46ec208de74dc2c205a93a8d928e675a2265bd63ac852979b25f4a268b2a86"
+    },
+    {
+      "path": "figures/process_q1_residuals.svg",
+      "sha256": "f98b8e6efd7ab99b700fbc5c4fd7ce9063061e4da957b9943c28485637b5c465"
+    },
+    {
+      "path": "figures/raw_q1_age_price.svg",
+      "sha256": "3c6dbc6e8d853e502573ae9f9c587e3365fe906872a3adc12d28f0aeaa0ebd23"
+    },
+    {
+      "path": "figures/raw_q1_length_price.svg",
+      "sha256": "4ebc0e28d90fcaddac30fe643bbcff2976d5c88bfacbee58be70cd66f8a7ae11"
+    },
+    {
+      "path": "figures/raw_q1_region_price.svg",
+      "sha256": "d83a2fe76e7e829477675bad74d8116be94c8320fe9673396d6008c46a652826"
+    },
+    {
+      "path": "figures/result_q1_hull_fit.svg",
+      "sha256": "ee7f5078caa708353b86b4c9900dedf8b6e4e76617eb6cdb457f5ef859a64036"
+    },
+    {
+      "path": "figures/result_q1_pred_observed.svg",
+      "sha256": "42ddd1386726ab648394fc7139b39641b7eb5116eab29383cc41d126fc82fe27"
+    },
+    {
+      "path": "figures/result_q1_region_medians.svg",
+      "sha256": "733b14c3db21487bffd53567a8f07c02cd1bb5e904cd29606738e826711fd584"
+    },
+    {
+      "path": "prototype_model.py",
+      "sha256": "98c36b866774f324cb074fe063d8efbf4b1ce7332410aa49355aa15d78eeada2"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "37c4b512e9f54b5dde9c502ae75c7c3a1394c5f3cd84b43bfdf91f82fd8fea41"
+    },
+    {
+      "path": "results/predictions.csv",
+      "sha256": "a9e790a66275439224d9f44b3bd8f3e8f1fbf9e204e5a72cfc947d65ac1575aa"
+    },
+    {
+      "path": "results/repro_manifest.json",
+      "sha256": "bed285f6147536d00ab59a5d3535c24c49aab2c14d4413d111e345155361d1aa"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

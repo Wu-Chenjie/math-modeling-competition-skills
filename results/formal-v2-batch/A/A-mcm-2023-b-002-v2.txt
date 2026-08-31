@@ -1,0 +1,22 @@
+{
+  "status": "completed_with_pending_stages",
+  "code_path": "model_run.py",
+  "metrics_path": "results/metrics.json",
+  "figures_count": 9,
+  "tests": {
+    "execution": "passed",
+    "syntax_compilation": "passed",
+    "enumeration": "passed",
+    "bounded_indices": "passed",
+    "feasibility": "passed",
+    "falsification_recomputation": "passed",
+    "structured_report": "results/modeling_report.json"
+  },
+  "pending_stages": [
+    "empirical_calibration",
+    "external_validation",
+    "long_term_forecast_calibration",
+    "official_rule_verification",
+    "independent_stage_gates"
+  ]
+}

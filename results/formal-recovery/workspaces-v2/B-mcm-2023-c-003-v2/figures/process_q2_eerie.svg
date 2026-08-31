@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420"><rect width="100%" height="100%" fill="white"/><text x="380.0" y="25" text-anchor="middle" font-family="Arial" font-size="16">EERIE predicted distribution</text><text x="15" y="210.0" transform="rotate(-90 15 210.0)" font-family="Arial" font-size="12">percent</text>
+<line x1="60" y1="45" x2="60" y2="350" stroke="black"/><line x1="60" y1="350" x2="740" y2="350" stroke="black"/>
+<rect x="73.6" y="346.6" width="69.9" height="3.4" fill="#70ad47"/><text x="108.6" y="368" text-anchor="middle" font-family="Arial" font-size="10">1</text>
+<rect x="170.7" y="305.5" width="69.9" height="44.5" fill="#70ad47"/><text x="205.7" y="368" text-anchor="middle" font-family="Arial" font-size="10">2</text>
+<rect x="267.9" y="159.5" width="69.9" height="190.5" fill="#70ad47"/><text x="302.9" y="368" text-anchor="middle" font-family="Arial" font-size="10">3</text>
+<rect x="365.0" y="45.0" width="69.9" height="305.0" fill="#70ad47"/><text x="400.0" y="368" text-anchor="middle" font-family="Arial" font-size="10">4</text>
+<rect x="462.2" y="109.6" width="69.9" height="240.4" fill="#70ad47"/><text x="497.1" y="368" text-anchor="middle" font-family="Arial" font-size="10">5</text>
+<rect x="559.3" y="219.8" width="69.9" height="130.2" fill="#70ad47"/><text x="594.3" y="368" text-anchor="middle" font-family="Arial" font-size="10">6</text>
+<rect x="656.5" y="313.1" width="69.9" height="36.9" fill="#70ad47"/><text x="691.4" y="368" text-anchor="middle" font-family="Arial" font-size="10">X</text>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-024",
+  "judge_id": "C",
+  "scores": {
+    "problem_understanding": 4,
+    "model_reasonableness": 14,
+    "mathematical_rigor": 7,
+    "data_handling": 6,
+    "code_and_solving": 8,
+    "model_validation": 9,
+    "innovation": 4,
+    "result_interpretation": 3,
+    "paper_quality": 3,
+    "reproducibility": 1
+  },
+  "fatal_flags": [],
+  "notes": "Visible files: 14 total, code=1, tests=0, figures=9; metrics=parsed; reproducibility=absent. Metrics declare pending stages; conclusions should be treated as incomplete. Missing or unusable evidence: modeling_report.md, reproducibility_manifest.json, test script."
+}

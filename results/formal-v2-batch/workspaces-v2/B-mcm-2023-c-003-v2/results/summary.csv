@@ -1,0 +1,11 @@
+metric,value
+n_rows,359
+forecast_point,9413.130023425307
+forecast_pi_low,5969.075804983683
+forecast_pi_high,15432.913360536792
+hard_mode_mean,0.07763431416133597
+difficulty_median,4.17
+eerie_expected_tries,4.562997453363455
+eerie_class,hard
+cv_forecast_mae_mean,7505.53770129783
+cv_hard_accuracy_mean,1.0

@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-017",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 8,
+    "model_reasonableness": 10,
+    "mathematical_rigor": 5,
+    "data_handling": 2,
+    "code_and_solving": 8,
+    "model_validation": 4,
+    "innovation": 3,
+    "result_interpretation": 4,
+    "paper_quality": 6,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "Light-pollution model includes formula, intervention scenarios and sensitivity, while empirical rows are unavailable."
+}

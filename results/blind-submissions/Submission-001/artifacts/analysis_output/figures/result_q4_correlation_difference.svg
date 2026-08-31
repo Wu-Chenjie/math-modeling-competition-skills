@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="32" text-anchor="middle" font-family="Arial" font-size="20">Largest between-type correlation differences</text>
+<text x="22" y="240.0" transform="rotate(-90 22 240.0)" text-anchor="middle" font-family="Arial" font-size="13">absolute rho difference</text>
+<line x1="90" y1="65" x2="90" y2="415" stroke="#222"/>
+<line x1="90" y1="415" x2="865" y2="415" stroke="#222"/>
+<rect x="105.5" y="100.0" width="65.9" height="315.0" fill="#277da1"/>
+<text x="138.4" y="94.0" text-anchor="middle" font-family="Arial" font-size="11">1.16</text>
+<text x="138.4" y="433" transform="rotate(35 138.4 433)" text-anchor="start" font-family="Arial" font-size="10">SiO2/SrO</text>
+<rect x="202.4" y="145.9" width="65.9" height="269.1" fill="#277da1"/>
+<text x="235.3" y="139.9" text-anchor="middle" font-family="Arial" font-size="11">0.994</text>
+<text x="235.3" y="433" transform="rotate(35 235.3 433)" text-anchor="start" font-family="Arial" font-size="10">BaO/SO2</text>
+<rect x="299.2" y="160.0" width="65.9" height="255.0" fill="#277da1"/>
+<text x="332.2" y="154.0" text-anchor="middle" font-family="Arial" font-size="11">0.942</text>
+<text x="332.2" y="433" transform="rotate(35 332.2 433)" text-anchor="start" font-family="Arial" font-size="10">SrO/SnO2</text>
+<rect x="396.1" y="168.9" width="65.9" height="246.1" fill="#277da1"/>
+<text x="429.1" y="162.9" text-anchor="middle" font-family="Arial" font-size="11">0.909</text>
+<text x="429.1" y="433" transform="rotate(35 429.1 433)" text-anchor="start" font-family="Arial" font-size="10">CaO/SrO</text>
+<rect x="493.0" y="172.0" width="65.9" height="243.0" fill="#277da1"/>
+<text x="525.9" y="166.0" text-anchor="middle" font-family="Arial" font-size="11">0.898</text>
+<text x="525.9" y="433" transform="rotate(35 525.9 433)" text-anchor="start" font-family="Arial" font-size="10">PbO/SO2</text>
+<rect x="589.9" y="200.6" width="65.9" height="214.4" fill="#277da1"/>
+<text x="622.8" y="194.6" text-anchor="middle" font-family="Arial" font-size="11">0.792</text>
+<text x="622.8" y="433" transform="rotate(35 622.8 433)" text-anchor="start" font-family="Arial" font-size="10">Fe2O3/CuO</text>
+<rect x="686.8" y="201.6" width="65.9" height="213.4" fill="#277da1"/>
+<text x="719.7" y="195.6" text-anchor="middle" font-family="Arial" font-size="11">0.788</text>
+<text x="719.7" y="433" transform="rotate(35 719.7 433)" text-anchor="start" font-family="Arial" font-size="10">SiO2/K2O</text>
+<rect x="783.6" y="205.4" width="65.9" height="209.6" fill="#277da1"/>
+<text x="816.6" y="199.4" text-anchor="middle" font-family="Arial" font-size="11">0.774</text>
+<text x="816.6" y="433" transform="rotate(35 816.6 433)" text-anchor="start" font-family="Arial" font-size="10">Fe2O3/SnO2</text>
+</svg>

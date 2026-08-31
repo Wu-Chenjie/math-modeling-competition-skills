@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-019",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 8,
+    "model_reasonableness": 10,
+    "mathematical_rigor": 6,
+    "data_handling": 1,
+    "code_and_solving": 7,
+    "model_validation": 3,
+    "innovation": 4,
+    "result_interpretation": 4,
+    "paper_quality": 7,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "Auditable weighted risk formula and intervention assumptions; empirical location scores/calibration explicitly null."
+}

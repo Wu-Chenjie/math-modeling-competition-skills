@@ -1,0 +1,114 @@
+# Modeling Report: MCM 2023 Y — Understanding Used Sailboat Prices
+
+## Problem Framing
+
+The case concerns approximately 3,500 sailboats advertised in December 2020 across Europe, the Caribbean, and the USA. Records cover monohulled sailboats and catamarans, with make, variant, length, geographic region, country/region/state, listing price, and manufacture year.
+
+The supplied excerpt ends before the numbered requirements (“For a given make, va…”). Therefore, the exact q1–qN deliverables and evaluation criteria are pending confirmation. The defensible scope from the summary is:
+
+1. Explain price variation using available attributes.
+2. Build a price-prediction model.
+3. Compare effects across hull types, makes, ages, lengths, and regions, with uncertainty.
+
+No causal interpretation should be claimed: listing price is an asking price from one cross-sectional month.
+
+## Data Audit
+
+Input inventory:
+
+- `official-data.zip`
+- `official/2023_MCM_Problem_Y_Data.xlsx`
+- SHA-256 of problem source: `2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce`
+- SHA-256 of data: `17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba`
+
+Workbook sheets:
+
+| Sheet | Rows | Columns | Fields |
+|---|---:|---:|---|
+| Monohulled Sailboats | 2,347 | 7 | Make, Variant, Length, Geographic Region, Country/Region/State, Listing Price, Year |
+| Catamarans | 1,146 | 7 | Same seven fields |
+
+Reported aggregate numeric ranges are 12–1,885,229 for monohulls and 4–2,890,000 for catamarans; these ranges combine heterogeneous numeric columns and are not field-specific bounds. Missingness, duplicate records, invalid years, zero/negative prices, unit consistency, and category spelling must be profiled when execution is authorized. Attachments were not opened, so those checks remain pending.
+
+## Assumptions
+
+- Analysis date is December 2020; age is `2020 − manufacture year`.
+- Prices are positive USD asking prices; use `log(price)` for modeling.
+- Make, variant, hull type, and region are categorical predictors.
+- Observations are approximately independent, but repeated make/variant entries require grouped validation.
+- Missing values are informative only if demonstrated; otherwise impute within training folds and add missingness indicators.
+- Results describe association and prediction, not depreciation causality or realized transaction value.
+
+## Candidate Models
+
+Two model systems are sufficient:
+
+1. **Regularized hedonic regression**  
+   One-hot encode categorical variables; represent length and age with restricted cubic splines or low-degree polynomials; include hull-type interactions. Ridge or elastic-net regularization controls high-cardinality make/variant effects. This is interpretable and supports coefficient contrasts.
+
+2. **Tree-ensemble nonlinear model**  
+   Histogram gradient boosting or random forest on engineered numeric and one-hot features, with hyperparameters selected in nested cross-validation. It captures nonlinear length-age-region interactions and serves as a predictive comparator. Feature importance or permutation importance is descriptive only.
+
+## Baseline
+
+Use two transparent baselines:
+
+- Global median listing price.
+- Median price within hull type (monohull versus catamaran), computed from training data only.
+
+Report baseline performance before comparing advanced models. No numerical score is available yet.
+
+## Mathematical Specification
+
+For boat \(i\), let \(P_i\) be listing price, \(L_i\) length, \(A_i=2020-Y_i\) age, \(H_i\) hull type, \(R_i\) region, and \(M_i,V_i\) make and variant.
+
+\[
+y_i=\log(P_i)
+=\beta_0+f_L(L_i)+f_A(A_i)+\gamma_{H_i}+\delta_{R_i}
++\alpha_{M_i}+\eta_{V_i}
++\theta(H_i\!\times\!L_i)+\varepsilon_i .
+\]
+
+Fit coefficients by minimizing
+
+\[
+\sum_i (y_i-\hat y_i)^2+
+\lambda\left[\rho\|\beta\|_1+(1-\rho)\|\beta\|_2^2\right].
+\]
+
+For prediction, transform back as \(\hat P_i=\exp(\hat y_i)\), optionally applying a smearing correction estimated from training residuals. Construct 90% prediction intervals by split-conformal calibration on held-out residuals.
+
+## Executable Experiment Plan
+
+Pending attachment access and implementation:
+
+1. Read both sheets; standardize headers and categorical labels.
+2. Validate price, length, and year ranges; quantify missingness and duplicates.
+3. Derive age, log-length, hull-type indicators, and make/variant frequency flags.
+4. Split data by make-variant groups, stratified by hull type where feasible.
+5. Run repeated nested five-fold cross-validation for both models and baselines.
+6. Tune regularization and boosting complexity only within training folds.
+7. Evaluate log-MAE, USD-MAE, RMSE, and median absolute percentage error; emphasize MAE because percentage metrics can distort low-priced boats.
+8. Produce calibration plots, residual diagnostics, subgroup errors, partial-effect plots, and prediction intervals.
+9. Freeze parameters, rerun once on the prescribed split, and record outputs.
+
+All computations and numerical conclusions are unexecuted and therefore pending.
+
+## Validation and Robustness
+
+Use repeated grouped cross-validation and a final untouched test set. Compare errors by hull type, region, price quantile, and age band. Bootstrap confidence intervals for key effects. Repeat analyses with alternative age forms, price winsorization rules, exclusion of extremely sparse makes/variants, and region reweighting. Check whether conclusions persist under random rather than grouped splits; a large gap would indicate dependence leakage.
+
+## Falsification Tests
+
+- Permute prices relative to predictors; predictive performance should fall to baseline.
+- Replace manufacture year with a randomized placebo; age effects should disappear.
+- Compare residual distributions across hull types and regions.
+- Test whether a model using only make/variant outperforms physically meaningful variables; if so, investigate memorization and sparse-category leakage.
+
+## Reviewer Risks
+
+Primary risks are target leakage through high-cardinality variant labels, overfitting from sparse makes, nonrepresentative advertising selection, confounding of hull type with length and geography, extrapolation beyond observed ages/lengths, and metric mismatch between log-scale training and USD-scale claims. Exact competition requirements remain a material documentation risk because the supplied excerpt is incomplete.
+
+## Reproducibility Manifest
+
+Record case ID `mcm-2023-y`, both supplied SHA-256 hashes, workbook sheet names, preprocessing rules, random seed (TBD), Python and package versions (TBD), fold-generation rule, model hyperparameters, metric definitions, and one unique rerun command (TBD). No execution results, scores, citations, or fitted parameters are asserted here.

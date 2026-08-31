@@ -18,6 +18,9 @@ from evaluate import (
     sha256_tree,
     build_run_id,
 )
+from run_baseline import build_run_plan, decode_process_output, validate_vendor_root, process_command_result, _prompt, build_execution_env, WALL_CLOCK_BUDGET_SECONDS
+from prepare_summaries import build_summary
+from score_artifacts import inspect_run, resolve_record_path, build_report_from_roots
 
 
 class EvaluateContractTests(unittest.TestCase):
@@ -108,6 +111,95 @@ class EvaluateContractTests(unittest.TestCase):
         self.assertEqual(summary["mean"], 70)
         self.assertEqual(summary["median"], 70)
         self.assertAlmostEqual(summary["failure_rate"], 1 / 3)
+
+    def test_build_run_plan_has_42_unique_preregistered_runs(self):
+        plan = build_run_plan(ROOT / "benchmarks" / "cases")
+        self.assertEqual(len(plan), 42)
+        self.assertEqual(len({item["run_id"] for item in plan}), 42)
+        self.assertEqual({item["group"] for item in plan}, {"A", "B"})
+        self.assertTrue(all(item["index"] in (1, 2, 3) for item in plan))
+        self.assertFalse(any(item["group"] == "C" for item in plan))
+
+    def test_build_run_plan_binds_verified_case_hashes_and_skill_refs(self):
+        plan = build_run_plan(ROOT / "benchmarks" / "cases")
+        item = next(item for item in plan if item["case_id"] == "cumcm-2022-c" and item["group"] == "B")
+        self.assertEqual(item["statement_sha256"], "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7")
+        self.assertEqual(item["domain_skill_ref"], "5a85fe34ca1d075872e95556b122c8979984d322")
+        self.assertEqual(item["engineering_skill_ref"], "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76")
+        self.assertTrue(item["summary_path"].endswith("benchmarks/case-summaries/cumcm-2022-c.json"))
+
+    def test_process_output_decodes_utf8_without_windows_locale_failure(self):
+        self.assertEqual(decode_process_output("中文".encode("utf-8")), "中文")
+        self.assertIn("replacement", decode_process_output(b"replacement:\xff"))
+
+    def test_vendor_root_requires_full_domain_and_selected_engineering_skills(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            vendor_root = Path(temp_dir)
+            (vendor_root / "xiao").mkdir()
+            (vendor_root / "xiao" / "SKILL.md").write_text("entry", encoding="utf-8")
+            missing = validate_vendor_root(vendor_root)
+            self.assertIn("xiao/使用指南.md", missing)
+            self.assertIn("xiao/references/roles/建模手/SKILL.md", missing)
+            self.assertIn("matt/skills/engineering/research/SKILL.md", missing)
+
+    def test_process_command_result_preserves_exit_and_timeout_status(self):
+        self.assertEqual(process_command_result(0, False), "completed")
+        self.assertEqual(process_command_result(1, False), "failed")
+        self.assertEqual(process_command_result(None, True), "timeout")
+
+    def test_runner_timeout_matches_preregistered_120_minute_budget(self):
+        self.assertEqual(WALL_CLOCK_BUDGET_SECONDS, 120 * 60)
+
+    def test_execution_env_pins_workspace_python_dependencies(self):
+        env = build_execution_env()
+        self.assertIn("codex-runtimes", env["PATH"])
+        self.assertIn("codex-runtimes", env["PYTHONPATH"])
+
+    def test_artifact_gate_never_assigns_human_score(self):
+        result = inspect_run(ROOT / "results" / "run-records-v2c" / "A-cumcm-2022-c-001-v2.json")
+        self.assertIn(result["checks"]["status"], {"scoreable_artifacts_pending_blind_review", "unscored_missing_artifacts"})
+        self.assertIn("human_dimensions_pending_review", result["checks"])
+
+    def test_artifact_gate_resolves_mojibake_absolute_paths_by_results_suffix(self):
+        record = ROOT / "results" / "run-records-recovery" / "A-icm-2023-d-001-v2-recovery.json"
+        resolved = resolve_record_path("C:/Users/invalid-user/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-icm-2023-d-001-v2-recovery")
+        self.assertTrue(resolved.is_dir())
+        self.assertEqual(inspect_run(record)["checks"]["scoreable_machine_evidence"], True)
+
+    def test_recovery_record_supersedes_old_timeout_for_same_run_id(self):
+        old = ROOT / "results" / "run-records-v2-batch" / "A-cumcm-2022-c-003-v2.json"
+        recovery = ROOT / "results" / "run-records-recovery" / "A-cumcm-2022-c-003-v2-recovery.json"
+        self.assertEqual(json.loads(old.read_text(encoding="utf-8"))["status"], "timeout")
+        self.assertEqual(json.loads(recovery.read_text(encoding="utf-8"))["status"], "completed")
+        report = build_report_from_roots([ROOT / "results" / "run-records-v2-batch", ROOT / "results" / "run-records-recovery"])
+        selected = next(r for r in report["runs"] if r["run_id"] == "A-cumcm-2022-c-003-v2")
+        self.assertEqual(selected["checks"]["process_completed"], True)
+
+    def test_summary_contains_same_auditable_fields_for_every_verified_case(self):
+        summary = build_summary(ROOT / "benchmarks" / "cases" / "mcm-2023-y")
+        self.assertEqual(summary["case_id"], "mcm-2023-y")
+        self.assertEqual(summary["source_status"], "verified")
+        self.assertIn("problem_sha256", summary)
+        self.assertIn("data_files", summary)
+        self.assertIn("data_audit", summary)
+        self.assertIsInstance(summary["data_audit"], list)
+        self.assertGreater(len(summary["problem_text"]), 900)
+        self.assertTrue(summary["data_audit"][0]["sheets"][0]["rows_data"])
+
+    def test_baseline_prompt_uses_deterministic_summary_instead_of_binary_attachments(self):
+        item = next(
+            item
+            for item in build_run_plan(ROOT / "benchmarks" / "cases")
+            if item["run_id"] == "A-cumcm-2022-c-001-v2"
+        )
+        prompt = _prompt(item, ROOT / "baseline-vendors" / "pinned")
+        self.assertIn("benchmarks/case-summaries/cumcm-2022-c.json", prompt.replace("\\", "/"))
+        self.assertIn("Do not open or parse binary attachments", prompt)
+        self.assertNotIn("Inspect ", prompt)
+        self.assertIn("Do not narrate tool use", prompt)
+        self.assertIn("JSON receipt", prompt)
+        self.assertIn("create executable code", prompt)
+        self.assertIn("run the code", prompt)
 
 
 if __name__ == "__main__":

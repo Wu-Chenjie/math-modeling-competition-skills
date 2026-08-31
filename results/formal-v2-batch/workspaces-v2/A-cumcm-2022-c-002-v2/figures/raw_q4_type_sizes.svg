@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="62" y="28" font-family="Arial" font-size="16" font-weight="bold">Q4 artifact counts by type</text>
+<line x1="62" y1="368" x2="698" y2="368" stroke="#333"/>
+<rect x="112.88" y="264.52" width="216.24" height="103.48" fill="#6a3d9a"/>
+<text x="221.00" y="385" text-anchor="middle" font-family="Arial" font-size="10">高钾</text>
+<text x="221.00" y="259.52" text-anchor="middle" font-family="Arial" font-size="10">14.000</text>
+<rect x="430.88" y="101.91" width="216.24" height="266.09" fill="#6a3d9a"/>
+<text x="539.00" y="385" text-anchor="middle" font-family="Arial" font-size="10">铅钡</text>
+<text x="539.00" y="96.91" text-anchor="middle" font-family="Arial" font-size="10">36.000</text>
+</svg>

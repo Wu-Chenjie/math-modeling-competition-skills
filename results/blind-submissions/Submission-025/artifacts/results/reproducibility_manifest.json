@@ -1,0 +1,11 @@
+{
+  "case_summary": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-y.json",
+  "case_sha256": "2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce",
+  "data_sha256": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba",
+  "seed": 20230830,
+  "python": "3.12.13",
+  "numpy": "2.3.5",
+  "pillow": "12.3.0",
+  "command": "python run_model.py",
+  "code_sha256": "2b56f6a52178a619a2424e6a4d34042f59f7e9aa8f26517ad196b6214d86640c"
+}

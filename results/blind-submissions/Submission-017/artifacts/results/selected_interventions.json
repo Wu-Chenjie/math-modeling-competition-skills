@@ -1,0 +1,16 @@
+{
+  "suburban_community": {
+    "location": "suburban_community",
+    "scenario": "adaptive_shielded_led",
+    "score": 40.34,
+    "band": "moderate",
+    "baseline_score": 57.70000000000001
+  },
+  "urban_community": {
+    "location": "urban_community",
+    "scenario": "adaptive_shielded_led",
+    "score": 55.40600000000001,
+    "band": "moderate",
+    "baseline_score": 81.14
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420"><rect width="100%" height="100%" fill="white"/><text x="380.0" y="25" text-anchor="middle" font-family="Arial" font-size="16">Chronological-fold accuracy</text><text x="15" y="210.0" transform="rotate(-90 15 210.0)" font-family="Arial" font-size="12">accuracy</text>
+<line x1="60" y1="45" x2="60" y2="350" stroke="black"/><line x1="60" y1="350" x2="740" y2="350" stroke="black"/>
+<rect x="79.0" y="107.1" width="97.9" height="242.9" fill="#4472c4"/><text x="128.0" y="368" text-anchor="middle" font-family="Arial" font-size="10">F1</text>
+<rect x="215.0" y="66.6" width="97.9" height="283.4" fill="#4472c4"/><text x="264.0" y="368" text-anchor="middle" font-family="Arial" font-size="10">F2</text>
+<rect x="351.0" y="49.2" width="97.9" height="300.8" fill="#4472c4"/><text x="400.0" y="368" text-anchor="middle" font-family="Arial" font-size="10">F3</text>
+<rect x="487.0" y="136.0" width="97.9" height="214.0" fill="#4472c4"/><text x="536.0" y="368" text-anchor="middle" font-family="Arial" font-size="10">F4</text>
+<rect x="623.0" y="45.0" width="97.9" height="305.0" fill="#4472c4"/><text x="672.0" y="368" text-anchor="middle" font-family="Arial" font-size="10">F5</text>
+</svg>

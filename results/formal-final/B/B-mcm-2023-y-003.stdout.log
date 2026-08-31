@@ -1,0 +1,91 @@
+## Problem Framing
+
+Develop an interpretable, validated model for December 2020 advertised sailboat prices using hull type, make, variant, length, geography, and manufacture year. Separate market description from prediction: estimate depreciation, size and location effects while predicting prices for observed-market and previously unseen designs.
+
+The supplied excerpt ends mid-sentence, so any requirements beyond this scope are unavailable and must not be inferred.
+
+## Data Audit
+
+- Source: verified MCM 2023 Problem Y summary.
+- Inventory: `official-data.zip` containing `official/2023_MCM_Problem_Y_Data.xlsx`.
+- Workbook name conflicts with the excerpt’s `2023_MCM_Problem_Y_Boats.xlsx`; verify before execution.
+- Monohull sheet: 2,347 rows, 7 columns, 16,426/16,429 cells populated, implying three empty cells.
+- Catamaran sheet: 1,146 rows, 7 columns, all 8,022 cells populated.
+- Fields: make, variant, length (ft), geographic region, country/region/state, listing price (USD), manufacture year.
+- Reported numeric ranges are pooled across numeric columns: monohull 12–1,885,229; catamaran 4–2,890,000. Values below the stated 36–56 ft scope require field-level verification rather than automatic deletion.
+- Pending: record counts excluding headers, data types, missing-cell locations, duplicate listings, invalid years/prices, category spelling, distributions, and outliers.
+
+## Assumptions
+
+1. Listing price is a positive asking price, not a transaction price or market value.
+2. Listing date is December 2020; boat age is \(A_i=2020-\text{Year}_i\).
+3. Observations represent listings, not a probability sample of all sailboats.
+4. Currency is already normalized to USD.
+5. Monohulls and catamarans have structurally different price functions.
+6. Cleaning thresholds will be learned or justified from fields, never from test outcomes.
+
+## Candidate Models
+
+**Primary: hierarchical generalized additive model.** Model log-price with smooth length and age effects, hull-specific interactions, geographic effects, and regularized make/variant effects. This supports interpretation and partial pooling of sparse categories.
+
+**Challenger: categorical gradient boosting.** Use CatBoost-style ordered categorical encoding with age, length, hull type, region, country, make, and variant. It can capture nonlinearities but requires strict fold-local preprocessing and stronger overfitting controls.
+
+## Baseline
+
+Within each training fold, predict the median price for the corresponding hull type; use the overall training median only when a hull stratum is unavailable. Also report a simple log-linear age–length–hull regression as a transparent secondary benchmark.
+
+## Math Specification
+
+Let \(P_i>0\), \(Y_i=\log(1+P_i)\), hull \(H_i\), length \(L_i\), age \(A_i\), region \(R_i\), make \(M_i\), and variant \(V_i\).
+
+\[
+Y_i=\beta_0+f_{H_i}(L_i)+g_{H_i}(A_i)+\gamma_{H_i}
++\rho_{R_i}+u_{M_i}+v_{V_i(M_i)}+\epsilon_i
+\]
+
+Smooth functions use penalized splines; categorical effects use shrinkage penalties. Fit by minimizing
+
+\[
+\sum_{i\in train}\ell(Y_i,\hat Y_i)+
+\lambda_fJ(f,g)+\lambda_c\left(\|u\|_2^2+\|v\|_2^2\right),
+\]
+
+with Huber or squared loss selected only inside nested validation. Convert predictions to dollars using a training-fold smearing correction, not naive exponentiation. Produce distribution-free prediction intervals from held-out conformal residuals.
+
+## Executable Experiment Plan
+
+Status: **pending; no computation performed**.
+
+1. Load the two sheets, normalize headers, add hull type and immutable row IDs.
+2. Audit types, missingness, duplicates, ranges, category aliases, and price/age distributions.
+3. Quarantine impossible values; compare results with and without plausible extremes.
+4. Create age and prespecified hull-by-age and hull-by-length interactions.
+5. Run nested cross-validation: outer grouped folds by make–variant for unseen-design performance; repeated stratified folds by hull and region for ordinary listing performance.
+6. Fit baseline and both candidates with all imputers, encoders, rare-category pooling, and tuning inside training folds.
+7. Save fold assignments, predictions, residuals, coefficients/importance, intervals, and audit decisions.
+
+## Validation
+
+Primary metrics: dollar MAE and median absolute error. Secondary metrics: RMSLE, \(R^2\) on log-price, 80%/95% interval coverage, and interval width. Report metrics overall and by hull type, region, length band, age band, and seen versus unseen make–variant. Never select a model using test folds.
+
+## Sensitivity and Robustness
+
+Vary duplicate policy, rare-category threshold, spline complexity, loss function, extreme-price treatment, geographic granularity, and grouped versus ordinary splits. Bootstrap outer-fold differences between models. Check residual drift across price, age, and length. Treat rankings as unstable if model preference changes materially across reasonable specifications.
+
+## Falsification
+
+Reject or qualify the model if it fails the hull-median baseline, intervals undercover, residuals retain strong age/length structure, performance collapses on unseen designs, geographic effects reverse under minor cleaning changes, or predicted price decreases implausibly with length across broad supported ranges without data evidence.
+
+## Reviewer Risks
+
+Asking-price selection bias; omitted condition, equipment, seller, and exact listing-date variables; sparse variants; duplicate advertisements; geographic confounding; extrapolation outside 36–56 ft or sampled regions; target leakage through data-driven cleaning; metric mismatch from optimizing log error while claiming dollar accuracy; and overinterpreting associations as causal effects.
+
+## Reproducibility Manifest
+
+- Run ID: `B-mcm-2023-y-003`
+- Problem SHA-256: `2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce`
+- Data SHA-256: `17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba`
+- Planned seed: `2023003`
+- Code, dependency versions, fold hashes, commands, artifacts, runtime, metrics, and gate results: **pending**
+- Repository modifications: none
+- Execution and independent model/program gates: **not performed**

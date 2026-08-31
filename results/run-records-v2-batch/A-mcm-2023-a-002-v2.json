@@ -1,0 +1,28 @@
+{
+  "group": "A",
+  "case_id": "mcm-2023-a",
+  "index": 2,
+  "run_id": "A-mcm-2023-a-002-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/mcm-2023-a",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-a.json",
+  "statement_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "timeout",
+  "started_at": "2026-08-30T08:15:16.791351+00:00",
+  "ended_at": "2026-08-30T08:25:16.813476+00:00",
+  "exit_code": null,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/A/A-mcm-2023-a-002-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-mcm-2023-a-002-v2",
+  "artifacts": [
+    "run_model.py"
+  ],
+  "reported_tokens": null,
+  "stdout_log": "results/formal-v2-batch/A/A-mcm-2023-a-002-v2.stdout.log",
+  "stderr_log": "results/formal-v2-batch/A/A-mcm-2023-a-002-v2.stderr.log",
+  "stdout_tail": "",
+  "stderr_tail": " \"falsification\": [\n+            \"The complementarity mechanism is weakened if mixed-trait communities do not outperform same-trait communities under matched drought paths.\",\n+            \"The adaptation mechanism is contradicted internally if A leaves [0,1] or fails to rise during drought.\",\n+            \"External falsification requires longitudinal biomass, species composition, precipitation, habitat, and pollution observations.\"\n+        ],\n+        \"reviewer_risks\": [\n+            \"Uncalibrated parameters make outputs illustrative rather than predictive.\",\n+            \"Annual aggregation omits seasonality, seed banks, migration, and spatial structure.\",\n+            \"Extinction threshold and benefit criterion are decision definitions, not ecological constants.\",\n+            \"Explicit Euler recurrence may bias highly nonlinear within-year dynamics; annual update stability is checked only over the declared grid.\",\n+            \"No citations beyond the supplied official problem text were introduced.\"\n+        ],\n+        \"reproducibility_manifest\": manifest,\n+        \"pending_stages\": [\"empirical calibration\", \"external validation\", \"citation-backed ecological parameterization\"]\n+    }\n+    with (RESULTS / \"modeling_report.json\").open(\"w\", encoding=\"utf-8\") as fh: json.dump(report, fh, indent=2)\n+    with (RESULTS / \"reproducibility_manifest.json\").open(\"w\", encoding=\"utf-8\") as fh: json.dump(manifest, fh, indent=2)\n+    print(json.dumps({\"checks\": metrics[\"checks\"], \"benefit_threshold_species\": metrics[\"benefit_threshold_species\"], \"figure_count\": metrics[\"figure_count\"]}))\n+\n+\n+if __name__ == \"__main__\":\n+    main()\n\ncodex\nThe failure is environmental and reproducible: the active Python has no `matplotlib`, so the program never reached the model. I’m removing that optional dependency at the architecture boundary and emitting standards-compliant SVG figures with the Python standard library; empirical calibration and raster export will remain explicitly pending.\n"
+}

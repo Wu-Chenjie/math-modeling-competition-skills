@@ -1,0 +1,13 @@
+{
+  "python": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "stdlib_only": true,
+  "seed": 20230217,
+  "command": "python run_model.py --input \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\icm-2023-d.json\" --output .",
+  "outputs": [
+    "results/metrics.json",
+    "figures/raw_q1_input_coverage.svg",
+    "figures/process_q2_data_gate.svg",
+    "figures/result_q2_uniform_baseline.svg"
+  ]
+}

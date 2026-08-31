@@ -1,0 +1,67 @@
+{
+  "status": "pending_data",
+  "case_id": "mcm-2023-b",
+  "input": {
+    "path": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-b.json",
+    "file_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090",
+    "declared_problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+    "declared_data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rows_data_count": 0,
+    "data_audit_count": 0
+  },
+  "model_contract": {
+    "q1_policy_design": {
+      "models": [
+        "capacity-constrained multi-objective optimization"
+      ],
+      "decision_variables": "x[z,p] in {0,1} for zone z and policy p",
+      "objectives": [
+        "maximize wildlife protection",
+        "maximize resident livelihood benefit",
+        "minimize animal-human conflict"
+      ],
+      "constraints": [
+        "one policy package per zone",
+        "tourism and enforcement capacity limits",
+        "budget and area feasibility"
+      ],
+      "ranking": "Pareto front, then epsilon-constraint tie break; no arbitrary weights"
+    },
+    "q2_evaluation_method": {
+      "models": [
+        "animal-human interaction network + economic impact accounting"
+      ],
+      "network": "bipartite nodes (zones, stakeholder/animal groups), weighted edges are observed interactions",
+      "economic_accounting": "direct tourism, opportunity-cost, mitigation-cost and spillover terms",
+      "comparison": "scenario simulation with Pareto dominance and constraint violations reported separately"
+    },
+    "q3_long_term": {
+      "models": [
+        "scenario-based robust dynamic projection"
+      ],
+      "state": "wildlife, habitat, resident welfare, conflict and tourism state vectors by year",
+      "scenarios": [
+        "conservation-forward",
+        "balanced",
+        "tourism-intensive"
+      ],
+      "robustness": "evaluate worst-case regret and probability intervals after calibration; pending without time series"
+    }
+  },
+  "numeric_results": null,
+  "pending_stages": [
+    "baseline_calibration",
+    "q1_multi_objective_optimization",
+    "q2_network_economic_calibration",
+    "q3_long_term_projection",
+    "sensitivity_robustness"
+  ],
+  "figures_count": 9,
+  "tests": {
+    "schema_validation": "PASS",
+    "data_gate": "PASS"
+  },
+  "generated_at_utc": "2026-08-30T08:48:24.937913+00:00",
+  "python": "3.12.13",
+  "command": "python run_model.py"
+}

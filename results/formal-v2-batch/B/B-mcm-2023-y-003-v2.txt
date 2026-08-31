@@ -1,0 +1,1 @@
+{"status":"completed_with_pending","code_path":"run_model.py","metrics_path":"results/metrics.json","figures_count":9,"tests":{"command":"python -m unittest -v test_model.py","passed":3},"pending_stages":["q3_hong_kong_effect"]}

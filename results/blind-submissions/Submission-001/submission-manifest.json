@@ -1,0 +1,68 @@
+{
+  "submission_id": "Submission-001",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 15,
+  "artifacts": [
+    {
+      "path": "analysis_output/figures/process_q1_shift_magnitude.svg",
+      "sha256": "b9ef62942367aeadcc4e264f7b122f18870a8b470c63b4f43747a5ef230751d5"
+    },
+    {
+      "path": "analysis_output/figures/process_q2_classifier_cv.svg",
+      "sha256": "817de14ab654dd2b20797c1952c4a32b883b67bc87fe952c634ce61d91a790fc"
+    },
+    {
+      "path": "analysis_output/figures/process_q3_prediction_stability.svg",
+      "sha256": "af83acfb218b8fe5ba05f5fb13db47dc9c1aa8616b2c48a64fc3689eb99a60d7"
+    },
+    {
+      "path": "analysis_output/figures/raw_q1_weathering_association.svg",
+      "sha256": "5170b48b165e7509a5a12b57b5682db1bf450d3aa832e87ecf8f56afb6ff17b9"
+    },
+    {
+      "path": "analysis_output/figures/raw_q2_valid_samples.svg",
+      "sha256": "049bc1c18121bba4bdd503036fc1bfafdde8014c5f3fa76c7bb793062eae1054"
+    },
+    {
+      "path": "analysis_output/figures/raw_q3_unknown_totals.svg",
+      "sha256": "e67af984a5707bd217afa40256eeecfaf6b6682fc8a9c3baec899d48b5a00268"
+    },
+    {
+      "path": "analysis_output/figures/result_q1_reconstructed_samples.svg",
+      "sha256": "99ec34eb4c1c1a55ea54e807ef08e06144edcd5ef86f70ea4fe399399ed6a37b"
+    },
+    {
+      "path": "analysis_output/figures/result_q2_subtype_silhouette.svg",
+      "sha256": "2f72d7852c362eb68bd55f8c28f36ecb67ff1d8822246f81b9de1e8d5db6512b"
+    },
+    {
+      "path": "analysis_output/figures/result_q3_predictions.svg",
+      "sha256": "16b15b1f9d65af939755c5d3abab4329230b78f36cc4ce0c0bea7f28145e4af4"
+    },
+    {
+      "path": "analysis_output/figures/result_q4_correlation_difference.svg",
+      "sha256": "0d07e0b05b64f1aabe1c8c0e5c1a130a96123080fa1d30076f1ae1484510b3a6"
+    },
+    {
+      "path": "analysis_output/metrics.json",
+      "sha256": "353f3e8f032eb9501bd67a658845434727344fdc9ece2c7d89a868a9834e0d54"
+    },
+    {
+      "path": "analysis_output/modeling_report.md",
+      "sha256": "de5cf4e0fbb74f5edc0fe11e17a2da2e0d24fdc8b41a6426ae6d0cc399d20678"
+    },
+    {
+      "path": "analysis_output/reproducibility_manifest.json",
+      "sha256": "8df48202ad07382e4fc20184e5e7eb12a614f84d915f21bdc134d23e106dc878"
+    },
+    {
+      "path": "run_analysis.py",
+      "sha256": "0f4afa778d51c10c2f031be8df193db6ed2b3f20c9c71daca51f9f66662cd091"
+    },
+    {
+      "path": "test_run_analysis.py",
+      "sha256": "b4e302bea21c4f11a59cc3c47e6b327f6bf07211468c17948afdb309e1a68340"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

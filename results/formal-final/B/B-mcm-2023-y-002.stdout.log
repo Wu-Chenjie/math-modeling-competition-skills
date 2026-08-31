@@ -1,0 +1,108 @@
+## Problem Framing
+
+**Run:** B-mcm-2023-y-002  
+**Case:** 2023 MCM Problem Y, “Understanding Used Sailboat Prices”
+
+Develop a reproducible model of December 2020 advertised sailboat prices using hull type, make, variant, length, geography, and manufacture year. The defensible outputs are:
+
+- Out-of-sample price predictions with uncertainty.
+- Estimated depreciation, size, geography, and hull-type effects.
+- Diagnostics identifying listings or market segments poorly explained by the model.
+
+The supplied excerpt ends mid-sentence, so any more specific contest subquestions are **pending** rather than inferred.
+
+## Data Audit
+
+The workbook inventory contains two sheets and seven stated fields:
+
+| Sheet | Audited rows | Columns | Nonempty cells |
+|---|---:|---:|---:|
+| Monohulled Sailboats | 2,347 | 7 | 16,426 |
+| Catamarans | 1,146 | 7 | 8,022 |
+
+Fields: Make, Variant, Length (ft), Geographic Region, Country/Region/State, Listing Price (USD), and Year.
+
+The monohull rectangle has three fewer nonempty cells than `2347×7`; their fields and whether the row count includes the header are unverified. The audit’s pooled numeric minima are 12 and 4, despite the stated 36–56 ft scope. These values require field-level checking and must not automatically be interpreted as lengths. Duplicate listings, invalid years, nonpositive prices, inconsistent category spelling, and extreme prices remain **pending audit**.
+
+## Assumptions
+
+1. Listing price is modeled, not realized transaction value.
+2. Prices are already comparable USD values from December 2020; inflation adjustment is unnecessary within this cross-section.
+3. Missing values mean unknown, not zero.
+4. Boat age is \(A_i=2020-Y_i\), admitted only when \(0\le A_i\le2020\).
+5. Rows are independent listings unless duplicate detection shows otherwise.
+6. Make and variant effects are partially pooled or regularized because rare categories cannot support unrestricted coefficients.
+7. Conclusions apply to the sampled 36–56 ft advertised market, not all sailboats.
+
+## Candidate Models
+
+**Model 1: Regularized hedonic regression.** Model log price using age and length splines, hull type, region, make, variant, and selected interactions. Elastic-net regularization or partial pooling handles sparse brands. This is the primary interpretable model.
+
+**Model 2: Gradient-boosted trees.** Fit nonlinearities and interactions without prespecifying their shapes. Categorical encoding must be learned within each training fold. Use this as a predictive challenger and comparison for misspecification.
+
+No additional model families are proposed.
+
+## Baseline
+
+Within each training fold, predict the median price separately for monohulls and catamarans. A second diagnostic baseline predicts the training-fold median within hull type and coarse length band when that band has adequate support. Validation data must never determine medians or bands.
+
+## Math Specification
+
+For listing \(i\),
+
+\[
+z_i=\log(1+P_i)
+=\beta_0+f_A(A_i)+f_L(L_i)+\beta_HH_i+
+\gamma_{R_i}+u_{M_i}+v_{V_i}
++\eta_1H_i f_L(L_i)+\eta_2H_i f_A(A_i)+\epsilon_i .
+\]
+
+Here \(P_i\) is listing price, \(f_A,f_L\) are penalized splines, \(H_i\) is hull type, and \(R_i,M_i,V_i\) represent geography, make, and variant. Predictions return to dollars through \(\hat P_i=\exp(\hat z_i)-1\); retransformation bias should be estimated from training residuals only.
+
+Primary metrics:
+
+\[
+MAE=\frac1n\sum|P_i-\hat P_i|,\qquad
+RMSLE=\sqrt{\frac1n\sum[\log(1+P_i)-\log(1+\hat P_i)]^2}.
+\]
+
+Report both because dollar-only and relative-error-only scoring answer different questions.
+
+## Executable Experiment Plan
+
+Status: **all execution pending**.
+
+1. Load the two sheets, add `hull_type`, normalize column names, and retain immutable row identifiers.
+2. Produce field-level missingness, type, range, category-frequency, and duplicate reports.
+3. Quarantine invalid price, length, or year records under explicit rules; retain an exclusion ledger.
+4. Engineer age, log length, rare-category indicators, and hull interactions.
+5. Run nested five-fold cross-validation. Group the primary split by normalized make–variant to test generalization beyond repeated models; use stratified random folds as a secondary interpolation test.
+6. Fit all preprocessing exclusively inside each fold; tune both models in inner folds.
+7. Compare against the baseline using fold-wise MAE, RMSLE, median absolute percentage error, and bootstrap confidence intervals.
+8. Refit the selected specification on all admissible data only after model selection.
+
+## Validation and Robustness
+
+Inspect residuals by hull type, price decile, age, length, region, make frequency, and fold. Test alternative rare-category thresholds, spline complexity, exclusion rules, and grouped versus random splits. Repeat cross-validation with planned seeds `2023002`, `2023003`, and `2023004`. Assess coefficient stability and prediction intervals; no stability result is currently claimed.
+
+## Falsification
+
+- Shuffle prices: neither candidate should materially beat the median baseline.
+- Replace predictors with row order: predictive value signals leakage or ordering artifacts.
+- Remove make and variant: a dramatic collapse confined to random folds indicates memorization.
+- Train on one hull type and test on the other: poor transfer would falsify a shared depreciation structure.
+- Check impossible extrapolations, negative depreciation claims, and systematically biased extreme-price predictions.
+
+## Reviewer Risks
+
+Principal risks are target leakage from global encodings, overfitting rare makes or variants, metric mismatch, treating asking prices as market values, unexplained record exclusions, and overstating effects as causal. Exact contest deliverables cannot be verified from the excerpt supplied.
+
+## Reproducibility Manifest
+
+- Case/run: `mcm-2023-y` / `B-mcm-2023-y-002`
+- Problem SHA-256: `2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce`
+- Data SHA-256: `17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba`
+- Inventory: `official-data.zip`; `official/2023_MCM_Problem_Y_Data.xlsx`
+- ZIP member: `2023_MCM_Problem_Y_Data.xlsx`
+- Source status: verified
+- Code, environment, dependencies, exclusions, fitted parameters, scores, and artifacts: **pending; not executed**

@@ -1,0 +1,54 @@
+{
+  "status": "partial_pending_data",
+  "case_id": "icm-2023-e",
+  "data_status": "no empirical rows; no attachments",
+  "data_audit": {
+    "rows": 0,
+    "audit_entries": 0,
+    "data_files": [],
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "metric": {
+    "formula": "R=0.30*radiance+0.25*exposure+0.25*ecology+0.20*safety",
+    "range": [
+      0,
+      1
+    ],
+    "weights": {
+      "radiance": 0.3,
+      "exposure": 0.25,
+      "ecology": 0.25,
+      "safety": 0.2
+    }
+  },
+  "location_classes": [
+    "protected_land",
+    "rural_community",
+    "suburban_community",
+    "urban_community"
+  ],
+  "interventions": [
+    "full-cutoff shielding",
+    "adaptive dimming/curfew",
+    "warm-spectrum LEDs"
+  ],
+  "computed_location_scores": null,
+  "pending_stages": [
+    "empirical_calibration",
+    "spatial_analysis",
+    "intervention_ranking",
+    "uncertainty_quantification",
+    "flyer_generation"
+  ],
+  "figures_count": 12,
+  "tests": {
+    "weighted_score_known_vector": true,
+    "zero_vector": true
+  },
+  "input_sha256": "9c136273749e640d6926cadeccad4d16dc55904d7d3a178602931f69fd4e2557",
+  "runtime": {
+    "python": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "utc": "2026-08-30T10:20:34.109516+00:00"
+  }
+}

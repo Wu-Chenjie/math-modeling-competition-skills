@@ -1,0 +1,393 @@
+{
+  "case_id": "mcm-2023-a",
+  "data_basis": {
+    "data_files": 0,
+    "empirical_rows": 0,
+    "parameters": "hypothetical dimensionless scenario assumptions; not fitted",
+    "problem_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002"
+  },
+  "falsification_identical_traits": [
+    {
+      "cv_last_30": 0.057153,
+      "mean_last_30": 73.23473,
+      "min_last_30": 61.378429,
+      "persistence_fraction": 1.0,
+      "richness": 1,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.057153,
+      "mean_last_30": 85.156663,
+      "min_last_30": 71.370266,
+      "persistence_fraction": 1.0,
+      "richness": 2,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.057153,
+      "mean_last_30": 90.042701,
+      "min_last_30": 75.465282,
+      "persistence_fraction": 1.0,
+      "richness": 3,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.057153,
+      "mean_last_30": 92.70219,
+      "min_last_30": 77.694214,
+      "persistence_fraction": 1.0,
+      "richness": 4,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.057153,
+      "mean_last_30": 94.374653,
+      "min_last_30": 79.095914,
+      "persistence_fraction": 1.0,
+      "richness": 5,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.057153,
+      "mean_last_30": 95.523561,
+      "min_last_30": 80.058821,
+      "persistence_fraction": 1.0,
+      "richness": 6,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.057153,
+      "mean_last_30": 96.361487,
+      "min_last_30": 80.761091,
+      "persistence_fraction": 1.0,
+      "richness": 7,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.057153,
+      "mean_last_30": 96.999643,
+      "min_last_30": 81.295933,
+      "persistence_fraction": 1.0,
+      "richness": 8,
+      "scenario": "reference"
+    }
+  ],
+  "figure_files": [
+    "process_reference_trajectories.svg",
+    "process_future_drought_trajectories.svg",
+    "result_richness_mean_last_30.svg",
+    "result_richness_min_last_30.svg",
+    "result_richness_cv_last_30.svg",
+    "result_trait_falsification.svg"
+  ],
+  "minimum_beneficial_richness_5pct": {
+    "future_drought": 2,
+    "future_plus_stress": 2,
+    "low_drought": 2,
+    "reference": 2
+  },
+  "pending_stages": [
+    "empirical_calibration",
+    "out_of_sample_validation",
+    "real_world_species recommendation",
+    "independent_subagent_quality_gate"
+  ],
+  "runtime_seconds": 0.043553,
+  "scenario_parameters": [
+    {
+      "drought_frequency": 0.1,
+      "drought_variability": 0.15,
+      "habitat_loss": 0.0,
+      "name": "low_drought",
+      "pollution": 0.0
+    },
+    {
+      "drought_frequency": 0.25,
+      "drought_variability": 0.25,
+      "habitat_loss": 0.0,
+      "name": "reference",
+      "pollution": 0.0
+    },
+    {
+      "drought_frequency": 0.45,
+      "drought_variability": 0.35,
+      "habitat_loss": 0.0,
+      "name": "future_drought",
+      "pollution": 0.0
+    },
+    {
+      "drought_frequency": 0.45,
+      "drought_variability": 0.35,
+      "habitat_loss": 0.2,
+      "name": "future_plus_stress",
+      "pollution": 0.1
+    }
+  ],
+  "seed": 2023003,
+  "sensitivity_percent_change_reference_s4": {
+    "drought_frequency_minus_20pct": 0.38549,
+    "drought_frequency_plus_20pct": -1.064483,
+    "variability_minus_20pct": 0.054808,
+    "variability_plus_20pct": -0.04532
+  },
+  "status": "completed_with_pending_empirical_stages",
+  "summary": [
+    {
+      "cv_last_30": 0.039216,
+      "mean_last_30": 74.835727,
+      "min_last_30": 65.456769,
+      "persistence_fraction": 1.0,
+      "richness": 1,
+      "scenario": "low_drought"
+    },
+    {
+      "cv_last_30": 0.035093,
+      "mean_last_30": 87.205135,
+      "min_last_30": 77.691677,
+      "persistence_fraction": 1.0,
+      "richness": 2,
+      "scenario": "low_drought"
+    },
+    {
+      "cv_last_30": 0.035173,
+      "mean_last_30": 92.224061,
+      "min_last_30": 82.094748,
+      "persistence_fraction": 1.0,
+      "richness": 3,
+      "scenario": "low_drought"
+    },
+    {
+      "cv_last_30": 0.035027,
+      "mean_last_30": 94.962253,
+      "min_last_30": 84.564736,
+      "persistence_fraction": 1.0,
+      "richness": 4,
+      "scenario": "low_drought"
+    },
+    {
+      "cv_last_30": 0.03484,
+      "mean_last_30": 96.689711,
+      "min_last_30": 86.157279,
+      "persistence_fraction": 1.0,
+      "richness": 5,
+      "scenario": "low_drought"
+    },
+    {
+      "cv_last_30": 0.034649,
+      "mean_last_30": 97.88101,
+      "min_last_30": 87.278289,
+      "persistence_fraction": 1.0,
+      "richness": 6,
+      "scenario": "low_drought"
+    },
+    {
+      "cv_last_30": 0.034465,
+      "mean_last_30": 98.75369,
+      "min_last_30": 88.115663,
+      "persistence_fraction": 1.0,
+      "richness": 7,
+      "scenario": "low_drought"
+    },
+    {
+      "cv_last_30": 0.034292,
+      "mean_last_30": 99.421499,
+      "min_last_30": 88.768332,
+      "persistence_fraction": 1.0,
+      "richness": 8,
+      "scenario": "low_drought"
+    },
+    {
+      "cv_last_30": 0.057153,
+      "mean_last_30": 73.23473,
+      "min_last_30": 61.378429,
+      "persistence_fraction": 1.0,
+      "richness": 1,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.049201,
+      "mean_last_30": 85.549096,
+      "min_last_30": 74.06718,
+      "persistence_fraction": 1.0,
+      "richness": 2,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.049218,
+      "mean_last_30": 90.4897,
+      "min_last_30": 78.142722,
+      "persistence_fraction": 1.0,
+      "richness": 3,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.048754,
+      "mean_last_30": 93.191112,
+      "min_last_30": 80.523394,
+      "persistence_fraction": 1.0,
+      "richness": 4,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.048164,
+      "mean_last_30": 94.900879,
+      "min_last_30": 82.11901,
+      "persistence_fraction": 1.0,
+      "richness": 5,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.047541,
+      "mean_last_30": 96.085736,
+      "min_last_30": 83.288157,
+      "persistence_fraction": 1.0,
+      "richness": 6,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.04693,
+      "mean_last_30": 96.959505,
+      "min_last_30": 84.196029,
+      "persistence_fraction": 1.0,
+      "richness": 7,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.046349,
+      "mean_last_30": 97.633701,
+      "min_last_30": 84.929437,
+      "persistence_fraction": 1.0,
+      "richness": 8,
+      "scenario": "reference"
+    },
+    {
+      "cv_last_30": 0.069827,
+      "mean_last_30": 71.487256,
+      "min_last_30": 61.3633,
+      "persistence_fraction": 1.0,
+      "richness": 1,
+      "scenario": "future_drought"
+    },
+    {
+      "cv_last_30": 0.056355,
+      "mean_last_30": 83.752232,
+      "min_last_30": 74.147489,
+      "persistence_fraction": 1.0,
+      "richness": 2,
+      "scenario": "future_drought"
+    },
+    {
+      "cv_last_30": 0.05561,
+      "mean_last_30": 88.54946,
+      "min_last_30": 78.39821,
+      "persistence_fraction": 1.0,
+      "richness": 3,
+      "scenario": "future_drought"
+    },
+    {
+      "cv_last_30": 0.054104,
+      "mean_last_30": 91.183493,
+      "min_last_30": 80.958045,
+      "persistence_fraction": 1.0,
+      "richness": 4,
+      "scenario": "future_drought"
+    },
+    {
+      "cv_last_30": 0.052634,
+      "mean_last_30": 92.871893,
+      "min_last_30": 82.707918,
+      "persistence_fraction": 1.0,
+      "richness": 5,
+      "scenario": "future_drought"
+    },
+    {
+      "cv_last_30": 0.051319,
+      "mean_last_30": 94.062219,
+      "min_last_30": 84.002982,
+      "persistence_fraction": 1.0,
+      "richness": 6,
+      "scenario": "future_drought"
+    },
+    {
+      "cv_last_30": 0.050167,
+      "mean_last_30": 94.956498,
+      "min_last_30": 85.012749,
+      "persistence_fraction": 1.0,
+      "richness": 7,
+      "scenario": "future_drought"
+    },
+    {
+      "cv_last_30": 0.049163,
+      "mean_last_30": 95.659265,
+      "min_last_30": 85.829203,
+      "persistence_fraction": 1.0,
+      "richness": 8,
+      "scenario": "future_drought"
+    },
+    {
+      "cv_last_30": 0.106517,
+      "mean_last_30": 44.733831,
+      "min_last_30": 35.430231,
+      "persistence_fraction": 1.0,
+      "richness": 1,
+      "scenario": "future_plus_stress"
+    },
+    {
+      "cv_last_30": 0.072079,
+      "mean_last_30": 52.795662,
+      "min_last_30": 45.593508,
+      "persistence_fraction": 1.0,
+      "richness": 2,
+      "scenario": "future_plus_stress"
+    },
+    {
+      "cv_last_30": 0.071354,
+      "mean_last_30": 55.728485,
+      "min_last_30": 48.171724,
+      "persistence_fraction": 1.0,
+      "richness": 3,
+      "scenario": "future_plus_stress"
+    },
+    {
+      "cv_last_30": 0.069993,
+      "mean_last_30": 57.472643,
+      "min_last_30": 49.810168,
+      "persistence_fraction": 1.0,
+      "richness": 4,
+      "scenario": "future_plus_stress"
+    },
+    {
+      "cv_last_30": 0.068431,
+      "mean_last_30": 58.622534,
+      "min_last_30": 50.964291,
+      "persistence_fraction": 0.8,
+      "richness": 5,
+      "scenario": "future_plus_stress"
+    },
+    {
+      "cv_last_30": 0.066976,
+      "mean_last_30": 59.452392,
+      "min_last_30": 51.837041,
+      "persistence_fraction": 0.833333,
+      "richness": 6,
+      "scenario": "future_plus_stress"
+    },
+    {
+      "cv_last_30": 0.065695,
+      "mean_last_30": 60.088151,
+      "min_last_30": 52.526975,
+      "persistence_fraction": 0.714286,
+      "richness": 7,
+      "scenario": "future_plus_stress"
+    },
+    {
+      "cv_last_30": 0.064579,
+      "mean_last_30": 60.595543,
+      "min_last_30": 53.090267,
+      "persistence_fraction": 0.75,
+      "richness": 8,
+      "scenario": "future_plus_stress"
+    }
+  ],
+  "years": 120
+}

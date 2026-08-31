@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="62" y="28" font-family="Arial" font-size="16" font-weight="bold">Q3 distance margins</text>
+<line x1="62" y1="368" x2="698" y2="368" stroke="#333"/>
+<rect x="74.72" y="217.88" width="54.06" height="150.12" fill="#a6761d"/>
+<text x="101.75" y="385" text-anchor="middle" font-family="Arial" font-size="10">A1</text>
+<text x="101.75" y="212.88" text-anchor="middle" font-family="Arial" font-size="10">6.573</text>
+<rect x="154.22" y="288.69" width="54.06" height="79.31" fill="#a6761d"/>
+<text x="181.25" y="385" text-anchor="middle" font-family="Arial" font-size="10">A2</text>
+<text x="181.25" y="283.69" text-anchor="middle" font-family="Arial" font-size="10">3.472</text>
+<rect x="233.72" y="256.97" width="54.06" height="111.03" fill="#a6761d"/>
+<text x="260.75" y="385" text-anchor="middle" font-family="Arial" font-size="10">A3</text>
+<text x="260.75" y="251.97" text-anchor="middle" font-family="Arial" font-size="10">4.861</text>
+<rect x="313.22" y="255.97" width="54.06" height="112.03" fill="#a6761d"/>
+<text x="340.25" y="385" text-anchor="middle" font-family="Arial" font-size="10">A4</text>
+<text x="340.25" y="250.97" text-anchor="middle" font-family="Arial" font-size="10">4.905</text>
+<rect x="392.72" y="292.01" width="54.06" height="75.99" fill="#a6761d"/>
+<text x="419.75" y="385" text-anchor="middle" font-family="Arial" font-size="10">A5</text>
+<text x="419.75" y="287.01" text-anchor="middle" font-family="Arial" font-size="10">3.327</text>
+<rect x="472.22" y="101.91" width="54.06" height="266.09" fill="#a6761d"/>
+<text x="499.25" y="385" text-anchor="middle" font-family="Arial" font-size="10">A6</text>
+<text x="499.25" y="96.91" text-anchor="middle" font-family="Arial" font-size="10">11.650</text>
+<rect x="551.72" y="154.96" width="54.06" height="213.04" fill="#a6761d"/>
+<text x="578.75" y="385" text-anchor="middle" font-family="Arial" font-size="10">A7</text>
+<text x="578.75" y="149.96" text-anchor="middle" font-family="Arial" font-size="10">9.328</text>
+<rect x="631.22" y="220.37" width="54.06" height="147.63" fill="#a6761d"/>
+<text x="658.25" y="385" text-anchor="middle" font-family="Arial" font-size="10">A8</text>
+<text x="658.25" y="215.37" text-anchor="middle" font-family="Arial" font-size="10">6.464</text>
+</svg>

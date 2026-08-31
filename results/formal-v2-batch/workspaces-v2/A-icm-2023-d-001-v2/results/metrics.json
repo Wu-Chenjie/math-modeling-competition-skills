@@ -1,0 +1,179 @@
+{
+  "problem_framing": "Prioritize 17 interconnected SDGs under no observed edge data.",
+  "data_audit": {
+    "benchmark_case": "icm-2023-d",
+    "official_text_present": true,
+    "data_files": 0,
+    "rows_data_present": false,
+    "synthetic_prior_used": true,
+    "input_sha256": "fab0bf900d68461086aefc9fc4e5aa651e48ab21a7bc0dcb8f6dc58dc4fbb7cf"
+  },
+  "assumptions": [
+    "critical: signed interaction prior is a structural placeholder, not empirical evidence",
+    "critical: criteria are normalized before weighting",
+    "relaxable: crisis multipliers and shocks; scanned deterministically"
+  ],
+  "candidate_models": [
+    "signed weighted network centrality",
+    "TOPSIS multi-criteria ranking with weight sensitivity"
+  ],
+  "math_specification": {
+    "A_ij": "deterministic signed interaction prior",
+    "c_i": "[degree, positive spillover, closeness]",
+    "TOPSIS_weights": [
+      0.4,
+      0.35,
+      0.25
+    ]
+  },
+  "baseline": {
+    "top10_sdgs": [
+      12,
+      9,
+      8,
+      11,
+      10,
+      7,
+      13,
+      5,
+      14,
+      3
+    ],
+    "scores": [
+      0.19442454838600012,
+      0.3801067356725455,
+      0.34729456401900266,
+      0.5241790652407191,
+      0.29945221269685196,
+      0.6089436715553295,
+      0.7805632245760179,
+      0.9314377988078579,
+      0.7068229690238265,
+      0.7377046527524154,
+      0.9739744436015533,
+      0.5540945108773981,
+      0.5196688876846035,
+      0.32719847060308704,
+      0.3387070836128652,
+      0.08810416678126859,
+      0.008559721204531067
+    ]
+  },
+  "experiment": {
+    "weight_sensitivity_cases": 16,
+    "achieved_goal_cases": {
+      "1": {
+        "top3": [
+          12,
+          9,
+          8
+        ],
+        "network_strength": 44.864328709033394
+      },
+      "2": {
+        "top3": [
+          12,
+          9,
+          11
+        ],
+        "network_strength": 44.23828215103731
+      },
+      "13": {
+        "top3": [
+          9,
+          12,
+          8
+        ],
+        "network_strength": 43.55821003082496
+      }
+    },
+    "crisis_cases": {
+      "technology": {
+        "top3": [
+          12,
+          9,
+          10
+        ],
+        "spearman_like_top1_stable": 1
+      },
+      "pandemic": {
+        "top3": [
+          12,
+          9,
+          8
+        ],
+        "spearman_like_top1_stable": 1
+      },
+      "climate": {
+        "top3": [
+          9,
+          12,
+          8
+        ],
+        "spearman_like_top1_stable": 0
+      },
+      "war": {
+        "top3": [
+          9,
+          8,
+          7
+        ],
+        "spearman_like_top1_stable": 0
+      },
+      "refugee": {
+        "top3": [
+          12,
+          9,
+          8
+        ],
+        "spearman_like_top1_stable": 1
+      }
+    }
+  },
+  "validation": {
+    "tests": {
+      "n_nodes_17": true,
+      "symmetric_network": true,
+      "finite_scores": true,
+      "scores_in_0_1": true,
+      "figures_15_svg": true
+    },
+    "validation_type": "internal invariants only; no empirical holdout available"
+  },
+  "sensitivity_robustness": {
+    "top1_frequency": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 3,
+      "10": 0,
+      "11": 0,
+      "12": 13,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0
+    }
+  },
+  "falsification": "Reject priority claims if empirical SDG interaction data reverse edge signs or if rankings are unstable under preregistered weight ranges.",
+  "reviewer_risks": [
+    "synthetic network may encode researcher bias",
+    "no country/time stratification",
+    "SVG-only figures because matplotlib/Pillow are unavailable"
+  ],
+  "reproducibility_manifest": {
+    "seed": 2023,
+    "command": "python run_model.py --seed 2023 --benchmark <case-summary-json> --out .",
+    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "dependencies": {
+      "numpy": "2.3.5"
+    }
+  }
+}

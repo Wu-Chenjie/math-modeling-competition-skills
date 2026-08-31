@@ -1,0 +1,587 @@
+{
+  "protocol": "A/B baseline v2",
+  "runs": [
+    {
+      "run_id": "A-cumcm-2022-c-003-v2",
+      "group": "A",
+      "case_id": "cumcm-2022-c",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 937270,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-cumcm-2022-c-003-v2/results/metrics.json"
+        ],
+        "manifest_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-cumcm-2022-c-003-v2/results/reproducibility_manifest.json"
+        ],
+        "figures_count": 24,
+        "has_metrics": true,
+        "has_reproducibility_manifest": true,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": true,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "scoreable_artifacts_pending_blind_review"
+      }
+    },
+    {
+      "run_id": "A-icm-2023-d-001-v2-recovery",
+      "group": "A",
+      "case_id": "icm-2023-d",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 545327,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-icm-2023-d-001-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-icm-2023-d-001-v2-recovery/results/reproducibility_manifest.json"
+        ],
+        "figures_count": 15,
+        "has_metrics": true,
+        "has_reproducibility_manifest": true,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": true,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "scoreable_artifacts_pending_blind_review"
+      }
+    },
+    {
+      "run_id": "A-icm-2023-d-003-v2",
+      "group": "A",
+      "case_id": "icm-2023-d",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 186638,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-icm-2023-d-003-v2/results/metrics.json"
+        ],
+        "manifest_paths": [],
+        "figures_count": 1,
+        "has_metrics": true,
+        "has_reproducibility_manifest": false,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": false,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "unscored_missing_artifacts"
+      }
+    },
+    {
+      "run_id": "A-icm-2023-e-001-v2-recovery",
+      "group": "A",
+      "case_id": "icm-2023-e",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 66595,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-icm-2023-e-001-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [],
+        "figures_count": 12,
+        "has_metrics": true,
+        "has_reproducibility_manifest": false,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": false,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "unscored_missing_artifacts"
+      }
+    },
+    {
+      "run_id": "A-mcm-2023-a-001-v2-recovery",
+      "group": "A",
+      "case_id": "mcm-2023-a",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 285049,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-mcm-2023-a-001-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [],
+        "figures_count": 18,
+        "has_metrics": true,
+        "has_reproducibility_manifest": false,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": false,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "unscored_missing_artifacts"
+      }
+    },
+    {
+      "run_id": "A-mcm-2023-a-002-v2-recovery",
+      "group": "A",
+      "case_id": "mcm-2023-a",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 226255,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-mcm-2023-a-002-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-mcm-2023-a-002-v2-recovery/results/repro_manifest.json"
+        ],
+        "figures_count": 9,
+        "has_metrics": true,
+        "has_reproducibility_manifest": true,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": true,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "scoreable_artifacts_pending_blind_review"
+      }
+    },
+    {
+      "run_id": "A-mcm-2023-b-003-v2-recovery",
+      "group": "A",
+      "case_id": "mcm-2023-b",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 140687,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-mcm-2023-b-003-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-mcm-2023-b-003-v2-recovery/results/reproducibility_manifest.json"
+        ],
+        "figures_count": 18,
+        "has_metrics": true,
+        "has_reproducibility_manifest": true,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": true,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "scoreable_artifacts_pending_blind_review"
+      }
+    },
+    {
+      "run_id": "A-mcm-2023-c-001-v2-recovery",
+      "group": "A",
+      "case_id": "mcm-2023-c",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 73336,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-mcm-2023-c-001-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [],
+        "figures_count": 10,
+        "has_metrics": true,
+        "has_reproducibility_manifest": false,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": false,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "unscored_missing_artifacts"
+      }
+    },
+    {
+      "run_id": "A-mcm-2023-c-003-v2-recovery",
+      "group": "A",
+      "case_id": "mcm-2023-c",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 322977,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-mcm-2023-c-003-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [],
+        "figures_count": 24,
+        "has_metrics": true,
+        "has_reproducibility_manifest": false,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": false,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "unscored_missing_artifacts"
+      }
+    },
+    {
+      "run_id": "B-mcm-2023-a-001-v2-recovery",
+      "group": "B",
+      "case_id": "mcm-2023-a",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 258296,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/B-mcm-2023-a-001-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/B-mcm-2023-a-001-v2-recovery/results/repro_manifest.json"
+        ],
+        "figures_count": 9,
+        "has_metrics": true,
+        "has_reproducibility_manifest": true,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": true,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "scoreable_artifacts_pending_blind_review"
+      }
+    },
+    {
+      "run_id": "B-mcm-2023-a-002-v2-recovery",
+      "group": "B",
+      "case_id": "mcm-2023-a",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 206637,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/B-mcm-2023-a-002-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [],
+        "figures_count": 18,
+        "has_metrics": true,
+        "has_reproducibility_manifest": false,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": false,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "unscored_missing_artifacts"
+      }
+    },
+    {
+      "run_id": "B-mcm-2023-b-001-v2-recovery",
+      "group": "B",
+      "case_id": "mcm-2023-b",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 534869,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/B-mcm-2023-b-001-v2-recovery/artifacts/metrics.json",
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/B-mcm-2023-b-001-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [],
+        "figures_count": 19,
+        "has_metrics": true,
+        "has_reproducibility_manifest": false,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": false,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "unscored_missing_artifacts"
+      }
+    },
+    {
+      "run_id": "B-mcm-2023-b-002-v2-recovery",
+      "group": "B",
+      "case_id": "mcm-2023-b",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 238105,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/B-mcm-2023-b-002-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [],
+        "figures_count": 9,
+        "has_metrics": true,
+        "has_reproducibility_manifest": false,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": false,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "unscored_missing_artifacts"
+      }
+    },
+    {
+      "run_id": "B-mcm-2023-c-001-v2-recovery",
+      "group": "B",
+      "case_id": "mcm-2023-c",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 287888,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/B-mcm-2023-c-001-v2-recovery/results/metrics.json"
+        ],
+        "manifest_paths": [],
+        "figures_count": 9,
+        "has_metrics": true,
+        "has_reproducibility_manifest": false,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": false,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "unscored_missing_artifacts"
+      }
+    },
+    {
+      "run_id": "B-mcm-2023-c-003-v2",
+      "group": "B",
+      "case_id": "mcm-2023-c",
+      "checks": {
+        "process_completed": true,
+        "receipt_exists": true,
+        "workspace_exists": true,
+        "artifacts_recorded": true,
+        "reported_tokens": 105476,
+        "metrics_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/B-mcm-2023-c-003-v2/results/metrics.json"
+        ],
+        "manifest_paths": [
+          "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/B-mcm-2023-c-003-v2/results/reproducibility_manifest.json"
+        ],
+        "figures_count": 9,
+        "has_metrics": true,
+        "has_reproducibility_manifest": true,
+        "has_figures": true,
+        "metrics_json_valid": true,
+        "scoreable_machine_evidence": true,
+        "machine_dimensions_pending_review": [
+          "code_and_solving",
+          "model_validation",
+          "reproducibility"
+        ],
+        "human_dimensions_pending_review": [
+          "problem_understanding",
+          "model_reasonableness",
+          "mathematical_rigor",
+          "data_handling",
+          "innovation",
+          "result_interpretation",
+          "paper_quality"
+        ],
+        "status": "scoreable_artifacts_pending_blind_review"
+      }
+    }
+  ],
+  "by_group": {
+    "A": {
+      "runs": 9,
+      "scoreable_artifacts": 4,
+      "unscored": 5
+    },
+    "B": {
+      "runs": 6,
+      "scoreable_artifacts": 2,
+      "unscored": 4
+    }
+  },
+  "human_review": "pending blind Judges A-D",
+  "decision": "INCONCLUSIVE until three independent real runs per case and blind review are complete"
+}

@@ -1,0 +1,113 @@
+# Structured Modeling Report
+
+**Run:** B-mcm-2023-b-002  
+**Case:** `mcm-2023-b`  
+**Competition:** 2023 MCM, Problem B  
+**Title:** *Reimagining Maasai Mara*  
+**Problem type:** Optimization  
+**Source status:** Verified
+
+## Problem Framing
+
+The task concerns alternate management of resources within and outside the current Maasai Mara park boundaries. The excerpt establishes wildlife conservation, equitable resource sharing, community-based management, governance, financing, and penalties as relevant policy context. It explicitly requests specific policies and management strategies, but the supplied excerpt ends mid-sentence (“for diff…”); omitted requirements must be recovered from the official statement before implementation.
+
+The modeling goal is to compare feasible policy portfolios and recommend strategies balancing ecological protection, community benefits, financial feasibility, and governance/enforcement. Expected method families are network analysis, multi-objective optimization, and scenario analysis.
+
+## Data Audit
+
+- No data files are listed in the deterministic summary.
+- No sheets, row counts, variables, or numerical observations are available.
+- `problem_sha256`: `a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4`
+- `data_sha256`: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`
+- PDF inventory: 2 pages; extracted excerpt length 3149 characters.
+- All parameter estimates, weights, capacities, and scenario outcomes are **pending data acquisition**.
+
+## Assumptions
+
+1. Management is represented by a finite set of policy actions (for example, zoning, corridor protection, community conservancies, tourism controls, revenue sharing, and enforcement); the exact action set is pending the complete statement and available evidence.
+2. Ecological, social, financial, and governance outcomes can be normalized to comparable utility scores.
+3. Resource and implementation limits impose explicit capacity constraints.
+4. Stakeholder interactions and resource flows can be represented as a weighted network.
+5. Uncertainty is represented through alternative scenarios and parameter ranges rather than a single deterministic forecast.
+
+## Candidate Models
+
+**Model 1: Network analysis.** Construct a multilayer graph with nodes for park zones, surrounding communities, tourism operators, government/enforcement bodies, and wildlife corridors. Edge weights represent movement, revenue, service provision, or conflict exposure. Centrality, connectivity, and bottleneck measures identify critical corridors and intervention points.
+
+**Model 2: Multi-objective optimization.** Select a policy portfolio maximizing ecological benefit, community benefit, and net financial value while minimizing conflict and enforcement risk. Use Pareto optimization or epsilon-constraint generation to expose trade-offs. Scenario analysis evaluates robustness under tourism, funding, climate, and enforcement conditions.
+
+These are the two independent model systems; scenario analysis is a stress-testing layer, not a third model.
+
+## Baseline
+
+The baseline is the current-boundary management arrangement with no new policy actions. Its objective values, network metrics, and feasibility status are **pending** because no quantitative data are supplied. A qualitative baseline should document existing boundary assumptions and known institutional arrangements without assigning unsupported scores.
+
+## Math Specification
+
+Let \(x_j\in\{0,1\}\) indicate adoption of policy \(j\), and \(y_{iz}\in[0,1]\) indicate intensity of policy \(j\) in zone \(i\). Let \(s\) index scenarios.
+
+For each scenario, maximize:
+
+\[
+F_1(x)=\text{ecological protection},\quad
+F_2(x)=\text{community benefit},\quad
+F_3(x)=\text{financial net benefit},
+\]
+
+while minimizing conflict/enforcement risk \(F_4(x)\).
+
+A scalar reporting form is:
+
+\[
+\max_x\; \sum_{k=1}^{4} w_k \,\tilde F_k(x),
+\]
+
+with \(\tilde F_k\) normalized using documented bounds and weights \(w_k\) elicited or stress-tested, never chosen arbitrarily.
+
+Subject to:
+
+\[
+\sum_j c_jx_j\le C,\qquad
+\sum_j r_{ij}x_j\le R_i,\qquad
+x_j\in\{0,1\},
+\]
+
+plus ecological minimums, corridor-connectivity requirements, equity constraints, and policy incompatibilities identified from the full problem statement. Robust selection can maximize worst-case or lower-quantile scenario performance.
+
+## Executable Experiment Plan
+
+**Pending implementation.**
+
+1. Obtain the complete official Problem B text and any permitted datasets.
+2. Define entities, policy actions, indicators, units, and evidence sources.
+3. Clean and document data; distinguish observed values from elicited assumptions.
+4. Build the multilayer network and compute baseline metrics.
+5. Generate feasible policy portfolios with explicit capacity constraints.
+6. Solve Pareto and epsilon-constraint formulations for each scenario.
+7. Compare recommended portfolios with the current-boundary baseline.
+8. Export machine-readable results, parameter files, and a deterministic run manifest.
+
+## Validation
+
+**Pending execution.** Validate network structure through sensitivity to edge definitions; optimization through feasibility checks, independent solver confirmation, and constraint residuals; scenario outputs through holdout or back-testing where historical observations exist. Confirm that recommendations remain interpretable to park and community stakeholders.
+
+## Sensitivity and Robustness
+
+Vary objective weights, ecological response coefficients, tourism revenue, enforcement effectiveness, budget, and capacity limits. Report rank stability, Pareto-front movement, and worst-case degradation. Explicitly test high-tourism/low-tourism, high-enforcement/low-enforcement, and severe ecological-stress scenarios.
+
+## Falsification
+
+Reject or revise the model if: recommended policies violate capacity or equity constraints; small weight changes reverse rankings; network interventions do not improve connectivity or conflict metrics; benefits depend on one unverified parameter; or a no-action baseline performs as well as the proposed portfolio across scenarios.
+
+## Reviewer Risks
+
+Primary risks are arbitrary weights, ignored capacity constraints, unsupported policy effects, boundary-condition ambiguity, conflating correlation with causal impact, and claiming robustness without parameter or scenario analysis. The truncated excerpt is itself a documentation risk.
+
+## Reproducibility Manifest
+
+- Repository files modified: **none**.
+- Input: deterministic case-summary entry `mcm-2023-b`.
+- Source and data hashes: recorded above.
+- Random seed: not applicable yet.
+- Software, solver, parameters, and command: **pending implementation**.
+- Execution results and scores: **not run; pending**.

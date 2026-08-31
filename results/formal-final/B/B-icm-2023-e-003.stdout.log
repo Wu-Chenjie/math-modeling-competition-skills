@@ -1,0 +1,90 @@
+# Modeling Report: B-icm-2023-e-003
+
+## Problem Framing
+
+ICM 2023 Problem E concerns excessive or poorly managed artificial light, including skyglow, light trespass, over-illumination, and light clutter. The supplied excerpt establishes environmental, ecological, health, safety, and astronomical consequences, but does not include the complete requirement bullets or an attached dataset. The analysis should therefore quantify spatial patterns, estimate associations between artificial light and relevant outcomes, and compare mitigation scenarios. Any requirement-specific deliverable remains pending confirmation from the full statement.
+
+## Data Audit
+
+- Case: `icm-2023-e`; verified source.
+- Problem SHA-256: `058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da`
+- Data SHA-256: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`
+- Problem length metadata: 2 pages, 4,724 extracted characters.
+- Data files: none listed.
+- ZIP inventory: empty.
+- Consequently, no observations, coordinate reference system, time span, sampling frame, outcome definitions, missingness rates, or measurement-error estimates are available. All numerical estimates and scores are pending data access.
+
+## Assumptions
+
+1. Artificial-light exposure can be represented by calibrated nighttime radiance or illuminance, preferably on a common spatial grid.
+2. Exposure and outcomes are georeferenced to compatible administrative units or ecological/health sampling locations.
+3. Covariates such as population, land use, cloud cover, latitude, season, socioeconomic conditions, and transportation infrastructure are available or explicitly treated as unobserved.
+4. Intervention effects can be represented by multiplicative changes in radiance and spatial spillovers.
+5. Observational associations are not interpreted causally without design-based or sensitivity evidence.
+
+## Candidate Models
+
+1. **Spatial exposure model.** Use log-radiance surfaces with Moran’s I and local hotspot statistics (e.g., Getis–Ord). A spatial error or conditional-autoregressive model can account for residual dependence.
+2. **Hierarchical statistical model.** For outcome \(Y_{it}\) in region \(i\) and period \(t\):
+\[
+g(E[Y_{it}])=\alpha+\beta \log(L_{it}+c)+\gamma^\top X_{it}+u_i+v_t,
+\]
+where \(g\) is identity, log, or logit according to outcome type; \(L\) is light exposure; \(X\) contains confounders; \(u_i\) and \(v_t\) are spatial and temporal effects. Use robust or Bayesian uncertainty intervals.
+3. **Scenario model.** For intervention \(k\), define
+\[
+L_i^{(k)}=L_i\exp(-r_{ik}),
+\]
+where \(r_{ik}\) is the fractional reduction from shielding, dimming, curfew, spectral conversion, or fixture replacement. Propagate \(L_i^{(k)}\) through the fitted outcome model and report benefits, costs, equity, and spillovers.
+
+At most two independent model families should be retained per subproblem: a spatial-statistical family and a scenario/decision family.
+
+## Baseline
+
+The baseline is the status quo: descriptive radiance maps, unadjusted exposure-outcome correlations, and a no-intervention scenario \(r_{ik}=0\). A simple adjusted linear/logistic regression may serve as a computational benchmark, but it is not a causal claim.
+
+## Mathematical Specification
+
+For continuous outcomes, use Gaussian or Student-\(t\) errors; for counts, Poisson/negative-binomial likelihood; for binary outcomes, Bernoulli likelihood. Standardize continuous predictors after documenting units. Include spatial dependence through a CAR/random-effect structure or spatially correlated residual covariance. Scenario ranking can use a transparent utility:
+\[
+U_k=\sum_i w_i\left(\Delta H_{ik}-\lambda C_{ik}\right)-\rho\,\text{Inequality}_k,
+\]
+with weights \(w_i\), cost penalty \(\lambda\), and equity penalty \(\rho\) reported rather than hidden.
+
+## Executable Experiment Plan
+
+Pending data provision:
+
+1. Validate schema, units, coordinates, time fields, duplicate records, missingness, and exposure calibration.
+2. Harmonize projections and aggregate to a documented spatial unit.
+3. Produce exploratory maps, distributions, and exposure-outcome plots.
+4. Fit the baseline and hierarchical spatial models using a fixed train/validation split.
+5. Estimate intervention reductions from explicit engineering assumptions; run scenario simulations.
+6. Export coefficient tables, uncertainty intervals, maps, scenario rankings, and a machine-readable manifest.
+7. Record deterministic seeds and software versions. No experiment has been executed.
+
+## Validation
+
+Use spatially blocked cross-validation to prevent neighboring-region leakage and temporal holdout when repeated periods exist. Compare predictive metrics appropriate to the outcome (RMSE/MAE, log loss, deviance, or calibration). Check residual Moran’s I, posterior predictive checks, overdispersion, influential observations, and coverage of uncertainty intervals. Validate scenario outputs against held-out periods or independent monitoring where available.
+
+## Sensitivity and Robustness
+
+Vary spatial aggregation, exposure transformations, buffer radii, covariate sets, missing-data handling, and spatial-effect specifications. Bootstrap or posterior-sample uncertainty. Re-rank scenarios across plausible intervention reductions, costs, \(\lambda,\rho\), and population-equity weights. Report rank stability rather than a single deterministic winner.
+
+## Falsification
+
+Apply outcome permutations, spatially shifted exposure (“placebo” exposure), negative-control outcomes unlikely to respond to light, and pre-intervention placebo periods. Test whether estimated effects disappear when exposure is randomly reassigned within comparable strata. Examine extreme cases: zero-light areas, saturated radiance, missing covariates, and complete intervention \(r_{ik}\) at its maximum plausible value.
+
+## Reviewer Risks
+
+Primary risks are sampling bias (unequal monitoring and urban coverage), confounded correlation (light proxying population, wealth, or development), ecological fallacy, spatial leakage, arbitrary scenario weights, and omitted uncertainty analysis. These must be explicit limitations.
+
+## Reproducibility Manifest
+
+- Run ID: `B-icm-2023-e-003`
+- Case ID: `icm-2023-e`
+- Input hashes: problem and data hashes above
+- Data inventory: none supplied
+- Random seed: pending implementation
+- Environment/dependencies: pending implementation
+- Canonical command: pending implementation
+- Execution status: not run; all numerical results, figures, rankings, and scores pending.

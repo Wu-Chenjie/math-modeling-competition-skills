@@ -1,0 +1,26 @@
+{
+  "seed": 20220915,
+  "input_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\cumcm-2022-c.json",
+  "input_sha256": "86b82e0ac469e5dff323bea2773de708fc879c26fc9e2f6cc8ff711b01e1e231",
+  "problem_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+  "data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+  "command": "python run_analysis.py --input <case-summary.json> --output analysis_output",
+  "python": "3.12.13",
+  "dependencies": {
+    "python_standard_library": true
+  },
+  "outputs": [
+    "metrics.json",
+    "modeling_report.md",
+    "figures\\raw_q1_weathering_association.svg",
+    "figures\\raw_q2_valid_samples.svg",
+    "figures\\raw_q3_unknown_totals.svg",
+    "figures\\process_q1_shift_magnitude.svg",
+    "figures\\process_q2_classifier_cv.svg",
+    "figures\\process_q3_prediction_stability.svg",
+    "figures\\result_q1_reconstructed_samples.svg",
+    "figures\\result_q2_subtype_silhouette.svg",
+    "figures\\result_q3_predictions.svg",
+    "figures\\result_q4_correlation_difference.svg"
+  ]
+}

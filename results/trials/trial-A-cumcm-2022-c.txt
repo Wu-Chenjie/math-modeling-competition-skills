@@ -1,0 +1,129 @@
+Baseline A trial report, not a scored benchmark. No repository files were modified.
+
+**Source audit**
+
+- Problem: [CUMCM_2022_C.pdf](C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\benchmarks\cases\cumcm-2022-c\problem\CUMCM_2022_C.pdf), 2 pages; SHA-256 `573ee0f2865af13f8b2fbd12dab7f8efa68cf61ec6b8edf132a2120424480dbd`.
+- Data: [CUMCM_2022_C_附件.xlsx](C:\Users\伍辰杰\Documents\ChatGPT\mathmodel\math-modeling-competition-skills\benchmarks\cases\cumcm-2022-c\data\CUMCM_2022_C_附件.xlsx); SHA-256 `ffb82a8e209a005f26883e115de3ddea42ab6e0a34986d312a52a3cea6b1063c`.
+- Sheets:
+  - 表单1: 58 known artifacts; 18 high-potassium, 40 lead-barium; 34 weathered, 24 unweathered; decoration A/B/C counts 22/6/30.
+  - 表单2: 69 labeled composition sampling rows, including paired locations, unweathered points, and severely weathered points.
+  - 表单3: 8 unknown artifacts, with stated weathering status.
+- Validity rule from the problem: component sum in `[85%, 105%]`.
+  - Known rows: 67/69 within the band; 2 below 85%; observed range 71.89%-100%.
+  - Unknown rows: all 8 within the band; sums are 99.48%, 96.28%, 98.98%, 96.00%, 99.62%, 99.10%, 99.64%, and 99.98%.
+- Blank composition cells are frequent and represent “not detected” in the statement. They must not automatically be interpreted as exact zero without a sensitivity analysis.
+- The workbook’s chemical header labels were not recoverable from the OOXML text cells; column mapping must be visually or independently verified before execution.
+
+**Problem framing**
+
+1. Estimate associations between weathering, glass type, decoration, color, and composition; infer pre-weathering composition from paired/point measurements.
+2. Classify known high-potassium versus lead-barium glass, then identify defensible subtypes within each class.
+3. Classify the eight unknowns and quantify uncertainty.
+4. Compare within-class and between-class compositional dependence structures.
+
+Repeated samples from one artifact are not independent observations; artifact ID should be a grouping factor.
+
+**Three candidate model families**
+
+1. **Compositional discriminant family**  
+   Replace raw percentages by an isometric log-ratio (ilr) transform, then fit regularized multinomial logistic regression, LDA/QDA, or nearest-centroid classification. Suitable for the main type label and interpretable element contrasts.
+
+2. **Probabilistic compositional mixture family**  
+   Fit class-conditional logistic-normal or Dirichlet mixtures in ilr space. Use mixture components as candidate subtypes, with model selection by held-out log-likelihood/BIC and stability under resampling.
+
+3. **Constrained weathering and dependence family**  
+   Estimate unweathered composition using a constrained mass-balance model; analyze associations with repeated-measures logistic/ordinal models and compare class-specific sparse precision matrices or log-ratio covariance matrices. This family addresses Questions 1 and 4 without violating closure.
+
+**Baseline**
+
+Unexecuted pending implementation:
+
+- Filter or flag rows outside `[85%,105%]`.
+- Treat blanks as zero for a deliberately simple reference model, then closure-normalize each row to sum to one.
+- Classify using Euclidean nearest centroid on normalized compositions, with artifact-level grouped cross-validation.
+- For unknowns, report class probabilities only after calibration.
+- This baseline is expected to be biased by closure, censoring, and weathering; it is a comparator, not the recommended final method.
+
+**Mathematical specification**
+
+Let \(x_{ij}\ge 0\) be measured proportion of component \(j\) for sample \(i\), and \(s_i=\sum_jx_{ij}\).
+
+Validity indicator:
+
+\[
+v_i=\mathbf 1(85\le s_i\le105).
+\]
+
+After explicit zero/censoring policy and closure normalization:
+
+\[
+p_{ij}=x_{ij}/\sum_kx_{ik},\qquad
+z_i=\operatorname{ilr}(p_i).
+\]
+
+Type model:
+
+\[
+\Pr(Y_i=c\mid z_i,w_i)
+=\frac{\exp(\alpha_c+\beta_c^\top z_i+\gamma_c^\top w_i)}
+{\sum_{r}\exp(\alpha_r+\beta_r^\top z_i+\gamma_r^\top w_i)},
+\]
+
+where \(w_i\) contains weathering, decoration, and color, and artifact-level random effects or grouped folds account for repeated measurements.
+
+Subtype model: within each known class, fit
+
+\[
+z_i\mid g_i=k\sim N(\mu_k,\Sigma_k),\qquad
+\Pr(g_i=k)=\pi_k,
+\]
+
+with \(K\) selected by held-out likelihood/BIC and stability.
+
+Weathering reconstruction:
+
+\[
+\hat p_i^{\,0}
+=\arg\min_{p\in\Delta^{D-1}}
+\|A p-y_i\|_{W}^{2}
++\lambda R(p),
+\]
+
+subject to \(p_j\ge0\), \(\sum_jp_j=1\), and a specified exchange/removal matrix \(A\). The paired unweathered/severely weathered observations should identify or constrain \(A\); otherwise the reconstruction is only partially identifiable.
+
+Association comparison should use log-ratio covariance or precision matrices, with bootstrap confidence intervals and permutation tests that preserve class labels and artifact grouping.
+
+**Validation plan**
+
+- Use artifact-grouped nested cross-validation; never split paired samples across train and test.
+- Compare baseline and candidate families using balanced accuracy, macro-F1, log loss, calibration error, and confusion matrices.
+- Bootstrap artifact IDs, not individual rows.
+- Perform sensitivity runs for:
+  - blank-as-zero versus censored/left-limit treatment;
+  - raw closure versus ilr/robust ilr;
+  - inclusion/exclusion of the two invalid known rows;
+  - weathered versus unweathered-only training;
+  - alternative subtype counts and random seeds.
+- For unknowns, report probability intervals and classify as indeterminate when uncertainty overlaps both classes.
+
+**Falsification questions**
+
+- Does type prediction remain strong after removing PbO/BaO/K2O, or is it driven by one obvious component?
+- Do results change materially when blanks are treated as censored rather than zero?
+- Are apparent weathering effects explained by artifact identity or sampling location?
+- Are subtype clusters stable under bootstrap, perturbation, and alternative transforms?
+- Does the classifier outperform a composition-sum or dominant-component rule?
+- Are class-specific correlations genuine after accounting for closure and multiple testing?
+- Can the weathering inversion recover held-out unweathered points from paired data?
+
+**Reproducibility risks**
+
+- Missing chemical headers in the machine-readable header cells require independent verification.
+- Blank-cell semantics and detection limits are undocumented.
+- Two known rows fail the stated validity threshold and need row-level identification before modeling.
+- Repeated artifact samples create leakage risk.
+- Weathering inversion may be non-identifiable without explicit exchange assumptions.
+- Small and imbalanced labeled data limit reliable subtype discovery.
+- Exact preprocessing, ilr basis, random seeds, fold assignments, and software versions must be recorded.
+
+All model fitting, validation metrics, classifications, and reconstructed compositions remain **unexecuted and pending**.

@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-024",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 8,
+    "model_reasonableness": 13,
+    "mathematical_rigor": 7,
+    "data_handling": 7,
+    "code_and_solving": 8,
+    "model_validation": 7,
+    "innovation": 4,
+    "result_interpretation": 5,
+    "paper_quality": 7,
+    "reproducibility": 3
+  },
+  "fatal_flags": [],
+  "notes": "Sailboat data audit, candidate models and quantitative metrics are present; report file absent but assumptions are clear in metrics."
+}

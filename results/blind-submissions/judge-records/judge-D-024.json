@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-024",
+  "judge_id": "D",
+  "scores": {
+    "problem_understanding": 3,
+    "model_reasonableness": 7,
+    "mathematical_rigor": 3,
+    "data_handling": 6,
+    "code_and_solving": 8,
+    "model_validation": 8,
+    "innovation": 2,
+    "result_interpretation": 2,
+    "paper_quality": 3,
+    "reproducibility": 5
+  },
+  "fatal_flags": [],
+  "notes": "Evidence-only communication review: report=False, metrics=True, figures=True, reproducibility_manifest=True; no group labels used."
+}

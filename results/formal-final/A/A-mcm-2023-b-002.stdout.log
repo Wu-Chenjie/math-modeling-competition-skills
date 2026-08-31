@@ -1,0 +1,115 @@
+# Structured Modeling Report: A-mcm-2023-b-002
+
+## Problem Framing
+
+The case concerns “Reimagining Maasai Mara”: recommending alternative policies and management strategies for resources inside and outside the current Maasai Mara preserve boundary. The auditable excerpt identifies wildlife conservation, equitable resource sharing, community-based management, governance, finance, and penalties as relevant concerns. The complete subquestion text and numerical dataset are unavailable in the benchmark summary; conclusions requiring them remain pending.
+
+Decision outputs should identify feasible policy portfolios, quantify trade-offs, and test performance under alternative future conditions.
+
+## Data Audit
+
+- Case: `mcm-2023-b`; MCM, 2023; source status: verified.
+- Problem SHA-256: `a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4`.
+- Data SHA-256: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+- Declared data files: none; ZIP inventory: empty.
+- No observations, spatial layers, budgets, capacities, stakeholder utilities, or historical outcomes can be audited from the summary.
+- Consequently, parameter estimation, numerical scores, rankings, and empirical validation are **pending data access**.
+
+## Assumptions
+
+1. The preserve and surrounding community/tourism/governance areas can be represented as spatial or administrative nodes.
+2. Wildlife movement, economic benefits, enforcement resources, and conflict pressures form a connected network.
+3. Candidate policies have measurable ecological, social, financial, and implementation effects.
+4. Resource, budget, staffing, land-use, and ecological carrying-capacity limits are binding constraints where specified.
+5. Unspecified weights, capacities, and causal effects will be estimated from supplied data or elicited transparently; none are invented here.
+6. Legal feasibility under the cited Kenyan governance context must be checked separately.
+
+## Candidate Models
+
+1. **Network analysis.** Construct a multilayer graph with nodes for zones and stakeholders and edges for wildlife movement, revenue/resource flows, governance links, or conflict interactions. Use weighted degree, betweenness, modularity, and connectivity to identify corridor bottlenecks, high-leverage interventions, and boundary spillovers.
+
+2. **Multi-objective optimization.** Select a policy portfolio from actions such as boundary coordination, corridor protection, community revenue sharing, tourism zoning, monitoring, and enforcement. Optimize ecological integrity, community welfare, sustainable revenue, and low cost/conflict using an epsilon-constraint or Pareto formulation. This avoids arbitrary single-score weights.
+
+Scenario analysis overlays uncertain tourism, climate, wildlife, funding, and compliance conditions. These are candidate scenario dimensions, not observed facts.
+
+## Baseline
+
+Define the baseline as the current-boundary/current-management portfolio with no policy change. Its indicators and capacities must be populated from the eventual data or official assumptions. Until then, baseline values and all comparisons are **pending**.
+
+## Mathematical Specification
+
+Let \(x_j\in\{0,1\}\) indicate adoption/intensity of policy \(j\), and \(s\) index scenarios. Let \(z_i\) denote zone-level allocations and \(y_{ik}\) network flows.
+
+For scenario \(s\), maximize the vector
+
+\[
+\left[
+B_s(x,z),\; W_s(x,z),\; R_s(x,z),\; -C_s(x,z),\; -F_s(x,z)
+\right],
+\]
+
+where \(B\) is biodiversity/connectivity, \(W\) community welfare, \(R\) sustainable revenue, \(C\) implementation cost, and \(F\) conflict or enforcement risk.
+
+Subject to
+
+\[
+\sum_j c_jx_j+\sum_i c_i z_i\leq \text{budget},
+\]
+
+\[
+0\le z_i\le \text{capacity}_i,\qquad
+0\le y_{ik}\le \text{edge capacity}_{ik},
+\]
+
+\[
+\text{ecological thresholds}_s(x,z)\geq \tau_s,
+\]
+
+plus land-use, staffing, legal, and conservation constraints supplied by the problem. Generate the Pareto frontier, then apply a documented decision rule or stakeholder preference set.
+
+## Executable Experiment Plan
+
+1. Acquire only authorized case data and document field definitions, units, spatial scale, and missingness.
+2. Build the multilayer network; normalize edge weights using stated units.
+3. Specify policy costs, capacities, and objective response functions; distinguish observed, estimated, and elicited parameters.
+4. Compute the status-quo baseline.
+5. Solve the multi-objective model with epsilon-constraint sweeps and obtain Pareto portfolios.
+6. Simulate every portfolio across a prespecified scenario matrix.
+7. Export policy rankings, objective values, binding constraints, network metrics, and uncertainty intervals.
+8. Record all inputs, software versions, random seeds, and commands.
+
+Execution is **pending** because no numerical input is present in the summary.
+
+## Validation
+
+Use temporal or spatial holdouts where historical data exist; otherwise use expert-elicited bounds and internal constraint checks. Validate network predictions against observed movement/resource links, and compare optimization outputs with baseline outcomes. Report Pareto-frontier stability, scenario regret, feasibility rates, and bootstrap or Monte Carlo intervals. All metrics are pending execution.
+
+## Sensitivity and Robustness
+
+Vary objective weights only as a secondary analysis; primary results should use epsilon constraints. Perform global sensitivity analysis on costs, capacities, ecological response coefficients, compliance, and scenario probabilities. Report rank reversal frequency, worst-case regret, feasibility under capacity reductions, and policies appearing on most Pareto frontiers.
+
+## Falsification
+
+Reject or revise the model if it:
+
+- violates legal, budget, land, or carrying-capacity limits;
+- predicts benefits when an intervention removes a required ecological connection;
+- cannot reproduce known baseline patterns;
+- produces unstable recommendations under small parameter changes;
+- relies on network edges or causal effects unsupported by data;
+- ranks portfolios solely because of unnormalized objectives.
+
+## Reviewer Risks
+
+Primary risks are absent data, arbitrary weights, scale mismatch, ignored capacity constraints, unsupported causal claims, boundary spillovers, optimistic compliance assumptions, and lack of robustness. The truncated excerpt also leaves the full set of required deliverables unresolved; coverage must be checked against the official statement before submission. No citations are supplied in the benchmark input; legal and ecological references remain pending verification.
+
+## Reproducibility Manifest
+
+- Run ID: `A-mcm-2023-b-002`
+- Case and problem hash: as listed above
+- Input-data inventory: none available in summary
+- Random seed: pending
+- Environment/dependency versions: pending
+- Key parameters and scenario grid: pending data and specification
+- Unique reproduction command: pending implementation
+- Numerical results, figures, and scores: not executed; do not infer or report them as facts

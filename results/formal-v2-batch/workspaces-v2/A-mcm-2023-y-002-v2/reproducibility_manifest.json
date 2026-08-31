@@ -1,0 +1,23 @@
+{
+  "command": "python sailboat_model.py --summary \"C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-y.json\" --output \".\"",
+  "input_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-y.json",
+  "input_sha256": "debad91a2bf4d4bfab453dce3f4b8adadb9dddcb158518f31663599a793342ef",
+  "problem_sha256_declared": "2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce",
+  "data_sha256_declared": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba",
+  "python": "3.12.13",
+  "numpy": "2.3.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "seed": 2023002,
+  "figures": [
+    "process_q1_cv_mae.svg",
+    "process_q1_cv_rmse.svg",
+    "process_q1_regularization.svg",
+    "raw_q1_age_by_hull.svg",
+    "raw_q1_price_by_hull.svg",
+    "raw_q2_region_counts.svg",
+    "result_q1_variant_precision.svg",
+    "result_q2_region_effects.svg",
+    "result_q3_hk_data_readiness.svg"
+  ],
+  "runtime_seconds": 5.9260781000011775
+}

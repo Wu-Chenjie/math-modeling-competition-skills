@@ -1,0 +1,100 @@
+{
+  "submission_id": "Submission-010",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 23,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_wildlife_paths.png",
+      "sha256": "0fbcfb6a2f273c490f08df1fcba6a0a6e3ffc7609db11cd8af68960131ed65d7"
+    },
+    {
+      "path": "figures/process_q1_wildlife_paths.svg",
+      "sha256": "11f6210f411c8e5e518f9a955987706be4f1b169f8a248eac7c9672bbb786732"
+    },
+    {
+      "path": "figures/process_q2_income_paths.png",
+      "sha256": "779abf21fefef77952174454528e3629355f49d77e187805794d94db9ee0a31d"
+    },
+    {
+      "path": "figures/process_q2_income_paths.svg",
+      "sha256": "aa3622139aa33194d1063297efd9ec2151f4a3bc2b01ba743a4cee2340a475a2"
+    },
+    {
+      "path": "figures/process_q3_conflict_paths.png",
+      "sha256": "a226ddf8b6a7085fd25c796cd9f1c4e783beba0d2837f7a005cb6efe9ad0a81e"
+    },
+    {
+      "path": "figures/process_q3_conflict_paths.svg",
+      "sha256": "446c8309bcd9287eddd94985ce8d1fdd305e71d1a870d2c50928099a2b6132fc"
+    },
+    {
+      "path": "figures/raw_q1_assumed_levers.png",
+      "sha256": "0b2b25c62be7fb70cff69c6d9cb34cd994375f515c3856a5d2eeb02e34681f0b"
+    },
+    {
+      "path": "figures/raw_q1_assumed_levers.svg",
+      "sha256": "b2630d6cab113d6f96be502b6301311c79c1909a542c71db0c0c150e9b05422c"
+    },
+    {
+      "path": "figures/raw_q2_initial_state.png",
+      "sha256": "a2014ed2814e5317e1c535a24fe32312a7860a5a8f0b23834ed565b1c4e065e5"
+    },
+    {
+      "path": "figures/raw_q2_initial_state.svg",
+      "sha256": "f7ec649a1ca55547a6a16e97f2931d74135037952b9977af65c3b1a71c034efb"
+    },
+    {
+      "path": "figures/raw_q3_parameter_scale.png",
+      "sha256": "eb2b2fc033695f7bbb204372dd7187722c7f5696051d0e3b5874bd1a8a7d59cf"
+    },
+    {
+      "path": "figures/raw_q3_parameter_scale.svg",
+      "sha256": "9025acc193b95c4c7c94b3831a955b9610c912bf2ae1aef5741ac461038948dd"
+    },
+    {
+      "path": "figures/result_q1_ecology.png",
+      "sha256": "b8c702e9aef674c884ddc653f385e9aca3eca188e740b64fd58c810336dd1209"
+    },
+    {
+      "path": "figures/result_q1_ecology.svg",
+      "sha256": "243654693637fa169e5640ba9b2f091f03847cb4a7c7e6a2a5129b52fb216f5d"
+    },
+    {
+      "path": "figures/result_q2_coexistence.png",
+      "sha256": "780c2bc9f65aa9bde032a83be4e0e7d6ed4986b285ba2406c526f2204025a212"
+    },
+    {
+      "path": "figures/result_q2_coexistence.svg",
+      "sha256": "65b125058df9d41843703cccce4f6841c930dcc7522d58ca731f56c2d37af19c"
+    },
+    {
+      "path": "figures/result_q3_robustness.png",
+      "sha256": "167e203e529b243bf22a7fe26792c1ac62daea4a3d13715600164dda93cfb03c"
+    },
+    {
+      "path": "figures/result_q3_robustness.svg",
+      "sha256": "ac5274761448614bab72d27301183dd064a0c2c1f74a3e488e01666f153ab7e5"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "535900ff43720c4c653097896dc06ae3d11d3de5cf8d7186fd0d92f3ca83cac9"
+    },
+    {
+      "path": "results/modeling_report.json",
+      "sha256": "72fe4dad75207b48fc3be2c683a484649caa178b98a7de19dd1ca1ad8d9e52ca"
+    },
+    {
+      "path": "results/policy_metrics.csv",
+      "sha256": "2331972aa86321032fdc46769cf7e0df2b28234b76d346148ef5d701f5e94b0c"
+    },
+    {
+      "path": "results/reproducibility_manifest.json",
+      "sha256": "378d467f996ce036536598959bdf5b853f4907f9a947e7fdc7dd185689fd5354"
+    },
+    {
+      "path": "run_model.py",
+      "sha256": "5c2b571ccad0017ee5a00d45ff2d81c59565056ead218d55c6a93ec73844adb1"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

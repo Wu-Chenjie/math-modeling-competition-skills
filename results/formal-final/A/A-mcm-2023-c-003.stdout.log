@@ -1,0 +1,122 @@
+# Modeling Report: A-mcm-2023-c
+
+## Problem Framing
+
+The case is **MCM 2023 Problem C, “Predicting Wordle Results.”** Wordle asks a player to identify a valid five-letter English word in at most six guesses. Each guess produces position-wise feedback: green (correct letter and position), yellow (correct letter, wrong position), or unmarked/gray (letter not usable in that position or word).
+
+The modeling objective is to predict Wordle outcomes from the supplied 2023 historical dataset. The summary does not expose the full subquestion text or complete column semantics, so target definitions and feature availability must be confirmed during authorized data parsing; unresolved requirements remain **pending**.
+
+## Data Audit
+
+- Case ID: `mcm-2023-c`
+- Competition/year: MCM 2023
+- Source status: verified
+- Problem SHA-256: `b511204705db800f3b812943b780074cc24bfe5108d26b6c20f308128e631ef6`
+- Data SHA-256: `22d9c6c308700c6b744d74da8c83e358eefba955f58713c65f947624cda5ac94`
+- Listed inputs: `official-data.zip`, containing `2023_MCM_Problem_C_Data.xlsx`
+- Workbook audit: one sheet, 481 rows, 13 columns, 4,321 nonempty cells
+- Audited headers: `"Percent in "` followed by blank header labels in the summary
+- Numeric range: 0 to 361,908
+
+The blank headers indicate possible merged or multi-row headers. Exact dates, response categories, denominators, missingness, duplicates, and row ordering are **pending** because binary attachments must not be opened or parsed in this run.
+
+## Assumptions
+
+1. Rows can be ordered chronologically using an explicit date/index field if present.
+2. Any prediction uses only information available before the prediction date.
+3. Blank cells are missing values, not zero, unless the data dictionary establishes otherwise.
+4. Outcome categories are mutually exclusive and collectively exhaustive after schema reconciliation.
+5. If the data are aggregate counts, exposure denominators are retained rather than treating percentages as equally precise observations.
+6. The official contest rules and exact scoring requirements are **pending verification**.
+
+## Candidate Models
+
+**Model A: Dynamic time-series probability model.**  
+Use a multinomial state-space model for daily outcome probabilities, allowing gradual drift and optional calendar effects. This matches the expected `time_series` method.
+
+**Model B: Regularized classification model.**  
+Predict an outcome class such as solve-in-1,…,solve-in-6, or failure using lagged outcome statistics and calendar features in a multinomial logistic model with L2 regularization. This matches the expected `classification` method.
+
+At most these two independent model systems should be retained for each subproblem.
+
+## Baseline
+
+Use two deterministic baselines:
+
+- Persistence: next-period outcome distribution equals the most recent observed distribution.
+- Historical prior: every prediction equals the training-set empirical class distribution.
+
+These establish whether either candidate improves over trivial temporal and frequency-based forecasts.
+
+## Mathematical Specification
+
+For period \(t\), let \(c_{tj}\) be the count in outcome class \(j\), \(n_t=\sum_j c_{tj}\), and \(p_{tj}\) its probability.
+
+\[
+\mathbf c_t\sim \operatorname{Multinomial}(n_t,\mathbf p_t),\qquad
+p_{tj}=\frac{\exp(\eta_{tj})}{\sum_{\ell}\exp(\eta_{t\ell})}.
+\]
+
+For the dynamic model,
+
+\[
+\eta_{tj}=\alpha_j+\phi_j\eta_{t-1,j}+\beta_j^\top x_t,
+\]
+
+with identifiability constraint \(\eta_{tJ}=0\). For individual classification,
+
+\[
+P(Y_i=j\mid x_i)=
+\frac{\exp(\theta_j^\top x_i)}
+{\sum_{\ell}\exp(\theta_\ell^\top x_i)},
+\]
+
+estimated by penalized negative log-likelihood
+
+\[
+-\sum_i\log P(Y_i=y_i\mid x_i)+\lambda\sum_j\|\theta_j\|_2^2.
+\]
+
+Primary metrics should be multiclass log loss and Brier score; accuracy or MAE may be secondary only if aligned with the official requirement.
+
+## Executable Experiment Plan
+
+**Pending execution**, because the workbook cannot be parsed in this preregistered read-only run.
+
+1. Parse the workbook header structure and document every field, unit, and missing-value code.
+2. Reconstruct chronological order and define the target for each subquestion.
+3. Check duplicates, impossible percentages/counts, denominator consistency, and class sparsity.
+4. Build lagged and calendar features using training data only.
+5. Fit both baselines and candidate models.
+6. Use rolling-origin cross-validation with an untouched final temporal block.
+7. Save predictions, fold metrics, calibration tables, parameter settings, and diagnostics.
+8. Run the unique reproducibility command after fixing the environment and seed.
+
+## Validation
+
+Use expanding-window temporal folds. Report mean and fold-level log loss/Brier score with uncertainty intervals. Compare calibration curves and prediction sharpness. No random train/test split should be used unless temporal order is demonstrably absent.
+
+## Sensitivity and Robustness
+
+Vary lag length, state persistence \(\phi\), regularization \(\lambda\), training-window length, treatment of sparse classes, and aggregation choices. Refit after excluding suspected duplicate or anomalous rows. Assess whether rankings and conclusions persist under these perturbations.
+
+## Falsification Tests
+
+- Shuffle temporal order: predictive performance should materially deteriorate.
+- Replace lagged predictors with future values as a negative-control audit; any apparent advantage indicates leakage.
+- Compare against a constant-distribution model.
+- Inspect residual autocorrelation and calibration drift over time.
+
+## Reviewer Risks
+
+Primary risks are malformed headers, unclear target semantics, temporal leakage, overfitting with only 481 rows, class imbalance, denominator misinterpretation, metric mismatch, and unsupported claims about Wordle strategy. Any result depending on unavailable fields or unverified contest rules remains **pending**.
+
+## Reproducibility Manifest
+
+- Run: `A-mcm-2023-c-003`
+- Case/data hashes: recorded above
+- Input inventory: recorded above
+- Random seed: **pending specification**
+- Software/dependency versions: **pending execution**
+- Exact command: **pending implementation**
+- Numerical results and scores: **not executed; pending**

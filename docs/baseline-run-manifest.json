@@ -1,6 +1,6 @@
 {
   "manifest_version": 1,
-  "status": "blocked_pending_full_ab_runs",
+  "status": "ab_v2_recovery_merged_gate_unmet_inconclusive",
   "created_at": "2026-08-30T00:00:00+08:00",
   "model": "gpt-5.6-sol",
   "provider": "openlux",
@@ -33,14 +33,25 @@
     "token_budget": "not_hard_enforceable_by_codex_exec_0.151.0; record_actual_usage"
   },
   "run_id_format": "<group>-<case_id>-<index:03d>",
-  "scoring_status": "not_started",
+  "scoring_status": "machine_artifacts_pending_blind_review",
   "trial_runs": [
     {"group": "A", "case_id": "cumcm-2022-c", "run_id": "trial-A-smoke", "status": "entry_smoke_only", "result_file": "results/trial-A-smoke.txt", "reported_tokens": 16430},
     {"group": "B", "case_id": "cumcm-2022-c", "run_id": "trial-B-smoke", "status": "entry_smoke_only", "result_file": "results/trial-B-smoke.txt", "reported_tokens": 12438}
   ],
+  "real_artifact_runs": {
+    "record_count": 42,
+    "process_completed_original": 25,
+    "timeouts_original": 17,
+    "recovery_runs": 15,
+    "artifact_gate_passes_after_recovery_merge": 21,
+    "gate_report": "results/AB-v2-recovery-merged-gate.json",
+    "timeout_budget_seconds": 7200
+  },
+  "pilot_unscored_runs": 42,
   "blocking_conditions": [
-    "No complete A/B run records yet",
+    "Only one real run per group/case is complete; need three independent real runs per case",
     "No blind multi-judge reports yet",
-    "C fusion group must not be created before A/B evidence"
+    "C fusion group must not be created before A/B evidence",
+    "Human rubric scores and cross-case aggregation are pending"
   ]
 }

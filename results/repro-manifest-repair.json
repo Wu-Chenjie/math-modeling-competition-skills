@@ -1,0 +1,71 @@
+{
+  "repaired": [
+    {
+      "run_id": "A-mcm-2023-c-001-v2-recovery",
+      "path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-mcm-2023-c-001-v2-recovery/reproducibility_manifest.json",
+      "source": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-recovery/workspaces-v2/A-mcm-2023-c-001-v2-recovery/results/metrics.json"
+    },
+    {
+      "run_id": "A-icm-2023-d-002-v2",
+      "path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-icm-2023-d-002-v2/reproducibility_manifest.json",
+      "source": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-icm-2023-d-002-v2/results/metrics.json"
+    },
+    {
+      "run_id": "A-mcm-2023-y-002-v2",
+      "path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-002-v2/reproducibility_manifest.json",
+      "source": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-002-v2/results/metrics.json"
+    },
+    {
+      "run_id": "B-mcm-2023-c-002-v2",
+      "path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/B-mcm-2023-c-002-v2/reproducibility_manifest.json",
+      "source": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/B-mcm-2023-c-002-v2/results/metrics.json"
+    }
+  ],
+  "blocked": [
+    {
+      "run_id": "A-icm-2023-d-003-v2",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "A-icm-2023-e-001-v2-recovery",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "A-mcm-2023-a-001-v2-recovery",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "A-mcm-2023-c-003-v2-recovery",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "B-mcm-2023-a-002-v2-recovery",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "B-mcm-2023-b-001-v2-recovery",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "B-mcm-2023-b-002-v2-recovery",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "B-mcm-2023-c-001-v2-recovery",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "A-icm-2023-e-002-v2",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "B-cumcm-2022-c-003-v2",
+      "reason": "embedded_manifest_absent"
+    },
+    {
+      "run_id": "B-mcm-2023-y-002-v2",
+      "reason": "embedded_manifest_absent"
+    }
+  ],
+  "status": "completed"
+}

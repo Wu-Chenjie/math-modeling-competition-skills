@@ -1,0 +1,10 @@
+{
+  "command": "python analyze_case.py",
+  "input": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\cumcm-2022-c.json",
+  "input_sha256": "86b82e0ac469e5dff323bea2773de708fc879c26fc9e2f6cc8ff711b01e1e231",
+  "seed": 20220822,
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "dependencies": "stdlib-only",
+  "metrics": "results/metrics.json",
+  "figures": "figures/*.svg"
+}

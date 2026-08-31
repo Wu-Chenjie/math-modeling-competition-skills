@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-015",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 9,
+    "model_reasonableness": 8,
+    "mathematical_rigor": 5,
+    "data_handling": 2,
+    "code_and_solving": 7,
+    "model_validation": 2,
+    "innovation": 3,
+    "result_interpretation": 4,
+    "paper_quality": 8,
+    "reproducibility": 4
+  },
+  "fatal_flags": [],
+  "notes": "Long SDG report and metrics with explicit pending stages; relationship data absent, so ranking/forecast claims are incomplete."
+}

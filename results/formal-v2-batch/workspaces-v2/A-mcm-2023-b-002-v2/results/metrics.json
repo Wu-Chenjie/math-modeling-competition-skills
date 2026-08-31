@@ -1,0 +1,124 @@
+{
+  "case_id": "mcm-2023-b",
+  "seed": 202302,
+  "input_rows": 0,
+  "input_attachments": 0,
+  "assumption_driven": true,
+  "n_policy_combinations": 256,
+  "n_feasible": 189,
+  "baseline": {
+    "policy": "protection|protection|protection|protection",
+    "wildlife": 0.7875000000000001,
+    "livelihood": 0.4125,
+    "tourism": 0.4125,
+    "conflict": 0.325,
+    "capacity": 0.8,
+    "score": 0.6031250000000001,
+    "feasible": true
+  },
+  "recommended": {
+    "policy": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+    "wildlife": 0.8424999999999999,
+    "livelihood": 0.795,
+    "tourism": 0.5650000000000001,
+    "conflict": 0.2325,
+    "capacity": 0.73,
+    "score": 0.752625,
+    "feasible": true
+  },
+  "robustness": [
+    {
+      "pressure": 0.8,
+      "compensation": 0.0,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|corridor_restoration",
+      "score": 0.751425
+    },
+    {
+      "pressure": 0.8,
+      "compensation": 0.2,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+      "score": 0.7595999999999999
+    },
+    {
+      "pressure": 0.8,
+      "compensation": 0.4,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+      "score": 0.7720999999999999
+    },
+    {
+      "pressure": 1.0,
+      "compensation": 0.0,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|corridor_restoration",
+      "score": 0.744
+    },
+    {
+      "pressure": 1.0,
+      "compensation": 0.2,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+      "score": 0.752625
+    },
+    {
+      "pressure": 1.0,
+      "compensation": 0.4,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+      "score": 0.7651249999999999
+    },
+    {
+      "pressure": 1.2,
+      "compensation": 0.0,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|corridor_restoration",
+      "score": 0.730575
+    },
+    {
+      "pressure": 1.2,
+      "compensation": 0.2,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+      "score": 0.7396499999999999
+    },
+    {
+      "pressure": 1.2,
+      "compensation": 0.4,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+      "score": 0.7521499999999999
+    },
+    {
+      "pressure": 1.4,
+      "compensation": 0.0,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|corridor_restoration",
+      "score": 0.71715
+    },
+    {
+      "pressure": 1.4,
+      "compensation": 0.2,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+      "score": 0.726675
+    },
+    {
+      "pressure": 1.4,
+      "compensation": 0.4,
+      "winner": "community_conservancy|community_conservancy|corridor_restoration|community_conservancy",
+      "score": 0.7391749999999999
+    }
+  ],
+  "falsification": {
+    "recommendation_beats_baseline_score": true,
+    "recommendation_beats_baseline_without_corridor_bonus": true,
+    "baseline_score": 0.6031250000000001,
+    "recommended_score": 0.752625
+  },
+  "tests": {
+    "enumerated_all_assignments": true,
+    "feasible_set_nonempty": true,
+    "recommended_is_feasible": true,
+    "all_indices_bounded_0_1": true,
+    "nine_svg_figures_created": true,
+    "falsification_recomputed": true
+  },
+  "pending_stages": [
+    "empirical_calibration",
+    "external_validation",
+    "long_term_forecast_calibration",
+    "official_rule_verification",
+    "independent_stage_gates"
+  ]
+}

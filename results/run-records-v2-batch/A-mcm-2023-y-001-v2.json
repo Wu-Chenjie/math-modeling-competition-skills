@@ -1,0 +1,29 @@
+{
+  "group": "A",
+  "case_id": "mcm-2023-y",
+  "index": 1,
+  "run_id": "A-mcm-2023-y-001-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/mcm-2023-y",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-y.json",
+  "statement_sha256": "2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce",
+  "data_sha256": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "timeout",
+  "started_at": "2026-08-30T09:07:06.547648+00:00",
+  "ended_at": "2026-08-30T09:17:06.569009+00:00",
+  "exit_code": null,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/A/A-mcm-2023-y-001-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-001-v2",
+  "artifacts": [
+    "__pycache__/test_model_run.cpython-312.pyc",
+    "test_model_run.py"
+  ],
+  "reported_tokens": null,
+  "stdout_log": "results/formal-v2-batch/A/A-mcm-2023-y-001-v2.stdout.log",
+  "stderr_log": "results/formal-v2-batch/A/A-mcm-2023-y-001-v2.stderr.log",
+  "stdout_tail": "",
+  "stderr_tail": "ge_is_explicitly_pending\r\n    import model_run\r\nModuleNotFoundError: No module named 'model_run'\r\n\r\n======================================================================\r\nERROR: test_load_rows_and_fit_returns_finite_metrics (test_model_run.ModelRunTests.test_load_rows_and_fit_returns_finite_metrics)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\�鳽��\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\results\\formal-v2-batch\\workspaces-v2\\A-mcm-2023-y-001-v2\\test_model_run.py\", line 7, in test_load_rows_and_fit_returns_finite_metrics\r\n    import model_run\r\nModuleNotFoundError: No module named 'model_run'\r\n\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.001s\r\n\r\nFAILED (errors=2)\r\n\ndiff --git a/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-001-v2/test_model_run.py b/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-001-v2/test_model_run.py\nnew file mode 100644\nindex 0000000000000000000000000000000000000000..12c286576e980bbcfc20baac4d80aa9d120dddd3\n--- /dev/null\n+++ b/results/formal-v2-batch/workspaces-v2/A-mcm-2023-y-001-v2/test_model_run.py\n@@ -0,0 +1,26 @@\n+import math\n+import unittest\n+\n+\n+class ModelRunTests(unittest.TestCase):\n+    def test_load_rows_and_fit_returns_finite_metrics(self):\n+        import model_run\n+\n+        summary = model_run.load_summary()\n+        rows = model_run.prepare_rows(summary)\n+        self.assertEqual(len(rows), 3491)\n+        result = model_run.fit_and_evaluate(rows, seed=2023)\n+        self.assertEqual(result[\"n\"], 3491)\n+        self.assertTrue(math.isfinite(result[\"test_rmse_log\"]))\n+        self.assertGreaterEqual(result[\"test_rmse_log\"], 0.0)\n+        self.assertLessEqual(result[\"test_r2_log\"], 1.0)\n+\n+\n+    def test_hong_kong_stage_is_explicitly_pending(self):\n+        import model_run\n+\n+        self.assertIs(model_run.HK_PENDING, True)\n+\n+\n+if __name__ == \"__main__\":\n+    unittest.main()\n\n"
+}

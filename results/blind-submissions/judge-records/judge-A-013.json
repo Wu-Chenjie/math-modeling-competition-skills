@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-013",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 6,
+    "model_reasonableness": 7,
+    "mathematical_rigor": 4,
+    "data_handling": 1,
+    "code_and_solving": 6,
+    "model_validation": 2,
+    "innovation": 1,
+    "result_interpretation": 2,
+    "paper_quality": 3,
+    "reproducibility": 3
+  },
+  "fatal_flags": [],
+  "notes": "Short report/artifacts provide minimal evidence; no complete derivation or validation narrative."
+}

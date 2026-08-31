@@ -1,0 +1,3189 @@
+{
+  "run_id": "A-mcm-2023-y-002-v2",
+  "problem_framing": {
+    "objective": "Explain and validate used sailboat listing prices and quantify supplied-region effects.",
+    "response": "Listing Price (USD), modeled on the log scale.",
+    "subproblems": [
+      "price explanation and variant precision",
+      "regional effect and consistency",
+      "Hong Kong transfer",
+      "additional inferences"
+    ]
+  },
+  "data_audit": {
+    "raw_data_rows_excluding_headers": 3491,
+    "valid_rows": 3491,
+    "invalid_or_incomplete_core_rows": 0,
+    "exact_duplicate_rows": 82,
+    "hull_counts": {
+      "monohull": 2346,
+      "catamaran": 1145
+    },
+    "region_counts": {
+      "Europe": 2518,
+      "USA": 493,
+      "Caribbean": 480
+    },
+    "year_range": [
+      2005,
+      2019
+    ],
+    "length_range_ft": [
+      36.0,
+      56.0
+    ],
+    "price_range_usd": [
+      45000.0,
+      2890000.0
+    ],
+    "source_scope": "case-summary rows_data only; no binary attachments opened"
+  },
+  "assumptions": [
+    "December 2020 listing records are cross-sectional and asking prices are not sale prices.",
+    "Manufacture age equals 2020 minus listed year.",
+    "Variant-grouped folds estimate transfer to unseen variants and prevent identical variants crossing folds.",
+    "Exact duplicate-looking rows are retained in the primary analysis because limited columns cannot prove duplicate listings; de-duplication is a sensitivity analysis.",
+    "Regional counterfactuals are conditional associations, not causal effects."
+  ],
+  "candidate_models": [
+    {
+      "name": "hull median baseline",
+      "role": "minimum predictive reference"
+    },
+    {
+      "name": "ridge log-price without region",
+      "role": "structured price model and regional ablation"
+    },
+    {
+      "name": "ridge log-price with region interactions",
+      "role": "primary interpretable regional model"
+    }
+  ],
+  "baseline": {
+    "rmse_log": 0.4842505772694836,
+    "mae_usd": 109083.40547121169,
+    "mape": 0.3896677517166381,
+    "r2_log": 0.33875600137390305
+  },
+  "math_specification": {
+    "equation": "log(price_i)=beta0+f_length+f_age+hull+make+variant+location+region+region:hull+region:length+region:age+error",
+    "estimator": "argmin_beta ||y-X beta||_2^2 + alpha ||beta_nonintercept||_2^2",
+    "primary_alpha": 10.0,
+    "validation": "deterministic SHA-256 variant-grouped five-fold out-of-fold predictions",
+    "feature_count_full_fit": 253
+  },
+  "code_prototype": {
+    "entrypoint": "sailboat_model.py",
+    "language": "Python",
+    "random_seed": 2023002
+  },
+  "experiment": {
+    "baseline": {
+      "rmse_log": 0.4842505772694836,
+      "mae_usd": 109083.40547121169,
+      "mape": 0.3896677517166381,
+      "r2_log": 0.33875600137390305
+    },
+    "ridge_no_region": {
+      "rmse_log": 0.23008822034697274,
+      "mae_usd": 51280.942328010206,
+      "mape": 0.18101954885914948,
+      "r2_log": 0.850717046362877
+    },
+    "ridge_region_interactions": {
+      "rmse_log": 0.22698486992332595,
+      "mae_usd": 50927.64813261198,
+      "mape": 0.17769220891025478,
+      "r2_log": 0.8547168430888329
+    },
+    "alpha_sensitivity": {
+      "alpha=1": {
+        "rmse_log": 0.2225496949348995,
+        "mae_usd": 49755.39502244327,
+        "mape": 0.1766747707692048,
+        "r2_log": 0.8603389007961937
+      },
+      "alpha=10": {
+        "rmse_log": 0.22698486992332595,
+        "mae_usd": 50927.64813261198,
+        "mape": 0.17769220891025478,
+        "r2_log": 0.8547168430888329
+      },
+      "alpha=100": {
+        "rmse_log": 0.2612622631983585,
+        "mae_usd": 58528.451984397114,
+        "mape": 0.199894731168927,
+        "r2_log": 0.8075247827510045
+      }
+    }
+  },
+  "validation": {
+    "out_of_fold": true,
+    "grouping": "make|variant",
+    "folds": 5,
+    "primary_improvement_rmse_log_vs_baseline": 0.25726570734615767
+  },
+  "sensitivity_robustness": {
+    "regularization": {
+      "alpha=1": {
+        "rmse_log": 0.2225496949348995,
+        "mae_usd": 49755.39502244327,
+        "mape": 0.1766747707692048,
+        "r2_log": 0.8603389007961937
+      },
+      "alpha=10": {
+        "rmse_log": 0.22698486992332595,
+        "mae_usd": 50927.64813261198,
+        "mape": 0.17769220891025478,
+        "r2_log": 0.8547168430888329
+      },
+      "alpha=100": {
+        "rmse_log": 0.2612622631983585,
+        "mae_usd": 58528.451984397114,
+        "mape": 0.199894731168927,
+        "r2_log": 0.8075247827510045
+      }
+    },
+    "deduplicated_primary_metrics": {
+      "rmse_log": 0.22813785773879283,
+      "mae_usd": 50593.50531274436,
+      "mape": 0.17888009129022814,
+      "r2_log": 0.8522000794051121
+    },
+    "primary_rows": 3491,
+    "deduplicated_rows": 3409
+  },
+  "regional_effects": {
+    "monohull": {
+      "Caribbean": {
+        "median_percent_vs_europe": -9.703584066066151,
+        "bootstrap_95pct_ci": [
+          -9.749202869903655,
+          -9.276602255618686
+        ],
+        "practically_significant_5pct": true,
+        "statistically_directional": true,
+        "variant_iqr_percent": [
+          -11.806810089103026,
+          -8.082743876158272
+        ],
+        "variant_sign_agreement": 1.0
+      },
+      "USA": {
+        "median_percent_vs_europe": 16.379197006680258,
+        "bootstrap_95pct_ci": [
+          16.3289976044247,
+          16.388074732205162
+        ],
+        "practically_significant_5pct": true,
+        "statistically_directional": true,
+        "variant_iqr_percent": [
+          15.668058389037272,
+          16.947929034966847
+        ],
+        "variant_sign_agreement": 1.0
+      }
+    },
+    "catamaran": {
+      "Caribbean": {
+        "median_percent_vs_europe": -14.187431168656994,
+        "bootstrap_95pct_ci": [
+          -14.574034693031324,
+          -14.12843522309528
+        ],
+        "practically_significant_5pct": true,
+        "statistically_directional": true,
+        "variant_iqr_percent": [
+          -15.178856414244926,
+          -11.128487839353598
+        ],
+        "variant_sign_agreement": 1.0
+      },
+      "USA": {
+        "median_percent_vs_europe": 8.417555179117509,
+        "bootstrap_95pct_ci": [
+          8.352420169122476,
+          8.501028629530394
+        ],
+        "practically_significant_5pct": true,
+        "statistically_directional": true,
+        "variant_iqr_percent": [
+          7.56812999426017,
+          8.967380147892229
+        ],
+        "variant_sign_agreement": 1.0
+      }
+    }
+  },
+  "variant_precision": {
+    "Alliage|44": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Alliage|AZZURO 53": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Alliaura|Feeling 39 DI": {
+      "n": 2,
+      "residual_sd_log": 0.25126640330782907,
+      "approx_95pct_half_width_percent": 82.7894920484914
+    },
+    "Allures|44": {
+      "n": 3,
+      "residual_sd_log": 0.2220517614412089,
+      "approx_95pct_half_width_percent": 65.29316111683399
+    },
+    "Alubat|CIGALE 16": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Alubat|Ovni 395": {
+      "n": 3,
+      "residual_sd_log": 0.15876160807165304,
+      "approx_95pct_half_width_percent": 43.23426835374033
+    },
+    "Amel|54": {
+      "n": 3,
+      "residual_sd_log": 0.07742357955575092,
+      "approx_95pct_half_width_percent": 19.151553544547852
+    },
+    "Antares|44GS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Antares|44i": {
+      "n": 3,
+      "residual_sd_log": 0.16013098765819195,
+      "approx_95pct_half_width_percent": 43.67886827273389
+    },
+    "Archambault|40 RC": {
+      "n": 6,
+      "residual_sd_log": 0.08098899302156727,
+      "approx_95pct_half_width_percent": 18.70332139320108
+    },
+    "Azuree|40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Azuree|46": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "B-Yachts|38": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "B-Yachts|Brenta B42": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Bali|4.0": {
+      "n": 8,
+      "residual_sd_log": 0.1496374863562205,
+      "approx_95pct_half_width_percent": 36.489904075849154
+    },
+    "Bali|4.0999999999999996": {
+      "n": 16,
+      "residual_sd_log": 0.13270200331180668,
+      "approx_95pct_half_width_percent": 30.74788545906597
+    },
+    "Bali|4.3": {
+      "n": 14,
+      "residual_sd_log": 0.0646247519007534,
+      "approx_95pct_half_width_percent": 14.009344434313187
+    },
+    "Bali|4.3 LOFT": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Bali|4.5": {
+      "n": 12,
+      "residual_sd_log": 0.1749447091469965,
+      "approx_95pct_half_width_percent": 42.888286226004844
+    },
+    "Bali|4.6": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Bali|5.4": {
+      "n": 2,
+      "residual_sd_log": 0.35987686917721373,
+      "approx_95pct_half_width_percent": 137.23580201313422
+    },
+    "Bavaria|38 Cruiser": {
+      "n": 11,
+      "residual_sd_log": 0.1656514871938541,
+      "approx_95pct_half_width_percent": 40.37033270173638
+    },
+    "Bavaria|39 Cruiser": {
+      "n": 23,
+      "residual_sd_log": 0.2023159652906913,
+      "approx_95pct_half_width_percent": 49.940444768164504
+    },
+    "Bavaria|40 Cruiser": {
+      "n": 28,
+      "residual_sd_log": 0.16284744807827706,
+      "approx_95pct_half_width_percent": 38.37962913688773
+    },
+    "Bavaria|40S Cruiser": {
+      "n": 10,
+      "residual_sd_log": 0.19693468993369465,
+      "approx_95pct_half_width_percent": 49.90503637911292
+    },
+    "Bavaria|41 Cruiser": {
+      "n": 23,
+      "residual_sd_log": 0.21104945531052985,
+      "approx_95pct_half_width_percent": 52.58533056296126
+    },
+    "Bavaria|42 Cruiser": {
+      "n": 11,
+      "residual_sd_log": 0.173366053377929,
+      "approx_95pct_half_width_percent": 42.60478500233196
+    },
+    "Bavaria|42 Match": {
+      "n": 4,
+      "residual_sd_log": 0.17316200707538898,
+      "approx_95pct_half_width_percent": 46.14922145998428
+    },
+    "Bavaria|42 Vision": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Bavaria|44 Vision": {
+      "n": 3,
+      "residual_sd_log": 0.09389786380972436,
+      "approx_95pct_half_width_percent": 23.67795588094097
+    },
+    "Bavaria|45 Cruiser": {
+      "n": 20,
+      "residual_sd_log": 0.16002864713677092,
+      "approx_95pct_half_width_percent": 37.9059728798175
+    },
+    "Bavaria|46 Cruiser": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Bavaria|47 Cruiser": {
+      "n": 4,
+      "residual_sd_log": 0.3557766846135878,
+      "approx_95pct_half_width_percent": 118.0665345456291
+    },
+    "Bavaria|49 Cruiser": {
+      "n": 2,
+      "residual_sd_log": 0.08951647634278805,
+      "approx_95pct_half_width_percent": 23.971844927526487
+    },
+    "Bavaria|50 Cruiser": {
+      "n": 40,
+      "residual_sd_log": 0.21030227116299044,
+      "approx_95pct_half_width_percent": 51.78776115760264
+    },
+    "Bavaria|51 Cruiser": {
+      "n": 30,
+      "residual_sd_log": 0.22473990122410703,
+      "approx_95pct_half_width_percent": 56.482113940084666
+    },
+    "Bavaria|51 Cruiser Style": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Bavaria|56 Cruiser": {
+      "n": 29,
+      "residual_sd_log": 0.16987015565813215,
+      "approx_95pct_half_width_percent": 40.30343632914138
+    },
+    "Bavaria|C45 Holiday": {
+      "n": 3,
+      "residual_sd_log": 0.20100125443841402,
+      "approx_95pct_half_width_percent": 57.60294269142674
+    },
+    "Bavaria|Cruiser 46": {
+      "n": 76,
+      "residual_sd_log": 0.1468950932754889,
+      "approx_95pct_half_width_percent": 33.61633909011839
+    },
+    "Bavaria|Cruiser 46 Style": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Bavaria|Cruiser 46S": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Bavaria|Cruiser 50": {
+      "n": 3,
+      "residual_sd_log": 0.1920144510313673,
+      "approx_95pct_half_width_percent": 54.42982690243083
+    },
+    "Bavaria|Vision 46": {
+      "n": 8,
+      "residual_sd_log": 0.15992064869842465,
+      "approx_95pct_half_width_percent": 39.43914268462676
+    },
+    "Beneteau|40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|41.1": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|423": {
+      "n": 4,
+      "residual_sd_log": 0.22544004412628707,
+      "approx_95pct_half_width_percent": 63.88868776407324
+    },
+    "Beneteau|43": {
+      "n": 7,
+      "residual_sd_log": 0.1614530032264318,
+      "approx_95pct_half_width_percent": 40.25570295908063
+    },
+    "Beneteau|523": {
+      "n": 2,
+      "residual_sd_log": 0.08473234105002156,
+      "approx_95pct_half_width_percent": 22.556257108355204
+    },
+    "Beneteau|56": {
+      "n": 2,
+      "residual_sd_log": 0.28313526575816156,
+      "approx_95pct_half_width_percent": 97.32189434649756
+    },
+    "Beneteau|America 50": {
+      "n": 2,
+      "residual_sd_log": 1.0420664049988053,
+      "approx_95pct_half_width_percent": 1120.0541682233725
+    },
+    "Beneteau|Cyclades 39.3": {
+      "n": 25,
+      "residual_sd_log": 0.1403690351970639,
+      "approx_95pct_half_width_percent": 32.3886626389243
+    },
+    "Beneteau|Cyclades 43": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Cyclades 43.3": {
+      "n": 6,
+      "residual_sd_log": 0.0695370401309014,
+      "approx_95pct_half_width_percent": 15.860052386556145
+    },
+    "Beneteau|Cyclades 43.4": {
+      "n": 10,
+      "residual_sd_log": 0.09034342211118492,
+      "approx_95pct_half_width_percent": 20.408006247613166
+    },
+    "Beneteau|Cyclades 50.5": {
+      "n": 21,
+      "residual_sd_log": 0.2382038317131416,
+      "approx_95pct_half_width_percent": 61.26300435461762
+    },
+    "Beneteau|First 40": {
+      "n": 11,
+      "residual_sd_log": 0.4106125697296764,
+      "approx_95pct_half_width_percent": 131.77267358267986
+    },
+    "Beneteau|First 40 CR": {
+      "n": 2,
+      "residual_sd_log": 0.30521272022865503,
+      "approx_95pct_half_width_percent": 108.06141592823666
+    },
+    "Beneteau|First 40.7": {
+      "n": 4,
+      "residual_sd_log": 0.30237712500327046,
+      "approx_95pct_half_width_percent": 93.98547327024434
+    },
+    "Beneteau|First 44.7": {
+      "n": 9,
+      "residual_sd_log": 0.11175667892751848,
+      "approx_95pct_half_width_percent": 25.97227924621588
+    },
+    "Beneteau|First 45": {
+      "n": 8,
+      "residual_sd_log": 0.18755499226143985,
+      "approx_95pct_half_width_percent": 47.684334684495866
+    },
+    "Beneteau|First 47.7": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|First 50": {
+      "n": 11,
+      "residual_sd_log": 0.1388518896219193,
+      "approx_95pct_half_width_percent": 32.8766535357444
+    },
+    "Beneteau|First 50 Sport": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Moorings 42.3": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Moorings 43.5": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|OCEANIS 55": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Oceanis 38": {
+      "n": 14,
+      "residual_sd_log": 0.07322657205492454,
+      "approx_95pct_half_width_percent": 16.01641898628039
+    },
+    "Beneteau|Oceanis 38.1": {
+      "n": 5,
+      "residual_sd_log": 0.2603929310173876,
+      "approx_95pct_half_width_percent": 74.90669633652631
+    },
+    "Beneteau|Oceanis 40": {
+      "n": 35,
+      "residual_sd_log": 0.1458400481064951,
+      "approx_95pct_half_width_percent": 33.62955317034901
+    },
+    "Beneteau|Oceanis 41": {
+      "n": 24,
+      "residual_sd_log": 0.1521663850225931,
+      "approx_95pct_half_width_percent": 35.58060741166671
+    },
+    "Beneteau|Oceanis 41 Owners Version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Oceanis 41.1": {
+      "n": 5,
+      "residual_sd_log": 0.22674656496896706,
+      "approx_95pct_half_width_percent": 62.716835271836025
+    },
+    "Beneteau|Oceanis 423": {
+      "n": 12,
+      "residual_sd_log": 0.06178544035541772,
+      "approx_95pct_half_width_percent": 13.433243787990335
+    },
+    "Beneteau|Oceanis 43": {
+      "n": 33,
+      "residual_sd_log": 0.14634145077423183,
+      "approx_95pct_half_width_percent": 33.79555063021063
+    },
+    "Beneteau|Oceanis 43 Family": {
+      "n": 2,
+      "residual_sd_log": 0.2155153344641629,
+      "approx_95pct_half_width_percent": 67.7567033056825
+    },
+    "Beneteau|Oceanis 43.4": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Oceanis 45": {
+      "n": 44,
+      "residual_sd_log": 0.18069755262797615,
+      "approx_95pct_half_width_percent": 43.07077036102582
+    },
+    "Beneteau|Oceanis 46": {
+      "n": 23,
+      "residual_sd_log": 0.18581349753305246,
+      "approx_95pct_half_width_percent": 45.067285990176885
+    },
+    "Beneteau|Oceanis 46 Family": {
+      "n": 2,
+      "residual_sd_log": 0.01902522483065907,
+      "approx_95pct_half_width_percent": 4.67289870167964
+    },
+    "Beneteau|Oceanis 46 Owner Version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Oceanis 46.1": {
+      "n": 4,
+      "residual_sd_log": 0.12503551320721693,
+      "approx_95pct_half_width_percent": 31.520973734345237
+    },
+    "Beneteau|Oceanis 473": {
+      "n": 9,
+      "residual_sd_log": 0.19259403321664284,
+      "approx_95pct_half_width_percent": 48.8700207124781
+    },
+    "Beneteau|Oceanis 48": {
+      "n": 23,
+      "residual_sd_log": 0.16390691715919964,
+      "approx_95pct_half_width_percent": 38.8420975803466
+    },
+    "Beneteau|Oceanis 49": {
+      "n": 7,
+      "residual_sd_log": 0.13977489198781518,
+      "approx_95pct_half_width_percent": 34.02742590740655
+    },
+    "Beneteau|Oceanis 50": {
+      "n": 38,
+      "residual_sd_log": 0.14327858764472023,
+      "approx_95pct_half_width_percent": 32.9093480342437
+    },
+    "Beneteau|Oceanis 50 F G5": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Oceanis 50 Family": {
+      "n": 4,
+      "residual_sd_log": 0.11864960019502431,
+      "approx_95pct_half_width_percent": 29.693319944238272
+    },
+    "Beneteau|Oceanis 50.5": {
+      "n": 4,
+      "residual_sd_log": 0.03181601105506846,
+      "approx_95pct_half_width_percent": 7.220782259695868
+    },
+    "Beneteau|Oceanis 51": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Oceanis 51.1": {
+      "n": 6,
+      "residual_sd_log": 0.15018087259116691,
+      "approx_95pct_half_width_percent": 37.42927141795418
+    },
+    "Beneteau|Oceanis 523": {
+      "n": 6,
+      "residual_sd_log": 0.3184765408144117,
+      "approx_95pct_half_width_percent": 96.25177214091865
+    },
+    "Beneteau|Oceanis 523 A": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Oceanis 54": {
+      "n": 22,
+      "residual_sd_log": 0.16627810533546195,
+      "approx_95pct_half_width_percent": 39.54678157023608
+    },
+    "Beneteau|Oceanis 55": {
+      "n": 16,
+      "residual_sd_log": 0.112962909090548,
+      "approx_95pct_half_width_percent": 25.636348230577433
+    },
+    "Beneteau|Oceanis 55.1": {
+      "n": 3,
+      "residual_sd_log": 0.051681727887557156,
+      "approx_95pct_half_width_percent": 12.408206601110972
+    },
+    "Beneteau|Oceanis Clipper 423": {
+      "n": 8,
+      "residual_sd_log": 0.17159232554786616,
+      "approx_95pct_half_width_percent": 42.86390033481682
+    },
+    "Beneteau|Oceanis Clipper 473": {
+      "n": 4,
+      "residual_sd_log": 0.13646395756896945,
+      "approx_95pct_half_width_percent": 34.8563338230756
+    },
+    "Beneteau|Oceanis Clipper 523": {
+      "n": 7,
+      "residual_sd_log": 0.1684094941179022,
+      "approx_95pct_half_width_percent": 42.31506074561153
+    },
+    "Beneteau|Sense 43": {
+      "n": 2,
+      "residual_sd_log": 0.05468394131086344,
+      "approx_95pct_half_width_percent": 14.02742438650062
+    },
+    "Beneteau|Sense 46": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Sense 50": {
+      "n": 12,
+      "residual_sd_log": 0.1122709720996337,
+      "approx_95pct_half_width_percent": 25.738787252734774
+    },
+    "Beneteau|Sense 51": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Beneteau|Sense 55": {
+      "n": 2,
+      "residual_sd_log": 0.009128793683540448,
+      "approx_95pct_half_width_percent": 2.2155536708290624
+    },
+    "Bestevaer|49ST": {
+      "n": 2,
+      "residual_sd_log": 0.24186397281214497,
+      "approx_95pct_half_width_percent": 78.71004643252427
+    },
+    "Bestevaer|53ST": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Boreal|44": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Boreal|47": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Broadblue|385": {
+      "n": 11,
+      "residual_sd_log": 0.0970567782409975,
+      "approx_95pct_half_width_percent": 21.98038869979968
+    },
+    "Broadblue|415": {
+      "n": 3,
+      "residual_sd_log": 0.09875245474833438,
+      "approx_95pct_half_width_percent": 25.044294534616185
+    },
+    "Broadblue|435": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "C&C|115": {
+      "n": 5,
+      "residual_sd_log": 0.06797503609007458,
+      "approx_95pct_half_width_percent": 15.713523504813388
+    },
+    "C&C|121": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Cabo Rico|42": {
+      "n": 3,
+      "residual_sd_log": 0.1372868967507712,
+      "approx_95pct_half_width_percent": 36.439280345719126
+    },
+    "Caliber|40 LRC SE": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Caliber|47 LRC SE": {
+      "n": 2,
+      "residual_sd_log": 0.09870789708286576,
+      "approx_95pct_half_width_percent": 26.73755950540535
+    },
+    "Caliber|47LRC": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Catalina|375": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Catalina|385": {
+      "n": 3,
+      "residual_sd_log": 0.020323207423742117,
+      "approx_95pct_half_width_percent": 4.706995918863255
+    },
+    "Catalina|387": {
+      "n": 4,
+      "residual_sd_log": 0.09974547972182589,
+      "approx_95pct_half_width_percent": 24.430472442289684
+    },
+    "Catalina|400 MK II": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Catalina|42 MK II": {
+      "n": 6,
+      "residual_sd_log": 0.060699326955919355,
+      "approx_95pct_half_width_percent": 13.712485790393703
+    },
+    "Catalina|42 Mk II": {
+      "n": 2,
+      "residual_sd_log": 0.12823637527849543,
+      "approx_95pct_half_width_percent": 36.04716106573682
+    },
+    "Catalina|425": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Catalina|445": {
+      "n": 8,
+      "residual_sd_log": 0.05136258724084089,
+      "approx_95pct_half_width_percent": 11.268651082644986
+    },
+    "Catalina|470": {
+      "n": 4,
+      "residual_sd_log": 0.0894164224843735,
+      "approx_95pct_half_width_percent": 21.645680499154896
+    },
+    "Catalina|Morgan 440": {
+      "n": 6,
+      "residual_sd_log": 0.08208070830446257,
+      "approx_95pct_half_width_percent": 18.97798662996413
+    },
+    "Catalina|Morgan 440 DS Sloop": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Catana|47": {
+      "n": 2,
+      "residual_sd_log": 0.0015081173833238564,
+      "approx_95pct_half_width_percent": 0.3626796668427801
+    },
+    "Catana|47 Ocean Class": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Catana|50": {
+      "n": 3,
+      "residual_sd_log": 0.19261427090971703,
+      "approx_95pct_half_width_percent": 54.6396108695294
+    },
+    "Chris White|Atlantic 48": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Chris White|Atlantic 49MF": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Chris White|MastFoil 40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Comar|Comet 41S": {
+      "n": 8,
+      "residual_sd_log": 0.1527989725436424,
+      "approx_95pct_half_width_percent": 37.38992396914212
+    },
+    "Comar|Comet 450": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Comar|Comet 45S": {
+      "n": 2,
+      "residual_sd_log": 0.18187528069663414,
+      "approx_95pct_half_width_percent": 54.74239828871603
+    },
+    "Comar|Comet 45s": {
+      "n": 4,
+      "residual_sd_log": 0.12481777774532543,
+      "approx_95pct_half_width_percent": 31.45823559185765
+    },
+    "Comar|Comet 51S": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Comar|Comet 52 RS": {
+      "n": 4,
+      "residual_sd_log": 0.04574508567415587,
+      "approx_95pct_half_width_percent": 10.543988174173457
+    },
+    "Contest|42CS": {
+      "n": 2,
+      "residual_sd_log": 0.002463685290490553,
+      "approx_95pct_half_width_percent": 0.593159908788432
+    },
+    "Contest|45CS": {
+      "n": 2,
+      "residual_sd_log": 0.1321882168484883,
+      "approx_95pct_half_width_percent": 37.34389920071255
+    },
+    "Contest|50CS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Contest|55CS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dehler|37": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dehler|38 Competition": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dehler|39 SQ": {
+      "n": 2,
+      "residual_sd_log": 0.010099064561011492,
+      "approx_95pct_half_width_percent": 2.4539049823971704
+    },
+    "Dehler|41": {
+      "n": 5,
+      "residual_sd_log": 0.10418606237378322,
+      "approx_95pct_half_width_percent": 25.06895280117105
+    },
+    "Dehler|41 CR": {
+      "n": 2,
+      "residual_sd_log": 0.049302914790721436,
+      "approx_95pct_half_width_percent": 12.563986672250804
+    },
+    "Dehler|42": {
+      "n": 3,
+      "residual_sd_log": 0.04845418016295252,
+      "approx_95pct_half_width_percent": 11.590098078214716
+    },
+    "Dehler|44": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dehler|44 SQ": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dehler|45": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dehler|46": {
+      "n": 5,
+      "residual_sd_log": 0.19232322729440526,
+      "approx_95pct_half_width_percent": 51.1242103958182
+    },
+    "Dehler|47": {
+      "n": 3,
+      "residual_sd_log": 0.07255846379300361,
+      "approx_95pct_half_width_percent": 17.846796777912722
+    },
+    "Dehler|47 SQ": {
+      "n": 2,
+      "residual_sd_log": 0.16481620118803397,
+      "approx_95pct_half_width_percent": 48.533640561871195
+    },
+    "Dehler|Varianta 44": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Delphia|40": {
+      "n": 5,
+      "residual_sd_log": 0.2711522125476516,
+      "approx_95pct_half_width_percent": 78.994239657904
+    },
+    "Delphia|46 cc": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Discovery|55": {
+      "n": 2,
+      "residual_sd_log": 0.28110938618476455,
+      "approx_95pct_half_width_percent": 96.36462309470666
+    },
+    "Dix Harvey|DH550": {
+      "n": 3,
+      "residual_sd_log": 0.013635558407375336,
+      "approx_95pct_half_width_percent": 3.134128527408553
+    },
+    "Dolphin Ocema|Ocema 42": {
+      "n": 2,
+      "residual_sd_log": 0.16766292115665402,
+      "approx_95pct_half_width_percent": 49.55212877237134
+    },
+    "Dufour|380": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|382 GL": {
+      "n": 3,
+      "residual_sd_log": 0.0489673833163493,
+      "approx_95pct_half_width_percent": 11.719783946331198
+    },
+    "Dufour|385": {
+      "n": 3,
+      "residual_sd_log": 0.22378469371452953,
+      "approx_95pct_half_width_percent": 65.94271299611778
+    },
+    "Dufour|385 GL": {
+      "n": 5,
+      "residual_sd_log": 0.042077924164251296,
+      "approx_95pct_half_width_percent": 9.455112825657741
+    },
+    "Dufour|390": {
+      "n": 2,
+      "residual_sd_log": 0.14827696531191215,
+      "approx_95pct_half_width_percent": 42.75202491769667
+    },
+    "Dufour|40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|40 Performance": {
+      "n": 4,
+      "residual_sd_log": 0.13053681140350676,
+      "approx_95pct_half_width_percent": 33.11608754118283
+    },
+    "Dufour|405": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|405 GL": {
+      "n": 6,
+      "residual_sd_log": 0.16373495307621366,
+      "approx_95pct_half_width_percent": 41.42986665688457
+    },
+    "Dufour|40e": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|40e Performance": {
+      "n": 3,
+      "residual_sd_log": 0.09277982744804068,
+      "approx_95pct_half_width_percent": 23.36540241226821
+    },
+    "Dufour|410": {
+      "n": 3,
+      "residual_sd_log": 0.08087506260728805,
+      "approx_95pct_half_width_percent": 20.085943650513084
+    },
+    "Dufour|410 GL": {
+      "n": 8,
+      "residual_sd_log": 0.1935578989359934,
+      "approx_95pct_half_width_percent": 49.5388953390175
+    },
+    "Dufour|412": {
+      "n": 7,
+      "residual_sd_log": 0.10429799443039767,
+      "approx_95pct_half_width_percent": 24.425694736858915
+    },
+    "Dufour|412 GL": {
+      "n": 6,
+      "residual_sd_log": 0.14512253208406667,
+      "approx_95pct_half_width_percent": 35.9654318652751
+    },
+    "Dufour|425": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|425 GL": {
+      "n": 4,
+      "residual_sd_log": 0.11804605006808473,
+      "approx_95pct_half_width_percent": 29.52190255886493
+    },
+    "Dufour|430": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|430 GL": {
+      "n": 4,
+      "residual_sd_log": 0.09057993868877931,
+      "approx_95pct_half_width_percent": 21.956232246424577
+    },
+    "Dufour|44": {
+      "n": 2,
+      "residual_sd_log": 0.044698569717187046,
+      "approx_95pct_half_width_percent": 11.326697614421866
+    },
+    "Dufour|44 Performance": {
+      "n": 2,
+      "residual_sd_log": 0.03755224782163395,
+      "approx_95pct_half_width_percent": 9.433204102387727
+    },
+    "Dufour|445": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|445 GL": {
+      "n": 6,
+      "residual_sd_log": 0.16509535381170426,
+      "approx_95pct_half_width_percent": 41.83777538284175
+    },
+    "Dufour|45 Performance": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|450 GL": {
+      "n": 4,
+      "residual_sd_log": 0.15058474867191088,
+      "approx_95pct_half_width_percent": 39.09450103719725
+    },
+    "Dufour|450 Liberty version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|455": {
+      "n": 5,
+      "residual_sd_log": 0.11876239535350763,
+      "approx_95pct_half_width_percent": 29.045060584969896
+    },
+    "Dufour|455 GL": {
+      "n": 11,
+      "residual_sd_log": 0.19650554774939166,
+      "approx_95pct_half_width_percent": 49.522540429562234
+    },
+    "Dufour|45e Performance": {
+      "n": 4,
+      "residual_sd_log": 0.25880457782677846,
+      "approx_95pct_half_width_percent": 76.32003462117186
+    },
+    "Dufour|460": {
+      "n": 8,
+      "residual_sd_log": 0.13838153282068869,
+      "approx_95pct_half_width_percent": 33.33312761066569
+    },
+    "Dufour|460 GL": {
+      "n": 19,
+      "residual_sd_log": 0.15408342594451807,
+      "approx_95pct_half_width_percent": 36.321934585116345
+    },
+    "Dufour|460 Performance": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|485": {
+      "n": 2,
+      "residual_sd_log": 0.13193037271431743,
+      "approx_95pct_half_width_percent": 37.258915833987686
+    },
+    "Dufour|485 GL": {
+      "n": 5,
+      "residual_sd_log": 0.08983484983975824,
+      "approx_95pct_half_width_percent": 21.27395956071272
+    },
+    "Dufour|500": {
+      "n": 2,
+      "residual_sd_log": 2.7409762770344924e-05,
+      "approx_95pct_half_width_percent": 0.006579929878181012
+    },
+    "Dufour|500 GL": {
+      "n": 5,
+      "residual_sd_log": 0.22617560575084342,
+      "approx_95pct_half_width_percent": 62.51748441771965
+    },
+    "Dufour|512 GL": {
+      "n": 3,
+      "residual_sd_log": 0.3757463819504156,
+      "approx_95pct_half_width_percent": 134.05691284493165
+    },
+    "Dufour|520": {
+      "n": 5,
+      "residual_sd_log": 0.1147823391469706,
+      "approx_95pct_half_width_percent": 27.947008396358108
+    },
+    "Dufour|520 GL": {
+      "n": 3,
+      "residual_sd_log": 0.05892528289357684,
+      "approx_95pct_half_width_percent": 14.266181886796447
+    },
+    "Dufour|520 GL Owner Version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Dufour|525 GL": {
+      "n": 8,
+      "residual_sd_log": 0.2033582066942658,
+      "approx_95pct_half_width_percent": 52.616818974361436
+    },
+    "Dufour|56 Exclusive": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Elan|394 Impression": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Elan|40 E5": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Elan|40 Impression": {
+      "n": 6,
+      "residual_sd_log": 0.050278969805509506,
+      "approx_95pct_half_width_percent": 11.231417662346143
+    },
+    "Elan|410": {
+      "n": 2,
+      "residual_sd_log": 0.05427905222234246,
+      "approx_95pct_half_width_percent": 13.916650841982992
+    },
+    "Elan|434 Impression": {
+      "n": 2,
+      "residual_sd_log": 0.20877182560560414,
+      "approx_95pct_half_width_percent": 65.0629543228965
+    },
+    "Elan|444 Impression": {
+      "n": 6,
+      "residual_sd_log": 0.14876130292590825,
+      "approx_95pct_half_width_percent": 37.01687679512593
+    },
+    "Elan|45 Impression": {
+      "n": 9,
+      "residual_sd_log": 0.05950215871948665,
+      "approx_95pct_half_width_percent": 13.080835291081062
+    },
+    "Elan|450": {
+      "n": 9,
+      "residual_sd_log": 0.1144713433949593,
+      "approx_95pct_half_width_percent": 26.680786683965252
+    },
+    "Elan|494 Impression": {
+      "n": 2,
+      "residual_sd_log": 0.17522292886557328,
+      "approx_95pct_half_width_percent": 52.29094720745595
+    },
+    "Elan|50": {
+      "n": 2,
+      "residual_sd_log": 0.04706945146588225,
+      "approx_95pct_half_width_percent": 11.962097829138795
+    },
+    "Elan|50 Impression": {
+      "n": 6,
+      "residual_sd_log": 0.062124604418732694,
+      "approx_95pct_half_width_percent": 14.05611685399364
+    },
+    "Elan|514 IMPRESSION": {
+      "n": 2,
+      "residual_sd_log": 0.3277358426716004,
+      "approx_95pct_half_width_percent": 119.6202809129769
+    },
+    "Elan|GT5": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Elan|IMPRESSION 394": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Elan|Impression 384": {
+      "n": 5,
+      "residual_sd_log": 0.21468177068386238,
+      "approx_95pct_half_width_percent": 58.55594495629934
+    },
+    "Elan|Impression 40": {
+      "n": 4,
+      "residual_sd_log": 0.1397244710887775,
+      "approx_95pct_half_width_percent": 35.82332131058652
+    },
+    "Elan|Impression 434": {
+      "n": 16,
+      "residual_sd_log": 0.20806606737583422,
+      "approx_95pct_half_width_percent": 52.251017355839146
+    },
+    "Elan|Impression 444": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Elan|Impression 45": {
+      "n": 7,
+      "residual_sd_log": 0.12904660869230491,
+      "approx_95pct_half_width_percent": 31.0481975957265
+    },
+    "Elan|Impression 494": {
+      "n": 2,
+      "residual_sd_log": 0.05077703903812681,
+      "approx_95pct_half_width_percent": 12.963015147108159
+    },
+    "Elan|Impression 50": {
+      "n": 4,
+      "residual_sd_log": 0.046919512620408284,
+      "approx_95pct_half_width_percent": 10.828847983232492
+    },
+    "Fountaine Pajot|Astrea 42": {
+      "n": 3,
+      "residual_sd_log": 0.17847660743121713,
+      "approx_95pct_half_width_percent": 49.76999849841908
+    },
+    "Fountaine Pajot|Athena 38": {
+      "n": 5,
+      "residual_sd_log": 0.07630143282265221,
+      "approx_95pct_half_width_percent": 17.800779509231155
+    },
+    "Fountaine Pajot|Bahia 46": {
+      "n": 6,
+      "residual_sd_log": 0.21533346675202233,
+      "approx_95pct_half_width_percent": 57.754522661377216
+    },
+    "Fountaine Pajot|Belize 43": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Fountaine Pajot|Helia 44": {
+      "n": 28,
+      "residual_sd_log": 0.15730731155461658,
+      "approx_95pct_half_width_percent": 36.858832205149675
+    },
+    "Fountaine Pajot|Helia 44 Evolution": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Fountaine Pajot|Helia 44 Maestro": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Fountaine Pajot|Lavezzi 40": {
+      "n": 12,
+      "residual_sd_log": 0.10459608433798608,
+      "approx_95pct_half_width_percent": 23.78542414255831
+    },
+    "Fountaine Pajot|Lipari 41": {
+      "n": 22,
+      "residual_sd_log": 0.17961226883309644,
+      "approx_95pct_half_width_percent": 43.32606838923385
+    },
+    "Fountaine Pajot|Lucia 40": {
+      "n": 11,
+      "residual_sd_log": 0.12088200717276058,
+      "approx_95pct_half_width_percent": 28.077324336906926
+    },
+    "Fountaine Pajot|Lucia 40 Owner's Version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Fountaine Pajot|Orana 44": {
+      "n": 17,
+      "residual_sd_log": 0.1322691611670282,
+      "approx_95pct_half_width_percent": 30.573164896667237
+    },
+    "Fountaine Pajot|Pajot Bahia 46": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Fountaine Pajot|SABA 50": {
+      "n": 19,
+      "residual_sd_log": 0.13371782067500543,
+      "approx_95pct_half_width_percent": 30.85184133952503
+    },
+    "Fountaine Pajot|SABA 50 Maestro": {
+      "n": 2,
+      "residual_sd_log": 0.19099722579984665,
+      "approx_95pct_half_width_percent": 58.1681988651221
+    },
+    "Fountaine Pajot|Salina 48": {
+      "n": 18,
+      "residual_sd_log": 0.19835381707000477,
+      "approx_95pct_half_width_percent": 49.096980218378825
+    },
+    "Fountaine Pajot|Salina 48 Evolution": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Fountaine Pajot|Saona 47": {
+      "n": 11,
+      "residual_sd_log": 0.06077392473311534,
+      "approx_95pct_half_width_percent": 13.248409775909199
+    },
+    "Grand Soleil|37 B&C": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Grand Soleil|39": {
+      "n": 5,
+      "residual_sd_log": 0.22226643820959835,
+      "approx_95pct_half_width_percent": 61.159140413715754
+    },
+    "Grand Soleil|40": {
+      "n": 4,
+      "residual_sd_log": 0.20518488807508473,
+      "approx_95pct_half_width_percent": 56.77339151191958
+    },
+    "Grand Soleil|40 B&C": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Grand Soleil|43": {
+      "n": 7,
+      "residual_sd_log": 0.2804121729229847,
+      "approx_95pct_half_width_percent": 79.95839796432973
+    },
+    "Grand Soleil|43 BC": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Grand Soleil|43 Maletto": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Grand Soleil|43 Maletto - GS 43": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Grand Soleil|45": {
+      "n": 9,
+      "residual_sd_log": 0.12291227462740448,
+      "approx_95pct_half_width_percent": 28.909367028535215
+    },
+    "Grand Soleil|45 RACING": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Grand Soleil|46": {
+      "n": 3,
+      "residual_sd_log": 0.09865671553318717,
+      "approx_95pct_half_width_percent": 25.017203091921125
+    },
+    "Grand Soleil|46 Jezequel": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Grand Soleil|46 LC": {
+      "n": 3,
+      "residual_sd_log": 0.023603015720062605,
+      "approx_95pct_half_width_percent": 5.487117800945063
+    },
+    "Grand Soleil|47": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Grand Soleil|48 Ocean Cruiser": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Grand Soleil|50": {
+      "n": 15,
+      "residual_sd_log": 0.19562604449154664,
+      "approx_95pct_half_width_percent": 48.58719201248527
+    },
+    "Grand Soleil|54": {
+      "n": 5,
+      "residual_sd_log": 0.09271935451488773,
+      "approx_95pct_half_width_percent": 22.02736896711528
+    },
+    "Grand Soleil|56": {
+      "n": 4,
+      "residual_sd_log": 0.2613414129557414,
+      "approx_95pct_half_width_percent": 77.30294219711973
+    },
+    "Grand Soleil|56 EXTREME": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "HH Catamarans|HH55 Catamaran": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hallberg-Rassy|40": {
+      "n": 4,
+      "residual_sd_log": 0.21381713496079183,
+      "approx_95pct_half_width_percent": 59.767181762685276
+    },
+    "Hallberg-Rassy|412": {
+      "n": 2,
+      "residual_sd_log": 0.07546345604737173,
+      "approx_95pct_half_width_percent": 19.859498179616452
+    },
+    "Hallberg-Rassy|43": {
+      "n": 2,
+      "residual_sd_log": 0.22388191591281048,
+      "approx_95pct_half_width_percent": 71.15998663755457
+    },
+    "Hallberg-Rassy|44": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hallberg-Rassy|48": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hallberg-Rassy|54": {
+      "n": 5,
+      "residual_sd_log": 0.11511213446168556,
+      "approx_95pct_half_width_percent": 28.037639043601104
+    },
+    "Hanse|385": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hanse|388": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hanse|400": {
+      "n": 17,
+      "residual_sd_log": 0.10739536927359984,
+      "approx_95pct_half_width_percent": 24.18441463961818
+    },
+    "Hanse|400 Epoxy": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hanse|400e": {
+      "n": 3,
+      "residual_sd_log": 0.21961569686715882,
+      "approx_95pct_half_width_percent": 64.3843524372011
+    },
+    "Hanse|411": {
+      "n": 6,
+      "residual_sd_log": 0.1812117160742763,
+      "approx_95pct_half_width_percent": 46.76064476829338
+    },
+    "Hanse|415": {
+      "n": 15,
+      "residual_sd_log": 0.13084115863314844,
+      "approx_95pct_half_width_percent": 30.32472680906477
+    },
+    "Hanse|418": {
+      "n": 3,
+      "residual_sd_log": 0.15745880550470964,
+      "approx_95pct_half_width_percent": 42.812561291953145
+    },
+    "Hanse|430": {
+      "n": 2,
+      "residual_sd_log": 0.016719237282016745,
+      "approx_95pct_half_width_percent": 4.095080203690227
+    },
+    "Hanse|430e": {
+      "n": 8,
+      "residual_sd_log": 0.1737155532877029,
+      "approx_95pct_half_width_percent": 43.49589039487882
+    },
+    "Hanse|445": {
+      "n": 19,
+      "residual_sd_log": 0.1335773672093723,
+      "approx_95pct_half_width_percent": 30.814888719430144
+    },
+    "Hanse|455": {
+      "n": 25,
+      "residual_sd_log": 0.17632636761103251,
+      "approx_95pct_half_width_percent": 42.25398532497109
+    },
+    "Hanse|461": {
+      "n": 9,
+      "residual_sd_log": 0.2309843933979855,
+      "approx_95pct_half_width_percent": 61.15858607921496
+    },
+    "Hanse|470": {
+      "n": 6,
+      "residual_sd_log": 0.13483287073007066,
+      "approx_95pct_half_width_percent": 33.03563585745752
+    },
+    "Hanse|470e": {
+      "n": 9,
+      "residual_sd_log": 0.13942881963536233,
+      "approx_95pct_half_width_percent": 33.384123449716576
+    },
+    "Hanse|495": {
+      "n": 8,
+      "residual_sd_log": 0.18754794284827317,
+      "approx_95pct_half_width_percent": 47.68217038904554
+    },
+    "Hanse|505": {
+      "n": 15,
+      "residual_sd_log": 0.1573936334193844,
+      "approx_95pct_half_width_percent": 37.521306213300385
+    },
+    "Hanse|508": {
+      "n": 2,
+      "residual_sd_log": 0.06486080351362582,
+      "approx_95pct_half_width_percent": 16.847368621405522
+    },
+    "Hanse|531": {
+      "n": 6,
+      "residual_sd_log": 0.30803981476516035,
+      "approx_95pct_half_width_percent": 91.9631448416322
+    },
+    "Hanse|540": {
+      "n": 3,
+      "residual_sd_log": 0.02913205433798286,
+      "approx_95pct_half_width_percent": 6.815412903696916
+    },
+    "Hanse|540e": {
+      "n": 11,
+      "residual_sd_log": 0.13158812953324134,
+      "approx_95pct_half_width_percent": 30.915391866017615
+    },
+    "Hanse|545": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hanse|548": {
+      "n": 4,
+      "residual_sd_log": 0.05472078641735669,
+      "approx_95pct_half_width_percent": 12.739787325422869
+    },
+    "Hanse|575": {
+      "n": 3,
+      "residual_sd_log": 0.1037708099513297,
+      "approx_95pct_half_width_percent": 26.472594170285866
+    },
+    "Hanse|588": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Harmony|38": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Harmony|42 Elegance": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Harmony|47": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hunter|38": {
+      "n": 23,
+      "residual_sd_log": 0.12646123405582163,
+      "approx_95pct_half_width_percent": 28.81344870473084
+    },
+    "Hunter|380": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hunter|39": {
+      "n": 2,
+      "residual_sd_log": 0.03909563289584387,
+      "approx_95pct_half_width_percent": 9.839394701881021
+    },
+    "Hunter|40": {
+      "n": 2,
+      "residual_sd_log": 0.04540817509312706,
+      "approx_95pct_half_width_percent": 11.51649396918093
+    },
+    "Hunter|41": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hunter|41 Aft Cockpit": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hunter|41 DS": {
+      "n": 14,
+      "residual_sd_log": 0.14432163601191275,
+      "approx_95pct_half_width_percent": 34.017297038665426
+    },
+    "Hunter|41 Deck Salon": {
+      "n": 2,
+      "residual_sd_log": 0.07570160201696259,
+      "approx_95pct_half_width_percent": 19.928037774666652
+    },
+    "Hunter|44": {
+      "n": 3,
+      "residual_sd_log": 0.08516247583816529,
+      "approx_95pct_half_width_percent": 21.256848793856786
+    },
+    "Hunter|44 DS": {
+      "n": 3,
+      "residual_sd_log": 0.014978158169083293,
+      "approx_95pct_half_width_percent": 3.4479873903113134
+    },
+    "Hunter|44 Deck Salon": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hunter|45 Center Cockpit": {
+      "n": 6,
+      "residual_sd_log": 0.11375867849631606,
+      "approx_95pct_half_width_percent": 27.23071372320216
+    },
+    "Hunter|45 DS": {
+      "n": 2,
+      "residual_sd_log": 0.17926907995432845,
+      "approx_95pct_half_width_percent": 53.77732324856412
+    },
+    "Hunter|45cc": {
+      "n": 2,
+      "residual_sd_log": 0.04407812939798566,
+      "approx_95pct_half_width_percent": 11.16101472184341
+    },
+    "Hunter|466": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hunter|49": {
+      "n": 6,
+      "residual_sd_log": 0.11297239901592404,
+      "approx_95pct_half_width_percent": 27.01910334599731
+    },
+    "Hunter|50": {
+      "n": 2,
+      "residual_sd_log": 0.006752040594390386,
+      "approx_95pct_half_width_percent": 1.6340339712748841
+    },
+    "Hunter|50 Center Cockpit": {
+      "n": 3,
+      "residual_sd_log": 0.07634395588399805,
+      "approx_95pct_half_width_percent": 18.860771842931555
+    },
+    "Hunter|AC 50": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hunter|M-H 40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hunter|OV": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hunter|Passage 456": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Hylas|46": {
+      "n": 3,
+      "residual_sd_log": 0.05745646746073996,
+      "approx_95pct_half_width_percent": 13.886964070861541
+    },
+    "Hylas|49": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Island Packet|370": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Island Packet|420": {
+      "n": 2,
+      "residual_sd_log": 0.03250983071762575,
+      "approx_95pct_half_width_percent": 8.116573896328095
+    },
+    "Island Packet|440": {
+      "n": 5,
+      "residual_sd_log": 0.05826512992208502,
+      "approx_95pct_half_width_percent": 13.326115461245314
+    },
+    "Island Packet|445": {
+      "n": 2,
+      "residual_sd_log": 2.274065535639818e-05,
+      "approx_95pct_half_width_percent": 0.005459043200217728
+    },
+    "Island Packet|465": {
+      "n": 3,
+      "residual_sd_log": 0.015715984966930382,
+      "approx_95pct_half_width_percent": 3.620875277101243
+    },
+    "Island Packet|485": {
+      "n": 3,
+      "residual_sd_log": 0.19384728069680274,
+      "approx_95pct_half_width_percent": 55.07174524584608
+    },
+    "Island Packet|SP Cruiser": {
+      "n": 3,
+      "residual_sd_log": 0.06271277365215563,
+      "approx_95pct_half_width_percent": 15.249870017684009
+    },
+    "J Boats|J 122": {
+      "n": 10,
+      "residual_sd_log": 0.08533906850588495,
+      "approx_95pct_half_width_percent": 19.175685303340128
+    },
+    "J boats|J 122": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|39i": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|409": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|42 DS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|45 Sun Odyssey Performance": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|469": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|49i": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|509": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|51": {
+      "n": 4,
+      "residual_sd_log": 0.149960669748395,
+      "approx_95pct_half_width_percent": 38.90440913190092
+    },
+    "Jeanneau|53": {
+      "n": 43,
+      "residual_sd_log": 0.18497738689397056,
+      "approx_95pct_half_width_percent": 44.3033092546109
+    },
+    "Jeanneau|SUN ODYSSEY 40.3": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyessy 41DS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyssey 389": {
+      "n": 12,
+      "residual_sd_log": 0.09131951405945345,
+      "approx_95pct_half_width_percent": 20.477736791413605
+    },
+    "Jeanneau|Sun Odyssey 39 DS": {
+      "n": 8,
+      "residual_sd_log": 0.10304648509485427,
+      "approx_95pct_half_width_percent": 23.88985429568229
+    },
+    "Jeanneau|Sun Odyssey 39i": {
+      "n": 21,
+      "residual_sd_log": 0.1381709523245896,
+      "approx_95pct_half_width_percent": 31.941447376382847
+    },
+    "Jeanneau|Sun Odyssey 39i Performance": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyssey 40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyssey 40.3": {
+      "n": 12,
+      "residual_sd_log": 0.11811740662778375,
+      "approx_95pct_half_width_percent": 27.247442312562995
+    },
+    "Jeanneau|Sun Odyssey 40.9": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyssey 409": {
+      "n": 26,
+      "residual_sd_log": 0.1796796931294613,
+      "approx_95pct_half_width_percent": 43.17261915208896
+    },
+    "Jeanneau|Sun Odyssey 410": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyssey 419": {
+      "n": 14,
+      "residual_sd_log": 0.10085194379101503,
+      "approx_95pct_half_width_percent": 22.704359129874273
+    },
+    "Jeanneau|Sun Odyssey 41DS": {
+      "n": 2,
+      "residual_sd_log": 0.1529418065649475,
+      "approx_95pct_half_width_percent": 44.35953875734236
+    },
+    "Jeanneau|Sun Odyssey 42": {
+      "n": 2,
+      "residual_sd_log": 0.004722515886583787,
+      "approx_95pct_half_width_percent": 1.1400899616513138
+    },
+    "Jeanneau|Sun Odyssey 42 DS": {
+      "n": 14,
+      "residual_sd_log": 0.12190846463778242,
+      "approx_95pct_half_width_percent": 28.05978107439733
+    },
+    "Jeanneau|Sun Odyssey 42i": {
+      "n": 23,
+      "residual_sd_log": 0.20692009148059995,
+      "approx_95pct_half_width_percent": 51.32901236462868
+    },
+    "Jeanneau|Sun Odyssey 42i Performance": {
+      "n": 2,
+      "residual_sd_log": 0.028960208071850218,
+      "approx_95pct_half_width_percent": 7.199240524976758
+    },
+    "Jeanneau|Sun Odyssey 43 DS": {
+      "n": 3,
+      "residual_sd_log": 0.14338323414382595,
+      "approx_95pct_half_width_percent": 38.33482206253762
+    },
+    "Jeanneau|Sun Odyssey 439": {
+      "n": 27,
+      "residual_sd_log": 0.19045499067673302,
+      "approx_95pct_half_width_percent": 46.24918735629087
+    },
+    "Jeanneau|Sun Odyssey 44 DS": {
+      "n": 8,
+      "residual_sd_log": 0.16912287408923182,
+      "approx_95pct_half_width_percent": 42.13235536043898
+    },
+    "Jeanneau|Sun Odyssey 440": {
+      "n": 8,
+      "residual_sd_log": 0.1789519285147734,
+      "approx_95pct_half_width_percent": 45.066501038713014
+    },
+    "Jeanneau|Sun Odyssey 449": {
+      "n": 9,
+      "residual_sd_log": 0.13100892155325283,
+      "approx_95pct_half_width_percent": 31.083879800712012
+    },
+    "Jeanneau|Sun Odyssey 44i": {
+      "n": 15,
+      "residual_sd_log": 0.13480839277110448,
+      "approx_95pct_half_width_percent": 31.37555113938506
+    },
+    "Jeanneau|Sun Odyssey 45": {
+      "n": 27,
+      "residual_sd_log": 0.18736033269514601,
+      "approx_95pct_half_width_percent": 45.348614748986684
+    },
+    "Jeanneau|Sun Odyssey 45 DS": {
+      "n": 18,
+      "residual_sd_log": 0.0919913629867371,
+      "approx_95pct_half_width_percent": 20.35118162222811
+    },
+    "Jeanneau|Sun Odyssey 45 Performance": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyssey 469": {
+      "n": 25,
+      "residual_sd_log": 0.35436369352860836,
+      "approx_95pct_half_width_percent": 103.05520383910122
+    },
+    "Jeanneau|Sun Odyssey 479": {
+      "n": 8,
+      "residual_sd_log": 0.19031056078109118,
+      "approx_95pct_half_width_percent": 48.532777365004456
+    },
+    "Jeanneau|Sun Odyssey 48 DS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyssey 49": {
+      "n": 14,
+      "residual_sd_log": 0.16449694818857494,
+      "approx_95pct_half_width_percent": 39.61664279616268
+    },
+    "Jeanneau|Sun Odyssey 49 DS": {
+      "n": 16,
+      "residual_sd_log": 0.22904591422277146,
+      "approx_95pct_half_width_percent": 58.84305348672163
+    },
+    "Jeanneau|Sun Odyssey 49 Owners Version": {
+      "n": 2,
+      "residual_sd_log": 0.2685301121497471,
+      "approx_95pct_half_width_percent": 90.5237209467803
+    },
+    "Jeanneau|Sun Odyssey 49 Owners version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyssey 490": {
+      "n": 4,
+      "residual_sd_log": 0.06299767184141683,
+      "approx_95pct_half_width_percent": 14.803264640540137
+    },
+    "Jeanneau|Sun Odyssey 49DS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Jeanneau|Sun Odyssey 49i": {
+      "n": 18,
+      "residual_sd_log": 0.19545491155303113,
+      "approx_95pct_half_width_percent": 48.22915446089087
+    },
+    "Jeanneau|Sun Odyssey 49i Performance": {
+      "n": 2,
+      "residual_sd_log": 0.1735049828705211,
+      "approx_95pct_half_width_percent": 51.66420332442174
+    },
+    "Jeanneau|Sun Odyssey 50 DS": {
+      "n": 28,
+      "residual_sd_log": 0.16959994398686173,
+      "approx_95pct_half_width_percent": 40.25609479064622
+    },
+    "Jeanneau|Sun Odyssey 509": {
+      "n": 23,
+      "residual_sd_log": 0.15429673814892073,
+      "approx_95pct_half_width_percent": 36.19616379596098
+    },
+    "Jeanneau|Sun Odyssey 519": {
+      "n": 13,
+      "residual_sd_log": 0.2384786959572197,
+      "approx_95pct_half_width_percent": 62.42770680991021
+    },
+    "Jeanneau|Sun Odyssey 53": {
+      "n": 4,
+      "residual_sd_log": 0.07834288208898917,
+      "approx_95pct_half_width_percent": 18.72935743694213
+    },
+    "Jeanneau|Sun Odyssey 54 DS": {
+      "n": 42,
+      "residual_sd_log": 0.19673181582558824,
+      "approx_95pct_half_width_percent": 47.72138277163356
+    },
+    "Knysna|440": {
+      "n": 2,
+      "residual_sd_log": 0.07421591995900317,
+      "approx_95pct_half_width_percent": 19.50109063529082
+    },
+    "Lagoon|380": {
+      "n": 20,
+      "residual_sd_log": 0.214033921505766,
+      "approx_95pct_half_width_percent": 53.70518998374123
+    },
+    "Lagoon|380 Owners Version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Lagoon|380 S2": {
+      "n": 3,
+      "residual_sd_log": 0.16557315856306812,
+      "approx_95pct_half_width_percent": 45.45947420904408
+    },
+    "Lagoon|39": {
+      "n": 34,
+      "residual_sd_log": 0.13250568111882752,
+      "approx_95pct_half_width_percent": 30.148085967238814
+    },
+    "Lagoon|40": {
+      "n": 17,
+      "residual_sd_log": 0.11547863592297868,
+      "approx_95pct_half_width_percent": 26.22552609438118
+    },
+    "Lagoon|400": {
+      "n": 75,
+      "residual_sd_log": 0.12249609159675903,
+      "approx_95pct_half_width_percent": 27.339639171920282
+    },
+    "Lagoon|400 Owners Version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Lagoon|400 S2": {
+      "n": 17,
+      "residual_sd_log": 0.0986746669428805,
+      "approx_95pct_half_width_percent": 22.019340327608084
+    },
+    "Lagoon|410": {
+      "n": 2,
+      "residual_sd_log": 0.03507307745680722,
+      "approx_95pct_half_width_percent": 8.783874007826897
+    },
+    "Lagoon|410-S2": {
+      "n": 3,
+      "residual_sd_log": 0.10572417010711722,
+      "approx_95pct_half_width_percent": 27.032950813100708
+    },
+    "Lagoon|42": {
+      "n": 85,
+      "residual_sd_log": 0.12957111688364345,
+      "approx_95pct_half_width_percent": 29.104103880909694
+    },
+    "Lagoon|42 Owners Version": {
+      "n": 5,
+      "residual_sd_log": 0.06222308854646279,
+      "approx_95pct_half_width_percent": 14.293267108769502
+    },
+    "Lagoon|420": {
+      "n": 28,
+      "residual_sd_log": 0.13853279517763833,
+      "approx_95pct_half_width_percent": 31.828334117776237
+    },
+    "Lagoon|421": {
+      "n": 20,
+      "residual_sd_log": 0.12821127913390032,
+      "approx_95pct_half_width_percent": 29.369159664852873
+    },
+    "Lagoon|440": {
+      "n": 58,
+      "residual_sd_log": 0.11222056119026243,
+      "approx_95pct_half_width_percent": 24.837204329700114
+    },
+    "Lagoon|450": {
+      "n": 146,
+      "residual_sd_log": 0.12113846115619979,
+      "approx_95pct_half_width_percent": 26.901767567979775
+    },
+    "Lagoon|450 Owners Version": {
+      "n": 2,
+      "residual_sd_log": 0.1731179553861662,
+      "approx_95pct_half_width_percent": 51.5233636965049
+    },
+    "Lagoon|450F": {
+      "n": 55,
+      "residual_sd_log": 0.147459071582188,
+      "approx_95pct_half_width_percent": 33.861486597563314
+    },
+    "Lagoon|450S": {
+      "n": 12,
+      "residual_sd_log": 0.04207794776156532,
+      "approx_95pct_half_width_percent": 8.963239658408707
+    },
+    "Lagoon|450s": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Lagoon|45F": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Lagoon|46": {
+      "n": 2,
+      "residual_sd_log": 0.0015076793574915282,
+      "approx_95pct_half_width_percent": 0.36257413744871236
+    },
+    "Lagoon|50": {
+      "n": 8,
+      "residual_sd_log": 0.09355103929103738,
+      "approx_95pct_half_width_percent": 21.46824545492054
+    },
+    "Lagoon|50 Owners Version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Lagoon|500": {
+      "n": 33,
+      "residual_sd_log": 0.17472209360305793,
+      "approx_95pct_half_width_percent": 41.567336787491136
+    },
+    "Lagoon|50F": {
+      "n": 3,
+      "residual_sd_log": 0.14862131883648583,
+      "approx_95pct_half_width_percent": 39.984526998676564
+    },
+    "Lagoon|52": {
+      "n": 29,
+      "residual_sd_log": 0.19831384858831402,
+      "approx_95pct_half_width_percent": 48.48889465519477
+    },
+    "Lagoon|52 Sport": {
+      "n": 2,
+      "residual_sd_log": 0.11963926800186414,
+      "approx_95pct_half_width_percent": 33.26828042895238
+    },
+    "Lagoon|52F": {
+      "n": 17,
+      "residual_sd_log": 0.34751168115828496,
+      "approx_95pct_half_width_percent": 101.55047833942632
+    },
+    "Lagoon|570": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Leopard|38": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Leopard|39": {
+      "n": 8,
+      "residual_sd_log": 0.4812093360406294,
+      "approx_95pct_half_width_percent": 171.9323594725985
+    },
+    "Leopard|40": {
+      "n": 11,
+      "residual_sd_log": 0.20597270926714673,
+      "approx_95pct_half_width_percent": 52.4486600395772
+    },
+    "Leopard|43": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Leopard|44": {
+      "n": 29,
+      "residual_sd_log": 0.17828645642933957,
+      "approx_95pct_half_width_percent": 42.677299239205
+    },
+    "Leopard|45": {
+      "n": 4,
+      "residual_sd_log": 0.1340398476171483,
+      "approx_95pct_half_width_percent": 34.14186751850969
+    },
+    "Leopard|46": {
+      "n": 8,
+      "residual_sd_log": 0.38230151092489373,
+      "approx_95pct_half_width_percent": 121.39190991775162
+    },
+    "Leopard|47": {
+      "n": 3,
+      "residual_sd_log": 0.43553253043263535,
+      "approx_95pct_half_width_percent": 167.9694803774969
+    },
+    "Leopard|48": {
+      "n": 21,
+      "residual_sd_log": 0.3467676583525187,
+      "approx_95pct_half_width_percent": 100.502976723278
+    },
+    "Leopard|48 Crewed Version": {
+      "n": 2,
+      "residual_sd_log": 0.02014714301334737,
+      "approx_95pct_half_width_percent": 4.95517998502264
+    },
+    "Leopard|Sunsail 404": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Maine Cat|41": {
+      "n": 2,
+      "residual_sd_log": 0.07390059974196063,
+      "approx_95pct_half_width_percent": 19.410671357767328
+    },
+    "Malo|40": {
+      "n": 2,
+      "residual_sd_log": 0.09653126481100002,
+      "approx_95pct_half_width_percent": 26.077082042117983
+    },
+    "Malo|40 Classic MK Il": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Malo|40 classic": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Malo|43 Classic": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Malo|46": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Manta|42 MK II": {
+      "n": 4,
+      "residual_sd_log": 0.03598900286215241,
+      "approx_95pct_half_width_percent": 8.205756315326695
+    },
+    "Manta|42 MK IV": {
+      "n": 2,
+      "residual_sd_log": 0.0,
+      "approx_95pct_half_width_percent": 0.0
+    },
+    "Maxi|1200": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Maxi|1300": {
+      "n": 4,
+      "residual_sd_log": 0.08523545090501956,
+      "approx_95pct_half_width_percent": 20.536257894188957
+    },
+    "Moody|45 Classic": {
+      "n": 2,
+      "residual_sd_log": 0.5065210308767608,
+      "approx_95pct_half_width_percent": 237.33412035067718
+    },
+    "Moody|45 DS": {
+      "n": 3,
+      "residual_sd_log": 0.1366874581296978,
+      "approx_95pct_half_width_percent": 36.25430450104232
+    },
+    "Moody|45 DS e": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Moody|49": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Moody|54": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Morris|M42": {
+      "n": 2,
+      "residual_sd_log": 0.10859950100686785,
+      "approx_95pct_half_width_percent": 29.782929596848895
+    },
+    "Morris|M42X": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Morris|Ocean Series 48": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Najad|380": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Najad|440 CC": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Najad|505": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nauticat|385": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nauticat|42": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nauticat|44": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nauticat|441": {
+      "n": 2,
+      "residual_sd_log": 0.20313574592611167,
+      "approx_95pct_half_width_percent": 62.84478917384404
+    },
+    "Nauticat|441 Ketch": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nautitech|40": {
+      "n": 12,
+      "residual_sd_log": 0.05816060823533014,
+      "approx_95pct_half_width_percent": 12.597524149236584
+    },
+    "Nautitech|40 Open": {
+      "n": 20,
+      "residual_sd_log": 0.14217524202551096,
+      "approx_95pct_half_width_percent": 33.0487065977606
+    },
+    "Nautitech|40.2": {
+      "n": 2,
+      "residual_sd_log": 0.10595076702068465,
+      "approx_95pct_half_width_percent": 28.960350506767597
+    },
+    "Nautitech|40.200000000000003": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nautitech|402": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nautitech|44": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nautitech|441": {
+      "n": 9,
+      "residual_sd_log": 0.12969754421520874,
+      "approx_95pct_half_width_percent": 30.729210509876136
+    },
+    "Nautitech|442 Owners Version": {
+      "n": 2,
+      "residual_sd_log": 0.000813003377549697,
+      "approx_95pct_half_width_percent": 0.19535202046685463
+    },
+    "Nautitech|46 Fly": {
+      "n": 9,
+      "residual_sd_log": 0.06882606929089866,
+      "approx_95pct_half_width_percent": 15.280272827652652
+    },
+    "Nautitech|46 Open": {
+      "n": 10,
+      "residual_sd_log": 0.1588576959338572,
+      "approx_95pct_half_width_percent": 38.61890066530034
+    },
+    "Nautitech|46 open": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nautitech|47": {
+      "n": 8,
+      "residual_sd_log": 0.25591672706370067,
+      "approx_95pct_half_width_percent": 70.23739739497788
+    },
+    "Nautitech|542": {
+      "n": 3,
+      "residual_sd_log": 0.18174931153320922,
+      "approx_95pct_half_width_percent": 50.883437348501225
+    },
+    "Nautitech|Open 40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nautor|Swan 46": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nautor|Swan 50": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nautor|Swan 54": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nautor|Swan ClubSwan 50": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nordship|380DS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Nordship|DSC 38": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Outremer|45": {
+      "n": 3,
+      "residual_sd_log": 0.13150163415254848,
+      "approx_95pct_half_width_percent": 34.66448668580815
+    },
+    "Outremer|49": {
+      "n": 4,
+      "residual_sd_log": 0.08200509812911273,
+      "approx_95pct_half_width_percent": 19.686016010230723
+    },
+    "Oyster|46": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Oyster|475": {
+      "n": 2,
+      "residual_sd_log": 0.03700058270410749,
+      "approx_95pct_half_width_percent": 9.288380678898056
+    },
+    "Oyster|53": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Oyster|54": {
+      "n": 4,
+      "residual_sd_log": 0.24662696815665097,
+      "approx_95pct_half_width_percent": 71.67709514249148
+    },
+    "Oyster|545": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Passport|470": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Passport|470 Center Cockpit": {
+      "n": 2,
+      "residual_sd_log": 0.09802649635155486,
+      "approx_95pct_half_width_percent": 26.530424024800126
+    },
+    "Passport|545 Aft Cockpit": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Passport|Vista 515 Center Cockpit": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Passport|Vista 545 Center Cockpit": {
+      "n": 2,
+      "residual_sd_log": 0.05318340434254929,
+      "approx_95pct_half_width_percent": 13.617432014096241
+    },
+    "Poncin|HARMONY 47": {
+      "n": 2,
+      "residual_sd_log": 0.3523971627375007,
+      "approx_95pct_half_width_percent": 133.0142374860644
+    },
+    "Poncin|harmony 52": {
+      "n": 3,
+      "residual_sd_log": 0.11233927582157593,
+      "approx_95pct_half_width_percent": 28.949119186108298
+    },
+    "Privilege|435": {
+      "n": 4,
+      "residual_sd_log": 0.059977299856100424,
+      "approx_95pct_half_width_percent": 14.045927398666125
+    },
+    "Privilege|495": {
+      "n": 5,
+      "residual_sd_log": 0.09827586202016295,
+      "approx_95pct_half_width_percent": 23.491901549010198
+    },
+    "Privilege|Series 5": {
+      "n": 5,
+      "residual_sd_log": 0.11179138933218327,
+      "approx_95pct_half_width_percent": 27.127992691704694
+    },
+    "RM Yachts|1260": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "RM Yachts|RM 12.70": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "RM Yachts|RM 1200": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "RM Yachts|RM 1270": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "RM Yachts|rm 12.60": {
+      "n": 2,
+      "residual_sd_log": 0.11114640642966514,
+      "approx_95pct_half_width_percent": 30.578833021723796
+    },
+    "Rustler|42": {
+      "n": 2,
+      "residual_sd_log": 0.03758835107065859,
+      "approx_95pct_half_width_percent": 9.442688634741936
+    },
+    "Rustler|44": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sabre|386": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sabre|426": {
+      "n": 4,
+      "residual_sd_log": 0.06331450525386931,
+      "approx_95pct_half_width_percent": 14.882999285226717
+    },
+    "Sabre|456 MK II": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Salona|38": {
+      "n": 2,
+      "residual_sd_log": 0.08884947944829885,
+      "approx_95pct_half_width_percent": 23.77350920465824
+    },
+    "Salona|40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Salona|42": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Salona|44": {
+      "n": 2,
+      "residual_sd_log": 0.12758545571631769,
+      "approx_95pct_half_width_percent": 35.834748965638205
+    },
+    "Salona|45": {
+      "n": 5,
+      "residual_sd_log": 0.17914943460146984,
+      "approx_95pct_half_width_percent": 46.90953615711755
+    },
+    "Salona|S380": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Salona|S41": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Seawind|1160": {
+      "n": 2,
+      "residual_sd_log": 0.10003803202704033,
+      "approx_95pct_half_width_percent": 27.14287786573333
+    },
+    "Seawind|1190 Sport": {
+      "n": 2,
+      "residual_sd_log": 0.0,
+      "approx_95pct_half_width_percent": 0.0
+    },
+    "Seawind|1250": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Seawind|1260": {
+      "n": 2,
+      "residual_sd_log": 0.0,
+      "approx_95pct_half_width_percent": 0.0
+    },
+    "ShearWater|39": {
+      "n": 2,
+      "residual_sd_log": 0.3468029860975065,
+      "approx_95pct_half_width_percent": 129.9060474351467
+    },
+    "Sly|42": {
+      "n": 2,
+      "residual_sd_log": 0.004169342610539881,
+      "approx_95pct_half_width_percent": 1.0058759334159229
+    },
+    "Sly|47": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sly|48C": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sly|53": {
+      "n": 4,
+      "residual_sd_log": 0.1452274601958345,
+      "approx_95pct_half_width_percent": 37.47112426702226
+    },
+    "Solaris|42": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Solaris|44": {
+      "n": 2,
+      "residual_sd_log": 0.07959570197785495,
+      "approx_95pct_half_width_percent": 21.054355585323027
+    },
+    "Solaris|48": {
+      "n": 2,
+      "residual_sd_log": 0.0359346452090324,
+      "approx_95pct_half_width_percent": 9.009092909860183
+    },
+    "Solaris|48 ONE": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Solaris|50": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Solaris|One 44": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Southerly|135": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Southerly|38": {
+      "n": 2,
+      "residual_sd_log": 0.06505319373996701,
+      "approx_95pct_half_width_percent": 16.90134502352738
+    },
+    "Southerly|42 RST": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Southerly|420": {
+      "n": 2,
+      "residual_sd_log": 0.06876421255030409,
+      "approx_95pct_half_width_percent": 17.94738965156746
+    },
+    "Southerly|48": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Southerly|535": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sunbeam|39": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sunbeam|42.1": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sunbeam|53": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sweden Yachts|42": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sweden Yachts|45": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Sweden Yachts|54": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Tartan|4000": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Tartan|4300": {
+      "n": 6,
+      "residual_sd_log": 0.17530680277233365,
+      "approx_95pct_half_width_percent": 44.93741717900437
+    },
+    "Tartan|4400": {
+      "n": 3,
+      "residual_sd_log": 0.08557146525268132,
+      "approx_95pct_half_width_percent": 21.369139754854615
+    },
+    "Tayana|48": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Tayana|52 DS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Tayana|Pilothouse": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Tofinou|12": {
+      "n": 3,
+      "residual_sd_log": 0.06926203632414538,
+      "approx_95pct_half_width_percent": 16.970870162440875
+    },
+    "Tofinou|16": {
+      "n": 2,
+      "residual_sd_log": 0.04130693059097071,
+      "approx_95pct_half_width_percent": 10.423996598883978
+    },
+    "Triplast|Y 40": {
+      "n": 3,
+      "residual_sd_log": 0.19647921191449927,
+      "approx_95pct_half_width_percent": 55.998205421179016
+    },
+    "Van De Stadt|Beluga 46": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Van De Stadt|Norman 41": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Van De Stadt|Stainless Steel Cutter": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Vismara|52 Carbon": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Vismara|54": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Vismara|V50": {
+      "n": 2,
+      "residual_sd_log": 0.018131993991156097,
+      "approx_95pct_half_width_percent": 4.448699461153782
+    },
+    "Vismara|V50 DS": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Vismara|V50 Mills": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Vismara|V52": {
+      "n": 2,
+      "residual_sd_log": 2.8274125830193803e-05,
+      "approx_95pct_half_width_percent": 0.006787434094190914
+    },
+    "Voyage Yachts|500": {
+      "n": 3,
+      "residual_sd_log": 0.24743325428563118,
+      "approx_95pct_half_width_percent": 75.06622963484617
+    },
+    "Voyage Yachts|500 Owner's Version": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Voyage Yachts|Voyage 480": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Voyage Yachts|Voyage 520 DC": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Wauquiez|Centurion 40s": {
+      "n": 8,
+      "residual_sd_log": 0.09063925504511028,
+      "approx_95pct_half_width_percent": 20.735183820810033
+    },
+    "Wauquiez|Opium 39": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Wauquiez|Pilot Saloon 40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Wauquiez|Pilot Saloon 41": {
+      "n": 3,
+      "residual_sd_log": 0.13542122091499426,
+      "approx_95pct_half_width_percent": 35.864390706666626
+    },
+    "Wauquiez|Pilot Saloon 42": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "Wauquiez|Pilot Saloon 47": {
+      "n": 3,
+      "residual_sd_log": 0.23929975444022292,
+      "approx_95pct_half_width_percent": 71.87311727920493
+    },
+    "Wauquiez|Pilot Saloon 48": {
+      "n": 3,
+      "residual_sd_log": 0.05291526907312678,
+      "approx_95pct_half_width_percent": 12.72246252882898
+    },
+    "X-Yachts|40": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|41": {
+      "n": 2,
+      "residual_sd_log": 0.06006817472103967,
+      "approx_95pct_half_width_percent": 15.510777382312169
+    },
+    "X-Yachts|50": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|X 4.3": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|X-40": {
+      "n": 6,
+      "residual_sd_log": 0.10128287825689285,
+      "approx_95pct_half_width_percent": 23.91431135109354
+    },
+    "X-Yachts|X-41 One Design": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|X-43": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|X-46": {
+      "n": 2,
+      "residual_sd_log": 0.02245324491624861,
+      "approx_95pct_half_width_percent": 5.537801757972249
+    },
+    "X-Yachts|X-50": {
+      "n": 4,
+      "residual_sd_log": 0.05718483099361891,
+      "approx_95pct_half_width_percent": 13.350180796845779
+    },
+    "X-Yachts|X-50 Modern": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|X-55": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|X4": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|X4.6": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|XP50": {
+      "n": 5,
+      "residual_sd_log": 0.11071998825095526,
+      "approx_95pct_half_width_percent": 26.835886649864737
+    },
+    "X-Yachts|Xc 38": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    },
+    "X-Yachts|Xc 42": {
+      "n": 2,
+      "residual_sd_log": 0.021892542211989375,
+      "approx_95pct_half_width_percent": 5.395846934026505
+    },
+    "X-Yachts|Xc 50": {
+      "n": 3,
+      "residual_sd_log": 0.07430078139268495,
+      "approx_95pct_half_width_percent": 18.312411913982984
+    },
+    "X-Yachts|Xp 38": {
+      "n": 3,
+      "residual_sd_log": 0.08075878971442006,
+      "approx_95pct_half_width_percent": 20.05434715241705
+    },
+    "X-Yachts|Xp 44": {
+      "n": 5,
+      "residual_sd_log": 0.12202533360450939,
+      "approx_95pct_half_width_percent": 29.952294142676305
+    },
+    "Zuanelli|40": {
+      "n": 2,
+      "residual_sd_log": 0.1351919713544594,
+      "approx_95pct_half_width_percent": 38.33779806143891
+    },
+    "Zuanelli|52 DH": {
+      "n": 1,
+      "residual_sd_log": 0.22616937033468115,
+      "approx_95pct_half_width_percent": 87.18168003480342
+    }
+  },
+  "falsification": {
+    "repetitions": 19,
+    "observed_rmse_log_gain": 0.003103350423646789,
+    "permuted_gains": [
+      -0.0003518222305198271,
+      -0.0005280404122846583,
+      -0.00015549234168435455,
+      -0.00040134642028147316,
+      -0.000502379192451663,
+      -0.0005404569973276596,
+      -0.00041366156087663253,
+      -0.00029301609677787055,
+      5.876222074321924e-05,
+      -0.0003085349182034569,
+      -0.00035466515130705423,
+      -8.420210765153202e-05,
+      -0.0004745461365893988,
+      -0.00013484929930512868,
+      -0.000151062908021804,
+      0.00013664841958599405,
+      -0.00020707912073078538,
+      3.37661327583505e-05,
+      -3.794615781757549e-05
+    ],
+    "one_sided_p_value": 0.05
+  },
+  "additional_inferences": {
+    "median_price_by_hull_usd": {
+      "monohull": 193182.5,
+      "catamaran": 431654.0
+    },
+    "interpretation_limit": "These are descriptive conditional estimates from advertised listings."
+  },
+  "reviewer_risks": [
+    "No Hong Kong observations are supplied, so the Hong Kong effect cannot be estimated.",
+    "Unobserved condition, equipment, broker strategy, and macroeconomic covariates can confound regional effects.",
+    "High-cardinality makes and variants are regularized and rare levels collapse to the reference structure.",
+    "Grouped validation is demanding but does not test temporal transport beyond the 2020 listing snapshot.",
+    "Price interval widths use residual dispersion and are approximate, not full conformal coverage guarantees."
+  ],
+  "pending_stages": [
+    {
+      "stage": "hong_kong_comparable_listing_analysis",
+      "reason": "The permitted deterministic input contains zero Hong Kong comparable listings; omitted values were not invented."
+    }
+  ],
+  "reproducibility_manifest": {
+    "command": "python sailboat_model.py --summary \"C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-y.json\" --output \".\"",
+    "input_path": "C:\\Users\\\u4f0d\u8fb0\u6770\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-y.json",
+    "input_sha256": "debad91a2bf4d4bfab453dce3f4b8adadb9dddcb158518f31663599a793342ef",
+    "problem_sha256_declared": "2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce",
+    "data_sha256_declared": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba",
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "seed": 2023002,
+    "figures": [
+      "process_q1_cv_mae.svg",
+      "process_q1_cv_rmse.svg",
+      "process_q1_regularization.svg",
+      "raw_q1_age_by_hull.svg",
+      "raw_q1_price_by_hull.svg",
+      "raw_q2_region_counts.svg",
+      "result_q1_variant_precision.svg",
+      "result_q2_region_effects.svg",
+      "result_q3_hk_data_readiness.svg"
+    ],
+    "runtime_seconds": 5.9260781000011775
+  }
+}

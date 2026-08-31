@@ -1,0 +1,88 @@
+{
+  "submission_id": "Submission-006",
+  "protocol": "A/B v2 with recovery",
+  "artifact_count": 20,
+  "artifacts": [
+    {
+      "path": "figures/process_q1_structural_response.svg",
+      "sha256": "b1fed770566a3069e3c2f3630c555cf0c5dfd518b53c1274db682d23703ea00f"
+    },
+    {
+      "path": "figures/process_q2_pending.svg",
+      "sha256": "8ecbe47d4738275c2b46f1cfd8d19c689d251a35a480fedbb5b05df6875f8777"
+    },
+    {
+      "path": "figures/process_q3_pending.svg",
+      "sha256": "1c6b1114b8d7454bcc5ef4de7badea416784d0d991a0d5182c769acf88edd28e"
+    },
+    {
+      "path": "figures/process_q4_pending.svg",
+      "sha256": "ef2b421e2516fd59a7ad63b3512595ba761fa4f084e187b670df3f7f6358301c"
+    },
+    {
+      "path": "figures/process_q5_pending.svg",
+      "sha256": "cf8d29fd666ed958c0417bda12f7dfc8125690f22467e9d94aee8f8a714a63fc"
+    },
+    {
+      "path": "figures/raw_q1_input_availability.svg",
+      "sha256": "4e0e898de7caf840d5451ba0a16cc62310cdc9dc5230961b8e7bc87867214f3a"
+    },
+    {
+      "path": "figures/raw_q2_pending.svg",
+      "sha256": "8ecbe47d4738275c2b46f1cfd8d19c689d251a35a480fedbb5b05df6875f8777"
+    },
+    {
+      "path": "figures/raw_q3_pending.svg",
+      "sha256": "1c6b1114b8d7454bcc5ef4de7badea416784d0d991a0d5182c769acf88edd28e"
+    },
+    {
+      "path": "figures/raw_q4_pending.svg",
+      "sha256": "ef2b421e2516fd59a7ad63b3512595ba761fa4f084e187b670df3f7f6358301c"
+    },
+    {
+      "path": "figures/raw_q5_pending.svg",
+      "sha256": "cf8d29fd666ed958c0417bda12f7dfc8125690f22467e9d94aee8f8a714a63fc"
+    },
+    {
+      "path": "figures/result_q1_metric_contract.svg",
+      "sha256": "25c4ee745390c0d1477b2ba6d5e2eeb8e3b0b050bbce3d10ce1e9add63a66e3d"
+    },
+    {
+      "path": "figures/result_q2_pending.svg",
+      "sha256": "8ecbe47d4738275c2b46f1cfd8d19c689d251a35a480fedbb5b05df6875f8777"
+    },
+    {
+      "path": "figures/result_q3_pending.svg",
+      "sha256": "1c6b1114b8d7454bcc5ef4de7badea416784d0d991a0d5182c769acf88edd28e"
+    },
+    {
+      "path": "figures/result_q4_pending.svg",
+      "sha256": "ef2b421e2516fd59a7ad63b3512595ba761fa4f084e187b670df3f7f6358301c"
+    },
+    {
+      "path": "figures/result_q5_pending.svg",
+      "sha256": "cf8d29fd666ed958c0417bda12f7dfc8125690f22467e9d94aee8f8a714a63fc"
+    },
+    {
+      "path": "light_pollution_model.py",
+      "sha256": "772cbb4a6dcca36e93cd73c2b956d428d4215d0129cf4d0066fbbd06013222ed"
+    },
+    {
+      "path": "modeling_report.md",
+      "sha256": "8270d9dfd82237c58e26568805c870ee01d5317f2b9536206051ac4eec73320f"
+    },
+    {
+      "path": "results/metrics.json",
+      "sha256": "ee3d2b431294d99beacd11119db4e4adcf71fac4eb183db04f6cd6996e626aaf"
+    },
+    {
+      "path": "results/reproducibility_manifest.json",
+      "sha256": "7b3780a3da496ab717c9348c012a5e0e96dd052e21ed79e80aa16cc012d13944"
+    },
+    {
+      "path": "test_light_pollution_model.py",
+      "sha256": "14adf1ee7159336b6f140f90c386f804c659b32246673c5b70d3499f84d11fa5"
+    }
+  ],
+  "review_status": "pending_blind_judges"
+}

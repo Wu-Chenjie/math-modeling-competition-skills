@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="55" y="58" font-family="Arial" font-size="27" fill="#151515">Input inventory</text>
+<text x="55" y="92" font-family="Arial" font-size="16" fill="#444444">Counts are read directly from the deterministic case summary.</text>
+<text x="55" y="178" font-family="Arial" font-size="15" fill="#222222">Official SDG nodes</text>
+<rect x="310" y="160" width="714" height="24" fill="#2f6f4e"/>
+<text x="1036" y="178" font-family="Arial" font-size="15" fill="#222222">17</text>
+<text x="55" y="216" font-family="Arial" font-size="15" fill="#222222">Data files</text>
+<rect x="310" y="198" width="2" height="24" fill="#b23a48"/>
+<text x="324" y="216" font-family="Arial" font-size="15" fill="#222222">0</text>
+<text x="55" y="254" font-family="Arial" font-size="15" fill="#222222">Audited tables</text>
+<rect x="310" y="236" width="2" height="24" fill="#b23a48"/>
+<text x="324" y="254" font-family="Arial" font-size="15" fill="#222222">0</text>
+<text x="55" y="292" font-family="Arial" font-size="15" fill="#222222">Relationship rows</text>
+<rect x="310" y="274" width="2" height="24" fill="#b23a48"/>
+<text x="324" y="292" font-family="Arial" font-size="15" fill="#222222">0</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="28" text-anchor="middle" font-family="Arial" font-size="20">q4 result: top-1 stability indicator</text>
+<line x1="70" y1="430" x2="830" y2="430" stroke="#333"/>
+<rect x="89.0" y="96.7" width="114.0" height="333.3" fill="#9b5de5"/>
+<text x="146.0" y="448" text-anchor="middle" font-family="Arial" font-size="10">technology</text>
+<rect x="241.0" y="96.7" width="114.0" height="333.3" fill="#9b5de5"/>
+<text x="298.0" y="448" text-anchor="middle" font-family="Arial" font-size="10">pandemic</text>
+<rect x="393.0" y="430.0" width="114.0" height="0.0" fill="#9b5de5"/>
+<text x="450.0" y="448" text-anchor="middle" font-family="Arial" font-size="10">climate</text>
+<rect x="545.0" y="430.0" width="114.0" height="0.0" fill="#9b5de5"/>
+<text x="602.0" y="448" text-anchor="middle" font-family="Arial" font-size="10">war</text>
+<rect x="697.0" y="96.7" width="114.0" height="333.3" fill="#9b5de5"/>
+<text x="754.0" y="448" text-anchor="middle" font-family="Arial" font-size="10">refugee</text>
+</svg>

@@ -1,0 +1,143 @@
+{
+  "problem_framing": {
+    "title": "Predicting Wordle Results",
+    "questions": [
+      "reported-count prediction interval",
+      "hard-mode association",
+      "future score distribution",
+      "difficulty classification",
+      "other features and editor letter"
+    ]
+  },
+  "data_audit": {
+    "source": "mcm-2023-c.json rows_data only",
+    "rows_used": 359,
+    "date_min": "2022-01-07",
+    "date_max": "2022-12-31",
+    "contest_min": 202,
+    "contest_max": 560,
+    "blank_rows_skipped": 121,
+    "malformed_or_nonalpha_words": [
+      "rprobe",
+      "naïve"
+    ],
+    "percentages_closed_by_normalization": true
+  },
+  "assumptions": [
+    "Reported Twitter scores are a time-varying sample, not all players.",
+    "Word attributes are limited to spelling-derived features available in rows_data.",
+    "Future date extrapolation assumes continuation of observed trend and weekday cycle.",
+    "Rounded percentages are treated as compositional observations after closure."
+  ],
+  "candidate_models": {
+    "q1": "log-linear regression with trend and weekday harmonics; baseline median and holdout comparison",
+    "q2": "additive log-ratio regressions for seven categories; uncertainty from residual dispersion",
+    "q3": "difficulty tertiles plus one-vs-rest linear scores; baseline majority class"
+  },
+  "baseline": {
+    "q1_median_reported": 44578.0,
+    "q2_mean_distribution": [
+      0.469845463662917,
+      5.844950255566615,
+      22.7367817245799,
+      32.94022306532865,
+      23.649965942761863,
+      11.556411409215857,
+      2.8018221388841895
+    ],
+    "q3_majority_accuracy": 0.3342618384401114
+  },
+  "math_specification": {
+    "q1": "log(N_t)=beta0+beta1*t+beta2*sin(2pi t/7)+beta3*cos(2pi t/7)+epsilon_t",
+    "q2": "log(p_{tk}/p_{tX})=x_t^T beta_k, k=1..6; p=softmax([z,0])",
+    "q3": "difficulty=tertiles of A_t=sum_{k=1}^6 k p_{tk}+7p_{tX}"
+  },
+  "code_prototype": {
+    "path": "solution.py",
+    "language": "Python standard library",
+    "tests": "test_solution.py"
+  },
+  "experiment": {
+    "q1_forecast_2023_03_01": {
+      "mean": 9413.579514799769,
+      "pi95": [
+        5236.755382615822,
+        16921.829034754985
+      ]
+    },
+    "hard_mode_model_coefficients": {
+      "intercept": 0.03880119002058218,
+      "vowel_fraction": -0.023273687752182914,
+      "unique_letter_fraction": 0.005896044511438006,
+      "repeat_fraction": 0.0030730448942901147,
+      "initial_vowel": -0.0021153972132379835,
+      "time_per_year": 0.08506036443034516
+    },
+    "eerie_distribution_percent": [
+      0.0,
+      0.9556,
+      13.5436,
+      33.825,
+      34.5686,
+      15.8428,
+      1.2643
+    ],
+    "eerie_distribution_sum": 99.99999999999999,
+    "eerie_difficulty_class": 2,
+    "class_labels": {
+      "0": "easy",
+      "1": "medium",
+      "2": "hard"
+    }
+  },
+  "validation": {
+    "q1_temporal_holdout": {
+      "temporal_holdout_n": 72,
+      "log_rmse": 0.3414820110053336,
+      "coverage_proxy": "not estimable for single future date"
+    },
+    "q2_in_sample_component_rmse_percent_points": 5.061107442983809,
+    "q3_accuracy": 0.48467966573816157,
+    "q3_confusion_matrix": [
+      [
+        85,
+        23,
+        12
+      ],
+      [
+        63,
+        29,
+        28
+      ],
+      [
+        44,
+        15,
+        60
+      ]
+    ]
+  },
+  "sensitivity_robustness": {
+    "forecast_log_sigma": 0.29920978126508146,
+    "eerie_top_category": 5,
+    "note": "Feature coefficients are sensitive to extrapolation; no omitted rows were imputed."
+  },
+  "falsification": [
+    "Temporal holdout tests extrapolation rather than random split.",
+    "A null hard-mode model is represented by the intercept-only baseline; compare coefficients and holdout error before causal interpretation.",
+    "Rounded percentages and Twitter self-selection can invalidate calibration."
+  ],
+  "reviewer_risks": [
+    "Single-year data limits seasonal generalization.",
+    "Word difficulty is operationalized from reported outcomes, so classification is descriptive.",
+    "No external word-frequency or player-demographic data were used."
+  ],
+  "reproducibility_manifest": {
+    "seed": 20230830,
+    "input_path": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-c.json",
+    "input_sha256": "3a6237b515ff2d07de7a07d92b2104e03a040a938783b1508e75f7700626ec01",
+    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "command": "python solution.py",
+    "rows_used": 359
+  }
+}

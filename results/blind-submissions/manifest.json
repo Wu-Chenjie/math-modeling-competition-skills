@@ -1,0 +1,109 @@
+{
+  "protocol": "A/B v2 with recovery",
+  "blind": true,
+  "package_count": 25,
+  "packages": [
+    {
+      "submission_id": "Submission-001",
+      "artifact_count": 15
+    },
+    {
+      "submission_id": "Submission-002",
+      "artifact_count": 17
+    },
+    {
+      "submission_id": "Submission-003",
+      "artifact_count": 30
+    },
+    {
+      "submission_id": "Submission-004",
+      "artifact_count": 21
+    },
+    {
+      "submission_id": "Submission-005",
+      "artifact_count": 6
+    },
+    {
+      "submission_id": "Submission-006",
+      "artifact_count": 20
+    },
+    {
+      "submission_id": "Submission-007",
+      "artifact_count": 16
+    },
+    {
+      "submission_id": "Submission-008",
+      "artifact_count": 24
+    },
+    {
+      "submission_id": "Submission-009",
+      "artifact_count": 15
+    },
+    {
+      "submission_id": "Submission-010",
+      "artifact_count": 23
+    },
+    {
+      "submission_id": "Submission-011",
+      "artifact_count": 14
+    },
+    {
+      "submission_id": "Submission-012",
+      "artifact_count": 14
+    },
+    {
+      "submission_id": "Submission-013",
+      "artifact_count": 16
+    },
+    {
+      "submission_id": "Submission-014",
+      "artifact_count": 9
+    },
+    {
+      "submission_id": "Submission-015",
+      "artifact_count": 8
+    },
+    {
+      "submission_id": "Submission-016",
+      "artifact_count": 5
+    },
+    {
+      "submission_id": "Submission-017",
+      "artifact_count": 18
+    },
+    {
+      "submission_id": "Submission-018",
+      "artifact_count": 14
+    },
+    {
+      "submission_id": "Submission-019",
+      "artifact_count": 20
+    },
+    {
+      "submission_id": "Submission-020",
+      "artifact_count": 15
+    },
+    {
+      "submission_id": "Submission-021",
+      "artifact_count": 11
+    },
+    {
+      "submission_id": "Submission-022",
+      "artifact_count": 15
+    },
+    {
+      "submission_id": "Submission-023",
+      "artifact_count": 14
+    },
+    {
+      "submission_id": "Submission-024",
+      "artifact_count": 13
+    },
+    {
+      "submission_id": "Submission-025",
+      "artifact_count": 14
+    }
+  ],
+  "source_map": "blind-source-map.json (operator-only)",
+  "human_review": "pending blind Judges A-D"
+}

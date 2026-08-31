@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="34" text-anchor="middle" font-family="Arial" font-size="20">Median listing price by hull</text>
+<text x="22" y="260.0" transform="rotate(-90 22 260.0)" text-anchor="middle" font-family="Arial" font-size="14">USD</text>
+<line x1="80" y1="440.0" x2="820" y2="440.0" stroke="#444"/>
+<rect x="144.8" y="278.9" width="240.5" height="161.1" fill="#2a6f97"/>
+<text x="265.0" y="462" text-anchor="middle" font-family="Arial" font-size="12">Monohull</text>
+<text x="265.0" y="271.9" text-anchor="middle" font-family="Arial" font-size="11">1.93e+05</text>
+<rect x="514.8" y="80.0" width="240.5" height="360.0" fill="#2a6f97"/>
+<text x="635.0" y="462" text-anchor="middle" font-family="Arial" font-size="12">Catamaran</text>
+<text x="635.0" y="73.0" text-anchor="middle" font-family="Arial" font-size="11">4.32e+05</text>
+</svg>

@@ -1,0 +1,92 @@
+## Problem framing
+
+**Run:** B-mcm-2023-c-002  
+**Case:** 2023 MCM Problem C, *Predicting Wordle Results*.
+
+The verified excerpt defines Wordle’s six-guess mechanism and positional feedback. The benchmark classifies the task as prediction and statistics, expecting time-series modeling, classification, and cross-validation. Because the excerpt truncates the formal requirements, exact subquestions, forecast horizon, target columns, and requested outputs remain **pending**; conclusions beyond the supplied summary would be speculative.
+
+## Data audit
+
+- Inventory: `official-data.zip` containing `2023_MCM_Problem_C_Data.xlsx`; binary files were not opened.
+- Workbook summary: one sheet, 481 rows, 13 columns, 4,321 nonempty cells.
+- Reported numeric range: 0 to 361,908, indicating mixed scales that must not be modeled without field-specific normalization.
+- Header extraction is incomplete: only `"Percent in "` plus blank headers is recorded. Column meanings cannot be safely reconstructed.
+- The 1,932 empty cells implied by the dimensions cannot be classified as missing observations because merged headers or formatting may account for them.
+- Problem SHA-256: `b511204705db800f3b812943b780074cc24bfe5108d26b6c20f308128e631ef6`
+- Data SHA-256: `22d9c6c308700c6b744d74da8c83e358eefba955f58713c65f947624cda5ac94`
+
+## Assumptions
+
+1. If a valid date or contest-order field exists, observations form an ordered series; random train/test splitting is invalid.
+2. If several columns are attempt-result percentages, they form one bounded distribution and must be modeled jointly.
+3. Word-derived predictors may use only answer strings present in the authorized data; no external dictionary or frequency corpus is assumed.
+4. Any participation-count field reflects reporting activity, not necessarily the total player population.
+5. Missing values are not zeros unless the eventual data dictionary establishes that convention.
+
+## Candidate models
+
+1. **Dynamic compositional regression:** forecast the full attempt-outcome distribution using lagged outcomes, trend, participation covariates, and reproducible word features. This directly handles temporal dependence and percentage coupling.
+2. **Regularized difficulty classification:** define difficulty classes from a prespecified response statistic using thresholds learned inside each training fold, then fit multinomial logistic regression. A tree-based classifier may be a secondary comparator only if sample size and nested tuning justify it.
+
+## Baseline
+
+- Distribution prediction: expanding-window historical mean, plus a last-observation forecast.
+- Classification: training-fold majority class and regularized intercept-only probabilities.
+- A complex model is retained only if it improves preregistered out-of-time metrics across multiple folds.
+
+## Math specification
+
+Let \(p_t=(p_{t1},\ldots,p_{tK})\) be the result proportions for ordered puzzle \(t\), with \(\sum_k p_{tk}=1\). After validation and a training-only pseudocount \(\alpha\),
+
+\[
+z_{tk}=\log\frac{p_{tk}+\alpha}{p_{tK}+\alpha},\qquad
+z_t=c+A z_{t-1}+B\phi(w_t)+\gamma^\top u_t+\varepsilon_t.
+\]
+
+Here \(\phi(w_t)\) denotes answer-derived features and \(u_t\) verified contextual variables. Predictions are mapped back through the softmax, guaranteeing nonnegative proportions summing to one.
+
+If classification is required, define \(C_t\) from a scalar difficulty statistic \(d(p_t)\), with fold-specific thresholds, and estimate
+
+\[
+P(C_t=r\mid x_t)=
+\frac{\exp(\beta_r^\top x_t)}
+{\sum_s\exp(\beta_s^\top x_t)}.
+\]
+
+The definition of \(K\), \(d\), and all covariates is **pending schema recovery**.
+
+## Executable experiment plan
+
+**Status: pending; no computation executed.**
+
+1. Verify the data hash, recover the 13-column schema, and create an explicit field/unit contract.
+2. Check chronology, duplicates, missingness, ranges, percentage encoding, and row-wise distribution sums.
+3. Build word features deterministically within each fold; fit preprocessing only on training observations.
+4. Use expanding-window rolling-origin splits and a final untouched chronological test block.
+5. Fit baselines first, then candidate models; tune only through nested time-respecting validation.
+6. Export fold predictions, residuals, calibration summaries, fitted parameters, and constraint checks.
+7. Generate uncertainty intervals using time-block residual bootstrap or model-based predictive simulation.
+
+## Validation
+
+For distribution forecasts, report per-bin MAE, aggregate MAE, and Jensen–Shannon divergence; report both unweighted and participation-weighted versions if valid counts exist. For classification, use log loss, macro-F1, balanced accuracy, and calibration. Compare models fold-by-fold rather than using one pooled score.
+
+## Sensitivity and robustness
+
+Vary pseudocount \(\alpha\), lag order, training-window length, classification thresholds, participation weighting, and word-feature groups. Repeat after excluding influential rows and temporal endpoints. Assess stability of rankings and coefficients, not only mean accuracy.
+
+## Falsification
+
+- Remove word features: claimed word-specific predictive value should decline.
+- Permute word features within temporal blocks: performance should approach the baseline.
+- Introduce a future-variable leakage probe: any gain signals pipeline contamination.
+- Confirm every predicted distribution is finite, nonnegative, and sums to one.
+- Test constant, missing, duplicated, and extreme-feature inputs before full execution.
+
+## Reviewer risks
+
+Primary risks are temporal leakage, overfitting 481 summarized rows, metric mismatch, corrupted or merged headers, arbitrary difficulty thresholds, ignoring distribution constraints, and interpreting self-selected reporting counts as population behavior. The truncated requirement text prevents verified coverage of every official subquestion.
+
+## Reproducibility manifest
+
+Repository modifications: none. Binary attachments: unopened. Input authority: the specified summary entry only. Random seeds, software versions, recovered schema, split dates, commands, model parameters, output hashes, numerical results, citations, and scores are **pending execution**.

@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-006",
+  "judge_id": "C",
+  "scores": {
+    "problem_understanding": 7,
+    "model_reasonableness": 14,
+    "mathematical_rigor": 7,
+    "data_handling": 6,
+    "code_and_solving": 8,
+    "model_validation": 9,
+    "innovation": 4,
+    "result_interpretation": 5,
+    "paper_quality": 7,
+    "reproducibility": 5
+  },
+  "fatal_flags": [],
+  "notes": "Visible files: 21 total, code=1, tests=1, figures=15; metrics=parsed; reproducibility=present. Metrics declare pending stages; conclusions should be treated as incomplete. All core machine-evidence categories are present; score reflects visible implementation quality."
+}

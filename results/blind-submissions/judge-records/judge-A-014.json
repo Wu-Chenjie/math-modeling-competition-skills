@@ -1,0 +1,18 @@
+{
+  "submission_id": "Submission-014",
+  "judge_id": "A",
+  "scores": {
+    "problem_understanding": 5,
+    "model_reasonableness": 4,
+    "mathematical_rigor": 2,
+    "data_handling": 1,
+    "code_and_solving": 5,
+    "model_validation": 1,
+    "innovation": 1,
+    "result_interpretation": 1,
+    "paper_quality": 2,
+    "reproducibility": 2
+  },
+  "fatal_flags": [],
+  "notes": "Only a small artifact set and metrics/test evidence; problem understanding and assumptions are not sufficiently documented."
+}

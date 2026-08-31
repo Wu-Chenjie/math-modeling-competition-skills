@@ -1,0 +1,174 @@
+# Baseline B Trial Report
+
+**Status:** Protocol/audit only; not a scored benchmark. No model was fitted, no prediction was generated, and no score is claimed.
+
+## Evidence Audited
+
+- Problem: `benchmarks/cases/cumcm-2022-c/problem/CUMCM_2022_C.pdf`
+  - 2 pages, A4; text extraction succeeded.
+  - Four tasks: weathering/appearance analysis and pre-weathering reconstruction; within-type classification/subtyping; unknown-sample identification; cross-category component associations.
+- Workbook: `benchmarks/cases/cumcm-2022-c/data/CUMCM_2022_C_附件.xlsx`
+  - Form 1: 58 artifact records; 3 pattern labels, 2 glass types, 34 weathered and 24 unweathered records.
+  - Form 2: 69 chemistry rows across 14 components. Validity rule is component sum in `[85%, 105%]`; 67 rows pass, while IDs `15` and `17` fail with sums `79.47%` and `71.89%`.
+  - Form 3: 8 unknown samples; all sums pass the validity rule: `96.00%`-`99.98%`.
+  - Blanks are defined by the problem as “not detected”; they must not automatically be treated as missing-at-random.
+- Current file hashes:
+  - PDF: `573EE0F2865AF13F8B2FBD12DAB7F8EFA68CF61EC6B8EDF132A2120424480DBD`
+  - XLSX: `FFB82A8E209A005F26883E115DE3DDEA42AB6E0A34986D312A52A3CEA6B1063C`
+- The hashes differ from those recorded in `metadata.yaml`; provenance is therefore unresolved.
+- PDF visual rendering was attempted but Poppler lacked CJK/ArialUnicode fonts and could not write PNG output. Text-level audit succeeded; visual layout verification is pending.
+
+## Problem Framing
+
+Let \(x_{ij}\) be the reported percentage of component \(j\) for observation \(i\), \(s_i=\sum_jx_{ij}\), \(T_i\) the known type, \(W_i\) weathering status, and \(A_i\) artifact ID.
+
+The central complication is compositional data: components are constrained by a total, and weathering changes observed proportions. Repeated rows for one artifact must be grouped during validation to avoid leakage.
+
+Required outputs:
+
+1. Estimate associations of weathering with type, pattern, and color; quantify composition shifts and reconstruct plausible pre-weathering composition.
+2. Classify high-potassium versus lead-barium glass, then identify stable within-type subtypes.
+3. Assign each unknown sample a type with uncertainty and sensitivity analysis.
+4. Compare component-association structures between types.
+
+## Three Candidate Model Families
+
+### 1. Interpretable compositional regression
+
+Use zero/non-detection handling followed by closure and an isometric log-ratio transform (ILR). Fit:
+
+- grouped logistic or mixed-effects regression for \(W_i\);
+- multivariate linear/mixed regression for transformed composition;
+- within-type Gaussian mixtures for subtypes.
+
+Strength: transparent coefficients, confounder controls, and reconstructable compositions. Risk: sensitivity to zero replacement and distributional assumptions.
+
+### 2. Nonlinear supervised classification
+
+Use ILR balances as inputs to calibrated SVM, random forest, or gradient boosting models.
+
+Strength: captures nonlinear boundaries and interactions. Risk: small effective sample size, repeated-artifact leakage, and reduced interpretability. Must be compared against the baseline, not reported alone.
+
+### 3. Probabilistic latent compositional model
+
+Use a logistic-normal hierarchical model with artifact/location random effects, measurement-error sensitivity, and latent subtype mixtures. Estimate type and subtype posteriors jointly.
+
+Strength: uncertainty propagation and explicit treatment of repeated measurements. Risk: computational complexity, identifiability, and dependence on prior/model specification.
+
+## Baseline Contract
+
+A simple, reproducible baseline should complete the same outputs:
+
+- Type: nearest-centroid or linear discriminant classifier in ILR space; alternatively a one-balance rule based on learned \( \tau \) for \(PbO+BaO\) versus \(K_2O\). The value of \( \tau \) is **pending estimation**.
+- Subtype: within-type \(k\)-means or Gaussian mixture, with \(k\) selected only from training data.
+- Unknowns: posterior/nearest-centroid assignment plus a low-confidence reject option.
+- Weathering: group-wise mean composition difference between weathered and unweathered observations.
+- Associations: pairwise CLR/ILR correlation matrix by type.
+
+No baseline result has been executed.
+
+## Mathematical Specification
+
+1. **Validity and normalization**
+
+\[
+s_i=\sum_{j=1}^{p}x_{ij},\qquad I_i=\mathbf 1(85\le s_i\le105),\qquad
+y_{ij}=x_{ij}/s_i.
+\]
+
+Rows with \(I_i=0\) are excluded or handled in a pre-registered sensitivity branch.
+
+2. **Compositional transform**
+
+After a declared non-detection replacement rule,
+
+\[
+z_i=V^\top\log(y_i),
+\]
+
+where \(V\) is an orthonormal ILR contrast matrix.
+
+3. **Weathering model**
+
+\[
+\operatorname{logit}P(W_i=1)
+=\alpha+\beta_TT_i+\beta_PP_i+\beta_CC_i+u_{A_i}.
+\]
+
+For transformed composition:
+
+\[
+z_i=\mu+\gamma_TT_i+\gamma_WW_i+
+\gamma_{TW}(T_iW_i)+\gamma_PP_i+\gamma_CC_i+u_{A_i}+\epsilon_i.
+\]
+
+A proposed pre-weathering estimate is
+
+\[
+\widehat z_{\text{pre}}=\widehat z_{\text{weathered}}
+-\widehat\gamma_W-\widehat\gamma_{TW}T,
+\]
+
+followed by inverse ILR and closure. This reconstruction is **pending execution and validation**.
+
+4. **Type and subtype**
+
+\[
+P(T_i=\text{Pb-Ba}\mid z_i)=
+\sigma(a+b^\top z_i),
+\]
+
+and, within type \(t\),
+
+\[
+p(z_i\mid T_i=t)=\sum_{k=1}^{K_t}
+\pi_{tk}\mathcal N(z_i;\mu_{tk},\Sigma_{tk}).
+\]
+
+5. **Association comparison**
+
+For each type, estimate a sparse precision matrix:
+
+\[
+\widehat\Theta_t=
+\arg\max_{\Theta\succ0}
+\{\log\det\Theta-\operatorname{tr}(S_t\Theta)
+-\lambda\|\Theta\|_1\}.
+\]
+
+Compare edge presence, sign, and bootstrap stability across types.
+
+## Validation Plan
+
+- Split by artifact ID, never by chemistry row; location-specific rows must remain in one fold.
+- Use grouped nested cross-validation for type/subtype models.
+- Report balanced accuracy, macro-F1, log loss/Brier score, confusion matrices, and bootstrap intervals.
+- Compare invalid-row handling: exclude, renormalize, and bounded/imputed sensitivity branches.
+- Compare multiple non-detection replacements and perturbations.
+- Validate pre-weathering reconstruction against held-out known unweathered measurements and paired locations where available.
+- For unknowns, report posterior confidence and perturbation stability; true labels are unavailable in the attachment.
+- For association graphs, use bootstrap edge-selection frequency and class-label permutation tests.
+- Record seed, fold assignments, parameters, runtime, input/output hashes, and exact command.
+
+## Falsification Questions
+
+- Does the weathering effect remain after controlling for type, pattern, color, and artifact?
+- Does row-wise splitting produce inflated performance compared with artifact-grouped splitting?
+- Do conclusions change under alternative blank/non-detection treatment?
+- Do the 85%-105% validity boundaries materially change results?
+- Is classification driven only by \(PbO\), \(BaO\), and \(K_2O\)?
+- Are subtype counts stable across seeds, folds, and model families?
+- Does pre-weathering correction recover known unweathered compositions?
+- Do association-network differences survive bootstrap and label permutation?
+- Are unknown classifications stable under measurement perturbations?
+
+## Reproducibility Risks
+
+- **Critical:** current PDF/XLSX hashes do not match `metadata.yaml`.
+- **High:** repeated artifact measurements can cause leakage unless grouped.
+- **High:** blanks, explicit zeros, and below-detection values have different semantics.
+- **High:** only 67 valid Form 2 rows remain after the stated validity rule.
+- **Medium:** Form 3 has no ground-truth labels for direct validation.
+- **Medium:** no case-specific official scoring rubric was found; repository rubric is a benchmark control only.
+- **Medium:** referenced Xiao role/PDF/XLSX/algorithm files are absent from the pinned Xiao directory, so its full vendor gates could not be executed.
+- **Pending:** all fitted parameters, classifications, error metrics, sensitivity results, and runtime/reproducibility manifests.

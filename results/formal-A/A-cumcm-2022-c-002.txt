@@ -1,0 +1,178 @@
+# Modeling Report: A-cumcm-2022-c-002
+
+## Problem Framing
+
+The case is CUMCM 2022 C, “古代玻璃制品的成分分析与鉴别.” The modeling objective is to distinguish two archaeological glass classes:
+
+- high-potassium glass;
+- lead-barium glass.
+
+Observed predictors are chemical-component proportions. The data are compositional: component proportions should sum to approximately 100%, but measurement error is allowed. A record is valid when the component sum lies in `[85%, 105%]`.
+
+The supplied summary does not include numbered subquestion text. Therefore, this report defines the common analysis contract; exact q1/q2/... outputs are pending confirmation from the benchmark owner.
+
+## Data Audit
+
+Known from the deterministic summary:
+
+- `case_id`: `cumcm-2022-c`
+- competition/year: CUMCM, 2022
+- source status: verified
+- problem PDF: 2 pages, 1,498 extracted characters
+- data inventory: `CUMCM_2022_C_附件.xlsx`
+- problem SHA-256: `61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7`
+- data SHA-256: `14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2`
+- expected methods: compositional data, classification, uncertainty analysis
+- documented failure modes: ignoring compositional constraint, data leakage, unsupported classification
+
+The XLSX was intentionally not opened or parsed. Consequently, row counts, column names, class balance, component-specific missingness, duplicate records, and weathering-field availability are pending.
+
+Blank cells are described as “not detected.” They must not automatically be interpreted as exact zero without a detection-limit convention; both zero-replacement and detection-limit sensitivity analyses are required.
+
+## Assumptions
+
+1. Component proportions are nonnegative and measured on a common scale.
+2. Only records satisfying the `[85%,105%]` sum rule enter the primary analysis.
+3. Class labels are treated as reference labels, not noiseless ground truth.
+4. Preprocessing parameters are estimated inside each training fold.
+5. Samples are independent unless duplicate specimens or shared artifacts are identified.
+6. Weathering can alter observed proportions; class prediction should therefore be evaluated by weathering status if such a field exists.
+7. No unreported external data, citations, or execution results are used.
+
+## Candidate Models
+
+**Model A: ILR plus regularized logistic classification**
+
+- Replace zeros using a preregistered multiplicative replacement.
+- Close each composition to 100%.
+- Transform to isometric log-ratio (ILR) coordinates.
+- Fit ridge-penalized logistic regression.
+- Advantages: respects closure, interpretable coefficients, stable with correlated raw proportions.
+
+**Model B: Logistic-normal discriminant classifier**
+
+- Use the same ILR coordinates.
+- Estimate class-specific means and regularized covariance matrices.
+- Produce posterior class probabilities through QDA or a shrinkage equivalent.
+- Advantages: captures class-specific covariance and supports probabilistic uncertainty.
+
+The two models are independent classification systems; zero handling and ILR preprocessing are shared compositional infrastructure, not separate models.
+
+## Baseline
+
+Use a majority-class predictor as the minimum baseline. Report balanced accuracy, macro-F1, log loss, Brier score, and calibration. A raw-proportion classifier may be shown only as a diagnostic comparator, explicitly labeled as compositionally misspecified.
+
+## Mathematical Specification
+
+For sample \(i\), let \(x_i=(x_{i1},\ldots,x_{iD})\) and \(s_i=\sum_jx_{ij}\). Retain the sample if
+
+\[
+85 \le s_i \le 105.
+\]
+
+After zero replacement, close the composition:
+
+\[
+z_{ij}=100\,x'_{ij}/\sum_kx'_{ik}.
+\]
+
+Let \(g(z_i)\) be the geometric mean. With an ILR basis \(V\),
+
+\[
+y_i=V^\top\log\!\left(z_i/g(z_i)\right).
+\]
+
+Model A estimates
+
+\[
+P(C_i=1\mid y_i)=\sigma(\beta_0+\beta^\top y_i),
+\]
+
+by minimizing weighted cross-entropy plus \(\lambda\|\beta\|_2^2\).
+
+Model B assumes
+
+\[
+y_i\mid C_i=c\sim N(\mu_c,\Sigma_c+\tau I),
+\]
+
+with shrinkage covariance and Bayes posterior probabilities. Hyperparameters \(\lambda,\tau\), replacement amount \(\delta\), and class weights are selected only within nested training folds.
+
+## Executable Experiment Plan
+
+Execution is pending because the binary attachment must not be opened in this run.
+
+Planned workflow:
+
+1. Load the XLSX with a reproducible parser; record sheet names, dimensions, headers, and SHA-256.
+2. Identify labels, component columns, blanks, possible weathering indicators, and duplicate artifact IDs.
+3. Apply the `[85%,105%]` validity rule and document exclusions.
+4. Fit zero replacement and ILR transformation within each training fold.
+5. Run nested stratified cross-validation for Models A and B.
+6. Tune hyperparameters using inner-fold log loss or balanced accuracy.
+7. Refit the selected specification on all valid labeled data.
+8. Export predictions, confusion matrices, calibration data, coefficient/loadings tables, and uncertainty intervals.
+9. Freeze a reproducibility manifest containing the exact command and environment.
+
+No command, model fit, score, or figure has been executed.
+
+## Validation
+
+Primary validation:
+
+- nested stratified cross-validation;
+- balanced accuracy and macro-F1;
+- class-wise sensitivity/specificity;
+- log loss, Brier score, and calibration curve;
+- bootstrap confidence intervals for all metrics.
+
+Leakage checks:
+
+- fit replacement, closure, ILR basis, scaling, and feature selection only on training folds;
+- group splits if multiple measurements belong to one artifact;
+- do not use reference labels, post hoc class descriptions, or test-set weathering information during training.
+
+## Sensitivity and Robustness
+
+Repeat the analysis over:
+
+- zero-replacement values \(\delta\in\{10^{-6},10^{-5},10^{-4}\}\);
+- alternative ILR bases;
+- raw versus normalized proportions as a diagnostic;
+- class weighting versus unweighted loss;
+- weathering strata, if available;
+- bootstrap resamples and closure-preserving perturbations;
+- supplementary validity thresholds, clearly separated from the prescribed `[85%,105%]` primary rule.
+
+## Falsification
+
+A credible model should:
+
+- lose performance under label permutation;
+- remain better than the majority baseline under repeated resampling;
+- not depend on one component alone;
+- show degradation under targeted closure-preserving perturbations;
+- produce calibrated probabilities rather than only hard labels.
+
+If label permutation retains comparable performance, leakage or duplicated records is suspected.
+
+## Reviewer Risks
+
+Main risks are automatic treatment of blanks as zeros, use of raw proportions without closure handling, invalid-row filtering after model fitting, data leakage through preprocessing, unsupported claims from small or imbalanced samples, and overinterpretation of weathered specimens. Exact sample-level conclusions remain pending until the XLSX is legitimately parsed in a permitted execution.
+
+## Reproducibility Manifest
+
+```json
+{
+  "run_id": "A-cumcm-2022-c-002",
+  "case_id": "cumcm-2022-c",
+  "input_summary": "benchmarks/case-summaries.json",
+  "problem_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+  "data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+  "data_files": ["CUMCM_2022_C_附件.xlsx"],
+  "seed": "pending preregistration",
+  "software_versions": "pending execution",
+  "command": "pending execution",
+  "results": "pending; no binary attachment opened"
+}
+```

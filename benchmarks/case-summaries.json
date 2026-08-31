@@ -1,0 +1,335 @@
+[
+  {
+    "case_id": "cumcm-2022-c",
+    "competition": "CUMCM",
+    "year": 2022,
+    "title": "古代玻璃制品的成分分析",
+    "problem_type": "statistical_analysis",
+    "source_status": "verified",
+    "problem_sha256": "61db63cc8d1a6b7ec75bae484bea971e66f6c1687338e4a66e5e78bbeb8772f7",
+    "data_sha256": "14849c7ed9d34b8c1b3709b138061492605b8c794249a0ab8bb0d4efc4b2f7e2",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 1498,
+    "problem_excerpt": "2022 年高教社杯全国大学生数学建模竞赛题目 （请先阅读“全国大学生数学建模竞赛论文格式规范”） C 题 古代玻璃制品的成分分析与鉴别 丝绸之路是古代中西方文化交流的通道，其中玻璃是早期贸易往来的宝贵物证。早期的玻 璃在西亚和埃及地区常被制作成珠形饰品传入我国，我国古代玻璃吸收其技术后在本土就地取 材制作，因此与外来的玻璃制品外观相似，但化学成分却不相同。 玻璃的主要原料是石英砂， 主要化学成分是二氧化硅 （SiO2） 。 由于纯石英砂的熔点较高， 为了降低熔化温度，在炼制时需要添加助熔剂。古代常用的助熔剂有草木灰、天然泡碱、硝石 和铅矿石等，并添加石灰石作为稳定剂，石灰石煅烧以后转化为氧化钙（CaO）。添加的助熔 剂不同，其主要化学成分也不同。例如，铅钡玻璃在烧制过程中加入铅矿石作为助熔剂，其氧 化铅（PbO）、氧化钡（BaO）的含量较高，通常被认为是我国自己发明的玻璃品种，楚文化 的玻璃就是以铅钡玻璃为主。钾玻璃是以含钾量高的物质如草木灰作为助熔剂烧制而成的，主 要流行于我国岭南以及东南亚和印度等区域。 古代玻璃极易受埋藏环境的影响而风化。在风化过程中，内部元素与环境元素进行大量交 换，导致其成分比例发生变化，从而影响对其类别的正确判断。如图 1 的文物标记为表面无风 化，表面能明显看出文物的颜色、纹饰，但不排除局部有较浅的风化；图2 的文物标记为表面 风化，表面大面积灰黄色区域为风化层，是明显风化区域，紫色部分是一般风化表面。在部分 风化的文物中，其表面也有未风化的区域。 图 1 未风化的蜻蜓眼玻璃珠样品 图 2 风化的玻璃棋子样品 现有一批我国古代玻璃制品的相关数据，考古工作者依据这些文物样品的化学成分和其他 检测手段已将其分为高钾玻璃和铅钡玻璃两种类型。附件表单 1 给出了这些文物的分类信息， 附件表单 2 给出了相应的主要成分所占比例（空白处表示未检测到该成分）。这些数据的特点 是成分性，即各成分比例的累加和应为 100%，但因检测手段等原因可能导致其成分比例的累 加和非 100%的情况。本题中将成分比例累加和介于 85%~105%之间的数据视为有效数据。",
+    "data_files": [
+      "CUMCM_2022_C_附件.xlsx"
+    ],
+    "data_audit": [
+      {
+        "file": "CUMCM_2022_C_附件.xlsx",
+        "sheets": [
+          {
+            "sheet": "表单1",
+            "rows": 59,
+            "columns": 5,
+            "nonempty_cells": 291,
+            "headers": [
+              "文物编号",
+              "纹饰",
+              "类型",
+              "颜色",
+              "表面风化"
+            ],
+            "numeric_min": 1.0,
+            "numeric_max": 58.0
+          },
+          {
+            "sheet": "表单2",
+            "rows": 70,
+            "columns": 15,
+            "nonempty_cells": 726,
+            "headers": [
+              "文物采样点",
+              "二氧化硅(SiO2)",
+              "氧化钠(Na2O)",
+              "氧化钾(K2O)",
+              "氧化钙(CaO)",
+              "氧化镁(MgO)",
+              "氧化铝(Al2O3)",
+              "氧化铁(Fe2O3)",
+              "氧化铜(CuO)",
+              "氧化铅(PbO)",
+              "氧化钡(BaO)",
+              "五氧化二磷(P2O5)",
+              "氧化锶(SrO)",
+              "氧化锡(SnO2)",
+              "二氧化硫(SO2)"
+            ],
+            "numeric_min": 0.0,
+            "numeric_max": 96.77
+          },
+          {
+            "sheet": "表单3",
+            "rows": 9,
+            "columns": 16,
+            "nonempty_cells": 111,
+            "headers": [
+              "文物编号",
+              "表面风化",
+              "二氧化硅(SiO2)",
+              "氧化钠(Na2O)",
+              "氧化钾(K2O)",
+              "氧化钙(CaO)",
+              "氧化镁(MgO)",
+              "氧化铝(Al2O3)",
+              "氧化铁(Fe2O3)",
+              "氧化铜(CuO)",
+              "氧化铅(PbO)",
+              "氧化钡(BaO)",
+              "五氧化二磷(P2O5)",
+              "氧化锶(SrO)",
+              "氧化锡(SnO2)",
+              "二氧化硫(SO2)"
+            ],
+            "numeric_min": 0.0,
+            "numeric_max": 93.17
+          }
+        ]
+      }
+    ],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "compositional_data",
+      "classification",
+      "uncertainty_analysis"
+    ],
+    "metadata_common_failures": [
+      "ignored_compositional_constraint",
+      "data_leakage",
+      "unsupported_classification"
+    ]
+  },
+  {
+    "case_id": "icm-2023-d",
+    "competition": "ICM",
+    "year": 2023,
+    "title": "Prioritizing the UN Sustainability Goals",
+    "problem_type": "multi_objective_decision",
+    "source_status": "verified",
+    "problem_sha256": "a4d6400ec7c6d45da73c248ca5892a97d52cdef7f71e45f4134264920bdf0de7",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 3852,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 ICM Problem D: Prioritizing the UN Sustainability Goals Unknown author. Public domain via Wikimedia Commons Background The United Nations (UN) has set 17 Sustainable Development Goals (SDGs). Achieving these goals would ultimately lead to an improved life for many people around the world. These goals are not independent of each other. So, often positive gains in some goals have an impact (positive or negative and sometimes both) on other goals. This interconnectedness makes the achievement of all goals a fluid process where funding limitations and other national and international priorities may take precedence. Additionally, the impact of technological advances, global pandemics, climate change, regional wars, and refugee movements have had serious implications on many of the goals. Requirement To explore",
+    "data_files": [],
+    "data_audit": [],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "multi_criteria_decision",
+      "weight_sensitivity",
+      "robustness_analysis"
+    ],
+    "metadata_common_failures": [
+      "arbitrary_weights",
+      "scale_mismatch",
+      "no_ranking_robustness"
+    ]
+  },
+  {
+    "case_id": "icm-2023-e",
+    "competition": "ICM",
+    "year": 2023,
+    "title": "Light Pollution",
+    "problem_type": "complex_data_analysis",
+    "source_status": "verified",
+    "problem_sha256": "058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 4724,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 ICM Problem E: Light Pollution Photo Credit: K. Blyman Background Light pollution is used to describe any excessive or poor use of artificial light. Some of the phenomena that we refer to as light pollution include light trespass, over-illumination, and light clutter. These phenomena are most easily observed as a glow in the sky after the sun has set in large cities; however, they may also occur in more remote regions. Light pollution alters our view of the night sky, has environmental impacts and affects our health and safety. For example, plant maturation may be delayed or accelerated, and migration patterns of wildlife affected. Excessive artificial light may confuse our circadian rhythms, leading to poor sleep quality and perhaps physical and mental health issues. Glare caused by artificial lights may",
+    "data_files": [],
+    "data_audit": [],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "spatial_analysis",
+      "statistical_modeling",
+      "scenario_analysis"
+    ],
+    "metadata_common_failures": [
+      "sampling_bias",
+      "confounded_correlation",
+      "no_uncertainty_analysis"
+    ]
+  },
+  {
+    "case_id": "mcm-2023-a",
+    "competition": "MCM",
+    "year": 2023,
+    "title": "Drought-Stricken Plant Communities",
+    "problem_type": "dynamic_system",
+    "source_status": "verified",
+    "problem_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 3102,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem A: Drought-Stricken Plant Communities Photo Credit: Pixabay.com Background Different species of plants react to stresses in different ways. For example, grasslands are quite sensitive to drought. Droughts occur at varying frequencies and varying levels of severity. Numerous observations suggest that the number of different species present plays a role in how a plant community adapts when exposed to cycles of drought over successive generations. In some communities with only one species of plant, the generations that follow are not as well adapted to drought conditions as the individual plants in communities with four or more species. These observations raise many questions. For example, what is the minimal number of species necessary for a plant community to benefit from this type of localized",
+    "data_files": [],
+    "data_audit": [],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "mechanistic_model",
+      "differential_equation",
+      "numerical_simulation"
+    ],
+    "metadata_common_failures": [
+      "wrong_boundary_condition",
+      "unstable_solver",
+      "no_extreme_case"
+    ]
+  },
+  {
+    "case_id": "mcm-2023-b",
+    "competition": "MCM",
+    "year": 2023,
+    "title": "Reimagining Maasai Mara",
+    "problem_type": "optimization",
+    "source_status": "verified",
+    "problem_sha256": "a22b1cdf79432f5ed5cc3443f360322e968ff4255bdabb791b5f9afae96a63f4",
+    "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pdf_pages": 2,
+    "pdf_extracted_chars": 3149,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem B: Reimagining Maasai Mara Photo Credit: Pixabay.com Background Kenya’s wildlife preserves were originally created primarily to protect wildlife and other natural resources. Kenya’s parliament passed the Wildlife Conservation and Management Act, 2013 to provide more equitable sharing of resources, as well as to allow alternative, community-based management efforts [1]. Kenya has since added amendments to address gaps in the legislation to provide more clear governance, finance, and penalties for violators[2]. Requirement Focusing on one large game preserve, the Maasai Mara, your task is to determine alternate ways to manage the resources within and outside the current boundaries of the park. Specifically, you should: • Consider and recommend specific policies and management strategies for diff",
+    "data_files": [],
+    "data_audit": [],
+    "zip_entries": {},
+    "metadata_expected_methods": [
+      "network_analysis",
+      "multi_objective_optimization",
+      "scenario_analysis"
+    ],
+    "metadata_common_failures": [
+      "arbitrary_weights",
+      "ignored_capacity_constraint",
+      "no_robustness"
+    ]
+  },
+  {
+    "case_id": "mcm-2023-c",
+    "competition": "MCM",
+    "year": 2023,
+    "title": "Predicting Wordle Results",
+    "problem_type": "prediction_and_statistics",
+    "source_status": "verified",
+    "problem_sha256": "b511204705db800f3b812943b780074cc24bfe5108d26b6c20f308128e631ef6",
+    "data_sha256": "22d9c6c308700c6b744d74da8c83e358eefba955f58713c65f947624cda5ac94",
+    "pdf_pages": 4,
+    "pdf_extracted_chars": 7051,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem C: Predicting Wordle Results Image: nytco.com[1] Background Wordle is a popular puzzle currently offered daily by the New York Times. Players try to solve the puzzle by guessing a five-letter word in six tries or less, receiving feedback with every guess. For this version, each guess must be an actual word in English. Guesses that are not recognized as words by the contest are not allowed. Wordle continues to grow in popularity and versions of the game are now available in over 60 languages. The New York Times website directions for Wordle state that the color of the tiles will change after you submit your word. A yellow tile indicates the letter in that tile is in the word, but it is in the wrong location. A green tile indicates that the letter in that tile is in the word and is in the correc",
+    "data_files": [
+      "official-data.zip",
+      "official/2023_MCM_Problem_C_Data.xlsx"
+    ],
+    "data_audit": [
+      {
+        "file": "2023_MCM_Problem_C_Data.xlsx",
+        "sheets": [
+          {
+            "sheet": "Sheet1",
+            "rows": 481,
+            "columns": 13,
+            "nonempty_cells": 4321,
+            "headers": [
+              "Percent in ",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "numeric_min": 0.0,
+            "numeric_max": 361908.0
+          }
+        ]
+      }
+    ],
+    "zip_entries": {
+      "official-data.zip": [
+        "2023_MCM_Problem_C_Data.xlsx"
+      ]
+    },
+    "metadata_expected_methods": [
+      "time_series",
+      "classification",
+      "cross_validation"
+    ],
+    "metadata_common_failures": [
+      "temporal_leakage",
+      "overfitting",
+      "metric_mismatch"
+    ]
+  },
+  {
+    "case_id": "mcm-2023-y",
+    "competition": "MCM",
+    "year": 2023,
+    "title": "Understanding Used Sailboat Prices",
+    "problem_type": "prediction_and_statistics",
+    "source_status": "verified",
+    "problem_sha256": "2e68ae40ec59bcaf77d1980bfa8dfe501944d6c06c4ac8d03b351a330a40cbce",
+    "data_sha256": "17bc5eb97116d148815fd7bcc306672c967e4693cd8f5aa0368032a775c01aba",
+    "pdf_pages": 3,
+    "pdf_extracted_chars": 6010,
+    "problem_excerpt": "| ©2023 by COMAP, Inc. | www.comap.com | www.mathmodels.org | info@comap.com | 2023 MCM Problem Y: Understanding Used Sailboat Prices Photo Credit: www.pixabay.com Like many luxury goods, sailboats vary in value as they age and as market conditions change. The attached “2023_MCM_Problem_Y_Boats.xlsx” file includes data on approximately 3500 sailboats from 36 to 56 feet long advertised for sale in Europe, the Caribbean, and the USA in December 2020. A boating enthusiast provided these data to COMAP. Like most real-world data sets, it may have missing data or other issues that require some data cleaning prior to analysis. The Excel file includes two tabs, one for monohulled sailboats and one for catamarans. In each tab, columns are labeled Make, Variant, Length (in feet), Geographic Region, Country/Region/State, Listing Price (in US dollars), and Year (of manufacture). For a given make, va",
+    "data_files": [
+      "official-data.zip",
+      "official/2023_MCM_Problem_Y_Data.xlsx"
+    ],
+    "data_audit": [
+      {
+        "file": "2023_MCM_Problem_Y_Data.xlsx",
+        "sheets": [
+          {
+            "sheet": "Monohulled Sailboats ",
+            "rows": 2347,
+            "columns": 7,
+            "nonempty_cells": 16426,
+            "headers": [
+              "Make",
+              "Variant",
+              "Length \n(ft)",
+              "Geographic Region",
+              "Country/Region/State ",
+              "Listing Price (USD)",
+              "Year"
+            ],
+            "numeric_min": 12.0,
+            "numeric_max": 1885229.0
+          },
+          {
+            "sheet": "Catamarans",
+            "rows": 1146,
+            "columns": 7,
+            "nonempty_cells": 8022,
+            "headers": [
+              "Make",
+              "Variant",
+              "Length \n(ft)",
+              "Geographic Region",
+              "Country/Region/State ",
+              "Listing Price (USD)",
+              "Year"
+            ],
+            "numeric_min": 4.0,
+            "numeric_max": 2890000.0
+          }
+        ]
+      }
+    ],
+    "zip_entries": {
+      "official-data.zip": [
+        "2023_MCM_Problem_Y_Data.xlsx"
+      ]
+    },
+    "metadata_expected_methods": [
+      "regression",
+      "feature_engineering",
+      "cross_validation"
+    ],
+    "metadata_common_failures": [
+      "target_leakage",
+      "overfitting",
+      "metric_mismatch"
+    ]
+  }
+]

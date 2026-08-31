@@ -1,0 +1,8 @@
+{
+  "code": "wordle_model.py",
+  "input": "C:\\Users\\伍辰杰\\Documents\\ChatGPT\\mathmodel\\math-modeling-competition-skills\\benchmarks\\case-summaries\\mcm-2023-c.json",
+  "seed": 0,
+  "command": "python wordle_model.py",
+  "runtime": "Python stdlib",
+  "figures": 9
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="28" text-anchor="middle" font-family="Arial" font-size="18">Community income trajectories</text>
+<line x1="82" y1="448" x2="865" y2="448" stroke="#222"/>
+<line x1="82" y1="55" x2="82" y2="448" stroke="#222"/>
+<line x1="82" y1="448.0" x2="865" y2="448.0" stroke="#ddd"/>
+<text x="73" y="452.0" text-anchor="end" font-family="Arial" font-size="11">0.35</text>
+<line x1="82" y1="369.4" x2="865" y2="369.4" stroke="#ddd"/>
+<text x="73" y="373.4" text-anchor="end" font-family="Arial" font-size="11">0.53</text>
+<line x1="82" y1="290.8" x2="865" y2="290.8" stroke="#ddd"/>
+<text x="73" y="294.8" text-anchor="end" font-family="Arial" font-size="11">0.72</text>
+<line x1="82" y1="212.2" x2="865" y2="212.2" stroke="#ddd"/>
+<text x="73" y="216.2" text-anchor="end" font-family="Arial" font-size="11">0.91</text>
+<line x1="82" y1="133.6" x2="865" y2="133.6" stroke="#ddd"/>
+<text x="73" y="137.6" text-anchor="end" font-family="Arial" font-size="11">1.09</text>
+<line x1="82" y1="55.0" x2="865" y2="55.0" stroke="#ddd"/>
+<text x="73" y="59.0" text-anchor="end" font-family="Arial" font-size="11">1.28</text>
+<polyline points="82.0,391.8 108.1,389.4 134.2,387.9 160.3,387.0 186.4,386.6 212.5,386.6 238.6,386.9 264.7,387.5 290.8,388.3 316.9,389.2 343.0,390.4 369.1,391.6 395.2,392.9 421.3,394.3 447.4,395.8 473.5,397.3 499.6,398.8 525.7,400.4 551.8,402.0 577.9,403.6 604.0,405.2 630.1,406.8 656.2,408.5 682.3,410.1 708.4,411.7 734.5,413.2 760.6,414.8 786.7,416.4 812.8,417.9 838.9,419.4 865.0,420.9" fill="none" stroke="#0072B2" stroke-width="2.5"/>
+<line x1="685" y1="55" x2="707" y2="55" stroke="#0072B2" stroke-width="3"/>
+<text x="713" y="59" font-family="Arial" font-size="11">status_quo</text>
+<polyline points="82.0,391.8 108.1,389.4 134.2,387.7 160.3,386.3 186.4,385.1 212.5,384.2 238.6,383.3 264.7,382.6 290.8,381.9 316.9,381.2 343.0,380.5 369.1,379.9 395.2,379.3 421.3,378.7 447.4,378.1 473.5,377.5 499.6,376.9 525.7,376.4 551.8,375.9 577.9,375.4 604.0,374.9 630.1,374.4 656.2,373.9 682.3,373.5 708.4,373.1 734.5,372.7 760.6,372.4 786.7,372.0 812.8,371.7 838.9,371.4 865.0,371.1" fill="none" stroke="#D55E00" stroke-width="2.5"/>
+<line x1="685" y1="73" x2="707" y2="73" stroke="#D55E00" stroke-width="3"/>
+<text x="713" y="77" font-family="Arial" font-size="11">strict_zoning</text>
+<polyline points="82.0,391.8 108.1,373.2 134.2,355.7 160.3,339.0 186.4,323.1 212.5,307.9 238.6,293.3 264.7,279.4 290.8,266.1 316.9,253.3 343.0,241.1 369.1,229.3 395.2,218.1 421.3,207.3 447.4,197.0 473.5,187.1 499.6,177.6 525.7,168.6 551.8,159.9 577.9,151.7 604.0,143.7 630.1,136.2 656.2,129.0 682.3,122.1 708.4,115.5 734.5,109.3 760.6,103.3 786.7,97.6 812.8,92.2 838.9,87.0 865.0,82.1" fill="none" stroke="#009E73" stroke-width="2.5"/>
+<line x1="685" y1="91" x2="707" y2="91" stroke="#009E73" stroke-width="3"/>
+<text x="713" y="95" font-family="Arial" font-size="11">community_led</text>
+<polyline points="82.0,391.8 108.1,383.5 134.2,375.5 160.3,367.8 186.4,360.2 212.5,352.7 238.6,345.4 264.7,338.2 290.8,331.1 316.9,324.3 343.0,317.6 369.1,311.2 395.2,305.0 421.3,299.0 447.4,293.4 473.5,287.9 499.6,282.7 525.7,277.8 551.8,273.0 577.9,268.6 604.0,264.3 630.1,260.2 656.2,256.3 682.3,252.7 708.4,249.2 734.5,245.9 760.6,242.7 786.7,239.8 812.8,236.9 838.9,234.2 865.0,231.7" fill="none" stroke="#CC79A7" stroke-width="2.5"/>
+<line x1="685" y1="109" x2="707" y2="109" stroke="#CC79A7" stroke-width="3"/>
+<text x="713" y="113" font-family="Arial" font-size="11">corridor_first</text>
+<polyline points="82.0,391.8 108.1,375.8 134.2,360.4 160.3,345.6 186.4,331.2 212.5,317.2 238.6,303.6 264.7,290.3 290.8,277.5 316.9,264.9 343.0,252.7 369.1,240.9 395.2,229.4 421.3,218.3 447.4,207.7 473.5,197.4 499.6,187.6 525.7,178.1 551.8,169.1 577.9,160.5 604.0,152.3 630.1,144.5 656.2,137.0 682.3,129.9 708.4,123.1 734.5,116.7 760.6,110.5 786.7,104.7 812.8,99.1 838.9,93.8 865.0,88.7" fill="none" stroke="#E69F00" stroke-width="2.5"/>
+<line x1="685" y1="127" x2="707" y2="127" stroke="#E69F00" stroke-width="3"/>
+<text x="713" y="131" font-family="Arial" font-size="11">balanced_portfolio</text>
+<text x="450.0" y="500" text-anchor="middle" font-family="Arial" font-size="13">Year</text>
+<text x="18" y="260.0" transform="rotate(-90 18 260.0)" text-anchor="middle" font-family="Arial" font-size="13">Normalized index</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.0" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">Q1 outcome components (assumed)</text>
+<text x="18" y="205.0" transform="rotate(-90 18 205.0)" text-anchor="middle" font-family="Arial" font-size="12">wildlife score</text>
+<line x1="70" y1="355" x2="735" y2="355" stroke="#222"/>
+<line x1="70" y1="55" x2="70" y2="355" stroke="#222"/>
+<rect x="94.9" y="220.0" width="116.4" height="135.0" fill="#2c7fb8"/>
+<text x="153.1" y="373" text-anchor="middle" font-family="Arial" font-size="11">baseline</text>
+<text x="153.1" y="215.0" text-anchor="middle" font-family="Arial" font-size="10">0.450</text>
+<rect x="261.2" y="152.7" width="116.4" height="202.3" fill="#2c7fb8"/>
+<text x="319.4" y="373" text-anchor="middle" font-family="Arial" font-size="11">zoned_co_management</text>
+<text x="319.4" y="147.7" text-anchor="middle" font-family="Arial" font-size="10">0.674</text>
+<rect x="427.4" y="171.8" width="116.4" height="183.2" fill="#2c7fb8"/>
+<text x="485.6" y="373" text-anchor="middle" font-family="Arial" font-size="11">corridor_community</text>
+<text x="485.6" y="166.8" text-anchor="middle" font-family="Arial" font-size="10">0.611</text>
+<rect x="593.7" y="145.0" width="116.4" height="210.0" fill="#2c7fb8"/>
+<text x="651.9" y="373" text-anchor="middle" font-family="Arial" font-size="11">adaptive_hybrid</text>
+<text x="651.9" y="140.0" text-anchor="middle" font-family="Arial" font-size="10">0.700</text>
+</svg>

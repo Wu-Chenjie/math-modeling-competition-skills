@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="30" y="32" font-family="Arial" font-size="18" fill="#222">q2 raw overview</text>
+<rect x="80.0" y="90.0" width="195.0" height="260.0" fill="#4472c4"/>
+<text x="170.0" y="375" text-anchor="middle" font-family="Arial" font-size="11">铅钡</text>
+<text x="170.0" y="85.0" text-anchor="middle" font-family="Arial" font-size="10">30.00</text>
+<rect x="380.0" y="228.7" width="195.0" height="121.3" fill="#4472c4"/>
+<text x="470.0" y="375" text-anchor="middle" font-family="Arial" font-size="11">高钾</text>
+<text x="470.0" y="223.7" text-anchor="middle" font-family="Arial" font-size="10">14.00</text>
+<line x1="60" y1="350" x2="700" y2="350" stroke="#333"/>
+</svg>

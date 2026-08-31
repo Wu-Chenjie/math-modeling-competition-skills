@@ -1,0 +1,58 @@
+# Diagnostic Report: CUMCM 2022 C
+
+**Status.** This is a diagnostic design report, not a scored benchmark. The pre-audited summary is the only data description used: a two-page PDF (1,498 extracted characters), a three-sheet workbook, 244 shared strings, 58 artifacts, 14 oxide columns, and missing values in several oxide columns. No workbook or PDF content was opened, and no calculation was executed. All numerical results, fitted parameters, sample counts after cleaning, and performance estimates are **[PENDING]**.
+
+## Framing
+
+The task is supervised classification of ancient-glass samples from oxide composition. The predictors are compositional: oxide percentages are nonnegative and constrained by a constant-sum relationship. The objective is to assign each valid sample to the workbook’s defined class label, quantify uncertainty, identify chemically informative oxides, and test whether apparent separation is robust to missingness, artifacts, and preprocessing choices.
+
+## Assumptions
+
+1. Artifact rows can be identified reproducibly and excluded without using the class label; the final valid-row count is **[PENDING]**.
+2. Oxide entries are concentrations on a common scale. Zeros represent either true absence or below-detection measurements and must be distinguished from missing values.
+3. Missing values are not treated as zero. Their mechanism may be MAR or MNAR; this must be stress-tested.
+4. Samples are independent unless provenance/site identifiers imply clustering; grouped validation will be used when such identifiers exist.
+5. Workbook labels are provisionally trusted, with possible label noise checked through outlier and disagreement analysis.
+6. Any conclusion involving PDF context, sheet semantics, or column meanings remains **[PENDING]** until authorized data inspection.
+
+## Three Candidate Models
+
+**Model 1: Compositional discriminant model.** Apply train-fold-only zero replacement and multiplicative imputation, close each composition, transform with an isometric log-ratio (ILR) basis, then fit multinomial logistic regression or QDA. This respects constant-sum geometry and offers coefficient-level interpretation.
+
+**Model 2: Elastic-net multinomial regression.** Use ILR coordinates, missingness indicators, and standardized auxiliary variables. Optimize a penalized multinomial likelihood, selecting regularization by nested cross-validation. This is appropriate if the sample size is small relative to correlated oxide features.
+
+**Model 3: Gradient-boosted trees.** Fit a multiclass boosted-tree classifier to ILR coordinates plus missingness indicators, with class weighting and monotonicity constraints only where chemically justified. Use SHAP or permutation importance for interpretation. Nonlinear interactions are its principal advantage, but overfitting risk is substantial.
+
+## Baseline
+
+Use two baselines: (i) majority-class prediction and (ii) stratified linear multinomial logistic regression on raw, closed compositions. Baseline macro-F1, balanced accuracy, log loss, and class frequencies are **[PENDING]**. No candidate should be considered useful unless it materially and stably exceeds these baselines.
+
+## Mathematical Specification
+
+For sample \(i\), let \(x_i=(x_{i1},\ldots,x_{ip})\), \(p=14\). After imputation and zero handling, define
+\[
+z_{ij}=\frac{x_{ij}}{\sum_{k=1}^{p}x_{ik}},\qquad
+y_i=V^\top\log z_i,
+\]
+where \(V\) is an orthonormal ILR basis. For class \(c\),
+\[
+P(g_i=c\mid y_i)=
+\frac{\exp(\beta_{c0}+\beta_c^\top y_i)}
+{\sum_r\exp(\beta_{r0}+\beta_r^\top y_i)}.
+\]
+Elastic-net estimation minimizes
+\[
+-\ell(\beta)+\lambda\left[\alpha\|\beta\|_1+
+\frac{1-\alpha}{2}\|\beta\|_2^2\right].
+\]
+The boosted-tree model minimizes weighted multiclass log loss over additive tree functions \(f_c(y_i)\). Hyperparameters, imputation method, \(\epsilon\) for zeros, and selected ILR basis are **[PENDING]**.
+
+## Validation and Falsification
+
+Use repeated nested stratified cross-validation; use grouped splits if provenance clustering is present. Report macro-F1, balanced accuracy, per-class recall, log loss, Brier score, calibration error, confusion matrices, and bootstrap confidence intervals, all **[PENDING]**. Compare against label-permutation null distributions. Repeat analyses under alternative imputation methods, zero treatments, ILR/CLR transforms, artifact inclusion or exclusion, high-missingness column removal, and class weighting.
+
+Falsify the modeling claim if performance fails to exceed the baseline, permutation tests are nonsignificant, fold-to-fold rankings are unstable, calibration is poor, or results disappear under reasonable preprocessing perturbations. Check for leakage from sheet identifiers, artifact flags, provenance, or label-derived fields.
+
+## Reproducibility Risks
+
+The raw files were not inspected in this diagnostic run; sheet meanings, label encoding, units, duplicate rows, hidden content, and artifact definitions are **[PENDING]**. Extracted PDF text may omit tables or formulas. Missingness and below-detection values may be conflated. Constant-sum effects, small classes, and provenance dependence can inflate apparent accuracy. A reproducible release must record exact cleaning rules, train-fold preprocessing, random seeds, fold assignments, software versions, model parameters, input-file hashes, and the single execution command.

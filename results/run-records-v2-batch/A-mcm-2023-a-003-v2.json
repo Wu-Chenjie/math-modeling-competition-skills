@@ -1,0 +1,32 @@
+{
+  "group": "A",
+  "case_id": "mcm-2023-a",
+  "index": 3,
+  "run_id": "A-mcm-2023-a-003-v2",
+  "protocol_version": 2,
+  "case_root": "benchmarks/cases/mcm-2023-a",
+  "summary_path": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-a.json",
+  "statement_sha256": "948959869a6e863246b0eb7c9001e82a39b9b28d8ffe881fcd8aad5bddfc9002",
+  "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "model": "gpt-5.6-sol",
+  "domain_skill_ref": "5a85fe34ca1d075872e95556b122c8979984d322",
+  "engineering_skill_ref": null,
+  "status": "completed",
+  "started_at": "2026-08-30T08:15:36.919835+00:00",
+  "ended_at": "2026-08-30T08:22:21.796443+00:00",
+  "exit_code": 0,
+  "output_file": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/A/A-mcm-2023-a-003-v2.txt",
+  "workspace": "C:/Users/伍辰杰/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/results/formal-v2-batch/workspaces-v2/A-mcm-2023-a-003-v2",
+  "artifacts": [
+    "__pycache__/run_model.cpython-312.pyc",
+    "__pycache__/test_model.cpython-312.pyc",
+    "results/metrics.csv",
+    "run_model.py",
+    "test_model.py"
+  ],
+  "reported_tokens": 237589,
+  "stdout_log": "results/formal-v2-batch/A/A-mcm-2023-a-003-v2.stdout.log",
+  "stderr_log": "results/formal-v2-batch/A/A-mcm-2023-a-003-v2.stderr.log",
+  "stdout_tail": "{\n  \"status\": \"partial\",\n  \"code_path\": \"C:\\\\Users\\\\伍辰杰\\\\Documents\\\\ChatGPT\\\\mathmodel\\\\math-modeling-competition-skills\\\\results\\\\formal-v2-batch\\\\workspaces-v2\\\\A-mcm-2023-a-003-v2\\\\run_model.py\",\n  \"metrics_path\": \"C:\\\\Users\\\\伍辰杰\\\\Documents\\\\ChatGPT\\\\mathmodel\\\\math-modeling-competition-skills\\\\results\\\\formal-v2-batch\\\\workspaces-v2\\\\A-mcm-2023-a-003-v2\\\\results\\\\metrics.csv\",\n  \"figures_count\": 0,\n  \"tests\": {\n    \"passed\": 7,\n    \"failed\": 0,\n    \"command\": \"python -m unittest test_model.py\"\n  },\n  \"pending_stages\": [\n    \"Figures: execution stopped with IndexError because the Q1 plotting series contained one value for five x-axis positions.\",\n    \"Structured modeling report: pending because execution stopped before modeling_report.json was written.\",\n    \"Final artifact validation: pending until the plotting dimension mismatch is corrected and the code is rerun.\"\n  ]\n}\n",
+  "stderr_tail": "t_zero_initial_state_remains_extinct(self):\n+        traits = model.make_traits(4, \"balanced\")\n+        weather = model.generate_weather(12, model.SCENARIOS[\"historical\"], 5)\n+        out = model.simulate(\n+            traits,\n+            weather,\n+            model.SCENARIOS[\"historical\"],\n+            initial=np.zeros(4),\n+        )\n+        self.assertEqual(float(np.max(out[\"abundance\"])), 0.0)\n+\n+    def test_interaction_matrix_has_unit_diagonal(self):\n+        traits = model.make_traits(6, \"balanced\")\n+        matrix = model.interaction_matrix(traits)\n+        np.testing.assert_allclose(np.diag(matrix), np.ones(6))\n+        self.assertTrue(np.all(matrix >= 0.0))\n+\n+    def test_experiment_has_all_scenarios_and_richness_levels(self):\n+        result = model.run_experiment(years=12, replicates=2)\n+        self.assertEqual(set(result[\"summary\"]), set(model.SCENARIOS))\n+        for scenario in model.SCENARIOS:\n+            self.assertEqual(set(map(int, result[\"summary\"][scenario])), set(model.RICHNESS_LEVELS))\n+\n+    def test_experiment_computes_baseline_and_composition(self):\n+        result = model.run_experiment(years=12, replicates=2)\n+        self.assertEqual(set(map(int, result[\"baseline\"][\"historical\"])), set(model.RICHNESS_LEVELS))\n+        self.assertEqual(\n+            set(result[\"composition\"]),\n+            {\"balanced\", \"drought_tolerant\", \"drought_sensitive\"},\n+        )\n+\n+    def test_halving_integrator_step_preserves_elapsed_time(self):\n+        traits = model.make_traits(4, \"balanced\")\n+        weather = model.generate_weather(12, model.SCENARIOS[\"historical\"], 19)\n+        coarse = model.simulate(traits, weather, model.SCENARIOS[\"historical\"], dt=0.1)\n+        fine = model.simulate(traits, weather, model.SCENARIOS[\"historical\"], dt=0.05)\n+        relative = abs(coarse[\"total\"][-1] - fine[\"total\"][-1]) / max(fine[\"total\"][-1], 1e-12)\n+        self.assertLess(relative, 0.05)\n+\n+\n+if __name__ == \"__main__\":\n+    unittest.main()\n\ntokens used\n237,589\n"
+}

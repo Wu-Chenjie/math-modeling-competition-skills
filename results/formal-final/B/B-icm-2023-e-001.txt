@@ -1,0 +1,126 @@
+# Modeling Report — B-icm-2023-e-001
+
+## 1. Problem framing
+
+The verified benchmark concerns 2023 ICM Problem E, “Light Pollution.” The supplied excerpt defines light pollution as excessive or poorly used artificial light—including trespass, over-illumination, clutter, and sky glow—and identifies possible astronomical, ecological, health, and safety impacts.
+
+The auditable excerpt ends during the background. It does not expose the full requirements, target geography, prediction variable, intervention constraints, or evaluation criteria. Accordingly, this report preregisters a general framework for:
+
+1. estimating spatial light-pollution exposure;
+2. relating exposure to contextual factors without claiming causality;
+3. evaluating intervention scenarios with uncertainty.
+
+Any more specific deliverable remains pending recovery through an authorized benchmark summary.
+
+## 2. Data audit
+
+- Supplied data files: none.
+- Structured data audit: empty.
+- Data SHA-256: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`, the hash of an empty payload.
+- Problem source: verified; two pages; source hash `058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da`.
+- No observations, coordinates, timestamps, units, sample sizes, missingness statistics, or outcome labels are available.
+
+Consequently, no numerical estimates, rankings, maps, scores, or fitted relationships can be reported.
+
+## 3. Assumptions
+
+Pending verification:
+
+- Analysis units are location–time observations.
+- A measurable quantity such as nighttime radiance can serve as an exposure proxy, but not automatically as total ecological or health harm.
+- Relevant predictors may include land use, population or infrastructure intensity, lighting characteristics, weather, and natural background conditions.
+- Nearby observations are spatially dependent.
+- Observational associations may be confounded and must not be presented as intervention effects.
+- If several impacts are combined, weights must be reported and varied rather than treated as objectively correct.
+
+## 4. Candidate models
+
+**Model A: Spatial hierarchical regression.** Model transformed exposure using nonlinear covariate effects plus a spatial random field. This directly addresses spatial dependence, supports uncertainty intervals, and permits interpretable scenario changes.
+
+**Model B: Physics-informed propagation model.** Represent emitted light from multiple sources with distance attenuation, atmospheric transmission, shielding, and background illumination. This is preferable when source-level engineering data exist and provides more defensible intervention mechanisms.
+
+Model selection will depend on available resolution and variables. The two approaches may be compared, but their outputs must not be blended without calibration.
+
+## 5. Baseline
+
+Use an intercept-only predictor and a non-spatial regularized linear regression. Both must be evaluated on identical held-out spatial blocks. A complex model is justified only if it improves predictive error, calibration, and residual spatial structure.
+
+## 6. Mathematical specification
+
+For observation \(i\), let \(y_i=\log(1+L_i)\), where \(L_i\) is measured exposure; \(x_i\) are covariates; and \(s_i\) is location:
+
+\[
+y_i=\beta_0+\sum_j f_j(x_{ij})+u(s_i)+\epsilon_i,
+\qquad
+\epsilon_i\sim N(0,\sigma^2),
+\]
+
+\[
+\operatorname{Cov}[u(s_i),u(s_k)]
+=\tau^2\exp\!\left(-\frac{\|s_i-s_k\|}{\rho}\right).
+\]
+
+For scenario \(a\), alter only specified actionable covariates:
+
+\[
+\Delta_i^{(a)}
+=\widehat L_i(x_i^{(a)},s_i)-\widehat L_i(x_i,s_i).
+\]
+
+Report distributions of \(\Delta_i^{(a)}\), not unsupported point claims. If impacts \(R_{ik}\) are aggregated,
+
+\[
+R_i(w)=\sum_k w_kR_{ik},\quad w_k\ge0,\quad \sum_k w_k=1,
+\]
+
+with conclusions evaluated over a preregistered weight simplex.
+
+## 7. Executable experiment plan
+
+Status: **pending data and implementation**.
+
+1. Validate schema, coordinate reference system, units, timestamps, duplicates, censoring, and missingness.
+2. Plot spatial coverage and compare sampled versus target populations.
+3. Predefine transformations using training data only.
+4. Partition observations into spatial blocks; add temporal holdout if timestamps permit.
+5. Fit baseline, Model A, and—only with source-level inputs—Model B.
+6. Tune exclusively within training blocks.
+7. Evaluate untouched blocks.
+8. Simulate explicitly defined intervention levels and propagate parameter and residual uncertainty.
+9. Export predictions, intervals, residual diagnostics, scenario deltas, and configuration metadata.
+
+## 8. Validation
+
+Primary metrics: MAE and RMSE on the original exposure scale. Also report interval coverage, calibration, and residual spatial autocorrelation. Compare performance by geographic or settlement strata where sample sizes permit. No random-row cross-validation should be used as the sole validation because it can leak nearby spatial information.
+
+## 9. Sensitivity and robustness
+
+Vary spatial block size, covariance kernel, transformation, influential observations, missing-data treatment, exposure definition, scenario intensity, and aggregation weights. Repeat analysis after geographic reweighting to assess sampling bias. Report rank or recommendation stability rather than one preferred configuration alone.
+
+## 10. Falsification
+
+Reject or qualify the framework if:
+
+- spatially permuted outcomes perform similarly;
+- held-out-region error greatly exceeds internal validation error;
+- residual spatial dependence remains substantial;
+- estimated effects reverse across plausible specifications;
+- negative-control predictors appear strongly predictive;
+- placebo interventions produce material changes;
+- uncertainty intervals fail empirical coverage.
+
+## 11. Reviewer risks
+
+Major risks are incomplete requirement visibility, absent data, proxy validity, spatial sampling bias, confounded correlation, ecological fallacy, arbitrary impact weights, extrapolation beyond sampled regions, and false precision. Citations and domain thresholds are absent and remain pending; none are invented.
+
+## 12. Reproducibility manifest
+
+- Run ID: `B-icm-2023-e-001`
+- Competition/case: ICM 2023 E
+- Input authority: `case-summaries.json`, entry `icm-2023-e`
+- Problem hash: `058ac24bc2d9948fad429ce8bb711c68d244cb31119bd4f9f470b44070a1a7da`
+- Data hash: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`
+- Expected method families: spatial analysis, statistical modeling, scenario analysis
+- Known failure modes: sampling bias, confounded correlation, missing uncertainty analysis
+- Code, dependencies, random seed, execution command, results, and scores: **pending; unexecuted**
+- Repository modifications: none

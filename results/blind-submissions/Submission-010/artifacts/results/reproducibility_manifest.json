@@ -1,0 +1,12 @@
+{
+  "code_sha256": "5c2b571ccad0017ee5a00d45ff2d81c59565056ead218d55c6a93ec73844adb1",
+  "command": "python run_model.py --input \"C:/Users/\u4f0d\u8fb0\u6770/Documents/ChatGPT/mathmodel/math-modeling-competition-skills/benchmarks/case-summaries/mcm-2023-b.json\"",
+  "dependencies": "Python standard library only",
+  "figures_count": 9,
+  "input_sha256": "463986a93ebcf8d6e959b2f20723f1c5f4795c0f39141c24fbd4f697de462090",
+  "metrics_sha256": "535900ff43720c4c653097896dc06ae3d11d3de5cf8d7186fd0d92f3ca83cac9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.13",
+  "runtime_seconds": 0.39627,
+  "seed": 2023003
+}

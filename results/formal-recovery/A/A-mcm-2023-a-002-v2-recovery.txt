@@ -1,0 +1,14 @@
+{
+  "status": "completed_with_pending_stages",
+  "code_path": "model_run.py",
+  "metrics_path": "results/metrics.json",
+  "figures_count": 9,
+  "tests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "pending_stages": [
+    "Publication PNG export and strict figure audit: matplotlib unavailable",
+    "Empirical calibration and out-of-sample validation: no observational rows supplied"
+  ]
+}
